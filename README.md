@@ -34,7 +34,7 @@ You only need to do this part once, not every time you're submitting homework!
 - **Add an upstream remote repository**
     +  *Creating an upstream remote links the local repository on your computer to this repository on Github*
     + `cd WDi24-Homework`
-    + `git remote add upstream https://github.com/phoboes/WDi24-Homework`
+    + `git remote add upstream https://github.com/JoshuaMcEvoy/WDi24-Homework`
     + `git pull upstream master`
 
 ### 3. Do your Homework
