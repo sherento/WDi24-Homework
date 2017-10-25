@@ -1,5 +1,5 @@
 /*
-The Word Guesser
+The Word Guesser - Hangman variation
 */
 
 // global variables needed by multiple functions
@@ -77,9 +77,9 @@ const Hangman = function () {
   // ask player for a letter input, differentiate between first guess
   let guessedLetter;
   if ( guessesLeft === 6 ) {
-      guessedLetter = prompt('Welcome to Hangman. Go on, guess a letter:');
+      guessedLetter = prompt('Welcome to Hangman. Go on, guess a letter:').toLowerCase();
   } else {
-      guessedLetter = prompt('Take another guess:');
+      guessedLetter = prompt('Take another guess:').toLowerCase();
   }
 
   // let player exit game
