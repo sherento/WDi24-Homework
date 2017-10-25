@@ -22,8 +22,7 @@ const guessedLetters = ['_','_','_', '_'];
 let correctGuessCounter = 0;
 
 
-const asciiArt = ` ___________.._______\n| .__________))______|\n| | / /      ||\n| |/ /       ||\n| | /        ||.-''.\n| |/         |/  _  \\n| |          ||  \`/,|\n| |          (\\\`_.'\n| |         .-\`--'.\n| |        /Y . . Y\\n| |       // |   | \\\n| |      //  | . |  \\\n| |     ')   |   |   (\`\n| |          ||'||\n| |          || ||\n| |          || ||\n| |          || ||\n| |         / | | \\n""""""""""|_\`-' \`-' |"""|\n|"|"""""""\ \       '"|"|\n| |        \ \        | |\n: :         \ \       : :\n. .          \`'       . .`
-
+const asciiArt = `_______\n|\/      |\n|      (_)\n|      \\|\/\n|       |\n|      \/ \\\n|\n________`;
 
 
 
@@ -99,4 +98,11 @@ console.log( `If I guess 'a':` );
 guessLetter('a');
 console.log( `If I guess 'i':` );
 guessLetter('i');
-console.log( `Guess a letter using the function guessLetter(yourGuessHere)` );
+console.log( `If I guess 'h':` );
+guessLetter('h');
+console.log( `If I guess 'j':` );
+guessLetter('j');
+console.log( `If I guess 'P':` );
+guessLetter('p');
+console.log( `If I guess 'q':` );
+guessLetter('q');
