@@ -11,11 +11,9 @@ const words = ['bumfuzzle', 'cattywampus', 'gardyloo', 'taradiddle', 'billingsga
 const word = words[getRandomInt(0, words.length)];
 
 // make array of letters & array of underscores from random word chosen
-let letters = [];
 let correctGuesses = [];
 
 for (let i = 0; i < word.length; i++) {
-  letters.push(word[i]);
   correctGuesses.push('_');
 }
 
@@ -25,10 +23,10 @@ let numGuesses = 0;
 
 const guessLetter = function ( letter ) {
   let found = false;
-  // iterate through letters
-  for (let i = 0; i < letters.length; i++) {
+  // iterate through word
+  for (let i = 0; i < word.length; i++) {
     // if guessed letter matches
-    if ( letters[i] === letter ) {
+    if ( word[i] === letter ) {
       // update word to reflect match
       correctGuesses[i] = letter;
       found = true;
@@ -44,7 +42,7 @@ const guessLetter = function ( letter ) {
   }
 
   // if no letters needed to be guessed
-  if ( correctGuesses.join('') === letters.join('') ) {
+  if ( correctGuesses.join('') === word ) {
     // congratulate user for winning
     console.log(`Congratulations! You've guessed the word ${ word }`);
   }
