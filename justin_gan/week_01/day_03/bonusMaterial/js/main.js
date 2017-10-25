@@ -27,7 +27,7 @@ const isVowel = function ( char ) {
   }
 }
 
-const sumarr = function ( arr ) {
+const sumArr = function ( arr ) {
   let result = 0;
   for (let i = 0; i < arr.length; i++) {
     result += arr[i];
@@ -35,7 +35,7 @@ const sumarr = function ( arr ) {
   return result;
 }
 
-const multiplyarr = function ( arr ) {
+const multiplyArr = function ( arr ) {
   let result = 1;
   for (let i = 0; i < arr.length; i++) {
     result *= arr[i];
