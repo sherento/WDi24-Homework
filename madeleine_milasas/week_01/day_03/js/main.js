@@ -102,6 +102,7 @@ const reverseString = function (str) {
 // testing
 console.log( `REVERSE STRINGS EXERCISE` );
 console.log( `The reverse of 'cat' is '${ reverseString( 'cat' ) }'.` );
+console.log( `The reverse of 'jag testar' is '${ reverseString( 'jag testar' ) }'.` );
 console.log( `The reverse of 'bolognese' is '${ reverseString( 'bolognese' ) }'.` );
 console.log( `The reverse of 'dog was I' is '${ reverseString( 'dog was I' ) }'.` );
 
@@ -131,5 +132,24 @@ console.log( `The length of the longest word of 'bar', 33333333333 and 'pompom' 
 
 
 
+// ********* FILTER LONG WORDS **************************************************
+// Write a function filterLongWords that takes an array of words and an number i
+// and returns the array of words that are longer than i.
+const filterLongWords = function (words, i) {
+  let longWords = [];
+  for (let j = 0; j < words.length; j++) {
+    let word = words[j];
+    if (word.length > i) {
+      longWords.push( words[j] );
+    }
+  }
+  return longWords;
+};
 
-// Write a function filterLongWords that takes an array of words and an number i and returns the array of words that are longer than i.
+// testing
+console.log( `FILTER LONG WORDS EXERCISE` );
+const testWords = ['at', 'slumber', 'grep', 'halt', 'triskaidekaphobia', 'chocolate', 'sit', 'it', 'timetable', 'ennui'];
+console.log( `Test words: ${ testWords }` );
+console.log( `Longer than 3: ${ filterLongWords( testWords, 3 ) }` );
+console.log( `Longer than 5: ${ filterLongWords( testWords, 5 ) }` );
+console.log( `Longer than 10: ${ filterLongWords( testWords, 10 ) }` );
