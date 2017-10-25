@@ -115,8 +115,8 @@ const word = ['b', 'a', 'n', 'a', 'n', 'a'];
 const guesses = ['_', '_', '_', '_', '_', '_'];
 const guessedLetters = []
 let correctGuess = false;        // triggers a message after a correct guess
-let letters = 3;       // number of different letters in word
-let hangmanState = 0;
+let letters = 3;       // number of different letters left to find in word
+let hangmanState = 0;       // game over when this reaches 6
 
 const guessLetter = function(guess){
   if(!guessedLetters.includes(guess)){        // checks if letter has previously been guessed
