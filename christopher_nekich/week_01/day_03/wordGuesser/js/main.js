@@ -155,6 +155,19 @@ const guessLetter = function(guess){
     console.log('     |       |')
     console.log('     |      / \\')
     console.log('     |')
-    console.log('jgs_|___')
+    console.log('_____|___')
   };
 };
+
+// =========== TEST ============
+
+console.log(guessLetter('h'))
+console.log(guessLetter('a'))
+console.log(guessLetter('a'))
+console.log(guessLetter('s'))
+console.log(guessLetter('d'))
+console.log(guessLetter('y'))
+console.log(guessLetter('b'))
+console.log(guessLetter('k'))
+console.log(guessLetter('l'))
+console.log(guessLetter('r'))
