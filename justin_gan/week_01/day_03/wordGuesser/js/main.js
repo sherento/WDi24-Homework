@@ -73,5 +73,7 @@ const guessLetter = function ( letter ) {
     else {
       console.log(`You've already guessed this letter...`);
     }
+  } else {
+    console.log(`You've already lost. Why are you still trying to play?`);
   }
 }
