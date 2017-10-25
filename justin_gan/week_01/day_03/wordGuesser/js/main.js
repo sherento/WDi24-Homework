@@ -35,14 +35,7 @@ const start = function () {
 const gameOver = function () {
   // check if player has won or lost
   if ( lose() ) {
-    console.log(`Game Over! You stink loser\n
-                             _________\n
-                                 |    |\n
-                                 O    |\n
-                                -|-   |\n
-                                / \\   |\n
-                                      |\n
-                             _________|
+    console.log(`Game Over! You stink loser\n_________\n    |    |\n    O    |\n   -|-   |\n   / \\   |\n         |\n_________|
                 `)
     return true;
   } else if ( win() ) {
@@ -113,7 +106,9 @@ const checkMatch = function ( guessedLetter ) {
   // if match found, congratulate player
   if ( match ) {
     console.log(`Congratulations! You guessed "${ guessedLetter }" correctly`);
-  } else {
+  }
+  // take away a guess and comfort player
+  else {
     guessesLeft--;
     comfort(guessedLetter);
   }
