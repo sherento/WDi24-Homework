@@ -120,7 +120,7 @@ let hangmanState = 0;       // game over when this reaches 6
 
 const guessLetter = function(guess){
   if(!guessedLetters.includes(guess)){        // checks if letter has previously been guessed
-    for (var i = 0; i < guesses.length; i++) {
+    for (var i = 0; i < guesses.length; i++) {  //if not already guessed, runs through checking for successful guess
       if(guess === word[i]){
         guesses[i] = guess;
         correctGuess = true;        // triggers correct guess message
@@ -138,7 +138,7 @@ const guessLetter = function(guess){
     letters -= 1;
     hangmanState -= 1
     if(letters > 0){
-      console.log(`You have ${letters} more letters to find`);
+      console.log(`You have ${letters} more letter(s) to find`);
     }else{
       console.log('Congratulations, you have won the game!');
     };
