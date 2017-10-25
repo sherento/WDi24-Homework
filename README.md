@@ -60,8 +60,7 @@ You need to do this every time you're submitting homework.
 - **Push the changes in your local repository to your forked repository**
     + `git push origin master`
 - **Once you're finished, submit a pull request for me to accept your homework**
-    + Navigate to your forked version of this repository on Github (eg [https://github.com/{{YOUR_USERNAME_HERE}}/WDi
-    -Homework](https://github.com/{{YOUR_USERNAME_HERE}}/WDi24-Homework)).
+    + Navigate to your forked version of this repository on Github (eg [https://github.com/{{YOUR_USERNAME_HERE}}/WDi24-Homework](https://github.com/{{YOUR_USERNAME_HERE}}/WDi24-Homework)).
     + Hit the **Pull request** button.
     + Make sure the destination for the pull request is set to my repository, not your own or anyone else's.
     - In the pull request comment, tell me the following:
