@@ -16,9 +16,9 @@ const getRandomInt = function ( min, max ) {
 const word = words[getRandomInt(0, words.length)];
 
 // make array of underscores equal in length to random word chosen
-let correctGuesses = [];
+let revealedLetters = [];
 for (let i = 0; i < word.length; i++) {
-  correctGuesses.push('_');
+  revealedLetters.push('_');
 }
 
 // track guessed letters in allGuesses array and number of guesses left
@@ -62,71 +62,71 @@ const lose = function () {
 
 const win = function () {
   // the player has won if all their correct guesses match the word
-  if ( correctGuesses.join('') === word ) {
+  if ( revealedLetters.join('') === word ) {
     return true;
   }
 }
 
 const Hangman = function () {
   // ask player for a letter input, differentiate between first guess
-  let input;
+  let guessedLetter;
   if ( guessesLeft === 6 ) {
-      input = prompt('Welcome to Hangman. Go on, guess a letter:');
+      guessedLetter = prompt('Welcome to Hangman. Go on, guess a letter:');
   } else {
-      input = prompt('Take another guess:');
+      guessedLetter = prompt('Take another guess:');
   }
 
   // let player exit game
-  if ( input === "stop" || input === "quit" ) {
+  if ( guessedLetter === "stop" || guessedLetter === "quit" ) {
     guessesLeft = 0;
   }
 
-  // check if input was already guessed
-  if ( isDuplicate(input) ) {
-    console.log(`You've already guessed this letter...`);
+  // check if letter was already guessed
+  if ( isDuplicate(guessedLetter) ) {
+    console.log(`You've already guessed "${ guessedLetter }"...`);
   } else {
-    checkMatch(input);
-    allGuesses.push(input);
+    allGuesses.push(guessedLetter);
+    checkMatch(guessedLetter);
   }
 }
 
-const isDuplicate = function ( input ) {
-  // letter has been guessed if in allGuesses
-  if ( allGuesses.indexOf(input) !== -1 ) {
+const isDuplicate = function ( guessedLetter ) {
+  // letter is a duplicate if it's indexOf return isn't -1
+  if ( allGuesses.indexOf(guessedLetter) !== -1 ) {
     return true;
   } else {
     return false;
   }
 }
 
-const checkMatch = function ( input ) {
+const checkMatch = function ( guessedLetter ) {
   let match = false;
-  //  iterate through word
+  //  iterate over the chosen word
   for (let i = 0; i < word.length; i++) {
-    // if guessed letter matches
-    if ( word[i] === input ) {
-      // update correctGuesses to reflect match
-      correctGuesses[i] = input;
+    // if guessed letter matches, update revealedLetters to reflect match
+    if ( word[i] === guessedLetter ) {
+      revealedLetters[i] = guessedLetter;
       match = true;
     }
   }
 
-  // log guessed letters
-  console.log(correctGuesses.join(''));
-  // if match found congratulate player
+  // if match found, congratulate player
   if ( match ) {
-    console.log(`Congratulations! You guessed "${ input }" correctly`);
+    console.log(`Congratulations! You guessed "${ guessedLetter }" correctly`);
   } else {
     guessesLeft--;
-    comfort(input);
+    comfort(guessedLetter);
   }
+
+  // log guessed letters
+  console.log(revealedLetters.join(''));
 }
 
-const comfort = function ( input ) {
+const comfort = function ( guessedLetter ) {
   if ( guessesLeft !== 0 && guessesLeft !== 1 ) {
-    console.log(`Sorry, no "${ input }" here. You have ${ guessesLeft } guesses left`);
+    console.log(`Sorry, no "${ guessedLetter }" here. You have ${ guessesLeft } guesses left`);
   } else if ( guessesLeft === 1 ) {
-    console.log(`Sorry, no "${ input }" here. You have ${ guessesLeft } guess left`);
+    console.log(`Sorry, no "${ guessedLetter }" here. You have ${ guessesLeft } guess left`);
   }
 }
 
