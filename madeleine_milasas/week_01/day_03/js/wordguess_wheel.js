@@ -1,11 +1,19 @@
 // ~~~~~~~ WORD GUESS GAME ~~~~~~~~~~~
 
+
+// WHEEL. OF.
+
+// .d888               888
+// d88P"                888
+// 888                  888
+// 888888 .d88b. 888d888888888888  88888888b.  .d88b.
+// 888   d88""88b888P"  888   888  888888 "88bd8P  Y8b
+// 888   888  888888    888   888  888888  88888888888
+// 888   Y88..88P888    Y88b. Y88b 888888  888Y8b.
+// 888    "Y88P" 888     "Y888 "Y88888888  888 "Y8888
+
+
 // You'll create a simple word guessing game where the user gets infinite tries to guess the word
-// (like Hangman without the hangman, or like Wheel of Fortune without the wheel and fortune).
-
-
-
-// (multiplying the reward if multiple letters found),
 
 
 
