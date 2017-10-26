@@ -3,7 +3,10 @@ Credit Card Validation
 */
 
 const validateCreditCard = function ( n ) {
-  console.log(n.replace(/-/g, ''));
+  let creditCard  = {
+    number: n
+  };
+
   // remove hyphens
   let nArr = n.replace(/-/g, '');
   const sum = nArr.split('').reduce(function (a, b) {
@@ -11,25 +14,38 @@ const validateCreditCard = function ( n ) {
   }, 0);
   // check if number is 16 digits
   if ( nArr.length !== 16 ) {
-    return false;
+    creditCard.valid = false;
+    creditCard.error = 'invalid_card_length';
+    return creditCard;
   }
   // check if all characters are numbers
   else if ( /[^0-9]/.test(nArr) ) {
-    return false;
+    creditCard.valid = false;
+    creditCard.error = 'invalid_characters';
+    return creditCard;
   }
   // check if there are at least 2 different digits
   else if ( allDigitsSame(nArr) ) {
-    return false;
+    creditCard.valid = false;
+    creditCard.error = 'only_one_type_of_number';
+    return creditCard;
   }
   // check if the final digit is even
   else if ( nArr[ nArr.length - 1 ] % 2 !== 0 ) {
-    return false;
+    creditCard.valid = false;
+    creditCard.error = 'final_digit_is_odd';
+    return creditCard;
   }
   // check if sum of all digits is more than 16
   else if ( 16 >= sum ) {
-    return false;
+    creditCard.valid = false;
+    creditCard.error = 'sum_of_digits_less_than_16';
+    return creditCard;
+  } else {
+    creditCard.valid = true;
+    creditCard.number = n;
+    return creditCard;
   }
-  return true;
 }
 
 const allDigitsSame = function ( n ) {
