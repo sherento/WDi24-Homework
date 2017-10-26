@@ -171,7 +171,7 @@ const removeDashes = function (card) {
 
 // Check if 16 digit
 const is16Digit = function (str) {
-  console.log( `Checking if this is 16 digits: ${ str }` );
+  console.log( `Checking if this is 16 digits: ${ str.length }` );
   if (16 === str.length) {
     console.log(true);
     return true;
@@ -197,10 +197,10 @@ const isAllNumbers = function (numberArray) {
 
 // Check that all digits are not the same
 const isDifferentDigits = function (numberArray) {
-  console.log( `Checking all digits are different: ${ numberArray }` );
+  console.log( `Checking if digits are different: ${ numberArray }` );
   // sort array
-  const sortedNumbers = numberArray.sort();
-  console.log( sortedNumbers );
+  // discovered i needed to make a copy of array with .slice() or original array would sort too
+  const sortedNumbers = numberArray.slice().sort();
   // if first and last elements are same, all digits are the same
   if (sortedNumbers[0] === sortedNumbers[ sortedNumbers.length -1 ]) {
     console.log(false);
@@ -214,7 +214,7 @@ const isDifferentDigits = function (numberArray) {
 
 // The final digit must be even
 const isFinalDigitEven = function (numberArray) {
-  console.log( `Checking last digit is even: ${ numberArray }` );
+  console.log( `Checking if last digit is even: ${ numberArray } ` );
   const lastDigit = numberArray[numberArray.length - 1];
   if ( lastDigit % 2 === 0 ) {
     console.log(true);
@@ -251,7 +251,7 @@ const validateCreditCard = function (card) {
   if ( !isDifferentDigits( numbers ) ) {
     return false;
   }
-  // Last digit must be everything
+  // Last digit must be even
   if ( !isFinalDigitEven( numbers ) ) {
     return false;
   }
