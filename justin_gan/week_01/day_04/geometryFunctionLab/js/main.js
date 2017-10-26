@@ -65,19 +65,21 @@ const triangleArea = function ( triangle ) {
   const b = triangle.sideB;
   const c = triangle.sideC;
 
+  // use Heron's Formula to find area
   let halfPerimeter = ( a + b + c ) / 2;
   console.log( halfPerimeter );
   const area = Math.sqrt( halfPerimeter * ( halfPerimeter - a ) * ( halfPerimeter - b ) * ( halfPerimeter - c ) );
   return area;
 }
 const isObtuse = function ( triangle ) {
+  // sort sides from smallest to largest
   let sides = [triangle.sideA, triangle.sideB, triangle.sideC];
   sides.sort(function(a, b) {
     console.log(a, b);
     console.log(a - b);
     return a - b;
   });
-  console.log(sides);
+  // use Pythagorean Theorem to determine if obtuse
   return (( sides[0] * sides[0] ) + ( sides[1] * sides[1] )) < ( sides[2] * sides[2] )
 }
 
