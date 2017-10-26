@@ -235,6 +235,7 @@ console.log(validateCreditCard('6666-6666-6666-6661'));
 //The Bank
 
 
+
 const bankArray = [
   {name: "John",
     balance: 0,
@@ -267,10 +268,13 @@ const deposit = function () {
     if (bankArray[i].name === name) {
       bankArray[i].deposit(amount);
       showBalance();
-      return;
+      //return;
     }
   }
     showBalance();
+    //document.getElementById('output1').innerHTML = "<h1>" + output1 + "</h1>";
+    document.getElementById('output1').innerHTML = "<h1>" + showBalance() + "</h1>";
+    //document.getElementById('output1').innerHTML = "output1uhshiuoweuiohwefuhi";
     return;
 }
 
@@ -343,10 +347,19 @@ const newAccount = function () {
 
 const showBalance = function () {
   let output1 = ""
+  bankFunds = 0;
   for (var i = 0; i < bankArray.length; i++) {
+    bankFunds = bankFunds + bankArray[i].balance;
     console.log(`index:${i}, ${bankArray[i].name}, ${bankArray[i].balance}`);
-    output1 = `${output1} index:${i}, ${bankArray[i].name}, ${bankArray[i].balance}\n`
+    output1 = `${output1} index:${i}, ${bankArray[i].name}, ${bankArray[i].balance} <br>`
+    console.log(`Total funds in bank: ${bankFunds}`);
   }
+  output1 = output1 + `Total funds in bank: ${bankFunds}`;
+  console.log(output1);
+  // cant manipultae DOM yet as the HTML is not populated yet.
+  //document.getElementById('output1').innerHTML = "<h1>" + output1 + "</h1>";
+  return output1;
+
   // update the main browser window. DOM.
   //output1 = "something"
   //document.getElementById('output1').innerHTML = "<h1>" + output1 + "</h1>";
