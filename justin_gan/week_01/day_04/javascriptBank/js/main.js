@@ -1,105 +1,85 @@
 /*
-Credit Card Validation
+Javascript Bank
 */
 
-const validateCreditCard = function ( n ) {
-  let creditCard  = {
-    number: n
-  };
+let bank = [];
 
-  // remove hyphens
-  let nArr = n.replace(/-/g, '');
-  const sum = nArr.split('').reduce(function (a, b) {
-    return parseInt(a) + parseInt(b);
-  }, 0);
-  // check Luhn algorithm
+const sumAllAccounts = function () {
+  let sum = 0;
+  // iterate through accounts in bank and sum their balances
+  for (let i = 0; i < bank.length; i++) {
+    sum += bank[i].balance;
+  }
+  return sum;
+}
 
-
-  // check if number is 16 digits
-  if ( nArr.length !== 16 ) {
-    creditCard.valid = false;
-    creditCard.error = 'invalid_card_length';
-    return creditCard;
-  }
-  // check if all characters are numbers
-  else if ( /[^0-9]/.test(nArr) ) {
-    creditCard.valid = false;
-    creditCard.error = 'invalid_characters';
-    return creditCard;
-  }
-  // check if there are at least 2 different digits
-  else if ( allDigitsSame(nArr) ) {
-    creditCard.valid = false;
-    creditCard.error = 'only_one_type_of_number';
-    return creditCard;
-  }
-  // check if the final digit is even
-  else if ( nArr[ nArr.length - 1 ] % 2 !== 0 ) {
-    creditCard.valid = false;
-    creditCard.error = 'final_digit_is_odd';
-    return creditCard;
-  }
-  // check if sum of all digits is more than 16
-  else if ( 16 >= sum ) {
-    creditCard.valid = false;
-    creditCard.error = 'sum_of_digits_less_than_16';
-    return creditCard;
+const addAccount = function ( balance, name ) {
+  // if balance is less than 0, inform user and return false
+  if ( balance < 0 ) {
+    console.log(`You can't have a negative balance.`);
+    return false;
   } else {
-    creditCard.valid = true;
-    creditCard.number = n;
-    return creditCard;
-  }
-}
-
-const allDigitsSame = function ( n ) {
-  let firstDigit = n[0];
-  let same = true;
-  // iterate over array to check if all match the first digit
-  for (let i = 1; i < n.length; i++) {
-    if ( n[i] !== firstDigit ) {
-      same = false;
-      break;
+    // push account to bank and return true
+    const account = {
+      balance: balance,
+      name: name
     }
-  }
-  return same;
-}
-
-const checkLuhn = function ( n ) {
-  let digits = [];
-  for (let i = n.length - 2; i >= 0; i -= 2 ) {
-    const product = String(n[i] * 2);
-    // if product is single digit, push it to digits
-    if ( product.length === 1 ) {
-      digits.push(product);
-    }
-    // if product is double digits, push its individual digits to digits
-    else {
-      digits.push(product[0]);
-      digits.push(product[1]);
-    }
-  }
-  // push every other digit to digits
-  for (let i = n.length - 1; i >= 0; i -= 2 ) {
-    digits.push(n[i]);
-  }
-  const sum = digits.reduce(function (a, b) {
-    return parseInt(a) + parseInt(b);
-  });
-  if ( sum % 10 === 0 ) {
+    bank.push(account);
     return true;
-  } else {
+  }
+}
+
+const deposit = function ( amount, name ) {
+  // iterate through bank until name matches name in account & add amount to balance
+  for (let i = 0; i < bank.length; i++) {
+    let b = bank[i];
+    if ( b.name === name ) {
+      b.balance += amount;
+      return b.balance;
+    }
+  }
+}
+
+const withdraw = function ( amount, name ) {
+  // iterate through bank until name matches name in account
+  for (let i = 0; i < bank.length; i++) {
+    let b = bank[i];
+    if ( b.name === name ) {
+      // if balance would be negative after withdraw, inform user and return false
+      if ( b.balance - amount < 0 ) {
+        console.log(`Your balance is $${ b.balance }. You don't have enough money to withdraw $${ amount }.`);
+        return false;
+      }
+      // remove amount from balance
+      else {
+        b.balance -= amount;
+        return b.balance;
+      }
+    }
+  }
+}
+
+const transfer = function ( amount, transferrer, recipient ) {
+  // call withdraw to take money from transferrer and deposit it in recipients account
+  if ( withdraw(amount, transferrer) !== false ) {
+    deposit(amount, recipient);
+    return true;
+  }
+  // if withdraw fails, return false
+  else {
     return false;
   }
 }
 
-
-console.log(validateCreditCard('9999-9999-8888-0000'));
-console.log(validateCreditCard('6666-6666-6666-1666'));
-console.log(validateCreditCard('a923-3211-9c01-1112'));
-console.log(validateCreditCard('4444-4444-4444-4444'));
-console.log(validateCreditCard('1111-1111-1111-1110'));
-console.log(validateCreditCard('6666-6666-6666-6661'));
-console.log(validateCreditCard('9999-9999-8888-00001'));
-
-console.log(checkLuhn('79927398710'));
-console.log(checkLuhn('79927398713'));
+console.log(addAccount(2000, 'Justin'));
+console.log(addAccount(2050, 'Meggan'));
+console.log(addAccount(-50, 'Bill'));
+console.log(sumAllAccounts(bank));
+console.log(addAccount(375, 'Rich'));
+console.log(sumAllAccounts(bank));
+console.log(deposit(25, 'Rich'));
+console.log(withdraw(5000, 'Rich'));
+console.log(sumAllAccounts(bank));
+console.log(withdraw(100, 'Justin'));
+console.log(sumAllAccounts(bank));
+console.log(transfer(100, 'Justin', 'Rich'));
