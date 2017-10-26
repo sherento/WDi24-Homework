@@ -19,14 +19,14 @@ const cartForParty = {
 // cashRegister(cartForParty)); // 60.55
 
 const cashRegister = function(shoppingCart){
-  let keys = Object.keys(shoppingCart);
+  let keys = Object.keys(shoppingCart);       // create array of the objects keys
   let total = 0
 
   for (var i = 0; i < keys.length; i++) {
-    let price = shoppingCart[keys[i]];
-    price = parseFloat(price);
+    let price = shoppingCart[keys[i]];        // loop through each key and place value in variable
+    price = parseFloat(price);                // turn price into floating point number
     total += price;
   };
 
   return total;
-}
+};
