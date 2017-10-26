@@ -148,6 +148,8 @@ console.log( `Your total will be $${cashRegister(cartForSchool)}` );
 // ******************* CREDIT CARD **********************
 // A simple function called validateCreditCard that returns true or false.
 
+
+
 // COMPONENT FUNCTIONS ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
@@ -230,8 +232,8 @@ const isFinalDigitEven = function (numberArray) {
 const isSumGreater16 = function (numberArray) {
   console.log( `Checking if sum is greater than 16: ${ numberArray }` );
   const sum = numberArray.reduce((total, amount) => total + amount);
+  // ( this .reduce sums all numbers in array: accumulatively works through function and returns one number)
   console.log( `Sum: ${ sum }` );
-  // ( this sums all numbers in array ^: accumulatively works through function and returns one number)
   if (sum > 16) {
     console.log(true);
     return true;
@@ -245,44 +247,37 @@ const isSumGreater16 = function (numberArray) {
 // MAIN VALIDATION FUNCTION ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 const validateCreditCard = function (card) {
-  const validatedCard = {   // our validated card object
+  const validatedCard = {   // our validated card object to return at end
     valid: false,
     number: card            // number key with value same as entered card string
   };                        // (no error key added yet since card might not error)
 
-  // Print original entry to log
   console.log( `Card entered: ${ card }` );
-  // Remove dashes
   const numbers = removeDashes( card );
-  // Check if number is 16 digits
-  if ( !is16Digit( numbers ) ) {   // if it is not 16 digits
+  if ( !is16Digit( numbers ) ) {
     validatedCard.valid = false;
-    validatedCard.error = 'wrong_length';      // add error descrip to object
-    return validatedCard;                       // stop the function and return object with error descrip
+    validatedCard.error = 'wrong_length';      // add error key + value to object
+    return validatedCard;                      // stop the function and return object with error descrip
   }
-  // All of them must be numbers
   if ( !isAllNumbers( numbers ) ) {
     validatedCard.valid = false;
-    validatedCard.error = 'contains_invalid_char';     // add error descrip to object
-    return validatedCard;                       // stop the function and return object with error descrip
+    validatedCard.error = 'contains_invalid_char';
+    return validatedCard;
   }
-  // All digits cannot be the same
   if ( !isDifferentDigits( numbers ) ) {
     validatedCard.valid = false;
-    validatedCard.error = 'all_digits_identical';      // add error descrip to object
-    return validatedCard;                       // stop the function and return object with error descrip
+    validatedCard.error = 'all_digits_identical';
+    return validatedCard;
   }
-  // Last digit must be even
   if ( !isFinalDigitEven( numbers ) ) {
     validatedCard.valid = false;
-    validatedCard.error = 'final_digit_odd';      // add error descrip to object
-    return validatedCard;                       // stop the function and return object with error descrip
+    validatedCard.error = 'final_digit_odd';
+    return validatedCard;
   }
-  // Sum of digits greater than 16
   if ( !isSumGreater16( numbers ) ) {
     validatedCard.valid = false;
-    validatedCard.error = 'sum_less_than_16';      // add error descrip to object
-    return validatedCard;                       // stop the function and return object with error descrip
+    validatedCard.error = 'sum_less_than_16';
+    return validatedCard;
   }
   validatedCard.valid = true; // If function hasn't exited before here, card must be valid - assign true and return object.
   return validatedCard;
@@ -290,17 +285,6 @@ const validateCreditCard = function (card) {
 
 
 
-
-
-// The following credit card numbers are valid:
-// 9999-9999-8888-0000
-// 6666-6666-6666-1666
-// The following credit card numbers are invalid:
-//
-// a923-3211-9c01-1112 invalid characters
-// 4444-4444-4444-4444 only one type of number
-// 1111-1111-1111-1110 sum less than 16
-// 6666-6666-6666-6661 odd final number
 
 // Test cards
 const testCards = [
@@ -327,22 +311,9 @@ for (let i = 0; i < testCards.length; i++) {
   console.log( `-----------------` );
 }
 
-// console.log( `Card number: ${ testCard1 }. Valid: ${ validateCreditCard( testCard1 ).valid }.` );
-// console.log('');
-// console.log( `Card number: ${ testCard2 }. Valid: ${ validateCreditCard( testCard2 ) }.` );
-// console.log('');
-// console.log( `Card number: ${ testCard3 }. Valid: ${ validateCreditCard( testCard3 ) }.` );
-// console.log('');
-// console.log( `Card number: ${ testCard4 }. Valid: ${ validateCreditCard( testCard4 ) }.` );
-// console.log('');
-// console.log( `Card number: ${ testCard5 }. Valid: ${ validateCreditCard( testCard5 ) }.` );
-// console.log('');
-// console.log( `Card number: ${ testCard6 }. Valid: ${ validateCreditCard( testCard6 ) }.` );
-// console.log('');
-// console.log( `Card number: ${ testCard7 }. Valid: ${ validateCreditCard( testCard7 ) }.` );
-// console.log('');
-// console.log( `Card number: ${ testCard8 }. Valid: ${ validateCreditCard( testCard8 ) }.` );
-// console.log('');
+
+
+
 
 
 
