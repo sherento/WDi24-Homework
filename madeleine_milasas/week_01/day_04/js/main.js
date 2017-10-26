@@ -150,6 +150,7 @@ console.log( `Your total will be $${cashRegister(cartForSchool)}` );
 
 // COMPONENT FUNCTIONS ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
+
 // Remove dashes and make an array of numbers
 const removeDashes = function (card) {
   // declare array we'll want the function to return
@@ -163,55 +164,79 @@ const removeDashes = function (card) {
   }
   // splits str into array and convert to numbers
   numbers = cardRejoin.split('').map(Number);
+  console.log( `Removing dashes...  Numbers: ${ numbers }` );
   return numbers;
 };
 
 
-
 // Check if 16 digit
 const is16Digit = function (str) {
+  console.log( `Checking if this is 16 digits: ${ str }` );
   if (16 === str.length) {
+    console.log(true);
     return true;
   } else {
+    console.log(false);
     return false;
   }
 };
+
 
 // Check if all digits are numbers
 const isAllNumbers = function (numberArray) {
+  console.log( `Checking if all digits are numbers: ${ numberArray }` );
   if (!numberArray.some(isNaN)) {    // if my array does NOT contain something that is NOT a number (dbl negative, i.e. is everything a number)
+    console.log(true);
     return true;
   } else {
+    console.log(false);
     return false;
   }
 };
+
 
 // Check that all digits are not the same
 const isDifferentDigits = function (numberArray) {
+  console.log( `Checking all digits are different: ${ numberArray }` );
   // sort array
   const sortedNumbers = numberArray.sort();
-  // if first and last elements are the same, all digits are the same
-  if (sortedNumbers[0] === sortedNumbers[ sortedNumbers -1 ]) {
+  console.log( sortedNumbers );
+  // if first and last elements are same, all digits are the same
+  if (sortedNumbers[0] === sortedNumbers[ sortedNumbers.length -1 ]) {
+    console.log(false);
+    return false;
+  } else {
+    console.log(true);
+    return true;
+  }
+};
+
+
+// The final digit must be even
+const isFinalDigitEven = function (numberArray) {
+  console.log( `Checking last digit is even: ${ numberArray }` );
+  const lastDigit = numberArray[numberArray.length - 1];
+  if ( lastDigit % 2 === 0 ) {
+    console.log(true);
     return true;
   } else {
+    console.log(false);
     return false;
   }
 };
 
-// The final digit must be even
-const isFinalDigitEven = function (numberArray) {
-  const lastDigit = numberArray[numberArray.length - 1];
-  if ( lastDigit % 2 === 0 ) {
-    return true;
-  } else {
-    return false;
-  }
-};
+
+
+
+// The sum of all the digits must be greater than 16 - is valid because card could be 0000-0000-0000-1000
+//const sumDigitsGreater16 =
 
 
 // MAIN VALIDATE FUNCTION ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 const validateCreditCard = function (card) {
+  // Print original entry to log
+  console.log( `Card entered: ${ card }` );
   // Remove dashes
   const numbers = removeDashes( card );
   // Check if number is 16 digits
@@ -227,17 +252,13 @@ const validateCreditCard = function (card) {
     return false;
   }
   // Last digit must be everything
-  if ( !isFinalDigitEven ) {
+  if ( !isFinalDigitEven( numbers ) ) {
     return false;
   }
   return true;  // If function hasn't exited before here, card must be valid - return true.
 };
 
-// Here are the rules for a valid number:
-//
 
-
-// The sum of all the digits must be greater than 16
 
 
 
@@ -257,13 +278,23 @@ const testCard2 = '2354-3462-34534-9998';
 const testCard3 = '235x-3462-3454-9998';
 const testCard4 = '4444-4444-4444-4444';
 const testCard5 = '4224-4664-4444-4443';
+const testCard6 = '0000-0000-0000-1000';
 
 console.log( `\nCREDIT CARD VALIDATION` );
 console.log( `Card number: ${ testCard1 }. Valid: ${ validateCreditCard( testCard1 ) }.` );
+console.log('');
 console.log( `Card number: ${ testCard2 }. Valid: ${ validateCreditCard( testCard2 ) }.` );
+console.log('');
 console.log( `Card number: ${ testCard3 }. Valid: ${ validateCreditCard( testCard3 ) }.` );
+console.log('');
 console.log( `Card number: ${ testCard4 }. Valid: ${ validateCreditCard( testCard4 ) }.` );
+console.log('');
 console.log( `Card number: ${ testCard5 }. Valid: ${ validateCreditCard( testCard5 ) }.` );
+console.log('');
+console.log( `Card number: ${ testCard6 }. Valid: ${ validateCreditCard( testCard6 ) }.` );
+console.log('');
+
+
 
 
 //**
