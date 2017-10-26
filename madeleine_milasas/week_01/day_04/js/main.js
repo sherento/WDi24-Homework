@@ -226,10 +226,20 @@ const isFinalDigitEven = function (numberArray) {
 };
 
 
-
-
-// The sum of all the digits must be greater than 16 - is valid because card could be 0000-0000-0000-1000
-//const sumDigitsGreater16 =
+// The sum of all the digits must be greater than 16 - is valid because otherwise card could be 0000-0000-0000-1000 for e.g.
+const isSumGreater16 = function (numberArray) {
+  console.log( `Checking if sum is greater than 16: ${ numberArray }` );
+  const sum = numberArray.reduce((total, amount) => total + amount);
+  console.log( `Sum: ${ sum }` );
+  // ( this sums all numbers in array ^: accumulatively works through function and returns one number)
+  if (sum > 16) {
+    console.log(true);
+    return true;
+  } else {
+    console.log(false);
+    return false;
+  }
+};
 
 
 // MAIN VALIDATE FUNCTION ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -253,6 +263,10 @@ const validateCreditCard = function (card) {
   }
   // Last digit must be even
   if ( !isFinalDigitEven( numbers ) ) {
+    return false;
+  }
+  // Sum of digits greater than 16
+  if ( !isSumGreater16( numbers ) ) {
     return false;
   }
   return true;  // If function hasn't exited before here, card must be valid - return true.
@@ -279,6 +293,9 @@ const testCard3 = '235x-3462-3454-9998';
 const testCard4 = '4444-4444-4444-4444';
 const testCard5 = '4224-4664-4444-4443';
 const testCard6 = '0000-0000-0000-1000';
+const testCard7 = '0310-4100-0121-1000';
+const testCard8 = '9999-9999-8888-0000';
+
 
 console.log( `\nCREDIT CARD VALIDATION` );
 console.log( `Card number: ${ testCard1 }. Valid: ${ validateCreditCard( testCard1 ) }.` );
@@ -292,6 +309,10 @@ console.log('');
 console.log( `Card number: ${ testCard5 }. Valid: ${ validateCreditCard( testCard5 ) }.` );
 console.log('');
 console.log( `Card number: ${ testCard6 }. Valid: ${ validateCreditCard( testCard6 ) }.` );
+console.log('');
+console.log( `Card number: ${ testCard7 }. Valid: ${ validateCreditCard( testCard7 ) }.` );
+console.log('');
+console.log( `Card number: ${ testCard8 }. Valid: ${ validateCreditCard( testCard8 ) }.` );
 console.log('');
 
 
