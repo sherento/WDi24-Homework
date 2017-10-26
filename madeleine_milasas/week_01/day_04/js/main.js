@@ -198,6 +198,15 @@ const isDifferentDigits = function (numberArray) {
   }
 };
 
+// The final digit must be even
+const isFinalDigitEven = function (numberArray) {
+  const lastDigit = numberArray[numberArray.length - 1];
+  if ( lastDigit % 2 === 0 ) {
+    return true;
+  } else {
+    return false;
+  }
+};
 
 
 // MAIN VALIDATE FUNCTION ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -217,13 +226,17 @@ const validateCreditCard = function (card) {
   if ( !isDifferentDigits( numbers ) ) {
     return false;
   }
+  // Last digit must be everything
+  if ( !isFinalDigitEven ) {
+    return false;
+  }
   return true;  // If function hasn't exited before here, card must be valid - return true.
 };
 
 // Here are the rules for a valid number:
 //
 
-// The final digit must be even
+
 // The sum of all the digits must be greater than 16
 
 
@@ -243,12 +256,14 @@ const testCard1 = '1234-1234-1234-1234';
 const testCard2 = '2354-3462-34534-9998';
 const testCard3 = '235x-3462-3454-9998';
 const testCard4 = '4444-4444-4444-4444';
+const testCard5 = '4224-4664-4444-4443';
 
 console.log( `\nCREDIT CARD VALIDATION` );
 console.log( `Card number: ${ testCard1 }. Valid: ${ validateCreditCard( testCard1 ) }.` );
 console.log( `Card number: ${ testCard2 }. Valid: ${ validateCreditCard( testCard2 ) }.` );
 console.log( `Card number: ${ testCard3 }. Valid: ${ validateCreditCard( testCard3 ) }.` );
 console.log( `Card number: ${ testCard4 }. Valid: ${ validateCreditCard( testCard4 ) }.` );
+console.log( `Card number: ${ testCard5 }. Valid: ${ validateCreditCard( testCard5 ) }.` );
 
 
 //**
