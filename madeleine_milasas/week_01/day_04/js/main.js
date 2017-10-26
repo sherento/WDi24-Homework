@@ -150,15 +150,22 @@ console.log( `Your total will be $${cashRegister(cartForSchool)}` );
 
 // COMPONENT FUNCTIONS ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-// Remove dashes
+// Remove dashes and make an array of numbers
 const removeDashes = function (card) {
+  // declare array we'll want the function to return
+  let numbers = [];
+  // split str and remove dashes
   const cardSplit = card.split('-');
+  // recombine str without dashes
   let cardRejoin = '';
   for (let i = 0; i < cardSplit.length; i++) {
     cardRejoin += cardSplit[i];
   }
-  return cardRejoin;
+  // splits str into array and convert to numbers
+  numbers = cardRejoin.split('').map(Number);
+  return numbers;
 };
+
 
 
 // Check if 16 digit
@@ -170,14 +177,26 @@ const is16Digit = function (str) {
   }
 };
 
+// Check if all digits numbers
+const isAllNumbers = function (str) {
+
+};
+
+
+
 // MAIN VALIDATE FUNCTION ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 const validateCreditCard = function (card) {
-  const noDashes = removeDashes(card);
-  if ( !is16Digit(noDashes) ) {   // if it is not 16 digits
+  // Remove dashes
+  const numbers = removeDashes(card);
+  // Check if number is 16 digits
+  if ( !is16Digit( numbers ) ) {   // if it is not 16 digits
     return false;                 // stop the function and say validation is false
   }
-
+  // All of them must be numbers
+//  if ( !isAllNumbers(noDashes) ) {
+//    return false;
+//  }
 
 
   return true;  // If function hasn't exited before here, card must be valid - return true.
@@ -185,7 +204,6 @@ const validateCreditCard = function (card) {
 
 // Here are the rules for a valid number:
 //
-// Number must be 16 digits, all of them must be numbers
 // You must have at least two different digits represented (all of the digits cannot be the same)
 // The final digit must be even
 // The sum of all the digits must be greater than 16
