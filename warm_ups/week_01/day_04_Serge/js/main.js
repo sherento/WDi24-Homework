@@ -1,5 +1,3 @@
-console.log(`warmup day 4 - 26-10-17`);
-
 // Serge Says
 //
 // Serge answers 'Sure.' if you ask him a question.
@@ -12,40 +10,24 @@ console.log(`warmup day 4 - 26-10-17`);
 //
 // Create a function that takes an input and returns Serge's response.
 
+const serge = function(string){
+  // console.log(string[string.length - 1]);
 
-const sergeSays = function (string1 = "") {
-  console.log(`Serge is loading...`);
-  console.log(string1);
-  console.log(string1.toUpperCase());
-
-  let result = ""; // declare variable that we will output to screen.
-
-  // case 1 - no input or empty string
-  if (string1 === "") {
-    result = "Fine be that way!";
-    return result;
+  // checking to see if the user has called the function with an argument.
+  if ( string === null || string === undefined || string === '' ){
+    console.log(`Fine. Be that way!`);
+  // string.length tells you how many characters are in the string. By minusing 1 away from the length we can get the index of the last character. (remember the indexes start at 0)
+  } else if( string[string.length - 1] === '?' ){
+    console.log(`Sure.`);
+  // We can use .toUpperCase() to convert all characters within a string to uppercase.
+  } else if ( string === string.toUpperCase() ){
+    console.log(`Woah, chill out!`);
+  } else {
+    console.log(`Whatever.`);
   }
-
-  // case 2  - ALL CAPS
-  if (string1 === string1.toUpperCase()) {
-    result = 'Woah, chill out!';
-    return result;
-  }
-
-  // case 3 - it is a non-shouty question
-  // all this tests for is the prescenece of a question mark. I guess it's a question, but
-  // it's hardly a failsafe test '???' would be fine for it.
-  // another decent way would be to check if lastLetter === "?"
-  if (string1.indexOf('?') > -1) {
-    result = 'sure';
-    return result;
-  }
-  // note - I've used string.search(char) before, but seems as though '?' is a special character
-  // and I wouod have to tackle regular Expression to use that method, string.indexOf seems to
-  // bypass this potential problem.
-
-  // case 4 - everything else.
-  // we could have used if / then / else structure, but this'll do
-  result = "Whatever";
-  return result;
 }
+
+serge('sup?');
+serge('LKSJHEGLKJSEH');
+serge();
+serge('');
