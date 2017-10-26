@@ -376,12 +376,16 @@ const bank = {
     let withdrawNotify = {};
     for (let i = 0; i < this.accounts.length; i++) {
       if (person === this.accounts[i].owner) {
-        this.accounts[i].balance -= amount;
-        withdrawNotify.person = person;
-        withdrawNotify.amount = amount;
-        withdrawNotify.balance = this.accounts[i].balance;
+        if (this.accounts[i].balance - amount > 0) {
+          this.accounts[i].balance -= amount;
+          withdrawNotify.balance = this.accounts[i].balance;
+        } else {
+          withdrawNotify.error = true;
+        }
       }
     }
+    withdrawNotify.person = person;
+    withdrawNotify.amount = amount;
     return withdrawNotify;
   }
 
@@ -409,8 +413,30 @@ console.log( `New balance of all accounts: $${ bank.sum() }` );
 
 console.log( `Requesting a withdrawal...` );
 newWithdraw = bank.withdraw('Hal Incandenza', 650);
-console.log( `${ newWithdraw.person } has withdrawn $${ newWithdraw.amount }.` );
-console.log( `${ newWithdraw.person } now has a balance of $${ newWithdraw.balance }.` );
-console.log( `New balance of all accounts: $${ bank.sum() }` );
+console.log( `${ newWithdraw.person } is withdrawing $${ newWithdraw.amount }.` );
+if (!newWithdraw.error) {
+  console.log( `${ newWithdraw.person } now has a balance of $${ newWithdraw.balance }.` );
+  console.log( `New balance of all accounts: $${ bank.sum() }` );
+} else {
+  console.log( `Withdrawal declined: insufficient funds` );
+  console.log( `Balance of all accounts: $${ bank.sum() }` );
+}
+
+
+console.log( `Requesting a withdrawal...` );
+newWithdraw = bank.withdraw('Joelle Van Dyne', 250);
+console.log( `${ newWithdraw.person } is withdrawing $${ newWithdraw.amount }.` );
+if (!newWithdraw.error) {
+  console.log( `${ newWithdraw.person } now has a balance of $${ newWithdraw.balance }.` );
+  console.log( `New balance of all accounts: $${ bank.sum() }` );
+} else {
+  console.log( `Withdrawal declined: insufficient funds` );
+  console.log( `Balance of all accounts: $${ bank.sum() }` );
+}
+
+
+
+
+
 
 //**
