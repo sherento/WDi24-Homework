@@ -357,21 +357,60 @@ const bank = {
         balance: amount
       }
     );
+  },
+
+  deposit: function (person, amount) {
+    let depositNotify = {};
+    for (let i = 0; i < this.accounts.length; i++) {
+      if (person === this.accounts[i].owner) {
+        this.accounts[i].balance += amount;
+        depositNotify.person = person;
+        depositNotify.amount = amount;
+        depositNotify.balance = this.accounts[i].balance;
+      }
+    }
+    return depositNotify;
+  },
+
+  withdraw: function (person, amount) {
+    let withdrawNotify = {};
+    for (let i = 0; i < this.accounts.length; i++) {
+      if (person === this.accounts[i].owner) {
+        this.accounts[i].balance -= amount;
+        withdrawNotify.person = person;
+        withdrawNotify.amount = amount;
+        withdrawNotify.balance = this.accounts[i].balance;
+      }
+    }
+    return withdrawNotify;
   }
 
 };
 
 
+let newestCustomer;
+let newDeposit;
+let newWithdraw;
 
 console.log( `\nWELCOME TO THE JAVASCRIPT BANK` );
 console.log( `Balance of all accounts: $${ bank.sum() }` );
+
 console.log( `Adding new customer...` );
 bank.addAccount( 'Joelle Van Dyne', 150 );
-const newestCustomer = bank.accounts[ bank.accounts.length -1 ];
+newestCustomer = bank.accounts[ bank.accounts.length -1 ];
 console.log( `Javascript Bank welcomes ${ newestCustomer.owner } to our group of incredibly impressed customers.` );
 console.log( `New balance of all accounts: $${ bank.sum() }` );
 
+console.log( `Receiving a deposit...` );
+newDeposit = bank.deposit('Orin Incandenza', 1000);
+console.log( `${ newDeposit.person } has deposited $${ newDeposit.amount }.` );
+console.log( `${ newDeposit.person } now has a balance of $${ newDeposit.balance }.` );
+console.log( `New balance of all accounts: $${ bank.sum() }` );
 
-
+console.log( `Requesting a withdrawal...` );
+newWithdraw = bank.withdraw('Hal Incandenza', 650);
+console.log( `${ newWithdraw.person } has withdrawn $${ newWithdraw.amount }.` );
+console.log( `${ newWithdraw.person } now has a balance of $${ newWithdraw.balance }.` );
+console.log( `New balance of all accounts: $${ bank.sum() }` );
 
 //**
