@@ -177,9 +177,25 @@ const is16Digit = function (str) {
   }
 };
 
-// Check if all digits numbers
-const isAllNumbers = function (str) {
+// Check if all digits are numbers
+const isAllNumbers = function (numberArray) {
+  if (!numberArray.some(isNaN)) {    // if my array does NOT contain something that is NOT a number (dbl negative, i.e. is everything a number)
+    return true;
+  } else {
+    return false;
+  }
+};
 
+// Check that all digits are not the same
+const isDifferentDigits = function (numberArray) {
+  // sort array
+  const sortedNumbers = numberArray.sort();
+  // if first and last elements are the same, all digits are the same
+  if (sortedNumbers[0] === sortedNumbers[ sortedNumbers -1 ]) {
+    return true;
+  } else {
+    return false;
+  }
 };
 
 
@@ -188,23 +204,25 @@ const isAllNumbers = function (str) {
 
 const validateCreditCard = function (card) {
   // Remove dashes
-  const numbers = removeDashes(card);
+  const numbers = removeDashes( card );
   // Check if number is 16 digits
   if ( !is16Digit( numbers ) ) {   // if it is not 16 digits
     return false;                 // stop the function and say validation is false
   }
   // All of them must be numbers
-//  if ( !isAllNumbers(noDashes) ) {
-//    return false;
-//  }
-
-
+  if ( !isAllNumbers( numbers ) ) {
+    return false;
+  }
+  // All digits cannot be the same
+  if ( !isDifferentDigits( numbers ) ) {
+    return false;
+  }
   return true;  // If function hasn't exited before here, card must be valid - return true.
 };
 
 // Here are the rules for a valid number:
 //
-// You must have at least two different digits represented (all of the digits cannot be the same)
+
 // The final digit must be even
 // The sum of all the digits must be greater than 16
 
@@ -222,9 +240,15 @@ const validateCreditCard = function (card) {
 
 // Testing
 const testCard1 = '1234-1234-1234-1234';
+const testCard2 = '2354-3462-34534-9998';
+const testCard3 = '235x-3462-3454-9998';
+const testCard4 = '4444-4444-4444-4444';
 
 console.log( `\nCREDIT CARD VALIDATION` );
 console.log( `Card number: ${ testCard1 }. Valid: ${ validateCreditCard( testCard1 ) }.` );
+console.log( `Card number: ${ testCard2 }. Valid: ${ validateCreditCard( testCard2 ) }.` );
+console.log( `Card number: ${ testCard3 }. Valid: ${ validateCreditCard( testCard3 ) }.` );
+console.log( `Card number: ${ testCard4 }. Valid: ${ validateCreditCard( testCard4 ) }.` );
 
 
 //**
