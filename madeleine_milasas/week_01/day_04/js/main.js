@@ -348,16 +348,28 @@ const bank = {
       total += this.accounts[i].balance;
     }
     return total;
+  },
+
+  addAccount: function (person, amount) {
+    this.accounts.push(
+      {
+        owner: person,
+        balance: amount
+      }
+    );
   }
 
 };
 
 
 
-
-
-
-
+console.log( `\nWELCOME TO THE JAVASCRIPT BANK` );
+console.log( `Balance of all accounts: $${ bank.sum() }` );
+console.log( `Adding new customer...` );
+bank.addAccount( 'Joelle Van Dyne', 150 );
+const newestCustomer = bank.accounts[ bank.accounts.length -1 ];
+console.log( `Javascript Bank welcomes ${ newestCustomer.owner } to our group of incredibly impressed customers.` );
+console.log( `New balance of all accounts: $${ bank.sum() }` );
 
 
 
