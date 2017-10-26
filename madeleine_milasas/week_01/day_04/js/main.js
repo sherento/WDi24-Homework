@@ -242,34 +242,50 @@ const isSumGreater16 = function (numberArray) {
 };
 
 
-// MAIN VALIDATE FUNCTION ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+// MAIN VALIDATION FUNCTION ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 const validateCreditCard = function (card) {
+  const validatedCard = {   // our validated card object
+    valid: false,
+    number: card            // number key with value same as entered card string
+  };                        // (no error key added yet since card might not error)
+
   // Print original entry to log
   console.log( `Card entered: ${ card }` );
   // Remove dashes
   const numbers = removeDashes( card );
   // Check if number is 16 digits
   if ( !is16Digit( numbers ) ) {   // if it is not 16 digits
-    return false;                 // stop the function and say validation is false
+    validatedCard.valid = false;
+    validatedCard.error = 'wrong_length';      // add error descrip to object
+    return validatedCard;                       // stop the function and return object with error descrip
   }
   // All of them must be numbers
   if ( !isAllNumbers( numbers ) ) {
-    return false;
+    validatedCard.valid = false;
+    validatedCard.error = 'contains_invalid_char';     // add error descrip to object
+    return validatedCard;                       // stop the function and return object with error descrip
   }
   // All digits cannot be the same
   if ( !isDifferentDigits( numbers ) ) {
-    return false;
+    validatedCard.valid = false;
+    validatedCard.error = 'all_digits_identical';      // add error descrip to object
+    return validatedCard;                       // stop the function and return object with error descrip
   }
   // Last digit must be even
   if ( !isFinalDigitEven( numbers ) ) {
-    return false;
+    validatedCard.valid = false;
+    validatedCard.error = 'final_digit_odd';      // add error descrip to object
+    return validatedCard;                       // stop the function and return object with error descrip
   }
   // Sum of digits greater than 16
   if ( !isSumGreater16( numbers ) ) {
-    return false;
+    validatedCard.valid = false;
+    validatedCard.error = 'sum_less_than_16';      // add error descrip to object
+    return validatedCard;                       // stop the function and return object with error descrip
   }
-  return true;  // If function hasn't exited before here, card must be valid - return true.
+  validatedCard.valid = true; // If function hasn't exited before here, card must be valid - assign true and return object.
+  return validatedCard;
 };
 
 
@@ -286,34 +302,47 @@ const validateCreditCard = function (card) {
 // 1111-1111-1111-1110 sum less than 16
 // 6666-6666-6666-6661 odd final number
 
-// Testing
-const testCard1 = '1234-1234-1234-1234';
-const testCard2 = '2354-3462-34534-9998';
-const testCard3 = '235x-3462-3454-9998';
-const testCard4 = '4444-4444-4444-4444';
-const testCard5 = '4224-4664-4444-4443';
-const testCard6 = '0000-0000-0000-1000';
-const testCard7 = '0310-4100-0121-1000';
-const testCard8 = '9999-9999-8888-0000';
+// Test cards
+const testCards = [
+  '1234-1234-1234-1234',
+  '2354-3462-34534-9998',
+  '235x-3462-3454-9998',
+  '4444-4444-4444-4444',
+  '4224-4664-4444-4443',
+  '0000-0000-0000-1000',
+  '0310-4100-0121-1000',
+  '9999-9999-8888-0000'
+];
 
 
-console.log( `\nCREDIT CARD VALIDATION` );
-console.log( `Card number: ${ testCard1 }. Valid: ${ validateCreditCard( testCard1 ) }.` );
-console.log('');
-console.log( `Card number: ${ testCard2 }. Valid: ${ validateCreditCard( testCard2 ) }.` );
-console.log('');
-console.log( `Card number: ${ testCard3 }. Valid: ${ validateCreditCard( testCard3 ) }.` );
-console.log('');
-console.log( `Card number: ${ testCard4 }. Valid: ${ validateCreditCard( testCard4 ) }.` );
-console.log('');
-console.log( `Card number: ${ testCard5 }. Valid: ${ validateCreditCard( testCard5 ) }.` );
-console.log('');
-console.log( `Card number: ${ testCard6 }. Valid: ${ validateCreditCard( testCard6 ) }.` );
-console.log('');
-console.log( `Card number: ${ testCard7 }. Valid: ${ validateCreditCard( testCard7 ) }.` );
-console.log('');
-console.log( `Card number: ${ testCard8 }. Valid: ${ validateCreditCard( testCard8 ) }.` );
-console.log('');
+
+console.log( `\nCREDIT CARD VALIDATION\n-----------------` );
+
+for (let i = 0; i < testCards.length; i++) {
+  const card = validateCreditCard( testCards[i] );
+  console.log( `Card number: ${ card.number }  Valid: ${ card.valid }` );
+  if (card.error) {
+    console.log( `Error: ${card.error}` );
+  }
+  console.log( `-----------------` );
+}
+
+// console.log( `Card number: ${ testCard1 }. Valid: ${ validateCreditCard( testCard1 ).valid }.` );
+// console.log('');
+// console.log( `Card number: ${ testCard2 }. Valid: ${ validateCreditCard( testCard2 ) }.` );
+// console.log('');
+// console.log( `Card number: ${ testCard3 }. Valid: ${ validateCreditCard( testCard3 ) }.` );
+// console.log('');
+// console.log( `Card number: ${ testCard4 }. Valid: ${ validateCreditCard( testCard4 ) }.` );
+// console.log('');
+// console.log( `Card number: ${ testCard5 }. Valid: ${ validateCreditCard( testCard5 ) }.` );
+// console.log('');
+// console.log( `Card number: ${ testCard6 }. Valid: ${ validateCreditCard( testCard6 ) }.` );
+// console.log('');
+// console.log( `Card number: ${ testCard7 }. Valid: ${ validateCreditCard( testCard7 ) }.` );
+// console.log('');
+// console.log( `Card number: ${ testCard8 }. Valid: ${ validateCreditCard( testCard8 ) }.` );
+// console.log('');
 
 
 
