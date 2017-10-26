@@ -33,7 +33,7 @@ const validateCreditCard = function(cardNum){
   };
 
 // regex tests whether every index is an integer
-  let allDigits = /^\d+$/.test(removeDash);
+  let allDigits = /^\d+$/.test(removeDash);       // stolen from stackoverflow - I cannot yet make sense of regexpressions and hate that they exist
 
 // for loop places differing digits in array to be counted later
   for (let i = 0; i < removeDash.length; i++) {
@@ -53,17 +53,24 @@ const validateCreditCard = function(cardNum){
     };
   };
 
+  result = {valid: false, number: cardNum}
+
 // check to see if number satisfies all requirements
   if(!allDigits){
-    return false;
+    result.error = 'invalid characters';
+    return result;
   }else if(multipleDigits.length < 2){
-    return false;
+    result.error = 'only one type of number';
+    return result;
   }else if(!isEven){
-    return false;
+    result.error = 'odd final number'
+    return result;
   }else if(sumDigits < 16){
-    return false;
+    result.error = 'sum less than 16';
+    return result;
   }else{
-    return true;
+    result.valid = true;
+    return result
   };
 
 };
