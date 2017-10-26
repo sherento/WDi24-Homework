@@ -67,7 +67,7 @@ const areaTriangle = function(shape){
 
 const isObtuse = function(shape){
   let sides = [shape.sideA, shape.sideB, shape.sideC];
-  sides = sides.sort();
+  sides = sides.sort();       //sort sides into ascending order, so we know which side is the longest
 
   if( (sides[0]**2) + (sides[1]**2) < sides[2]**2 ){        // triangle is obtuse if a**2 + b**2 < c**2 where c is the longest side
     return true;
