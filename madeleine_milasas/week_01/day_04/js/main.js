@@ -364,11 +364,12 @@ const bank = {
     for (let i = 0; i < this.accounts.length; i++) {
       if (person === this.accounts[i].owner) {
         this.accounts[i].balance += amount;
-        depositNotify.person = person;
-        depositNotify.amount = amount;
         depositNotify.balance = this.accounts[i].balance;
+        break;
       }
     }
+    depositNotify.person = person;
+    depositNotify.amount = amount;
     return depositNotify;
   },
 
@@ -379,6 +380,7 @@ const bank = {
         if (this.accounts[i].balance - amount > 0) {
           this.accounts[i].balance -= amount;
           withdrawNotify.balance = this.accounts[i].balance;
+          break;
         } else {
           withdrawNotify.error = true;
         }
@@ -387,14 +389,31 @@ const bank = {
     withdrawNotify.person = person;
     withdrawNotify.amount = amount;
     return withdrawNotify;
-  }
+  },
 
+  transfer: function (fromPerson, toPerson, amount) {
+    let transferNotify = {};
+    const withdrawStep = this.withdraw(fromPerson, amount);
+    if (!withdrawStep.error) {
+      const depositStep = this.deposit(toPerson, amount);
+      transferNotify.toPersonBalance = depositStep.balance;
+    }
+    transferNotify.fromPerson = fromPerson;
+    transferNotify.toPerson = toPerson;
+    transferNotify.amount = amount;
+    transferNotify.fromPersonBalance = withdrawStep.balance;
+    transferNotify.error = withdrawStep.error;
+    return transferNotify;
+  }
 };
 
+
+// Test stories
 
 let newestCustomer;
 let newDeposit;
 let newWithdraw;
+let newTransfer;
 
 console.log( `\nWELCOME TO THE JAVASCRIPT BANK` );
 console.log( `Balance of all accounts: $${ bank.sum() }` );
@@ -411,7 +430,7 @@ console.log( `${ newDeposit.person } has deposited $${ newDeposit.amount }.` );
 console.log( `${ newDeposit.person } now has a balance of $${ newDeposit.balance }.` );
 console.log( `New balance of all accounts: $${ bank.sum() }` );
 
-console.log( `Requesting a withdrawal...` );
+console.log( `Receiving a withdrawal...` );
 newWithdraw = bank.withdraw('Hal Incandenza', 650);
 console.log( `${ newWithdraw.person } is withdrawing $${ newWithdraw.amount }.` );
 if (!newWithdraw.error) {
@@ -422,8 +441,7 @@ if (!newWithdraw.error) {
   console.log( `Balance of all accounts: $${ bank.sum() }` );
 }
 
-
-console.log( `Requesting a withdrawal...` );
+console.log( `Receiving a withdrawal...` );
 newWithdraw = bank.withdraw('Joelle Van Dyne', 250);
 console.log( `${ newWithdraw.person } is withdrawing $${ newWithdraw.amount }.` );
 if (!newWithdraw.error) {
@@ -434,9 +452,28 @@ if (!newWithdraw.error) {
   console.log( `Balance of all accounts: $${ bank.sum() }` );
 }
 
+console.log( `Receiving a transfer...` );
+newTransfer = bank.transfer('Hal Incandenza', 'Joelle Van Dyne', 300);
+console.log( `${ newTransfer.fromPerson } is transferring $${ newTransfer.amount } to ${ newTransfer.toPerson }.` );
+if (!newTransfer.error) {
+  console.log( `${ newTransfer.fromPerson } now has a balance of $${ newTransfer.fromPersonBalance }.` );
+  console.log( `${ newTransfer.toPerson } now has a balance of $${ newTransfer.toPersonBalance }.` );
+  console.log( `Balance of all accounts: $${ bank.sum() }` );
+} else {
+  console.log( `Transfer declined: insufficient funds` );
+  console.log( `Balance of all accounts: $${ bank.sum() }` );
+}
 
-
-
-
+console.log( `Receiving a transfer...` );
+newTransfer = bank.transfer('Orin Incandenza', 'Hal Incandenza', 9000);
+console.log( `${ newTransfer.fromPerson } is transferring $${ newTransfer.amount } to ${ newTransfer.toPerson }.` );
+if (!newTransfer.error) {
+  console.log( `${ newTransfer.fromPerson } now has a balance of $${ newTransfer.fromPersonBalance }.` );
+  console.log( `${ newTransfer.toPerson } now has a balance of $${ newTransfer.toPersonBalance }.` );
+  console.log( `Balance of all accounts: $${ bank.sum() }` );
+} else {
+  console.log( `Transfer declined: insufficient funds` );
+  console.log( `Balance of all accounts: $${ bank.sum() }` );
+}
 
 //**
