@@ -1,9 +1,10 @@
 bank = {
   accounts: [],
-  moneyCount: function(){
-    let total = 0;
+  showBalance: function(name){
     for (var i = 0; i < bank.accounts.length; i++) {
-      total += bank.accounts[i].accountBalance;
+      if(bank.accounts[i].accountName === name){
+        return (`${name} currently has $${bank.accounts[i].accountBalance} in their account.`)
+      }
     };
     return (`This bank holds $${total} in total.`);
   },
@@ -33,12 +34,28 @@ bank = {
         }; //positive balance if else
       }; // name finder if conditional
     }; // for loop
-  } // withdraw function
+  }, // withdraw function
+  transfer: function(fromAcc, toAcc, amount){
+    let fromAccount;
+    let toAccount;
+    for (var i = 0; i < bank.accounts.length; i++) {
+      if(bank.accounts[i].accountName === fromAcc){
+        fromAccount = bank.accounts[i];
+      }else if(bank.accounts[i].accountName === toAcc){
+        toAccount = bank.accounts[i];
+      };
+    };
+    fromAccount.accountBalance -= amount;
+    toAccount.accountBalance += amount;
+    return (`${fromAccount.accountName} has transferred $${amount} to ${toAccount.accountName}.`)
+  } // transfer function
 }; // bank object
 
 console.log(bank.addAccount('Willy', 12));
 console.log(bank.deposit('Willy', 500));
 console.log(bank.withdraw('Willy', 25));
 console.log(bank.withdraw('Willy', 1000));
-console.log(bank.addAccount('James', 20))
-console.log(bank.moneyCount());
+console.log(bank.addAccount('James', 20));
+console.log(bank.showBalance('Willy'));
+console.log(bank.transfer('Willy', 'James', 240));
+console.log(bank.showBalance('James'));
