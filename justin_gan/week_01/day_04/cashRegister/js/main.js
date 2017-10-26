@@ -14,8 +14,10 @@ let cartForParty = {
 const cashRegister = function ( cart ) {
   const items = Object.keys(cart);
   let total = 0;
+  // iterate through items
   for (let i = 0; i < items.length; i++) {
     let item = items[i];
+    // sum item prices
     total += parseFloat(cart[item]);
   }
   return total;
