@@ -145,8 +145,68 @@ console.log( `Your total will be $${cashRegister(cartForSchool)}` );
 
 
 
+// ******************* CREDIT CARD **********************
+// A simple function called validateCreditCard that returns true or false.
+
+// COMPONENT FUNCTIONS ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+// Remove dashes
+const removeDashes = function (card) {
+  const cardSplit = card.split('-');
+  let cardRejoin = '';
+  for (let i = 0; i < cardSplit.length; i++) {
+    cardRejoin += cardSplit[i];
+  }
+  return cardRejoin;
+};
 
 
+// Check if 16 digit
+const is16Digit = function (str) {
+  if (16 === str.length) {
+    return true;
+  } else {
+    return false;
+  }
+};
+
+// MAIN VALIDATE FUNCTION ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+const validateCreditCard = function (card) {
+  const noDashes = removeDashes(card);
+  if ( !is16Digit(noDashes) ) {   // if it is not 16 digits
+    return false;                 // stop the function and say validation is false
+  }
+
+
+
+  return true;  // If function hasn't exited before here, card must be valid - return true.
+};
+
+// Here are the rules for a valid number:
+//
+// Number must be 16 digits, all of them must be numbers
+// You must have at least two different digits represented (all of the digits cannot be the same)
+// The final digit must be even
+// The sum of all the digits must be greater than 16
+
+
+
+// The following credit card numbers are valid:
+// 9999-9999-8888-0000
+// 6666-6666-6666-1666
+// The following credit card numbers are invalid:
+//
+// a923-3211-9c01-1112 invalid characters
+// 4444-4444-4444-4444 only one type of number
+// 1111-1111-1111-1110 sum less than 16
+// 6666-6666-6666-6661 odd final number
+
+// Testing
+const testCard1 = '1234-1234-1234-1234';
+
+console.log( `\nCREDIT CARD VALIDATION` );
+console.log( `Card number: ${ testCard1 }. Valid: ${ validateCreditCard( testCard1 ) }.` );
 
 
 //**
