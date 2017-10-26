@@ -20,27 +20,32 @@
 
 
 const validateCreditCard = function(cardNum){
-  let removeDash = '';
-  let multipleDigits = [];
-  let sumDigits = 0
+  let removeDash = '';        // credit card number with dashes removed
+  let multipleDigits = [];    // array for checking for at least 2 different digits
+  let sumDigits = 0           // for checking sum of digits
 
+
+// for loop removes dashes from credit card
   for (let i = 0; i < cardNum.length; i++) {
     if(cardNum[i] !== '-'){
       removeDash += cardNum[i];
     };
   };
 
+// regex tests whether every index is an integer
   let allDigits = /^\d+$/.test(removeDash);
 
-
+// for loop places differing digits in array to be counted later
   for (let i = 0; i < removeDash.length; i++) {
     if(multipleDigits.includes(removeDash[i]) === false){
       multipleDigits.push(removeDash[i]);
     };
   };
 
+// evaluates to boolean to check if number is even
   isEven = parseInt(removeDash) % 2 === 0;
 
+// splits digits into an array then for loop adds every digit to find the sum of the entire number
   if(allDigits){
     splits = removeDash.split('');
     for (var i = 0; i < splits.length; i++) {
@@ -48,6 +53,7 @@ const validateCreditCard = function(cardNum){
     }
   }
 
+// check to see if number satisfies all requirements
   if(!allDigits){
     return false
   }else if(multipleDigits.length < 2){
