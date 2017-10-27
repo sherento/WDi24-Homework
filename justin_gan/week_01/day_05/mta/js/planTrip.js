@@ -103,6 +103,12 @@ const getJourneyWest = function ( line, startIndex, endIndex ) {
   return stops;
 }
 
+const focusOnload = function () {
+  const startStation = document.getElementById( 'startStation' );
+  startStation.focus();
+}
+window.onload = focusOnload;
+
 
 planTrip( 'N', 'Times Square', 'N', '8th' );
 planTrip( 'N', '8th', 'N', 'Times Square' );
