@@ -25,7 +25,8 @@
  // *********** LINES **********
 
 const lineL = ['8th', '6th', 'Union Square', '3rd', '1st'];
-
+const lineN = ['Times Square', '34th', '28th', '23rd', 'Union Square', '8th'];
+const line6 = ['Grand Central', '33rd', '28th', '23rd', 'Union Square', 'Astor Place'];
 
 // *******************
 
@@ -50,13 +51,19 @@ const compareStations = function (lineOn, stationOn, lineOff, stationOff) {
   if (lineOn === lineOff) {
     // get end index
     const endIndex = lineArray.indexOf( stationOff );
-    // make array of thru stops (not inc start but inc end as per problem requirement)
-    tripData.thruStops = lineArray.slice( startIndex + 1, endIndex + 1 );
+    if (endIndex > startIndex) {
+      // make array of thru stops (not inc start but inc end as per problem requirement)
+      tripData.thruStops = lineArray.slice( startIndex + 1, endIndex + 1 );
+    } else { // if going in reverse direction
+      tripData.thruStops = lineArray.slice( endIndex, startIndex ).reverse();
+    }
     tripData.totalStops = tripData.thruStops.length;
+
+  } else {
+  // if the start and end lines are different
+  tripData.change = true;
+  // do more stuff here
   }
-  // else do a bunch of other shit
-
-
   return tripData;
 };
 
@@ -81,13 +88,17 @@ const planTrip = function (lOn, sOn, lOff, sOff) {  // line ON, stop ON, line OF
 // ********* Test cases ***********
 
 const testCases = [
-  { lo: 'L', so: '6th', lof: 'L', sof: '3rd' },
-  { lo: 'L', so: '8th', lof: 'L', sof: '1st' }
+  { lo: 'L', so: '6th', lof: 'L', sof: '3rd' }, // L line only
+  { lo: 'L', so: '8th', lof: 'L', sof: '1st' },
+  { lo: 'L', so: '1st', lof: 'L', sof: '8th' }  // reverse direction L only
 ];
 
 
 
 for (let i = 0; i < testCases.length; i++) {
+  console.log( `You have entered:` );
+  console.log( `LINE ON - ${ testCases[i].lo }, STOP ON - ${ testCases[i].so }` );
+  console.log( `LINE OFF - ${ testCases[i].lof }, STOP OFF - ${ testCases[i].sof }\n ` );
   planTrip( testCases[i].lo, testCases[i].so, testCases[i].lof, testCases[i].sof );
 }
 
