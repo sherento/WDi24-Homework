@@ -17,3 +17,34 @@
 // The 6 line has the following stops: Grand Central, 33rd, 28th, 23rd, Union Square, and Astor Place.
 // All 3 subway lines intersect at Union Square, but there are no other intersection points. (For example, this means the 28th stop on the N line is different than the 28th street stop on the 6 line, so you'll have to differentiate this when you name your stops in the arrays.)
 // Tell the user the number of stops AND the stops IN ORDER that they will pass through or change at.
+
+const N = ['Times Square', '34th', '28th', '23rd', 'Union Square', '8th'];
+
+const planTrip = function ( startLine, startStation, endLine, endStation ) {
+  const startIndex = N.indexOf(startStation);
+  const endIndex = N.indexOf(endStation);
+  console.log(startIndex, endIndex);
+  let stops = [];
+  // check if trip goes from left to right in array via index
+  if ( startIndex < endIndex ) {
+    for (let i = startIndex; i <= endIndex; i++) {
+      console.log(N[i]);
+      stops.push(N[i]);
+    }
+  }
+  // otherwise trip goes from right to left
+  else {
+    console.log('endIndex: ' + endIndex);
+    for (let i = startIndex; i >= endIndex; i--) {
+      stops.push(N[i]);
+    }
+  }
+  console.log(stops);
+}
+
+
+
+planTrip('N', 'Times Square', 'N', '8th');
+planTrip('N', '8th', 'N', 'Times Square');
+planTrip('N', '34th', 'N', 'Union Square');
+planTrip('N', '28th', 'N', 'Times Square');
