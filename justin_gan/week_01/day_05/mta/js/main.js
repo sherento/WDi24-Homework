@@ -29,33 +29,30 @@ const planTrip = function ( startLine, startStation, endLine, endStation ) {
   const eLine = subway[endLine];
   const startIndex = sLine.indexOf(startStation);
   const endIndex = eLine.indexOf(endStation);
-  // if journey is on one line
+  // check if journey is on one line
   if ( startLine === endLine ) {
     travel(startLine, startIndex, endLine, endIndex);
   }
   // if journey crosses multiple lines
   else {
-    console.log('You got some work to do son');
-    let endIndexUS;
-    for (let i = 0; i < subway[startLine].length; i++) {
-      if ( sLine[i] === 'Union Square' ) {
-        endIndexUS = sLine.indexOf(sLine[i]);
-        break;
-      }
-    }
-    let startIndexUS;
-    for (let i = 0; i < subway[endLine].length; i++) {
-      if ( eLine[i] === 'Union Square' ) {
-        startIndexUS = eLine.indexOf(eLine[i]);
-        break;
-      }
-    }
-    console.log('endIndexUS: ' + endIndexUS, startIndexUS);
+    //
+    const endIndexUS = findUnionSquare(sLine);
+    const startIndexUS = findUnionSquare(sLine);
+
     travel(startLine, startIndex, endLine, endIndexUS);
     console.log('Change at Union Square');
     travel(startLine, startIndexUS, endLine, endIndex);
   }
+}
 
+const findUnionSquare = function ( line ) {
+  for (let i = 0; i < line.length; i++) {
+    if ( line[i] === 'Union Square' ) {
+      return line.indexOf(line[i]);
+      break;
+    }
+  }
+  console.log(`For some reason Union square doesn't exist on this line.`);
 }
 
 const travel = function ( startLine, startIndex, endLine, endIndex ) {
@@ -106,3 +103,4 @@ planTrip('L', '3rd', 'L', '6th');
 planTrip('6', 'Grand Central', '6', '23rd');
 planTrip('6', 'Astor Place', '6', '33rd');
 planTrip('N', 'Times Square', '6', '33rd');
+planTrip('6', '33rd', 'N', 'Times Square');
