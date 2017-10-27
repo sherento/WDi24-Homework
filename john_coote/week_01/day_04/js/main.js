@@ -118,7 +118,10 @@ const cashRegister = function (cartObject) {
     total = total + price;                   // add it to the total
 
     // ref alternative looping function is:
-    //
+    // for (let animal in zoo ) {
+    //    console.log (animal)
+    // }
+    //  for in and for of
   }
   return total;
 }
@@ -295,6 +298,7 @@ const withdraw = function () {
     }
   }
     showBalance();
+    document.getElementById('output1').innerHTML = "<h1>" + showBalance() + "</h1>";
     return;
 }
 
@@ -310,7 +314,7 @@ const transfer = function () {
       if (bankArray[i].balance < amount) {
         alert("Insufficient Funds!");
         showBalance();
-        return;
+        //return;
       }
       bankArray[i].balance = bankArray[i].balance - amount;
     }
@@ -323,6 +327,7 @@ const transfer = function () {
 
   }
     showBalance();
+    document.getElementById('output1').innerHTML = "<h1>" + showBalance() + "</h1>";
     return;
 }
 
@@ -340,6 +345,7 @@ const newAccount = function () {
   bankArray.push(newAccount)
 
   showBalance();
+  document.getElementById('output1').innerHTML = "<h1>" + showBalance() + "</h1>";
   return;
 }
 
@@ -365,5 +371,17 @@ const showBalance = function () {
   //document.getElementById('output1').innerHTML = "<h1>" + output1 + "</h1>";
   //console.log(output1);
 }
+// const startBank = function () {
+//   document.getElementById('output1').innerHTML = "<h1>" + showBalance() + "</h1>";
+// }
+
+
+// CANT MAKE THIS WORK
+//
+// var el = document.getElementById("btnDeposit");
+// if (el.addEventListener)
+//     el.addEventListener("click", deposit(), false);
+// else if (el.attachEvent)
+//     el.attachEvent('onclick', deposit());
 
 showBalance();
