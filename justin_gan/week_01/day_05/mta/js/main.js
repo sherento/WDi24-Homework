@@ -19,38 +19,79 @@
 // Tell the user the number of stops AND the stops IN ORDER that they will pass through or change at.
 
 const subway = {
-  N: ['Times Square', '34th', '28th', '23rd', 'Union Square', '8th']
+  N: ['Times Square', '34th', '28th', '23rd', 'Union Square', '8th'],
+  L: ['8th', '6th', 'Union Square', '3rd', '1st'],
+  6: ['Grand Central', '33rd', '28th', '23rd', 'Union Square', 'Astor Place']
 };
 
 const planTrip = function ( startLine, startStation, endLine, endStation ) {
-  const line = subway[startLine];
-  const startIndex = line.indexOf(startStation);
-  const endIndex = line.indexOf(endStation);
-  let requiredStations;
+  const sLine = subway[startLine];
+  const eLine = subway[endLine];
+  const startIndex = sLine.indexOf(startStation);
+  const endIndex = eLine.indexOf(endStation);
+  // if journey is on one line
+  if ( startLine === endLine ) {
+    travel(startLine, startIndex, endLine, endIndex);
+  }
+  // if journey crosses multiple lines
+  else {
+    console.log('You got some work to do son');
+    let endIndexUS;
+    for (let i = 0; i < subway[startLine].length; i++) {
+      if ( sLine[i] === 'Union Square' ) {
+        endIndexUS = sLine.indexOf(sLine[i]);
+        break;
+      }
+    }
+    let startIndexUS;
+    for (let i = 0; i < subway[endLine].length; i++) {
+      if ( eLine[i] === 'Union Square' ) {
+        startIndexUS = eLine.indexOf(eLine[i]);
+        break;
+      }
+    }
+    console.log('endIndexUS: ' + endIndexUS, startIndexUS);
+    travel(startLine, startIndex, endLine, endIndexUS);
+    console.log('Change at Union Square');
+    travel(startLine, startIndexUS, endLine, endIndex);
+  }
+
+}
+
+const travel = function ( startLine, startIndex, endLine, endIndex ) {
+  let passedStations;
   // check if trip goes from left to right in array via index
   if ( startIndex < endIndex ) {
-    requiredStations = travelEast( startIndex, endIndex, line );
+    passedStations = travelEast( startLine, startIndex, endLine, endIndex );
   }
   // otherwise trip goes from right to left
   else {
-    requiredStations = travelWest( startIndex, endIndex, line );
+    passedStations = travelWest( startLine, startIndex, endLine, endIndex );
   }
-  const msg = `You must travel through the following stops on the N line: ${ requiredStations.join(', ') }.`;
+  const msg = `You must travel through the following stops on the ${ startLine } line: ${ passedStations.join(', ') }.`;
   console.log(msg);
 }
 
-const travelEast = function ( startIndex, endIndex, line ) {
+const travelEast = function ( startLine, startIndex, endLine, endIndex ) {
   let stops = [];
+  // iterate over stops in line and push stations passed through
   for (let i = startIndex; i <= endIndex; i++) {
-    stops.push(line[i]);
+    // skip pushing start and end stations
+    if ( i !== startIndex && i !== endIndex ) {
+      stops.push(subway[startLine][i]);
+    }
   }
   return stops;
 }
 
-const travelWest = function ( startIndex, endIndex, line ) {
+const travelWest = function ( startLine, startIndex, endLine, endIndex ) {
   let stops = [];
+  // iterate over stops in line and push stations passed through
   for (let i = startIndex; i >= endIndex; i--) {
-    stops.push(line[i]);
+    // ignore start and end stations
+    if ( i !== startIndex && i !== endIndex ) {
+      stops.push(subway[startLine][i]);
+    }
   }
   return stops;
 }
@@ -60,3 +101,8 @@ planTrip('N', 'Times Square', 'N', '8th');
 planTrip('N', '8th', 'N', 'Times Square');
 planTrip('N', '34th', 'N', 'Union Square');
 planTrip('N', '28th', 'N', 'Times Square');
+planTrip('L', '8th', 'L', 'Union Square');
+planTrip('L', '3rd', 'L', '6th');
+planTrip('6', 'Grand Central', '6', '23rd');
+planTrip('6', 'Astor Place', '6', '33rd');
+planTrip('N', 'Times Square', '6', '33rd');
