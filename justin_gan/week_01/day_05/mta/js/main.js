@@ -29,7 +29,8 @@ const planTrip = function ( startLine, startStation, endLine, endStation ) {
   const endIndex = subway[ endLine ].indexOf( endStation );
   // check if journey is on one line
   if ( startLine === endLine ) {
-    travel( startLine, startIndex, endIndex );
+    const journey = getJourney( startLine, startIndex, endIndex );
+    console.log( `You must travel through the following stops on the ${ startLine } line: ${ journey }.`)
   }
   // if journey crosses multiple lines
   else {
@@ -37,9 +38,12 @@ const planTrip = function ( startLine, startStation, endLine, endStation ) {
     const endIndexUS = findUnionSquare( subway[ startLine ] );
     const startIndexUS = findUnionSquare( subway[ endLine ] );
 
-    travel( startLine, startIndex, endIndexUS, true );
+    const firstLeg = getJourney( startLine, startIndex, endIndexUS );
+    const secondLeg = getJourney( endLine, startIndexUS, endIndex );
+
+    console.log( `You must travel through the following stops on the ${ startLine } line: ${ firstLeg }.`);
     console.log( 'Change at Union Square' );
-    travel( endLine, startIndexUS, endIndex, true );
+    console.log( `Your journey continues through the following stops on the ${ endLine } line: ${ secondLeg }.`);
   }
 }
 
@@ -54,40 +58,41 @@ const findUnionSquare = function ( line ) {
   console.log( `For some reason Union square doesn't exist on this line.` );
 }
 
-const travel = function ( line, startIndex, endIndex, change ) {
+const getJourney = function ( line, startIndex, endIndex ) {
   let passedStations;
   // check if trip goes from left to right in array via index
   if ( startIndex < endIndex ) {
-    passedStations = travelEast( line, startIndex, endIndex, change );
+    passedStations = getJourneyEast( line, startIndex, endIndex );
   }
   // otherwise trip goes from right to left
   else {
-    passedStations = travelWest( line, startIndex, endIndex, change );
+    passedStations = getJourneyWest( line, startIndex, endIndex );
   }
-  const msg = `You must travel through the following stops on the ${ line } line: ${ passedStations.join(', ') }.`;
-  console.log( msg );
+  // const msg = `You must travel through the following stops on the ${ line } line: ${ passedStations.join(', ') }.`;
+  // console.log( msg );
+  return passedStations.join(', ');
 }
 
-const travelEast = function ( line, startIndex, endIndex, change ) {
+const getJourneyEast = function ( line, startIndex, endIndex ) {
   let stops = [];
   // iterate over stops in line and push stations passed through
   for ( let i = startIndex; i <= endIndex; i++ ) {
     let stop = subway[ line ][ i ];
-    // push all stations except start & end stop unless changing
-    if ( i !== startIndex && ( i !== endIndex || change )) {
+    // push all stations to stops except start
+    if ( i !== startIndex ) {
       stops.push( stop );
     }
   }
   return stops;
 }
 
-const travelWest = function ( line, startIndex, endIndex, change ) {
+const getJourneyWest = function ( line, startIndex, endIndex ) {
   let stops = [];
   // iterate over stops in line and push stations passed through
   for ( let i = startIndex; i >= endIndex; i-- ) {
     let stop = subway[ line ][ i ];
-    // ignore start and end stations
-    if ( i !== startIndex && ( i !== endIndex || change )) {
+    // push all stations to stops except start
+    if ( i !== startIndex ) {
       stops.push( stop );
     }
   }
