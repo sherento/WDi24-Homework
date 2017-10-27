@@ -30,6 +30,25 @@ const line6 = ['Grand Central', '33rd', '28th', '23rd', 'Union Square', 'Astor P
 
 // *******************
 
+const countStops = function (startI, endI, lineArr) {
+  const calculated = {
+    thru: [],
+    total: 0
+  };
+
+  if (endI > startI) {
+    // make array of thru stops (not inc start but inc end as per problem requirement)
+    calculated.thru = lineArr.slice( startI + 1, endI + 1 );
+  } else { // if going in reverse direction
+    calculated.thru = lineArr.slice( endI, startI ).reverse();
+  }
+  calculated.total = calculated.thru.length;
+
+  return calculated;
+};
+
+
+
 const compareStations = function (lineOn, stationOn, lineOff, stationOff) {
   // object to return
   const tripData = {
@@ -51,18 +70,19 @@ const compareStations = function (lineOn, stationOn, lineOff, stationOff) {
   if (lineOn === lineOff) {
     // get end index
     const endIndex = lineArray.indexOf( stationOff );
-    if (endIndex > startIndex) {
-      // make array of thru stops (not inc start but inc end as per problem requirement)
-      tripData.thruStops = lineArray.slice( startIndex + 1, endIndex + 1 );
-    } else { // if going in reverse direction
-      tripData.thruStops = lineArray.slice( endIndex, startIndex ).reverse();
-    }
-    tripData.totalStops = tripData.thruStops.length;
-
+    // calculate stops
+    const calculate = countStops( startIndex, endIndex, lineArray );
+    tripData.thruStops = calculate.thru;
+    tripData.totalStops = calculate.total;
   } else {
-  // if the start and end lines are different
-  tripData.change = true;
-  // do more stuff here
+    // ~~ if the start and end lines are different ~~
+    tripData.change = true;
+    // FIRST HALF OF TRIP: calculate stops to Union Square
+    const unionSquare = lineArray.indexOf( 'Union Square' );
+    const calculate = countStops( startIndex, unionSquare, lineArray );
+    tripData.thruStops = calculate.thru;
+    tripData.totalStops = calculate.total;
+
   }
   return tripData;
 };
@@ -76,7 +96,7 @@ const planTrip = function (lOn, sOn, lOff, sOff) {  // line ON, stop ON, line OF
   const trip = compareStations(lOn, sOn, lOff, sOff);
   console.log( `You must travel through the following stops on the ${ trip.startLine } line: ${ trip.thruStops.join(', ') }.` );
   if (trip.change) {
-    console.log( `Stuff goes here about changing lines.` );
+    console.log( `Change at Union Square.` );
   }
   console.log( `${ trip.totalStops } stops in total. Enjoy your trip!\n----------------------------------` );
 };
@@ -90,7 +110,8 @@ const planTrip = function (lOn, sOn, lOff, sOff) {  // line ON, stop ON, line OF
 const testCases = [
   { lo: 'L', so: '6th', lof: 'L', sof: '3rd' }, // L line only
   { lo: 'L', so: '8th', lof: 'L', sof: '1st' },
-  { lo: 'L', so: '1st', lof: 'L', sof: '8th' }  // reverse direction L only
+  { lo: 'L', so: '1st', lof: 'L', sof: '8th' },  // reverse direction L only
+  { lo: 'L', so: '8th', lof: 'N', sof: 'Times Square' }  // multi lines
 ];
 
 
@@ -101,6 +122,7 @@ for (let i = 0; i < testCases.length; i++) {
   console.log( `LINE OFF - ${ testCases[i].lof }, STOP OFF - ${ testCases[i].sof }\n ` );
   planTrip( testCases[i].lo, testCases[i].so, testCases[i].lof, testCases[i].sof );
 }
+
 
 
 
