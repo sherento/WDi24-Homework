@@ -8,23 +8,23 @@ Given the following a rectangle object like the one below, write the following f
     area - Returns the area of the rectangle
     perimeter - Returns the perimeter of the rectangle
 */
-// const rectangle = {
-//   length: 4,
-//   width: 4,
-//   isSquare : function ( ){
-//     if (this.width === this.length )
-//     return true;
-//     else
-//     return false;
-//   },
-//   area : function (){
-//     return this.width *this.length;
-//   },
-//   perimeter : function () {
-//     return 2 * (this.width + this.length);
-//   }
-// };
-// console.log (`This rectangle 's area is ${rectangle.area( )} and it'perimeter is ${rectangle.perimeter()}`)
+const rectangle = {
+  length: 4,
+  width: 4,
+  isSquare : function ( ){
+    if (this.width === this.length )
+    return true;
+    else
+    return false;
+  },
+  area : function (){
+    return this.width *this.length;
+  },
+  perimeter : function () {
+    return 2 * (this.width + this.length);
+  }
+};
+console.log (`This rectangle 's area is ${rectangle.area( )} and it'perimeter is ${rectangle.perimeter()}`)
 
 /*
 Part 2, Triangle
@@ -36,52 +36,52 @@ Given the following a triangle object like the one below, write the following fu
     area - Returns the area of the Triangle
     isObtuse - Returns whether the triangle is obtuse or not
 */
-// const triangle = {
-//   sideA: 3,
-//   sideB: 4,
-//   sideC: 4,
-//   isEquilateral : function (){
-//     //definition of equilateral triangle: 3 equal sides.
-//     if (this.sideA === this.sideB && this.sideA === this.sideC)
-//     return true;
-//     else
-//     return false;
-//   },
-//   isIsosceles : function () {
-//     //definition of isosceles triangle, if it has two equal sides
-//     if (this.sideA === this.sideB  || this.sideA === this.sideC || this.sideB=== this.sideC)
-//     return true;
-//     else
-//     return false;
-//   },
-//   area : function (){
-//     //Math: Get the triangle's area by 3 sides
-//     let p = (this.sideA + this. sideB + this.sideC )/2;
-//     return Math.sqrt ( p* (p-this.sideA)*(p -  this.sideB)*(p-this.sideC));
-//   },
-//   isObtuse: function (){
-//   //if the triangle is a obtuse (angel )-> that angel cos value should be (0,-1).
-//     const a = this.sideA;
-//     const b = this.sideB;
-//     const c = this.sideC;
-//     const cosAngleA = (Math.pow(b,2)+Math.pow(c,2)-Math.pow(a,2))/(2 * b* c);
-//     const cosAngleB = (Math.pow(a,2)+Math.pow(c,2)-Math.pow(b,2))/(2 * a* c);
-//     const cosAngleC = (Math.pow(b,2)+Math.pow(a,2)-Math.pow(c,2))/(2 * b* a);
-//     const possibleOb = Math.min (cosAngleA,cosAngleB,cosAngleA);
-//     if (possibleOb < 0)
-//     return true;
-//     else
-//     return false;
-//   }
-// }
-//
-//  if ( triangle.isObtuse())
-//  console.log('This is a Obtuse triangle');
-//  if( triangle.isEquilateral())
-//  console.log('This is a Equilateral triangle');
-//  if( triangle.isIsosceles())
-//  console.log('This is a Isoscele triangle');
-//  console.log(`This triangle \'s area is ${triangle.area().toFixed(2)} `);
+const triangle = {
+  sideA: 3,
+  sideB: 4,
+  sideC: 4,
+  isEquilateral : function (){
+    //definition of equilateral triangle: 3 equal sides.
+    if (this.sideA === this.sideB && this.sideA === this.sideC)
+    return true;
+    else
+    return false;
+  },
+  isIsosceles : function () {
+    //definition of isosceles triangle, if it has two equal sides
+    if (this.sideA === this.sideB  || this.sideA === this.sideC || this.sideB=== this.sideC)
+    return true;
+    else
+    return false;
+  },
+  area : function (){
+    //Math: Get the triangle's area by 3 sides
+    let p = (this.sideA + this. sideB + this.sideC )/2;
+    return Math.sqrt ( p* (p-this.sideA)*(p -  this.sideB)*(p-this.sideC));
+  },
+  isObtuse: function (){
+  //if the triangle is a obtuse (angel )-> that angel cos value should be (0,-1).
+    const a = this.sideA;
+    const b = this.sideB;
+    const c = this.sideC;
+    const cosAngleA = (Math.pow(b,2)+Math.pow(c,2)-Math.pow(a,2))/(2 * b* c);
+    const cosAngleB = (Math.pow(a,2)+Math.pow(c,2)-Math.pow(b,2))/(2 * a* c);
+    const cosAngleC = (Math.pow(b,2)+Math.pow(a,2)-Math.pow(c,2))/(2 * b* a);
+    const possibleOb = Math.min (cosAngleA,cosAngleB,cosAngleA);
+    if (possibleOb < 0)
+    return true;
+    else
+    return false;
+  }
+}
+
+ if ( triangle.isObtuse())
+ console.log('This is a Obtuse triangle');
+ if( triangle.isEquilateral())
+ console.log('This is a Equilateral triangle');
+ if( triangle.isIsosceles())
+ console.log('This is a Isoscele triangle');
+ console.log(`This triangle \'s area is ${triangle.area().toFixed(2)} `);
 
 /*
 The Cash Register
@@ -101,26 +101,30 @@ const cartForParty = {
 // Output
 cashRegister(cartForParty)); // 60.55
 */
-// const cartForParty = {
-//   banana: "1.25",
-//   handkerchief: ".99",
-//   Tshirt: "25.01",
-//   apple: "0.60",
-//   nalgene: "10.34",
-//   proteinShake: "22.36"
-// };
-// const cashRegister = function ( m ){
-//   const b = Number (m.banana);
-//   const h = Number (m.handkerchief);
-//   const T = Number (m.Tshirt);
-//   const a = Number (m.apple);
-//   const n = Number (m.nalgene);
-//   const p = Number (m.proteinShake);
-//   // conver all the string numbers into number;
-//   return ( b + h + T + a + n + p);
-// }
-// console.log( cashRegister(cartForParty));
+const cartForParty = {
+  banana: "1.25",
+  handkerchief: ".99",
+  Tshirt: "25.01",
+  apple: "0.60",
+  nalgene: "10.34",
+  proteinShake: "22.36"
+};
 
+let sumOfItems = 0;  // Declare the global variable to hold the value of sum of the price;
+const fruitKey = Object.keys(cartForParty);
+{
+  for (let i= 0; i<fruitKey.length; i++){
+    sumOfItems +=Number(cartForParty[fruitKey[i]]);  // change the value into number and plus them together;
+
+  }
+}
+
+console.log(fruitKey);
+console.log(sumOfItems);
+
+
+
+//***************************************************
 
 /*
 Credit Card Validation
@@ -158,7 +162,7 @@ const validateCreditCard = function (array){
 
       //console.log (noDashArray); for test use
 
-//Cardnumber must have at least two different digitsrepresented (all of the digits cannot be the same)
+//Cardnumber must have at least two different digits represented (all of the digits cannot be the same)
 
   for (let i= 1 ; i< noDashArray.length;i++){
       if ( noDashArray[0] != noDashArray[i] ){    //if find 1st digit is different from the other digits

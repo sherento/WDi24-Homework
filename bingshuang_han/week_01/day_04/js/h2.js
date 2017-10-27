@@ -23,6 +23,8 @@ Bonus
     Write a 'transfer' on the bank that allows you to transfer amounts between two accounts.
 */
 //***********************************************************************************************
+// first version I will redo this if I have time during the weekend
+//**************************************************************************************************
 function Account (name,balance){
   this.userName = name;
   this.currentBalance = balance;
