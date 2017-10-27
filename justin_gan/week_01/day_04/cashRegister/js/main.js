@@ -12,15 +12,28 @@ let cartForParty = {
 };
 
 const cashRegister = function ( cart ) {
+  // store object keys in array
   const items = Object.keys(cart);
   let total = 0;
-  // iterate through items
+  // iterate through items to access key/value pairs in object
   for (let i = 0; i < items.length; i++) {
     let item = items[i];
     // sum item prices
     total += parseFloat(cart[item]);
   }
+  // reduce can replace for loop
+
   return total;
 }
 
 console.log(cashRegister(cartForParty));
+
+const simpleCashRegister = function ( cart ) {
+  const prices = Object.values(cart);
+  const total = prices.reduce(function ( a, b ) {
+    return a + parseFloat(b);
+  }, 0);
+  return total;
+}
+
+console.log(simpleCashRegister(cartForParty));
