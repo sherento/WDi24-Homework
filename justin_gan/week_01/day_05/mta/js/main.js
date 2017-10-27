@@ -18,30 +18,42 @@
 // All 3 subway lines intersect at Union Square, but there are no other intersection points. (For example, this means the 28th stop on the N line is different than the 28th street stop on the 6 line, so you'll have to differentiate this when you name your stops in the arrays.)
 // Tell the user the number of stops AND the stops IN ORDER that they will pass through or change at.
 
-const N = ['Times Square', '34th', '28th', '23rd', 'Union Square', '8th'];
+const subway = {
+  N: ['Times Square', '34th', '28th', '23rd', 'Union Square', '8th']
+};
 
 const planTrip = function ( startLine, startStation, endLine, endStation ) {
-  const startIndex = N.indexOf(startStation);
-  const endIndex = N.indexOf(endStation);
-  console.log(startIndex, endIndex);
-  let stops = [];
+  const line = subway[startLine];
+  const startIndex = line.indexOf(startStation);
+  const endIndex = line.indexOf(endStation);
+  let requiredStations;
   // check if trip goes from left to right in array via index
   if ( startIndex < endIndex ) {
-    for (let i = startIndex; i <= endIndex; i++) {
-      console.log(N[i]);
-      stops.push(N[i]);
-    }
+    requiredStations = travelEast( startIndex, endIndex, line );
   }
   // otherwise trip goes from right to left
   else {
-    console.log('endIndex: ' + endIndex);
-    for (let i = startIndex; i >= endIndex; i--) {
-      stops.push(N[i]);
-    }
+    requiredStations = travelWest( startIndex, endIndex, line );
   }
-  console.log(stops);
+  const msg = `You must travel through the following stops on the N line: ${ requiredStations.join(', ') }.`;
+  console.log(msg);
 }
 
+const travelEast = function ( startIndex, endIndex, line ) {
+  let stops = [];
+  for (let i = startIndex; i <= endIndex; i++) {
+    stops.push(line[i]);
+  }
+  return stops;
+}
+
+const travelWest = function ( startIndex, endIndex, line ) {
+  let stops = [];
+  for (let i = startIndex; i >= endIndex; i--) {
+    stops.push(line[i]);
+  }
+  return stops;
+}
 
 
 planTrip('N', 'Times Square', 'N', '8th');
