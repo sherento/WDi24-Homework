@@ -30,20 +30,24 @@ const planTrip = function ( startLine, startStation, endLine, endStation ) {
   // check if journey is on one line
   if ( startLine === endLine ) {
     const journey = getJourney( startLine, startIndex, endIndex );
-    console.log( `You must travel through the following stops on the ${ startLine } line: ${ journey }.`)
+    console.log( `You must travel through the following stops on the ${ startLine } line: ${ journey.join(', ') }.`);
+    console.log(`${ journey.length } stops in total.`)
+    console.log(`-----------------------------------------------`);
   }
   // if journey crosses multiple lines
   else {
-    // get 'Union Square' index for both lines
+    // get 'Union Square' index for start & end lines
     const endIndexUS = findUnionSquare( subway[ startLine ] );
     const startIndexUS = findUnionSquare( subway[ endLine ] );
-
+    // get journey info of both legs
     const firstLeg = getJourney( startLine, startIndex, endIndexUS );
     const secondLeg = getJourney( endLine, startIndexUS, endIndex );
 
-    console.log( `You must travel through the following stops on the ${ startLine } line: ${ firstLeg }.`);
+    console.log( `You must travel through the following stops on the ${ startLine } line: ${ firstLeg.join(', ') }.`);
     console.log( 'Change at Union Square' );
-    console.log( `Your journey continues through the following stops on the ${ endLine } line: ${ secondLeg }.`);
+    console.log( `Your journey continues through the following stops on the ${ endLine } line: ${ secondLeg.join(', ') }.`);
+    console.log(`${ firstLeg.length + secondLeg.length } stops in total.`)
+    console.log(`-----------------------------------------------`);
   }
 }
 
@@ -70,7 +74,7 @@ const getJourney = function ( line, startIndex, endIndex ) {
   }
   // const msg = `You must travel through the following stops on the ${ line } line: ${ passedStations.join(', ') }.`;
   // console.log( msg );
-  return passedStations.join(', ');
+  return passedStations
 }
 
 const getJourneyEast = function ( line, startIndex, endIndex ) {
@@ -110,3 +114,5 @@ planTrip( '6', 'Grand Central', '6', '23rd' );
 planTrip( '6', 'Astor Place', '6', '33rd' );
 planTrip( '6', '33rd', 'N', 'Times Square' );
 planTrip( 'N', 'Times Square', '6', '33rd' );
+planTrip( 'N', 'Times Square', 'L', '1st' );
+planTrip( 'L', '3rd', '6', 'Astor Place' );
