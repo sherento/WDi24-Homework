@@ -60,12 +60,24 @@ const compareStations = function (lineOn, stationOn, lineOff, stationOff) {
     thruStopsCont: [],  // for second part of journey if req
     change: false,
     totalStops: 0,
-    invalid: false // flag for invalid user input
+  //  invalid: false, // flag for invalid user input
+    error: ''
   };
+
+  // declare error msgs
+  const invalidLineMsg = `Sorry, that doesn't look like a valid train line to me, please check your entry and try again.\n----------------------------------`;
+  const invalidStationMsg = `Sorry, that doesn't look like a valid station to me, please check your entry and try again.\n----------------------------------`
+  const sameStationMsg = `Spin around. You are at your destination.\n----------------------------------`;
 
   // ## check if lOn/lOff is a valid line ##
   if ( validLines.indexOf( lineOn ) === -1 || validLines.indexOf( lineOff ) === -1 ) {
-    tripData.invalid = true;
+    tripData.error = invalidLineMsg;
+    return tripData;
+  }
+
+  // ## check if both stations the same (same station same line) or both are US
+  if ( lineOn === lineOff && stationOn === stationOff || ( 'Union Square' === stationOn && 'Union Square' === stationOff ) ) {
+    tripData.error = sameStationMsg;
     return tripData;
   }
 
@@ -92,16 +104,13 @@ const compareStations = function (lineOn, stationOn, lineOff, stationOff) {
     lineArray1 = line6;
   }
 
+
   // ## check if station data is valid
   if ( lineArray1.indexOf( stationOn ) === -1 ) {
-    tripData.invalid = true;
+    tripData.error = invalidStationMsg;
     return tripData;
   }
 
-  // ## check if both stations the same
-  // if ( lineOn === lineOff && stationOn === stationOff ) {
-  //   tripData.invalid =
-  // }
 
   // find index of starting station
   const startIndex = lineArray1.indexOf( stationOn );
@@ -137,7 +146,7 @@ const compareStations = function (lineOn, stationOn, lineOff, stationOff) {
 
     // ## check if station data is valid
     if ( lineArray2.indexOf( stationOff ) === -1 ) {
-      tripData.invalid = true;
+      tripData.error = invalidStationMsg;
       return tripData;
     }
 
@@ -154,14 +163,13 @@ const compareStations = function (lineOn, stationOn, lineOff, stationOff) {
 
 
 
-
 // ******** PLAN TRIP FUNCTION ************
 
 const planTrip = function (lOn, sOn, lOff, sOff) {  // line ON, stop ON, line OFF, stop OFF
   const trip = compareStations(lOn, sOn, lOff, sOff);
   // if there was invalid user input
-  if (trip.invalid) {
-    console.log( `Sorry, that doesn't look like a valid trip plan to me, please check your entry and try again.\n----------------------------------` );
+  if (trip.error) {
+    console.log( trip.error );
     return;
   }
   console.log( `You must travel through the following stops on the ${ trip.startLine } line: ${ trip.thruStops.join(', ') }.` );
@@ -199,7 +207,9 @@ const testCases = [
   { lo: 'Q', so: '34th', lof: 'L', sof: 'Union Square' },  // if invalid line
   { lo: 'N', so: '34th', lof: 'Foo Line', sof: 'Union Square' },  // if invalid line
   { lo: 'L', so: '34th', lof: 'L', sof: 'Union Square' },  // if invalid station (e.g. real station, wrong line)
-  { lo: '6', so: 'Astor Place', lof: 'L', sof: 'Foo Station' }  // if invalid station (e.g. nonsense station)
+  { lo: '6', so: 'Astor Place', lof: 'L', sof: 'Foo Station' },  // if invalid station (e.g. nonsense station)
+  { lo: 'L', so: '3rd', lof: 'L', sof: '3rd' },  // if both stations the same (same station same line)
+  { lo: 'N', so: 'Union Square', lof: '6', sof: 'Union Square' }  // if both stations are Union Square
 ];
 
 
