@@ -92,8 +92,10 @@ const compareStations = function (lineOn, stationOn, lineOff, stationOff) {
 
     // then figure out second half of trip
     // determine second line
-    if ('N' === lineOff) {
-      lineArray = lineN;  // can use lineArray again as we've already copied relevant stops from prev line into tripData obj
+    if ('L' === lineOff) {
+      lineArray = lineL;  // can use lineArray again as we've already copied relevant stops from prev line into tripData obj
+    } else if ('N' === lineOff) {
+      lineArray = lineN;
     } else if ('6' === lineOff) {
       lineArray = line6;
     }
@@ -138,8 +140,12 @@ const testCases = [
   { lo: 'L', so: '8th', lof: 'L', sof: '1st' },
   { lo: 'L', so: '1st', lof: 'L', sof: '8th' },  // reverse direction L only
   { lo: 'N', so: '34th', lof: 'N', sof: '8th' }, // N line only
-  // { lo: 'N', so: '8th', lof: 'N', sof: 'Times Square' },  // reverse direction N only
-  { lo: 'L', so: '8th', lof: 'N', sof: 'Times Square' }  // multi lines
+  { lo: 'N', so: '8th', lof: 'N', sof: 'Times Square' },  // reverse direction N only
+  { lo: '6', so: 'Grand Central', lof: '6', sof: '23rd' }, // 6 line only
+  { lo: '6', so: 'Astor Place', lof: '6', sof: '33rd' },  // reverse direction 6 only
+  { lo: 'L', so: '8th', lof: 'N', sof: 'Times Square' },  // multi lines L to N
+  { lo: '6', so: 'Astor Place', lof: 'L', sof: '6th' },  // multi lines 6 to L
+  { lo: 'N', so: '8th', lof: '6', sof: '28th' }  // multi lines N to 6
 ];
 
 
