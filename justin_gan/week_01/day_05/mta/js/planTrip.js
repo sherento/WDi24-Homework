@@ -116,7 +116,7 @@ const load = () => {
     planTrip( startLine, startStation, endLine, endStation );
 
     event.preventDefault();
-  }), false;
+  });
 }
 
 window.onload = load;
