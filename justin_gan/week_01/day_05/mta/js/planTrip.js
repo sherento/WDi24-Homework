@@ -103,8 +103,23 @@ const getJourneyWest = function ( line, startIndex, endIndex ) {
   return stops;
 }
 
+const load = () => {
+  // intercept 'submit' event
+  const form = document.querySelector( 'form' );
+  form.addEventListener( 'submit', function( event ) {
 
+    const startLine = form.elements.startLine.value;
+    const startStation = form.elements.startStation.value;
+    const endLine = form.elements.endLine.value;
+    const endStation = form.elements.endStation.value;
 
+    planTrip( startLine, startStation, endLine, endStation );
+
+    event.preventDefault();
+  }), false;
+}
+
+window.onload = load;
 
 planTrip( 'N', 'Times Square', 'N', '8th' );
 planTrip( 'N', '8th', 'N', 'Times Square' );
