@@ -60,6 +60,15 @@ const compareStations = function (lineOn, stationOn, lineOff, stationOff) {
     totalStops: 0
   };
 
+
+  // !!!!!!!! add condition if user enters starting at US but on different line to end point
+  if ('Union Square' === stationOn && lineOn !== lineOff) {
+    unionSquareRedirect = `At Union Square, go straight to the ${ lineOff } line.`;
+    console.log( unionSquareRedirect );
+    lineOn = lineOff;
+    tripData.startLine = lineOff;
+  }
+
   // bring in array of relevant starting line
   let lineArray; // declare here for scope
   if ('L' === lineOn) {
@@ -69,6 +78,7 @@ const compareStations = function (lineOn, stationOn, lineOff, stationOff) {
   } else if ('6' === lineOn) {
     lineArray = line6;
   }
+
   // find index of starting station
   const startIndex = lineArray.indexOf( stationOn );
   // now look at line off
@@ -145,7 +155,9 @@ const testCases = [
   { lo: '6', so: 'Astor Place', lof: '6', sof: '33rd' },  // reverse direction 6 only
   { lo: 'L', so: '8th', lof: 'N', sof: 'Times Square' },  // multi lines L to N
   { lo: '6', so: 'Astor Place', lof: 'L', sof: '6th' },  // multi lines 6 to L
-  { lo: 'N', so: '8th', lof: '6', sof: '28th' }  // multi lines N to 6
+  { lo: 'N', so: '8th', lof: '6', sof: '28th' },  // multi lines N to 6
+  { lo: '6', so: 'Union Square', lof: '6', sof: '33rd' },  // if US is a start on one line
+  { lo: 'L', so: 'Union Square', lof: '6', sof: '33rd' }  // if US is a start on one line but the user entered that they think they need to change lines
 ];
 
 
