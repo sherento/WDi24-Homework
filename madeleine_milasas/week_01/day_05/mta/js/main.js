@@ -64,6 +64,10 @@ const compareStations = function (lineOn, stationOn, lineOff, stationOff) {
   let lineArray; // declare here for scope
   if ('L' === lineOn) {
     lineArray = lineL;
+  } else if ('N' === lineOn) {
+    lineArray = lineN;
+  } else if ('6' === lineOn) {
+    lineArray = line6;
   }
   // find index of starting station
   const startIndex = lineArray.indexOf( stationOn );
@@ -125,10 +129,16 @@ const planTrip = function (lOn, sOn, lOff, sOff) {  // line ON, stop ON, line OF
 
 // ********* Test cases ***********
 
+// The N line has the following stops: Times Square, 34th, 28th, 23rd, Union Square, and 8th
+// The L line has the following stops: 8th, 6th, Union Square, 3rd, and 1st
+// The 6 line has the following stops: Grand Central, 33rd, 28th, 23rd, Union Square, and Astor Place.
+
 const testCases = [
   { lo: 'L', so: '6th', lof: 'L', sof: '3rd' }, // L line only
   { lo: 'L', so: '8th', lof: 'L', sof: '1st' },
   { lo: 'L', so: '1st', lof: 'L', sof: '8th' },  // reverse direction L only
+  { lo: 'N', so: '34th', lof: 'N', sof: '8th' }, // N line only
+  // { lo: 'N', so: '8th', lof: 'N', sof: 'Times Square' },  // reverse direction N only
   { lo: 'L', so: '8th', lof: 'N', sof: 'Times Square' }  // multi lines
 ];
 
