@@ -69,27 +69,6 @@ const compareStations = function (lineOn, stationOn, lineOff, stationOff) {
     return tripData;
   }
 
-  // bring in array of relevant starting line
-  let lineArray; // declare here for scope
-  if ('L' === lineOn) {
-    lineArray = lineL;
-  } else if ('N' === lineOn) {
-    lineArray = lineN;
-  } else if ('6' === lineOn) {
-    lineArray = line6;
-  }
-
-  // ## check if station data is valid
-  if ( lineArray.indexOf( stationOn ) === -1 || lineArray.indexOf( stationOff ) === -1 ) {
-    tripData.invalid = true;
-    return tripData;
-  }
-
-  // ## check if both stations the same
-  // if ( lineOn === lineOff && stationOn === stationOff ) {
-  //   tripData.invalid =
-  // }
-
   // !!!!!!!! add condition if user enters starting at US but on different line to end point
   if ('Union Square' === stationOn && lineOn !== lineOff) {
     unionSquareRedirect = `At Union Square, go straight to the ${ lineOff } line.`;
@@ -103,40 +82,69 @@ const compareStations = function (lineOn, stationOn, lineOff, stationOff) {
     lineOff = lineOn;
   }
 
+  // bring in array of relevant starting line
+  let lineArray1; // declare here for scope
+  if ('L' === lineOn) {
+    lineArray1 = lineL;
+  } else if ('N' === lineOn) {
+    lineArray1 = lineN;
+  } else if ('6' === lineOn) {
+    lineArray1 = line6;
+  }
+
+  // ## check if station data is valid
+  if ( lineArray1.indexOf( stationOn ) === -1 ) {
+    tripData.invalid = true;
+    return tripData;
+  }
+
+  // ## check if both stations the same
+  // if ( lineOn === lineOff && stationOn === stationOff ) {
+  //   tripData.invalid =
+  // }
+
   // find index of starting station
-  const startIndex = lineArray.indexOf( stationOn );
+  const startIndex = lineArray1.indexOf( stationOn );
   // now look at line off
   // if it's the same as line on
   if (lineOn === lineOff) {
     // get end index
-    const endIndex = lineArray.indexOf( stationOff );
+    const endIndex = lineArray1.indexOf( stationOff );
     // calculate stops
-    const calculate = countStops( startIndex, endIndex, lineArray );
+    const calculate = countStops( startIndex, endIndex, lineArray1 );
     tripData.thruStops = calculate.thru;
     tripData.totalStops = calculate.total;
   } else {
     // ~~ if the start and end lines are different ~~
     tripData.change = true;
     // FIRST HALF OF TRIP: calculate stops to Union Square
-    let unionSquare = lineArray.indexOf( 'Union Square' );  // a let b/c we'll recalculate index of US for second line
-    const calculateA = countStops( startIndex, unionSquare, lineArray );
+    let unionSquare = lineArray1.indexOf( 'Union Square' );  // a let b/c we'll recalculate index of US for second line
+    const calculateA = countStops( startIndex, unionSquare, lineArray1 );
     // spit out data to obj
     tripData.thruStops = calculateA.thru;
     tripData.totalStops = calculateA.total;
 
     // then figure out second half of trip
     // determine second line
+    let lineArray2;
     if ('L' === lineOff) {
-      lineArray = lineL;  // can use lineArray again as we've already copied relevant stops from prev line into tripData obj
+      lineArray2 = lineL;
     } else if ('N' === lineOff) {
-      lineArray = lineN;
+      lineArray2 = lineN;
     } else if ('6' === lineOff) {
-      lineArray = line6;
+      lineArray2 = line6;
     }
+
+    // ## check if station data is valid
+    if ( lineArray2.indexOf( stationOff ) === -1 ) {
+      tripData.invalid = true;
+      return tripData;
+    }
+
     // SECOND HALF OF TRIP: calculate stops from Union Square to end
-    unionSquare = lineArray.indexOf( 'Union Square' );  // finding new US index on second line
-    const endIndex = lineArray.indexOf( stationOff );
-    const calculateB = countStops( unionSquare, endIndex, lineArray );
+    unionSquare = lineArray2.indexOf( 'Union Square' );  // finding new US index on second line
+    const endIndex = lineArray2.indexOf( stationOff );
+    const calculateB = countStops( unionSquare, endIndex, lineArray2 );
     // add second trip data to obj
     tripData.thruStopsCont = calculateB.thru;
     tripData.totalStops += calculateB.total;
@@ -189,9 +197,9 @@ const testCases = [
   { lo: 'L', so: 'Union Square', lof: '6', sof: '33rd' },  // if US is start but user entered they think they need to change lines
   { lo: 'N', so: '34th', lof: 'L', sof: 'Union Square' },  // if US is destination but user entered they think they need to change lines
   { lo: 'Q', so: '34th', lof: 'L', sof: 'Union Square' },  // if invalid line
-  { lo: 'N', so: '34th', lof: 'Chorus', sof: 'Union Square' },  // if invalid line
+  { lo: 'N', so: '34th', lof: 'Foo Line', sof: 'Union Square' },  // if invalid line
   { lo: 'L', so: '34th', lof: 'L', sof: 'Union Square' },  // if invalid station (e.g. real station, wrong line)
-  { lo: '6', so: 'Astor Place', lof: 'L', sof: 'Foo' }  // if invalid station (e.g. nonsense station)
+  { lo: '6', so: 'Astor Place', lof: 'L', sof: 'Foo Station' }  // if invalid station (e.g. nonsense station)
 ];
 
 
