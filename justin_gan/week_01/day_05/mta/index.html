@@ -8,6 +8,8 @@
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
     <script src="js/planTrip.js"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="js/jquery.subwayMap-0.5.0.js" type="text/javascript"></script>
   </head>
   <body>
     <div class="container-fluid">
@@ -61,14 +63,28 @@
         <button type="submit" class="btn btn-primary">Show Trip Info</button>
       </form>
       <br>
+      <div class="map" data-columns="12" data-rows="10" data-cellSize="40" data-legendId="legend" data-textClass="text" data-grid="true" data-gridNumbers="true" data-lineWidth="8">
+        <ul data-color="#939497" data-label="L">
+          <li data-coords="2, 5">8th Ave</li>
+          <li data-coords="4, 5">6th Ave</li>
+          <li data-coords="7, 5">Union Square</li>
+          <li data-coords="9, 5">3rd Ave</li>
+          <li data-coords="11, 5">1st Ave</li>
+        </ul>
+      </div>
+      <div id="legend"></div>
       <div>
         <p id="output"></p>
       </div>
-
     </div>
+    <!-- Subway Map -->
+    <script type="text/javascript">
+      $(".map").subwayMap({ debug: true });
+    </script>
+
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
 

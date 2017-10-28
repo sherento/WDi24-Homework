@@ -41,13 +41,13 @@ const planTrip = function ( startLine, startStation, endLine, endStation ) {
   else if ( startLine === endLine ) {
     const journey = getJourney( startLine, startIndex, endIndex );
 
+    console.log(`-----------------------------------------------`);
     console.log( `You must travel through the following stops on the ${ startLine } line: ${ journey.join(', ') }.`);
     console.log(`Your journey is ${ journey.length } stops in total.`)
-    console.log(`-----------------------------------------------`);
 
-    const msg1 = `You must travel through the following stops on the ${ startLine } line: ${ journey.join(', ') }.`;
-    const msg2 = `Your journey is ${ journey.length } stops in total.`;
-    const msg3 = `-----------------------------------------------`;
+    const msg1 = `-----------------------------------------------`;
+    const msg2 = `You must travel through the following stops on the ${ startLine } line: ${ journey.join(', ') }.`;
+    const msg3 = `Your journey is ${ journey.length } stops in total.`;
     const msg = `<p>${ msg1 }</p><p>${ msg2 }</p><p>${ msg3 }</p>`;
     return msg;
   }
@@ -60,17 +60,17 @@ const planTrip = function ( startLine, startStation, endLine, endStation ) {
     const firstLeg = getJourney( startLine, startIndex, endIndexUS );
     const secondLeg = getJourney( endLine, startIndexUS, endIndex );
 
+    console.log(`-----------------------------------------------`);
     console.log( `You must travel through the following stops on the ${ startLine } line: ${ firstLeg.join(', ') }.`);
     console.log( 'Change at Union Square' );
     console.log( `Your journey continues through the following stops on the ${ endLine } line: ${ secondLeg.join(', ') }.`);
     console.log(`Your journey is ${ firstLeg.length + secondLeg.length } stops in total.`)
-    console.log(`-----------------------------------------------`);
 
-    const msg1 = `You must travel through the following stops on the ${ startLine } line: ${ firstLeg.join(', ') }.`;
-    const msg2 = `Change at Union Square`;
-    const msg3 = `Your journey continues through the following stops on the ${ endLine } line: ${ secondLeg.join(', ') }.`
-    const msg4 = `Your journey is ${ firstLeg.length + secondLeg.length } stops in total.`;
-    const msg5 = `-----------------------------------------------`;
+    const msg1 = `-----------------------------------------------`;
+    const msg2 = `You must travel through the following stops on the ${ startLine } line: ${ firstLeg.join(', ') }.`;
+    const msg3 = `Change at Union Square`;
+    const msg4 = `Your journey continues through the following stops on the ${ endLine } line: ${ secondLeg.join(', ') }.`
+    const msg5 = `Your journey is ${ firstLeg.length + secondLeg.length } stops in total.`;
     const msg = '<p>' + [ msg1, msg2, msg3, msg4, msg5 ].join('</p><p>') + '</p>';
     return msg;
   }
