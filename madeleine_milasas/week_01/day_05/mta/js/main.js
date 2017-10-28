@@ -68,6 +68,11 @@ const compareStations = function (lineOn, stationOn, lineOff, stationOff) {
     lineOn = lineOff;
     tripData.startLine = lineOff;
   }
+  // !!!!!! and change line off to be same as line on if user enters ending at US but on different line to start point
+  if ('Union Square' === stationOff && lineOn !== lineOff) {
+    console.log( `No need to change lines.` );
+    lineOff = lineOn;
+  }
 
   // bring in array of relevant starting line
   let lineArray; // declare here for scope
@@ -157,7 +162,8 @@ const testCases = [
   { lo: '6', so: 'Astor Place', lof: 'L', sof: '6th' },  // multi lines 6 to L
   { lo: 'N', so: '8th', lof: '6', sof: '28th' },  // multi lines N to 6
   { lo: '6', so: 'Union Square', lof: '6', sof: '33rd' },  // if US is a start on one line
-  { lo: 'L', so: 'Union Square', lof: '6', sof: '33rd' }  // if US is a start on one line but the user entered that they think they need to change lines
+  { lo: 'L', so: 'Union Square', lof: '6', sof: '33rd' },  // if US is start but user entered they think they need to change lines
+  { lo: 'N', so: '34th', lof: 'L', sof: 'Union Square' }  // if US is destination but user entered they think they need to change lines
 ];
 
 
