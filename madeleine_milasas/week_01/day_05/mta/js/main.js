@@ -24,11 +24,12 @@
 
  // *********** LINES **********
 
+const validLines = ['L', 'N', '6'];
 const lineL = ['8th', '6th', 'Union Square', '3rd', '1st'];
 const lineN = ['Times Square', '34th', '28th', '23rd', 'Union Square', '8th'];
 const line6 = ['Grand Central', '33rd', '28th', '23rd', 'Union Square', 'Astor Place'];
 
-// *******************
+// ************* functions *****************************************************
 
 const countStops = function (startI, endI, lineArr) {
   const calculated = {
@@ -48,6 +49,7 @@ const countStops = function (startI, endI, lineArr) {
 };
 
 
+// *******************
 
 const compareStations = function (lineOn, stationOn, lineOff, stationOff) {
   // object to return
@@ -57,9 +59,36 @@ const compareStations = function (lineOn, stationOn, lineOff, stationOff) {
     thruStops: [],
     thruStopsCont: [],  // for second part of journey if req
     change: false,
-    totalStops: 0
+    totalStops: 0,
+    invalid: false // flag for invalid user input
   };
 
+  // ## check if lOn/lOff is a valid line ##
+  if ( validLines.indexOf( lineOn ) === -1 || validLines.indexOf( lineOff ) === -1 ) {
+    tripData.invalid = true;
+    return tripData;
+  }
+
+  // bring in array of relevant starting line
+  let lineArray; // declare here for scope
+  if ('L' === lineOn) {
+    lineArray = lineL;
+  } else if ('N' === lineOn) {
+    lineArray = lineN;
+  } else if ('6' === lineOn) {
+    lineArray = line6;
+  }
+
+  // ## check if station data is valid
+  if ( lineArray.indexOf( stationOn ) === -1 || lineArray.indexOf( stationOff ) === -1 ) {
+    tripData.invalid = true;
+    return tripData;
+  }
+
+  // ## check if both stations the same
+  // if ( lineOn === lineOff && stationOn === stationOff ) {
+  //   tripData.invalid =
+  // }
 
   // !!!!!!!! add condition if user enters starting at US but on different line to end point
   if ('Union Square' === stationOn && lineOn !== lineOff) {
@@ -72,16 +101,6 @@ const compareStations = function (lineOn, stationOn, lineOff, stationOff) {
   if ('Union Square' === stationOff && lineOn !== lineOff) {
     console.log( `No need to change lines.` );
     lineOff = lineOn;
-  }
-
-  // bring in array of relevant starting line
-  let lineArray; // declare here for scope
-  if ('L' === lineOn) {
-    lineArray = lineL;
-  } else if ('N' === lineOn) {
-    lineArray = lineN;
-  } else if ('6' === lineOn) {
-    lineArray = line6;
   }
 
   // find index of starting station
@@ -132,6 +151,11 @@ const compareStations = function (lineOn, stationOn, lineOff, stationOff) {
 
 const planTrip = function (lOn, sOn, lOff, sOff) {  // line ON, stop ON, line OFF, stop OFF
   const trip = compareStations(lOn, sOn, lOff, sOff);
+  // if there was invalid user input
+  if (trip.invalid) {
+    console.log( `Sorry, that doesn't look like a valid trip plan to me, please check your entry and try again.\n----------------------------------` );
+    return;
+  }
   console.log( `You must travel through the following stops on the ${ trip.startLine } line: ${ trip.thruStops.join(', ') }.` );
   if (trip.change) {
     console.log( `Change at Union Square for the ${ trip.endLine } line.` );
@@ -163,7 +187,11 @@ const testCases = [
   { lo: 'N', so: '8th', lof: '6', sof: '28th' },  // multi lines N to 6
   { lo: '6', so: 'Union Square', lof: '6', sof: '33rd' },  // if US is a start on one line
   { lo: 'L', so: 'Union Square', lof: '6', sof: '33rd' },  // if US is start but user entered they think they need to change lines
-  { lo: 'N', so: '34th', lof: 'L', sof: 'Union Square' }  // if US is destination but user entered they think they need to change lines
+  { lo: 'N', so: '34th', lof: 'L', sof: 'Union Square' },  // if US is destination but user entered they think they need to change lines
+  { lo: 'Q', so: '34th', lof: 'L', sof: 'Union Square' },  // if invalid line
+  { lo: 'N', so: '34th', lof: 'Chorus', sof: 'Union Square' },  // if invalid line
+  { lo: 'L', so: '34th', lof: 'L', sof: 'Union Square' },  // if invalid station (e.g. real station, wrong line)
+  { lo: '6', so: 'Astor Place', lof: 'L', sof: 'Foo' }  // if invalid station (e.g. nonsense station)
 ];
 
 
