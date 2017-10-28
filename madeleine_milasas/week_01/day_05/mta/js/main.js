@@ -53,7 +53,9 @@ const compareStations = function (lineOn, stationOn, lineOff, stationOff) {
   // object to return
   const tripData = {
     startLine: lineOn,
+    endLine: lineOff,
     thruStops: [],
+    thruStopsCont: [],  // for second part of journey if req
     change: false,
     totalStops: 0
   };
@@ -78,11 +80,26 @@ const compareStations = function (lineOn, stationOn, lineOff, stationOff) {
     // ~~ if the start and end lines are different ~~
     tripData.change = true;
     // FIRST HALF OF TRIP: calculate stops to Union Square
-    const unionSquare = lineArray.indexOf( 'Union Square' );
-    const calculate = countStops( startIndex, unionSquare, lineArray );
-    tripData.thruStops = calculate.thru;
-    tripData.totalStops = calculate.total;
+    let unionSquare = lineArray.indexOf( 'Union Square' );  // a let b/c we'll recalculate index of US for second line
+    const calculateA = countStops( startIndex, unionSquare, lineArray );
+    // spit out data to obj
+    tripData.thruStops = calculateA.thru;
+    tripData.totalStops = calculateA.total;
 
+    // then figure out second half of trip
+    // determine second line
+    if ('N' === lineOff) {
+      lineArray = lineN;  // can use lineArray again as we've already copied relevant stops from prev line into tripData obj
+    } else if ('6' === lineOff) {
+      lineArray = line6;
+    }
+    // SECOND HALF OF TRIP: calculate stops from Union Square to end
+    unionSquare = lineArray.indexOf( 'Union Square' );  // finding new US index on second line
+    const endIndex = lineArray.indexOf( stationOff );
+    const calculateB = countStops( unionSquare, endIndex, lineArray );
+    // add second trip data to obj
+    tripData.thruStopsCont = calculateB.thru;
+    tripData.totalStops += calculateB.total;
   }
   return tripData;
 };
@@ -96,7 +113,8 @@ const planTrip = function (lOn, sOn, lOff, sOff) {  // line ON, stop ON, line OF
   const trip = compareStations(lOn, sOn, lOff, sOff);
   console.log( `You must travel through the following stops on the ${ trip.startLine } line: ${ trip.thruStops.join(', ') }.` );
   if (trip.change) {
-    console.log( `Change at Union Square.` );
+    console.log( `Change at Union Square for the ${ trip.endLine } line.` );
+    console.log( `Your journey continues through the following stops: ${ trip.thruStopsCont.join(', ') }.` );
   }
   console.log( `${ trip.totalStops } stops in total. Enjoy your trip!\n----------------------------------` );
 };
