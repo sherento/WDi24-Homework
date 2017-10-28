@@ -27,12 +27,29 @@ const subway = {
 const planTrip = function ( startLine, startStation, endLine, endStation ) {
   const startIndex = subway[ startLine ].indexOf( startStation );
   const endIndex = subway[ endLine ].indexOf( endStation );
+  // check if start station is valid
+  if ( startIndex === -1 ) {
+    const msg = `${ startStation } is not a valid station on line ${ startLine }`;
+    return msg;
+  }
+  // check if end station is valid
+  if ( endIndex == -1 ) {
+    const msg = `${ endStation } station is not a valid stop on line ${ endLine }`;
+    return msg;
+  }
   // check if journey is on one line
-  if ( startLine === endLine ) {
+  else if ( startLine === endLine ) {
     const journey = getJourney( startLine, startIndex, endIndex );
+
     console.log( `You must travel through the following stops on the ${ startLine } line: ${ journey.join(', ') }.`);
-    console.log(`${ journey.length } stops in total.`)
+    console.log(`Your journey is ${ journey.length } stops in total.`)
     console.log(`-----------------------------------------------`);
+
+    const msg1 = `You must travel through the following stops on the ${ startLine } line: ${ journey.join(', ') }.`;
+    const msg2 = `Your journey is ${ journey.length } stops in total.`;
+    const msg3 = `-----------------------------------------------`;
+    const msg = `<p>${ msg1 }</p><p>${ msg2 }</p><p>${ msg3 }</p>`;
+    return msg;
   }
   // if journey crosses multiple lines
   else {
@@ -46,8 +63,16 @@ const planTrip = function ( startLine, startStation, endLine, endStation ) {
     console.log( `You must travel through the following stops on the ${ startLine } line: ${ firstLeg.join(', ') }.`);
     console.log( 'Change at Union Square' );
     console.log( `Your journey continues through the following stops on the ${ endLine } line: ${ secondLeg.join(', ') }.`);
-    console.log(`${ firstLeg.length + secondLeg.length } stops in total.`)
+    console.log(`Your journey is ${ firstLeg.length + secondLeg.length } stops in total.`)
     console.log(`-----------------------------------------------`);
+
+    const msg1 = `You must travel through the following stops on the ${ startLine } line: ${ firstLeg.join(', ') }.`;
+    const msg2 = `Change at Union Square`;
+    const msg3 = `Your journey continues through the following stops on the ${ endLine } line: ${ secondLeg.join(', ') }.`
+    const msg4 = `Your journey is ${ firstLeg.length + secondLeg.length } stops in total.`;
+    const msg5 = `-----------------------------------------------`;
+    const msg = '<p>' + [ msg1, msg2, msg3, msg4, msg5 ].join('</p><p>') + '</p>';
+    return msg;
   }
 }
 
@@ -104,17 +129,21 @@ const getJourneyWest = function ( line, startIndex, endIndex ) {
 }
 
 const load = () => {
-  // intercept 'submit' event
   const form = document.querySelector( 'form' );
   form.addEventListener( 'submit', function( event ) {
-
+    // get user input from form
     const startLine = form.elements.startLine.value;
     const startStation = form.elements.startStation.value;
     const endLine = form.elements.endLine.value;
     const endStation = form.elements.endStation.value;
 
-    planTrip( startLine, startStation, endLine, endStation );
+    const msg = planTrip( startLine, startStation, endLine, endStation );
 
+    // update page with journey info
+    const output = document.getElementById( 'output' );
+    output.innerHTML = msg;
+
+    // prevent page from refreshing
     event.preventDefault();
   });
 }
