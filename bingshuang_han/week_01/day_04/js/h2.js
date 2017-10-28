@@ -25,42 +25,132 @@ Bonus
 //***********************************************************************************************
 // first version I will redo this if I have time during the weekend
 //**************************************************************************************************
+//Declare account object, it has useName aand currentBalance as keys. deposit and withdraw as method.
 function Account (name,balance){
-  this.userName = name;
-  this.currentBalance = balance;
+  this.userName = "";
+  this.currentBalance = 0;
 }
 Account.prototype.deposit = function ( amount){
-  this.currentBalance += amount;
-  console.log(`Deposit: ${amount}, new balance is ${this.currentBalance}`);
+  this.currentBalance += Number(amount);
+  console.log(`Client ${this.userName} deposit: ${amount}, new balance is ${this.currentBalance}`);
 }
 
 Account.prototype.withdraw = function (amount){
-  if (this.currentBalance > amount){
-    this.currentBalance -= amount;
-    console.log(` ${this.userName} withdraw ${amount} , new balance is ${this.currentBalance}`);
+  if (this.currentBalance > Number(amount) ){
+    this.currentBalance -= Number(amount);
+    console.log(` Client ${this.userName} withdraw ${amount} , new balance is ${this.currentBalance}`);
   }
   else
   console.log(`Sorry ${this.userName}, you have insufficient money to withdraw! ` );
-
 }
 
-const a = new Account ('Alice', 100);
-const b = new Account ('Bing', 0 );
-let numofBanlance = 0;
-let bank = [];
+//Declare global varibal bank []
+let bank = new Array();
 
-bank.push(a);
-bank.push(b);
-//Account.prototype.createAccount=function ()
+//********************************************************************************
+//global function for creat new account
+const creatNewAccount = function( ){
+  let a = prompt("Creat a New Account: client Name:");
+  let b = prompt ("Start balance :");
+  let c = new Account(a,b);
+  c.userName = a;
+  c.currentBalance = Number( b) ;
+  bank.push(c);
+  console.log(`Your account ${a} has been created, and the current Balance is $ ${b}`);
+}
 
-const sumOfBalance = function (){
-  for (let i= 0;i<bank.length;i++){
-    let c = bank[i];
-    numofBanlance +=c.currentBalance;
+// global function for deposit***************************************************
+const deposit = function ( ){
+  let userName = prompt("Deposit -Netbank client name:");
+  let amount = prompt ("Amount for deposit:");
+  let match = false;
+  // match will return true if the bank found the user name other will be false;
+  for (let i= 0; i< bank.length;i++){
+    if (bank[i].userName === userName){
+      bank[i].deposit( Number(amount));
+      c = true;
+      return;
+    }
   }
-  console.log(`The total balance of the bank is ${numofBanlance}`);
+  if (!match){
+    console.log(`Sorry,Your account is not exit`);
+  }
 }
 
-a.withdraw (20);
-b.withdraw (20);
-sumOfBalance();
+//global function for withdraw ************************************************
+const withdraw = function (){
+  let userName = prompt ("Withdraw - Netbank client name:");
+  let amount = prompt ("Amount for withdraw:");
+  let match = false;
+  // match will return true if the bank found the user name other will be false;
+  for (let i= 0; i< bank.length;i++){
+    if (bank[i].userName === userName){
+        bank[i].withdraw ( Number (amount));
+        match = true ;
+      }
+    }
+    if (!match){
+    console.log(`Sorry, Client ${userName} is not exit.`);
+    }
+}
+
+
+
+//Global function for transaction between two clients***************************
+const accountTransfer = function (){
+  let checkA = false;                                                     //true if client A exist
+  let checkB = false;                                                     //true if client B exist
+  let i= 0 ;                                                              // index of client A
+  let j= 0 ;                                                              //index of client B
+  let userA = prompt("Transaction from , Client name:");
+  let amount = prompt ("Transfer amount :");
+  let userB = prompt ("Transaction to , Client name:");
+  for ( i= 0; i< bank.length; i++){
+    if (bank[i].userName === userA){
+      checkA = true;
+      break;
+    }
+  }
+   if (!checkA){
+   console.log(` ${userA} is not exist !`);
+   return;
+ }
+  for ( j= 0 ; j< bank.length; j++){
+    if ( bank[j].userName === userB ){
+      checkB = true;
+      break;
+    }
+  }
+  if (!checkB) {
+    console.log(`${userB} is not exist!`);
+    return;
+  }
+  //check if user A have sufficient money to do this transaction////////////////////////
+  if (bank[i].currentBalance >= Number(amount)) {
+      bank[i].currentBalance -= Number(amount);
+      bank[j].currentBalance += Number(amount);
+      console.log(` Transaction finished. ${userA} 's current balance : ${bank[i].currentBalance}' and ${userB}'s current balance :${bank[j].currentBalance}.' `)
+  }
+  else {
+    console.log(`${bank[j].userName} You have insufficient balance to do this transaction!`);
+  }
+}
+
+//global function for calculate all the balance of the bank********************
+const sumOfBalance = function (){
+  let sum = 0;
+  for ( let i=0; i<bank.length; i++){
+    sum += bank[i].currentBalance ;
+  }
+  console.log( `The total balance of the bank is ${sum} $`);
+}
+
+
+//For test /////////////////////////////////////////////////////////////////////////////////////////////
+// creatNewAccount();
+// console.log(bank);
+
+// deposit();
+// withdraw();
+// accountTransfer();
+//*********************************************************************************************************
