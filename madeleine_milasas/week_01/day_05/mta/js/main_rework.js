@@ -137,8 +137,10 @@ const planTrip = function ( lOn, sOn, lOff, sOff ) {
   // ** IF START AND END LINES ARE DIFFERENT **
     // find intercept
     const intercept = findIntercept( startLine.lineArray, endLine.lineArray );
-
-    // TODO add alert if user tries 3 leg trip
+    if (undefined === intercept) { // i.e. if the start and end lines don't directly intercept, e.g. trip might require 3 legs
+      console.log( `I'm sorry, your trip requires more than one change and I'm not clever enough to do that yet. Please divide your trip into smaller journeys.` );
+      return;
+    }
 
     // now evaluate trips...
     // FIRST HALF OF TRIP
@@ -195,19 +197,20 @@ const testCases = [
   { lo: 'L', so: '1st Av', lof: 'L', sof: '8th Av' },  // reverse direction L only ----- this one and ones below from prev version
   { lo: 'N', so: '34th', lof: 'N', sof: '8th St' }, // N line only
   { lo: 'N', so: '8th St', lof: 'N', sof: 'Times Square' },  // reverse direction N only
-  { lo: '6', so: 'Grand Central', lof: '6', sof: '23rd (6)' }, // 6 line only
-  { lo: '6', so: 'Astor Place', lof: '6', sof: '33rd' },  // reverse direction 6 only
+  { lo: '6', so: 'GranD Central', lof: '6', sof: '23RD (6)' }, // 6 line only
+  { lo: '6', so: 'Astor PLACE', lof: '6', sof: '33rd' },  // reverse direction 6 only
   { lo: 'L', so: '8th Av', lof: 'N', sof: 'Times Square' },  // multi lines L to N
   { lo: 'l', so: '1st av', lof: 'n', sof: 'times square' },  // multi lines L to N lower case letters
-  { lo: '6', so: 'Astor Place', lof: 'L', sof: '6th Av' },  // multi lines 6 to L
+  { lo: '6', so: 'Astor Place', lof: 'l', sof: '6th Av' },  // multi lines 6 to L
   { lo: 'N', so: '8th St', lof: '6', sof: '28th (6)' },  // multi lines N to 6
   { lo: '6', so: 'Union Square', lof: '6', sof: '33rd' },  // if US is a start on one line
   { lo: 'L', so: 'Union Square', lof: '6', sof: '33rd' },  // if US is start but user entered they think they need to change lines
   { lo: 'A', so: '8th Av', lof: 'L', sof: '1st Av' },  // if 8th Av is start but user entered they think they need to change lines
   { lo: 'N', so: '34th', lof: 'L', sof: 'Union Square' },  // if US is destination but user entered they think they need to change lines
   { lo: 'A', so: '23rd (A)', lof: 'A', sof: '23rd (A)' },  // if both stations the same (same station same line)
-  { lo: 'N', so: 'Union Square', lof: '6', sof: 'Union Square' },  // if both stations are Union Square (even if user entered diff lines)
-  { lo: 'A', so: '8th Av', lof: 'L', sof: '8th Av' }  // if both stations are 8th Av (even if user entered diff lines)
+  { lo: 'N', so: 'union square', lof: '6', sof: 'Union Square' },  // if both stations are Union Square (even if user entered diff lines)
+  { lo: 'A', so: '8th Av', lof: 'L', sof: '8th Av' },  // if both stations are 8th Av (even if user entered diff lines)
+  { lo: 'A', so: '50th', lof: '6', sof: 'Grand Central' }  // if stations entered require 3 legs
 ];
 
 
