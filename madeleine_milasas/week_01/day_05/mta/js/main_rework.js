@@ -6,11 +6,13 @@
 // const lineN = ['Times Square', '34th', '28th', '23rd', 'Union Square', '8th'];
 // const line6 = ['Grand Central', '33rd', '28th', '23rd', 'Union Square', 'Astor Place'];
 
+// The B line has the following stops: 50th, Port, 23rd, 8th Av, W 4th
 
 const trainLines = {
-  L: ['8th Av', '6th Av', 'Union Square', '3rd', '1st'],
+  L: ['8th Av', '6th Av', 'Union Square', '3rd Av', '1st Av'],
   N: ['Times Square', '34th', '28th (N)', '23rd (N)', 'Union Square', '8th St'],
-  6: ['Grand Central', '33rd', '28th (6)', '23rd (6)', 'Union Square', 'Astor Place']
+  6: ['Grand Central', '33rd', '28th (6)', '23rd (6)', 'Union Square', 'Astor Place'],
+  B: ['50th', 'Port', '23rd', '8th Av', 'W 4th']
 };
 const allLines = Object.keys( trainLines );
 
@@ -155,13 +157,14 @@ const planTrip = function ( lOn, sOn, lOff, sOff ) {
 
 
 const testCases = [
-  { lo: 'L', so: '6th Av', lof: 'L', sof: '3rd' }, // L line only
-  { lo: 'Q', so: '6th Av', lof: 'L', sof: '3rd' }, // Bad start line name
-  { lo: 'L', so: '34th', lof: 'L', sof: '3rd' }, // Bad start station name
-  { lo: 'L', so: '6th Av', lof: 'Foo', sof: '3rd' }, // Bad end line name
+  { lo: 'L', so: '6th Av', lof: 'L', sof: '3rd Av' }, // L line only
+  { lo: 'Q', so: '6th Av', lof: 'L', sof: '3rd Av' }, // Bad start line name
+  { lo: 'L', so: '34th', lof: 'L', sof: '3rd Av' }, // Bad start station name
+  { lo: 'L', so: '6th Av', lof: 'Foo', sof: '3rd Av' }, // Bad end line name
   { lo: 'L', so: '6th Av', lof: 'N', sof: 'Bar' }, // Bad end station name
   { lo: 'L', so: '8th Av', lof: 'N', sof: '23rd (N)' }, // intercept L and N
-  { lo: 'N', so: '8th St', lof: '6', sof: 'Grand Central' } // intercept N and 6
+  { lo: 'N', so: '8th St', lof: '6', sof: 'Grand Central' }, // intercept N and 6
+  { lo: 'B', so: 'Port', lof: 'L', sof: '1st Av' } // intercept L and B!
 ];
 
 
