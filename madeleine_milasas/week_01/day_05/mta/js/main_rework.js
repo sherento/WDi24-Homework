@@ -11,7 +11,7 @@ const trainLines = {
   L: ['8th Av', '6th Av', 'Union Square', '3rd Av', '1st Av'],
   N: ['Times Square', '34th', '28th (N)', '23rd (N)', 'Union Square', '8th St'],
   6: ['Grand Central', '33rd', '28th (6)', '23rd (6)', 'Union Square', 'Astor Place'],
-  A: ['50th', 'Port', '23rd', '8th Av', 'W 4th']
+  A: ['50th', 'Port', '23rd (A)', '8th Av', 'W 4th']
 };
 const allLines = Object.keys( trainLines );
 
@@ -120,7 +120,13 @@ const planTrip = function ( lOn, sOn, lOff, sOff ) {
     console.log( endStation.error + `\nPlease check your STOP OFF entry and try again.\n----------------------------------` );
     return;
   }
-  // console.log(startLine, endLine);
+
+  // ## check if BOTH STATIONS ARE THE SAME
+  if ( sOn.toUpperCase() === sOff.toUpperCase() ) {
+    console.log( sameStationMsg );
+    return;
+  }
+
   // ** IF START AND END LINES ARE THE SAME **
   if (lOn.toUpperCase() === lOff.toUpperCase()) {
     trip = countStops( startStation.index, endStation.index, startLine.lineArray );
@@ -131,12 +137,26 @@ const planTrip = function ( lOn, sOn, lOff, sOff ) {
   // ** IF START AND END LINES ARE DIFFERENT **
     // find intercept
     const intercept = findIntercept( startLine.lineArray, endLine.lineArray );
-    // console.log( intercept );
+
+    // // ## exception: if user puts starting at an intersection station but enters two different lines
+    // let startStationName = startLine.lineArray[ startStation.index ]; // doing it this way to get correct capitalisation r/less of user input
+    // let interceptStationName = endLine[ intercept.xEndLine ];
+    // console.log( interceptStationName );
+    // // if ( startStationName.toUpperCase() === endLine[ intercept.xEndLine ].toUpperCase() ) {
+    // //   // console.log( `At ${ startStationName }, go straight to the ${ lOff.toUpperCase() } line.` );
+    // // }
+
+    // now evaluate trips...
     // FIRST HALF OF TRIP
     tripA = countStops( startStation.index, intercept.xStartLine, startLine.lineArray );
-    console.log( `You must travel through the following stops on the ${ lOn.toUpperCase() } line: ${ tripA.thru.join(', ') }.` );
-    const interceptStation = startLine.lineArray[ intercept.xStartLine ];
-    console.log( `Change at ${ interceptStation } for the ${ lOff.toUpperCase() } line.` );
+    let interceptStationName = endLine.lineArray[intercept.xEndLine];
+    if (0 === tripA.thru.length) { // if the first leg array is empty, i.e. user mistakenly thinks they need two diff lines
+      console.log( `No need to start on the ${ lOn.toUpperCase() } line.\nGet on the ${ lOff.toUpperCase() } line at ${ interceptStationName }.` );
+    } else {
+      console.log( `You must travel through the following stops on the ${ lOn.toUpperCase() } line: ${ tripA.thru.join(', ') }.` );
+      const interceptStation = startLine.lineArray[ intercept.xStartLine ];
+      console.log( `Change at ${ interceptStation } for the ${ lOff.toUpperCase() } line.` );
+    }
     // SECOND HALF OF TRIP
     tripB = countStops( intercept.xEndLine, endStation.index, endLine.lineArray );
     console.log( `Your journey continues through the following stops: ${ tripB.thru.join(', ') }.` );
@@ -158,6 +178,10 @@ const planTrip = function ( lOn, sOn, lOff, sOff ) {
 // startStationIndex2 = findStation( startLineArray, '8th' );
 
 
+
+
+
+
 const testCases = [
   { lo: 'L', so: '6th Av', lof: 'L', sof: '3rd Av' }, // L line only
   { lo: 'Q', so: '6th Av', lof: 'L', sof: '3rd Av' }, // Bad start line name
@@ -166,10 +190,10 @@ const testCases = [
   { lo: 'L', so: '6th Av', lof: 'N', sof: 'Bar' }, // Bad end station name
   { lo: 'L', so: '8th Av', lof: 'N', sof: '23rd (N)' }, // intercept L and N
   { lo: 'N', so: '8th St', lof: '6', sof: 'Grand Central' }, // intercept N and 6
-  { lo: 'A', so: 'Port', lof: 'L', sof: '1st Av' }, // intercept L and A!
+  { lo: 'A', so: 'Port', lof: 'L', sof: '1st Av' }, // intercept A and L omg A!
+  { lo: 'L', so: '3rd Av', lof: 'A', sof: '50th' }, // intercept L to A
   { lo: 'A', so: 'W 4th', lof: 'a', sof: '50th' }, // just A, also lower case
-  // adding some test cases from first version:
-  { lo: 'L', so: '1st Av', lof: 'L', sof: '8th Av' },  // reverse direction L only
+  { lo: 'L', so: '1st Av', lof: 'L', sof: '8th Av' },  // reverse direction L only ----- this one and ones below from prev version
   { lo: 'N', so: '34th', lof: 'N', sof: '8th St' }, // N line only
   { lo: 'N', so: '8th St', lof: 'N', sof: 'Times Square' },  // reverse direction N only
   { lo: '6', so: 'Grand Central', lof: '6', sof: '23rd (6)' }, // 6 line only
@@ -177,12 +201,13 @@ const testCases = [
   { lo: 'L', so: '8th Av', lof: 'N', sof: 'Times Square' },  // multi lines L to N
   { lo: 'l', so: '1st av', lof: 'n', sof: 'times square' },  // multi lines L to N lower case letters
   { lo: '6', so: 'Astor Place', lof: 'L', sof: '6th Av' },  // multi lines 6 to L
-  { lo: 'N', so: '8th St', lof: '6', sof: '28th (6)' }  // multi lines N to 6
-  // { lo: '6', so: 'Union Square', lof: '6', sof: '33rd' },  // if US is a start on one line
-  // { lo: 'L', so: 'Union Square', lof: '6', sof: '33rd' },  // if US is start but user entered they think they need to change lines
+  { lo: 'N', so: '8th St', lof: '6', sof: '28th (6)' },  // multi lines N to 6
+  { lo: '6', so: 'Union Square', lof: '6', sof: '33rd' },  // if US is a start on one line
+  { lo: 'L', so: 'Union Square', lof: '6', sof: '33rd' },  // if US is start but user entered they think they need to change lines
+  { lo: 'A', so: '8th Av', lof: 'L', sof: '1st Av' },  // if 8th Av is start but user entered they think they need to change lines
   // { lo: 'N', so: '34th', lof: 'L', sof: 'Union Square' },  // if US is destination but user entered they think they need to change lines
-  // { lo: 'L', so: '3rd', lof: 'L', sof: '3rd' },  // if both stations the same (same station same line)
-  // { lo: 'N', so: 'Union Square', lof: '6', sof: 'Union Square' }  // if both stations are Union Square
+  { lo: 'A', so: '23rd (A)', lof: 'A', sof: '23rd (A)' },  // if both stations the same (same station same line)
+  { lo: 'N', so: 'Union Square', lof: '6', sof: 'Union Square' }  // if both stations are Union Square (even if user entered diff lines)
 ];
 
 
