@@ -182,6 +182,11 @@ THE SOFTWARE.
                         if (title === undefined) title = "";
                     }
 
+                    // justin: store classes
+                    let classes = $(this).attr("class");
+                    if (classes === undefined) classes = "";
+                    console.log('---classes---:', classes);
+
                     self._debug("Coords=" + coords + "; Dir=" + dir + "; Link=" + link + "; Label=" + label + "; labelPos=" + labelPos + "; Marker=" + marker);
 
                     var x = "";
