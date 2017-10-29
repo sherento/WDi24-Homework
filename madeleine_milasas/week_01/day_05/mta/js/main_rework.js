@@ -138,28 +138,26 @@ const planTrip = function ( lOn, sOn, lOff, sOff ) {
     // find intercept
     const intercept = findIntercept( startLine.lineArray, endLine.lineArray );
 
-    // // ## exception: if user puts starting at an intersection station but enters two different lines
-    // let startStationName = startLine.lineArray[ startStation.index ]; // doing it this way to get correct capitalisation r/less of user input
-    // let interceptStationName = endLine[ intercept.xEndLine ];
-    // console.log( interceptStationName );
-    // // if ( startStationName.toUpperCase() === endLine[ intercept.xEndLine ].toUpperCase() ) {
-    // //   // console.log( `At ${ startStationName }, go straight to the ${ lOff.toUpperCase() } line.` );
-    // // }
+    // TODO add alert if user tries 3 leg trip
 
     // now evaluate trips...
     // FIRST HALF OF TRIP
     tripA = countStops( startStation.index, intercept.xStartLine, startLine.lineArray );
     let interceptStationName = endLine.lineArray[intercept.xEndLine];
     if (0 === tripA.thru.length) { // if the first leg array is empty, i.e. user mistakenly thinks they need two diff lines
-      console.log( `No need to start on the ${ lOn.toUpperCase() } line.\nGet on the ${ lOff.toUpperCase() } line at ${ interceptStationName }.` );
+      console.log( `No need to start on the ${ lOn.toUpperCase() } line. Get on the ${ lOff.toUpperCase() } line at ${ interceptStationName }.` );
     } else {
       console.log( `You must travel through the following stops on the ${ lOn.toUpperCase() } line: ${ tripA.thru.join(', ') }.` );
-      const interceptStation = startLine.lineArray[ intercept.xStartLine ];
-      console.log( `Change at ${ interceptStation } for the ${ lOff.toUpperCase() } line.` );
     }
     // SECOND HALF OF TRIP
     tripB = countStops( intercept.xEndLine, endStation.index, endLine.lineArray );
-    console.log( `Your journey continues through the following stops: ${ tripB.thru.join(', ') }.` );
+    if (0 === tripB.thru.length) { // if second leg array is empty, i.e. user mistakenly thinks they need two diff lines
+      console.log( `No need to change lines - you have arrived at your destination.` );
+    } else {
+      const interceptStation = startLine.lineArray[ intercept.xStartLine ];
+      console.log( `Change at ${ interceptStation } for the ${ lOff.toUpperCase() } line.` );
+      console.log( `Your journey continues through the following stops: ${ tripB.thru.join(', ') }.` );
+    }
     let totalStops = tripA.total + tripB.total;
     console.log( `${ totalStops } stops in total. Enjoy your trip!\n----------------------------------` );
   }
@@ -176,6 +174,7 @@ const planTrip = function ( lOn, sOn, lOff, sOff ) {
 // startLineArray = findLine( 'l' );
 // startStationIndex = findStation( startLineArray, '22th' );
 // startStationIndex2 = findStation( startLineArray, '8th' );
+
 
 
 
@@ -205,9 +204,10 @@ const testCases = [
   { lo: '6', so: 'Union Square', lof: '6', sof: '33rd' },  // if US is a start on one line
   { lo: 'L', so: 'Union Square', lof: '6', sof: '33rd' },  // if US is start but user entered they think they need to change lines
   { lo: 'A', so: '8th Av', lof: 'L', sof: '1st Av' },  // if 8th Av is start but user entered they think they need to change lines
-  // { lo: 'N', so: '34th', lof: 'L', sof: 'Union Square' },  // if US is destination but user entered they think they need to change lines
+  { lo: 'N', so: '34th', lof: 'L', sof: 'Union Square' },  // if US is destination but user entered they think they need to change lines
   { lo: 'A', so: '23rd (A)', lof: 'A', sof: '23rd (A)' },  // if both stations the same (same station same line)
-  { lo: 'N', so: 'Union Square', lof: '6', sof: 'Union Square' }  // if both stations are Union Square (even if user entered diff lines)
+  { lo: 'N', so: 'Union Square', lof: '6', sof: 'Union Square' },  // if both stations are Union Square (even if user entered diff lines)
+  { lo: 'A', so: '8th Av', lof: 'L', sof: '8th Av' }  // if both stations are 8th Av (even if user entered diff lines)
 ];
 
 
