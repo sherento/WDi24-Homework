@@ -50,16 +50,19 @@ const findStation = function ( l, s ) {  // line array, station
   const station = {
     error: ''
   };
-  // ## check if station data is valid, if not return error msg
-  if ( l.lineArray.indexOf( s ) === -1 ) {
-    station.error = invalidStationMsg;
-    return station;
-  }
   // convert array to uppercase for comparison
   lUpper = l.lineArray.map( function (x) { return x.toUpperCase()} );
-  // now compare
-  station.index = lUpper.indexOf( s.toUpperCase() );
-  return station;
+  // look for station in array
+  const index = lUpper.indexOf( s.toUpperCase() )
+  // ## if station entered is in array return error msg
+  if ( -1 === index ) {
+    station.error = invalidStationMsg;
+    return station;
+  } else {
+  // return index
+    station.index = index;
+    return station;
+  }
 };
 
 
@@ -119,7 +122,7 @@ const planTrip = function ( lOn, sOn, lOff, sOff ) {
   }
   // console.log(startLine, endLine);
   // ** IF START AND END LINES ARE THE SAME **
-  if (lOn === lOff) {
+  if (lOn.toUpperCase() === lOff.toUpperCase()) {
     trip = countStops( startStation.index, endStation.index, startLine.lineArray );
     console.log( `You must travel through the following stops on the ${ lOn.toUpperCase() } line: ${ trip.thru.join(', ') }.` );
     console.log( `${ trip.total } stops in total. Enjoy your trip!\n----------------------------------` );
@@ -133,7 +136,7 @@ const planTrip = function ( lOn, sOn, lOff, sOff ) {
     tripA = countStops( startStation.index, intercept.xStartLine, startLine.lineArray );
     console.log( `You must travel through the following stops on the ${ lOn.toUpperCase() } line: ${ tripA.thru.join(', ') }.` );
     const interceptStation = startLine.lineArray[ intercept.xStartLine ];
-    console.log( `Change at ${ interceptStation } for the ${ lOff } line.` );
+    console.log( `Change at ${ interceptStation } for the ${ lOff.toUpperCase() } line.` );
     // SECOND HALF OF TRIP
     tripB = countStops( intercept.xEndLine, endStation.index, endLine.lineArray );
     console.log( `Your journey continues through the following stops: ${ tripB.thru.join(', ') }.` );
@@ -163,7 +166,23 @@ const testCases = [
   { lo: 'L', so: '6th Av', lof: 'N', sof: 'Bar' }, // Bad end station name
   { lo: 'L', so: '8th Av', lof: 'N', sof: '23rd (N)' }, // intercept L and N
   { lo: 'N', so: '8th St', lof: '6', sof: 'Grand Central' }, // intercept N and 6
-  { lo: 'A', so: 'Port', lof: 'L', sof: '1st Av' } // intercept L and A!
+  { lo: 'A', so: 'Port', lof: 'L', sof: '1st Av' }, // intercept L and A!
+  { lo: 'A', so: 'W 4th', lof: 'a', sof: '50th' }, // just A, also lower case
+  // adding some test cases from first version:
+  { lo: 'L', so: '1st Av', lof: 'L', sof: '8th Av' },  // reverse direction L only
+  { lo: 'N', so: '34th', lof: 'N', sof: '8th St' }, // N line only
+  { lo: 'N', so: '8th St', lof: 'N', sof: 'Times Square' },  // reverse direction N only
+  { lo: '6', so: 'Grand Central', lof: '6', sof: '23rd (6)' }, // 6 line only
+  { lo: '6', so: 'Astor Place', lof: '6', sof: '33rd' },  // reverse direction 6 only
+  { lo: 'L', so: '8th Av', lof: 'N', sof: 'Times Square' },  // multi lines L to N
+  { lo: 'l', so: '1st av', lof: 'n', sof: 'times square' },  // multi lines L to N lower case letters
+  { lo: '6', so: 'Astor Place', lof: 'L', sof: '6th Av' },  // multi lines 6 to L
+  { lo: 'N', so: '8th', lof: '6', sof: '28th (6)' }  // multi lines N to 6
+  // { lo: '6', so: 'Union Square', lof: '6', sof: '33rd' },  // if US is a start on one line
+  // { lo: 'L', so: 'Union Square', lof: '6', sof: '33rd' },  // if US is start but user entered they think they need to change lines
+  // { lo: 'N', so: '34th', lof: 'L', sof: 'Union Square' },  // if US is destination but user entered they think they need to change lines
+  // { lo: 'L', so: '3rd', lof: 'L', sof: '3rd' },  // if both stations the same (same station same line)
+  // { lo: 'N', so: 'Union Square', lof: '6', sof: 'Union Square' }  // if both stations are Union Square
 ];
 
 
@@ -171,7 +190,7 @@ const testCases = [
 
 
 for (let i = 0; i < testCases.length; i++) {
-  console.log( `You have entered:` );
+  console.log( `${ i + 1 }: You have entered:` );
   console.log( `LINE ON - ${ testCases[i].lo }, STOP ON - ${ testCases[i].so }` );
   console.log( `LINE OFF - ${ testCases[i].lof }, STOP OFF - ${ testCases[i].sof }\n ` );
   planTrip( testCases[i].lo, testCases[i].so, testCases[i].lof, testCases[i].sof );
