@@ -8,8 +8,8 @@
 
 
 const trainLines = {
-  L: ['8th (L)', '6th', 'Union Square', '3rd', '1st'],
-  N: ['Times Square', '34th', '28th (N)', '23rd (N)', 'Union Square', '8th (N)'],
+  L: ['8th Av', '6th Av', 'Union Square', '3rd', '1st'],
+  N: ['Times Square', '34th', '28th (N)', '23rd (N)', 'Union Square', '8th St'],
   6: ['Grand Central', '33rd', '28th (6)', '23rd (6)', 'Union Square', 'Astor Place']
 };
 const allLines = Object.keys( trainLines );
@@ -123,19 +123,22 @@ const planTrip = function ( lOn, sOn, lOff, sOff ) {
     console.log( `You must travel through the following stops on the ${ lOn.toUpperCase() } line: ${ trip.thru.join(', ') }.` );
     console.log( `${ trip.total } stops in total. Enjoy your trip!\n----------------------------------` );
     return;
+  } else {
+  // ** IF START AND END LINES ARE DIFFERENT **
+    // find intercept
+    const intercept = findIntercept( startLine.lineArray, endLine.lineArray );
+    // console.log( intercept );
+    // FIRST HALF OF TRIP
+    tripA = countStops( startStation.index, intercept.xStartLine, startLine.lineArray );
+    console.log( `You must travel through the following stops on the ${ lOn.toUpperCase() } line: ${ tripA.thru.join(', ') }.` );
+    const interceptStation = startLine.lineArray[ intercept.xStartLine ];
+    console.log( `Change at ${ interceptStation } for the ${ lOff } line.` );
+    // SECOND HALF OF TRIP
+    tripB = countStops( intercept.xEndLine, endStation.index, endLine.lineArray );
+    console.log( `Your journey continues through the following stops: ${ tripB.thru.join(', ') }.` );
+    let totalStops = tripA.total + tripB.total;
+    console.log( `${ totalStops } stops in total. Enjoy your trip!\n----------------------------------` );
   }
-
-
-  // if not
-  //
-  // // find intercept
-  // const intercept = findIntercept( startLine.lineArray, endLine.lineArray );
-  // console.log( intercept );
-  // // then do the calcs and logging
-  // // FIRST HALF OF TRIP
-  // calculateA = countStops( startStation.index, intercept.xStartLine, startLine.lineArray );
-    // this is returning thru stops and total
-
 };
 
 
@@ -152,12 +155,13 @@ const planTrip = function ( lOn, sOn, lOff, sOff ) {
 
 
 const testCases = [
-  { lo: 'L', so: '6th', lof: 'L', sof: '3rd' }, // L line only
-  { lo: 'Q', so: '6th', lof: 'L', sof: '3rd' }, // Bad start line name
+  { lo: 'L', so: '6th Av', lof: 'L', sof: '3rd' }, // L line only
+  { lo: 'Q', so: '6th Av', lof: 'L', sof: '3rd' }, // Bad start line name
   { lo: 'L', so: '34th', lof: 'L', sof: '3rd' }, // Bad start station name
-  { lo: 'L', so: '6th', lof: 'Foo', sof: '3rd' }, // Bad end line name
-  { lo: 'L', so: '6th', lof: 'N', sof: 'Bar' }, // Bad end station name
-  { lo: 'L', so: '8th (L)', lof: 'N', sof: '23rd (N)' } // find intercept test **
+  { lo: 'L', so: '6th Av', lof: 'Foo', sof: '3rd' }, // Bad end line name
+  { lo: 'L', so: '6th Av', lof: 'N', sof: 'Bar' }, // Bad end station name
+  { lo: 'L', so: '8th Av', lof: 'N', sof: '23rd (N)' }, // intercept L and N
+  { lo: 'N', so: '8th St', lof: '6', sof: 'Grand Central' } // intercept N and 6
 ];
 
 
