@@ -3,9 +3,52 @@
   <head>
     <meta charset="utf-8">
     <title>MTA</title>
-    <script src="js/main.js" charset="utf-8"></script>
+    <style media="screen">
+      body {
+        text-align: center;
+        background-color: #5F9BCC;
+        color: white;
+      }
+      .messagebox {
+        margin: 0 auto;
+        margin-top: 20px;
+        background-color: blue;
+      }
+
+    </style>
   </head>
   <body>
-    <p>Console</p>
+
+    <p>Select your starting point</p>
+    <p>Starting Line - Starting Station</p>
+    <select class="startLine">
+      <option disabled selected value> -- </option>
+      <option value="L">L</option>
+      <option value="N">N</option>
+      <option value="6">6</option>
+    </select>
+    <span>-</span>
+    <select class="startStation" style="width: 120px;">
+      <option value=""></option>
+    </select>
+
+    <p>Select your destination point</p>
+    <p>Destination Line - Destination Station</p>
+    <select class="stopLine">
+      <option disabled selected value=""> -- </option>
+      <option value="L">L</option>
+      <option value="N">N</option>
+      <option value="6">6</option>
+    </select>
+    <span>-</span>
+    <select class="stopStation" style="width: 120px;">
+      <option value=""></option>
+    </select>
+    <button type="button" name="button" id=process>Plan Trip</button>
+    <button type="button" name="button" id=reset>Reset</button>
+    <div class="messagebox">
+
+    </div>
+  <script src="js/main.js" charset="utf-8"></script>
   </body>
 </html>
