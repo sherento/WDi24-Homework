@@ -162,7 +162,7 @@ goButton.addEventListener('click', function(){
     messageBox.innerHTML = `You travel ${journeyPrinter[0]} stops along the ${journeyPrinter[1]} Line`
   }else{
     messageBox.innerHTML = `\<p>You must travel through the following stops on the ${startLinePicked.value} Line: ${journeyPrinter[0]}\</p>
-                            \<p>Change at Union Station\</p>
+                            \<p>Change at Union Square Station\</p>
                             \<p>Your journey continues along the following stops on the ${stopLinePicked.value} Line: ${journeyPrinter[1]}\</p>
                             \<p>${journeyPrinter[2]} stops in total.`
   };
