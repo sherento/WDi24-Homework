@@ -2,6 +2,7 @@
 
 
 // LINES
+
 // const lineL = ['8th', '6th', 'Union Square', '3rd', '1st'];
 // const lineN = ['Times Square', '34th', '28th', '23rd', 'Union Square', '8th'];
 // const line6 = ['Grand Central', '33rd', '28th', '23rd', 'Union Square', 'Astor Place'];
@@ -21,8 +22,6 @@ const invalidLineMsg = `Sorry, that doesn't look like a valid train line to me.`
 const invalidStationMsg = `Sorry, that doesn't look like a valid station to me.`
 const sameStationMsg = `Spin around. You are at your destination.\n----------------------------------`;
 
-
-// find start line array and start station index
 
 
 //////////////////////////// FIND LINE FUNCTION ////////////////////////////////
@@ -141,8 +140,7 @@ const planTrip = function ( lOn, sOn, lOff, sOff ) {
       console.log( `I'm sorry, your trip requires more than one change and I'm not clever enough to do that yet. Please divide your trip into smaller journeys.` );
       return;
     }
-
-    // now evaluate trips...
+    // evaluate trips...
     // FIRST HALF OF TRIP
     tripA = countStops( startStation.index, intercept.xStartLine, startLine.lineArray );
     let interceptStationName = endLine.lineArray[intercept.xEndLine];
@@ -157,7 +155,9 @@ const planTrip = function ( lOn, sOn, lOff, sOff ) {
       console.log( `No need to change lines - you have arrived at your destination.` );
     } else {
       const interceptStation = startLine.lineArray[ intercept.xStartLine ];
-      console.log( `Change at ${ interceptStation } for the ${ lOff.toUpperCase() } line.` );
+      if (0 !== tripA.thru.length) {
+        console.log( `Change at ${ interceptStation } for the ${ lOff.toUpperCase() } line.` );
+      }
       console.log( `Your journey continues through the following stops: ${ tripB.thru.join(', ') }.` );
     }
     let totalStops = tripA.total + tripB.total;
@@ -172,14 +172,6 @@ const planTrip = function ( lOn, sOn, lOff, sOff ) {
 
 
 // ******* Test cases *****************************
-
-// startLineArray = findLine( 'l' );
-// startStationIndex = findStation( startLineArray, '22th' );
-// startStationIndex2 = findStation( startLineArray, '8th' );
-
-
-
-
 
 
 
