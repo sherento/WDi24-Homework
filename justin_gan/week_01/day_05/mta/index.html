@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>MTA Lab</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/map.css">
+    <script src="js/planTrip.js"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="js/jquery.subwayMap-0.5.0.js" type="text/javascript"></script>
+  </head>
+  <body>
+    <div class="container-fluid">
+      <form>
+        <div class="form-group row">
+          <div class="col-1">
+            <label for="inputFrom" class="col-form-label">From:</label>
+          </div>
+          <div class="col">
+            <input type="text" name="startStation" class="form-control" id="startStation" placeholder="Choose starting station..." autofocus>
+          </div>
+          <div class="form-check form-check-inline">
+            <label class="form-check-label">
+              <input class="form-check-input startLine N" type="radio" name="startLine" value="N" checked>N
+            </label>
+          </div>
+          <div class="form-check form-check-inline">
+            <label class="form-check-label">
+              <input class="form-check-input startLine L" type="radio" name="startLine" value="L">L
+            </label>
+          </div>
+          <div class="form-check form-check-inline">
+            <label class="form-check-label">
+              <input class="form-check-input startLine 6" type="radio" name="startLine" value="6">6
+            </label>
+          </div>
+        </div>
+        <div class="form-group row">
+          <div class="col-1">
+            <label for="inputTo" class="col-form-label">To:</label>
+          </div>
+          <div class="col">
+            <input type="text" name="endStation" class="form-control" id="endStation" placeholder="Choose destination..." required>
+          </div>
+          <div class="form-check form-check-inline">
+            <label class="form-check-label">
+              <input class="form-check-input" type="radio" name="endLine" value="N" checked>N
+            </label>
+          </div>
+          <div class="form-check form-check-inline">
+            <label class="form-check-label">
+              <input class="form-check-input" type="radio" name="endLine" value="L">L
+            </label>
+          </div>
+          <div class="form-check form-check-inline">
+            <label class="form-check-label">
+              <input class="form-check-input" type="radio" name="endLine" value="6">6
+            </label>
+          </div>
+        </div>
+        <button type="submit" class="btn btn-primary">Show Trip Info</button>
+      </form>
+      <br>
+      <div class="map" data-columns="16" data-rows="8" data-cellSize="40" data-legendId="legend" data-textClass="text" data-lineWidth="8">
+
+        <ul data-color="#FFCF00" data-label="N" data-shiftCoords="-1, 0">
+          <li data-coords="3, 1" class="N">Times Sq</li>
+          <li data-coords="5, 2" class="N">34 St</li>
+          <li data-coords="7, 3" class="N">28 St</li>
+          <li data-coords="9, 4" data-labelPos="SW" class="N">23 St</li>
+          <li data-coords="10, 6" class="N"></li>
+          <li data-coords="10, 7" data-labelPos="W" class="N">8 St</li>
+        </ul>
+
+        <ul data-color="#939497" data-label="L">
+          <li data-coords="1, 6" class="L">8 Ave</li>
+          <li data-coords="5, 6" class="L">6 Ave</li>
+          <li data-coords="8, 6" class="L"></li>
+          <li data-coords="13, 6" class="L">3 Ave</li>
+          <li data-coords="15, 6" class="L">1 Ave</li>
+        </ul>
+
+        <ul data-color="#009D3D" data-label="6">
+          <li data-coords="10.3, 1" data-labelPos="E" class="6">Grand Central</li>
+          <li data-coords="10, 2" data-labelPos="E" class="6">33 St</li>
+          <li data-coords="10, 3" data-labelPos="E" class="6">28 St</li>
+          <li data-coords="10, 4" data-labelPos="E" class="6">23 St</li>
+          <li data-coords="10, 6" data-labelPos="NE" class="6">Union Sq</li>
+          <li data-coords="9.9, 6" data-marker="@interchange" class="6"> </li>
+          <li data-coords="10.3, 7" data-labelPos="E" class="6">Astor Pl</li>
+        </ul>
+      </div>
+      <!-- Fix legend position -->
+      <!-- <div id="legend"></div> -->
+      <div>
+        <p id="output"></p>
+      </div>
+    </div>
+    <!-- Subway Map -->
+    <script type="text/javascript">
+      $(".map").subwayMap({ debug: true });
+    </script>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
+
+  </body>
+</html>

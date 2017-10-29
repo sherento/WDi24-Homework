@@ -1,0 +1,12 @@
+.map canvas {
+  position:relative;
+}
+
+#legend {
+
+}
+
+.text:hover {
+  cursor: pointer;
+  color: blue;
+}
