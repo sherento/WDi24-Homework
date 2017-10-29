@@ -6,6 +6,7 @@
 
 }
 
-.text {
+.text:hover {
   cursor: pointer;
+  color: blue;
 }

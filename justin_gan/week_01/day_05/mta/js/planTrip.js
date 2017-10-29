@@ -129,6 +129,25 @@ const getJourneyWest = function ( line, startIndex, endIndex ) {
 }
 
 const load = () => {
+  // add onclick functionality to all stations
+  const stations = document.getElementsByClassName( 'text' );
+  for ( let i = 0; i < stations.length; i++ ) {
+    const station = stations[i];
+    station.onclick = function () {
+      const classes = this.getAttribute( 'class' );
+      const startLine = document.getElementsByName( 'startLine' );
+      if (classes === 'text N') {
+        document.querySelector('.startLine.N').checked = true;
+      }
+      if (classes === 'text L') {
+        document.querySelector('.startLine.L').checked = true;
+      }
+      if (classes === 'text 6') {
+        document.querySelector('.startLine.\\36').checked = true;
+      }
+    }
+  }
+
   const form = document.querySelector( 'form' );
   form.addEventListener( 'submit', function( event ) {
     // get user input from form
