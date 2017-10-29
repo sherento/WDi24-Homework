@@ -213,7 +213,7 @@ const validate = function (cards) {
     the below replace function should replace all instances
     of the char "-" in the array, but it's not?
     */
-    newCardArray.replace(/-/g, '');
+    newCardArray.replace(/-/g, 'NaN');
     console.log(newCardArray);
   }
 
@@ -221,3 +221,146 @@ const validate = function (cards) {
 };
 
 validate(cardObject);
+
+
+/*
+// ******************* CREDIT CARD **********************
+// A simple function called validateCreditCard that returns true or false.
+// COMPONENT FUNCTIONS ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+// Remove dashes and make an array of numbers
+const removeDashes = function (card) {
+  // declare array we'll want the function to return
+  let numbers = [];
+  // split str and remove dashes
+  const cardSplit = card.split('-'); // .split('-').join('') --- recombine in one step
+  // recombine str without dashes
+  let cardRejoin = '';
+  for (let i = 0; i < cardSplit.length; i++) {
+    cardRejoin += cardSplit[i];
+  }
+  // splits str into array and convert to numbers
+  numbers = cardRejoin.split('').map(Number);
+  console.log( `Removing dashes...  Numbers: ${ numbers }` );
+  return numbers;
+};
+// Check if 16 digit
+const is16Digit = function (str) {
+  console.log( `Checking if this is 16 digits: ${ str.length }` );
+  if (16 === str.length) {
+    console.log(true);
+    return true;
+  } else {
+    console.log(false);
+    return false;
+  }
+};
+// Check if all digits are numbers
+const isAllNumbers = function (numberArray) {
+  console.log( `Checking if all digits are numbers: ${ numberArray }` );
+  if (!numberArray.some(isNaN)) {    // if my array does NOT contain something that is NOT a number (dbl negative, i.e. is everything a number)
+    console.log(true);
+    return true;
+  } else {
+    console.log(false);
+    return false;
+  }
+};
+// Check that all digits are not the same
+const isDifferentDigits = function (numberArray) {
+  console.log( `Checking if digits are different: ${ numberArray }` );
+  // sort array
+  // discovered i needed to make a copy of array with .slice() or original array would sort too
+  const sortedNumbers = numberArray.slice().sort();
+  // if first and last elements are same, all digits are the same
+  if (sortedNumbers[0] === sortedNumbers[ sortedNumbers.length -1 ]) {
+    console.log(false);
+    return false;
+  } else {
+    console.log(true);
+    return true;
+  }
+};
+// The final digit must be even
+const isFinalDigitEven = function (numberArray) {
+  console.log( `Checking if last digit is even: ${ numberArray } ` );
+  const lastDigit = numberArray[numberArray.length - 1];
+  if ( lastDigit % 2 === 0 ) {
+    console.log(true);
+    return true;
+  } else {
+    console.log(false);
+    return false;
+  }
+};
+// The sum of all the digits must be greater than 16 - is valid because otherwise card could be 0000-0000-0000-1000 for e.g.
+const isSumGreater16 = function (numberArray) {
+  console.log( `Checking if sum is greater than 16: ${ numberArray }` );
+  const sum = numberArray.reduce((total, amount) => total + amount);
+  // ( this .reduce sums all numbers in array: accumulatively works through function and returns one number)
+  console.log( `Sum: ${ sum }` );
+  if (sum > 16) {
+    console.log(true);
+    return true;
+  } else {
+    console.log(false);
+    return false;
+  }
+};
+// MAIN VALIDATION FUNCTION ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+const validateCreditCard = function (card) {
+  const validatedCard = {   // our validated card object to return at end
+    valid: false,
+    number: card            // number key with value same as entered card string
+  };                        // (no error key added yet since card might not error)
+  console.log( `Card entered: ${ card }` );
+  const numbers = removeDashes( card );
+  if ( !is16Digit( numbers ) ) {
+    validatedCard.valid = false;
+    validatedCard.error = 'wrong_length';      // add error key + value to object
+    return validatedCard;                      // stop the function and return object with error descrip
+  }
+  if ( !isAllNumbers( numbers ) ) {
+    validatedCard.valid = false;
+    validatedCard.error = 'contains_invalid_char';
+    return validatedCard;
+  }
+  if ( !isDifferentDigits( numbers ) ) {
+    validatedCard.valid = false;
+    validatedCard.error = 'all_digits_identical';
+    return validatedCard;
+  }
+  if ( !isFinalDigitEven( numbers ) ) {
+    validatedCard.valid = false;
+    validatedCard.error = 'final_digit_odd';
+    return validatedCard;
+  }
+  if ( !isSumGreater16( numbers ) ) {
+    validatedCard.valid = false;
+    validatedCard.error = 'sum_less_than_16';
+    return validatedCard;
+  }
+  validatedCard.valid = true; // If function hasn't exited before here, card must be valid - assign true and return object.
+  return validatedCard;
+};
+// Test cards
+const testCards = [
+  '1234-1234-1234-1234',
+  '2354-3462-34534-9998',
+  '235x-3462-3454-9998',
+  '4444-4444-4444-4444',
+  '4224-4664-4444-4443',
+  '0000-0000-0000-1000',
+  '0310-4100-0121-1000',
+  '9999-9999-8888-0000'
+];
+console.log( `\nCREDIT CARD VALIDATION\n-----------------` );
+for (let i = 0; i < testCards.length; i++) {
+  const card = validateCreditCard( testCards[i] );
+  console.log( `Card number: ${ card.number }  Valid: ${ card.valid }` );
+  if (card.error) {
+    console.log( `Error: ${card.error}` );
+  }
+  console.log( `-----------------` );
+}
+
+*/
