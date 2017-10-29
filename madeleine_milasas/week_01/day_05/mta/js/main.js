@@ -166,7 +166,7 @@ const compareStations = function (lineOn, stationOn, lineOff, stationOff) {
 // ******** PLAN TRIP FUNCTION ************
 
 const planTrip = function (lOn, sOn, lOff, sOff) {  // line ON, stop ON, line OFF, stop OFF
-  const trip = compareStations(lOn, sOn, lOff, sOff);
+  const trip = compareStations(lOn.toUpperCase(), sOn, lOff.toUpperCase(), sOff);
   // if there was invalid user input
   if (trip.error) {
     console.log( trip.error );
@@ -199,6 +199,7 @@ const testCases = [
   { lo: '6', so: 'Grand Central', lof: '6', sof: '23rd' }, // 6 line only
   { lo: '6', so: 'Astor Place', lof: '6', sof: '33rd' },  // reverse direction 6 only
   { lo: 'L', so: '8th', lof: 'N', sof: 'Times Square' },  // multi lines L to N
+  { lo: 'l', so: '1st', lof: 'n', sof: 'Times Square' },  // multi lines L to N lower case letters
   { lo: '6', so: 'Astor Place', lof: 'L', sof: '6th' },  // multi lines 6 to L
   { lo: 'N', so: '8th', lof: '6', sof: '28th' },  // multi lines N to 6
   { lo: '6', so: 'Union Square', lof: '6', sof: '33rd' },  // if US is a start on one line
