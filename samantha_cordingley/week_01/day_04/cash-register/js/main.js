@@ -4,22 +4,30 @@
 
 //global scope variables
 
-const cartForParty = [
-  {name: "banana", price: 1.25},
-  {name: "handkerchief", price: .99},
-  {name: "Tshirt", price: 25.01},
-  {name: "apple", price: 0.60},
-  {name: "nalgene", price: 10.34},
-  {name: "proteinShake", price: 22.36}
-];
+//create shopping cart as object with items name: price
 
+totalPrice = 0;
 
-const cashRegister = function (item) {
-  let total = 0;
-  for (i = 0; i < cartForParty.length; i++) {
-  total = total + cartForParty[i]['price'];
+const shoppingCart = {
+  apples: 4.5,
+  bananas: 5,
+  nutella: 3,
+  shampoo: 20,
+  meat: 35
+};
+
+//create function with for in loop to access values inside keys
+const sum = function (obj) {
+    for (let key in shoppingCart) {
+      console.log(shoppingCart[key]);
   }
-  console.log(total);
 }
 
-cashRegister(cartForParty);
+
+//Can't figure out how to sum the keys Ive accessed together
+
+
+console.log(sum(shoppingCart));
+
+
+//return Object.values(shoppingCart); //this also returns values in the console but can't figure out how to add them together

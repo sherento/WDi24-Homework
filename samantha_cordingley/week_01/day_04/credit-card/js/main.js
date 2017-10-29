@@ -12,7 +12,7 @@ The sum of all the digits must be greater than 16
 
 //global scope variables
 
-let newNum = " ";
+//let newNum = " ";
 
 let fig = " ";
 
