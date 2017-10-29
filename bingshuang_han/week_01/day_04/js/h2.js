@@ -90,7 +90,7 @@ const withdraw = function (){
       }
     }
     if (!match){
-    console.log(`Sorry, Client ${userName} is not exit.`);
+    console.log(`Sorry, Client ${userName} is not exist.`);
     }
 }
 

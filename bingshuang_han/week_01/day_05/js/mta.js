@@ -40,7 +40,7 @@ const lines = {
 // Declare the function for user to travel within the same line.
 const travelSameLine = function (lineName,station1,station2){
 
-//Declare local array pathSation to hold all the stops and pathStationString to hold stops name in string.
+//Declare local array pathStation to hold all the stops and pathStationString to hold stops name in string.
   let pathStation = [];
   let pathStationString = "";
   let nameOfLine = lineName;
@@ -53,7 +53,7 @@ const travelSameLine = function (lineName,station1,station2){
     }
     pathStationString = pathStation.join(', ');
     console.log(pathStationString);
-    return( b- a ) ;
+    return( b - a ) ;
   }
   else{
   //travel direction from right to left;
@@ -62,7 +62,7 @@ const travelSameLine = function (lineName,station1,station2){
     }
     pathStationString = pathStation.join(', ');
     console.log(pathStationString);
-    return ( a- b ) ;
+    return ( a - b ) ;
     }
 
 }
@@ -74,13 +74,23 @@ const travelSameLine = function (lineName,station1,station2){
 //*****************************************************************************************
 
 // main function for travel plan
-const planTrip = function (line1,station1,line2,station2){
+const planTrip = function ( ){
+     const input = prompt ("Input your travel information: Get on line and station ; Get off line and station: ","line6,Grand Central,lineN,34th"  );
+     const arrayOfStrings = input.split (",");
+     const line1 = arrayOfStrings[0];
+     const station1 = arrayOfStrings[1];
+     const line2 = arrayOfStrings[2];
+     const station2 = arrayOfStrings[3];
+     console.log( input);
+     console.log(arrayOfStrings);
+
   if (line1 === line2 )
   {
     //travel in same line;
     if (( line1 === 'lineN' )|| (line1 === 'lineL') ||(line1 ==='line6')){
       console.log(`You must travel through the following stops on the ${line1}`);
-      travelSameLine(line1,station1,station2);
+      let c =travelSameLine(line1,station1,station2);
+      console.log(`${c } stops in total`)
     }
     else{
       console.log("Your travel line is not exit!!!");
@@ -95,7 +105,7 @@ const planTrip = function (line1,station1,line2,station2){
    console.log(`Change at Union Square to ${line2}`);
    console.log(`Your journey continues through the following stops: `);
    let b = travelSameLine(line2,'Union Square',station2);
-   console.log (`${a+b} stops in total.`)
+   console.log (`${a+b} stops in total.`);
 
 
   }
@@ -107,10 +117,13 @@ const planTrip = function (line1,station1,line2,station2){
 // planTrip('lineL', '1st', 'lineL', 'Union Square');
 // planTrip('lineL', 'Union Square', 'lineL', '1st');
 // planTrip('line6', '33rd', 'line6', 'Union Square');
-// planTrip('line6', '28th', 'line6', 'U33rd');
-// planTrip('lineM', '28th', 'lineM', 'U33rd');
+// planTrip('line6', '28th', 'line6', '33rd');
+// planTrip('lineM', '28th', 'lineM', '33rd');
 //*************************************************************************
 //test for travel in different lines
 //*************************************************************************
-planTrip('lineN', '34th', 'lineL', '1st');
-planTrip('line6', 'Grand Central', 'lineN', '34th');
+// planTrip('lineN', '34th', 'lineL', '1st');
+// planTrip('line6', 'Grand Central', 'lineN', '34th');
+
+//  lineN,34th,lineL,1st
+//line6,Grand Central,lineN,34th
