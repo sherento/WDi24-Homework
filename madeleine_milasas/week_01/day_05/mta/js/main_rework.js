@@ -17,8 +17,8 @@ const allLines = Object.keys( trainLines );
 
 
 // declare error msgs
-const invalidLineMsg = `Sorry, that doesn't look like a valid train line to me, please check your entry and try again.\n----------------------------------`;
-const invalidStationMsg = `Sorry, that doesn't look like a valid station to me, please check your entry and try again.\n----------------------------------`
+const invalidLineMsg = `Sorry, that doesn't look like a valid train line to me.`;
+const invalidStationMsg = `Sorry, that doesn't look like a valid station to me.`
 const sameStationMsg = `Spin around. You are at your destination.\n----------------------------------`;
 
 
@@ -54,7 +54,7 @@ const findStation = function ( l, s ) {  // line array, station
   lUpper = l.lineArray.map( function (x) { return x.toUpperCase()} );
   // look for station in array
   const index = lUpper.indexOf( s.toUpperCase() )
-  // ## if station entered is in array return error msg
+  // ## if station entered is not in array return error msg
   if ( -1 === index ) {
     station.error = invalidStationMsg;
     return station;
@@ -102,22 +102,22 @@ const countStops = function (startI, endI, lineArr) {
 const planTrip = function ( lOn, sOn, lOff, sOff ) {
   const startLine = findLine( lOn );
   if (startLine.error) {
-    console.log( startLine.error );
+    console.log( startLine.error + `\nPlease check your LINE ON entry and try again.\n----------------------------------` );
     return;
   }
   const startStation = findStation( startLine, sOn );
   if (startStation.error) {
-    console.log( startStation.error );
+    console.log( startStation.error + `\nPlease check your STOP ON entry and try again.\n----------------------------------` );
     return;
   }
   const endLine = findLine( lOff );
   if (endLine.error) {
-    console.log( endLine.error );
+    console.log( endLine.error + `\nPlease check your LINE OFF entry and try again.\n----------------------------------`);
     return;
   }
   const endStation = findStation( endLine, sOff );
   if (endStation.error) {
-    console.log( endStation.error );
+    console.log( endStation.error + `\nPlease check your STOP OFF entry and try again.\n----------------------------------` );
     return;
   }
   // console.log(startLine, endLine);
@@ -177,7 +177,7 @@ const testCases = [
   { lo: 'L', so: '8th Av', lof: 'N', sof: 'Times Square' },  // multi lines L to N
   { lo: 'l', so: '1st av', lof: 'n', sof: 'times square' },  // multi lines L to N lower case letters
   { lo: '6', so: 'Astor Place', lof: 'L', sof: '6th Av' },  // multi lines 6 to L
-  { lo: 'N', so: '8th', lof: '6', sof: '28th (6)' }  // multi lines N to 6
+  { lo: 'N', so: '8th St', lof: '6', sof: '28th (6)' }  // multi lines N to 6
   // { lo: '6', so: 'Union Square', lof: '6', sof: '33rd' },  // if US is a start on one line
   // { lo: 'L', so: 'Union Square', lof: '6', sof: '33rd' },  // if US is start but user entered they think they need to change lines
   // { lo: 'N', so: '34th', lof: 'L', sof: 'Union Square' },  // if US is destination but user entered they think they need to change lines
