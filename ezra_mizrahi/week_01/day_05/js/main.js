@@ -152,6 +152,7 @@ const planTrip = function ( startLine, startStation, endLine, endStation ) {
     // go from startStation of startLine and stop at Union Square
     // go from Union Square of endLine to endStation
     // concatenate these together
+    // didn't finish this
     console.log(false); // just a placeholder for the rest of the function
   }
 
