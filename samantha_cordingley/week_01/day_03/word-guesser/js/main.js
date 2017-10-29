@@ -35,7 +35,7 @@ const word = ["F", "0", "X"];
 
 const answer = ["_", "_", "_"];
 
-const remainingLetters = 3; //how many letters to be guessed
+let remainingLetters = 3; //how many letters to be guessed
 
 
 while (remainingLetters > 0) {
@@ -52,10 +52,9 @@ while (remainingLetters > 0) {
       if (word[i] === guess) {
         answer[i] = guess;
         console.log("You guessed a correct letter");
-        answer.push(guess);
         remainingLetters--;
       }
-      else if (remainingLetters === 0 && answer === "FOX") {
+      else if (remainingLetters === 0) {
         console.log (`Congratulations you won the word was ${word}.`); //congratulate on winning, not sure where to put this if statement
         console.log(answer.join( " "));
       }
