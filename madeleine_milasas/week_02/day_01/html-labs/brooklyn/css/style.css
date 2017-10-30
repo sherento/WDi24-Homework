@@ -15,8 +15,8 @@ Link Hover Color = #20222a
 questions...
 - Is it better to do shared characteristics together in one selector
 or write out separately for each tag?
-- is .container a good method? and then should we put
-properties in body or .container?
+- is .container a good practice? seems to be quite prevalent.
+- flexbox spacing between, how to adjust?
 */
 
 
