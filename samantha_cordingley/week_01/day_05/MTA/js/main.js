@@ -9,7 +9,7 @@ let mta = {
   lLine: [ "8th", "6th", "union square", "3rd", "1st" ],
   sixLine: [ "grand central", "33rd", "28th", "23rd", "union square", "astor place" ],
   nLine: [ "34th", "28th", "23rd", "union square", "8th"]
-}
+};
 
 ///////////TESTING ARRAYS//////////////
 //console.log(mta.lLine);
@@ -19,13 +19,16 @@ let mta = {
 //work on travelling along 1 line forwards
 
 //master function //
-const tripPlan = function (startStat, startStop, endStat, endStop) {
-  console.log(station1 = startStat);
-  console.log(station2 = endStat);
+const tripPlan = function (startLine, startStation, endLine, endStation) {
+  let station1 = startLine;
+  let station2 = endLine;
+  console.log(`starting station index is ${mta[station1].indexOf(startStation)}`);
+  console.log(`end station index is ${mta[station2].indexOf(endStation)}`);
 }
 
-console.log(tripPlan("lLine", "6th", "lLine", "1st"));
+tripPlan("lLine", "6th", "lLine", "1st");
 
+/*
 //can call an array and its values
 for (const prop in mta) {
   console.log(`mta.${prop} = ${mta[prop]}`);
@@ -51,7 +54,7 @@ let stops = function (line) {
 }
 
 stops(mta.lLine);
-
+*/
 //once I have the index of the starting and ending stop could I use the array,obj.push(); method to push the stops I want to display in a new variable eg.tripLog??
 
 
@@ -60,3 +63,9 @@ stops(mta.lLine);
 //console.log stops for trip using string.length of new variable
 
 console.log(tripLog.length);
+
+////NOTES////
+
+//main travel planner function comes last
+//if statements with smaller functions inside
+//Then if that IF statement is met it runs the function and exits the master function
