@@ -67,6 +67,10 @@ a {
   text-decoration: none;
 }
 
+a:hover {
+  color: #20222a;
+}
+
 [src*="press"] {
   padding: 1px;
   border: 4px solid #CCCCCC;
@@ -75,9 +79,11 @@ a {
 .flex-container {
     display: -webkit-flex;
     display: flex;
-    width: 957px;
+    /*width: 957px;*/
     /*margin: 0 auto;*/
     margin: 0;
+    align-content: space-between;
+    /*margin: 0 -5px;*/
 }
 
 .initial {
@@ -88,6 +94,7 @@ a {
 .flex-midleft {
   -webkit-flex: 1;
   flex: 1;
+  /*flex-grow: 1;*/
 }
 
 .flex-midright {
