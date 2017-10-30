@@ -108,14 +108,20 @@ and call guessLetter multiple times with various letters to check that your prog
 
 const correctWord = ["F", "O", "X"]; // letters making up the correct word
 
-let guesses = []; // empty array which will contain correctly guessed letters
+let guesses = ["_", "_", "_",]; // empty array which will contain correctly guessed letters
+
+let correctLetters = correctWord.length;
+
+let letterFound = false;
 
 
 const guessLetter = function (letter) {
   for (let i = 0; i < correctWord.length; i++) {
-    if (correctWord.includes(letter)) {
-      guesses.push(letter);
+    if ( correctWord[i] === letter ) {
+      guesses[i] === correctWord[i];
+      correctLetters--;
       console.log( `Congrats man, you found a new letter.` );
+      console.log( correctLetters );
       break;
     } else {
       console.log( `Naw man...naw. Try a different letter.` );
@@ -137,4 +143,3 @@ const guessLetter = function (letter) {
 guessLetter("F");
 guessLetter("O");
 guessLetter("X");
-guessLetter("D");

@@ -20,7 +20,19 @@ const cashRegister = function ( cart ) {
     // sum item prices
     total += parseFloat(cart[item]);
   }
+  // reduce can replace for loop
+
   return total;
 }
 
 console.log(cashRegister(cartForParty));
+
+const simpleCashRegister = function ( cart ) {
+  const prices = Object.values(cart);
+  const total = prices.reduce(function ( a, b ) {
+    return a + parseFloat(b);
+  }, 0);
+  return total;
+}
+
+console.log(simpleCashRegister(cartForParty));
