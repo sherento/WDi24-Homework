@@ -1,7 +1,7 @@
 
 #container {
   margin: 0 auto;
-  max-width: 1000px;
+  max-width: 960px;
 }
 
 /*body {
@@ -16,7 +16,7 @@
   }
 }
 
-#navlist {
+nav {
   list-style-type: none;
   margin: -10px;
   padding: 0;
@@ -25,10 +25,9 @@
 }
 
 .nav {
-  float: left;
-  display:block;
+  display: inline-block;
   text-align: center;
-  padding: 24px;
+  padding: 19px;
   color: white;
   font-family: sans-serif;
   font-size: 14px;
@@ -39,7 +38,6 @@
 }
 
 .logo {
-  position: relative;
   margin: 30px 0 20px;
 }
 
@@ -53,6 +51,10 @@ p.quote {
   border-style: inset;
   border-width: 1px;
   padding: 10px 10px 20px 10px;
+  position: relative;
+}
+
+.quotebutton {
   position: absolute;
 }
 
@@ -61,13 +63,9 @@ p.quote {
   display: inline;
   font-size: 22px;
   font-family: sans-serif;
-  position: relative;
-  top: 100px;
   padding: 0 0 0 40px;
 }
 
 .previewimage {
-  position: relative;
-  top: 100px;
   border: solid #e3e3e3 6px;
 }
