@@ -12,11 +12,8 @@ Link Hover Color = #20222a
 */
 
 /*
-questions...
-- Is it better to do shared characteristics together in one selector
-or write out separately for each tag?
-- is .container a good practice? seems to be quite prevalent.
-- flexbox spacing between, how to adjust?
+
+
 */
 
 
@@ -71,7 +68,9 @@ a:hover {
   color: #20222a;
 }
 
-[src*="press"] {
+/*[src*="press"] { /* not so well supported and bad if filename changes then it breaks */
+/*instead add class to surrounding div and do descendents do:*/
+.press img {
   padding: 1px;
   border: 4px solid #CCCCCC;
 }
