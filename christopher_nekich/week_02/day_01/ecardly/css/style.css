@@ -28,7 +28,7 @@ Developer @GA in NYC
 
 .banner {
   background-image: url(../images/background.jpg);
-  height: 100vh;
+  height: 140vh;
   background-repeat: repeat-x;
   background-color: #d6d6d6;
 }
@@ -42,9 +42,9 @@ Developer @GA in NYC
 
 .wordbox {
   background-color: white;
-  margin: 20px auto;
+  margin: 20px auto 0;
   max-width: 60%;
-  height: 60%;
+  height: 45%;
   overflow-y: scroll;
 }
 
@@ -60,6 +60,7 @@ h2 {
 
 .image {
   display: inline-block;
+  margin-right: -22px;
 }
 
 .image img {
@@ -71,11 +72,11 @@ h2 {
   display: inline-block;
   vertical-align: top;
   text-align: left;
-  mr
+  margin: 0 auto;
 }
 
 p {
-  font-size: 10px;
+  font-size: 12px;
   margin: 0;
 }
 
