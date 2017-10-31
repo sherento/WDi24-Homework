@@ -126,6 +126,59 @@ main iframe {
   display: block;
 }
 
+.banner {
+  margin: 0 auto;
+  display: block;
+  width: 450px;
+  padding-bottom: 0;
+}
+
+.side {
+  width: 300px;
+  position: absolute;
+  /*position: relative;
+  top: -100%;*/
+}
+
+@media (max-width: 1356px) {
+  .side {
+    display: none;
+  }
+}
+
+.side.left {
+  float: left;
+  left: 2%;
+  /*right: 50%;*/
+  -ms-transform: rotate(-30deg); /* IE 9 */
+  -webkit-transform: rotate(-30deg); /* Chrome, Safari, Opera */
+  transform: rotate(-30deg);
+}
+
+.side.right {
+  float:right;
+  right: 2%;
+  /*left: 50%;*/
+  -ms-transform: rotate(30deg); /* IE 9 */
+  -webkit-transform: rotate(30deg); /* Chrome, Safari, Opera */
+  transform: rotate(30deg);
+}
+
+.spin {
+  margin: auto;
+  display: block;
+	-webkit-animation: rotation 10s infinite linear;
+}
+
+@-webkit-keyframes rotation {
+		from {
+				-webkit-transform: rotate(0deg);
+		}
+		to {
+				-webkit-transform: rotate(359deg);
+		}
+}
+
 footer {
   height: 56px;
 }
