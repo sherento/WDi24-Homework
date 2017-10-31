@@ -44,7 +44,8 @@ nav ul a {
   width: 33.13%;
   text-align: center;
   color: white;
-  background: linear-gradient(rgb(45, 45, 45), rgb(80,80,80), rgb(45,45,45))
+  background: linear-gradient(rgb(45, 45, 45), rgb(80,80,80), rgb(45,45,45));
+  border-radius: 8px; 
 }
 
 .checkered {
