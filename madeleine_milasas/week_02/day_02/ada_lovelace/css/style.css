@@ -157,3 +157,15 @@ footer {
 #countdown {
   font-size: 20px;
 }
+
+.synth {
+  padding-top: 20px;
+}
+
+.grid {
+  padding: 10px 0;
+}
+
+.underline {
+  text-decoration: underline;
+}
