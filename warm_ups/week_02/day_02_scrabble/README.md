@@ -7,9 +7,6 @@ scrabble("cabbage")
 # => 14
 ```
 
-Your program should be in a file named `scrabble.rb`.
-You should be able to compute the score for any word entered by the user.
-
 ## Letter Values
 
 ```plain
