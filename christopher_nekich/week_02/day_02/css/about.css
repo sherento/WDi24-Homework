@@ -1,0 +1,132 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+
+}
+img {
+  display: block;
+  margin: 0 auto;
+}
+
+main {
+  text-align: center;
+  margin: 60px 0;
+}
+
+nav {
+  margin: 0 auto;
+  margin-bottom: 20px;
+  height: 60px;
+  text-align: center;
+}
+
+nav ul a {
+  width: 320px;
+  display: inline-block;
+  text-align: center;
+  text-decoration: none;
+  border: 2px solid black;
+  line-height: 30px;
+}
+
+hr {
+  margin-top: 45px;
+  border-top: 2px dashed black;
+}
+
+.bitbanner {
+  width: 600px;
+  height: 300px;
+  margin: 20px auto;
+  background-image: url(../images/make8bitart.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.container {
+  width: 80%;
+  margin: 30px auto;
+}
+
+p a {
+  text-decoration: none;
+  font-style: italic;
+}
+
+a:visited {
+  color: salmon;
+}
+
+a:hover {
+  color: skyblue;
+}
+
+.mediumbox {
+  margin: 30px auto;
+}
+
+.mediumbox h1 {
+  margin-bottom: 20px;
+}
+
+.medium1 {
+  height: 300px;
+  width: 300px;
+  background-color: blue;
+  display: inline-block;
+  margin: 0 30px;
+  background-image: url(../images/medium1.png);
+  background-size: contain;
+}
+
+.medium1 a {
+  height: 100%;
+  width: 100%;
+  line-height: 100%;
+  display: block;
+}
+.medium2 {
+  height: 300px;
+  width: 300px;
+  background-color: blue;
+  display: inline-block;
+  margin: 0 30px;
+  background-image: url(../images/medium2.png);
+  background-size: contain;
+}
+
+.medium2 a {
+  height: 100%;
+  width: 100%;
+  line-height: 100%;
+  display: block;
+}
+.medium3 {
+  height: 300px;
+  width: 300px;
+  background-color: blue;
+  display: inline-block;
+  margin: 0 30px;
+  background-image: url(../images/medium3.png);
+  background-size: contain;
+}
+
+.medium3 a {
+  height: 100%;
+  width: 100%;
+  line-height: 100%;
+  display: block;
+}
+
+.medium1 a:hover{
+  border: 2px dashed grey;
+}
+.medium2 a:hover{
+  border: 2px dashed grey;
+}
+.medium3 a:hover{
+  border: 2px dashed grey;
+}

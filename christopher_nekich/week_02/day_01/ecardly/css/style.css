@@ -84,3 +84,24 @@ p {
   color: orange;
   font-weight: 700;
 }
+
+@media (max-width: 960px) {
+  .image {
+    margin: 0 auto;
+  }
+}
+
+@media (max-width: 360px) {
+  .image {
+    margin: 0 auto;
+  }
+
+  .ecard {
+    margin: 0 auto;
+  }
+
+  .words {
+    display: block;
+    margin: 0 auto;
+  }
+}
