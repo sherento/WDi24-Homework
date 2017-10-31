@@ -1,6 +1,12 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,400i,700');
+
 * {
   margin: 0;
   padding: 0;
+}
+
+body {
+  font-family: "Montserrat", sans-serif;
 }
 
 .profile {
@@ -35,7 +41,7 @@ nav ul a {
   line-height: 50px;
   background-color: black;
   font-size: 18px;
-  width: 33.14%;
+  width: 33.13%;
   text-align: center;
   color: white;
   background: linear-gradient(rgb(45, 45, 45), rgb(80,80,80), rgb(45,45,45))

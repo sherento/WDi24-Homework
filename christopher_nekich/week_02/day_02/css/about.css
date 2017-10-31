@@ -1,11 +1,14 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,400i,700');
+
 * {
   margin: 0;
   padding: 0;
 }
 
 body {
-
+  font-family: "Montserrat", sans-serif;
 }
+
 img {
   display: block;
   margin: 0 auto;
@@ -70,6 +73,7 @@ a:hover {
 
 .mediumbox h1 {
   margin-bottom: 20px;
+  text-decoration: underline;
 }
 
 .medium1 {
@@ -129,4 +133,27 @@ a:hover {
 }
 .medium3 a:hover{
   border: 2px dashed grey;
+}
+
+.tweetbox {
+  margin: 40px auto;
+  height: 600px;
+  width: 400px;
+  overflow-y: scroll;
+  border: 2px dashed #00aced;
+  padding: 1em;
+}
+
+.tweetbox h1 {
+  margin-bottom: 20px;
+  text-decoration: underline;
+}
+
+.youtubebox {
+  margin: 40px auto;
+}
+
+.youtubebox h1 {
+  margin-bottom: 20px;
+  text-decoration: underline;
 }
