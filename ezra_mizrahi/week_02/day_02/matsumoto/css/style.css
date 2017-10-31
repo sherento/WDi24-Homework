@@ -116,17 +116,30 @@ p {
 
 .matzlist {
   width: 50%;
-  text-align: center;
+  text-align: left;
   margin: 0 auto;
   font-family: 'Exo 2', sans-serif;
 }
 
 .matzlist ul {
-  padding-left: -3em;
+  list-style-position: inside;
+  padding-left: 1em;
 }
 
 .matzlist ul li {
-  padding-left: -3em;
+
+}
+
+.contacttwitter {
+    width: 50%;
+    text-align: center;
+    margin: 0 auto;
+}
+
+.matzhome {
+    width: 50%;
+    text-align: center;
+    margin: 0 auto;
 }
 
 .footer {
