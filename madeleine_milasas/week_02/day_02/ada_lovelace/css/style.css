@@ -6,7 +6,7 @@
 
 body {
   margin: 0;
-  background-color: #fee;
+  background-color: #f8f7f7;
 }
 
 
@@ -57,7 +57,7 @@ nav li {
 }
 
 nav a {
-  color: #fee;
+  color: #f8f7f7;
   font-family: "Lato", sans-serif;
   text-transform: uppercase;
   text-decoration: none;
