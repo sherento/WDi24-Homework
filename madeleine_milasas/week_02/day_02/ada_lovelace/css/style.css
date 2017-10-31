@@ -17,9 +17,9 @@ body {
 
 header {
   background-color: #0C1B22;
-  background-image: url("../images/ada_header_bg2.png"); /* path is relative to stylesheet */
+  background-image: url("../images/ada_header_bg.png"); /* path is relative to stylesheet */
   background-repeat: no-repeat;
-  background-position: left;
+  background-position: center;
   text-align: center;
   color: #C8B57C;
   padding: 20px;
@@ -48,7 +48,7 @@ nav {
   padding: 10px 0;
   margin-left: -20px;
   margin-right: -20px;
-  background-color: rgba(0, 0, 0, 0.8);
+  /*background-color: rgba(0, 0, 0, 0.8);*/
 }
 
 nav li {
@@ -122,7 +122,8 @@ main p {
 
 footer {
   background-color: #142836;
-  background-image: url("../images/ada_header_bg2.png");
+  background-image: url("../images/ada_footer_bg.png");
+  background-repeat: no-repeat;
   background-position: left;
 }
 
