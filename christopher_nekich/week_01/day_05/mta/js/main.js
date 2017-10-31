@@ -16,9 +16,9 @@ const journeyA = function(startLine, start){ // first trip in a journey that req
   let startIndexA = mta[startLine].indexOf(start);
   let stopIndexA = mta[startLine].indexOf('Union Square');
 
-  if (startIndexA > stopIndexA) {
+  if (startIndexA > stopIndexA) {     // determines which direction along the line user is travelling
     for (let i = startIndexA - 1; i >= stopIndexA ; i--) {
-      journey.push(mta[startLine][i]);
+      journey.push(mta[startLine][i]);  // adds stops to array in order
       };
     }else{
       for (let i = startIndexA + 1; i <= stopIndexA; i++) {
@@ -28,7 +28,7 @@ const journeyA = function(startLine, start){ // first trip in a journey that req
   return journey;
 };
 
-const journeyB = function(stopLine, stop){
+const journeyB = function(stopLine, stop){  // second trip in a journey that requires a transfer
   let journey = [];
   let startIndexB = mta[stopLine].indexOf('Union Square');
   let stopIndexB = mta[stopLine].indexOf(stop);
@@ -46,7 +46,7 @@ const journeyB = function(stopLine, stop){
 };
 
 const planTrip = function(startLine, start, stopLine, stop){
-  if(stop === "Union Square"){
+  if(stop === "Union Square"){    // all trips starting at union square travel along a single line
     stopLine = startLine;
   };
 
@@ -57,14 +57,14 @@ const planTrip = function(startLine, start, stopLine, stop){
   if(startLine !== stopLine){
     let firstLeg = journeyA(startLine, start);
     let secondLeg = journeyB(stopLine, stop);
-    let stopsTotal = firstLeg.length + secondLeg.length;
+    let stopsTotal = firstLeg.length + secondLeg.length;  // length of both arrays added === number of stops
 
     console.log(`You must travel through the following stops on the ${startLine} line: ${firstLeg.join(', ')}.`);
     console.log("Change at Union Square");
     console.log(`Your journey continues through the following stops on the ${stopLine} line: ${secondLeg.join(', ')}.`);
     console.log(`${stopsTotal} stops in total.`);
 
-    return [`${firstLeg.join(', ')}`, `${secondLeg.join(', ')}`, `${stopsTotal}`]
+    return [`${firstLeg.join(', ')}`, `${secondLeg.join(', ')}`, `${stopsTotal}`] // return array for later use in dom manipulation
   }else{
     let startIndex = mta[startLine].indexOf(start);
     let stopIndex = mta[startLine].indexOf(stop);
@@ -95,12 +95,12 @@ let lDropdown = [];
 let nDropdown = [];
 let sixDropdown = [];
 let startLinePicked = document.querySelector(".startLine");
-let dynamicDropdown = document.querySelector(".startStation");
-let stopLinePicked = document.querySelector(".stopLine")
-let dynamicDropdown2 = document.querySelector(".stopStation");
+let dynamicDropdown = document.querySelector(".startStation");  // dropdown for starting stations
+let stopLinePicked = document.querySelector(".stopLine");
+let dynamicDropdown2 = document.querySelector(".stopStation"); // dropdown for destination stations
 let goButton = document.querySelector("#process");
 let resetButton = document.querySelector("#reset");
-let messageBox = document.querySelector(".messagebox")
+let messageBox = document.querySelector(".messagebox");
 
 
 for (var i = 0; i < lLine.length; i++) {
@@ -122,8 +122,8 @@ const startDropdownChanger = function(){
     dynamicDropdown.innerHTML = nDropdown;
   }else{
     dynamicDropdown.innerHTML = sixDropdown;
-  }
-}
+  };
+};
 
 const stopDropdownChanger = function(){
   if(stopLinePicked.value === "L"){
@@ -132,8 +132,8 @@ const stopDropdownChanger = function(){
     dynamicDropdown2.innerHTML = nDropdown;
   }else{
     dynamicDropdown2.innerHTML = sixDropdown;
-  }
-}
+  };
+};
 
 startLinePicked.addEventListener('change', function(){
   startDropdownChanger();
@@ -145,26 +145,27 @@ stopLinePicked.addEventListener('change', function(){
 
 goButton.addEventListener('click', function(){
   if(!dynamicDropdown.value){
-    messageBox.innerHTML = "<p>Please select a start point</p>"
-    return
+    messageBox.innerHTML = "<p>Please select a start point</p>";
+    return;
   }else if(!dynamicDropdown2.value){
-    messageBox.innerHTML = "<p>Please select a destination</p>"
-    return
-  }
+    messageBox.innerHTML = "<p>Please select a destination</p>";
+    return;
+  };
 
 
   let journeyPrinter = planTrip(startLinePicked.value, dynamicDropdown.value, stopLinePicked.value, dynamicDropdown2.value)
 
+  // essentially the same thing as the console version
   if(dynamicDropdown.value === dynamicDropdown2.value && startLinePicked.value === stopLinePicked.value){
     messageBox.innerHTML = `You do not need to get on a train, you are already at your destination`
   }else if(startLinePicked.value === stopLinePicked.value){
     messageBox.innerHTML = `You travel ${journeyPrinter[0]} stops along the ${journeyPrinter[1]} Line`
   }else{
     messageBox.innerHTML = `\<p>You must travel through the following stops on the ${startLinePicked.value} Line: ${journeyPrinter[0]}\</p>
-                            \<p>Change at Union Station\</p>
+                            \<p>Change at Union Square Station\</p>
                             \<p>Your journey continues along the following stops on the ${stopLinePicked.value} Line: ${journeyPrinter[1]}\</p>
                             \<p>${journeyPrinter[2]} stops in total.`
-  }
+  };
 });
 
 resetButton.addEventListener('click', function(){
