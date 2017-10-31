@@ -89,12 +89,20 @@ main {
   padding-bottom: 25px;
 }
 
+main a {
+  color: #D47A5E;
+}
+
 
 
 article {
   display: inline-block;
   width: 54%;
   padding-right: 54px;
+}
+
+.article-subsection {
+  padding: 10px 0;
 }
 
 aside {
@@ -140,4 +148,12 @@ footer {
 
 .youtube {
   padding: 4px 0;
+}
+
+.centered-text {
+  background-color: red;
+}
+
+#countdown {
+  font-size: 20px;
 }
