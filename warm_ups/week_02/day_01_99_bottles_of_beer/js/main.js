@@ -27,6 +27,8 @@
 // Count through any number of bottles.
 // Be able to count between a range of numbers (ie, 20 to 10).
 
+// Basic approach ***********************************
+
 const bottlesOfBeer = function( start ) {
   for (let i = start; i >= 0; i--) {
     if ( i === 0 ){
@@ -45,7 +47,7 @@ const bottlesOfBeer = function( start ) {
 
 bottlesOfBeer(10);
 
-//Bonus
+//Bonus: Object approach ****************************
 
 const beer = {
 
@@ -78,14 +80,19 @@ const beer = {
   },
 
   makeVerse: function( num ){
+    // You can call the function like beer.pluralise but becuase we're in an object we use 'this' to target it. This makes the code more dynamic if we ever have to change the name of the beer object we will still refer to the same object.
     let verse1 = `${ this.pluralise( num ) } on the wall, ${ this.pluralise( num ) }.`;
 
+
+    // Because the 'getMoreBeer' function returns a value we can use that as the argument for 'pluralise'.
     let verse2 = `${ this.action( num ) } ${ this.pluralise( this.getMoreBeer( num ) ) } bottles of beer on the wall.`
 
+    // concatenate the two verses together. '\n' denotes a new line the '\' changes the meaning of the following letter.
     return verse1 + "\n" + verse2;
   },
 
   song: function( startNum, endNum ){
+    // All of the functions return values individually so to get them to display I need to pass makeVerse into a console.log.
     for (let i = startNum; i >= endNum; i--) {
       console.log( this.makeVerse( i ));
     }
