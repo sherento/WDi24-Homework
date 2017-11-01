@@ -4,6 +4,10 @@
   background-color: navy;
 }
 
+#cat {
+  z-index: 1;
+}
+
 .rainbow {
   width: 20px;
   height: 200px;
@@ -89,6 +93,26 @@ left: 80%;
 #littleStar4 {
   top: 76%;
   left: 80%;
+}
+
+.grandmas {
+  position: absolute;
+  left: 17%;
+}
+
+.party {
+  position: absolute;
+  top: 70%;
+  height: 240px;
+  left: 58%;
+  z-index: 2;
+}
+
+.groot {
+  position: absolute;
+  top: 72%;
+  left: 21%;
+  z-index: 2;
 }
 
 @keyframes spin { 100% { -webkit-transform: rotate(360deg); transform:rotate(360deg); } }

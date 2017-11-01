@@ -12,6 +12,7 @@ let leftmove = false
 
 let runKitty = function() {
 
+
   if(!leftmove){
     if(parseInt(cat.style.left) < window.innerWidth){
       var oldLeft = parseInt(cat.style.left);
@@ -43,4 +44,4 @@ let runKitty = function() {
 };
 
 
-window.setInterval(runKitty, 20);
+window.setInterval(runKitty, 50);
