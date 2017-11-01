@@ -1,5 +1,10 @@
 @import url('https://fonts.googleapis.com/css?family=Exo+2|Karla|Lobster');
 
+body {
+  margin: 0;
+  padding: 0;
+}
+
 .container {
   margin: 0;
   width: 100%;
@@ -60,11 +65,13 @@ a.rightnav {
   font-family: 'Exo 2', sans-serif;
 }
 
+
+
 .banner h1 {
   text-align: center;
   color: white;
   width: 100%;
-  top: 200px;
+  top: 160px;
   display: inline-block;
   position: absolute;
   font-family: 'Lobster', cursive;
@@ -78,14 +85,31 @@ h1 span {
   padding: 10px;
 }
 
-.banner img {
+.banner {
+  background: url(osakanight.jpeg);
   position: relative;
-  width: 100%;
-  max-height: 400px;
+  margin: 0 auto;
   padding: 0;
-  margin: 0;
-
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  width: 100%;
+  height: 400px;
 }
+
+.banner img {
+    background: url(osakanight.jpeg);
+    position: relative;
+    margin: 0 auto;
+    padding: 0;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    width: 100%;
+    height: 400px;
+}
+
+
 
 .matzintro {
   text-align: center;
@@ -99,14 +123,29 @@ h1 span {
 }
 
 p {
-  text-align: center;
+  text-align: justify;
   font-family: 'Exo 2', sans-serif;
+}
+
+.matzinfo {
+  width: 50%;
+  text-align: center;
+  margin: 0 auto;
+  text-indent: 0;
 }
 
 .matzparagraph {
   width: 50%;
-  text-align: center;
+  text-align: justify;
   margin: 0 auto;
+  text-indent: 0;
+}
+
+.matzparagraph2 {
+  width: 50%;
+  text-align: justify;
+  margin: 0 auto;
+  text-indent: 0;
 }
 
 .parabold {
@@ -115,7 +154,7 @@ p {
 }
 
 .matzlist {
-  width: 50%;
+  width: 49%;
   text-align: left;
   margin: 0 auto;
   font-family: 'Exo 2', sans-serif;
@@ -124,10 +163,6 @@ p {
 .matzlist ul {
   list-style-position: inside;
   padding-left: 1em;
-}
-
-.matzlist ul li {
-
 }
 
 .contacttwitter {
@@ -142,8 +177,16 @@ p {
     margin: 0 auto;
 }
 
+.matzmap {
+  text-align: center;
+}
+
 .footer {
   text-align: center;
   font-family: 'Exo 2', sans-serif;
   font-size: 12px;
+  width: 50%;
+  margin: 0 auto;
+  text-indent: 0;
+  padding: 1em;
 }
