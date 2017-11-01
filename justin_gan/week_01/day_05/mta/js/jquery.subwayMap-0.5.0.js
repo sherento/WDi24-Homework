@@ -182,10 +182,14 @@ THE SOFTWARE.
                         if (title === undefined) title = "";
                     }
 
-                    // justin: store classes
+                    // justin: store classes & data-stations
                     let classes = $(this).attr("class");
                     if (classes === undefined) classes = "";
                     console.log('---classes---:', classes);
+
+                    let station = $(this).attr("data-station");
+                    if (station === undefined) station = "";
+                    console.log('---station---:', station);
 
                     self._debug("Coords=" + coords + "; Dir=" + dir + "; Link=" + link + "; Label=" + label + "; labelPos=" + labelPos + "; Marker=" + marker);
 
@@ -195,7 +199,7 @@ THE SOFTWARE.
                         x = Number(coords.split(",")[0]) + (marker.indexOf("interchange") > -1 ? 0 : shiftX);
                         y = Number(coords.split(",")[1]) + (marker.indexOf("interchange") > -1 ? 0 : shiftY);
                     }
-                    nodes[nodes.length] = { x: x, y:y, direction: dir, marker: marker, markerInfo: markerInfo, link: link, title: title, label: label, labelPos: labelPos, classes: classes};
+                    nodes[nodes.length] = { x: x, y:y, direction: dir, marker: marker, markerInfo: markerInfo, link: link, title: title, label: label, labelPos: labelPos, classes: classes, station: station};
                 });
                 if (nodes.length > 0)
                     self._drawLine(el, scale, rows, columns, color, (lineTextClass != "" ? lineTextClass : textClass), lineWidth, nodes, reverseMarkers);
@@ -407,7 +411,7 @@ THE SOFTWARE.
                 topOffset = offset;
                 break;
         }
-        var style = (textClass != "" ? "class='" + textClass + " " + data.classes + "' " : "") + "style='" + (textClass == "" ? "font-size:8pt;font-family:Verdana,Arial,Helvetica,Sans Serif;text-decoration:none;" : "") + "width:100px;" + (pos != "" ? pos : "") + ";position:absolute;top:" + (y + el.offset().top - (topOffset > 0 ? topOffset : 0)) + "px;left:" + (x + el.offset().left) + "px;z-index:3000;'";
+        var style = (data.station != "" ? "data-station='" + data.station + "' " : "") + (textClass != "" ? "class='" + textClass + " " + data.classes + "' " : "") + "style='" + (textClass == "" ? "font-size:8pt;font-family:Verdana,Arial,Helvetica,Sans Serif;text-decoration:none;" : "") + "width:100px;" + (pos != "" ? pos : "") + ";position:absolute;top:" + (y + el.offset().top - (topOffset > 0 ? topOffset : 0)) + "px;left:" + (x + el.offset().left) + "px;z-index:3000;'";
         if (data.link != "")
             $("<a " + style + " title='" + data.title.replace(/\\n/g,"<br />") + "' href='" + data.link + "' target='_new'>" + data.label.replace(/\\n/g,"<br />") + "</span>").appendTo(el);
         else
