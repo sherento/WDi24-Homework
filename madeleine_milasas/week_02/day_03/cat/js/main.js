@@ -1,11 +1,12 @@
 
 // Cat position vars
 const posH = '40px';
-const posV = '420px';
+const posV = '200px';
 const size = '140px';
 const middleBarrier = 340;
 const edgeBarrier = 150;
 const finalBarrier = 250;
+
 
 // FIRST CAT INIT
 const cat = document.getElementById('cat');
@@ -13,6 +14,7 @@ cat.style.position = 'absolute';
 cat.style.left = posH;
 cat.style.top = posV;
 cat.style.width = size;
+cat.style.filter = 'grayscale(100%)';
 
 // SECOND CAT INIT
 const catMirror = document.getElementById(`cat-mirror`);
@@ -21,6 +23,7 @@ catMirror.style.right = posH;
 catMirror.style.top = posV;
 catMirror.style.width = size;
 catMirror.style.transform = 'scaleX(-1)';
+catMirror.style.filter = 'grayscale(100%)';
 
 /////////////
 
