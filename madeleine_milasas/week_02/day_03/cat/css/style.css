@@ -1,0 +1,13 @@
+/*#cat {
+  position: absolute;
+  left: 0;
+}*/
+
+
+body {
+  margin: 0;
+  background-image: url('https://cdn.pixabay.com/photo/2016/07/28/15/39/retro-1548260_960_720.png');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+}
