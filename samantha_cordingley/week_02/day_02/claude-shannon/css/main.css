@@ -71,9 +71,13 @@ aside {
   width: 15%;
   border: 1.5px black solid;
   color: black;
+  position: relative;
+  bottom: 50px;
+  left: 58px;
+  padding-top: 20px;
   padding-left: 20px;
-  padding-right: -22px;
-  margin-left: 20px;
+  padding-bottom: 20px;
+  margin-left: 21px;
 }
 
 aside li {
@@ -177,6 +181,7 @@ aside#inventions {
 }
 
 /*////////////////////////////////SECRET PAGE STYLING//////////////////////////////*/
+
 .secretmain {
   width: 45%;
   padding-left: 60px;
@@ -194,5 +199,11 @@ aside#inventions {
 
 .secretreveal:hover {
   background: white;
+}
 
+.secretaside {
+  border: none;
+  position: relative;
+  top: 30px;
+  padding-right: 0;
 }
