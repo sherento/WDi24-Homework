@@ -38,4 +38,4 @@ const makeCountdown = function () {
 };
 
 setInterval( makeCountdown, 500 );
-// running at twice per second, seemed to update more smoothly this way
+// running at twice per second, seemed to update more smoothly this way...
