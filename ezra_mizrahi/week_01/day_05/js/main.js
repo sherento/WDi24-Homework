@@ -39,29 +39,29 @@ Make sure the stops that are the same for different lines have different names
 
 const lineN = [ "Times square",
                 "34th",
-                "28th line N",
-                "23rd line N",
-                "Union Square line N",
-                "8th line N"
+                "28th(N)",
+                "23rd(N)",
+                "Union Square(N)",
+                "8th(N)"
               ];
 
-const lineL = [ "8th line L",
+const lineL = [ "8th(L)",
                 "6th",
-                "Union Square line L",
+                "Union Square(L)",
                 "3rd",
                 "1st"
               ];
 
 const line6 = [ "Grand Central",
                 "33rd",
-                "28th line 6",
-                "23rd line 6",
-                "Union Square line 6",
+                "28th(6)",
+                "23rd(6)",
+                "Union Square(6)",
                 "Astor Place"
                ];
 
 
-let transfer = line6.indexOf("Union Square line 6");
+let transfer = line6.indexOf("Union Square(6)");
 console.log(transfer);
 
 // below function produces list of stops on a given trip
@@ -100,11 +100,11 @@ listStops(line6, "33rd", line6, "Astor Place");
 listStops(line6, "Grand Central", line6, "Astor Place");
 
 // should list: 28th, 23rd
-listStops(line6, "28th line 6", line6, "23rd line 6");
+listStops(line6, "28th(6)", line6, "23rd(6)");
 
 // should list: astor place, union square, 23rd
 // this is the reverse case
-listStops(line6, "Astor Place", line6, "23rd line 6");
+listStops(line6, "Astor Place", line6, "23rd(6)");
 
 
 
@@ -131,10 +131,10 @@ sumStops(line6, "Grand Central", line6, "Astor Place");
 sumStops(line6, "Grand Central", line6, "33rd");
 
 // should return 4 stops
-sumStops(lineL, "8th line L", lineL, "1st");
+sumStops(lineL, "8th(L)", lineL, "1st");
 
 // should return 1 stops
-sumStops(line6, "Astor Place", line6, "Union Square line 6");
+sumStops(line6, "Astor Place", line6, "Union Square(6)");
 
 // should return 4 stops
 // reverse case
