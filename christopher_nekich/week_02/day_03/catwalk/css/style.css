@@ -50,7 +50,17 @@ background-color: indigo;
   position: absolute;
   top: 380px;
   left: 20px;
-  border-radius: 5%;
+  z-index: 3;
+  font-size: 50px;
+  border-radius: 20%;
+}
+
+.pink p {
+  line-height: 90px;
+  text-align: center;
+  background-color: #CC6DB7;
+  color: #CC23B9;
+  border-radius: 10px;
 }
 
 .bigStar {
