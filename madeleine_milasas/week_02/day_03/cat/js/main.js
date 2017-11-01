@@ -29,7 +29,7 @@ catMirror.style.filter = 'grayscale(100%)';
 
 // CIRCLE INIT
 const circle = document.getElementById('circle');
-circle.style.width = '20px';
+circle.style.width = '30px';
 circle.style.visibility = 'hidden';
 circle.style.position = 'fixed';
 let h = window.innerHeight;
