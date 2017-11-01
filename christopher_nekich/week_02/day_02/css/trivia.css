@@ -34,16 +34,16 @@ a:hover {
   color: skyblue;
 }
 
-.container {
+aside {
   width: 960px;
   margin: 0 auto;
   text-align: center;
 }
-.container h1 {
+aside h1 {
   margin: 20px 0;
 }
 
-.container li {
+aside li {
   margin: 15px 0;
   list-style: georgian;
 }
