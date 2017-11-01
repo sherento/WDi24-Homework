@@ -1,0 +1,8 @@
+
+body {
+  /*background: green;*/
+  /*background: url("http://dash.ga.co/assets/anna-bg.png");*/
+  background: url("images/bg_body.jpg");
+  background-size: cover;
+  font-family: helvetica, sans-serif;
+}

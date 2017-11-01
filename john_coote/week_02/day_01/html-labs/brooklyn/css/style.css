@@ -15,14 +15,18 @@ Link Hover Color = #20222a
 body {
   font-family: "Times New Roman", serif;
   font-size: 12px;
+  line-height: 17px;
   color: #656565;
 }
 
 #container {
-  width: 950px;
+  width: 960px;
   margin: 0 auto;
 }
 
+.logo {
+  padding: 50px 0 10px 0;
+}
 
 a {
   color: #23EBE4;
@@ -33,8 +37,10 @@ h3 {
 }
 
 
+
 .foot img {
-  border: 5px;
+  border: 4px;
   border-style: solid;
   border-color: grey;
+  margin: 2px;
 }
