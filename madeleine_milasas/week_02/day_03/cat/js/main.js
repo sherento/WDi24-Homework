@@ -1,7 +1,7 @@
 
 // Cat init position vars
 const posH = '40px';
-const posV = '300px';
+const posV = '420px';
 const size = '140px';
 
 
@@ -22,15 +22,15 @@ catMirror.style.transform = 'scaleX(-1)';
 
 
 
-const catWalk = function () {
-  let oldLeft = parseFloat(cat.style.left);
-  let oldTop = parseFloat(cat.style.top);
+const catWalkLtoR = function () {
+  let oldH = parseFloat(cat.style.left);
+  let oldV = parseFloat(cat.style.top);
   let oldWidth = parseFloat(cat.style.width);
-  let newLeft = oldLeft + 0.7;
-  let newTop = oldTop + 0.2;
+  let newH = oldH + 0.7;
+  let newV = oldV + 0.2;
   let newWidth = oldWidth * 1.001;
-  cat.style.left = `${ newLeft }px`;
-  cat.style.top = `${ newTop }px`;
+  cat.style.left = `${ newH }px`;
+  cat.style.top = `${ newV }px`;
   cat.style.width = `${ newWidth }px`;
   if ( parseFloat(cat.style.left) > 340 ) {
     window.clearInterval(timerId);
@@ -39,7 +39,25 @@ const catWalk = function () {
   }
 };
 
+const catWalkRtoL = function () {
+  let oldH = parseFloat(catMirror.style.right);
+  let oldV = parseFloat(catMirror.style.top);
+  let oldWidth = parseFloat(catMirror.style.width);
+  let newH = oldH + 0.7;
+  let newV = oldV + 0.2;
+  let newWidth = oldWidth * 1.001;
+  catMirror.style.right = `${ newH }px`;
+  catMirror.style.top = `${ newV }px`;
+  catMirror.style.width = `${ newWidth }px`;
+  if ( parseFloat(catMirror.style.right) > 340 ) {
+    window.clearInterval(timerIdMir);
+    // go to still gif
+    catMirror.src = "images/cat-walk-frames/cat02.gif";
+  }
+};
+
 
 
 // now call function anim
-const timerId = setInterval( catWalk, 20 );
+const timerId = setInterval( catWalkLtoR, 20 );
+const timerIdMir = setInterval( catWalkRtoL, 20 );

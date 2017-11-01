@@ -6,8 +6,9 @@
 
 body {
   margin: 0;
-  background-image: url('https://cdn.pixabay.com/photo/2016/07/28/15/39/retro-1548260_960_720.png');
+  background-image: url('http://www.pxleyes.com/images/contests/ground%20level/fullsize/ground%20level_4c5bd54f50629_hires.jpg');
   background-repeat: no-repeat;
   background-attachment: fixed;
-  background-position: center;
+  background-position: bottom;
+  background-size: cover;
 }
