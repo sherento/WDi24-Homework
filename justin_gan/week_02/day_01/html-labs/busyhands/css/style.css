@@ -1,0 +1,133 @@
+* {
+  border: 1px solid green;
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  font-family: Helvetica, sans-serif;
+  background-color: black;
+}
+
+p {
+  line-height: 1.3;
+}
+
+header, nav, ul, li {
+  height: 85px;
+}
+
+nav, #main-content, #footer-content, .footer-bottom {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+#wrapper {
+  background: url('../images/bg_wrapper.png') repeat-x;
+}
+
+#container {
+  background: url('../images/bg_body.jpg');
+}
+
+header li {
+  display: inline-block;
+  padding: 32px 20px;
+  color: #c1cdc6;
+}
+
+header li:hover {
+  background: url('../images/bg_nav_rollover.png') repeat-x;
+  color: #00C8FF;
+}
+
+.logobanner {
+  margin-top: 25px;
+}
+
+#social-media {
+  float: right;
+}
+
+.photobanner img, .imageshadow img {
+  width: 100%;
+  display: block;
+}
+
+#blurb {
+  display: flex;
+  background: url(../images/bg_blurb.jpg);
+  align-items: center;
+  padding: 10px 20px;
+  border: 2px solid white;
+  border-style: inset;
+}
+
+#home-boxes {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 25px;
+}
+
+.home-box {
+  display: inline-block;
+  width: 30%;
+}
+
+.home-box img {
+  border: solid 3px #E0E0E0;
+  width: 100%;
+  margin: 15px 0;
+  padding: 2px;
+  background-clip: content-box;
+  background-color: white;
+}
+
+.home-box p {
+  margin-bottom: 15px;
+}
+
+.home-box a {
+  text-decoration: none;
+  color: #00C8FF;
+}
+
+.home-box a:hover {
+  color: #17a2c8;
+}
+
+h1 {
+  font-size: 24px;
+}
+
+footer {
+  background: black;
+  color: white;
+}
+
+#footer-content {
+  display: flex;
+}
+
+/* why is this making the the boxes 25%? */
+.box-footer:nth-child(odd) {
+ width: 100%;
+}
+
+.box-footer .text-widget {
+  color: green;
+}
+
+#footer-bottom {
+  display: flex;
+  justify-content: space-between;
+}
+
+#copyright, #companybottom {
+  display: inline-block;
+}
+/*
+#companybottom {
+  text-align: right;
+}*/
