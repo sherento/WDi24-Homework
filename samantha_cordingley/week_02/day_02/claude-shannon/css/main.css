@@ -19,6 +19,7 @@ nav {
   background-color: white;
   padding: 2px;
   position: fixed;
+  z-index: 1;
 }
 
 nav li {
@@ -151,15 +152,15 @@ span#copyright {
   padding-left: 60px;
   vertical-align: top;
   margin-top: 20px;
-  /*position: -webkit-sticky;   /*required for Safari*/
-  /*position: sticky; /*COULDNT GET THIS TO WORK WITH AFFECTING MY NAV LINKS*/
-  /*top: 0;          /*required with position sticky*/
+  position: -webkit-sticky;   /*required for Safari*/
+  position: sticky; /*COULDNT GET THIS TO WORK WITH AFFECTING MY NAV LINKS*/
+  top: 0;          /*required with position sticky*/
 }
 
 .aboutaside {
   width: 20%;
   margin-left: 205px;
-  margin-top: 96px;
+  margin-top: 137px;
 }
 
 #inventions {
