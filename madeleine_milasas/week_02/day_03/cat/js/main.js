@@ -6,6 +6,8 @@ const size = '140px';
 const middleBarrier = 340;
 const edgeBarrier = 150;
 const finalBarrier = 250;
+// Circle vars
+// const circleStartWidth = 2;
 
 
 // FIRST CAT INIT
@@ -17,13 +19,24 @@ cat.style.width = size;
 cat.style.filter = 'grayscale(100%)';
 
 // SECOND CAT INIT
-const catMirror = document.getElementById(`cat-mirror`);
+const catMirror = document.getElementById('cat-mirror');
 catMirror.style.position = 'absolute';
 catMirror.style.right = posH;
 catMirror.style.top = posV;
 catMirror.style.width = size;
 catMirror.style.transform = 'scaleX(-1)';
 catMirror.style.filter = 'grayscale(100%)';
+
+// CIRCLE INIT
+const circle = document.getElementById('circle');
+circle.style.width = '20px';
+circle.style.visibility = 'hidden';
+circle.style.position = 'fixed';
+let h = window.innerHeight;
+circle.style.top = `${ h / 2 }px`;
+let w = window.innerWidth;
+circle.style.right = `${ w / 2 }px`;
+circle.style.transform = 'scale(1, 1)';
 
 /////////////
 
@@ -109,7 +122,7 @@ const catMirWalkRtoL = function () {
   catMirror.style.top = `${ newV }px`;
   catMirror.style.width = `${ newWidth }px`;
   if ( parseFloat(catMirror.style.right) > middleBarrier ) {
-    window.clearInterval(timerIdMir);
+    clearInterval(timerIdMir);
     // go to still gif
     catMirror.src = "images/cat-walk-frames/cat02.gif";
   }
@@ -126,7 +139,7 @@ const catMirWalkLtoR = function () {
   catMirror.style.top = `${ newV }px`;
   catMirror.style.width = `${ newWidth }px`;
   if ( parseFloat(catMirror.style.right) < edgeBarrier ) {
-    window.clearInterval(timerIdMir2);
+    clearInterval(timerIdMir2);
     // go to still gif
     catMirror.src = "images/cat-walk-frames/cat05.gif";
   }
@@ -143,7 +156,7 @@ const catMirWalkRtoL2 = function () {
   catMirror.style.top = `${ newV }px`;
   catMirror.style.width = `${ newWidth }px`;
   if ( parseFloat(catMirror.style.right) > finalBarrier ) {
-    window.clearInterval(timerIdMir3);
+    clearInterval(timerIdMir3);
     // go to still gif
     catMirror.src = "images/cat-walk-frames/cat07.gif";
   }
@@ -160,7 +173,7 @@ const catMirWalkLtoR2 = function () {
   catMirror.style.top = `${ newV }px`;
   catMirror.style.width = `${ newWidth }px`;
   if ( parseFloat(catMirror.style.right) < edgeBarrier ) {
-    window.clearInterval(timerIdMir4);
+    clearInterval(timerIdMir4);
     // go to still gif
     catMirror.src = "images/cat-walk-frames/cat05.gif";
   }
@@ -206,6 +219,48 @@ setTimeout( function () { timerId4 = setInterval( catWalkRtoL2, 20 ); }, 20000);
 setTimeout( function () { timerIdMir4 = setInterval( catMirWalkLtoR2, 20 ); }, 20000);
 //
 //
+
+// now make cat wipe
+
+
+
+// now make circle wipe
+// const circleWipe = function () {
+//   let oldW = parseInt( circle.style.width );
+//   let newW = oldW + 10;
+//   circle.style.width = `${ newW }px`;
+//   h = window.innerHeight;
+//   circle.style.top = `${ h / 2 }px`;
+//   w = window.innerWidth;
+//   circle.style.right = `${ w / 2 }px`;
+// };
+
+const circleWipe = function () {
+  circle.style.visibility = 'visible';
+  const transStr = circle.style.transform;
+  console.log(transStr);
+  const a = transStr[9];
+  const b = transStr[10];
+  const c = transStr[11];
+  let x;
+  if (c) {
+    x = parseInt( a + b + c );
+  } else if (b) {
+    x = parseInt( a + b );
+  } else {
+    x = parseInt(a);
+  }
+  let newX = x + 1;
+  circle.style.transform = `scale(${newX}, ${newX}`;
+  if ( newX === 100 ) {
+    clearInterval(timerIdCircle);
+  }
+};
+// e.g. circle.style.transform = 'scale(1, 1)';
+
+
+let timerIdCircle;
+setTimeout( function () { timerIdCircle = setInterval( circleWipe, 20 );  }, 24000 );
 
 
 
