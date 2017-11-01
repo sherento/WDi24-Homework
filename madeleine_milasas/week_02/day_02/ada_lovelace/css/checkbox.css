@@ -1,0 +1,380 @@
+
+/*
+**********               CHECKBOXES         ************************************
+*/
+
+.box {
+  box-sizing: border-box;
+  width: 50px;
+  height: 50px;
+  border: 1px dashed lightgray;
+  display: inline-block;
+}
+
+/*//*/
+
+.checkboxOne {
+  position: relative;
+}
+
+.checkboxOne label {
+  display: block;
+  position: absolute;
+  width: 48px;
+  height: 48px;
+  cursor: pointer;
+  background-color: #f8f7f7;
+}
+
+.checkboxOne input[type=checkbox]:checked + label {
+	background-color: black;
+}
+
+.checkboxTwo {
+  position: relative;
+}
+
+.checkboxTwo label {
+  display: block;
+  position: absolute;
+  width: 48px;
+  height: 48px;
+  cursor: pointer;
+  background-color: #f8f7f7;
+}
+
+.checkboxTwo input[type=checkbox]:checked + label {
+	background-color: black;
+}
+
+.checkboxThree {
+  position: relative;
+}
+
+.checkboxThree label {
+  display: block;
+  position: absolute;
+  width: 48px;
+  height: 48px;
+  cursor: pointer;
+  background-color: #f8f7f7;
+}
+
+.checkboxThree input[type=checkbox]:checked + label {
+	background-color: black;
+}
+
+.checkboxFour {
+  position: relative;
+}
+
+.checkboxFour label {
+  display: block;
+  position: absolute;
+  width: 48px;
+  height: 48px;
+  cursor: pointer;
+  background-color: #f8f7f7;
+}
+
+.checkboxFour input[type=checkbox]:checked + label {
+	background-color: black;
+}
+
+.checkboxFive {
+  position: relative;
+}
+
+.checkboxFive label {
+  display: block;
+  position: absolute;
+  width: 48px;
+  height: 48px;
+  cursor: pointer;
+  background-color: #f8f7f7;
+}
+
+.checkboxFive input[type=checkbox]:checked + label {
+	background-color: black;
+}
+
+.checkboxSix {
+  position: relative;
+}
+
+.checkboxSix label {
+  display: block;
+  position: absolute;
+  width: 48px;
+  height: 48px;
+  cursor: pointer;
+  background-color: #f8f7f7;
+}
+
+.checkboxSix input[type=checkbox]:checked + label {
+	background-color: black;
+}
+
+.checkboxSeven {
+  position: relative;
+}
+
+.checkboxSeven label {
+  display: block;
+  position: absolute;
+  width: 48px;
+  height: 48px;
+  cursor: pointer;
+  background-color: #f8f7f7;
+}
+
+.checkboxSeven input[type=checkbox]:checked + label {
+	background-color: black;
+}
+
+
+.checkboxEight {
+  position: relative;
+}
+
+.checkboxEight label {
+  display: block;
+  position: absolute;
+  width: 48px;
+  height: 48px;
+  cursor: pointer;
+  background-color: #f8f7f7;
+}
+
+.checkboxEight input[type=checkbox]:checked + label {
+	background-color: black;
+}
+
+.checkboxNine {
+  position: relative;
+}
+
+.checkboxNine label {
+  display: block;
+  position: absolute;
+  width: 48px;
+  height: 48px;
+  cursor: pointer;
+  background-color: #f8f7f7;
+}
+
+.checkboxNine input[type=checkbox]:checked + label {
+	background-color: black;
+}
+
+.checkboxTen {
+  position: relative;
+}
+
+.checkboxTen label {
+  display: block;
+  position: absolute;
+  width: 48px;
+  height: 48px;
+  cursor: pointer;
+  background-color: #f8f7f7;
+}
+
+.checkboxTen input[type=checkbox]:checked + label {
+	background-color: black;
+}
+
+.checkboxEleven {
+  position: relative;
+}
+
+.checkboxEleven label {
+  display: block;
+  position: absolute;
+  width: 48px;
+  height: 48px;
+  cursor: pointer;
+  background-color: #f8f7f7;
+}
+
+.checkboxEleven input[type=checkbox]:checked + label {
+	background-color: black;
+}
+
+.checkboxTwelve {
+  position: relative;
+}
+
+.checkboxTwelve label {
+  display: block;
+  position: absolute;
+  width: 48px;
+  height: 48px;
+  cursor: pointer;
+  background-color: #f8f7f7;
+}
+
+.checkboxTwelve input[type=checkbox]:checked + label {
+	background-color: black;
+}
+
+.checkboxThirteen {
+  position: relative;
+}
+
+.checkboxThirteen label {
+  display: block;
+  position: absolute;
+  width: 48px;
+  height: 48px;
+  cursor: pointer;
+  background-color: #f8f7f7;
+}
+
+.checkboxThirteen input[type=checkbox]:checked + label {
+	background-color: black;
+}
+
+.checkboxFourteen {
+  position: relative;
+}
+
+.checkboxFourteen label {
+  display: block;
+  position: absolute;
+  width: 48px;
+  height: 48px;
+  cursor: pointer;
+  background-color: #f8f7f7;
+}
+
+.checkboxFourteen input[type=checkbox]:checked + label {
+	background-color: black;
+}
+
+.checkboxFifteen {
+  position: relative;
+}
+
+.checkboxFifteen label {
+  display: block;
+  position: absolute;
+  width: 48px;
+  height: 48px;
+  cursor: pointer;
+  background-color: #f8f7f7;
+}
+
+.checkboxFifteen input[type=checkbox]:checked + label {
+	background-color: black;
+}
+
+
+.checkboxSixteen {
+  position: relative;
+}
+
+.checkboxSixteen label {
+  display: block;
+  position: absolute;
+  width: 48px;
+  height: 48px;
+  cursor: pointer;
+  background-color: #f8f7f7;
+}
+
+.checkboxSixteen input[type=checkbox]:checked + label {
+	background-color: black;
+}
+
+.checkboxSeventeen {
+  position: relative;
+}
+
+.checkboxSeventeen label {
+  display: block;
+  position: absolute;
+  width: 48px;
+  height: 48px;
+  cursor: pointer;
+  background-color: #f8f7f7;
+}
+
+.checkboxSeventeen input[type=checkbox]:checked + label {
+	background-color: black;
+}
+
+.checkboxEighteen {
+  position: relative;
+}
+
+.checkboxEighteen label {
+  display: block;
+  position: absolute;
+  width: 48px;
+  height: 48px;
+  cursor: pointer;
+  background-color: #f8f7f7;
+}
+
+.checkboxEighteen input[type=checkbox]:checked + label {
+	background-color: black;
+}
+
+.checkboxNineteen {
+  position: relative;
+}
+
+.checkboxNineteen label {
+  display: block;
+  position: absolute;
+  width: 48px;
+  height: 48px;
+  cursor: pointer;
+  background-color: #f8f7f7;
+}
+
+.checkboxNineteen input[type=checkbox]:checked + label {
+	background-color: black;
+}
+
+.checkboxTwenty {
+  position: relative;
+}
+
+.checkboxTwenty label {
+  display: block;
+  position: absolute;
+  width: 48px;
+  height: 48px;
+  cursor: pointer;
+  background-color: #f8f7f7;
+}
+
+.checkboxTwenty input[type=checkbox]:checked + label {
+	background-color: black;
+}
+
+.checkboxTwentyOne {
+  position: relative;
+}
+
+.checkboxTwentyOne label {
+  display: block;
+  position: absolute;
+  width: 48px;
+  height: 48px;
+  cursor: pointer;
+  background-color: #f8f7f7;
+}
+
+.checkboxTwentyOne input[type=checkbox]:checked + label {
+	background-color: black;
+}
+
+
+/* hiding original checkboxes*/
+input[type=checkbox] {
+	/*visibility: hidden;*/
+  display: none;
+}

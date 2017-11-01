@@ -20,9 +20,10 @@ const shoppingCart = {
 const sum = function (obj) {
     for (let key in shoppingCart) {
       console.log(shoppingCart[key]);
+      totalPrice += shoppingCart[key];
   }
+  console.log(totalPrice);
 }
-
 
 //Can't figure out how to sum the keys Ive accessed together
 
