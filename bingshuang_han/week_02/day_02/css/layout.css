@@ -1,0 +1,78 @@
+
+*{
+  border:1px solid green;
+  /*box-sizing: border-box;*/
+}
+/*Help you to understand how the box display*/
+@import url('https://fonts.googleapis.com/css?family=Rozha+One');
+
+body{
+  font-family: 'Rozha One', serif;
+  background-color: #222;
+  /*same as #222222;*/
+  padding: 0;
+  margin: 0;
+  text-align: justify;
+}
+.container{
+  width: 960px;
+  padding: 1em;
+  margin: auto;
+  background-color: #ea8181;;
+  /*equal to #cccccc*/
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+  /*border-radius: 20px;*/
+  /*border-radius: 100%   circle */
+
+}
+h1{
+  text-align: center;
+  background-color: #222;
+  color: #ccc;
+  padding: 1em;
+}
+nav{
+  text-align: right;
+
+}
+nav a{
+  color: green;
+}
+
+main{
+  display: inline-block;
+  width: 65%;
+}
+main img{
+  display: block;
+  margin: 0 auto;
+  /*Variadic*/
+}
+aside{
+  position: fixed;
+  display: inline-block;
+  width:22%;
+  /*75% + 24% is about to  100%*/
+  vertical-align: top;
+  background: #ccc;
+  padding: 1em;
+  margin-top: 63px;
+  border-radius: 0.5em;
+  box-shadow:0 0 15px #222;
+
+}
+aside ul{
+  padding-left: 26px;
+}
+aside h3{
+  padding: 0 27px;
+}
+ul a {
+  width: 90px;
+  text-decoration: none;
+
+}
+ul li{
+    list-style-type: none;
+}

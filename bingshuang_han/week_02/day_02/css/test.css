@@ -1,0 +1,54 @@
+*{
+  border:1px solid green;
+  /*box-sizing: border-box;*/
+}
+
+
+main{
+  display: inline-block;
+  width:560px;
+  text-align: justify;
+
+}
+h1{
+  display: inline-block;
+  width: 255px;
+  background-color: #ccc;
+  height: 96px;
+}
+nav{
+  float: right;
+  width: auto;
+}
+nav ul li{
+  display: inline-block;
+  width: 60px;
+  height: 60px;
+  background: blue;
+  text-indent: -9999em;
+}
+ul li.linkedIn {
+	background:url(../images/socialNav.png) 0px 64px;
+}
+ul li.twitter {
+	background:url(../images/socialNav.png) -60px 64px;
+}
+ul li.facebook {
+	background:url(../images/socialNav.png) -120px 64px;
+}
+ul li.rss {
+	background:url(../images/socialNav.png) -180px 64px;
+}
+ul li.linkedIn:hover {
+	background:url(../images/socialNav.png) 0px 0px;
+}
+ul li.twitter:hover {
+	background:url(../images/socialNav.png) -60px 0px;
+}
+ul li.facebook:hover {
+	background:url(../images/socialNav.png) -120px 0px;
+}
+
+ul li.rss:hover {
+	background:url(../images/socialNav.png) -180px 0px;
+}

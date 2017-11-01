@@ -81,8 +81,8 @@ const planTrip = function ( ){
      const station1 = arrayOfStrings[1];
      const line2 = arrayOfStrings[2];
      const station2 = arrayOfStrings[3];
-     console.log( input);
-     console.log(arrayOfStrings);
+    // console.log( input);
+    // console.log(arrayOfStrings);      //for test;
 
   if (line1 === line2 )
   {
