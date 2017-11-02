@@ -6,7 +6,7 @@ Each property and value pair of the source object has to be present in the objec
 
 For example, if the first argument is `[{ first: "Romeo", last: "Montague" }, { first: "Mercutio", last: null }, { first: "Tybalt", last: "Capulet" }]`, and the second argument is `{ last: "Capulet" }`, then you must return the third object from the array (the first argument), because it contains the property and its value, that was passed on as the second argument.
 
-Make sense? Nope? Good!
+Spoiler - All the values die at the end of the function.
 
 HINT: Call the function like so:
 
