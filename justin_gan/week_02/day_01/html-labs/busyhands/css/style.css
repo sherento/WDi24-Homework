@@ -107,21 +107,37 @@ footer {
 }
 
 #footer-content {
-  display: flex;
+  margin-bottom: 50px;
 }
 
-/* why is this making the the boxes 25%? */
+.box-footer {
+  display: inline-block;
+}
+
+
+.box-footer p {
+  color: #505240;
+}
+
+.box-footer h2 {
+  border-bottom: 1px solid #505240;
+}
+
 .box-footer:nth-child(odd) {
- width: 100%;
+ width: 25%;
 }
 
-.box-footer .text-widget {
-  color: green;
+.box-footer:nth-child(odd) p {
+  border-bottom: 1px solid #505240;
+}
+
+.text-widget {
+  width: 48%;
 }
 
 #footer-bottom {
-  display: flex;
-  justify-content: space-between;
+  /*display: flex;
+  justify-content: space-between;*/
 }
 
 #copyright, #companybottom {
