@@ -1,66 +1,57 @@
 console.log("catgif day");
 
-const catgif = document.querySelector('img')
-const img =  document.querySelector('img')
-img.style.opacity = 1;
-// catgif.style.left = '0px';
-// catgif.style.width = '20px';
-//
-//
-const fadeAway = function() {
-  img.style.opacity = img.style.opacity - 0.1;
-  if (img.style.opacity < 0.2) {
-    clearInterval(fadeTimer);
+// declare vasriables 0
+oldLeft = 0;
+newLeft = 0;
+oldWidth = 0;
+newWidth = 0;
+let maxScreenWidth = 1000;
+
+const catgif = document.querySelector('img');
+catgif.style.position = 'absolute';
+catgif.style.left = '0px';
+catgif.style.top = "300px";
+
+const walkCat = function () {
+
+
+
+  // oldLeft = parseInt(catgif.style.left);
+  // newLeft = oldLeft + 2 // bigger = faster & jumpy, smaller = slow & smmoth
+  // catgif.style.left = newLeft + 'px'
+
+console.log(catgif);
+console.log(catgif.style.left);
+
+  oldLeft = parseInt(catgif.style.left);
+
+  console.log(oldLeft);
+  let newLeft = oldLeft + 3;
+  console.log(newLeft);
+
+  let oldWidth = parseInt(catgif.style.width);
+  let newWidth = oldWidth + 2;
+  //console.log(newWidth);
+
+  catgif.style.left = newLeft + 'px';
+  catgif.style.width = newWidth + 'px';
+
+
+  if ( oldLeft > maxScreenWidth ) {
+    clearInterval(moveTimer);
+    console.log("finished");
+    return;
   }
-};
-
-
-// const moveCat = function () {
-//   let oldLeft = Number(catgif.stlye.left);
-//   let newLeft = oldLeft + 50;
-//   catgif.style.left = newLeft + 'px';
-//   if ()
-//
-//
-// }
-
-
-const fadeTimer = window.setInterval(fadeAway, 800);
-
-console.log('timer ID is ', fadeTimer);
-console.log("continue");
 
 
 
-//
-// const walkCat = function () {
-//
-//   let maxScreenWidth = (Number(window.innerWidth) - 300)
-//
-//   let oldLeft = parseInt(catgif.style.left);
-//   let newLeft = oldLeft + 3;
-//   console.log(newLeft);
-//
-//   let oldWidth = Number(catgif.width);
-//   let newWidth = oldWidth + 2;
-//   console.log(newWidth);
-//
-//
-//
-//
-//   if ( newLeft > maxScreenWidth ) {
-//     clearInterval(moveTimer);
-//     console.log("finished");
-//     return;
-//   }
-//   catgif.style.left = newLeft + 'px';
-//   catgif.style.width = newWidth + 'px';
-//
-//
-// }
-//
-//
-// const moveTimer = window.setInterval(walkCat, 25);
+}
+
+
+const moveTimer = window.setInterval(walkCat, 25);
+
+
+
 // console.log("boo");
 //
 // // window.setInterval(walkCat, 40);
