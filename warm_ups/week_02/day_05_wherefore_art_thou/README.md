@@ -19,3 +19,10 @@ const arrayObj = [
 
 whatIsInAName( arrayObj, { last: "Capulet" } );
 ```
+
+Bonus - see if you can get it to work with additional values in the second argument
+
+```js
+whatIsInAName([{ "a": 1, "b": 2 }, { "a": 1 }, { "a": 1, "b": 2, "c": 2 }], { "a": 1, "b": 2 });
+whatIsInAName([{ "a": 1, "b": 2 }, { "a": 1 }, { "a": 1, "b": 2, "c": 2 }], { "a": 1, "c": 2 });
+```
