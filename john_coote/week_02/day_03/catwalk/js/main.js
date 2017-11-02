@@ -9,6 +9,10 @@ catgif.style.left = '0px';
 catgif.style.top = "300px";
 let newLeft = 0;
 let oldLeft = 0;
+let oldTop = 0;
+let newTop = 0;
+blDirectionX = true;
+blDirectionY = true;
 
 const sungif = document.querySelectorAll('img')[1];
 console.log(sungif);
@@ -18,6 +22,15 @@ sungif.style.left = "0px";
 sungif.style.top = "0px";
 sunOldTop = 0;
 sunNewTop = 0;
+sunOldLeft = 0;
+sunNewLeft = 0;
+blSunDirectionX = true;
+blSunDirectionY = true;
+
+
+let centreX = 500;
+let centreY = 400;
+
 
 // const sky = document.body.bgColor
 // console.log(sky);
@@ -36,13 +49,37 @@ console.log("one");
 
 const catWalk = function() {
   oldLeft = parseInt(catgif.style.left);
-  newLeft = oldLeft + 2 // bigger = faster & jumpy, smaller = slow & smmoth
+  oldTop = parseInt(catgif.style.top);
+  console.log(blDirectionX);
+  console.log(blDirectionY);
+
+
+  if (newLeft > 1000) {blDirectionX = false}
+  if (newLeft < 0) {blDirectionX = true}
+
+  if (blDirectionX === true) {newLeft = oldLeft + 2}
+  if (blDirectionX === false) {newLeft = oldLeft - 2}
+  // bigger = faster & jumpy, smaller = slow & smmoth
+
+  if (newTop > 800) {blDirectionY = false}
+  if (newTop < 0) {blDirectionY = true}
+  if (blDirectionY === true) {newTop = oldTop + 2}
+  if (blDirectionY === false) {newTop = oldTop - 2}
+
   catgif.style.left = newLeft + 'px'
-  if (newLeft > screenWidth) {
+  catgif.style.top = newTop + 'px'
+
+  console.log(newLeft);
+  console.log(newTop);
+
+
+
+
+  if (newLeft > 5000) {
     clearInterval(catTimerDone);
     console.log("cat has left the building");
-
   }
+
 }
 
 console.log("two");
@@ -51,6 +88,36 @@ const sunFall = function() {
   sunOldTop = parseInt(sungif.style.top);
   sunNewTop = sunOldTop + 1;
   sunOldLeft = parseInt(sungif.style.left);
+  sunNewLeft = sunOldLeft + 2
+  sungif.style.top = sunNewTop + 'px';
+  sungif.style.left = sunNewLeft + 'px';
+  if (sunNewTop > 1000) {
+    clearInterval(sunTimerDone);
+    console.log("end the sun");
+  }
+}
+
+
+
+const sunRotate = function() {
+  // Rotation needs x and y to change direction when they reach the end, same as the cat.
+  // first define a centre point (global) (centreX = 500, centreY = 400)
+  // it is position relative to the centre that will change direction.
+
+  sunOldTop = parseInt(sungif.style.top);
+  sunOldLeft = parseInt(sungif.style.left);
+
+  x = sunOldLeft + 500;
+  y = sunOldTop + 400;
+
+  delY = 
+
+  // if (newLeft > 1000) {blDirectionX = false}
+  // if (newLeft < 0) {blDirectionX = true}
+
+
+  sunNewTop = sunOldTop + 1;
+
   sunNewLeft = sunOldLeft + 2
   sungif.style.top = sunNewTop + 'px';
   sungif.style.left = sunNewLeft + 'px';
@@ -117,8 +184,8 @@ const skyDarken = function() {
 
 
 const catTimerDone = window.setInterval(catWalk, 16);
-const sunTimerDone = window.setInterval(sunFall, 16);
-const skyTimerDone = window.setInterval(skyDarken, 200);
+// const sunTimerDone = window.setInterval(sunFall, 16);
+// const skyTimerDone = window.setInterval(skyDarken, 200);
 
 
 
