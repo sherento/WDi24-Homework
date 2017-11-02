@@ -134,6 +134,17 @@ const load = () => {
   for ( let i = 0; i < stations.length; i++ ) {
     const station = stations[i];
     station.onclick = function () {
+      console.log( this.getAttribute('data-station') );
+      console.log( document.getElementById('startStation') );
+      const startStation = document.getElementById('startStation');
+      console.log( startStation.value );
+      const clickedStation = this.getAttribute('data-station');
+      // insert clicked station into input field
+      // if ( startStation.value === "" ) {
+        document.getElementById('startStation').value = this.getAttribute('data-station');
+      // }
+
+      // change line to clicked station's line
       const classes = this.getAttribute( 'class' );
       const startLine = document.getElementsByName( 'startLine' );
       if (classes === 'text N') {
