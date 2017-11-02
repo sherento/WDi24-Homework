@@ -1,0 +1,27 @@
+/*#cat {
+  position: absolute;
+  left: 0;
+}*/
+
+
+/*body {
+  background-image: url('http://www.pxleyes.com/images/contests/ground%20level/fullsize/ground%20level_4c5bd54f50629_hires.jpg');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: 0 -400px;
+  background-size: cover;
+}*/
+
+/*.container {
+  background-color: blue;
+}*/
+
+/*.scene {
+  width: 100px;
+  visibility: hidden;
+}*/
+
+
+.circle {
+  margin: 0 auto;
+}
