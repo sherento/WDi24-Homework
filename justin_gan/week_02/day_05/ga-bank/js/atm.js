@@ -39,7 +39,8 @@ $(document).ready(function() {
       handleWithdrawal( amount, clickedAccount, otherAccount, $otherAccount );
     }
     // update balance on screen
-    $clickedAccount.children( '.balance' ).html(`$${ accounts[ clickedAccount ] }`);
+    $clickedAccount.children( '.balance' ).children( 'p' ).html(`$${ accounts[ clickedAccount ] }`);
+    updateTransition( $clickedAccount );
 
     updateBackground( accounts[ clickedAccount ], $clickedAccount );
     updateBackground( accounts[ otherAccount ], $otherAccount );
@@ -58,7 +59,8 @@ $(document).ready(function() {
       // withdraw remainder from overdraft protection account
       accounts[ otherAccount ] -= remainder;
       // update balance on screen
-      $otherAccount.children( '.balance' ).html(`$${ accounts[ otherAccount ] }`);
+      $otherAccount.children( '.balance' ).children( 'p' ).html(`$${ accounts[ otherAccount ] }`);
+      updateTransition( $otherAccount );
     }
     else {
       accounts[ clickedAccount ] -= +amount;
@@ -71,6 +73,12 @@ $(document).ready(function() {
       total += accounts[ account ];
     }
     return total;
+  }
+
+  const updateTransition = function ( $clickedAccount ) {
+    // fade amount in
+    $clickedAccount.children( '.balance' ).children( 'p' ).css( 'opacity', '0.0' ).animate( { opacity: 1.0 }, 375 );
+    $clickedAccount.children( '.balance' ).children( 'p' ).clearQueue();
   }
 
   const updateBackground = function ( accountBalance, accountNode ) {

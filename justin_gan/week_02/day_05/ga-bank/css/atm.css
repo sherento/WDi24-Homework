@@ -51,3 +51,7 @@
 .message {
   transform: translateY(50%);
 }
+
+p {
+  margin: 0;
+}
