@@ -23,16 +23,20 @@ $(document).ready(function() {
     // amount entered by user
     const amount = $clickedAccount.children( ':text' ).val();
 
-    if ( isNaN( amount ) ) {  // validate input
+    if ( amount === '' ) {
+      $( '.message' ).html( `Please enter an amount to begin your transaction.` );
+    }
+    else if ( /</g.test( amount ) ) {
+      $( '.message' ).html( `Please stop trying to hack the Bank of GA.`);
+    }
+    else if ( isNaN( amount ) ) {
       $( '.message' ).html( `The amount you've entered, "${ amount }", is not a number. Please try again.` )
     }
     else if ( transactionType === 'Deposit' ) {
       accounts[ clickedAccount ] += +amount;
     }
     else if ( transactionType === 'Withdraw' && amount > sumAll( accounts ) ) {
-
       $( '.message' ).html( `<p>Your total balance is $${ sumAll( accounts ) }.</p><p>You don't have enough money to withdraw $${ amount }.</p>` )
-
     }
     else if ( transactionType === 'Withdraw' && amount > accounts[ clickedAccount ]) {
       // calculate amount needed from overdraft protection account
