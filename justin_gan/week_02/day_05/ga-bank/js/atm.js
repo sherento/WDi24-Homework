@@ -51,7 +51,8 @@ $(document).ready(function() {
     // update balance on screen
     $clickedAccount.children( '.balance' ).html(`$${ accounts[ clickedAccount ] }`);
 
-    updateBackground( accounts[ clickedAccount ], $clickedAccount, accounts[ otherAccount ], $otherAccount );
+    updateBackground( accounts[ clickedAccount ], $clickedAccount );
+    updateBackground( accounts[ otherAccount ], $otherAccount );
 
   });
 
@@ -63,19 +64,12 @@ $(document).ready(function() {
     return total;
   }
 
-  const updateBackground = function ( clickedAccountBalance, clickedAccountNode, otherAccountBalance, otherAccountNode ) {
-    if ( clickedAccountBalance === 0 ) {
-      clickedAccountNode.children( '.balance' ).addClass( 'zero' );
+  const updateBackground = function ( accountBalance, accountNode ) {
+    if ( accountBalance === 0 ) {
+      accountNode.children( '.balance' ).addClass( 'zero' );
     }
-    else if ( clickedAccountBalance !== 0 ) {
-      clickedAccountNode.children( '.balance' ).removeClass( 'zero' );
-    }
-
-    if ( otherAccountBalance === 0 ) {
-      otherAccountNode.children( '.balance' ).addClass( 'zero' );
-    }
-    else if ( otherAccountBalance !== 0 ) {
-      otherAccountNode.children( '.balance' ).removeClass( 'zero' );
+    else if ( accountBalance !== 0 ) {
+      accountNode.children( '.balance' ).removeClass( 'zero' );
     }
   }
 });
