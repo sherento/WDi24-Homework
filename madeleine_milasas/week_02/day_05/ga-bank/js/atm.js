@@ -50,7 +50,7 @@ $(document).ready( function() {
       if ( amount > cBal + sBal ) {       // if amount is bigger than both balances
         return;
       } else {
-        withdrawOverdraft( amount );
+        withdrawOverdraft( amount, 1 );
         return;
       }
     }
@@ -66,8 +66,13 @@ $(document).ready( function() {
 
   const withdrawSavings = function() {
     let amount = +$('#savings-amount').val();
-    if (amount > sBal) {
-      return;
+    if ( amount > sBal ) {
+      if ( amount > cBal + sBal ) {       // if amount is bigger than both balances
+        return;
+      } else {
+        withdrawOverdraft( amount, -1 );
+        return;
+      }
     }
     if ( !isNaN(amount) ) {  // if amount entered is a number
       sBal -= amount;     // add amount to existing
@@ -79,16 +84,24 @@ $(document).ready( function() {
   };
 
 
-  const withdrawOverdraft = function( a ) {
+  const withdrawOverdraft = function( a, delta ) {  // delta=which direction, sav to chk or vv
     let amount = a; // a is user amount passed in from withdraw savings/checking function
-    sBal = sBal - (a - cBal);
-    cBal = 0;
+    if ( delta === 1 ) {
+      sBal = sBal - (a - cBal);
+      cBal = 0;
+    } else if (delta === -1) {
+      cBal = cBal - (a - sBal);
+      sBal = 0;
+    }
     $('#checking-balance').text( `$${ cBal }` );      // update CHECKING amount in display
     $('#savings-balance').text( `$${ sBal }` );      // update SAVINGS amount in display
-    $('#checking').addClass('zero');
     if ( sBal === 0 ) {
       $('#savings').addClass('zero');
     }
+    if ( cBal === 0 ) {
+      $('#checking').addClass('zero');
+    }
+
   };
 
 
