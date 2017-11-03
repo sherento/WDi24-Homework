@@ -31,6 +31,7 @@ $(document).ready( function() {
     }
   };
 
+
   const depositSavings = function() {
     let amount = +$('#savings-amount').val();
     if ( !isNaN(amount) ) {  // if amount entered is a number
@@ -42,10 +43,16 @@ $(document).ready( function() {
     }
   };
 
+
   const withdrawChecking = function() {
     let amount = +$('#checking-amount').val();
-    if (amount > cBal) {
-      return;
+    if ( amount > cBal ) {
+      if ( amount > cBal + sBal ) {       // if amount is bigger than both balances
+        return;
+      } else {
+        withdrawOverdraft( amount );
+        return;
+      }
     }
     if ( !isNaN(amount) ) {  // if amount entered is a number
       cBal -= amount;     // add amount to existing
@@ -55,6 +62,7 @@ $(document).ready( function() {
       $('#checking').addClass('zero');
     }
   };
+
 
   const withdrawSavings = function() {
     let amount = +$('#savings-amount').val();
@@ -71,6 +79,19 @@ $(document).ready( function() {
   };
 
 
+  const withdrawOverdraft = function( a ) {
+    let amount = a; // a is user amount passed in from withdraw savings/checking function
+    sBal = sBal - (a - cBal);
+    cBal = 0;
+    $('#checking-balance').text( `$${ cBal }` );      // update CHECKING amount in display
+    $('#savings-balance').text( `$${ sBal }` );      // update SAVINGS amount in display
+    $('#checking').addClass('zero');
+    if ( sBal === 0 ) {
+      $('#savings').addClass('zero');
+    }
+  };
+
+
   // ************* CLICK EVENT HANDLERS **************************
   $('#checking-deposit').on('click', depositChecking);
   $('#savings-deposit').on('click', depositSavings);
@@ -79,7 +100,8 @@ $(document).ready( function() {
 
 
 
-
+// refactor ideas:
+// - fix NaN so function exits earlier if NaN
 
 
 
