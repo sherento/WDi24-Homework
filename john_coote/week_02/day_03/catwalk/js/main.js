@@ -26,6 +26,7 @@ sunOldLeft = 0;
 sunNewLeft = 0;
 blSunDirectionX = true;
 blSunDirectionY = true;
+let a = 0;
 
 
 let centreX = 500;
@@ -100,31 +101,52 @@ const sunFall = function() {
 
 
 const sunRotate = function() {
+
   // Rotation needs x and y to change direction when they reach the end, same as the cat.
   // first define a centre point (global) (centreX = 500, centreY = 400)
   // it is position relative to the centre that will change direction.
+  //
+  // sunOldTop = parseInt(sungif.style.top);
+  // sunOldLeft = parseInt(sungif.style.left);
+  //
+  // x = sunOldLeft + 500;
+  // y = sunOldTop + 400;
+  //
+  // delY =
+  //
+  // // if (newLeft > 1000) {blDirectionX = false}
+  // // if (newLeft < 0) {blDirectionX = true}
+  //
+  //
+  // sunNewTop = sunOldTop + 1;
+  //
+  // sunNewLeft = sunOldLeft + 2
+  // sungif.style.top = sunNewTop + 'px';
+  // sungif.style.left = sunNewLeft + 'px';
+  // if (sunNewTop > 1000) {
+  //   clearInterval(sunTimerDone);
+  //   console.log("end the sun");
+  // }
+  a = a + 0.005 // simulates time
+  let x1 = window.innerHeight / 2
+  //window.innerWidth / 3
+  let y1 = window.innerHeight / 2
 
-  sunOldTop = parseInt(sungif.style.top);
-  sunOldLeft = parseInt(sungif.style.left);
+  x = x1 * (Math.cos(a))
+  console.log(x);
 
-  x = sunOldLeft + 500;
-  y = sunOldTop + 400;
-
-  delY = 
-
-  // if (newLeft > 1000) {blDirectionX = false}
-  // if (newLeft < 0) {blDirectionX = true}
+  y = y1 * (Math.sin(a))
+  console.log(y);
 
 
-  sunNewTop = sunOldTop + 1;
+  x = x + x1;
+  y = y + x1;
 
-  sunNewLeft = sunOldLeft + 2
-  sungif.style.top = sunNewTop + 'px';
-  sungif.style.left = sunNewLeft + 'px';
-  if (sunNewTop > 1000) {
-    clearInterval(sunTimerDone);
-    console.log("end the sun");
-  }
+  sungif.style.top = x + 'px';
+  sungif.style.left = y + 'px';
+
+
+  // still need to accomodate top / left to centre. next time...
 }
 
 
@@ -184,6 +206,8 @@ const skyDarken = function() {
 
 
 const catTimerDone = window.setInterval(catWalk, 16);
+const sunTimeDone = window.setInterval(sunRotate, 10);
+
 // const sunTimerDone = window.setInterval(sunFall, 16);
 // const skyTimerDone = window.setInterval(skyDarken, 200);
 
