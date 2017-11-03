@@ -13,7 +13,11 @@ $(document).ready(function() {
     const accountType = $account.attr( 'id' );  // checkings or savings account
     const amount = $account.children( ':text' ).val(); // amount entered by user
 
-    if ( transaction === 'Deposit' ) {
+    if ( isNaN( amount ) ) {  // validate input
+      $('.message').html(`The amount you've entered, "${ amount }", is not a number. Please try again.`)
+    }
+
+    else if ( transaction === 'Deposit' ) {
       accounts[ accountType ] += +amount; // add amount to account in accounts object
     }
     else if ( accounts[ accountType] - amount < 0 ) { // inform user they're too poor
