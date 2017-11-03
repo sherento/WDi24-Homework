@@ -1,12 +1,12 @@
-let checkingBalance = 0;
-let savingsBalance = 0;
-
 $(document).ready(function() {
   const accounts = {
     checking: 0,
     savings: 0
   }
   $( ':button' ).on( 'click' , function () {
+    // reset message
+    $('.message').html('');
+
     // store relevant information
     const transaction = $( this ).val();  // Deposit or Withdrawal
     const $account = $( this ).parent();  // parent node of clicked button
