@@ -1,48 +1,58 @@
 $(document).ready(function() {
+
+  // balances stored in object so they can be accessed via jQuery selectors and bracket notation
   const accounts = {
     checking: 0,
     savings: 0
   }
+
   $( ':button' ).on( 'click' , function () {
     // reset message
     $('.message').html('');
 
-    // store relevant information
-    const transactionType = $( this ).val();  // Deposit or Withdrawal
-    const $account = $( this ).parent();  // parent node of clicked button
-    const accountType = $account.attr( 'id' );  // checkings or savings account
-    const $overdraftProtectionAccount = $account.siblings( '.account' ); // overdraft protection account node i.e. account that wasn't clicked
-    const overdraftProtectionAccountType = $overdraftProtectionAccount.attr( 'id' ); // account type that wasn't clicked
-    const amount = $account.children( ':text' ).val(); // amount entered by user
+    // Deposit or Withdrawal
+    const transactionType = $( this ).val();
+    // parent node of clicked button
+    const $clickedAccount = $( this ).parent();
+    // account type: checking or savings
+    const clickedAccount = $clickedAccount.attr( 'id' );
+    // overdraft protection account node i.e. account that wasn't clicked
+    const $otherAccount = $clickedAccount.siblings( '.account' );
+    // account type that wasn't clicked
+    const otherAccount = $otherAccount.attr( 'id' );
+    // amount entered by user
+    const amount = $clickedAccount.children( ':text' ).val();
 
     if ( isNaN( amount ) ) {  // validate input
       $( '.message' ).html( `The amount you've entered, "${ amount }", is not a number. Please try again.` )
     }
     else if ( transactionType === 'Deposit' ) {
-      accounts[ accountType ] += +amount; // add amount to account in accounts object
+      accounts[ clickedAccount ] += +amount;
     }
-    else if ( transactionType === 'Withdraw' && amount > sumAll( accounts ) ) { // if withdraw amount is larger than sum of all accounts inform user they're too poor
-      $( '.message' ).html( `<p>Your total balance is $${ sumAll( accounts ) }. You don't have enough money to withdraw $${ amount }.</p>` )
+    else if ( transactionType === 'Withdraw' && amount > sumAll( accounts ) ) {
+
+      $( '.message' ).html( `<p>Your total balance is $${ sumAll( accounts ) }.</p><p>You don't have enough money to withdraw $${ amount }.</p>` )
+
     }
-    else if ( transactionType === 'Withdraw' && amount > accounts[ accountType ]) {
-      const remainder = amount - accounts[ accountType ];  // calculate amount needed from overdraft protection account
-      accounts[ accountType ] = 0;  // withdraw all from user specified account
-      accounts[ overdraftProtectionAccountType ] -= remainder; // withdraw remainder from overdraft protection account
+    else if ( transactionType === 'Withdraw' && amount > accounts[ clickedAccount ]) {
+      // calculate amount needed from overdraft protection account
+      const remainder = amount - accounts[ clickedAccount ];
+      // withdraw all from user specified account
+      accounts[ clickedAccount ] = 0;
+      // withdraw remainder from overdraft protection account
+      accounts[ otherAccount ] -= remainder;
       // update balance on screen
-      $overdraftProtectionAccount.children( '.balance' ).html(`$${ accounts[ overdraftProtectionAccountType ] }`);
+      $otherAccount.children( '.balance' ).html(`$${ accounts[ otherAccount ] }`);
     }
     else if ( transactionType === 'Withdraw'  ) {
-      accounts[ accountType ] -= +amount; // subtract amount from account in accounts object
+      accounts[ clickedAccount ] -= +amount;
     }
 
-    if ( accounts[ accountType ] === 0 ) {
-      $account.children( '.balance' ).addClass( 'zero' );
-    }
-    else if ( accounts[ accountType ] !== 0 ) {
-      $account.children( '.balance' ).removeClass( 'zero' );
-    }
     // update balance on screen
-    $account.children( '.balance' ).html(`$${ accounts[ accountType ] }`);
+    $clickedAccount.children( '.balance' ).html(`$${ accounts[ clickedAccount ] }`);
+
+    updateBackground( accounts[ clickedAccount ], $clickedAccount, accounts[ otherAccount ], $otherAccount );
+
   });
 
   const sumAll = function ( accounts ) {
@@ -53,4 +63,19 @@ $(document).ready(function() {
     return total;
   }
 
+  const updateBackground = function ( clickedAccountBalance, clickedAccountNode, otherAccountBalance, otherAccountNode ) {
+    if ( clickedAccountBalance === 0 ) {
+      clickedAccountNode.children( '.balance' ).addClass( 'zero' );
+    }
+    else if ( clickedAccountBalance !== 0 ) {
+      clickedAccountNode.children( '.balance' ).removeClass( 'zero' );
+    }
+
+    if ( otherAccountBalance === 0 ) {
+      otherAccountNode.children( '.balance' ).addClass( 'zero' );
+    }
+    else if ( otherAccountBalance !== 0 ) {
+      otherAccountNode.children( '.balance' ).removeClass( 'zero' );
+    }
+  }
 });
