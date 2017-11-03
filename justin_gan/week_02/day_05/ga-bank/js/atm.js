@@ -35,10 +35,22 @@ $(document).ready(function() {
     else if ( transactionType === 'Deposit' ) {
       accounts[ clickedAccount ] += +amount;
     }
-    else if ( transactionType === 'Withdraw' && amount > sumAll( accounts ) ) {
+    else if ( transactionType === 'Withdraw' ) {
+      handleWithdrawal( amount, clickedAccount, otherAccount, $otherAccount );
+    }
+    // update balance on screen
+    $clickedAccount.children( '.balance' ).html(`$${ accounts[ clickedAccount ] }`);
+
+    updateBackground( accounts[ clickedAccount ], $clickedAccount );
+    updateBackground( accounts[ otherAccount ], $otherAccount );
+
+  });
+
+  const handleWithdrawal = function ( amount, clickedAccount, otherAccount, $otherAccount ) {
+    if ( amount > sumAll( accounts ) ) {
       $( '.message' ).html( `<p>Your total balance is $${ sumAll( accounts ) }.</p><p>You don't have enough money to withdraw $${ amount }.</p>` )
     }
-    else if ( transactionType === 'Withdraw' && amount > accounts[ clickedAccount ]) {
+    else if ( amount > accounts[ clickedAccount ]) {
       // calculate amount needed from overdraft protection account
       const remainder = amount - accounts[ clickedAccount ];
       // withdraw all from user specified account
@@ -48,17 +60,10 @@ $(document).ready(function() {
       // update balance on screen
       $otherAccount.children( '.balance' ).html(`$${ accounts[ otherAccount ] }`);
     }
-    else if ( transactionType === 'Withdraw'  ) {
+    else {
       accounts[ clickedAccount ] -= +amount;
     }
-
-    // update balance on screen
-    $clickedAccount.children( '.balance' ).html(`$${ accounts[ clickedAccount ] }`);
-
-    updateBackground( accounts[ clickedAccount ], $clickedAccount );
-    updateBackground( accounts[ otherAccount ], $otherAccount );
-
-  });
+  }
 
   const sumAll = function ( accounts ) {
     let total = 0;
