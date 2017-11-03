@@ -4,43 +4,74 @@
 // - don't do a fancy version w factories etc first
 // get it working the long way then refactor if time
 
-
-// * Keep track of the checking and savings balances somewhere
-// * Add functionality so that a user can deposit money into one of the bank accounts.
-// * Make sure you are updating the display and manipulating the HTML of the page
-// so a user can see the change.
-// * Add functionality so that a user can withdraw money from one of the bank accounts.
-// * Make sure you are updating the display and manipulating the HTML of the page
-// so a user can see the change.
-
+// * What happens when the user wants to withdraw more money from the checking
+// account than is in the account? These accounts have overdraft protection, so if
+// a withdrawal can be covered by the balances in both accounts, take the checking
+// balance down to $0 and take the rest of the withdrawal from the savings account.
+// If the withdrawal amount is more than the combined account balance, ignore it.
+// * Make sure there is overdraft protection going both ways.
 
 
 $(document).ready( function() {
 
-  // get starting balances and convert to integers
+  // Get starting balances and convert to integers
   let cBal = +$('#checking-balance').text()[1]; // [1] because [0] is $
   let sBal = +$('#savings-balance').text()[1];
 
+
+  // *********** DEPOSIT AND WITHDRAW FUNCTIONS ******************
   const depositChecking = function() {
-    cBal += +$('#checking-amount').val();     // get amount to be added and add to existing
-    $('#checking-balance').text( `$${ cBal }` );      // update that amount in display
+    let amount = +$('#checking-amount').val();
+    if ( !isNaN(amount) ) {  // if amount entered is a number
+      cBal += amount;     // add amount to existing
+      $('#checking-balance').text( `$${ cBal }` );      // update that amount in display
+    }
+    if ( cBal > 0 ) {
+      $('#checking').removeClass('zero');
+    }
   };
 
   const depositSavings = function() {
-    sBal += +$('#savings-amount').val();     // get amount to be added and add to existing
-    $('#savings-balance').text( `$${ sBal }` );      // update that amount in display
+    let amount = +$('#savings-amount').val();
+    if ( !isNaN(amount) ) {  // if amount entered is a number
+      sBal += amount;     // add amount to existing
+      $('#savings-balance').text( `$${ sBal }` );      // update that amount in display
+    }
+    if ( sBal > 0 ) {
+      $('#savings').removeClass('zero');
+    }
   };
 
   const withdrawChecking = function() {
-    cBal -= +$('#checking-amount').val();     // get amount to be added and add to existing
-    $('#checking-balance').text( `$${ cBal }` );      // update that amount in display
+    let amount = +$('#checking-amount').val();
+    if (amount > cBal) {
+      return;
+    }
+    if ( !isNaN(amount) ) {  // if amount entered is a number
+      cBal -= amount;     // add amount to existing
+      $('#checking-balance').text( `$${ cBal }` );      // update that amount in display
+    }
+    if ( cBal === 0 ) {
+      $('#checking').addClass('zero');
+    }
   };
 
   const withdrawSavings = function() {
-    sBal -= +$('#savings-amount').val();     // get amount to be added and add to existing
-    $('#savings-balance').text( `$${ sBal }` );      // update that amount in display
+    let amount = +$('#savings-amount').val();
+    if (amount > sBal) {
+      return;
+    }
+    if ( !isNaN(amount) ) {  // if amount entered is a number
+      sBal -= amount;     // add amount to existing
+      $('#savings-balance').text( `$${ sBal }` );      // update that amount in display
+    }
+    if ( sBal === 0 ) {
+      $('#savings').addClass('zero');
+    }
   };
 
+
+  // ************* CLICK EVENT HANDLERS **************************
   $('#checking-deposit').on('click', depositChecking);
   $('#savings-deposit').on('click', depositSavings);
   $('#checking-withdraw').on('click', withdrawChecking);
