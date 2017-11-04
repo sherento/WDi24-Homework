@@ -61,7 +61,7 @@ body {
 }
 
 .record-area {
-  padding: 50px 0;
+  padding: 65px 0;
 }
 
 .record {
@@ -71,8 +71,11 @@ body {
 .record-data {
   font-family: monospace;
   text-align: left;
+  font-size: 12px;
+  letter-spacing: 1px;
 }
 
 .right-balance {
   float: right;
+  font-weight: bold;
 }

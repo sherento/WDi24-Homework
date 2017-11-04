@@ -104,7 +104,10 @@ $(document).ready( function() {
 
 
   const addRecord = function ( acctType, transType, amount, balance ) {
-    const recordString = `${ acctType } | ${ transType } | $${ Number(amount).toFixed(2) } <span class="right-balance">$${ Number(balance).toFixed(2) } BALANCE</span>`;
+    // get current date and time
+    const timestamp = new Date().toString().slice(0, 24);
+    // make and prepend record string
+    const recordString = `${ timestamp } &nbsp; ${ acctType } &nbsp; ${ transType } &nbsp; $${ Number(amount).toFixed(2) } <span class="right-balance">$${ Number(balance).toFixed(2) } BALANCE</span>`;
     $('.record').prepend( `<p class="record-data">${recordString}</p>` );
   };
 
