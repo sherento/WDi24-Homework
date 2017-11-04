@@ -1,8 +1,8 @@
-
+// Bank of GA
 
 $(document).ready( function() {
 
-  // Get starting balances and convert to integers
+  // Declare balance vars, get starting balances and convert to integers
   let cBal = +$('#checking-balance').text()[1]; // [1] because [0] is $
   let sBal = +$('#savings-balance').text()[1];
 
@@ -10,10 +10,10 @@ $(document).ready( function() {
   // *********** DEPOSIT AND WITHDRAW FUNCTIONS ******************
   const depositChecking = function() {
     let amount = +$('#checking-amount').val();
-    if ( !isNaN(amount) ) {  // if amount entered is a number
-      cBal += amount;        // add amount to existing bal
-      $('#checking-balance').text( `$${ cBal }` );      // and update that amount in display
+    if ( isNaN(amount) ) {  // if amount entered is NOT a number
+      return;               // exit the function
     }
+    $('#checking-balance').text( `$${ cBal += amount }` );  // add amount and update display
     if ( cBal > 0 ) {
       $('#checking-balance').removeClass('zero');
     }
@@ -22,10 +22,10 @@ $(document).ready( function() {
 
   const depositSavings = function() {
     let amount = +$('#savings-amount').val();
-    if ( !isNaN(amount) ) {  // if amount entered is a number
-      sBal += amount;     // add amount to existing
-      $('#savings-balance').text( `$${ sBal }` );      // update that amount in display
+    if ( isNaN(amount) ) {
+      return;
     }
+    $('#savings-balance').text( `$${ sBal += amount }` );  // add amount and update display
     if ( sBal > 0 ) {
       $('#savings-balance').removeClass('zero');
     }
@@ -34,18 +34,19 @@ $(document).ready( function() {
 
   const withdrawChecking = function() {
     let amount = +$('#checking-amount').val();
+    if ( isNaN(amount) ) {
+      return;
+    }
+    // ** overdraft feature **
     if ( amount > cBal ) {
-      if ( amount > cBal + sBal ) {       // if amount is bigger than both balances
+      if ( amount > cBal + sBal ) {
         return;
       } else {
-        withdrawOverdraft( amount, 1 );
+        withdrawOverdraft( amount, 1 ); // 1 = direction from l to r, checking to savings
         return;
       }
-    }
-    if ( !isNaN(amount) ) {  // if amount entered is a number
-      cBal -= amount;     // add amount to existing
-      $('#checking-balance').text( `$${ cBal }` );      // update that amount in display
-    }
+    } // end overdraft
+    $('#checking-balance').text( `$${ cBal -= amount }` );
     if ( cBal === 0 ) {
       $('#checking-balance').addClass('zero');
     }
@@ -54,31 +55,31 @@ $(document).ready( function() {
 
   const withdrawSavings = function() {
     let amount = +$('#savings-amount').val();
+    if ( isNaN(amount) ) {
+      return;
+    }
+    // ** overdraft feature **
     if ( amount > sBal ) {
-      if ( amount > cBal + sBal ) {       // if amount is bigger than both balances
+      if ( amount > cBal + sBal ) {
         return;
       } else {
-        withdrawOverdraft( amount, -1 );
+        withdrawOverdraft( amount, -1 );  // -1 = from r to l, from sav to chk
         return;
       }
-    }
-    if ( !isNaN(amount) ) {  // if amount entered is a number
-      sBal -= amount;     // add amount to existing
-      $('#savings-balance').text( `$${ sBal }` );      // update that amount in display
-    }
+    } // end overdraft **
+    $('#savings-balance').text( `$${ sBal -= amount }` );
     if ( sBal === 0 ) {
       $('#savings-balance').addClass('zero');
     }
   };
 
 
-  const withdrawOverdraft = function( a, delta ) {  // delta=which direction, sav to chk or vv
-    let amount = a; // a is user amount passed in from withdraw savings/checking function
-    if ( delta === 1 ) {
-      sBal = sBal - (a - cBal);
+  const withdrawOverdraft = function( amount, delta ) {  // delta = which direction, chk to sav or vv
+    if ( delta === 1 ) {  // take money from check first, then sav
+      sBal = sBal - (amount - cBal);
       cBal = 0;
-    } else if (delta === -1) {
-      cBal = cBal - (a - sBal);
+    } else if (delta === -1) {  // from sav first, then check
+      cBal = cBal - (amount - sBal);
       sBal = 0;
     }
     $('#checking-balance').text( `$${ cBal }` );      // update CHECKING amount in display
@@ -89,7 +90,6 @@ $(document).ready( function() {
     if ( cBal === 0 ) {
       $('#checking-balance').addClass('zero');
     }
-
   };
 
 
@@ -99,32 +99,4 @@ $(document).ready( function() {
   $('#checking-withdraw').on('click', withdrawChecking);
   $('#savings-withdraw').on('click', withdrawSavings);
 
-
-
-// refactor ideas:
-// - fix NaN so function exits earlier if NaN
-
-
-
-
-
-
-
 }); // end document ready
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// **
