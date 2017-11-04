@@ -1,15 +1,3 @@
-// joels steps:
-//
-// - get buttons working first
-// - don't do a fancy version w factories etc first
-// get it working the long way then refactor if time
-
-// * What happens when the user wants to withdraw more money from the checking
-// account than is in the account? These accounts have overdraft protection, so if
-// a withdrawal can be covered by the balances in both accounts, take the checking
-// balance down to $0 and take the rest of the withdrawal from the savings account.
-// If the withdrawal amount is more than the combined account balance, ignore it.
-// * Make sure there is overdraft protection going both ways.
 
 
 $(document).ready( function() {
@@ -23,11 +11,11 @@ $(document).ready( function() {
   const depositChecking = function() {
     let amount = +$('#checking-amount').val();
     if ( !isNaN(amount) ) {  // if amount entered is a number
-      cBal += amount;     // add amount to existing
-      $('#checking-balance').text( `$${ cBal }` );      // update that amount in display
+      cBal += amount;        // add amount to existing bal
+      $('#checking-balance').text( `$${ cBal }` );      // and update that amount in display
     }
     if ( cBal > 0 ) {
-      $('#checking').removeClass('zero');
+      $('#checking-balance').removeClass('zero');
     }
   };
 
@@ -39,7 +27,7 @@ $(document).ready( function() {
       $('#savings-balance').text( `$${ sBal }` );      // update that amount in display
     }
     if ( sBal > 0 ) {
-      $('#savings').removeClass('zero');
+      $('#savings-balance').removeClass('zero');
     }
   };
 
@@ -59,7 +47,7 @@ $(document).ready( function() {
       $('#checking-balance').text( `$${ cBal }` );      // update that amount in display
     }
     if ( cBal === 0 ) {
-      $('#checking').addClass('zero');
+      $('#checking-balance').addClass('zero');
     }
   };
 
@@ -79,7 +67,7 @@ $(document).ready( function() {
       $('#savings-balance').text( `$${ sBal }` );      // update that amount in display
     }
     if ( sBal === 0 ) {
-      $('#savings').addClass('zero');
+      $('#savings-balance').addClass('zero');
     }
   };
 
@@ -96,10 +84,10 @@ $(document).ready( function() {
     $('#checking-balance').text( `$${ cBal }` );      // update CHECKING amount in display
     $('#savings-balance').text( `$${ sBal }` );      // update SAVINGS amount in display
     if ( sBal === 0 ) {
-      $('#savings').addClass('zero');
+      $('#savings-balance').addClass('zero');
     }
     if ( cBal === 0 ) {
-      $('#checking').addClass('zero');
+      $('#checking-balance').addClass('zero');
     }
 
   };
