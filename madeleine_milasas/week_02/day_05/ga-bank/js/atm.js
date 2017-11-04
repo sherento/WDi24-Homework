@@ -17,6 +17,7 @@ $(document).ready( function() {
     if ( cBal > 0 ) {
       $('#checking-balance').removeClass('zero');
     }
+    addRecord( 'CHECKING', 'DEPOSIT&nbsp;&nbsp;', amount, cBal );  // nbsp for alignment
   };
 
 
@@ -29,6 +30,7 @@ $(document).ready( function() {
     if ( sBal > 0 ) {
       $('#savings-balance').removeClass('zero');
     }
+    addRecord( 'SAVINGS&nbsp;', 'DEPOSIT&nbsp;&nbsp;', amount, sBal );
   };
 
 
@@ -50,6 +52,7 @@ $(document).ready( function() {
     if ( cBal === 0 ) {
       $('#checking-balance').addClass('zero');
     }
+    addRecord( 'CHECKING', 'WITHDRAW&nbsp;', amount, cBal );
   };
 
 
@@ -71,15 +74,22 @@ $(document).ready( function() {
     if ( sBal === 0 ) {
       $('#savings-balance').addClass('zero');
     }
+    addRecord( 'SAVINGS&nbsp;', 'WITHDRAW&nbsp;', amount, sBal );
   };
 
 
   const withdrawOverdraft = function( amount, delta ) {  // delta = which direction, chk to sav or vv
     if ( delta === 1 ) {  // take money from check first, then sav
-      sBal = sBal - (amount - cBal);
+      const excess = amount - cBal;
+      sBal = sBal - excess;
+      addRecord( 'CHECKING', 'WITHDRAW^', cBal, 0 ); // i.e. amount withdrawn is all the balance, balance now 0
+      addRecord( 'SAVINGS&nbsp;', 'OVERDRAW&nbsp;', excess, sBal );
       cBal = 0;
     } else if (delta === -1) {  // from sav first, then check
-      cBal = cBal - (amount - sBal);
+      const excess = amount - sBal;
+      cBal = cBal - excess;
+      addRecord( 'SAVINGS&nbsp;', 'WITHDRAW^', sBal, 0 ); // i.e. amount withdrawn is all the balance, balance now 0
+      addRecord( 'CHECKING', 'OVERDRAW&nbsp;', excess, cBal );
       sBal = 0;
     }
     $('#checking-balance').text( `$${ cBal }` );      // update CHECKING amount in display
@@ -93,6 +103,11 @@ $(document).ready( function() {
   };
 
 
+  const addRecord = function ( acctType, transType, amount, balance ) {
+    const recordString = `${ acctType } | ${ transType } | $${ Number(amount).toFixed(2) } <span class="right-balance">$${ Number(balance).toFixed(2) } BALANCE</span>`;
+    $('.record').prepend( `<p class="record-data">${recordString}</p>` );
+  };
+
   // ************* CLICK EVENT HANDLERS **************************
   $('#checking-deposit').on('click', depositChecking);
   $('#savings-deposit').on('click', depositSavings);
@@ -100,3 +115,17 @@ $(document).ready( function() {
   $('#savings-withdraw').on('click', withdrawSavings);
 
 }); // end document ready
+
+
+
+// example pre-record feature
+// const depositChecking = function() {
+//   let amount = +$('#checking-amount').val();
+//   if ( isNaN(amount) ) {  // if amount entered is NOT a number
+//     return;               // exit the function
+//   }
+//   $('#checking-balance').text( `$${ cBal += amount }` );  // add amount and update display
+//   if ( cBal > 0 ) {
+//     $('#checking-balance').removeClass('zero');
+//   }
+// };

@@ -6,10 +6,6 @@ body {
   letter-spacing: 1.7px;
 }
 
-input {
-  /*font-family: 'Avenir', sans-serif;*/
-}
-
 #content {
   margin: 0 auto;
   text-align: center;
@@ -35,14 +31,21 @@ input {
 }
 
 .account {
-  background-color: #6C9A74;
-  border: 1px solid #295A33;
+  border: 1px solid #333;
   padding: 10px;
+}
+
+#savings {
+  background-color: #A1B5D8;
+}
+
+#checking {
+  background-color: #C2D8B9;
 }
 
 .balance {
   background-color: #E3E3E3;
-  border: 1px solid #676767;
+  border: 1px solid #333;
   font-family: 'Ruluko', sans-serif;
   font-size: 50px;
   padding: 25px 0;
@@ -55,4 +58,21 @@ input {
 .zero {
   background-color: #F52F4F;
   color: #FFF;
+}
+
+.record-area {
+  padding: 50px 0;
+}
+
+.record {
+  padding-top: 30px;
+}
+
+.record-data {
+  font-family: monospace;
+  text-align: left;
+}
+
+.right-balance {
+  float: right;
 }
