@@ -8,7 +8,7 @@ $(document).ready( function() {
 
 
   // *********** DEPOSIT AND WITHDRAW FUNCTIONS ******************
-  const validateEntry = function ( amount ) {
+  const validated = function ( amount ) {
     if ( isNaN(amount) ) {
       return false;
     }
@@ -49,7 +49,7 @@ $(document).ready( function() {
 
   const depositChecking = function() {
     let amount = +$('#checking-amount').val();
-    if ( !validateEntry(amount) ) {
+    if ( !validated(amount) ) {
       return;
     }
     $('#checking-balance').text( `$${ cBal += amount }` );  // add amount and update display
@@ -62,7 +62,7 @@ $(document).ready( function() {
 
   const depositSavings = function() {
     let amount = +$('#savings-amount').val();
-    if ( !validateEntry(amount) ) {
+    if ( !validated(amount) ) {
       return;
     }
     $('#savings-balance').text( `$${ sBal += amount }` );  // add amount and update display
@@ -75,14 +75,16 @@ $(document).ready( function() {
 
   const withdrawChecking = function() {
     let amount = +$('#checking-amount').val();
-    if ( !validateEntry(amount) ) {
+    if ( !validated(amount) ) {
       return;
     }
     // ** overdraft feature **
     if ( amount > cBal ) {
       if ( amount > cBal + sBal ) {
+        $('.error>p').text( `Insufficient funds` );
         return;
       } else {
+        // $('.error>p').text( ` ` );
         withdrawOverdraft( amount, 1 ); // 1 = direction from l to r, checking to savings
         return;
       }
@@ -97,12 +99,13 @@ $(document).ready( function() {
 
   const withdrawSavings = function() {
     let amount = +$('#savings-amount').val();
-    if ( !validateEntry(amount) ) {
+    if ( !validated(amount) ) {
       return;
     }
     // ** overdraft feature **
     if ( amount > sBal ) {
       if ( amount > cBal + sBal ) {
+        $('.error>p').text( `Insufficient funds` );
         return;
       } else {
         withdrawOverdraft( amount, -1 );  // -1 = from r to l, from sav to chk
