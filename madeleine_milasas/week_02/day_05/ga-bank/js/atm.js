@@ -2,7 +2,7 @@
 
 $(document).ready( function() {
 
-  // Declare balance vars, get starting balances and convert to integers
+  // Declare balance variables, get starting balances and convert to integers
   let cBal = +$('#checking-balance').text()[1]; // [1] because [0] is $
   let sBal = +$('#savings-balance').text()[1];
 
@@ -84,8 +84,7 @@ $(document).ready( function() {
         $('.error>p').text( `Insufficient funds` );
         return;
       } else {
-        // $('.error>p').text( ` ` );
-        withdrawOverdraft( amount, 1 ); // 1 = direction from l to r, checking to savings
+        withdrawOverdraft( amount, 1 ); // 1 = direction from l to r, checking then savings
         return;
       }
     } // end overdraft
@@ -108,7 +107,7 @@ $(document).ready( function() {
         $('.error>p').text( `Insufficient funds` );
         return;
       } else {
-        withdrawOverdraft( amount, -1 );  // -1 = from r to l, from sav to chk
+        withdrawOverdraft( amount, -1 );  // -1 = from r to l, from sav then chk
         return;
       }
     } // end overdraft **
@@ -135,19 +134,3 @@ $(document).ready( function() {
   $('#savings-withdraw').on('click', withdrawSavings);
 
 }); // end document ready
-
-
-
-// REFACTOR - take out number validation
-
-// example pre-record feature
-// const depositChecking = function() {
-//   let amount = +$('#checking-amount').val();
-//   if ( isNaN(amount) ) {  // if amount entered is NOT a number
-//     return;               // exit the function
-//   }
-//   $('#checking-balance').text( `$${ cBal += amount }` );  // add amount and update display
-//   if ( cBal > 0 ) {
-//     $('#checking-balance').removeClass('zero');
-//   }
-// };
