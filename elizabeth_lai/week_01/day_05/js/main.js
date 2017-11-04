@@ -186,7 +186,9 @@ const planTrip = function (startLine, startStop, endLine, endStop) {
     }
 };
 
-
+// planTrip(lineL, '8thL', lineL, '3rd'); //single line
+// planTrip(lineL, '1st', lineL, '8thL'); //reverse single line
+// planTrip(line6, 'Astor Place', lineL, '1st'); //backward start line
 // planTrip(lineL, '8thL', line6, '28th6'); //backward end line
 // planTrip(line6, '28th6', lineN, '34th'); // both backward
-planTrip(lineL, '8thL', lineL, '3rd'); //single line
+planTrip(lineN, '34th', lineL, '3rd');
