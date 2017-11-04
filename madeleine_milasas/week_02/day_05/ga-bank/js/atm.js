@@ -8,73 +8,17 @@ $(document).ready( function() {
 
 
   // *********** DEPOSIT AND WITHDRAW FUNCTIONS ******************
-  const depositChecking = function() {
-    let amount = +$('#checking-amount').val();
-    if ( isNaN(amount) ) {  // if amount entered is NOT a number
-      return;               // exit the function
-    }
-    $('#checking-balance').text( `$${ cBal += amount }` );  // add amount and update display
-    if ( cBal > 0 ) {
-      $('#checking-balance').removeClass('zero');
-    }
-    addRecord( 'CHECKING', 'DEPOSIT&nbsp;&nbsp;', amount, cBal );  // nbsp for alignment
-  };
-
-
-  const depositSavings = function() {
-    let amount = +$('#savings-amount').val();
+  const validateEntry = function ( amount ) {
     if ( isNaN(amount) ) {
-      return;
+      return false;
     }
-    $('#savings-balance').text( `$${ sBal += amount }` );  // add amount and update display
-    if ( sBal > 0 ) {
-      $('#savings-balance').removeClass('zero');
+    if ( amount > 9999 ) {
+      $('.error>p').text(`Sorry, transactions are limited to under $10,000`);
+      return false;
+    } else {
+      $('.error>p').text(` `);
+      return true;
     }
-    addRecord( 'SAVINGS&nbsp;', 'DEPOSIT&nbsp;&nbsp;', amount, sBal );
-  };
-
-
-  const withdrawChecking = function() {
-    let amount = +$('#checking-amount').val();
-    if ( isNaN(amount) ) {
-      return;
-    }
-    // ** overdraft feature **
-    if ( amount > cBal ) {
-      if ( amount > cBal + sBal ) {
-        return;
-      } else {
-        withdrawOverdraft( amount, 1 ); // 1 = direction from l to r, checking to savings
-        return;
-      }
-    } // end overdraft
-    $('#checking-balance').text( `$${ cBal -= amount }` );
-    if ( cBal === 0 ) {
-      $('#checking-balance').addClass('zero');
-    }
-    addRecord( 'CHECKING', 'WITHDRAW&nbsp;', amount, cBal );
-  };
-
-
-  const withdrawSavings = function() {
-    let amount = +$('#savings-amount').val();
-    if ( isNaN(amount) ) {
-      return;
-    }
-    // ** overdraft feature **
-    if ( amount > sBal ) {
-      if ( amount > cBal + sBal ) {
-        return;
-      } else {
-        withdrawOverdraft( amount, -1 );  // -1 = from r to l, from sav to chk
-        return;
-      }
-    } // end overdraft **
-    $('#savings-balance').text( `$${ sBal -= amount }` );
-    if ( sBal === 0 ) {
-      $('#savings-balance').addClass('zero');
-    }
-    addRecord( 'SAVINGS&nbsp;', 'WITHDRAW&nbsp;', amount, sBal );
   };
 
 
@@ -103,6 +47,76 @@ $(document).ready( function() {
   };
 
 
+  const depositChecking = function() {
+    let amount = +$('#checking-amount').val();
+    if ( !validateEntry(amount) ) {
+      return;
+    }
+    $('#checking-balance').text( `$${ cBal += amount }` );  // add amount and update display
+    if ( cBal > 0 ) {
+      $('#checking-balance').removeClass('zero');
+    }
+    addRecord( 'CHECKING', 'DEPOSIT&nbsp;&nbsp;', amount, cBal );  // nbsp for alignment
+  };
+
+
+  const depositSavings = function() {
+    let amount = +$('#savings-amount').val();
+    if ( !validateEntry(amount) ) {
+      return;
+    }
+    $('#savings-balance').text( `$${ sBal += amount }` );  // add amount and update display
+    if ( sBal > 0 ) {
+      $('#savings-balance').removeClass('zero');
+    }
+    addRecord( 'SAVINGS&nbsp;', 'DEPOSIT&nbsp;&nbsp;', amount, sBal );
+  };
+
+
+  const withdrawChecking = function() {
+    let amount = +$('#checking-amount').val();
+    if ( !validateEntry(amount) ) {
+      return;
+    }
+    // ** overdraft feature **
+    if ( amount > cBal ) {
+      if ( amount > cBal + sBal ) {
+        return;
+      } else {
+        withdrawOverdraft( amount, 1 ); // 1 = direction from l to r, checking to savings
+        return;
+      }
+    } // end overdraft
+    $('#checking-balance').text( `$${ cBal -= amount }` );
+    if ( cBal === 0 ) {
+      $('#checking-balance').addClass('zero');
+    }
+    addRecord( 'CHECKING', 'WITHDRAW&nbsp;', amount, cBal );
+  };
+
+
+  const withdrawSavings = function() {
+    let amount = +$('#savings-amount').val();
+    if ( !validateEntry(amount) ) {
+      return;
+    }
+    // ** overdraft feature **
+    if ( amount > sBal ) {
+      if ( amount > cBal + sBal ) {
+        return;
+      } else {
+        withdrawOverdraft( amount, -1 );  // -1 = from r to l, from sav to chk
+        return;
+      }
+    } // end overdraft **
+    $('#savings-balance').text( `$${ sBal -= amount }` );
+    if ( sBal === 0 ) {
+      $('#savings-balance').addClass('zero');
+    }
+    addRecord( 'SAVINGS&nbsp;', 'WITHDRAW&nbsp;', amount, sBal );
+  };
+
+
   const addRecord = function ( acctType, transType, amount, balance ) {
     // get current date and time
     const timestamp = new Date().toString().slice(0, 24);
@@ -120,6 +134,8 @@ $(document).ready( function() {
 }); // end document ready
 
 
+
+// REFACTOR - take out number validation
 
 // example pre-record feature
 // const depositChecking = function() {

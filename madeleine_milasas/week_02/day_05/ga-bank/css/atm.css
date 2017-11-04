@@ -79,3 +79,12 @@ body {
   float: right;
   font-weight: bold;
 }
+
+.error {
+  box-sizing: border-box;
+  height: 82px;
+  color: #F52F4F;
+  letter-spacing: 1.2px;
+  padding: 30px 0;
+
+}
