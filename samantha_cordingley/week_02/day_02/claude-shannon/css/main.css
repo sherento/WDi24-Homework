@@ -1,0 +1,198 @@
+
+/*
+* {
+border: 1px solid limegreen;
+}
+*/
+
+/*//////////////////////////////////MASTER STYLING//////////////////////////////*/
+
+body {
+  font-family: 'Open Sans', sans-serif;
+  background-color: #FFFFFF;
+  padding: 0;
+  margin: 0;
+}
+
+nav {
+  width: 100%;
+  background-color: white;
+  padding: 2px;
+  position: fixed;
+}
+
+nav li {
+  display: inline-block;
+  list-style: none;
+  color: black;
+  padding-left: 20px;
+}
+
+nav a {
+  text-decoration: none;
+  color: black;
+  border: 0;
+}
+
+nav a:hover {
+  border-bottom: black solid 2px;
+  line-height: 0.2px;
+}
+
+nav li.video {
+  display: inline;
+  padding-left: 60%;
+}
+
+.wrapper img {
+  width: 100%;
+}
+
+homebanner {
+  display: block;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+}
+
+.container {
+  margin: 0;
+}
+
+main {
+  width: 60%;
+  padding: 40px;
+  display: inline-block;
+  color: black;
+}
+
+aside {
+  display: inline-block;
+  width: 15%;
+  border: 1.5px black solid;
+  color: black;
+  padding-left: 20px;
+  padding-right: -22px;
+  margin-left: 20px;
+}
+
+aside li {
+  list-style: none;
+}
+
+aside a {
+  text-decoration: none;
+  color: black;
+  line-height: 2;
+}
+
+aside a:hover {
+  border-bottom: black solid 2px;
+}
+
+aside a:visited {
+  text-decoration: none;
+  color: black;
+}
+
+.videocontainer {
+  width: 100%;
+  background: #232222;
+}
+
+.youtube {
+  padding-left: 34%;
+  padding-right: 20%;
+  display:block;
+}
+
+.footerlogo {
+  padding-left: 46%;
+}
+
+.credit {
+  background: #232222;
+  padding: 20px;
+  margin: 0;
+  color: white;
+  font-size: 12px;
+}
+
+.credit a {
+  color: white;
+  text-decoration: none;
+}
+
+.credit a:hover {
+  border-bottom: white solid 2px;
+}
+
+span#copyright {
+  float: right;
+  padding-right: 20px;
+}
+
+/*/////////////////////////////ABOUT PAGE STYLES//////////////////////////////////*/
+
+.about {
+  background-color: #fbfbfb;
+}
+
+.aboutcontainer {
+  margin: 0;
+}
+
+.aboutmain {
+  width: 50%;
+  padding-left: 60px;
+  vertical-align: top;
+  margin-top: 20px;
+  /*position: -webkit-sticky;   /*required for Safari*/
+  /*position: sticky; /*COULDNT GET THIS TO WORK WITH AFFECTING MY NAV LINKS*/
+  /*top: 0;          /*required with position sticky*/
+}
+
+.aboutaside {
+  width: 20%;
+  margin-left: 205px;
+  margin-top: 96px;
+}
+
+#inventions {
+    margin-bottom: 40px;
+}
+
+aside#inventions {
+  width: 50%;
+  margin-top: 40px;
+}
+
+#inventions img {
+  border: 3px solid black;
+}
+
+.jugglingheading {
+  font-size: 40px;
+  line-height: 44px;
+}
+
+/*////////////////////////////////SECRET PAGE STYLING//////////////////////////////*/
+.secretmain {
+  width: 45%;
+  padding-left: 60px;
+  margin-top: 20px;
+}
+
+.secretmain h1 {
+  margin-bottom: 50px;
+}
+
+.secretreveal {
+  padding-top: 45px;
+  background: black;
+}
+
+.secretreveal:hover {
+  background: white;
+
+}

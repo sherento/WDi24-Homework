@@ -4,7 +4,7 @@ Javascript Bank
 
 let bank = [];
 
-const sumAllAccounts = function () {
+const sumAllAccounts = function ( bank ) {
   let sum = 0;
   // iterate through accounts in bank and sum their balances
   for (let i = 0; i < bank.length; i++) {
@@ -38,6 +38,9 @@ const deposit = function ( amount, name ) {
       return b.balance;
     }
   }
+  // if name not found, inform user
+  console.log(`Account "${ name }" doesn't exist.`);
+  return false;
 }
 
 const withdraw = function ( amount, name ) {
@@ -50,19 +53,23 @@ const withdraw = function ( amount, name ) {
         console.log(`Your balance is $${ b.balance }. You don't have enough money to withdraw $${ amount }.`);
         return false;
       }
-      // remove amount from balance
+      // default: remove amount from balance
       else {
         b.balance -= amount;
         return b.balance;
       }
     }
   }
+  // if name not found, inform user
+  console.log(`Account "${ name }" doesn't exist.`);
+  return false;
 }
 
 const transfer = function ( amount, transferrer, recipient ) {
   // call withdraw to take money from transferrer and deposit it in recipients account
   if ( withdraw(amount, transferrer) !== false ) {
     deposit(amount, recipient);
+    console.log('The money has been transferred.')
     return true;
   }
   // if withdraw fails, return false
@@ -83,3 +90,4 @@ console.log(sumAllAccounts(bank));
 console.log(withdraw(100, 'Justin'));
 console.log(sumAllAccounts(bank));
 console.log(transfer(100, 'Justin', 'Rich'));
+console.log(deposit(25, 'Amy'));
