@@ -12,15 +12,13 @@ $(document).ready(function() {
 
     // Deposit or Withdrawal
     const transactionType = $( this ).val();
-    // parent node of clicked button
     const $clickedAccount = $( this ).parent();
     // account type: checking or savings
     const clickedAccount = $clickedAccount.attr( 'id' );
-    // overdraft protection account node i.e. account that wasn't clicked
+    const $clickedAccountBalanceDisplay = $clickedAccount.children( '.balance' ).children( 'p' );
     const $otherAccount = $clickedAccount.siblings( '.account' );
-    // account type that wasn't clicked
     const otherAccount = $otherAccount.attr( 'id' );
-    // amount entered by user
+    const $otherAccountBalanceDisplay = $otherAccount.children( '.balance' ).children( 'p' );
     const amount = $clickedAccount.children( ':text' ).val();
 
     if ( amount === '' ) {
@@ -34,22 +32,28 @@ $(document).ready(function() {
     }
     else if ( transactionType === 'Deposit' ) {
       accounts[ clickedAccount ] += +amount;
+
+      // add functionality: successful transaction message
+
     }
     else if ( transactionType === 'Withdraw' ) {
-      handleWithdrawal( amount, clickedAccount, otherAccount, $otherAccount );
+      handleWithdrawal( amount, clickedAccount, otherAccount, $otherAccountBalanceDisplay );
     }
+    // add functionality: empty text input after button click
+
     // update balance on screen
-    $clickedAccount.children( '.balance' ).children( 'p' ).html(`$${ accounts[ clickedAccount ] }`);
-    updateTransition( $clickedAccount );
+    $clickedAccountBalanceDisplay.html(`$${ accounts[ clickedAccount ] }`);
+    fadeAmountIn( $clickedAccountBalanceDisplay );
 
     updateBackground( accounts[ clickedAccount ], $clickedAccount );
     updateBackground( accounts[ otherAccount ], $otherAccount );
 
   });
 
-  const handleWithdrawal = function ( amount, clickedAccount, otherAccount, $otherAccount ) {
-    if ( amount > sumAll( accounts ) ) {
-      $( '.message' ).html( `<p>Your total balance is $${ sumAll( accounts ) }.</p><p>You don't have enough money to withdraw $${ amount }.</p>` )
+  const handleWithdrawal = function ( amount, clickedAccount, otherAccount, $otherAccountBalanceDisplay ) {
+    const totalBalance = sumAll( accounts );
+    if ( amount > totalBalance ) {
+      $( '.message' ).html( `<p>Your total balance is $${ totalBalance }.</p><p>You don't have enough money to withdraw $${ amount }.</p>` )
     }
     else if ( amount > accounts[ clickedAccount ]) {
       // calculate amount needed from overdraft protection account
@@ -59,11 +63,17 @@ $(document).ready(function() {
       // withdraw remainder from overdraft protection account
       accounts[ otherAccount ] -= remainder;
       // update balance on screen
-      $otherAccount.children( '.balance' ).children( 'p' ).html(`$${ accounts[ otherAccount ] }`);
-      updateTransition( $otherAccount );
+      $otherAccountBalanceDisplay.html(`$${ accounts[ otherAccount ] }`);
+      fadeAmountIn( $otherAccountBalanceDisplay );
+
+      // add functionality: successful transaction message
+
     }
     else {
       accounts[ clickedAccount ] -= +amount;
+
+      // add functionality: successful transaction message
+
     }
   }
 
@@ -75,10 +85,10 @@ $(document).ready(function() {
     return total;
   }
 
-  const updateTransition = function ( $clickedAccount ) {
+  const fadeAmountIn = function ( balanceDisplay ) {
     // fade amount in
-    $clickedAccount.children( '.balance' ).children( 'p' ).css( 'opacity', '0.0' ).animate( { opacity: 1.0 }, 375 );
-    $clickedAccount.children( '.balance' ).children( 'p' ).clearQueue();
+    balanceDisplay.css( 'opacity', '0.0' ).animate( { opacity: 1.0 }, 375 );
+    balanceDisplay.clearQueue();
   }
 
   const updateBackground = function ( accountBalance, accountNode ) {
