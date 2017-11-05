@@ -4,7 +4,7 @@ let total = checking + savings;
 
 const wSavings = function(){ //withdraw savings
   let $amount = parseFloat( $("#savings-amount").val() ); // amount in input turned into float
-  if($amoung > 0){
+  if($amount > 0){
     savings -= $amount; // taking amount from total savings
     savings = parseFloat(savings.toFixed(2));  // rounding savings to two decimal points and turning back into float
     updater(); // function updates account totals and screens to reflect them
