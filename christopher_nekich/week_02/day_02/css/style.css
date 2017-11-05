@@ -1,0 +1,74 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,400i,700');
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Montserrat", sans-serif;
+}
+
+.profile {
+  background: url(../images/schiffer.png);
+  background-size: cover;
+  width: 100vw;
+  height:730px;
+  background-repeat: no-repeat;
+  margin: 0 auto;
+}
+
+nav {
+  margin: 0;
+  padding: 0;
+  height: 40px;
+  height: 50px;
+  background: rgb(80,80,80);
+}
+
+/*nav ul{
+  list-style: none;
+  margin: 0 2px;
+  padding: 0;
+  display: flex;
+  justify-content: space-around;
+}*/
+
+nav ul a {
+  display: inline-block;
+  margin: 0 auto;
+  text-decoration: none;
+  line-height: 50px;
+  background-color: black;
+  font-size: 18px;
+  width: 33.13%;
+  text-align: center;
+  color: white;
+  background: linear-gradient(rgb(45, 45, 45), rgb(80,80,80), rgb(45,45,45));
+  border-radius: 8px; 
+}
+
+.checkered {
+  background-color: white;
+  color: rgb(45,45,45);
+  background: linear-gradient(rgb(210, 210, 210), white, rgb(210,210,210))
+}
+
+.fa-id-card-o {
+  color: white;
+}
+
+a:hover .fa-id-card-o {
+  position: relative;
+  top: -10px;
+}
+
+a:hover .fa-picture-o {
+  position: relative;
+  top: -10px;
+}
+
+a:hover .fa-question-circle-o {
+  position: relative;
+  top: -10px;
+}
