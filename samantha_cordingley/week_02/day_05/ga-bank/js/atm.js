@@ -10,6 +10,7 @@ $(document).ready(function () {
 let total = 0;
 let total2 = 0;
 let tempBal = 0;
+let tempBal2 = 0;
 
 
 const checkingDepos = function (event) {
@@ -19,13 +20,9 @@ const checkingDepos = function (event) {
   total += num;
 $('#checking-balance').html(`$${total}`);
 if (total > 0) {
-  $('#checking-balance').removeClass('zero')
+  $('#checking-balance').removeClass('zero');
 }
 };
-
-$('#checking-deposit').on('click', checkingDepos);
-
-
 
 //get amount that user has put in when they click withdrawal
 
@@ -35,17 +32,23 @@ const checkingWithdraw = function (event) {
   const amountGone = $('#checking-amount').val();
   //console.log(amount);
   let num = parseFloat(amountGone);
+  if (num >= total) {
+    tempBal = num - total;
+    total = 0;
+    total2 -= tempBal;
+    $('#savings-balance').html(`$${total2}`);
+  }
   if (num <= total) {
   total = total - num;
+}
+
+if (total === 0) {
+  $('#checking-balance').addClass('zero');
+  }
 
 $('#checking-balance').html(`$${total}`);
-if (total === 0) {
-  $('#checking-balance').addClass('zero')
-  }
-  }
-};
 
-$('#checking-withdraw').on('click', checkingWithdraw);
+};
 
 //get amount that user puts in when they click deposit on the savings accounts
 
@@ -56,41 +59,48 @@ const savingsDepos = function (event) {
   total2 += num;
 $('#savings-balance').html(`$${total2}`);
 if (total2 > 0) {
-  $('#savings-balance').removeClass('zero')
+  $('#savings-balance').removeClass('zero');
 }
 };
-
-$('#savings-deposit').on('click', savingsDepos);
 
 //get amount that user puts in when they click withdrawal on the savings accounts
 
 const savingsWithdraw = function (event) {
   const amountGone2 = $('#savings-amount').val();
   //console.log(amount);
-  let num = parseFloat(amountGone2);
-  if (num <= total2) {
-  total2 = total2 - num;
+  let num2 = parseFloat(amountGone2);
+  if (num2 >= total2) {
+    tempBal2 = num2 - total2;
+    total2 = 0;
+    total -= tempBal2;
+    $('#checking-balance').html(`$${total}`);
+  }
+  if (num2 <= total2) {
+  total2 = total2 - num2;
+}
 
-$('#savings-balance').html(`$${total}`);
 if (total2 === 0) {
-  $('#savings-balance').addClass('zero')
+  $('#savings-balance').addClass('zero');
 }
-}
+
+$('#savings-balance').html(`$${total2}`);
+
 };
 
+
+$('#checking-deposit').on('click', checkingDepos);
+$('#checking-withdraw').on('click', checkingWithdraw);
+$('#savings-deposit').on('click', savingsDepos);
 $('#savings-withdraw').on('click', savingsWithdraw);
-
-
 
 });
 
 
 //if there a user tries to withdraw from checking account but the right amount is in the savings, set the checking acc to 0 and take the remainder from the savings
 
-// if (num > total) {
-//   tempBal = num - total;
-//   total = 0;
-// }
-// if (tempBal < total2) {
-//   total2 = total2 - tempBal;
+//////////* BUG IF BOTH ACCOUNTS ARE DRAWN TO ZERO THE ACCOUNTS SHOULD GO RED*/ ////////////////
+
+// if (total === 0 && total2 === 0) {
+//   $('#savings-balance').addClass('zero');
+//   $('#checking-balance').addClass('zero');
 // }
