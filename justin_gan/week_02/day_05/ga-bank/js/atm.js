@@ -12,8 +12,9 @@ $(document).ready(function() {
     }
   }
 
+  let msg = '';
+
   $( ':button' ).on( 'click' , function () {
-    console.log( accounts );
     // reset message
     $('.message').html('');
 
@@ -29,9 +30,9 @@ $(document).ready(function() {
     const $otherAccountDisplay = $otherAccount.children( '.balance' ).children( 'p' );
 
     const amount = $clickedAccount.children( ':text' ).val();
-    let msg = '';
 
-    if ( validateInput( amount ) ) {
+    if ( isValidInput( amount ) ) {
+
       if ( transactionType === 'Deposit' ) {
         accounts.setBalance( clickedAccount, +amount );
         msg = `<p>You have successfully deposited $${ amount } into your ${ clickedAccount } account.</p><p>Your total balance is $${ sumAll( accounts ) }.</p>`;
@@ -39,6 +40,7 @@ $(document).ready(function() {
       else if ( transactionType === 'Withdraw' ) {
         msg = handleWithdrawal( amount, clickedAccount, otherAccount, $otherAccountDisplay );
       }
+
     }
 
     updateScreen( $clickedAccountDisplay, accounts.getBalance( clickedAccount ), msg );
@@ -46,11 +48,10 @@ $(document).ready(function() {
     updateBackground( accounts.getBalance( otherAccount ), $otherAccount );
     $clickedAccount.children( ':text' ).val( '' );
 
-    console.log( accounts );
     // TODO: implement metric symbols for longer numbers
   });
 
-  const validateInput = function ( amount ) {
+  const isValidInput = function ( amount ) {
     if ( amount === '' ) {
       msg = `<p>Please enter an amount to begin your transaction.</p>`;
       return false;
