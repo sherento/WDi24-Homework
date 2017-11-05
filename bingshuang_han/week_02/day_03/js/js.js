@@ -44,21 +44,43 @@ img.style.position = 'absolute';
 img.style.left = '0px';
 let c = false;
 
-// const catBack = function( ){
-//   img.src="images/slack-imgs.com.gif";
-// }
+const catDance = function( ){
+  img.src="images/dance.gif";
+  console.log('The function walk is called');
+}
+const catWalk1 = function(){
+  img.src ='images/walk.gif';
+  console.log('The function continue is called');
+  var oldLeft = parseInt(img.style.left);
+  var newLeft = oldLeft + 10;
+ console.log(newLeft);
+ img.style.left = newLeft + 'px';
+   if (newLeft > 900) {
+    -webkit-transform: scaleX(-1);
+    //transform: scaleX(-1);
+    clearInterval(setInterval(catWalk1(),100));
+
+   }
+}
+
+
+
 var catWalk = function() {
 
   var oldLeft = parseInt(img.style.left);
   var newLeft = oldLeft + 10;
-  //console.log(newLeft);
+  console.log(newLeft);
   img.style.left = newLeft + 'px';
   //console.log(fadeTimer);
-  if (newLeft > 460){
-     img.src="../images/giphy.gif";
+  if (newLeft === 460){
 
-     //clearInterval(fadeTimer)
-     //setTimeout(img.src="images/slack-imgs.com.gif",3000);
+
+     clearInterval(fadeTimer)
+     setTimeout(catDance,1000);
+     console.log('hello');
+     //setTimeout(setInterval(catWalk1, 100),12000);
+
+
 
 
   }

@@ -1,4 +1,22 @@
-*{
-  border:1px solid green;
-  /*box-sizing: border-box;*/
+
+
+p{
+  fond-size: 70px;
+}
+div iframe{
+  display: inline-block;
+  margin-left: 150px
+}
+div img{
+  width: 300px;
+  float:right;
+  border: 0;
+  margin-right: 150px;
+}
+h1{
+  margin:50px;
+}
+
+.container {
+  background-color:  #d9b3ff;
 }

@@ -1,10 +1,13 @@
-
+/*
 *{
   border:1px solid green;
-  /*box-sizing: border-box;*/
-}
+  box-sizing: border-box;
+}*/
 /*Help you to understand how the box display*/
 @import url('https://fonts.googleapis.com/css?family=Rozha+One');
+@import url('https://fonts.googleapis.com/css?family=Monoton');
+@import url('https://fonts.googleapis.com/css?family=Limelight');
+
 
 body{
   font-family: 'Rozha One', serif;
@@ -31,9 +34,12 @@ h1{
   background-color: #222;
   color: #ccc;
   padding: 1em;
+  font-family: 'Limelight', cursive;
+  fond-size: 45px;
 }
 nav{
   text-align: right;
+  text-decoration-style: none;
 
 }
 nav a{
@@ -52,12 +58,12 @@ main img{
 aside{
   position: fixed;
   display: inline-block;
-  width:22%;
+  width:30%;
   /*75% + 24% is about to  100%*/
   vertical-align: top;
   background: #ccc;
   padding: 1em;
-  margin-top: 63px;
+  margin-left: 10em;
   border-radius: 0.5em;
   box-shadow:0 0 15px #222;
 
@@ -75,4 +81,12 @@ ul a {
 }
 ul li{
     list-style-type: none;
+}
+h1,h2,h3 {
+font-family: 'Monoton', cursive;
+}
+aside img{
+  width :240px;
+
+  border-radius: 0.5em
 }
