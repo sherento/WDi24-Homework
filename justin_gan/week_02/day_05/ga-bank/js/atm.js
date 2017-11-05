@@ -3,7 +3,10 @@ $(document).ready(function() {
   // balances stored in object so they can be accessed via jQuery selectors and bracket notation
   const accounts = {
     checking: 0,
-    savings: 0
+    savings: 0,
+    setBalance: function( account, amount ) {
+      this[ account ] += amount;
+    }
   }
 
   $( ':button' ).on( 'click' , function () {
@@ -31,15 +34,16 @@ $(document).ready(function() {
       $( '.message' ).html( `The amount you've entered, "${ amount }", is not a number. Please try again.` )
     }
     else if ( transactionType === 'Deposit' ) {
-      accounts[ clickedAccount ] += +amount;
+      // accounts[ clickedAccount ] += +amount;
+      accounts.setBalance( clickedAccount, +amount );
 
-      // add functionality: successful transaction message
+      // TODO: successful transaction message
 
     }
     else if ( transactionType === 'Withdraw' ) {
       handleWithdrawal( amount, clickedAccount, otherAccount, $otherAccountBalanceDisplay );
     }
-    // add functionality: empty text input after button click
+    // TODO: empty text input after button click
 
     // update balance on screen
     $clickedAccountBalanceDisplay.html(`$${ accounts[ clickedAccount ] }`);
@@ -66,13 +70,13 @@ $(document).ready(function() {
       $otherAccountBalanceDisplay.html(`$${ accounts[ otherAccount ] }`);
       fadeAmountIn( $otherAccountBalanceDisplay );
 
-      // add functionality: successful transaction message
+      // TODO: successful transaction message
 
     }
     else {
       accounts[ clickedAccount ] -= +amount;
 
-      // add functionality: successful transaction message
+      // TODO: successful transaction message
 
     }
   }
@@ -80,7 +84,9 @@ $(document).ready(function() {
   const sumAll = function ( accounts ) {
     let total = 0;
     for ( let account in accounts ) {
-      total += accounts[ account ];
+      if ( !isNaN( accounts[ account ] ) ) {
+        total += accounts[ account ];
+      }
     }
     return total;
   }
