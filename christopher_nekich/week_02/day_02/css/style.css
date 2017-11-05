@@ -42,7 +42,7 @@ body {
 	background-clip: content-box;
 	cursor: ew-resize;
 	-webkit-filter: drop-shadow(0 0 2px black);
-	filter: drop-shadow(0 0 2px black);
+	filter: drop-shadow(0 0 4px red);
 }
 
 .image-slider img {

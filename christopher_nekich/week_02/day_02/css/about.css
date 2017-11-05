@@ -158,6 +158,9 @@ a:hover {
   vertical-align: top;
   margin-left: 25px;
   padding: 1em;
+  border: 2px dashed #cc181e;
+  height: 600px;
+  overflow-y: scroll;
 }
 
 iframe {
