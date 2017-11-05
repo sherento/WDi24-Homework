@@ -31,6 +31,8 @@ $(document).ready(function() {
     const amount = $clickedAccount.children( ':text' ).val();
     let msg = '';
 
+    // testing git TODO: validateInput
+
     if ( amount === '' ) {
       msg = `<p>Please enter an amount to begin your transaction.</p>`;
     }
