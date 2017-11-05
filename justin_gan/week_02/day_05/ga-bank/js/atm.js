@@ -1,5 +1,4 @@
 $(document).ready(function() {
-
   // balances stored in object so they can be accessed via jQuery selectors and bracket notation
   const accounts = {
     checking: 0,
@@ -14,6 +13,7 @@ $(document).ready(function() {
   }
 
   $( ':button' ).on( 'click' , function () {
+    console.log( accounts );
     // reset message
     $('.message').html('');
 
@@ -31,25 +31,14 @@ $(document).ready(function() {
     const amount = $clickedAccount.children( ':text' ).val();
     let msg = '';
 
-    // testing git TODO: validateInput
-
-    if ( amount === '' ) {
-      msg = `<p>Please enter an amount to begin your transaction.</p>`;
-    }
-    else if ( /</g.test( amount ) ) {
-      msg = `<p>Please stop trying to hack the Bank of GA.</p>`;
-    }
-    else if ( isNaN( amount ) ) {
-      msg = `<p>The amount you've entered, "${ amount }", is not a number. Please try again.</p>`;
-    }
-
-    else if ( transactionType === 'Deposit' ) {
-      accounts.setBalance( clickedAccount, +amount );
-      msg = `<p>You have successfully deposited $${ amount } into your ${ clickedAccount } account.</p><p>Your total balance is $${ sumAll( accounts ) }.</p>`;
-
-    }
-    else if ( transactionType === 'Withdraw' ) {
-      msg = handleWithdrawal( amount, clickedAccount, otherAccount, $otherAccountDisplay );
+    if ( validateInput( amount ) ) {
+      if ( transactionType === 'Deposit' ) {
+        accounts.setBalance( clickedAccount, +amount );
+        msg = `<p>You have successfully deposited $${ amount } into your ${ clickedAccount } account.</p><p>Your total balance is $${ sumAll( accounts ) }.</p>`;
+      }
+      else if ( transactionType === 'Withdraw' ) {
+        msg = handleWithdrawal( amount, clickedAccount, otherAccount, $otherAccountDisplay );
+      }
     }
 
     updateScreen( $clickedAccountDisplay, accounts.getBalance( clickedAccount ), msg );
@@ -57,11 +46,29 @@ $(document).ready(function() {
     updateBackground( accounts.getBalance( otherAccount ), $otherAccount );
     $clickedAccount.children( ':text' ).val( '' );
 
+    console.log( accounts );
     // TODO: implement metric symbols for longer numbers
   });
 
+  const validateInput = function ( amount ) {
+    if ( amount === '' ) {
+      msg = `<p>Please enter an amount to begin your transaction.</p>`;
+      return false;
+    }
+    else if ( /</g.test( amount ) ) {
+      msg = `<p>Please stop trying to hack the Bank of GA.</p>`;
+      return false;
+    }
+    else if ( isNaN( amount ) ) {
+      msg = `<p>The amount you've entered, "${ amount }", is not a number. Please try again.</p>`;
+      return false;
+    } else {
+      return true;
+    }
+  }
+
   const handleWithdrawal = function ( amount, clickedAccount, otherAccount, $otherAccountDisplay ) {
-    const totalBalance = sumAll( accounts );
+    let totalBalance = sumAll( accounts );
     const clickedAccountBalance = accounts.getBalance( clickedAccount );
     let msg = '';
 
@@ -75,11 +82,13 @@ $(document).ready(function() {
       // update balance on screen
       updateScreen( $otherAccountDisplay, accounts.getBalance( otherAccount ) );
 
+      totalBalance = sumAll( accounts );
       msg = `<p>You have successfully withdrawn $${ clickedAccountBalance } from your ${ clickedAccount } account and $${ amount - clickedAccountBalance } from your ${ otherAccount } account (total amount: $${amount}).</p><p>Your total balance is $${ totalBalance }.</p>`;
     }
     else {
       accounts.setBalance( clickedAccount, -amount );
 
+      totalBalance = sumAll( accounts );
       msg = `<p>You have successfully withdrawn $${ amount } from your ${ clickedAccount } account.</p><p>Your total balance is $${ totalBalance }.</p>`;
     }
     return msg;
