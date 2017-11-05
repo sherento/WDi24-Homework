@@ -7,7 +7,7 @@ $(document).ready(function() {
     setBalance: function( account, amount ) {
       this[ account ] += amount;
     },
-    // same as accounts [ account ]; negative effects???
+    // same as accounts[ account ]; negative effects???
     getBalance: function( account ) {
       return this[ account ];
     }
@@ -95,9 +95,8 @@ $(document).ready(function() {
 
   const updateScreen = function ( display, balance, msg ) {
     display.html(`$${ balance }`);
-    fadeIn( display );
     $( '.message' ).html( msg );
-    fadeIn( $( '.message' ) );
+    fadeIn( display, $( '.message' ) );
   }
 
   // function necessary to maintain display height
