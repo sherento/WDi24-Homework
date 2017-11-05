@@ -6,10 +6,15 @@ $(document).ready(function() {
     savings: 0,
     setBalance: function( account, amount ) {
       this[ account ] += amount;
+    },
+    // same as accounts [ account ]
+    getBalance: function( account ) {
+      return this[ account ];
     }
   }
 
   $( ':button' ).on( 'click' , function () {
+    console.log( accounts );
     // reset message
     $('.message').html('');
 
@@ -18,10 +23,12 @@ $(document).ready(function() {
     const $clickedAccount = $( this ).parent();
     // account type: checking or savings
     const clickedAccount = $clickedAccount.attr( 'id' );
-    const $clickedAccountBalanceDisplay = $clickedAccount.children( '.balance' ).children( 'p' );
+    const $clickedAccountDisplay = $clickedAccount.children( '.balance' ).children( 'p' );
+
     const $otherAccount = $clickedAccount.siblings( '.account' );
     const otherAccount = $otherAccount.attr( 'id' );
-    const $otherAccountBalanceDisplay = $otherAccount.children( '.balance' ).children( 'p' );
+    const $otherAccountDisplay = $otherAccount.children( '.balance' ).children( 'p' );
+
     const amount = $clickedAccount.children( ':text' ).val();
 
     if ( amount === '' ) {
@@ -34,47 +41,47 @@ $(document).ready(function() {
       $( '.message' ).html( `The amount you've entered, "${ amount }", is not a number. Please try again.` )
     }
     else if ( transactionType === 'Deposit' ) {
-      // accounts[ clickedAccount ] += +amount;
       accounts.setBalance( clickedAccount, +amount );
 
       // TODO: successful transaction message
 
     }
     else if ( transactionType === 'Withdraw' ) {
-      handleWithdrawal( amount, clickedAccount, otherAccount, $otherAccountBalanceDisplay );
+      handleWithdrawal( amount, clickedAccount, otherAccount, $otherAccountDisplay );
     }
     // TODO: empty text input after button click
 
     // update balance on screen
-    $clickedAccountBalanceDisplay.html(`$${ accounts[ clickedAccount ] }`);
-    fadeAmountIn( $clickedAccountBalanceDisplay );
+    $clickedAccountDisplay.html(`$${ accounts.getBalance( clickedAccount ) }`);
+    fadeAmountIn( $clickedAccountDisplay );
 
-    updateBackground( accounts[ clickedAccount ], $clickedAccount );
-    updateBackground( accounts[ otherAccount ], $otherAccount );
+    updateBackground( accounts.getBalance( clickedAccount ), $clickedAccount );
+    updateBackground( accounts.getBalance( otherAccount ), $otherAccount );
 
+    console.log( accounts );
   });
 
-  const handleWithdrawal = function ( amount, clickedAccount, otherAccount, $otherAccountBalanceDisplay ) {
+  const handleWithdrawal = function ( amount, clickedAccount, otherAccount, $otherAccountDisplay ) {
     const totalBalance = sumAll( accounts );
     if ( amount > totalBalance ) {
       $( '.message' ).html( `<p>Your total balance is $${ totalBalance }.</p><p>You don't have enough money to withdraw $${ amount }.</p>` )
     }
-    else if ( amount > accounts[ clickedAccount ]) {
+    else if ( amount > accounts.getBalance( clickedAccount ) ) {
       // calculate amount needed from overdraft protection account
-      const remainder = amount - accounts[ clickedAccount ];
+      const remainder = amount - accounts.getBalance( clickedAccount );
       // withdraw all from user specified account
-      accounts[ clickedAccount ] = 0;
+      accounts.setBalance( clickedAccount, -( amount - remainder ) );
       // withdraw remainder from overdraft protection account
-      accounts[ otherAccount ] -= remainder;
+      accounts.setBalance( otherAccount, -remainder );
       // update balance on screen
-      $otherAccountBalanceDisplay.html(`$${ accounts[ otherAccount ] }`);
-      fadeAmountIn( $otherAccountBalanceDisplay );
+      $otherAccountDisplay.html(`$${ accounts.getBalance( otherAccount ) }`);
+      fadeAmountIn( $otherAccountDisplay );
 
       // TODO: successful transaction message
 
     }
     else {
-      accounts[ clickedAccount ] -= +amount;
+      accounts.setBalance( clickedAccount, -amount );
 
       // TODO: successful transaction message
 
@@ -92,7 +99,6 @@ $(document).ready(function() {
   }
 
   const fadeAmountIn = function ( balanceDisplay ) {
-    // fade amount in
     balanceDisplay.css( 'opacity', '0.0' ).animate( { opacity: 1.0 }, 375 );
     balanceDisplay.clearQueue();
   }
