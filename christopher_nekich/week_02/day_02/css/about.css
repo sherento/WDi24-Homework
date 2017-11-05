@@ -142,6 +142,8 @@ a:hover {
   overflow-y: scroll;
   border: 2px dashed #00aced;
   padding: 1em;
+  display: inline-block;
+
 }
 
 .tweetbox h1 {
@@ -150,7 +152,16 @@ a:hover {
 }
 
 .youtubebox {
+  text-align: center;
   margin: 40px auto;
+  display: inline-block;
+  vertical-align: top;
+  margin-left: 25px;
+  padding: 1em;
+}
+
+iframe {
+  display: block;
 }
 
 .youtubebox h1 {
