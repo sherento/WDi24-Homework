@@ -36,7 +36,7 @@ $(document).ready(function() {
         msg = handleDeposit( clickedAccount, amount );
       }
       else if ( transactionType === 'Withdraw' ) {
-        msg = handleWithdrawal( amount, clickedAccount, otherAccount, $otherAccountDisplay );
+        msg = handleWithdrawal( clickedAccount, amount, otherAccount, $otherAccountDisplay );
       }
     }
 
@@ -72,7 +72,7 @@ $(document).ready(function() {
   }
 
 
-  const handleWithdrawal = function ( amount, clickedAccount, otherAccount, $otherAccountDisplay ) {
+  const handleWithdrawal = function ( clickedAccount, amount, otherAccount, $otherAccountDisplay ) {
     let totalBalance = sumAll( accounts );
     const clickedAccountBalance = accounts.getBalance( clickedAccount );
     let msg = '';
