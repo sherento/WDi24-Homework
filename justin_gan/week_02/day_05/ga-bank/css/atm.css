@@ -48,10 +48,10 @@
   color: #FFF;
 }
 
-.message {
-  transform: translateY(50%);
+.message p {
+  padding-top: 1em;
 }
 
-p {
+.balance p {
   margin: 0;
 }

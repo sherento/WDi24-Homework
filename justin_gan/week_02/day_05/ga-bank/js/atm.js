@@ -7,14 +7,13 @@ $(document).ready(function() {
     setBalance: function( account, amount ) {
       this[ account ] += amount;
     },
-    // same as accounts [ account ]
+    // same as accounts [ account ]; negative effects???
     getBalance: function( account ) {
       return this[ account ];
     }
   }
 
   $( ':button' ).on( 'click' , function () {
-    console.log( accounts );
     // reset message
     $('.message').html('');
 
@@ -30,62 +29,58 @@ $(document).ready(function() {
     const $otherAccountDisplay = $otherAccount.children( '.balance' ).children( 'p' );
 
     const amount = $clickedAccount.children( ':text' ).val();
+    let msg = '';
 
     if ( amount === '' ) {
-      $( '.message' ).html( `Please enter an amount to begin your transaction.` );
+      msg = `<p>Please enter an amount to begin your transaction.</p>`;
     }
     else if ( /</g.test( amount ) ) {
-      $( '.message' ).html( `Please stop trying to hack the Bank of GA.`);
+      msg = `<p>Please stop trying to hack the Bank of GA.</p>`;
     }
     else if ( isNaN( amount ) ) {
-      $( '.message' ).html( `The amount you've entered, "${ amount }", is not a number. Please try again.` )
+      msg = `<p>The amount you've entered, "${ amount }", is not a number. Please try again.</p>`;
     }
+
     else if ( transactionType === 'Deposit' ) {
       accounts.setBalance( clickedAccount, +amount );
-
-      // TODO: successful transaction message
+      msg = `<p>You have successfully deposited $${ amount } into your ${ clickedAccount } account.</p><p>Your total balance is $${ sumAll( accounts ) }.</p>`;
 
     }
     else if ( transactionType === 'Withdraw' ) {
-      handleWithdrawal( amount, clickedAccount, otherAccount, $otherAccountDisplay );
+      msg = handleWithdrawal( amount, clickedAccount, otherAccount, $otherAccountDisplay );
     }
-    // TODO: empty text input after button click
 
-    // update balance on screen
-    $clickedAccountDisplay.html(`$${ accounts.getBalance( clickedAccount ) }`);
-    fadeAmountIn( $clickedAccountDisplay );
-
+    updateScreen( $clickedAccountDisplay, accounts.getBalance( clickedAccount ), msg );
     updateBackground( accounts.getBalance( clickedAccount ), $clickedAccount );
     updateBackground( accounts.getBalance( otherAccount ), $otherAccount );
+    $clickedAccount.children( ':text' ).val( '' );
 
-    console.log( accounts );
+    // TODO: implement metric symbols for longer numbers
   });
 
   const handleWithdrawal = function ( amount, clickedAccount, otherAccount, $otherAccountDisplay ) {
     const totalBalance = sumAll( accounts );
+    const clickedAccountBalance = accounts.getBalance( clickedAccount );
+    let msg = '';
+
     if ( amount > totalBalance ) {
-      $( '.message' ).html( `<p>Your total balance is $${ totalBalance }.</p><p>You don't have enough money to withdraw $${ amount }.</p>` )
+      msg = `<p>Your total balance is $${ totalBalance }.</p><p>You don't have enough money to withdraw $${ amount }.</p>`;
     }
-    else if ( amount > accounts.getBalance( clickedAccount ) ) {
-      // calculate amount needed from overdraft protection account
-      const remainder = amount - accounts.getBalance( clickedAccount );
-      // withdraw all from user specified account
-      accounts.setBalance( clickedAccount, -( amount - remainder ) );
+    else if ( amount > clickedAccountBalance ) {
+      accounts.setBalance( clickedAccount, -clickedAccountBalance );
       // withdraw remainder from overdraft protection account
-      accounts.setBalance( otherAccount, -remainder );
+      accounts.setBalance( otherAccount, -( amount - clickedAccountBalance ) );
       // update balance on screen
-      $otherAccountDisplay.html(`$${ accounts.getBalance( otherAccount ) }`);
-      fadeAmountIn( $otherAccountDisplay );
+      updateScreen( $otherAccountDisplay, accounts.getBalance( otherAccount ) );
 
-      // TODO: successful transaction message
-
+      msg = `<p>You have successfully withdrawn $${ clickedAccountBalance } from your ${ clickedAccount } account and $${ amount - clickedAccountBalance } from your ${ otherAccount } account (total amount: $${amount}).</p><p>Your total balance is $${ totalBalance }.</p>`;
     }
     else {
       accounts.setBalance( clickedAccount, -amount );
 
-      // TODO: successful transaction message
-
+      msg = `<p>You have successfully withdrawn $${ amount } from your ${ clickedAccount } account.</p><p>Your total balance is $${ totalBalance }.</p>`;
     }
+    return msg;
   }
 
   const sumAll = function ( accounts ) {
@@ -98,9 +93,20 @@ $(document).ready(function() {
     return total;
   }
 
-  const fadeAmountIn = function ( balanceDisplay ) {
-    balanceDisplay.css( 'opacity', '0.0' ).animate( { opacity: 1.0 }, 375 );
-    balanceDisplay.clearQueue();
+  const updateScreen = function ( display, balance, msg ) {
+    display.html(`$${ balance }`);
+    fadeIn( display );
+    $( '.message' ).html( msg );
+    fadeIn( $( '.message' ) );
+  }
+
+  // function necessary to maintain display height
+  const fadeIn = function () {
+    for ( let i = 0; i < arguments.length; i++ ) {
+      arguments[i].css( 'opacity', '0.0' ).animate( { opacity: 1.0 }, 375 );
+      // prevents animation from locking up
+      arguments[i].clearQueue();
+    }
   }
 
   const updateBackground = function ( accountBalance, accountNode ) {
