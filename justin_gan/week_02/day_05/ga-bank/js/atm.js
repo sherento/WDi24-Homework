@@ -32,15 +32,12 @@ $(document).ready(function() {
     const amount = $clickedAccount.children( ':text' ).val();
 
     if ( isValidInput( amount ) ) {
-
       if ( transactionType === 'Deposit' ) {
-        accounts.setBalance( clickedAccount, +amount );
-        msg = `<p>You have successfully deposited $${ amount } into your ${ clickedAccount } account.</p><p>Your total balance is $${ sumAll( accounts ) }.</p>`;
+        msg = handleDeposit( clickedAccount, amount );
       }
       else if ( transactionType === 'Withdraw' ) {
         msg = handleWithdrawal( amount, clickedAccount, otherAccount, $otherAccountDisplay );
       }
-
     }
 
     updateScreen( $clickedAccountDisplay, accounts.getBalance( clickedAccount ), msg );
@@ -67,6 +64,13 @@ $(document).ready(function() {
       return true;
     }
   }
+
+  const handleDeposit = function ( clickedAccount, amount ) {
+    accounts.setBalance( clickedAccount, +amount );
+    msg = `<p>You have successfully deposited $${ amount } into your ${ clickedAccount } account.</p><p>Your total balance is $${ sumAll( accounts ) }.</p>`;
+    return msg;
+  }
+
 
   const handleWithdrawal = function ( amount, clickedAccount, otherAccount, $otherAccountDisplay ) {
     let totalBalance = sumAll( accounts );
