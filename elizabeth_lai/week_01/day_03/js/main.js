@@ -116,19 +116,27 @@ findLongestWord(['red', 'green', 'blue', 'pink'])
 // Pretend you don't know the word, and call guessLetter multiple times with various letters to check that your program works.
 
 let word = ['F', 'O', 'X'];
-let overallAttempts = [];
+let overallAttempts = ['_', '_', '_'];
+let correctLetters = word.length
+let letterFound = false;
 
 const guessLetter = function (guessedLetter) {
+  // guessedletter = guessedletter.toUpperCase();
+  letterFound = false; //resetting letterFound so that it doesn't return true for next letter guessed
   for (var i = 0; i < word.length; i++) {
     if (guessedLetter === word[i]) { //sees if guessed letter matches letter in word
     var newLetter = guessedLetter
     // console.log(`overallAttempts[i] = ${i}`);
     overallAttempts[i] = newLetter
+    correctLetters -- //(means word length minus 1 (in this case it is 3))
+    letterFound = true;
     }
 }
   console.log(`These are the letters you have guessed correctly - ${overallAttempts}. Congratulations on guessing the letter ${newLetter}.`);
-
-  if (word.length === overallAttempts.length){ //need a more sophisticated way of checking if word array === overallAttempts array
+  if (!letterFound) {
+    console.log('Not a letter. Try again.');
+  }
+  if (correctLetters === 0){ //need a more sophisticated way of checking if word array === overallAttempts array
       console.log(`Congratulations you won! The word is ${overallAttempts}.`);
   }
   else {
@@ -136,6 +144,7 @@ const guessLetter = function (guessedLetter) {
   }
 };
 
+guessLetter('j');
 guessLetter('O');
 guessLetter('F');
 guessLetter('X');
