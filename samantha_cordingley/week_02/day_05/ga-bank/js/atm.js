@@ -1,4 +1,3 @@
-
 //check the document is ready because js script tags are in the header of the HTML
 $(document).ready(function () {
   console.log("document is ready");
@@ -32,11 +31,16 @@ const checkingWithdraw = function (event) {
   const amountGone = $('#checking-amount').val();
   //console.log(amount);
   let num = parseFloat(amountGone);
-  if (num >= total) {
+  if (num > total) {
     tempBal = num - total;
+  if (tempBal > total2) {
+    console.log("insufficent funds");
+  }
+  else {
     total = 0;
     total2 -= tempBal;
     $('#savings-balance').html(`$${total2}`);
+  }
   }
   if (num <= total) {
   total = total - num;
@@ -69,11 +73,16 @@ const savingsWithdraw = function (event) {
   const amountGone2 = $('#savings-amount').val();
   //console.log(amount);
   let num2 = parseFloat(amountGone2);
-  if (num2 >= total2) {
+  if (num2 > total2) {
     tempBal2 = num2 - total2;
-    total2 = 0;
-    total -= tempBal2;
-    $('#checking-balance').html(`$${total}`);
+    if (tempBal2 > total) {
+      console.log("insufficent funds");
+    }
+    else {
+      total2 = 0;
+      total -= tempBal2;
+      $('#checking-balance').html(`$${total}`);
+  }
   }
   if (num2 <= total2) {
   total2 = total2 - num2;
