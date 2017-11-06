@@ -40,17 +40,20 @@ const checkingWithdraw = function (event) {
     total = 0;
     total2 -= tempBal;
     $('#savings-balance').html(`$${total2}`);
+    if (total2 === 0) {
+      $('#savings-balance').addClass('zero');
+    }
   }
   }
   if (num <= total) {
   total = total - num;
 }
 
+$('#checking-balance').html(`$${total}`);
+
 if (total === 0) {
   $('#checking-balance').addClass('zero');
   }
-
-$('#checking-balance').html(`$${total}`);
 
 };
 
@@ -82,17 +85,20 @@ const savingsWithdraw = function (event) {
       total2 = 0;
       total -= tempBal2;
       $('#checking-balance').html(`$${total}`);
+      if (total === 0) {
+        $('#checking-balance').addClass('zero');
+        }
   }
   }
   if (num2 <= total2) {
   total2 = total2 - num2;
 }
 
+$('#savings-balance').html(`$${total2}`);
+
 if (total2 === 0) {
   $('#savings-balance').addClass('zero');
 }
-
-$('#savings-balance').html(`$${total2}`);
 
 };
 
