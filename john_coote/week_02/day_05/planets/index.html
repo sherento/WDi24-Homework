@@ -12,6 +12,7 @@
 </head>
 <body>
 
+
 <div class="textual" id="info"></div>
 <div class="textual" id="info2"></div>
 <div class="textual" id="info3">
@@ -26,6 +27,9 @@
   <li id="neptuneYears"></li>
 </ul>
 </div>
+
+
+
 
 <img src="images/sun-transparent.png" alt="" class="sun" id="sol">
 <img src="images/mercury-transparent.png" alt="" class="planet" id="mercury">
@@ -49,14 +53,23 @@
 <img src="images/comet-clipart-12.png" alt="" class="comet" id="comet">
 
 
+<img class="mammal" id="cat" src="http://www.anniemation.com/clip_art/images/cat-walk.gif">
+
+<div id="catbox">
+  The Cat
+</div>
+
+
+
+
 <!-- JQuery Plugin -->
-<div id="input">input
-<input
+<div id="inputDiv">
+<input id="inputRange"
     type="range"
-    min="10"                    // default 0
-    max="1000"                  // default 100
-    step="10"                   // default 1
-    value="300"                 // default min + (max-min)/2
+    min="1"                    // default 0
+    max="100"                  // default 100
+    step="1"                   // default 1
+    value="5"                 // default min + (max-min)/2
     data-orientation="vertical" // default horizontal
 >
 </div>

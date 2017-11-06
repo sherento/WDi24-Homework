@@ -9,17 +9,21 @@ const screenCentreY = windowHeight / 2
 // planets are 100 square, centre is 50 from top and left
 // sun : 120 60/60, moon: 50 25/25
 
-// $('.textual').hide(); // hide the info divs
+$('.textual').hide(); // hide the info divs
 
-$('input[type="range"]').val(10).change();
 
-//rateFactor = 1 / $('input').val();
+
+////// SANDBOX
+
+
+
+
+/////////////////////////
 
 let pie = Math.PI
-let rateFactor =  0.005// this governs the smoothness. as I did the earth first if rateFactor = 2 * 3.14 the earth dont move.
+let rateFactor =  0.005// this governs the smoothness. as I did the earth first if rateFactor = 2 * 3.14 the earth dont move. THis will change with the slider, but we need to declare the variable first.
 let nearnessConstant = 80;
 let speedConstant = 20 // runs the loops ever speeadConstant milliseconds. unfortunately changing this in the console doesnt change the speed on the page.
-
 let earthTime = 0;
 let mercuryTime = 0;
 let venusTime = 0;
@@ -29,6 +33,19 @@ let saturnTime = 0;
 let uranusTime = 0;
 let neptuneTime = 0;
 let cometTime = 0;
+let blCatDirectionX = true;
+let blCatDirectionY = true;
+let catX = windowWidth -100;
+let catY = windowHeight -100;
+let a = 0;
+let mercuryX = 0;
+let mercuryY = 0;
+let arr1 = []
+
+$("#inputRange").on("change", function(){
+  console.log(this.valueAsNumber)
+  rateFactor = this.valueAsNumber / 1000;
+});
 
 
 
@@ -50,14 +67,13 @@ const planets = {
     orbit: function () {
       const a = planets.mercury.orbitRadius // orbit radius
       const b = planets.mercury.period
-      //console.log(a);
       mercuryTime = mercuryTime + (rateFactor * 365/b)
       mercuryX = (a * (Math.sin(mercuryTime)) + screenCentreX - 50);
       mercuryY = (a * (Math.cos(mercuryTime)) + screenCentreY - 50);
-      //console.log(mercuryX, mercuryY);
+
       planets.mercury.img.offset({left: mercuryX, top: mercuryY})
 
-      updateYearsInfo (planets.mercury.name, mercuryTime)
+      updateYearsInfo(planets.mercury.name, mercuryTime)
     },
     clicked: $('img#mercury').on('click', function () { // this works
       displayInfo (planets.mercury.info, planets.mercury.name)
@@ -265,7 +281,7 @@ const planets = {
       displayInfo (planets.neptune.info, planets.neptune.name)
     })
   },
-    comet: {
+  comet: {
       period: (1000 * Math.random()),
       $img: $('img#comet'),
       orbitRadius: 400,
@@ -276,8 +292,8 @@ const planets = {
         const b = planets.comet.period
         //console.log(a);
         cometTime = cometTime + (rateFactor * 365/b)
-        cometX = 2 * (a * (Math.sin(cometTime)) + screenCentreX - 50);
-        cometY = (a * (Math.cos(cometTime)) + screenCentreY - 50);
+        cometX = 2 * (a * (Math.sin(cometTime)) + screenCentreX - 200);
+        cometY = (a * (Math.cos(cometTime)) + screenCentreY - 100);
         //console.log(mercuryX, mercuryY);
         planets.comet.$img.offset({left: cometX, top: cometY});
         updateYearsInfo (planets.neptune.name, neptuneTime)
@@ -293,9 +309,63 @@ const planets = {
   }
 }
 
+// cat
+const cat = {
+  $catgif:  $('img#cat'),
+  walk: function () {
+    a = rateFactor * 400
+    catX = cat.$catgif.offset().left
+    catY = cat.$catgif.offset().top
+    // tru for direction is left-to-right and top-to-bottom
+
+    // fchange direction at window edges
+    if (catX >= windowWidth-70) {blCatDirectionX = false}
+    if (catX <= 0) {blCatDirectionX = true}
+    if (catY >= windowHeight-95) {blCatDirectionY = false}
+    if (catY <= 0) {blCatDirectionY = true}
+
+    if (blCatDirectionX) {
+      (catX = catX +  a)}
+      else {(catX = catX -  a)}
+    if (blCatDirectionY) {
+      (catY = catY +  a)}
+      else {(catY = catY -  a)}
+
+    cat.$catgif.offset({left: (catX), top: (catY)})
+
+    // if (isNear ((cometX+100), (cometY+100), (earthX+50), (earthY-50))) {
+    //   displayInfo (planets.comet.info, planets.comet.name)
+    //   //debugger;
+    //   $('#info').fadeOut(20000)
+    // }
+    //
+
+    arr1 = [mercuryX, mercuryY, venusX, venusY, earthX, earthY, marsX, marsY, jupiterX, jupiterY, saturnX, saturnY, uranusX, uranusY, neptuneX, neptuneY]
+    for (var i = 0; i < arr1.length; i = i + 2) {
+      otherX = arr1[i];
+      otherY = arr1[i+1]
+      if (isNear(catX, catY, otherX, otherY)) {
+        blCatDirectionX = !blCatDirectionX;
+        blCatDirectionY = blCatDirectionY
+      }
+    }
+
+
+
+  }
+}
+
+
+
+
+
+
+
+
 
 /////////// Set initial positions
 planets.sol.$img.offset({left:(screenCentreX-60), top:(screenCentreY-60)});
+cat.$catgif.offset({left: (windowWidth-320), top: (windowHeight-160)})
 // $('#input').offset({left: 50, top: 800});
 
 const moonInfo = "<p>There are lots of moons. They are not all shown on this page.</p><p>Jupiter and Satiurn have so many moons, no one has ever been able to count them all. Uranus and Neptune have moons too, but I had run out of puff by then.</p> <p>Also the speed of the moons is a bit ficticous. Where there are two or more moons per planet, their speeds relative to each other is about right<p>"
@@ -323,6 +393,7 @@ const updateYearsInfo = function (name, number) {
   //console.log(name, number);
   stringID = '#' + name + "Years";
   stringDisplay = name + " : " + ((Math.round( 10 * (number/ pie / 2) - 0.5)) / 10)
+  $('#info3').show()
   $(stringID).html(stringDisplay).show();
 }
 
@@ -336,3 +407,8 @@ const saturnTimeDone = window.setInterval(planets.saturn.orbit, speedConstant);
 const uranusTimeDone = window.setInterval(planets.uranus.orbit, speedConstant);
 const neptuneTimeDone = window.setInterval(planets.neptune.orbit, speedConstant);
 const cometTimeDone = window.setInterval(planets.comet.orbit, speedConstant);
+
+// start the cat
+$('#catbox').on('click', function () { // this works
+  const catTimerDone = window.setInterval(cat.walk, (speedConstant * 2));
+})
