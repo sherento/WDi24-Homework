@@ -1,19 +1,38 @@
 // Bank of GA
 
+
 $(document).ready( function() {
 
-  // Declare balance variables, get starting balances and convert to integers
-  let cBal = +$('#checking-balance').text()[1]; // [1] because [0] is $
-  let sBal = +$('#savings-balance').text()[1];
 
+  // Declare balance variables, get starting balances and convert to integers
+  let cBal = +( $('#checking-balance').text().slice(1) ); // because first char is $
+  let sBal = +( $('#savings-balance').text().slice(1) );
+
+  const changeIfZero = function () {
+    if ( cBal === 0 ) {
+      $('#checking-balance').addClass('zero');
+    }
+    if ( sBal === 0 ) {
+      $('#savings-balance').addClass('zero');
+    }
+  };
+
+  changeIfZero();
 
   // *********** DEPOSIT AND WITHDRAW FUNCTIONS ******************
+
   const validated = function ( amount ) {
     if ( isNaN(amount) ) {
       return false;
     }
     if ( amount > 9999 ) {
       $('.error>p').text(`Sorry, transactions are limited to under $10,000`);
+      return false;
+    } else {
+      $('.error>p').text(` `);
+    }
+    if ( amount % 1 !== 0 ) {
+      $('.error>p').text(`Sorry, we only accept transactions in whole dollar amounts`);
       return false;
     } else {
       $('.error>p').text(` `);
@@ -38,17 +57,12 @@ $(document).ready( function() {
     }
     $('#checking-balance').text( `$${ cBal }` );      // update CHECKING amount in display
     $('#savings-balance').text( `$${ sBal }` );      // update SAVINGS amount in display
-    if ( sBal === 0 ) {
-      $('#savings-balance').addClass('zero');
-    }
-    if ( cBal === 0 ) {
-      $('#checking-balance').addClass('zero');
-    }
+    changeIfZero();
   };
 
 
   const depositChecking = function() {
-    let amount = +$('#checking-amount').val();
+    const amount = +$('#checking-amount').val();
     if ( !validated(amount) ) {
       return;
     }
@@ -61,7 +75,7 @@ $(document).ready( function() {
 
 
   const depositSavings = function() {
-    let amount = +$('#savings-amount').val();
+    const amount = +$('#savings-amount').val();
     if ( !validated(amount) ) {
       return;
     }
@@ -74,7 +88,7 @@ $(document).ready( function() {
 
 
   const withdrawChecking = function() {
-    let amount = +$('#checking-amount').val();
+    const amount = +$('#checking-amount').val();
     if ( !validated(amount) ) {
       return;
     }
@@ -89,15 +103,13 @@ $(document).ready( function() {
       }
     } // end overdraft
     $('#checking-balance').text( `$${ cBal -= amount }` );
-    if ( cBal === 0 ) {
-      $('#checking-balance').addClass('zero');
-    }
+    changeIfZero();
     addRecord( 'CHECKING', 'WITHDRAW&nbsp;', amount, cBal );
   };
 
 
   const withdrawSavings = function() {
-    let amount = +$('#savings-amount').val();
+    const amount = +$('#savings-amount').val();
     if ( !validated(amount) ) {
       return;
     }
@@ -112,9 +124,7 @@ $(document).ready( function() {
       }
     } // end overdraft **
     $('#savings-balance').text( `$${ sBal -= amount }` );
-    if ( sBal === 0 ) {
-      $('#savings-balance').addClass('zero');
-    }
+    changeIfZero();
     addRecord( 'SAVINGS&nbsp;', 'WITHDRAW&nbsp;', amount, sBal );
   };
 
