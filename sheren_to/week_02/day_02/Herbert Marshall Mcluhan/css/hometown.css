@@ -53,30 +53,32 @@ iframe {
 
 #portrait {
   display: inline;
-  width: 30%;
+  width: 45%;
   height: auto;
+  margin: 0 350px;
 }
 
 #flag {
   display: inline;
-  width: 30%;
-  height: auto;
+  width: 33%;
+  height: 200px;
 }
 
 #mountains {
   display: inline;
-  width: 30%;
-  height: auto;
+  width: 33%;
+  height: 200px;
 }
 
 #poutine {
   display: inline;
-  width: 30%;
-  height: auto;
+  width: 33%;
+  height: 200px;
 }
 
 #jt {
   display: inline;
-  width: 30%;
+  width: 40%;
   height: auto;
+  margin: 0 350px;
 }
