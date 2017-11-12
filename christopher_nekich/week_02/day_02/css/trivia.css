@@ -47,3 +47,7 @@ aside li {
   margin: 15px 0;
   list-style: georgian;
 }
+
+hr {
+  border-top: 1px dashed lightgrey;
+}
