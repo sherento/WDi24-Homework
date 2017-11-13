@@ -5,16 +5,17 @@ def main_menu
 end
 
 
-def prompt (message)
-  print message
-  gets.chomp      #implicitly returned because its the last line of the function
-end
+# def prompt (message)
+#   print message
+#   gets.chomp      #implicitly returned because its the last line of the function
+# end
 
 
-###############################################################################
+# ###############################################################################
 
-# Calculator functionality
-# Calculator should be able to do basic arithmetic (+,-, *, /)
+# # Calculator functionality
+# # Calculator should be able to do basic arithmetic (+,-, *, /)
+
 
 ### GET TYPE ###
 
@@ -59,32 +60,10 @@ else
   first_number = gets.to_i
   puts "What is the second number you would like to #{current_type}: "
   second_number = gets.to_i
-end
-
-answer = sum(current_type, first_number, second_number)
-  puts "The answer is #{answer}"
-
-###############################################################################
-
-main_menu
-menu_choice = prompt('Please enter your selection: ').downcase
-puts "You chose: #{menu_choice}"
-
-until menu_choice == 'q'
-  # show the appropriate calculator
-  case menu_choice
-  when 'b'
-    basic_calculator_type
-  else
-    puts "invalid selection"
   end
-  # show the menu again
- main_menu
- # get the menu choice again
-menu_choice = prompt ('Please enter your selection: ').downcase
-end
 
-puts "Thank you for using this terrible calculator."
+  answer = sum(current_type, first_number, second_number)
+    puts "The answer is #{answer}"
 
 ################################################################################
 
@@ -92,3 +71,65 @@ puts "Thank you for using this terrible calculator."
 #
 # Advanced Calculator functionality
 # Calculator should be able to do basic arithmetic (exponents, square roots)
+
+### GET TYPE ###
+
+def advanced_calculator_type
+  print "What would you like to do? Type 1 to find exponents or 2 to find the square root of a number: "
+  selection = gets.to_i
+  # puts "You chose #{selection}"
+  if selection == 1
+    "exponents"
+  elsif selection == 2
+    "square root"
+  else
+    "error"
+  end
+end
+
+### DETERMINE WHAT SUM TO PREFORM ###
+
+def sum (operator, a, b)
+  if operator == "exponents"
+    a ** b
+  elsif operator == "square root"
+      Math.sqrt(a)
+  end
+end
+
+### GET NUMBERS FROM USER ###
+
+current_type = advanced_calculator_type()
+if current_type == "error"
+  puts "I do not understand this type of calculation"
+else
+  puts "What is the first number you would like to #{current_type}: "
+  first_number = gets.to_i
+  puts "What is the second number (leave blank if using the Square Root function): "
+  second_number = gets.to_i
+end
+
+answer = sum(current_type, first_number, second_number)
+  puts "The answer is #{answer}"
+
+  ################################################################################
+
+  main_menu
+  menu_choice = prompt('Please enter your selection: ').downcase
+  puts "You chose: #{menu_choice}"
+
+  until menu_choice == 'q'
+    # show the appropriate calculator
+    case menu_choice
+    when 'b'
+      basic_calculator_type
+    when 'a'
+      advanced_calculator_type
+    end
+    # show the menu again
+   main_menu
+   # get the menu choice again
+  menu_choice = prompt ('Please enter your selection: ').downcase
+  end
+
+  puts "Thank you for using this terrible calculator."
