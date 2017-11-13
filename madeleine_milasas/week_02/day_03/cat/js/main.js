@@ -52,8 +52,8 @@ const catWalkLtoR = function () {
   cat.style.width = `${ newWidth }px`;
   if ( parseFloat(cat.style.left) > middleBarrier ) {
     window.clearInterval(timerId);
-    // go to still gif
-    cat.src = "images/cat-walk-frames/cat02.gif";
+    // go to still image
+    cat.src = "images/cat-defringe-walk-frames/cat02.png";
   }
 };
 
@@ -69,8 +69,8 @@ const catWalkRtoL = function () {
   cat.style.width = `${ newWidth }px`;
   if ( parseFloat(cat.style.left) < edgeBarrier ) {
     window.clearInterval(timerId2);
-    // go to still gif
-    cat.src = "images/cat-walk-frames/cat05.gif";
+    // go to still image
+    cat.src = "images/cat-defringe-walk-frames/cat05.png";
   }
 };
 
@@ -86,8 +86,8 @@ const catWalkLtoR2 = function () {
   cat.style.width = `${ newWidth }px`;
   if ( parseFloat(cat.style.left) > finalBarrier ) {
     window.clearInterval(timerId3);
-    // go to still gif
-    cat.src = "images/cat-walk-frames/cat07.gif";
+    // go to still image
+    cat.src = "images/cat-defringe-walk-frames/cat07.png";
   }
 };
 
@@ -103,8 +103,8 @@ const catWalkRtoL2 = function () {
   cat.style.width = `${ newWidth }px`;
   if ( parseFloat(cat.style.left) < edgeBarrier ) {
     window.clearInterval(timerId4);
-    // go to still gif
-    cat.src = "images/cat-walk-frames/cat05.gif";
+    // go to still image
+    cat.src = "images/cat-defringe-walk-frames/cat05.png";
   }
 };
 
@@ -123,8 +123,8 @@ const catMirWalkRtoL = function () {
   catMirror.style.width = `${ newWidth }px`;
   if ( parseFloat(catMirror.style.right) > middleBarrier ) {
     clearInterval(timerIdMir);
-    // go to still gif
-    catMirror.src = "images/cat-walk-frames/cat02.gif";
+    // go to still image
+    catMirror.src = "images/cat-defringe-walk-frames/cat02.png";
   }
 };
 
@@ -140,8 +140,8 @@ const catMirWalkLtoR = function () {
   catMirror.style.width = `${ newWidth }px`;
   if ( parseFloat(catMirror.style.right) < edgeBarrier ) {
     clearInterval(timerIdMir2);
-    // go to still gif
-    catMirror.src = "images/cat-walk-frames/cat05.gif";
+    // go to still image
+    catMirror.src = "images/cat-defringe-walk-frames/cat05.png";
   }
 };
 
@@ -157,8 +157,8 @@ const catMirWalkRtoL2 = function () {
   catMirror.style.width = `${ newWidth }px`;
   if ( parseFloat(catMirror.style.right) > finalBarrier ) {
     clearInterval(timerIdMir3);
-    // go to still gif
-    catMirror.src = "images/cat-walk-frames/cat07.gif";
+    // go to still image
+    catMirror.src = "images/cat-defringe-walk-frames/cat07.png";
   }
 };
 
@@ -174,8 +174,8 @@ const catMirWalkLtoR2 = function () {
   catMirror.style.width = `${ newWidth }px`;
   if ( parseFloat(catMirror.style.right) < edgeBarrier ) {
     clearInterval(timerIdMir4);
-    // go to still gif
-    catMirror.src = "images/cat-walk-frames/cat05.gif";
+    // go to still image
+    catMirror.src = "images/cat-defringe-walk-frames/cat05.png";
   }
 };
 
@@ -192,7 +192,7 @@ const changeCats = function ( srcStr ) {
 };
 
 
-setTimeout(changeCats.bind( null, "images/cat-walk-reverse.gif" ), 10000);
+setTimeout(changeCats.bind( null, "images/cat-defringe-walk-reverse.gif" ), 10000);
 // setTimeout(exampleFunction.bind(null, exampleArg), 4000);
 
 
@@ -203,7 +203,7 @@ setTimeout( function () { timerId2 = setInterval( catWalkRtoL, 20 ); }, 10000);
 setTimeout( function () { timerIdMir2 = setInterval( catMirWalkLtoR, 20 ); }, 10000);
 
 // change to fwd cats
-setTimeout(changeCats.bind( null, "images/cat-walk.gif" ), 16000);
+setTimeout(changeCats.bind( null, "images/cat-defringe-walk.gif" ), 16000);
 // now go again forwards
 let timerId3;
 let timerIdMir3;
@@ -211,7 +211,7 @@ setTimeout( function () { timerId3 = setInterval( catWalkLtoR2, 20 ); }, 16000);
 setTimeout( function () { timerIdMir3 = setInterval( catMirWalkRtoL2, 20 ); }, 16000);
 
 // change to reverse cats
-setTimeout(changeCats.bind( null, "images/cat-walk-reverse.gif" ), 20000);
+setTimeout(changeCats.bind( null, "images/cat-defringe-walk-reverse.gif" ), 20000);  // FIXME all needs fix for defringe cats
 // now back again
 let timerId4;
 let timerIdMir4;
