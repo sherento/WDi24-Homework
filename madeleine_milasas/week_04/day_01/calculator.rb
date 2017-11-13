@@ -17,12 +17,30 @@ def basic_menu
   puts "(q) - quit and return to main menu"
 end
 
-##########
+def advanced_menu
+  puts "    ADVANCED CALCULATION OPTIONS    "
+  puts "(s) - square root of"
+  puts "(n) - nth root of"
+  puts "(p) - power of"
+  puts "(q) - quit and return to main menu"
+end
+
+
+########## Prompt function ###################
 
 def prompt(message)
   print message
   gets.chomp.downcase # implicit return
 end
+
+
+
+
+
+
+
+########## CALCULATOR FUNCTIONS #################
+
 
 def basic_calculator
   # ******* function definitions *******
@@ -42,7 +60,7 @@ def basic_calculator
   basic_menu
   operation = prompt('Please enter your selection: ')
 
-  until operation == 'q'
+  until 'q' == operation
     puts " You chose '#{ operation }'. Great choice."
     print "What is the first number you want to perform this on? "
     first_num = gets.to_f
@@ -60,14 +78,40 @@ def basic_calculator
     when '/'
       puts "The result is #{ divide first_num, second_num }."
     end
-  basic_menu
-  operation = prompt('Please enter your selection: ')
+    basic_menu
+    operation = prompt('Please enter your selection: ')
+  end
+  puts "-" * 40
+end
+
+# # #
+
+def advanced_calculator
+  # ******** function defs **********
+  def sqr_root
+    num = prompt('Find the square root of what number? ').to_f
+    result = Math.sqrt num
+  end
+
+  # --------- UI ------------
+  advanced_menu
+  operation = prompt('Please make your selection: ')
+
+  until 'q' == operation
+    puts " You wrote '#{ operation }'. Great choice."
+    case operation
+    when 's'
+      puts "The result is #{ sqr_root }."
+    end
+    advanced_menu
+    operation = prompt('Please make your selection: ')
   end
   puts "-" * 40
 end
 
 
-################################################################################
+
+########################## RUN PROGRAM ######################################################
 
 main_menu
 menu_choice = prompt('Please enter your selection: ')
@@ -79,6 +123,9 @@ until menu_choice == 'q'
   when 'b'
     puts "-" * 40
     basic_calculator
+  when 'a'
+    puts "-" * 40
+    advanced_calculator
   else
     puts "Invalid selection"
   end
