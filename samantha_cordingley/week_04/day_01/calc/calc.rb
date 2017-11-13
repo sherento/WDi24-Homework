@@ -1,0 +1,94 @@
+def main_menu
+  puts "(b) - basic calculator"
+  puts "(a) - advanced calculator"
+  puts "(q) - quit"
+end
+
+
+def prompt (message)
+  print message
+  gets.chomp      #implicitly returned because its the last line of the function
+end
+
+
+###############################################################################
+
+# Calculator functionality
+# Calculator should be able to do basic arithmetic (+,-, *, /)
+
+### GET TYPE ###
+
+def basic_calculator_type
+  print "What would you like to do? Type 1 to add, 2 to subtract, 3 to multiply or 4 to divide: "
+  selection = gets.to_i
+  # puts "You chose #{selection}"
+  if selection == 1
+    "add"
+  elsif selection == 2
+    "subtract"
+  elsif selection == 3
+    "multiply"
+  elsif selection == 4
+    "divide"
+  else
+    "error"
+  end
+end
+
+### DETERMINE WHAT SUM TO PREFORM ###
+
+def sum (operator, a, b)
+  if operator == "add"
+    a + b
+  elsif operator == "subtract"
+    a - b
+  elsif operator == "multiply"
+    a * b
+  elsif operator == "divide"
+    a / b
+  end
+end
+
+### GET NUMBERS FROM USER ###
+
+current_type = basic_calculator_type()
+if current_type == "error"
+  puts "I do not understand this type of calculation"
+else
+  puts "What is the first number you would like to #{current_type}: "
+  first_number = gets.to_i
+  puts "What is the second number you would like to #{current_type}: "
+  second_number = gets.to_i
+end
+
+answer = sum(current_type, first_number, second_number)
+  puts "The answer is #{answer}"
+
+###############################################################################
+
+main_menu
+menu_choice = prompt('Please enter your selection: ').downcase
+puts "You chose: #{menu_choice}"
+
+until menu_choice == 'q'
+  # show the appropriate calculator
+  case menu_choice
+  when 'b'
+    basic_calculator_type
+  else
+    puts "invalid selection"
+  end
+  # show the menu again
+ main_menu
+ # get the menu choice again
+menu_choice = prompt ('Please enter your selection: ').downcase
+end
+
+puts "Thank you for using this terrible calculator."
+
+################################################################################
+
+# Phase 2
+#
+# Advanced Calculator functionality
+# Calculator should be able to do basic arithmetic (exponents, square roots)
