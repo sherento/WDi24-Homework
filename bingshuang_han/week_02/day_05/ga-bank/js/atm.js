@@ -23,11 +23,12 @@ $(document).ready(function(){
           this.checking = 0;
          }
          else {
+           $('#fun').fadeIn(3000);
+           $('#fun').fadeOut(1000);
            alert( "YOU HAVE INSUFFICIANT BALANCE TO DO THIS WITHDRAW!");
            //$('#fun').css("display",block);
-           $('#fun').fadeIn(3000);
-           $('#fun').animate( {'height': '488px','width': '414px'},'slow');
-           $('#fun').animate( {'height': '244px', 'width': '207px'},'slow');
+
+
 
 
          }
@@ -38,6 +39,8 @@ $(document).ready(function(){
            this.saving = 0;
          }
          else {
+           $('#fun').fadeIn(3000);
+           $('#fun').fadeOut(1000);
            alert( "YOU HAVE INSUFFICIANT BALANCE TO DO THIS WITHDRAW!");
          }
       }
@@ -111,6 +114,8 @@ $('#savings-deposit').click(function(){
     }
 })
 //**************if the saving account withdraw button was clicked . the money will withdraw, conditions apply
+
+
 $('#savings-withdraw').click(function(){
   amount = parseInt( $('#savings-amount').val() );
   if (account.saving >= amount){
@@ -137,4 +142,77 @@ $('#savings-withdraw').click(function(){
     $('#savings-balance').text( account.saving);
   }
   })
+})
+
+//****************************************** class way**********************************
+// save all the data in DOM, and retrieve the data later when doing the accounting.
+
+
+
+const checkForZero = function (){
+  $('.zero').removeClass('zero');             // remove from css is more common way
+  const checkBalance = + ($('#checking-balance').text().slice(1));
+  if (0 ===checkingBalance){
+    $('.zero').addClass('zero');
+  }
+}
+
+// $('input:button').on('click',checkForZero);
+
+
+$(document).ready(function(){
+  checkForZero();
+
+  $('#checking-deposit').on('click',function(){
+    const amount = + ( $('#checking-amount').val());
+    const balance = + ($('#checking-balance').text().slice(1)); //skip the "$"
+
+    $('#checking-balance').text('$'+(amount+balance));
+  })
+
+$('#checking-withdraw').on('click',function(){
+  const amount = + ( $('#checking-amount').val());
+  const balance = + ($('#checking-balance').text().slice(1)); //skip the "$"
+
+  //retrieve other balance
+  // if amount <=balance
+  //else
+  const otherBalance = +($('#savings-balance').text().slice(1));
+
+
+  const  newBalance = balance -amount;
+  if (newBalance > =0 ){
+    $('#checking-balance').text('$'+(newBalance));
+    checkForZero();
+  }
+  else if ( amount <=balance +newBalance){
+    const remaining = amount - balance;  // how much do we need from other account
+    $('#checking-balance').text('0');
+    $('#savings-balance').text(remaining);
+
+  }
+
+})
+
+
+
+
+  $('#savings-deposit').on('click',function(){
+    const amount = + ( $('#savings-amount').val());
+    const balance = + ($('#savings-balance').text().slice(1)); //skip the "$"
+
+    $('#savings-balance').text('$'+(amount+balance));
+  })
+
+
+  $('#savings-withdraw').on('click',function(){
+    const amount = + ( $('#savings-amount').val());
+    const balance = + ($('#savings-balance').text().slice(1)); //skip the "$"
+    const  newBalance = balance -amount;
+    if (newBalance > 0 ){
+      $('#savings-balance').text('$'+(newBalance));
+      checkForZero();
+    }
+    checkForZero();
+
 })
