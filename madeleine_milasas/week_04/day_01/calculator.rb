@@ -20,7 +20,7 @@ end
 def advanced_menu
   puts "    ADVANCED CALCULATION OPTIONS    "
   puts "(s) - square root of"
-  puts "(n) - nth root of"
+  puts "(n) - positive nth root of"
   puts "(p) - power of"
   puts "(a) - sum all"
   puts "(q) - quit and return to main menu"
@@ -115,13 +115,22 @@ def advanced_calculator
 
   def sqr_root
     num = prompt('Find the square root of what number? ').to_f
-    int_or_float Math.sqrt num
+    if num >= 0
+      root = int_or_float Math.sqrt num
+      return "#{ root } or #{ root * -1 }"
+    else
+      return "invalid. Sorry, you can only find the square root of a positive number"
+    end
   end
 
   def nth_root
-    a = prompt('What is your base number? ').to_f
-    b = prompt('What is your degree? ').to_f
-    int_or_float a ** ( 1.0 / b ) # demo
+    base = prompt('What is your base number? ').to_f
+    degree = prompt('What is your degree? ').to_f
+    if base >= 0
+      int_or_float base ** ( 1.0 / degree ) # demo
+    else
+      return "invalid. Sorry, I can only handle positive base numbers"
+    end
   end
 
   def power
