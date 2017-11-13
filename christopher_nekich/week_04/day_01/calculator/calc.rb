@@ -65,7 +65,7 @@ end
 
 
 main_menu
-menu_choice = prompt "Please enter your selection: "
+menu_choice = prompt ("Please enter your selection: ").downcase
 
 until menu_choice == "q"
   #show appropriate calculator
