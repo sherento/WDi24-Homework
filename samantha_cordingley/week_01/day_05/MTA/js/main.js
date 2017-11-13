@@ -4,6 +4,9 @@
 let station1 = " ";
 let station2 = " ";
 let tripLog = " ";
+let linePosition1 = " ";
+let linePosition2 = " ";
+
 
 let mta = {
   lLine: [ "8th", "6th", "union square", "3rd", "1st" ],
@@ -20,13 +23,25 @@ let mta = {
 
 //master function //
 const tripPlan = function (startLine, startStation, endLine, endStation) {
-  let station1 = startLine;
-  let station2 = endLine;
-  console.log(`starting station index is ${mta[station1].indexOf(startStation)}`);
-  console.log(`end station index is ${mta[station2].indexOf(endStation)}`);
+  station1 = startLine;
+  station2 = endLine;
+  linePosition1 = mta[station1].indexOf(startStation);
+  linePosition2 = mta[station2].indexOf(endStation);
+  let route = mta[startLine].slice(linePosition1 + 1, linePosition2 + 1);
+  if (linePosition1 <= linePosition2) {
+    console.log(`Start on the ${startLine} and travel through stops ${route}`);
+  }
+  if (linePosition1 >= linePosition2) {
+    let reverseRoute = mta[startLine].reverse();
+    linePosition1 = reverseRoute.indexOf(startStation);
+    linePosition2 = reverseRoute.indexOf(endStation);
+    let route2 = reverseRoute.slice(linePosition1 + 1, linePosition2 + 1);
+    //console.log(route2);
+    console.log(`Start on the ${startLine} and travel through stops ${route2}`);
+  }
 }
 
-tripPlan("lLine", "6th", "lLine", "1st");
+tripPlan("lLine", "6th", "lLine", "3rd");
 
 /*
 //can call an array and its values
