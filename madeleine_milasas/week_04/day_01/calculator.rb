@@ -8,6 +8,16 @@ def main_menu
   puts "(q) - quit"
 end
 
+def basic_menu
+  puts "    BASIC CALCULATION OPTIONS    "
+  puts "(+) - add"
+  puts "(-) - subtract"
+  puts "(*) - multiply"
+  puts "(/) - divide"
+  puts "(q) - quit and return to main menu"
+  print "Make your choice NOW: "
+end
+
 def prompt(message)
   print message
   gets.chomp # implicit return
@@ -28,13 +38,7 @@ def basic_calculator
     a / b
   end
   # ------ UI ----------
-  puts "    BASIC CALCULATION OPTIONS    "
-  puts "(+) - add"
-  puts "(-) - subtract"
-  puts "(*) - multiply"
-  puts "(/) - divide"
-  puts "(q) - quit and return to main menu"
-  print "Make your choice NOW: "
+  basic_menu
   operation = gets.chomp.downcase
 
   until operation == 'q'
@@ -55,13 +59,7 @@ def basic_calculator
     when '/'
       puts "The result is #{ divide first_num, second_num }."
     end
-  puts "    BASIC CALCULATION OPTIONS    " # TODO make function, this is not DRY
-  puts "(+) - add"
-  puts "(-) - subtract"
-  puts "(*) - multiply"
-  puts "(/) - divide"
-  puts "(q) - quit and return to main menu"
-  print "Make your choice NOW: "
+  basic_menu
   operation = gets.chomp.downcase
   end
   puts "-" * 40
