@@ -28,12 +28,20 @@ end
 
 ########## Prompt function ###################
 
-def prompt(message)
+def prompt( message )
   print message
   gets.chomp.downcase # implicit return
 end
 
+######
 
+def check_if_int( n )
+  if (n - n.round).abs < 0.00000000001 # demo. alternative n % 1 == 0
+    n.round
+  else
+    return n
+  end
+end
 
 
 
@@ -49,25 +57,25 @@ def basic_calculator
   def add
     a = prompt("What is the first number you'd like to add? ").to_f
     b = prompt("What is the second number you'd like to add? ").to_f
-    a + b
+    check_if_int( a + b )
   end
 
   def subtract
     a = prompt("What is the number you want to subtract FROM? ").to_f
     b = prompt("What is the number you'd like to subtract? ").to_f
-    a - b
+    check_if_int( a - b )
   end
 
   def multiply
     a = prompt("What is the first number you'd like to multiply? ").to_f
     b = prompt("What is the second number you'd like to multiply? ").to_f
-    a * b
+    check_if_int( a * b )
   end
 
   def divide
     a = prompt("What is the number you'd like to divide? ").to_f
     b = prompt("What is the divisor? ").to_f
-    a / b
+    check_if_int( a / b )
   end
 
   # ------ UI ----------
@@ -107,18 +115,21 @@ def advanced_calculator
   def sqr_root
     num = prompt('Find the square root of what number? ').to_f
     result = Math.sqrt num
+    check_if_int( result )
   end
 
   def nth_root
     a = prompt('What is your base number? ').to_f
     b = prompt('What is your degree? ').to_f
     result = a ** ( 1.0 / b ) ## demo
+    check_if_int( result )
   end
 
   def power
     a = prompt('What is your base number? ').to_f
     b = prompt('What is your exponent? ').to_f
     result = a ** b
+    check_if_int( result )
   end
 
   # --------- UI ------------
