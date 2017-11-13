@@ -1,5 +1,5 @@
 
-
+########### MENU DISPLAY FUNCTIONS ####################
 
 def main_menu
   puts "    MAIN MENU    "
@@ -15,12 +15,13 @@ def basic_menu
   puts "(*) - multiply"
   puts "(/) - divide"
   puts "(q) - quit and return to main menu"
-  print "Make your choice NOW: "
 end
+
+##########
 
 def prompt(message)
   print message
-  gets.chomp # implicit return
+  gets.chomp.downcase # implicit return
 end
 
 def basic_calculator
@@ -39,14 +40,14 @@ def basic_calculator
   end
   # ------ UI ----------
   basic_menu
-  operation = gets.chomp.downcase
+  operation = prompt('Please enter your selection: ')
 
   until operation == 'q'
     puts " You chose '#{ operation }'. Great choice."
     print "What is the first number you want to perform this on? "
-    first_num = gets.to_i
+    first_num = gets.to_f
     print "What is the second number you want to perform this on? "
-    second_num = gets.to_i
+    second_num = gets.to_f
     puts " Amazing work you're doing there, choosing #{ first_num } and #{ second_num }.\n Allow me to perform that operation..."
 
     case operation
@@ -60,7 +61,7 @@ def basic_calculator
       puts "The result is #{ divide first_num, second_num }."
     end
   basic_menu
-  operation = gets.chomp.downcase
+  operation = prompt('Please enter your selection: ')
   end
   puts "-" * 40
 end
@@ -69,7 +70,7 @@ end
 ################################################################################
 
 main_menu
-menu_choice = prompt('Please enter your selection: ').downcase  # chaining here needs paren
+menu_choice = prompt('Please enter your selection: ')
 
 
 until menu_choice == 'q'
@@ -82,7 +83,7 @@ until menu_choice == 'q'
     puts "Invalid selection"
   end
     main_menu
-    menu_choice = prompt('Please enter your selection: ').downcase
+    menu_choice = prompt('Please enter your selection: ')
 end
 
 puts "Thank you for using this terrible calculator"
