@@ -93,6 +93,12 @@ def advanced_calculator
     result = Math.sqrt num
   end
 
+  def nth_root
+    a = prompt('What is your base number? ').to_f
+    b = prompt('What is your degree? ').to_f
+    result = a ** ( 1.0 / b )
+  end
+
   # --------- UI ------------
   advanced_menu
   operation = prompt('Please make your selection: ')
@@ -102,6 +108,8 @@ def advanced_calculator
     case operation
     when 's'
       puts "The result is #{ sqr_root }."
+    when 'n'
+      puts "The result is #{ nth_root }."
     end
     advanced_menu
     operation = prompt('Please make your selection: ')
