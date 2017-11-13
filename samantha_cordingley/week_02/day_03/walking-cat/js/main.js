@@ -14,6 +14,8 @@ Bonus #1: When the cat reaches the right-hand of the screen, restart them at the
 
 const cat = document.getElementsByTagName('img')[0];
 
+let maxWidth = window.innerWidth;
+
 //console.log(cat); //check cat image is stored in new variable 'cat'
 
 cat.style.left = '0px';                 //start cat at the left hand side of the screen
@@ -22,6 +24,13 @@ const catWalk = function () {          //create function to make cat move  by ch
   const oldPosition = parseInt(cat.style.left);   //save initial position in a new variable
   const newPosition = oldPosition + 10;           //save new position by taking initial position and adding 10 pixels
   cat.style.left = newPosition + 'px';            //change the position of the cat and make it equal the new position in pixels
+  if (parseInt(cat.style.left) >= maxWidth) {
+    //console.log('true');
+    cat.style.left = '0px';
+  }
 };
+
+
+  // console.log(maxWidth);
 
 setInterval(catWalk, 50);                         //call event but passing in function and interval time
