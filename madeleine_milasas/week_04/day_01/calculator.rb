@@ -61,7 +61,7 @@ def basic_calculator
   operation = prompt('Please enter your selection: ')
 
   until 'q' == operation
-    puts " You chose '#{ operation }'. Great choice."
+    puts " You chose '#{ operation }'. Interesting choice."
     print "What is the first number you want to perform this on? "
     first_num = gets.to_f
     print "What is the second number you want to perform this on? "
@@ -96,7 +96,13 @@ def advanced_calculator
   def nth_root
     a = prompt('What is your base number? ').to_f
     b = prompt('What is your degree? ').to_f
-    result = a ** ( 1.0 / b )
+    result = a ** ( 1.0 / b ) ## demo
+  end
+
+  def power
+    a = prompt('What is your base number? ').to_f
+    b = prompt('What is your exponent? ').to_f
+    result = a ** b
   end
 
   # --------- UI ------------
@@ -104,12 +110,14 @@ def advanced_calculator
   operation = prompt('Please make your selection: ')
 
   until 'q' == operation
-    puts " You wrote '#{ operation }'. Great choice."
+    puts " You wrote '#{ operation }'. Interesting choice."
     case operation
     when 's'
-      puts "The result is #{ sqr_root }."
+      puts "The result is #{ sqr_root }." ## demo
     when 'n'
       puts "The result is #{ nth_root }."
+    when 'p'
+      puts "The result is #{ power }."
     end
     advanced_menu
     operation = prompt('Please make your selection: ')
