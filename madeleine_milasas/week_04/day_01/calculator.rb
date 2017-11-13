@@ -1,5 +1,5 @@
 
-########### MENU DISPLAY FUNCTIONS ####################
+########### MENU DISPLAY FUNCTIONS #############################################
 
 def main_menu
   puts "    MAIN MENU    "
@@ -22,6 +22,7 @@ def advanced_menu
   puts "(s) - square root of"
   puts "(n) - nth root of"
   puts "(p) - power of"
+  puts "(a) - sum all"
   puts "(q) - quit and return to main menu"
 end
 
@@ -33,10 +34,10 @@ def prompt( message )
   gets.chomp.downcase # implicit return
 end
 
-######
+###### Display int where necessary function #########
 
-def check_if_int( n )
-  if (n - n.round).abs < 0.00000000001 # demo. alternative n % 1 == 0
+def int_or_float( n )  # demo
+  if (n - n.round).abs < 0.00000000001  # alternative n % 1 == 0, but this also helps with bad float maths
     n.round
   else
     return n
@@ -47,7 +48,7 @@ end
 
 
 
-########## CALCULATOR FUNCTIONS #################
+########## CALCULATOR FUNCTIONS #################################################
 
 
 def basic_calculator
@@ -57,25 +58,25 @@ def basic_calculator
   def add
     a = prompt("What is the first number you'd like to add? ").to_f
     b = prompt("What is the second number you'd like to add? ").to_f
-    check_if_int( a + b )
+    int_or_float a + b
   end
 
   def subtract
     a = prompt("What is the number you want to subtract FROM? ").to_f
     b = prompt("What is the number you'd like to subtract? ").to_f
-    check_if_int( a - b )
+    int_or_float a - b
   end
 
   def multiply
     a = prompt("What is the first number you'd like to multiply? ").to_f
     b = prompt("What is the second number you'd like to multiply? ").to_f
-    check_if_int( a * b )
+    int_or_float a * b
   end
 
   def divide
     a = prompt("What is the number you'd like to divide? ").to_f
     b = prompt("What is the divisor? ").to_f
-    check_if_int( a / b )
+    int_or_float a / b
   end
 
   # ------ UI ----------
@@ -114,22 +115,37 @@ def advanced_calculator
 
   def sqr_root
     num = prompt('Find the square root of what number? ').to_f
-    result = Math.sqrt num
-    check_if_int( result )
+    int_or_float Math.sqrt num
   end
 
   def nth_root
     a = prompt('What is your base number? ').to_f
     b = prompt('What is your degree? ').to_f
-    result = a ** ( 1.0 / b ) ## demo
-    check_if_int( result )
+    int_or_float a ** ( 1.0 / b ) # demo
   end
 
   def power
     a = prompt('What is your base number? ').to_f
     b = prompt('What is your exponent? ').to_f
-    result = a ** b
-    check_if_int( result )
+    int_or_float a ** b
+  end
+
+  def sum_all # demo
+    range = []
+    while true
+      input = prompt("Add a number (or just press enter to display your total): ") # didn't convert to float yet so can check if user hits enter
+      break if input.empty?
+      # if input.empty?
+      #   break
+      # end # n.b. if input.empty? break on one line didn't work
+      input = input.to_f
+      range << input  # add to end of array
+    end
+    sum = 0
+    range.each do |n|
+      sum += n
+    end
+    return int_or_float sum
   end
 
   # --------- UI ------------
@@ -146,6 +162,8 @@ def advanced_calculator
       puts "The result is #{ nth_root }."
     when 'p'
       puts "The result is #{ power }."
+    when 'a'
+      puts "The result is #{ sum_all }."
     else
       puts " Shame that's an invalid selection."
     end
@@ -179,4 +197,4 @@ until menu_choice == 'q'
     menu_choice = prompt('Please enter your selection: ')
 end
 
-puts "Thank you for using this terrible calculator"
+puts "Thank you for using this terrible calculator."
