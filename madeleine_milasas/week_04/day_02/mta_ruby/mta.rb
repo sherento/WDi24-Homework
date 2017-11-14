@@ -204,14 +204,23 @@ def prompt ( msg )
   gets.chomp
 end
 
-puts "Let us calculate your trip..."
-line_on = prompt( "Starting line: " )
-stat_on = prompt( "Starting station: " )
-line_off = prompt( "Destination line: " )
-stat_off = prompt( "Destination station: " )
+def menu
+  puts "  Let us calculate your next trip..."
+  selection = prompt( "To continue, press Enter, or type q to quit: " )
+  user_trip if selection == ''
+end
 
-plan_trip line_on, stat_on, line_off, stat_off
+def user_trip
+  line_on = prompt( "Starting line: " )
+  stat_on = prompt( "Starting station: " )
+  line_off = prompt( "Destination line: " )
+  stat_off = prompt( "Destination station: " )
 
+  plan_trip line_on, stat_on, line_off, stat_off
+  menu
+end
+
+menu
 
 
 
