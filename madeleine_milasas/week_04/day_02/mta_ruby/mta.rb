@@ -1,4 +1,5 @@
 require 'pry'
+
 puts '-' * 40
 puts "WELCOME TO THE MTA"
 puts '-' * 40
@@ -6,17 +7,7 @@ puts '-' * 40
 
 
 ###########################################
-#------------- Test cases ----------------#
-###########################################
-
-tests = [
-  { :l_on => 'L', :s_on => '8th Av', :l_off => 'L', :s_off => '1st Av' },  # L line only, end to end fwds
-  { :l_on => 'L', :s_on => '1st Av', :l_off => 'L', :s_off => '8th Av' }  # L line only, end to end fwds
-]
-
-
-###########################################
-#------------- LINES      ----------------#
+#------------- LINES ---------------------#
 ###########################################
 
 
@@ -37,26 +28,21 @@ def prompt (msg)
   gets.chomp.upcase
 end
 
-# ---------------- * CALCULATE TRIP FUNCTIONS * --------------------- #
-
-# test variables
-# start_line = 'L'
-# start_stat = '8th Av'
-# end_line = 'L'
-# end_stat = '1st Av'
-#
-
+# ---------------- * CALCULATE TRIP FUNCTIONS * ----------------- #
 
 
 def plan_trip ( lon, son, loff, soff )  # line on, station on, line off, station off
 
   if lon == loff
-      # find start line in train line
-      start_index = LINES[ lon ].index( son )
-      end_index = LINES[ loff ].index( soff )
 
-      # get array of stops to go through
-      stops = LINES[ lon ][ start_index + 1, end_index + 1 ]
+      start_i = LINES[ lon ].index( son )
+      end_i = LINES[ loff ].index( soff )
+
+      if end_i > start_i
+        stops = LINES[ lon ][ start_i + 1, end_i + 1 ]
+      else
+        stops = LINES[ lon ][ end_i, start_i ].reverse
+      end
 
       puts "You have entered:"
       puts "  LINE ON  - #{ lon }, STATION ON  - #{ son }"
@@ -64,12 +50,27 @@ def plan_trip ( lon, son, loff, soff )  # line on, station on, line off, station
       puts "You must travel through the following stops on the #{ lon } line: #{ stops.join(', ') }."
       puts "#{ stops.size } stops in total. Enjoy your trip!"
       puts '-' * 40
+
   end
+
 end
 
 
 
 
+
+
+###########################################
+#------------- Test cases ----------------#
+###########################################
+
+# array of test cases
+tests = [
+  { :l_on => 'L', :s_on => '8th Av', :l_off => 'L', :s_off => '1st Av' },  # L line only, end to end fwds
+  { :l_on => 'L', :s_on => '1st Av', :l_off => 'L', :s_off => '8th Av' }  # L line only, end to end backwards
+]
+
+# iterating through test cases
 tests.each do |n|
   plan_trip n[:l_on], n[:s_on], n[:l_off], n[:s_off]
 end
