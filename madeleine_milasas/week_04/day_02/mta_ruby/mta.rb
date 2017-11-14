@@ -62,16 +62,46 @@ def plan_trip ( lon, son, loff, soff )  # line on, station on, line off, station
 
     # MULTI LEG JOURNEY #
 
-    # find intersections....
-    inter = []  # array to keep intersections
-    x = LINES[ lon ] & LINES[ loff ]
-    inter << x.first
-    puts "The intersection is #{ inter }"
-    if inter == [ nil ]
-      puts "No intersection"
-    end
-  end
-end
+    # first version......#
+
+    # # find intersections....
+    # inter = []  # array to keep intersections
+    # x = LINES[ lon ] & LINES[ loff ]
+    # inter << x.first
+    # puts "The intersection is #{ inter }"
+    #
+    # # CALC JOURNEY
+    #
+    # if inter == [ nil ]
+    #   puts "No intersection"
+    # end
+
+
+    start_line = LINES[ lon ]
+
+    final_line = '' # init this variable for use in detecting if we've found whole path
+
+    while (final_line != loff)
+
+      LINES.each do |key, value|
+        next if key == lon
+        x_stat = value & start_line # might make these global scope...?
+        x_line = key
+        puts "Intersecting line: #{x_line}"
+        puts "- with intersecting station: #{x_stat}"
+
+        final_line = x_line if x_line == loff
+      end # LINES.each
+
+    end # while
+    puts final_line
+  end # multi-leg else
+
+end # def plan_trip
+
+
+
+
 
 
 
@@ -93,9 +123,9 @@ tests = [
   { :l_on => '6', :s_on => 'Grand Central', :l_off => '6', :s_off => 'Astor Place' },  # 6 line only, end to end fwds
   { :l_on => '6', :s_on => 'Astor Place', :l_off => '6', :s_off => 'Grand Central' },  # 6 line only, end to end backwards
   { :l_on => '6', :s_on => '33rd', :l_off => '6', :s_off => '23rd (6)' },  # partial trip, fwds
-  { :l_on => '6', :s_on => 'Astor Place', :l_off => '6', :s_off => '28th (6)' }  # partial trip, backwards
-  # { :l_on => 'L', :s_on => '8th Av', :l_off => '6', :s_off => 'Grand Central' },  # L to 6 line, i.e. one change
-  # { :l_on => 'A', :s_on => '50th', :l_off => '6', :s_off => 'Grand Central' }  # L to 6 line, i.e. one change
+  { :l_on => '6', :s_on => 'Astor Place', :l_off => '6', :s_off => '28th (6)' },  # partial trip, backwards
+  { :l_on => 'L', :s_on => '8th Av', :l_off => '6', :s_off => 'Grand Central' },  # L to 6 line, i.e. one change
+  { :l_on => 'A', :s_on => '50th', :l_off => '6', :s_off => 'Grand Central' }  # A to 6 line, i.e. two changes
 ]
 
 # iterating through test cases
