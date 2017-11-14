@@ -1,14 +1,15 @@
+require 'pry'
+
 def main_menu
   puts "(b) - basic calculator"
   puts "(a) - advanced calculator"
   puts "(q) - quit"
 end
 
-
-# def prompt (message)
-#   print message
-#   gets.chomp      #implicitly returned because its the last line of the function
-# end
+def prompt (message)
+  print message
+  gets.chomp      #implicitly returned because its the last line of the function
+end
 
 
 # ###############################################################################
@@ -36,6 +37,7 @@ def basic_calculator_type
   end
 end
 
+
 ### DETERMINE WHAT SUM TO PREFORM ###
 
 def sum (operator, a, b)
@@ -50,20 +52,6 @@ def sum (operator, a, b)
   end
 end
 
-### GET NUMBERS FROM USER ###
-
-current_type = basic_calculator_type()
-if current_type == "error"
-  puts "I do not understand this type of calculation"
-else
-  puts "What is the first number you would like to #{current_type}: "
-  first_number = gets.to_i
-  puts "What is the second number you would like to #{current_type}: "
-  second_number = gets.to_i
-  end
-
-  answer = sum(current_type, first_number, second_number)
-    puts "The answer is #{answer}"
 
 ################################################################################
 
@@ -97,22 +85,8 @@ def sum (operator, a, b)
   end
 end
 
-### GET NUMBERS FROM USER ###
-
-current_type = advanced_calculator_type()
-if current_type == "error"
-  puts "I do not understand this type of calculation"
-else
-  puts "What is the first number you would like to #{current_type}: "
-  first_number = gets.to_i
-  puts "What is the second number (leave blank if using the Square Root function): "
-  second_number = gets.to_i
-end
-
-answer = sum(current_type, first_number, second_number)
-  puts "The answer is #{answer}"
-
   ################################################################################
+
 
   main_menu
   menu_choice = prompt('Please enter your selection: ').downcase
@@ -122,9 +96,22 @@ answer = sum(current_type, first_number, second_number)
     # show the appropriate calculator
     case menu_choice
     when 'b'
-      basic_calculator_type
+        current_type = basic_calculator_type
+        puts "What is the first number you would like to #{current_type}: "
+        first_number = gets.to_i
+        puts "What is the second number you would like to #{current_type}: "
+        second_number = gets.to_i
+        answer = sum(current_type, first_number, second_number)
+          puts "The answer is #{answer}"
+
     when 'a'
-      advanced_calculator_type
+      current_type = advanced_calculator_type
+      puts "What is the first number you would like to #{current_type}: "
+      first_number = gets.to_i
+      puts "What is the second number (leave blank if using the Square Root function): "
+      second_number = gets.to_i
+      answer = sum(current_type, first_number, second_number)
+      puts "The answer is #{answer}"
     end
     # show the menu again
    main_menu
