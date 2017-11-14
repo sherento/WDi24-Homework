@@ -63,7 +63,7 @@ def further_leg ( lon, son, loff, soff )
       else
         stops = LINES[ lon ][ end_i..start_i - 1 ].reverse
       end
-
+      puts "Change at #{ son } for the #{ loff } line."
       puts "Your journey continues through the following stops: #{ stops.join(', ') }."
       # puts "#{ stops.size } stops in total. Enjoy your trip!"
       puts '-' * 40
@@ -93,45 +93,44 @@ def plan_trip ( lon, son, loff, soff )  # line on, station on, line off, station
     # x_stat = []
     intercept = {}
 
-    final_line = '' # init this variable for use in detecting if we've found whole path
+    # final_line = '' # init this variable for use in detecting if we've found whole path
 
     # count = 0
     finished = false
 
       #for each key/val pair in LINES obj
       LINES.each do |key, value|
-        puts "Checking line #{ line_in_qu }..."
+        # puts "Checking line #{ line_in_qu }..."
         # don't check against itself
-        puts "... against line #{ key }"
+        # puts "... against line #{ key }"
         next if key == line_in_qu
         # look for intersection point
         found_x = value & stops_in_qu
         # AT THIS POINT, key is the LINE and found_x is an array with the STOP
         # ** if found an intersection
         if found_x != []
-          puts "Intersection found"
+          # puts "Intersection found"
           # ** if that intersecting line is the final line
           if loff == key
-            puts "Match to final line"
+            # puts "Match to final line"
             # CALCULATE FIRST LEG
             first_leg lon, son, lon, found_x.first
-            puts "Change at #{ found_x.first } for the #{ key } line."
             further_leg key, found_x.first, loff, soff
             finished = true
             break
           else
             # # if 3 legs
-            puts "3 legs needed"
+            # puts "3 legs needed"
             # store intersecting line found
             intercept[ key ] = found_x.first
           end # if matching end line
         end # if found intersecion
-        puts "Ending that iteration now..."
+        # puts "Ending that iteration now..."
       end # LINES.each
 
       if finished == false
         # repeat again comparing end line to intercept lines
-        puts "Journey is more than 2 legs"
+        # puts "Journey is more than 2 legs"
         line_in_qu = loff
         stops_in_qu = LINES[ loff ]
 
