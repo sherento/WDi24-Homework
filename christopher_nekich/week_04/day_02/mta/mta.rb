@@ -24,9 +24,9 @@ def partA
     stations1 = ($lines[start_line][change..start_index]).reverse.drop(1)
   end
 
-
   return {"line" => start_line,
-          "stations" => stations1
+          "stations" => stations1,
+          "start" => start
           }
 end
 
@@ -44,8 +44,21 @@ def partB
   end
 
   return {"line" => finish_line,
-          "stations" => stations2}
+          "stations" => stations2,
+          "finish" => finish}
 
+end
+
+def single_line(line, start, finish)
+  start_i = $lines[line].index(start)
+  finish_i = $lines[line].index(finish)
+
+  if start_i > finish_i
+    stations = ($lines[line][finish_i..start_i]).reverse.drop(1)
+  else
+    stations = ($lines[line][start_i..finish_i]).drop(1)
+  end
+  return {"stations" => stations}
 end
 
 def plan_trip
@@ -61,8 +74,13 @@ def plan_trip
     puts "#{journey1["stations"].length + journey2["stations"].length} stops in total"
 
   else
-    puts "You must travel along the following stops #{journey1["stations"].concat(journey2["stations"]).join(", ")}"
-    puts "#{journey1["stations"].length + journey2["stations"].length} stops in total"
+    unless journey1["start"] == journey2["finish"]
+      single = single_line(journey1["line"], journey1["start"], journey2["finish"])
+      puts "You must travel along the following stops: #{single["stations"].join(", ")}"
+      puts "#{single["stations"].length} stops in total"
+    else
+      puts "You are already at your destination"
+    end
   end
 end
 
