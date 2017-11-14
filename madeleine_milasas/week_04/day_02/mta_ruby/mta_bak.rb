@@ -87,17 +87,30 @@ def plan_trip ( lon, son, loff, soff )  # line on, station on, line off, station
 
     # MULTI LEG JOURNEY #
 
+    # first version......#
+
+    # # find intersections....
+    # inter = []  # array to keep intersections
+    # x = LINES[ lon ] & LINES[ loff ]
+    # inter << x.first
+    # puts "The intersection is #{ inter }"
+    #
+    # # CALC JOURNEY
+    #
+    # if inter == [ nil ]
+    #   puts "No intersection"
+    # end
+
+
     line_in_qu = lon # start with checking for intersects on starting line
     stops_in_qu = LINES[ lon ]
-    # x_line = []
-    # x_stat = []
-    intercept = {}
+    x_line = []
+    x_stat = []
+    intercept = {} # using this one
 
     final_line = '' # init this variable for use in detecting if we've found whole path
 
-    # count = 0
-    finished = false
-
+    while (final_line != loff)
       #for each key/val pair in LINES obj
       LINES.each do |key, value|
         puts "Checking line #{ line_in_qu }..."
@@ -110,45 +123,41 @@ def plan_trip ( lon, son, loff, soff )  # line on, station on, line off, station
         # ** if found an intersection
         if found_x != []
           puts "Intersection found"
+
           # ** if that intersecting line is the final line
           if loff == key
             puts "Match to final line"
             # CALCULATE FIRST LEG
             first_leg lon, son, lon, found_x.first
             puts "Change at #{ found_x.first } for the #{ key } line."
+            # CALCULATE SECOND LEG
             further_leg key, found_x.first, loff, soff
-            finished = true
             break
           else
-            # # if 3 legs
-            puts "3 legs needed"
-            # store intersecting line found
+            # or if intersections are not on final line..........
+            # store poss intercepts
             intercept[ key ] = found_x.first
-          end # if matching end line
-        end # if found intersecion
-        puts "Ending that iteration now..."
+            p intercept
+            line_in_qu = intercept.keys[0]
+          end # if loff == key
+
+
+        end # if found_x was nothin
+
+
+        # if not, store all possible intersection
+          # x_stat << found_x.first
+          # x_line << key
+          # puts "Intersecting lines: #{ x_line.last }"
+          # puts "- with intersecting stations: #{ x_stat.last }"
+
+        # final_line = x_line.last if x_line.last == loff
+        puts "Ending while loop now"
+        final_line = loff
       end # LINES.each
 
-      if finished == false
-        # repeat again comparing end line to intercept lines
-        puts "Journey is more than 2 legs"
-        line_in_qu = loff
-        stops_in_qu = LINES[ loff ]
-
-        intercept.each do |key, value|
-          next if key == line_in_qu
-          found_x = LINES[ key ] & stops_in_qu
-          if found_x != []
-            first_leg lon, son, lon, value
-            further_leg key, value, key, found_x.first
-            further_leg loff, found_x.first, loff, soff
-            finished = true
-            break
-          end # if found_x != []
-        end # intercept.each
-
-      end # finished is false
-
+    end # while
+    puts final_line
   end # multi-leg else
 
 end # def plan_trip
@@ -179,7 +188,8 @@ tests = [
   { :l_on => '6', :s_on => '33rd', :l_off => '6', :s_off => '23rd (6)' },  # partial trip, fwds
   { :l_on => '6', :s_on => 'Astor Place', :l_off => '6', :s_off => '28th (6)' },  # partial trip, backwards
   { :l_on => 'L', :s_on => '8th Av', :l_off => '6', :s_off => 'Grand Central' },  # L to 6 line, i.e. one change
-  { :l_on => 'A', :s_on => '50th', :l_off => '6', :s_off => 'Grand Central' }  # A to 6 line, i.e. two changes
+  { :l_on => 'A', :s_on => '50th', :l_off => '6', :s_off => 'Grand Central' },  # A to 6 line, i.e. two changes
+  { :l_on => '6', :s_on => '33rd', :l_off => 'A', :s_off => 'Port' }  # 6 to A line, i.e. two changes
 ]
 
 # iterating through test cases
