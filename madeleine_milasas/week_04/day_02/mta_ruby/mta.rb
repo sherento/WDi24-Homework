@@ -15,7 +15,7 @@ puts '-' * 40
 LINES = {  # making keys strings instead of Symbols for compat w user input
   'L' => ['8th Av', '6th Av', 'Union Square', '3rd Av', '1st Av'],
   'N' => ['Times Square', '34th', '28th (N)', '23rd (N)', 'Union Square', '8th St'],
-  '6' => ['Grand Central', '33rd', '28th (6)', '23rd (6)', 'Union Square', 'Astor Place'], # doesn't need :6
+  '6' => ['Grand Central', '33rd', '28th (6)', '23rd (6)', 'Union Square', 'Astor Place'], # not using :6 for future user input
   'A' => ['50th', 'Port', '23rd (A)', '8th Av', 'W 4th']
 };
 
@@ -46,9 +46,9 @@ def plan_trip ( lon, son, loff, soff )  # line on, station on, line off, station
       end_i = LINES[ loff ].index( soff )
 
       if end_i > start_i
-        stops = LINES[ lon ][ start_i + 1, end_i + 1 ]
+        stops = LINES[ lon ][ start_i + 1..end_i ]  # +1 to take to not list starting stop
       else
-        stops = LINES[ lon ][ end_i, start_i ].reverse
+        stops = LINES[ lon ][ end_i..start_i - 1 ].reverse
       end
 
       puts "You have entered:"
@@ -78,6 +78,10 @@ end
 
 
 
+
+
+
+
 ###########################################
 #------------- Test cases ----------------#
 ###########################################
@@ -86,13 +90,17 @@ end
 tests = [
   { :l_on => 'L', :s_on => '8th Av', :l_off => 'L', :s_off => '1st Av' },  # L line only, i.e. one line end to end fwds
   { :l_on => 'L', :s_on => '1st Av', :l_off => 'L', :s_off => '8th Av' },  # L line only, i.e. one line end to end backwards
-  { :l_on => '6', :s_on => 'Astor Place', :l_off => '6', :s_off => '33rd' },  # 6 line only, i.e. one line backwards
-  { :l_on => 'L', :s_on => '8th Av', :l_off => '6', :s_off => 'Grand Central' },  # L to 6 line, i.e. one change
-  { :l_on => 'A', :s_on => '50th', :l_off => '6', :s_off => 'Grand Central' }  # L to 6 line, i.e. one change
+  { :l_on => '6', :s_on => 'Grand Central', :l_off => '6', :s_off => 'Astor Place' },  # 6 line only, end to end fwds
+  { :l_on => '6', :s_on => 'Astor Place', :l_off => '6', :s_off => 'Grand Central' },  # 6 line only, end to end backwards
+  { :l_on => '6', :s_on => '33rd', :l_off => '6', :s_off => '23rd (6)' },  # partial trip, fwds
+  { :l_on => '6', :s_on => 'Astor Place', :l_off => '6', :s_off => '28th (6)' }  # partial trip, backwards
+  # { :l_on => 'L', :s_on => '8th Av', :l_off => '6', :s_off => 'Grand Central' },  # L to 6 line, i.e. one change
+  # { :l_on => 'A', :s_on => '50th', :l_off => '6', :s_off => 'Grand Central' }  # L to 6 line, i.e. one change
 ]
 
 # iterating through test cases
-tests.each do |n|
+tests.each_with_index do |n, i|
+  puts i + 1  # number the test cases for easy ref
   plan_trip n[:l_on], n[:s_on], n[:l_off], n[:s_off]
 end
 
