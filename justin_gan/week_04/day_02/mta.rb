@@ -6,6 +6,9 @@ def plan_trip( start_line, start_station, end_line, end_station )
 
   if start_line == end_line
     p get_journey_leg( SUBWAY[ start_line ], start_index, end_index, end_station )
+  else
+    p "figure out 2 lines"
+    
   end
 end
 
@@ -33,21 +36,22 @@ def travel_west( line, start_index, end_index )
 end
 
 SUBWAY = {
-  :N => [ "Times Square", "34th", "28th", "23rd", "Union Square", "8th"],
-  :L => [ "8th", "6th", "Union Square", "3rd", '1st' ],
-  6 => [ "Grand Central", "33rd", "28th", "23rd", "Union Square", "Astor Place" ]
+  :N => [ "Times Square", "34th", "28th (N)", "23rd (N)", "Union Square", "8th (N)"],
+  :L => [ "8th (L)", "6th", "Union Square", "3rd", '1st' ],
+  6 => [ "Grand Central", "33rd", "28th (6)", "23rd (6)", "Union Square", "Astor Place" ]
 }
 
 
-plan_trip :N, '34th', :N, 'Union Square'
-plan_trip :N, '28th', :N, '28th'
-plan_trip :N, '8th', :N, '23rd'
-plan_trip :L, '8th', :L, '3rd'
-plan_trip :L, '6th', :L, '6th'
-plan_trip :L, '1st', :L, 'Union Square'
-plan_trip 6, '33rd', 6, 'Astor Place'
-plan_trip 6, '23rd', 6, '23rd'
-plan_trip 6, 'Union Square', 6, '33rd'
+plan_trip :N, '34th', 6, '28th'
+# plan_trip :N, '34th', :N, 'Union Square'
+# plan_trip :N, '28th', :N, '28th'
+# plan_trip :N, '8th', :N, '23rd'
+# plan_trip :L, '8th', :L, '3rd'
+# plan_trip :L, '6th', :L, '6th'
+# plan_trip :L, '1st', :L, 'Union Square'
+# plan_trip 6, '33rd', 6, 'Astor Place'
+# plan_trip 6, '23rd', 6, '23rd'
+# plan_trip 6, 'Union Square', 6, '33rd'
 
 
 
