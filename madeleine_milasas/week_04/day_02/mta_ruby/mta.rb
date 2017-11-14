@@ -3,7 +3,23 @@ puts '-' * 40
 puts "WELCOME TO THE MTA"
 puts '-' * 40
 
-############ LINES #########################
+
+
+###########################################
+#------------- Test cases ----------------#
+###########################################
+
+tests = [
+  { :l_on => 'L', :s_on => '8th Av', :l_off => 'L', :s_off => '1st Av' },  # L line only, end to end fwds
+  { :l_on => 'L', :s_on => '1st Av', :l_off => 'L', :s_off => '8th Av' }  # L line only, end to end fwds
+]
+
+
+###########################################
+#------------- LINES      ----------------#
+###########################################
+
+
 
 LINES = {  # making keys strings instead of Symbols for compat w user input
   'L' => ['8th Av', '6th Av', 'Union Square', '3rd Av', '1st Av'],
@@ -32,7 +48,7 @@ end
 
 
 
-def plan_trip( lon, son, loff, soff )  # line on, station on, line off, station off
+def plan_trip ( lon, son, loff, soff )  # line on, station on, line off, station off
 
   if lon == loff
       # find start line in train line
@@ -54,25 +70,18 @@ end
 
 
 
-
-plan_trip 'L', '8th Av', 'L', '1st Av'
-
-
-
+tests.each do |n|
+  plan_trip n[:l_on], n[:s_on], n[:l_off], n[:s_off]
+end
 
 
 
 
 
 
-###########################################
-#------------- Test cases ----------------#
-###########################################
 
-# test_cases = [
-#   { :l_on => 'L', :s_on => '8th Av', :l_off => 'L', :s_off => '1st Av' },  # L line only, end to end fwds
-#   { :l_on => 'L', :s_on => '1st Av', :l_off => 'L', :s_off => '8th Av' }  # L line only, end to end fwds
-# ]
+
+
 
 
 
