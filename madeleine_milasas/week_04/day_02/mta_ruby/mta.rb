@@ -78,19 +78,22 @@ def plan_trip ( lon, son, loff, soff )  # line on, station on, line off, station
 
 
     start_line = LINES[ lon ]
+    x_line = []
+    x_stat = []
 
     final_line = '' # init this variable for use in detecting if we've found whole path
 
     while (final_line != loff)
 
       LINES.each do |key, value|
-        next if key == lon
-        x_stat = value & start_line # might make these global scope...?
-        x_line = key
-        puts "Intersecting line: #{x_line}"
-        puts "- with intersecting station: #{x_stat}"
+        next if key == lon # don't check against itself
+        found_x = value & start_line
+        x_stat << found_x.first
+        x_line << key
+        puts "Intersecting lines: #{ x_line.last }"
+        puts "- with intersecting stations: #{ x_stat.last }"
 
-        final_line = x_line if x_line == loff
+        final_line = x_line.last if x_line.last == loff
       end # LINES.each
 
     end # while
