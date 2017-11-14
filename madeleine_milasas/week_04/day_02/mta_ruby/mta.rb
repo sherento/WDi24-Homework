@@ -24,12 +24,6 @@ LINES = {  # making keys strings instead of Symbols for compat w user input
 $stops_count = 0;
 
 
-# ---------------- Prompt function (hopeful) --------------------- #
-# def prompt ( msg )
-#   print msg
-#   gets.chomp.upcase
-# end
-
 # --------------------------------------------------------------- #
 # ---------------- * CALCULATE TRIP FUNCTIONS * ----------------- #
 # --------------------------------------------------------------- #
@@ -198,6 +192,25 @@ tests.each_with_index do |n, i|
   puts i + 1  # number the test cases for easy ref
   plan_trip n[:l_on], n[:s_on], n[:l_off], n[:s_off]
 end
+
+
+
+#####################################################################
+# ---------------- Prompt functions (hopeful) --------------------- #
+#####################################################################
+
+def prompt ( msg )
+  print msg
+  gets.chomp
+end
+
+puts "Let us calculate your trip..."
+line_on = prompt( "Starting line: " )
+stat_on = prompt( "Starting station: " )
+line_off = prompt( "Destination line: " )
+stat_off = prompt( "Destination station: " )
+
+plan_trip line_on, stat_on, line_off, stat_off
 
 
 
