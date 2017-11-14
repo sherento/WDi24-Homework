@@ -18,6 +18,7 @@ def partA
   start = prompt("Enter your starting station: ")
   start_index = $lines[start_line].index start
   change = $lines[start_line].index("Union Square")
+
   if change > start_index
     stations1 = ($lines[start_line][start_index..change]).drop(1)
   else
@@ -83,6 +84,5 @@ def plan_trip
     end
   end
 end
-
 
 plan_trip
