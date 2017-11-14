@@ -19,16 +19,20 @@ LINES = {  # making keys strings instead of Symbols for compat w user input
   'A' => ['50th', 'Port', '23rd (A)', '8th Av', 'W 4th']
 };
 
-# ALL_LINES = LINES.keys
+
+## Global variable for counting stops ##
+$stops_count = 0;
 
 
-# ---------------- Prompt function --------------------- #
-def prompt ( msg )
-  print msg
-  gets.chomp.upcase
-end
+# ---------------- Prompt function (hopeful) --------------------- #
+# def prompt ( msg )
+#   print msg
+#   gets.chomp.upcase
+# end
 
+# --------------------------------------------------------------- #
 # ---------------- * CALCULATE TRIP FUNCTIONS * ----------------- #
+# --------------------------------------------------------------- #
 
 def print_entry ( lon, son, loff, soff )
   puts "You have entered:"
@@ -48,8 +52,7 @@ def first_leg ( lon, son, loff, soff )
       end
 
       puts "You must travel through the following stops on the #{ lon } line: #{ stops.join(', ') }."
-      # puts "#{ stops.size } stops in total. Enjoy your trip!"
-      puts '-' * 40
+      $stops_count += stops.size
 
 end # first_leg
 
@@ -65,10 +68,16 @@ def further_leg ( lon, son, loff, soff )
       end
       puts "Change at #{ son } for the #{ loff } line."
       puts "Your journey continues through the following stops: #{ stops.join(', ') }."
-      # puts "#{ stops.size } stops in total. Enjoy your trip!"
-      puts '-' * 40
+      $stops_count += stops.size
 
 end # first_leg
+
+
+def print_stops
+      puts "#{ $stops_count } stops in total. Enjoy your trip, wow, that's great for you."
+      puts '-' * 40
+      $stops_count = 0  # set back to zero so count doesn't accum w each trip calc
+end
 
 
 # ---------------------------------------------------------------------------- #
@@ -82,6 +91,7 @@ def plan_trip ( lon, son, loff, soff )  # line on, station on, line off, station
   if lon == loff
 
     first_leg lon, son, loff, soff
+    print_stops
 
   else
 
@@ -116,6 +126,7 @@ def plan_trip ( lon, son, loff, soff )  # line on, station on, line off, station
             # CALCULATE FIRST LEG
             first_leg lon, son, lon, found_x.first
             further_leg key, found_x.first, loff, soff
+            print_stops
             finished = true
             break
           else
@@ -141,6 +152,7 @@ def plan_trip ( lon, son, loff, soff )  # line on, station on, line off, station
             first_leg lon, son, lon, value
             further_leg key, value, key, found_x.first
             further_leg loff, found_x.first, loff, soff
+            print_stops
             finished = true
             break
           end # if found_x != []
