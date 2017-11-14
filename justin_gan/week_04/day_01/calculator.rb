@@ -1,4 +1,19 @@
-puts "welcome"
+class String
+  def numeric?
+    return true if self =~ /\A\d+\Z/
+    true if Float(self) rescue false
+  end
+end
+
+def validate_input(message)
+  input = prompt(message)
+  puts input.numeric?
+  until input.numeric?
+    puts "that isn't a number"
+    input = prompt(message)
+  end
+  return input.to_f
+end
 
 def main_menu
   puts "(1) - basic calculator"
@@ -27,20 +42,20 @@ def basic_calculator
 
     case operation
     when '1'
-      a = prompt("Please enter a number: ").to_i
-      b = prompt("Please enter the number you'd like to add: ").to_i
+      a = validate_input("Please enter a number: ")
+      b = validate_input("Please enter the number you'd like to add: ")
       puts "The result is #{ a + b }"
     when '2'
-      a = prompt("Please enter a number: ").to_i
-      b = prompt("Please enter the number you'd like to subtract: ").to_i
+      a = validate_input("Please enter a number: ")
+      b = validate_input("Please enter the number you'd like to subtract: ")
       puts "The result is #{ a - b }"
     when '3'
-      a = prompt("Please enter a number: ").to_f
-      b = prompt("Please enter the number you'd like to divide by: ").to_i
+      a = validate_input("Please enter a number: ")
+      b = validate_input("Please enter the number you'd like to divide by: ")
       puts "The result is #{ a / b }"
     when '4'
-      a = prompt("Please enter a number: ").to_i
-      b = prompt("Please enter the number you'd like to multiply by: ").to_i
+      a = validate_input("Please enter a number: ")
+      b = validate_input("Please enter the number you'd like to multiply by: ").to_i
       puts "The result is #{ a * b }"
     end
 
@@ -62,11 +77,11 @@ def advanced_calculator
 
     case operation
     when '1'
-      a = prompt("Please enter a number: ").to_i
-      b = prompt("Please enter the number you'd like to raise #{ a } to the power of: ").to_i
+      a = validate_input("Please enter a number: ")
+      b = validate_input("Please enter the number you'd like to raise #{ a } to the power of: ")
       puts "The result is #{ a ** b }"
     when '2'
-      a = prompt("Please enter a number to take the square root of: ").to_i
+      a = validate_input("Please enter a number to take the square root of: ")
       puts "The result is #{ Math.sqrt a }"
     end
 

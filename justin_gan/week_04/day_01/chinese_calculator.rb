@@ -1,7 +1,21 @@
 require 'language_converter'
 require 'humanize'
 
-puts "welcome"
+class String
+  def numeric?
+    return true if self =~ /\A\d+\Z/
+    true if Float(self) rescue false
+  end
+end
+
+def validate_input(message)
+  input = prompt(message)
+  until input.numeric?
+    puts "that isn't a number"
+    input = prompt(message)
+  end
+  return input.to_i
+end
 
 def main_menu
   puts "(1) - basic calculator"
@@ -31,23 +45,23 @@ def basic_calculator
 
     case operation
     when '1'
-      a = prompt("Please enter a number: ").to_i
-      b = prompt("Please enter the number you'd like to add: ").to_i
+      a = validate_input("Please enter a number: ")
+      b = validate_input("Please enter the number you'd like to add: ")
       translated_result = lc( (a + b).humanize, 'zh' )
       puts "The result is #{ translated_result }"
     when '2'
-      a = prompt("Please enter a number: ").to_i
-      b = prompt("Please enter the number you'd like to subtract: ").to_i
+      a = validate_input("Please enter a number: ")
+      b = validate_input("Please enter the number you'd like to subtract: ")
       translated_result = lc( (a - b).humanize, 'zh' )
       puts "The result is #{ translated_result }"
     when '3'
-      a = prompt("Please enter a number: ").to_f
-      b = prompt("Please enter the number you'd like to divide by: ").to_i
+      a = validate_input("Please enter a number: ")
+      b = validate_input("Please enter the number you'd like to divide by: ")
       translated_result = lc( (a / b).humanize, 'zh' )
       puts "The result is #{ translated_result }"
     when '4'
-      a = prompt("Please enter a number: ").to_i
-      b = prompt("Please enter the number you'd like to multiply by: ").to_i
+      a = validate_input("Please enter a number: ")
+      b = validate_input("Please enter the number you'd like to multiply by: ")
       translated_result = lc( (a * b).humanize, 'zh' )
       puts "The result is #{ translated_result }"
     end
@@ -70,12 +84,12 @@ def advanced_calculator
 
     case operation
     when '1'
-      a = prompt("Please enter a number: ").to_i
-      b = prompt("Please enter the number you'd like to raise #{ a } to the power of: ").to_i
+      a = validate_input("Please enter a number: ")
+      b = validate_input("Please enter the number you'd like to raise #{ a } to the power of: ")
       translated_result = lc( (a ** b).humanize, 'zh' )
       puts "The result is #{ translated_result }"
     when '2'
-      a = prompt("Please enter a number to take the square root of: ").to_i
+      a = validate_input("Please enter a number to take the square root of: ")
       translated_result = lc( (Math.sqrt a).humanize, 'zh' )
       puts "The result is #{ translated_result }"
     end
