@@ -77,23 +77,43 @@ def plan_trip ( lon, son, loff, soff )  # line on, station on, line off, station
     # end
 
 
-    start_line = LINES[ lon ]
+    line_in_qu = lon # start with checking for intersects on starting line
+    stops_in_qu = LINES[ lon ]
     x_line = []
     x_stat = []
+
 
     final_line = '' # init this variable for use in detecting if we've found whole path
 
     while (final_line != loff)
-
+      #for each key/val pair in LINES obj
       LINES.each do |key, value|
-        next if key == lon # don't check against itself
-        found_x = value & start_line
-        x_stat << found_x.first
-        x_line << key
-        puts "Intersecting lines: #{ x_line.last }"
-        puts "- with intersecting stations: #{ x_stat.last }"
+        puts "Checking line #{ line_in_qu }..."
+        # don't check against itself
+        puts "... against line #{ key }"
+        next if key == line_in_qu
+        # look for intersection point
+        found_x = value & stops_in_qu
+        # AT THIS POINT, key is the LINE and found_x is an array with the STOP
+        # ** if found an intersection
+        if found_x != []
+          puts "Intersection found"
+          # check if that intersecting line is the final line
+          if loff == key
+            puts "Match to final line, loff: #{loff} and key: #{key}"
+          end
+        end
 
-        final_line = x_line.last if x_line.last == loff
+
+        # if not, store all possible intersection
+          # x_stat << found_x.first
+          # x_line << key
+          # puts "Intersecting lines: #{ x_line.last }"
+          # puts "- with intersecting stations: #{ x_stat.last }"
+
+        # final_line = x_line.last if x_line.last == loff
+        puts "Ending while loop now"
+        final_line = loff
       end # LINES.each
 
     end # while
