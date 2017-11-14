@@ -24,40 +24,38 @@ end
 # ---------------- * CALCULATE TRIP FUNCTIONS * --------------------- #
 
 # test variables
-start_line = 'L'
-start_stat = '8th Av'
-end_line = 'L'
-end_stat = '1st Av'
+# start_line = 'L'
+# start_stat = '8th Av'
+# end_line = 'L'
+# end_stat = '1st Av'
+#
 
 
 
-# find start line in train line
-start_index = LINES[ start_line ].index( start_stat )
-end_index = LINES[ end_line ].index( end_stat )
+def plan_trip( lon, son, loff, soff )  # line on, station on, line off, station off
 
+  if lon == loff
+      # find start line in train line
+      start_index = LINES[ lon ].index( son )
+      end_index = LINES[ loff ].index( soff )
 
-# get array of stops to go through
-stops = LINES[ start_line ][ start_index + 1, end_index + 1 ]
+      # get array of stops to go through
+      stops = LINES[ lon ][ start_index + 1, end_index + 1 ]
 
-#################################################################
-# ------------ UI----------------- #
-#################################################################
-
-
-
-puts "You have entered:"
-puts "  LINE ON  - #{ start_line }, STATION ON  - #{ start_stat }"
-puts "  LINE OFF - #{ end_line }, STATION OFF - #{ end_stat }"
-puts "You must travel through the following stops on the #{ start_line } line: #{ stops.join(', ') }."
-# "Change at Union Square."
-# "Your journey continues through the following stops: 23rd, 28th, 33rd."
-puts "#{ stops.size } stops in total. Enjoy your trip!"
-puts '-' * 40
+      puts "You have entered:"
+      puts "  LINE ON  - #{ lon }, STATION ON  - #{ son }"
+      puts "  LINE OFF - #{ loff }, STATION OFF - #{ soff }"
+      puts "You must travel through the following stops on the #{ lon } line: #{ stops.join(', ') }."
+      puts "#{ stops.size } stops in total. Enjoy your trip!"
+      puts '-' * 40
+  end
+end
 
 
 
 
 
+plan_trip 'L', '8th Av', 'L', '1st Av'
 
 
 
