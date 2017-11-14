@@ -31,7 +31,14 @@ end
 # ---------------- * CALCULATE TRIP FUNCTIONS * ----------------- #
 
 
+# class Trip # TODO maybe make a Trip class?
+
+
+# ---------------------------------------------------------------------------- #
+
 def plan_trip ( lon, son, loff, soff )  # line on, station on, line off, station off
+
+  # ONE LEG JOURNEY #
 
   if lon == loff
 
@@ -51,8 +58,19 @@ def plan_trip ( lon, son, loff, soff )  # line on, station on, line off, station
       puts "#{ stops.size } stops in total. Enjoy your trip!"
       puts '-' * 40
 
-  end
+  else
 
+    # MULTI LEG JOURNEY #
+
+    # find intersections....
+    inter = []  # array to keep intersections
+    x = LINES[ lon ] & LINES[ loff ]
+    inter << x.first
+    puts "The intersection is #{ inter }"
+    if inter == [ nil ]
+      puts "No intersection"
+    end
+  end
 end
 
 
@@ -66,8 +84,11 @@ end
 
 # array of test cases
 tests = [
-  { :l_on => 'L', :s_on => '8th Av', :l_off => 'L', :s_off => '1st Av' },  # L line only, end to end fwds
-  { :l_on => 'L', :s_on => '1st Av', :l_off => 'L', :s_off => '8th Av' }  # L line only, end to end backwards
+  { :l_on => 'L', :s_on => '8th Av', :l_off => 'L', :s_off => '1st Av' },  # L line only, i.e. one line end to end fwds
+  { :l_on => 'L', :s_on => '1st Av', :l_off => 'L', :s_off => '8th Av' },  # L line only, i.e. one line end to end backwards
+  { :l_on => '6', :s_on => 'Astor Place', :l_off => '6', :s_off => '33rd' },  # 6 line only, i.e. one line backwards
+  { :l_on => 'L', :s_on => '8th Av', :l_off => '6', :s_off => 'Grand Central' },  # L to 6 line, i.e. one change
+  { :l_on => 'A', :s_on => '50th', :l_off => '6', :s_off => 'Grand Central' }  # L to 6 line, i.e. one change
 ]
 
 # iterating through test cases
