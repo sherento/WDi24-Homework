@@ -23,24 +23,14 @@ LINES = {  # making keys strings instead of Symbols for compat w user input
 
 
 # ---------------- Prompt function --------------------- #
-def prompt (msg)
+def prompt ( msg )
   print msg
   gets.chomp.upcase
 end
 
 # ---------------- * CALCULATE TRIP FUNCTIONS * ----------------- #
 
-
-# class Trip # TODO maybe make a Trip class?
-
-
-# ---------------------------------------------------------------------------- #
-
-def plan_trip ( lon, son, loff, soff )  # line on, station on, line off, station off
-
-  # ONE LEG JOURNEY #
-
-  if lon == loff
+def first_leg ( lon, son, loff, soff )
 
       start_i = LINES[ lon ].index( son )
       end_i = LINES[ loff ].index( soff )
@@ -55,8 +45,20 @@ def plan_trip ( lon, son, loff, soff )  # line on, station on, line off, station
       puts "  LINE ON  - #{ lon }, STATION ON  - #{ son }"
       puts "  LINE OFF - #{ loff }, STATION OFF - #{ soff }"
       puts "You must travel through the following stops on the #{ lon } line: #{ stops.join(', ') }."
-      puts "#{ stops.size } stops in total. Enjoy your trip!"
+      # puts "#{ stops.size } stops in total. Enjoy your trip!"
       puts '-' * 40
+
+end # first_leg
+
+# ---------------------------------------------------------------------------- #
+
+def plan_trip ( lon, son, loff, soff )  # line on, station on, line off, station off
+
+  # ONE LEG JOURNEY #
+
+  if lon == loff
+    
+    first_leg lon, son, loff, soff
 
   else
 
