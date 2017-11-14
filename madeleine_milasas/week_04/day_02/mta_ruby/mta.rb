@@ -30,6 +30,12 @@ end
 
 # ---------------- * CALCULATE TRIP FUNCTIONS * ----------------- #
 
+def print_entry ( lon, son, loff, soff )
+  puts "You have entered:"
+  puts "  LINE ON  - #{ lon }, STATION ON  - #{ son }"
+  puts "  LINE OFF - #{ loff }, STATION OFF - #{ soff }"
+end # print_entry
+
 def first_leg ( lon, son, loff, soff )
 
       start_i = LINES[ lon ].index( son )
@@ -41,23 +47,40 @@ def first_leg ( lon, son, loff, soff )
         stops = LINES[ lon ][ end_i..start_i - 1 ].reverse
       end
 
-      puts "You have entered:"
-      puts "  LINE ON  - #{ lon }, STATION ON  - #{ son }"
-      puts "  LINE OFF - #{ loff }, STATION OFF - #{ soff }"
       puts "You must travel through the following stops on the #{ lon } line: #{ stops.join(', ') }."
       # puts "#{ stops.size } stops in total. Enjoy your trip!"
       puts '-' * 40
 
 end # first_leg
 
+def further_leg ( lon, son, loff, soff )
+
+      start_i = LINES[ lon ].index( son )
+      end_i = LINES[ loff ].index( soff )
+
+      if end_i > start_i
+        stops = LINES[ lon ][ start_i + 1..end_i ]  # +1 to take to not list starting stop
+      else
+        stops = LINES[ lon ][ end_i..start_i - 1 ].reverse
+      end
+
+      puts "Your journey continues through the following stops: #{ stops.join(', ') }."
+      # puts "#{ stops.size } stops in total. Enjoy your trip!"
+      puts '-' * 40
+
+end # first_leg
+
+
 # ---------------------------------------------------------------------------- #
 
 def plan_trip ( lon, son, loff, soff )  # line on, station on, line off, station off
 
+  print_entry lon, son, loff, soff
+
   # ONE LEG JOURNEY #
 
   if lon == loff
-    
+
     first_leg lon, son, loff, soff
 
   else
@@ -100,9 +123,13 @@ def plan_trip ( lon, son, loff, soff )  # line on, station on, line off, station
         # ** if found an intersection
         if found_x != []
           puts "Intersection found"
-          # check if that intersecting line is the final line
+          # ** if that intersecting line is the final line
           if loff == key
-            puts "Match to final line, loff: #{loff} and key: #{key}"
+            puts "Match to final line"
+            # CALCULATE FIRST LEG
+            first_leg lon, son, lon, found_x.first
+            puts "Change at #{ found_x.first } for the #{ key } line."
+            further_leg key, found_x.first, loff, soff
           end
         end
 
