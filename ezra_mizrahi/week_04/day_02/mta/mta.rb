@@ -118,8 +118,10 @@ puts reverse_transfer line_l, '1st', line_n, '28th N'
 def plan_trip line_start, stn_start, line_end, stn_end
   if line_start == line_end
     list_stations( line_start, stn_start, line_end, stn_end )
+  elsif line_start != line_end and line_start.find_index(stn_start) > line_start.find_index("Union Square")
+    reverse_transfer( line_start, stn_start, line_end, stn_end)
   elsif line_start != line_end
-    transfer( line_start, stn_start, line_end, stn_end)
+    transfer( line_start, stn_start, line_end, stn_end )
   end
 end
 
@@ -133,4 +135,4 @@ plan_trip line_n, '23rd N', line_n, 'Times Square'
 plan_trip line_n, 'Times Square', line_l, '3rd'
 
 # multi line trip going backwards
-plan_trip line_l, '1st', line_n, 'Times Square'
+plan_trip line_l, '1st', line_n, '28th N'
