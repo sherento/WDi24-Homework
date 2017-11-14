@@ -52,6 +52,13 @@ def play_trip
   end_line = date1.first.downcase
   end_station = date1.last.downcase
 
+  line1 = LINES[start_line.to_sym]
+  line2 = LINES[end_line.to_sym]
+  common_station  = line1 & line2
+
+
+
+
   sc = LINES[start_line.to_sym].index("union_square")
   ec = LINES[end_line.to_sym].index("union_square")
 
@@ -84,6 +91,8 @@ def play_trip
       end
    end
 end
+
+
 
 LINES.each{|line,station| puts "#{line} : #{station}"}
 play_trip

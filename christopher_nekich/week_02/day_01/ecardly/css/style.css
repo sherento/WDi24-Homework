@@ -1,0 +1,107 @@
+/*
+Project Name: Ecard.ly
+Client: General Assembly
+Author: Christopher Castig | @castig
+Developer @GA in NYC
+*/
+
+/* Box Model Hack */
+* {
+     -moz-box-sizing: border-box; /* Firexfox */
+     -webkit-box-sizing: border-box; /* Safari/Chrome/iOS/Android */
+     box-sizing: border-box; /* IE */
+}
+
+/* Clear fix hack */
+.clearfix:after {
+     content: ".";
+     display: block;
+     clear: both;
+     visibility: hidden;
+     line-height: 0;
+     height: 0;
+}
+
+.clear {
+	clear: both;
+}
+
+.banner {
+  background-image: url(../images/background.jpg);
+  height: 140vh;
+  background-repeat: repeat-x;
+  background-color: #d6d6d6;
+}
+
+.logo {
+  padding: 20px 0;
+  display: block;
+  margin: 0 auto;
+  max-width: 20%;
+}
+
+.wordbox {
+  background-color: white;
+  margin: 20px auto 0;
+  max-width: 60%;
+  height: 45%;
+  overflow-y: scroll;
+}
+
+h2 {
+  padding: 40px 30px 10px;
+  margin: 0;
+}
+
+.ecard {
+  margin-left: 30px;
+  display: table;
+}
+
+.image {
+  display: inline-block;
+  margin-right: -22px;
+}
+
+.image img {
+  max-width: 90%;
+}
+
+.words {
+  width: 25%;
+  display: inline-block;
+  vertical-align: top;
+  text-align: left;
+  margin: 0 auto;
+}
+
+p {
+  font-size: 12px;
+  margin: 0;
+}
+
+.download {
+  color: orange;
+  font-weight: 700;
+}
+
+@media (max-width: 960px) {
+  .image {
+    margin: 0 auto;
+  }
+}
+
+@media (max-width: 360px) {
+  .image {
+    margin: 0 auto;
+  }
+
+  .ecard {
+    margin: 0 auto;
+  }
+
+  .words {
+    display: block;
+    margin: 0 auto;
+  }
+}
