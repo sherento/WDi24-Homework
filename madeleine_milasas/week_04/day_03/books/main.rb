@@ -21,3 +21,7 @@ get '/book' do
 
   erb :book
 end
+
+get '/about' do
+  erb :about
+end
