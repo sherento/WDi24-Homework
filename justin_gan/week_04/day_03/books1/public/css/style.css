@@ -1,0 +1,32 @@
+body {
+  background-color: bisque;
+}
+
+.container {
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+h1 {
+  text-align: center;
+}
+
+.wrapper {
+  display: flex;
+  justify-content: center;
+}
+
+img, #viewerCanvas {
+  display: inline-block;
+}
+
+img {
+  align-self: flex-start;
+  margin-right: 1em;
+  border: 3px solid white;
+}
+
+#viewerCanvas {
+  width: 689px;
+  height: 800px;
+}

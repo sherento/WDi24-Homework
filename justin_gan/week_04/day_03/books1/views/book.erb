@@ -1,0 +1,5 @@
+
+<%= "<img src='#{ @thumbnail }'>" if @buy_link == nil %>
+<%= "<a href='#{ @buy_link }' target='_blank'><img src='#{ @thumbnail }'></a>" unless @buy_link == nil %>
+
+<div id="viewerCanvas"></div>
