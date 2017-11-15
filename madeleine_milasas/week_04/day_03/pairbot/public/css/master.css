@@ -1,0 +1,61 @@
+body {
+  background-color: black;
+  color: white;
+  max-width: 960px;
+  margin: 0 auto;
+  font-family: 'Tahoma', sans-serif;
+}
+
+h1 {
+  text-align: center;
+  margin-top: 200px;
+  font-size: 40px;
+  margin-bottom: 10px;
+}
+
+form {
+  display: inline-block;
+}
+
+.answers {
+  text-align: center;
+  margin: 20px 0;
+}
+
+button {
+  padding: 11px 19px;
+  margin: 0 15px;
+  font-size: 16px;
+  color: white;
+  border-radius: 5px;
+  border:none;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+  cursor: pointer;
+  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+}
+
+.yes {
+  background-color: #60BD60;
+  background-image: -moz-linear-gradient(270deg, #62c462, #51a351);
+  background-image: -webkit-linear-gradient(270deg, #62c462, #51a351);
+  background-image: -o-linear-gradient(270deg, #62c462, #51a351);
+  background-image: linear-gradient(180deg, #62c462, #51a351);
+}
+
+.no {
+  background-color: #E25551;
+  background-image: -moz-linear-gradient(270deg, #ee5f5b, #bd362f);
+  background-image: -webkit-linear-gradient(270deg, #ee5f5b, #bd362f);
+  background-image: -o-linear-gradient(270deg, #ee5f5b, #bd362f);
+  background-image: linear-gradient(180deg, #ee5f5b, #bd362f);
+}
+
+.done {
+  background-color: #007BCC;
+  background-image: -moz-linear-gradient(270deg, #0088cc, #0044cc);
+  background-image: -webkit-linear-gradient(270deg, #0088cc, #0044cc);
+  background-image: -o-linear-gradient(270deg, #0088cc, #0044cc);
+  background-image: linear-gradient(180deg, #0088cc, #0044cc);
+}
