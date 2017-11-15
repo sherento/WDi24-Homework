@@ -136,3 +136,5 @@ plan_trip line_n, 'Times Square', line_l, '3rd'
 
 # multi line trip going backwards
 plan_trip line_l, '1st', line_n, '28th N'
+
+plan_trip line_l, 'Union Square', line_n, 'Union Square'
