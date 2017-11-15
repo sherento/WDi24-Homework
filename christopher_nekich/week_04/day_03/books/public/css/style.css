@@ -1,3 +1,49 @@
+@import url('https://fonts.googleapis.com/css?family=Inconsolata:400,700');
+
 body {
+  text-align: center;
   background-color: skyblue;
+  font-family: "Inconsolata", sans-serif;
+  font-size: 40px;
+  margin: 0;
+  padding: 0;
+}
+
+h1 {
+  background-color: darksalmon;
+  margin: 0;
+  height: 120px;
+  line-height: 120px;
+  color: #000743;
+}
+
+.container {
+  width: 900px;
+  margin: 100px auto;
+}
+
+input {
+  width: 800px;
+  height: 200px;
+  font-size: 80px;
+  text-align: center;
+  border-radius: 10px;
+}
+
+button {
+  display: block;
+  margin: 5px auto;
+  width: 808px;
+  height: 80px;
+  font-size: 60px;
+  background-color: salmon;
+  border-radius: 10px;
+}
+
+.result {
+  font-size: 0.5em;
+}
+
+a {
+  text-decoration: none;
 }
