@@ -36,6 +36,10 @@ button {
   text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
 }
 
+button:hover {
+  text-decoration: underline;
+}
+
 .yes {
   background-color: #60BD60;
   background-image: -moz-linear-gradient(270deg, #62c462, #51a351);
