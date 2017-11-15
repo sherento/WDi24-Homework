@@ -4,5 +4,5 @@ require 'pry'
 require 'httparty'
 
 get '/' do
-  "Page is up yo"
+  erb :home
 end
