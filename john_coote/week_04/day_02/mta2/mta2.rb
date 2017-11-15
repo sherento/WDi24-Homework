@@ -53,16 +53,30 @@ stations = {
 } # end of stations hash
 
 
-# start with a staion - Hornsby - later we'll feed this in via argument.
+# start with a staion, later we'll feed this in via argument.
 queue = ['Cabramatta']   # array of stations to examine
+destination = 'Brooklyn'
 
 list = []                # array of stations visited
 trip = []                # array of trip taken
+stupid = []
+childs_plus_parents = []
 
 while queue.length > 0
   station_to_examine = queue[0]                         # is this the destination?
-  children = stations[station_to_examine][:connections] #if not, get it's children
+  children = stations[station_to_examine][:connections] # if not, get it's children
   children = children - list                            # if children in list remove those
+
+  # now we start getting quite inelegant.
+  # make an aray  of each CHILD with the immediate PARENT stuffed in front.
+  childs_plus_parents = children.map { |e| station_to_examine + "," + e }
+  # then add this array to the existing list of all stations with their immediate parents.
+  stupid = stupid + childs_plus_parents
+
+
+  #binding.pry
+
+  # briefly back to nice code.................
   queue = queue | children
 
   if list.include? station_to_examine
@@ -70,20 +84,33 @@ while queue.length > 0
   else                       # and just move on to the next item in the queue.
     list << queue.shift      # if not, append it to list for future examination.
   end
-
-  # for each element in children, add station_to_examine as it's immediate parent
-  trip = children.map {|e|  e + ", " + station_to_examine} #gets immediate parent
-
-  # if chilcren.length = 1, just append child to trip
-  # if children.length = 2, make a copy of trip[last] and then append childs
-  # if children.length = n, make (n-1) copies of trip[last] and then append each child.
-  # where trip[last] is the last trip entry which includes parent?
+  # ...........................................
 
 
-  puts station_to_examine
-  puts "queue #{queue}"
-  puts "list #{list}"
-  binding.pry
+  # puts station_to_examine
+  # puts "queue #{queue}"
+  # puts "list #{list}"
 
 
 end
+
+# now we have to pick apart the unwieldyl array trip to find the path.
+# If there's not a better way to do this, then I'm a monkey's uncle
+
+# it's the last element that contains the destination and it';s immediate parent
+child_parent_pair = stupid.pop # or stupid.last
+cp_length = child_parent_pair.length
+cp_split_index = child_parent_pair.index(",")
+child = child_parent_pair.slice(cp_split_index+1, cp_length)
+parent = child_parent_pair.slice(0, cp_split_index)
+trip.unshift(child)
+trip.unshift(parent)
+
+## then
+# going backwards in the array stupid - find the next element that contains parent
+# which will be a child in that instance.
+# get it's index in the array stupid  - INDEX
+# repeat the above
+
+
+binding.pry
