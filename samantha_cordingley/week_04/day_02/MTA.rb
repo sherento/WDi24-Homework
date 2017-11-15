@@ -35,6 +35,8 @@ def plan_trip(start_line, start_stop, end_line, end_stop)
   puts "Your trip is #{trip_length} stops in length. Start at the #{start_line}, and get on at platform #{start_stop}. Travel through stops #{user_journey} ,and get off at #{end_stop}."
 end
 
+plan_trip :n_line, '34th', :n_line, '8th' #forward on one line test
+
 # ############REVERSE FUNCTION####################
 
 def backwards_trip(start_line, start_stop, end_line, end_stop)
@@ -51,13 +53,11 @@ def backwards_trip(start_line, start_stop, end_line, end_stop)
   puts "Your trip is #{trip_length} stops in length. Start at the #{start_line}, and get on at platform #{start_stop}. Travel through stops #{user_journey} ,and get off at #{end_stop}."
 end
 
-plan_trip :n_line, '34th', :n_line, '8th' #forward on one line test
+
 backwards_trip :n_line, 'union square', :n_line, '34th' #backwards on one line
 
 
-################CHANGE LINES#########################
-
-
+################MULTI LINE BOTH FORWARDS#########################
 
 def plan_multi_trip(start_line, start_stop, end_line, end_stop)
   start_line_position = MTA[start_line].index(start_stop)
@@ -102,6 +102,54 @@ end
 
 plan_multi_trip :n_line, '34th', :l_line, '3rd' #changing at union sq and going forward
 plan_multi_trip :six_line, '33rd', :n_line, '8th' #changing at union sq and going forward
+
+######################MULTI LINE START LINE FORWARDS, END LINE BACKWARDS############################
+
+def plan_multi_startforwards(start_line, start_stop, end_line, end_stop)
+  start_line_position = MTA[start_line].index(start_stop)
+  end_line_position = MTA[end_line].index(end_stop)
+  if start_line != end_line
+    first_leg = []
+    new_reverse_line = []
+    second_leg = []
+
+    MTA[start_line].each do | el |
+  if MTA[start_line].index(el) <= MTA[start_line].index('union square') && MTA[start_line].index(el) > MTA[start_line].index(start_stop)
+    first_leg.push(el)
+  end
+end
+# print first_leg
+
+new_reverse_line = MTA[end_line].reverse!
+# print new_reverse_line
+start_line_position = new_reverse_line.index('union square')
+end_line_position = new_reverse_line.index(end_stop)
+second_leg = new_reverse_line[(start_line_position)...end_line_position]
+end
+
+total_journey = first_leg + second_leg
+# print total_journey
+
+puts "Your trip is #{total_journey.size} stops in length. Start at the #{start_line}, and get on at platform #{start_stop}. Travel through stops: "
+total_journey.map! do | el |
+  if el == 'union square'
+    puts "Change at union square."
+    puts "Get on the #{end_line}."
+    puts "Continue on: "
+  elsif el != 'union square'
+    puts el
+  end
+end
+  puts "Get off at #{end_stop}."
+end
+
+plan_multi_startforwards :n_line, '28th', :six_line, '28th' #starting in forwards motion, changing at union sq and going backwards
+plan_multi_startforwards :six_line, '23rd', :l_line, '8th' #starting in forwards motion, changing at union sq and going backwards
+
+
+######################MULTI LINE START LINE BACKWARDS, END LINE FORWARDS############################
+
+
 
 ######################INPUT FROM USER##################
 
