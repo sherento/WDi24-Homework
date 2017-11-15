@@ -1,0 +1,95 @@
+
+/*/////////////////////MASTER STYLING///////////////////////*/
+
+body {
+  background-color: #03031d;
+  font-family: 'Muli', sans-serif;
+  color: white;
+  margin: 0 auto;
+  padding: 30px;
+  padding-left: 93px;
+  padding-top: 38px;
+}
+
+#sitetitle {
+  font-family: 'Lora', serif;
+  font-size: 50px;
+  border-bottom: 30px solid white;
+  margin-bottom: 13px;
+  display:inline-block;
+}
+
+/*/////////////////////FORM HOME PAGE///////////////////////*/
+
+
+#button {
+  width: 158px;
+  height: 64px;
+  margin-top: 21px;
+  font-size: 23px;
+  font-weight: 700;
+  color: white;
+  background-color: #fd1503;
+  border: none;
+}
+
+#formfield {
+  width: 303px;
+  height: 65px;
+  margin-top: 20px;
+  display: block;
+  border: none;
+  font-size: 30px;
+  font-weight: 200;
+  padding-left: 5px;
+}
+
+/*/////////////////////SEARCH RESULT PAGE///////////////////////*/
+
+#searchtitle {
+  border-bottom: white solid 10px;
+  display: block;
+  width: 115px;
+}
+
+a {
+  text-decoration: none;
+  color: white;
+}
+
+a:hover {
+  text-decoration: none;
+  color: white;
+}
+
+a:visited {
+  text-decoration: none;
+  color: white;
+}
+
+#price {
+  padding-top: 10px;
+}
+
+.secondaryinfo {
+  font-size: 15px;
+  padding-top: 0px;
+  margin-top: -5px;
+}
+
+#readerrating {
+  padding-bottom: 10px;
+}
+
+.maininfo {
+  width: 896px;
+}
+
+#description {
+  display: inline-block;
+  font-weight: 300;
+}
+
+#cover {
+  display: inline-block;
+}
