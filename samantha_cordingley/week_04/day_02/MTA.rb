@@ -164,7 +164,7 @@ def plan_multi_startbackwards(start_line, start_stop, end_line, end_stop)
     first_leg = new_reverse_line[(reverse_start_position +1)...reverse_end_position]
   end
 
-print first_leg
+# print first_leg
 
     MTA[end_line].each do | el |
   if MTA[end_line].index(el) >= MTA[end_line].index('union square') && MTA[end_line].index(el) <= MTA[end_line].index(end_stop)
@@ -194,31 +194,31 @@ end
 # plan_multi_startbackwards :l_line, '1st', :n_line, '8th' #starting line going backwards, changing at union sq and going forwards
 plan_multi_startbackwards :n_line, '8th', :l_line, '3rd' #starting line going backwards, changing at union sq and going forwards
 
-######################MULTI LINE START LINE BACKWARDS, END LINE FORWARDS############################
+######################MULTI LINE BOTH BACKWARDS############################
 
 def plan_multi_bothbackwards(start_line, start_stop, end_line, end_stop)
-  start_line_position = MTA[start_line].index(start_stop)
-  end_line_position = MTA[end_line].index(end_stop)
+  # start_line_position = MTA[start_line].index(start_stop)
+  # end_line_position = MTA[end_line].index(end_stop)
   if start_line != end_line
     first_leg = []
-    new_reverse_line = []
+    first_reverse_line = []
+    second_reverse_line = []
     second_leg = []
 
-    new_reverse_line = MTA[start_line].reverse!
-    # print new_reverse_line
-    reverse_start_position = new_reverse_line.index(start_stop)
-    reverse_end_position = new_reverse_line.index('union square')
-    first_leg = new_reverse_line[(reverse_start_position +1)...reverse_end_position]
-  end
+    first_reverse_line = MTA[start_line]
+    # print first_reverse_line
+    reverse_start_position = first_reverse_line.index(start_stop)
+    reverse_end_position = first_reverse_line.index('union square')
+    first_leg = first_reverse_line[(reverse_start_position +1)...reverse_end_position]
 
-print first_leg
+# print first_leg
 
-    MTA[end_line].each do | el |
-  if MTA[end_line].index(el) >= MTA[end_line].index('union square') && MTA[end_line].index(el) <= MTA[end_line].index(end_stop)
-    second_leg.push(el)
-  end
+  second_reverse_line = MTA[end_line]
+  # print second_reverse_line
+  start_line_position = second_reverse_line.index('union square')
+  end_line_position = second_reverse_line.index(end_stop)
+  second_leg = second_reverse_line[start_line_position...(end_line_position +1)]
 end
-
 # print second_leg
 
 total_journey = first_leg + second_leg
@@ -237,8 +237,9 @@ end
   puts "Get off at #{end_stop}."
 end
 
-plan_multi_bothbackwards :six_line, 'astor place', :n_line, '23rd' #starting line going backwards, changing at union sq and second line going backwards
+plan_multi_bothbackwards :six_line, 'astor place', :n_line, '28th' #starting line going backwards, changing at union sq and second line going backwards
 
+plan_multi_bothbackwards :l_line, '1st', :six_line, '28th' #starting line going backwards, changing at union sq and second line going backwards
 
 
 ######################INPUT FROM USER##################
