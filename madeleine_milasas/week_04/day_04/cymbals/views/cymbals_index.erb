@@ -1,0 +1,11 @@
+<h3>All cymbals</h3>
+
+<ul>
+    <% @cymbals.each do |c| %>
+      <li>
+        <a href="/cymbals/<%= c['id'] %>">
+          <%= c['maker'] %> <%= c['name'] %>
+        </a>
+      </li>
+    <% end %>
+</ul>
