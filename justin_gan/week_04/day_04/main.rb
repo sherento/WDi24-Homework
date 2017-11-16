@@ -25,9 +25,29 @@ post '/boulders' do
 end
 
 # Show: Shows information for a single boulder
-get '/boulders_show/:id' do
+get '/boulders/:id' do
   @boulder = query_db("SELECT * FROM boulders WHERE id = #{ params[:id] }").first
-  erb :boulders_show
+  erb :boulders
+end
+
+# Edit: Shows the existing values for a single boulder for editing
+get '/boulders/:id/edit' do
+  @boulder = query_db("SELECT * FROM boulders WHERE id = #{ params[:id] }").first
+  erb :boulders_edit
+end
+
+# Update: Updates an existing boulder in the database with new information
+post '/boulders/:id' do
+  update = "UPDATE boulders SET name='#{ params[:name] }', grade='#{ params[:grade] }', crag='#{ params[:crag] }', country='#{ params[:country] }', ascensionists='#{ params[:ascensionists] }', image='#{ params[:image] }' WHERE id = #{ params[:id] }"
+  query_db update
+
+  redirect to("/boulders/#{ params[:id] }")
+end
+
+# Destroy: Deletes a boulder with the provided ID from the database
+get '/boulders/:id/delete' do
+  query_db "DELETE FROM boulders WHERE id = #{ params[:id] }"
+  redirect to('/boulders')
 end
 
 def query_db sql_statement
