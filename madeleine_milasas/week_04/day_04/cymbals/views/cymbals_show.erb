@@ -2,10 +2,16 @@
 
 <p>Maker: <%= @cymbal['maker'] %></p>
 <p>Type: <%= @cymbal['type'] %></p>
-<p>Sound: <%= @cymbal['sound'] %></p>
-<p>Size: <%= @cymbal['size'] %> inches</p>
 
-<% unless @cymbal['video'].nil?  %>
+<% unless @cymbal['sound'].empty?  %>
+  <p>Sound: <%= @cymbal['sound'] %></p>
+<% end %>
+
+<% unless @cymbal['size'].empty?  %>
+  <p>Size: <%= @cymbal['size'] %> inches</p>
+<% end %>
+
+<% unless @cymbal['video'].empty?  %>
   <% youtube_embed(@cymbal['video']) %>
   <%= @youtube_str %>
 <% end  %>

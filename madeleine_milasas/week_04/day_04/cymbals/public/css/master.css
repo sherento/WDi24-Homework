@@ -7,7 +7,7 @@ html, body {
 body {
   font-family: 'Avenir', sans-serif;
   letter-spacing: 0.8px;
-  background-color: #222;
+  background-color: #fff;
   background-image: url('../../images/drummer.jpg');
   background-repeat: no-repeat;
   background-size: cover;
@@ -91,8 +91,9 @@ li>a:hover {
     text-decoration: none;
 }
 
-.button>a:hover {
-  text-decoration: underline;
+.button:hover {
+  cursor: pointer;
+  background-color: coral;
 }
 
 footer {
@@ -129,4 +130,9 @@ button {
   padding: 40px;
   margin: 20px 0;
   border: none;
+}
+
+button:hover {
+  cursor: pointer;
+  background-color: coral;
 }

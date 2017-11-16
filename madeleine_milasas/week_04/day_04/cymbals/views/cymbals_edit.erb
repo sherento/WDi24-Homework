@@ -1,9 +1,9 @@
 <h2>Edit cymbal info</h2>
 
 <form action="/cymbals/<%= @cymbal['id'] %>" method="post">
-  <input type="text" name="maker" placeholder="Maker" value="<%= @cymbal['maker'] %>">
-  <input type="text" name="name" placeholder="Name" value="<%= @cymbal['name'] %>">
-  <input type="text" name="type" placeholder="Type e.g. Crash" value="<%= @cymbal['type'] %>">
+  <input type="text" name="maker" placeholder="Maker" value="<%= @cymbal['maker'] %>" required="required">
+  <input type="text" name="name" placeholder="Name" value="<%= @cymbal['name'] %>" required="required">
+  <input type="text" name="type" placeholder="Type e.g. Crash" value="<%= @cymbal['type'] %>" required="required">
   <input type="text" name="sound" placeholder="Description of sound" value="<%= @cymbal['sound'] %>">
   <input type="text" name="size" placeholder="Diameter in inches" value="<%= @cymbal['size'] %>">
   <input type="url" name="video" placeholder="Youtube URL, e.g. https://youtube.com..." value="<%= @cymbal['video'] %>">

@@ -20,7 +20,7 @@ end
 
 # post new
 post '/cymbals' do
-  query_db("INSERT INTO cymbals (maker, name, type, sound, size) VALUES ('#{ params['maker'] }', '#{ params['name'] }', '#{ params['type'] }', '#{ params['sound'] }', '#{ params['size'] }', '#{ params['video'] }')")
+  query_db("INSERT INTO cymbals (maker, name, type, sound, size, video) VALUES ('#{ params['maker'] }', '#{ params['name'] }', '#{ params['type'] }', '#{ params['sound'] }', '#{ params['size'] }', '#{ params['video'] }')")
   redirect to('/cymbals') # back to index page
 end
 
