@@ -23,6 +23,12 @@ post '/cymbals' do
   redirect to('/cymbals') # back to index page
 end
 
+# delete
+get '/cymbals/:id/delete' do
+  query_db("DELETE FROM cymbals WHERE id = #{ params['id'] }")
+  redirect to('/cymbals')
+end
+
 # show
 get '/cymbals/:id' do
   @cymbal = query_db("SELECT * FROM cymbals WHERE id = #{ params[:id] }").first
