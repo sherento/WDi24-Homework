@@ -7,7 +7,7 @@
   <p>Sound: <%= @cymbal['sound'] %></p>
 <% end %>
 
-<% unless @cymbal['size'].empty?  %>
+<% unless @cymbal['size'].nil? || @cymbal['size'] <= 0 %>
   <p>Size: <%= @cymbal['size'] %> inches</p>
 <% end %>
 

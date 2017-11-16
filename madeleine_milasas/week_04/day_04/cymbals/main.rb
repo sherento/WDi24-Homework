@@ -20,7 +20,7 @@ end
 
 # post new
 post '/cymbals' do
-  query_db("INSERT INTO cymbals (maker, name, type, sound, size, video) VALUES ('#{ params['maker'] }', '#{ params['name'] }', '#{ params['type'] }', '#{ params['sound'] }', '#{ params['size'] }', '#{ params['video'] }')")
+  query_db("INSERT INTO cymbals (maker, name, type, sound, size, video) VALUES ('#{ params['maker'] }', '#{ params['name'] }', '#{ params['type'] }', '#{ params['sound'] }', '#{ params['size'].to_i }', '#{ params['video'] }')")
   redirect to('/cymbals') # back to index page
 end
 
@@ -32,7 +32,7 @@ end
 
 # post update
 post '/cymbals/:id' do
-  update = "UPDATE cymbals SET maker='#{ params['maker'] }', name='#{ params['name'] }', type='#{ params['type'] }', sound='#{ params['sound'] }', size='#{ params['size'] }', video='#{ params['video'] }' WHERE id = #{ params['id'] }"
+  update = "UPDATE cymbals SET maker='#{ params['maker'] }', name='#{ params['name'] }', type='#{ params['type'] }', sound='#{ params['sound'] }', size='#{ params['size'].to_i }', video='#{ params['video'] }' WHERE id = #{ params['id'] }"
   query_db update
   redirect to("/cymbals/#{ params['id'] }")
 end
