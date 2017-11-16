@@ -1,5 +1,7 @@
 body {
   background-color: bisque;
+  font-family: sans-serif;
+  text-align: center;
 }
 
 .container {
@@ -8,7 +10,6 @@ body {
 }
 
 h1 {
-  text-align: center;
 }
 
 .wrapper {
