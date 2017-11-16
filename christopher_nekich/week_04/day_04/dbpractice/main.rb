@@ -4,13 +4,11 @@ require 'sqlite3'
 require 'pry'
 
 get '/' do
-
   erb :home
 end
 
 get '/blues' do
   @blues = query_db "SELECT * FROM blues"
-
   erb :blues_index
 end
 

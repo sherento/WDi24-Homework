@@ -67,6 +67,10 @@ hr {
   border: 1px solid white;
 }
 
+.cell:hover {
+  background-color: slategrey;
+}
+
 .row {
   margin: 25px auto;
 }
