@@ -11,11 +11,15 @@ nav {
   text-align: center;
   margin-bottom: 40px;
   height: 50px;
+  background-color: #191970;
 }
 
 button {
   display: block;
-  margin: 0 auto;
+  margin: 10px auto;
+  width: 400px;
+  height: px;
+  line-height: 20px;
 }
 
 input {
@@ -35,12 +39,14 @@ nav a {
   margin: 0 50px;
   line-height: 50px;
   color: white;
-  /*border: 1px solid white;*/
   padding: 10px;
-  background-color: navy;
   border-radius: 5px;
   text-decoration: none;
   width: 120px;
+}
+
+nav a:hover {
+  border: 1px solid white;
 }
 
 div {
@@ -77,6 +83,7 @@ hr {
 .showimg {
   max-width: 30%;
   max-height: 30%;
+  margin: 20px 0;
 }
 
 .swatch {
@@ -141,4 +148,12 @@ hr {
 
 .item {
   margin: 50px auto;
+}
+
+.controls {
+  margin: 20px auto;
+}
+
+.controls a {
+  margin: 0 20px;
 }

@@ -10,5 +10,7 @@
 <img src="<%= @blues['image'] %>" alt="" class="showimg">
 <p><%= @blues['description'] %></p>
 
-<a href="/blues/<%= @blues['id'] %>/edit">Edit</a>
-<a href="/blues/<%= @blues['id'] %>/delete">Delete</a>
+<div class="controls">
+  <a href="/blues/<%= @blues['id'] %>/edit">Edit</a>
+  <a href="/blues/<%= @blues['id'] %>/delete">Delete</a>
+</div>
