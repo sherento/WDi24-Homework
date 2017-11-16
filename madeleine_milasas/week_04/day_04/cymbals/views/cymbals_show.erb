@@ -5,6 +5,11 @@
 <p>Sound: <%= @cymbal['sound'] %></p>
 <p>Size: <%= @cymbal['size'] %> inches</p>
 
+<% unless @cymbal['video'].nil?  %>
+  <% youtube_embed(@cymbal['video']) %>
+  <%= @youtube_str %>
+<% end  %>
+
 <div class="controls">
   <a href="/cymbals/<%= @cymbal['id'] %>/delete">Delete cymbal from database</a>
   <a href="/cymbals/<%= @cymbal['id'] %>/edit">Edit cymbal info</a>
