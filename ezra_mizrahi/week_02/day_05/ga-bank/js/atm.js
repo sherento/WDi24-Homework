@@ -142,3 +142,168 @@ $('#savings-withdraw').on('click', function() {
 
 
 });
+
+////////////////////////////////////////////////////////////////////////////////
+//// JOEL'S SIMPLE SOLUTION ///////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+
+const checkForZero = function () {
+
+  $('.zero').removeClass('zero');
+  const checkingBalance = +()$('#checking-balance').text().slice(1)); // skip the "$"
+  if (0 === checkingBalance) {
+    $('#checking-balance').addClass('zero');
+  }
+
+
+  const savingsBalance = +()$('#savings-balance').text().slice(1)); // skip the "$"
+  if (0 === savingsBalance) {
+    $('#savings-balance').addClass('zero');
+  }
+
+};
+
+$(document).ready(function () {
+
+
+  checkForZero();
+
+
+  $('#checking-deposit').on('click', function () {
+
+    const amount = +()$('#checking-amount').val());
+
+    const balance = +()$('#checking-balance').text().slice(1)); // skip the "$"
+
+    $('#checking-balance').text( '$' + (amount + balance) );
+
+    checkForZero();
+
+  });
+
+
+  $('#checking-withdraw').on('click', function() {
+
+    const amount = +()$('#checking-amount').val());
+
+    const balance = +()$('#checking-balance').text().slice(1)); // skip the "$"
+
+    // pseudocode
+    // retrieve other balance
+    const otherBalance = +($('#savings-balance').text().slice(1)); // skip the $
+
+    const newBalance = balance - amount;
+
+    if (newBalance >= 0) {
+      $('#checking-balance').text( '$' + newBalance );
+    } else if (amount <= balance + otherBalance) {
+      const remaining = amount - balance; // how much do we need from the other account?
+      $('#checking-balance').text('$0');
+      $('#savings-balance').text('$' + (otherBalance - remaining));
+    }
+    checkForZero();
+    // else if amount <= balance + otherBalance
+      // withdraw from both accounts
+    // else
+      // seriously you don't have enough money
+
+  });
+
+
+  $('#savings-deposit').on('click', function () {
+
+    const amount = +()$('#savings-amount').val());
+
+    const balance = +()$('#savings-balance').text().slice(1)); // skip the "$"
+
+    $('#savings-balance').text( '$' + (amount + balance) );
+
+    checkForZero();
+
+  });
+
+
+  $('#savings-withdraw').on('click', function() {
+
+    const amount = +()$('#savings-amount').val());
+
+    const balance = +()$('#savings-balance').text().slice(1)); // skip the "$"
+
+    // pseudocode
+    // retrieve other balance
+    const otherBalance = +($('#checking-balance').text().slice(1)); // skip the $
+
+    const newBalance = balance - amount;
+
+    if (newBalance >= 0) {
+      $('#savings-balance').text( '$' + newBalance );
+    } else if (amount <= balance + otherBalance) {
+      const remaining = amount - balance; // how much do we need from the other account?
+      $('#savings-balance').text('$0');
+      $('#checking-balance').text('$' + (otherBalance - remaining));
+    }
+    checkForZero();
+    // else if amount <= balance + otherBalance
+      // withdraw from both accounts
+    // else
+      // seriously you don't have enough money
+
+  });
+
+
+});
+
+////////////////////////////////////////////////////////////////////////////////
+/// JOEL'S JAVASCRIPT + JQUERY SOLUTION ////////////////////////////////////////
+/// LINKED TO ACCOUNTS.JS //////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+
+const render = function () {
+  $('#checking-balance').text('$' + accounts.checkingBalance);
+  $('#savings-balance').text('$' + accounts.savingsBalance);
+
+  $('.zero').removeClass('zero');
+
+  // check for zero balances
+  if (accounts.checkingBalance === 0) {
+    $('#checking-balance').addClass('zero');
+  }
+
+  // check for zero balances
+  if (accounts.savingsBalance === 0) {
+    $('#savings-balance').addClass('zero');
+  }
+
+};
+
+$(document).ready(function () {
+
+  render();
+
+  $('#checking-deposit').on('click', function () {
+    const amount = $('#checking-amount').val();
+    accounts.checkingDeposit(amount);
+    render();
+  });
+
+  $('#checking-withdraw').on('click', function() {
+    const amount = $('#checking-amount').val();
+    accounts.checkingWithdraw(amount);
+    render();
+  });
+
+
+  $('#savings-deposit').on('click', function() {
+    const amount = $('#savings-amount').val();
+    accounts.savingsDeposit(amount);
+    render();
+  });
+
+  $('#savings-withdraw').on('click', function() {
+    const amount = $('#savings-amount').val();
+    accounts.savingsWithdraw(amount);
+    render();
+  });
+
+
+});
