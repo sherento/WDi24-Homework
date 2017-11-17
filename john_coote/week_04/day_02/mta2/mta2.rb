@@ -87,11 +87,12 @@ while queue.length > 0
   # ...........................................
 
 
-  # puts station_to_examine
-  # puts "queue #{queue}"
-  # puts "list #{list}"
+  puts station_to_examine
+  puts "queue #{queue}"
+  puts "list #{list}"
+  puts "stupid #{stupid}"
 
-
+binding.pry
 end
 
 # now we have to pick apart the unwieldyl array trip to find the path.
@@ -101,16 +102,18 @@ end
 child_parent_pair = stupid.pop # or stupid.last
 cp_length = child_parent_pair.length
 cp_split_index = child_parent_pair.index(",")
-child = child_parent_pair.slice(cp_split_index+1, cp_length)
+child = child_parent_pair.slice(cp_split_index + 1, cp_length)
 parent = child_parent_pair.slice(0, cp_split_index)
+
+# shoves the child into the first position of trip, and then the parent following that
 trip.unshift(child)
 trip.unshift(parent)
+
 
 ## then
 # going backwards in the array stupid - find the next element that contains parent
 # which will be a child in that instance.
 # get it's index in the array stupid  - INDEX
 # repeat the above
-
 
 binding.pry

@@ -1,0 +1,39 @@
+<h2>Detailed Information for <%= @parent.name %></h2>
+
+
+
+<p>This station is <%= @parent.name %></p>
+
+<% unless @parent.image.nil?  %>
+  <img src="<%= @parent.image %>" alt="" class="feature">
+<% end %>
+
+
+
+  <iframe width="600" height="450" frameborder="0" style="border:0" src="<%= @gmapsrc %>" allowfullscreen></iframe>
+
+
+
+<p>Closest good place to eat is <%= @parent.fav_rest %></p>
+
+<% unless @parent.fav_rest_img.nil?  %>
+  <img src="<%= @parent.fav_rest_img %>" alt="" class="feature">
+<% end %>
+
+
+<ul>
+  <li><%= @parent.name %></li>
+  <li><%= @parent.mapref %></li>
+  <li><%= @parent.image %></li>
+  <li><%= @parent.fav_rest %></li>
+  <li><%= @parent.fav_rest_img %></li>
+</ul>
+
+<a href="/parents/<%= @parent.id %>/edit">Click to edit this record</a>
+
+-33.5476699,151.2264143
+
+
+
+AIzaSyB7nJABK2HEiQKo4V-FCEMWX5xag8vVJeA
+<br>
