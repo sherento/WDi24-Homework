@@ -1,0 +1,10 @@
+<h2>edit this offbeat and odd film</h2>
+
+<form action="/films/<%= @film['id'] %>" method="post">
+  <input type="text" name="title" placeholder="put your new title in me" value="<%= @film['title'] %>">
+  <input type="text" name="year" placeholder="year" value="<%= @film['year'] %>">
+  <input type="text" name="director" placeholder="director" value="<%= @film['director'] %>">
+  <input type="text" name="genre" placeholder="genre" value="<%= @film['genre'] %>">
+  <input type="url" name="image" placeholder="image" value="<%= @film['image'] %>">
+  <button>edit</button>
+</form>
