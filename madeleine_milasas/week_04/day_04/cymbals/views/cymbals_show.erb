@@ -18,12 +18,16 @@
 
 <div class="controls">
 
-  <div class="button">
-    <a href="/cymbals/<%= @cymbal['id'] %>/delete">Delete cymbal from database</a>
-  </div>
+  <a href="/cymbals/<%= @cymbal['id'] %>/delete">
+    <div class="button">
+      Delete cymbal from database
+    </div>
+  </a>
 
-  <div class="button edit">
-    <a href="/cymbals/<%= @cymbal['id'] %>/edit">Edit cymbal info</a>
-  </div>
+  <a href="/cymbals/<%= @cymbal['id'] %>/edit">
+    <div class="button edit">
+      Edit cymbal info
+    </div>
+  </a>
 
 </div>
