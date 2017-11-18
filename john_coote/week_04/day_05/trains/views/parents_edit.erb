@@ -1,11 +1,12 @@
 <h2>EDIT <%= @parent.name %></h2>
 
 <form class="" action="/parents/<%= @parent.id %>" method="post">
-  
+
   <input type="text" name="name" value="<%= @parent.name %>">
   <input type="text" name="mapref" value="<%= @parent.mapref %>">
   <input type="text" name="image" value="<%= @parent.image %>">
   <input type="text" name="fav_rest" value="<%= @parent.fav_rest %>">
+  <input type="text" name="fav_rest_mapref" value="<%= @parent.fav_rest_mapref %>">
   <input type="text" name="fav_rest_img" value="<%= @parent.fav_rest_img %>">
   <button>Click to update record</button>
 </form>

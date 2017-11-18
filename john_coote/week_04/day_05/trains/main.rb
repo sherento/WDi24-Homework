@@ -35,11 +35,22 @@ end
 get '/parents/:id' do
   @parent = Parent.find params[:id]
   @mapref = @parent.mapref
-
   if @mapref.nil?
     @mapref = "0,0"
   end
-  @gmapsrc = "https://www.google.com/maps/embed/v1/place?q=" + @mapref + "&key=AIzaSyB7nJABK2HEiQKo4V-FCEMWX5xag8vVJeA"
+  @fav_rest_mapref = @parent.fav_rest_mapref
+  if @fav_rest_mapref.nil?
+    @fav_rest_mapref = "0,0"
+  end
+
+  @gAPIKey = "AIzaSyB7nJABK2HEiQKo4V-FCEMWX5xag8vVJeA"
+
+  @gmapURL = "https://www.google.com/maps/embed/v1/directions?key=" + @gAPIKey + "&origin=" + @mapref + "&destination=" + @fav_rest_mapref + "&mode=walking&zoom=18"
+
+  #binding.pry
+
+
+  # @gmapsrc = "https://www.google.com/maps/embed/v1/place?q=" + @mapref + "&key=AIzaSyB7nJABK2HEiQKo4V-FCEMWX5xag8vVJeA"
   # binding.pry
   erb :parents_show
 end
@@ -53,6 +64,6 @@ end
 # update section for parents.
 post '/parents/:id' do
   parent = Parent.find params[:id]
-  parent.update :name => params[:name], :mapref => params[:mapref], :image => params[:image], :fav_rest => params[:fav_rest], :fav_rest_img => params[:fav_rest_img]
+  parent.update :name => params[:name], :mapref => params[:mapref], :image => params[:image], :fav_rest => params[:fav_rest], :fav_rest_img => params[:fav_rest_img], :fav_rest_mapref => params[:fav_rest_mapref]
   redirect to("/parents/#{params[:id]}")
 end
