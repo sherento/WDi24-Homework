@@ -1,0 +1,11 @@
+<h2>All Bands</h2>
+
+<ul>
+  <% @bands.each do |b|  %>
+    <li>
+      <a href="/bands/<%= b.to_param %>">
+        <%= b.name %>
+      </a>
+    </li>
+  <% end %>
+</ul>
