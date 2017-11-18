@@ -11,8 +11,8 @@ ActiveRecord::Base.establish_connection(
 
 ActiveRecord::Base.logger = Logger.new(STDERR)
 
-class Boulder < ActiveRecord::Base
-end
+class Boulder < ActiveRecord::Base; end
+class Country < ActiveRecord::Base; end
 
 get '/' do
   erb :home
@@ -49,13 +49,6 @@ get '/boulders/:id' do
   erb :boulders_show
 end
 
-# Delete
-get '/boulders/:id/delete' do
-  boulder = Boulder.find params[:id]
-  boulder.destroy
-  redirect to("/boulders")
-end
-
 # Edit
 get '/boulders/:id/edit' do
   @boulder = Boulder.find params[:id]
@@ -73,6 +66,70 @@ post '/boulders/:id' do
                  :image => params[:image]
 
   redirect to("/boulders/#{ boulder.id }")
+end
+
+# Delete
+get '/boulders/:id/delete' do
+  boulder = Boulder.find params[:id]
+  boulder.destroy
+  redirect to("/boulders")
+end
+
+###############################################################################
+
+# Index
+get '/countries' do
+  @countries = Country.all
+  erb :countries_index
+end
+
+# New
+get '/countries/new' do
+  erb :countries_new
+end
+
+# Create
+post '/countries' do
+  country = Country.new
+  country.name = params[:name]
+  country.continent = params[:continent]
+  country.capital = params[:capital]
+  country.area = params[:area]
+  country.population = params[:population]
+  country.save
+
+  redirect to("/countries/#{ country.id }")
+end
+
+# Show
+get '/countries/:id' do
+  @country = Country.find params[:id]
+  erb :countries_show
+end
+
+# Edit
+get '/countries/:id/edit' do
+  @country = Country.find params[:id]
+  erb :countries_edit
+end
+
+# Update
+post '/countries/:id' do
+  country = Country.find params[:id]
+  country.update :name => params[:name],
+                 :continent => params[:continent],
+                 :capital => params[:capital],
+                 :area => params[:area],
+                 :population => params[:population]
+
+  redirect to("/countries/#{ country.id }")
+end
+
+# Delete
+get '/countries/:id/delete' do
+  country = Country.find params[:id]
+  country.destroy
+  redirect to("/countries")
 end
 
 after do
