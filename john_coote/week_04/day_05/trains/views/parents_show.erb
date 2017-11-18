@@ -1,4 +1,6 @@
 <h2>Detailed Information for <%= @parent.name %></h2>
+<h3><a href="/parents/<%= @parent.id %>/edit">Click to edit this record</a></h3>
+
 
 
 
@@ -32,11 +34,19 @@
 
 
 
-<a href="/parents/<%= @parent.id %>/edit">Click to edit this record</a>
 
--33.5476699,151.2264143
+<h3>Connections to <%= @parent.name %></h3>
+<!-- Gets list of all connections -->
+ <% @children.each do |child| %>
+   <% if child.parent_id == @parent.id %>
+     <li>
+      <strong><%= child.name %></strong>
+     </li>
+   <% end %>
+ <% end %>
+
+<!-- Google maps API Key =
+AIzaSyB7nJABK2HEiQKo4V-FCEMWX5xag8vVJeA -->
 
 
-
-AIzaSyB7nJABK2HEiQKo4V-FCEMWX5xag8vVJeA
 <br>

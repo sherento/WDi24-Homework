@@ -26,6 +26,12 @@ get '/parents' do
   erb :parents_index
 end
 
+# index - show all children
+get '/children' do
+  @children = Child.all
+  erb :children_index
+end
+
 # make a new parent
 get '/parents/new' do
   erb :parents_new
@@ -34,6 +40,8 @@ end
 # info page on single parent
 get '/parents/:id' do
   @parent = Parent.find params[:id]
+  @children = Child.all
+
   @mapref = @parent.mapref
   if @mapref.nil?
     @mapref = "0,0"
@@ -42,16 +50,9 @@ get '/parents/:id' do
   if @fav_rest_mapref.nil?
     @fav_rest_mapref = "0,0"
   end
-
   @gAPIKey = "AIzaSyB7nJABK2HEiQKo4V-FCEMWX5xag8vVJeA"
-
   @gmapURL = "https://www.google.com/maps/embed/v1/directions?key=" + @gAPIKey + "&origin=" + @mapref + "&destination=" + @fav_rest_mapref + "&mode=walking&zoom=18"
 
-  #binding.pry
-
-
-  # @gmapsrc = "https://www.google.com/maps/embed/v1/place?q=" + @mapref + "&key=AIzaSyB7nJABK2HEiQKo4V-FCEMWX5xag8vVJeA"
-  # binding.pry
   erb :parents_show
 end
 
