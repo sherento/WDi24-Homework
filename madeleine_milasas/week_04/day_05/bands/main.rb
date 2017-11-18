@@ -38,13 +38,18 @@ get '/' do
   erb :home
 end
 
-# index
+# index - show all bands
 get '/bands' do
   @bands = Band.all
   erb :bands_index
 end
 
-# show single
+# new - present form
+get '/bands/new' do
+  erb :bands_new
+end
+
+# show - single band
 get '/bands/:url_name' do
   @band = Band.find params['url_name'].to_i
   erb :bands_show
