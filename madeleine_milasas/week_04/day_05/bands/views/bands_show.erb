@@ -27,8 +27,13 @@
 
 <div class="controls">
   <a href="/bands/<%= @band.to_param %>/edit">
-    <div class="button">
+    <div class="button edit">
       Edit band info
     </div>
   </a>
+  <!-- <a href="/bands/<%= @band.to_param %>/delete" data-name="<%= @band.to_param %>" id="delete"> -->
+    <div class="button" id="delete-button" data-name="<%= @band.to_param %>">
+      Delete band
+    </div>
+  <!-- </a> -->
 </div>

@@ -52,7 +52,7 @@ end
 
 # new - post
 post '/bands' do
-  band = Band.create name: params[:name], country: params[:country], year: params[:year], image: params[:image]
+  band = Band.create name: params[:name], country: params[:country], year: params[:year].to_i, image: params[:image]
   redirect to("/bands/#{ band.id }")
 end
 
@@ -65,8 +65,15 @@ end
 # edit - post
 post '/bands/:url_name' do
   band = Band.find params[:url_name].to_i
-  band.update :name => params[:name], :country => params[:country], :year => params[:year], :members => params[:members], :image => params[:image]
+  band.update :name => params[:name], :country => params[:country], :year => params[:year].to_i, :members => params[:members], :image => params[:image]
   redirect to("/bands/#{ params[:url_name] }")
+end
+
+# delete
+get '/bands/:url_name/delete' do
+  band = Band.find params[:url_name]
+  band.delete ## destroy didn't work, maybe will once there are songs?
+  redirect to('/bands')
 end
 
 # show - single band

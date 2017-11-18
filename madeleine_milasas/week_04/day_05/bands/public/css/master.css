@@ -114,6 +114,7 @@ li>a:hover {
   font-family: 'PT Sans Narrow', sans-serif;
   text-transform: uppercase;
   font-size: 18px;
+  transition: 0.25s; /*TODO prefixes*/
 }
 
 .button > a {
@@ -124,6 +125,7 @@ li>a:hover {
 .button:hover {
   cursor: pointer;
   background-color: coral;
+  transition: 0.25s; /*TODO prefixes*/
 }
 
 footer {
@@ -137,10 +139,6 @@ footer {
   letter-spacing: 3px;
   text-align: center;
   font-size: 10px;
-}
-
-.edit {
-  background-color: #87c587;
 }
 
 input {
@@ -177,4 +175,18 @@ td {
   padding: 1em 2em 1em 0;
   vertical-align: top;
   font-size: 14px;
+}
+
+.edit {
+  background-color: #014765;
+}
+
+#delete-button:hover {
+  background-color: #DA4040;
+  animation: flash 0.25s ease-in-out infinite alternate;
+}
+
+@keyframes flash {
+    from {background-color: #DA4040;}
+    to {background-color: coral;}
 }
