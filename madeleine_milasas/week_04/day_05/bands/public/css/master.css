@@ -1,0 +1,180 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans|PT+Sans+Narrow');
+
+* {
+  /*border: 1px solid cornsilk;*/
+}
+
+html, body {
+  margin: 0;    /*these for sticky footer*/
+  padding: 0;   /*these for sticky footer*/
+  height: 100%; /*these for sticky footer*/
+}
+
+body {
+  font-family: 'Open Sans', sans-serif;
+  letter-spacing: 0.8px;
+  background-color: #025075;
+  background-image: url('../../images/mic_full.jpg');
+  background-repeat: no-repeat;
+  background-size: 100% auto;
+}
+
+.container {
+  min-height: 100vh;    /*these for sticky footer*/
+  position: relative;  /*these for sticky footer*/
+  max-width: 960px;
+  margin: 0 auto;
+  background-color: rgba(34, 34, 34, 0.97);
+  color: white;
+  padding: 2em;
+}
+
+p {
+ padding: 8px 0;
+ font-size: 14px;
+}
+
+.controls {
+  padding-bottom: 80px; /*height of footer*/
+}
+
+main {
+  display: inline-block;
+  width: 40%;
+}
+
+aside {
+  display: inline-block;
+  width: 59%;
+  vertical-align: top;
+}
+
+img.featured {
+  max-width: 100%;
+}
+
+iframe {
+  padding: 2em 0;
+}
+
+.container a {
+  display: block;
+}
+
+nav {
+  background-color: rgba(255, 248, 220, 0.5);
+  height: 80px;
+  line-height: 80px;
+  text-align: right;
+  padding: 10px 30px;
+}
+
+nav > a {
+  padding: 30px;
+  text-decoration: none;
+  color: #561A91;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-family: 'PT Sans Narrow', sans-serif;
+}
+
+nav>a:hover {
+  text-decoration: underline;
+}
+
+h1 {
+  text-transform: uppercase;
+}
+
+h2 {
+  font-size: 24px;
+  text-transform: uppercase;
+}
+
+li {
+  padding: 1em;
+}
+
+li > a {
+  color: white;
+  font-size: 18px;
+  text-decoration: none;
+}
+
+li>a:hover {
+  text-decoration: underline;
+}
+
+.button {
+  background-color: #DA4040;
+  padding: 40px;
+  max-width: 220px;
+  text-align: center;
+  margin: 2em 4px;
+  font-family: 'PT Sans Narrow', sans-serif;
+  text-transform: uppercase;
+  font-size: 18px;
+}
+
+.button > a {
+  color: white;
+  text-decoration: none;
+}
+
+.button:hover {
+  cursor: pointer;
+  background-color: coral;
+}
+
+footer {
+	background: rgba(255, 248, 220, 0.05);
+  width: 100%;
+	height: 80px;
+  line-height: 80px;
+	position: absolute;
+	bottom: 0;
+	left: 0;
+  letter-spacing: 3px;
+  text-align: center;
+  font-size: 10px;
+}
+
+.edit {
+  background-color: #87c587;
+}
+
+input {
+  display: block;
+  margin: 2em 0;
+  padding: 1em;
+  width: 350px;
+}
+
+button {
+  width: 200px;
+  color: white;
+  background-color: #014765;
+  font-family: 'PT Sans Narrow', sans-serif;
+  text-transform: uppercase;
+  font-size: 16px;
+  font-weight: normal;
+  padding: 40px;
+  margin: 20px 0;
+  border: none;
+}
+
+button:hover {
+  cursor: pointer;
+  background-color: coral;
+}
+
+a {
+  text-decoration: none;
+  color: white;
+}
+
+td {
+  padding: 1em 2em 1em 0;
+  vertical-align: top;
+  font-size: 14px;
+}

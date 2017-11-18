@@ -18,13 +18,14 @@ class Band < ActiveRecord::Base
 
   # attr_accessor :name
 
-  # def initialize
-  #   @name = :name
-  # end
+  def slug
+    self.name.downcase.gsub ' ', '-'
+  end
 
   def to_param  # to generate pretty urls
-    "#{ id }-#{ self.name }"
+    "#{ id }-#{ slug }"
   end
+
 end
 
 
@@ -47,6 +48,25 @@ end
 # new - present form
 get '/bands/new' do
   erb :bands_new
+end
+
+# new - post
+post '/bands' do
+  band = Band.create name: params[:name], country: params[:country], year: params[:year], image: params[:image]
+  redirect to("/bands/#{ band.id }")
+end
+
+# edit - present form
+get '/bands/:url_name/edit' do
+  @band = Band.find params['url_name'].to_i
+  erb :bands_edit
+end
+
+# edit - post
+post '/bands/:url_name' do
+  band = Band.find params[:url_name].to_i
+  band.update :name => params[:name], :country => params[:country], :year => params[:year], :members => params[:members], :image => params[:image]
+  redirect to("/bands/#{ params[:url_name] }")
 end
 
 # show - single band
