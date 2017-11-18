@@ -1,0 +1,11 @@
+
+body {
+  background-color: blue;
+  margin: 0;
+}
+
+
+canvas {
+  border: 1px solid black;
+  background-color: yellow;
+}

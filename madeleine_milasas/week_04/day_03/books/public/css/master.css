@@ -1,0 +1,56 @@
+body {
+  background-color: cornsilk;
+  color: black;
+  font-family: 'Avenir', sans-serif;
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+nav {
+  text-align: right;
+}
+
+a {
+  text-decoration: none;
+  font-size: 16px;
+  color: black;
+  padding: 15px;
+}
+
+a:hover {
+  color: teal;
+}
+
+h1 {
+  text-align: center;
+  text-transform: uppercase;
+  padding-bottom: 60px;
+}
+
+img {
+  float: right;
+  padding: 40px;
+}
+
+p {
+  text-align: justify;
+}
+
+input {
+  width: 400px;
+  padding: 10px;
+  margin-right: 20px;
+}
+
+button {
+  padding: 10px;
+}
+
+footer {
+  padding-top: 40px;
+}
+
+.centred {
+  text-align: center;
+}

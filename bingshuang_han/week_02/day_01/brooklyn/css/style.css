@@ -1,0 +1,79 @@
+/*
+
+## Style Hints:
+
+Body Font Size = 12px
+	 Line Height = 17px
+	 Font Family = "Times New Roman", serif
+	 Font Color = #656565
+
+Link Hover Color = #20222a
+
+*/
+h1{
+  font-size: 30px;
+  height: 17px;
+  font-family: "Timew New Roman", serif;
+  color: grey;
+  margin:30px;
+}
+img{
+  margin:auto 30px;
+}
+h2{
+  font-size:20px;
+  margin:0 30px;
+  font-family: "Timew New Roman", serif;
+  color:grey;
+}
+p{
+  max-width: 960px;
+  font-size: 14px;
+  margin:10px 30px;
+  font-family: "Timew New Roman", serif;
+  color:grey;
+}
+p.time{
+  color: blue;
+}
+span{
+  color:blue;
+  href:"#";
+
+}
+footer{
+  clear: left;
+  color: grey;
+  font-size: 14px;
+  margin:25px;
+  text-decoration: none;
+  }
+
+
+
+ li {
+  float: left;
+  width: 240px;
+  height: 200px;
+  color:white;
+}
+span a.hover{
+  color:blue;
+
+}
+
+a.hover{
+  color:#20222a;
+}
+li img {
+  border: 3px solid #bfbfbf;
+  display: block;
+  margin: 5px 2px;
+}
+li img:hover {
+    box-shadow: 0 0 2px 1px rgba(0, 140, 186, 0.5);
+}
+ul li.newYork{
+  margin-left:-15px;
+  padding-left: 0;
+}

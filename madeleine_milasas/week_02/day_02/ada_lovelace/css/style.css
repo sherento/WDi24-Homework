@@ -1,0 +1,188 @@
+@import url('https://fonts.googleapis.com/css?family=Crimson+Text|Forum|Lato');
+
+* {
+  /*border: 1px pink solid;*/
+}
+
+html, body {
+  height: 100%; /* for making footer sticky */
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #f8f7f7;
+}
+
+
+.container {
+  /*width: 960px;*/
+  margin: 0 auto;
+  min-height: 100%; /*for making footer sticky*/
+  position: relative; /*for making footer sticky*/
+}
+
+
+header {
+  background-color: #0C1B22;
+  background-image: url("../images/ada_header_bg.png"); /* path is relative to stylesheet */
+  background-repeat: no-repeat;
+  background-position: center;
+  text-align: center;
+  color: #C8B57C;
+  padding: 20px;
+}
+
+header h1 {
+  font-family: "Forum", sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 5px;
+  font-weight: normal;
+}
+
+header h2 {
+  font-family: "Forum", sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 8px;
+  font-weight: normal;
+  font-size: 11px;
+}
+
+main h2 {
+  margin-bottom: 25px;
+}
+
+nav {
+  padding: 10px 0;
+  margin-left: -20px;
+  margin-right: -20px;
+  /*background-color: rgba(0, 0, 0, 0.8);*/
+}
+
+nav li {
+  display: inline-block;
+  padding: 0 25px;
+}
+
+nav a {
+  color: #f8f7f7;
+  font-family: "Lato", sans-serif;
+  text-transform: uppercase;
+  text-decoration: none;
+  letter-spacing: 5px;
+  font-size: 13px;
+}
+
+nav a:hover {
+  /*text-decoration: underline;*/
+}
+
+.link-hidden {
+  color: rgba(255, 255, 255, 0);
+}
+
+a:hover {
+  color: rgba(200, 181, 124, 1.00);
+}
+
+a:hover .link-hidden {
+  color: rgba(200, 181, 124, 1.00);
+}
+
+main {
+  width: 960px;
+  margin: 0 auto;
+  height: 100%;
+  font-family: "Lato",sans-serif;
+  padding: 15px;
+  padding-bottom: 45px; /* Height of the footer element */
+}
+
+
+
+main a {
+  color: #D47A5E;
+}
+
+
+
+article {
+  display: inline-block;
+  width: 54%;
+  padding-right: 54px;
+}
+
+.article-subsection {
+  padding: 10px 0;
+}
+
+aside {
+  display: inline-block;
+  width: 39%;
+  vertical-align: top;
+}
+
+aside li {
+  padding-bottom: 25px;
+  font-size: 13px;
+  padding-left: 5px;
+  margin-left: -22px;
+}
+
+.list-number {
+  padding-left: 1em;
+}
+
+main p {
+  text-align: justify;
+  text-align-last: left;
+  font-size: 13px;
+}
+
+footer {
+  background-color: #142836;
+  background-image: url("../images/ada_footer_bg.png");
+  background-repeat: no-repeat;
+  background-position: left;
+  width: 100%;
+  height: 45px; /*same as height listed in main padding-bottom*/
+  position: absolute;
+  bottom: 0;
+  left:0;
+}
+
+
+.copyright {
+  width: 960px;
+  margin: 0 auto;
+  color: rgba(200, 181, 124, 1.00);
+  padding: 1.25em 2em;
+  font-family: "Lato", sans-serif;
+  font-size: 11px;
+  letter-spacing: 2px;
+  text-align: right;
+}
+
+.youtube {
+  padding: 4px 0;
+}
+
+.centered-text {
+  background-color: red;
+}
+
+#countdown {
+  font-size: 20px;
+}
+
+.synth {
+  padding-top: 20px;
+}
+
+.grid {
+  padding: 10px 0;
+}
+
+.underline {
+  text-decoration: underline;
+}
