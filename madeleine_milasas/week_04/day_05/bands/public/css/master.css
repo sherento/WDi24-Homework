@@ -105,6 +105,16 @@ li>a:hover {
   text-decoration: underline;
 }
 
+.list-unstyled {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.small-link {
+  font-size: 14px;
+}
+
 .button {
   background-color: #DA4040;
   padding: 40px;

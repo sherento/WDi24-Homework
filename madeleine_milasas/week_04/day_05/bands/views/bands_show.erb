@@ -15,6 +15,16 @@
         <td>Members:</td>
         <td><%= @band.members %></td>
       </tr>
+      <tr>
+        <td>Hits:</td>
+        <td>
+          <ul class="list-unstyled">
+          <% @band.songs.each do |song| %>
+            <li class="list-unstyled"><a class="small-link" href="/"><%= song['name'] %></a></li>
+          <% end  %>
+          </ul>
+        </td>
+      </tr>
     <% end %>
   </table>
 </main>
