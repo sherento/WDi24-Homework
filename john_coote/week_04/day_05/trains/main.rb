@@ -76,3 +76,94 @@ post '/parents/:id' do
   parent.update :name => params[:name], :mapref => params[:mapref], :image => params[:image], :fav_rest => params[:fav_rest], :fav_rest_img => params[:fav_rest_img], :fav_rest_mapref => params[:fav_rest_mapref]
   redirect to("/parents/#{params[:id]}")
 end
+
+
+
+
+################################
+
+# class Station
+#   attr_accessor :name, :connections
+#
+#   def initialize(name='', connections=[])
+#     @name = name
+#     @connections = connections
+#   end
+#
+# end
+#
+# @parents.each do |parent
+#
+#   name = parent.name
+#   parent = Station.new
+# end
+#
+# #
+# # <% @parents.each do |parent| %>
+# #   <li>
+# #     <a href="/parents/<%= parent.id%> "><%= parent.name %></a>
+# #   </li>
+# # <% end %>
+#
+# # <% @children.each do |child| %>
+# #   <% if child.parent_id == @parent.id %>
+# #     <li>
+# #       <%= child.name %>
+# #     </li>
+# #   <% end %>
+# # <% end %>
+
+
+
+
+
+stations = {
+  'Hornsby' => {
+    :name => 'Hornsby',
+    :connections => ['Epping', 'Chatswood', 'Brooklyn']
+  },
+  'Epping' => {
+    :name => 'Epping',
+    :connections => ['Hornsby', 'Chatswood', 'Strathfield']
+  },
+  'Chatswood' => {
+    :name => 'Chatswood',
+    :connections => ['Hornsby', 'Epping', 'Central']
+  },
+  'Strathfield' => {
+    :name => 'Strathfield',
+    :connections => ['Lidcombe', 'Epping', 'Central']
+  },
+  'Bankstown' => {
+    :name => 'Bankstown',
+    :connections => ['Sydneham', 'Cabramatta','Lidcombe']
+  },
+  'Cabramatta' => {
+    :name => 'Cabramatta',
+    :connections => ['Blacktown', 'Bankstown','Lidcombe', 'Glenfield']
+  },
+  'Sydneham' => {
+    :name => 'Sydneham',
+    :connections => ['Glenfield', 'Bankstown','Central']
+  },
+  'Central' => {
+    :name => 'Central',
+      :connections => ['Chatswood', 'Strathfield', 'Sydneham']
+  },
+  'Brooklyn' => {
+    :name => 'Brooklyn',
+    :connections => ['Hornsby']
+  },
+  'Glenfield' => {
+    :name => 'Glenfield',
+    :connections => ['Cabramatta','Sydneham']
+  },
+  'Lidcombe' => {
+    :name => 'Lidcombe',
+    :connections => ['Cabramatta','Bankstown', 'Strathfield']
+  },
+  'Blacktown' => {
+    :name => 'Blacktown',
+    :connections => ['Cabramatta']
+  }
+} # end of stations hash

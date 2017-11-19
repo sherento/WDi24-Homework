@@ -13,6 +13,23 @@ h1, h2, h3, h4 {
   text-align: center;
   font-family: 'Spectral SC', serif;
 }
+ul {
+  list-style: none;
+  text-align: left;
+}
+
+form {
+  height: 100%;
+}
+
+form li {
+  width: 80%;
+  padding-left: 10%;
+}
+form input {
+  float: right;
+  padding-right: 3em;
+}
 
 button {
   height: 3em;
@@ -53,10 +70,20 @@ button {
     /*height: 50vh;*/
 }
 
-.twenty
+.thirty
 {
   width: 30%;
     /*height: 50vh;*/
+}
+
+.twenty
+{
+  width: 20%;
+    /*height: 50vh;*/
+}
+
+.thomas {
+  /*height: 500px;*/
 }
 
 img {
