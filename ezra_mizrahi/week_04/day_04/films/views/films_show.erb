@@ -1,0 +1,14 @@
+<h2><%= @film['title'] %></h2>
+
+<h3>year: <%= @film['year'] %></h3>
+<h3>director: <%= @film['director'] %></h3>
+<h3>genre: <%= @film['genre'] %></h3>
+
+<% unless @film['image'].nil? %>
+<img class="feature" src="<%= @film['image'] %>" alt="<%= @film['title'] %>">
+<% end %>
+
+<div class="controls">
+  <a href="/films/<%= @film['id'] %>/delete">deletezmoi</a>
+  <a href="/films/<%= @film['id'] %>/edit">editezmoi</a>
+</div>
