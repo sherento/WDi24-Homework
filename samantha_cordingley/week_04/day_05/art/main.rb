@@ -15,11 +15,15 @@ ActiveRecord::Base.logger = Logger.new(STDERR)
 
 #Connect active record to my sql table / must be singular
 class Artwork < ActiveRecord::Base
+  # belongs_to :artist
 end
 
 #Connect active record to my artist sql table / must be singular
 class Artist < ActiveRecord::Base
+  # has_many :artworks
+  # validates :author, presence: true
 end
+
 
 #connect home page
 get '/' do

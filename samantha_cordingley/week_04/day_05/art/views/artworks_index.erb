@@ -1,9 +1,10 @@
-<h1> The Latest (ART.) </h1>
+<h1 class="pagetitle"> The Latest 10</h1><br>
+<h1 class="stopper">...</h1>
 
-<ul>
+<ul class="indexlist">
   <% @artworks.each do | artwork | %>
   <li>
-    <a href="/artworks/<%= artwork.id %>">
+    <a class="indexitems" href="/artworks/<%= artwork.id %>">
       <%= artwork.name %>
     </a>
   </li>
