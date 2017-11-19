@@ -50,3 +50,16 @@ get '/artworks/:id' do
   @artwork = Artwork.find params[:id]
   erb :artwork_show
 end
+
+#edit page. Holds edit form
+get '/artworks/:id/edit' do
+  @artwork = Artwork.find params[:id]
+  erb :artwork_edit
+end
+
+#post action to update data on database after Edit
+post '/artworks/:id' do
+  artwork = Artwork.find params[:id]
+artwork.update :name => params[:name], :author => params[:author], :year => params[:year], :canvas => params[:canvas], :image => params[:image]
+redirect to ("/artworks/#{ params[:id] }")
+end
