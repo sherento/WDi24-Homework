@@ -63,3 +63,15 @@ post '/artworks/:id' do
 artwork.update :name => params[:name], :author => params[:author], :year => params[:year], :canvas => params[:canvas], :image => params[:image]
 redirect to ("/artworks/#{ params[:id] }")
 end
+
+#delete action, allows something to delete an artwork
+get '/artworks/:id/delete' do
+  artwork = Artwork.find params[:id]
+  artwork.destroy
+  redirect to ('/artworks')
+end
+
+#'after do' function to shut down the server after each function
+after do
+  ActiveRecord::Base.connection.close
+end
