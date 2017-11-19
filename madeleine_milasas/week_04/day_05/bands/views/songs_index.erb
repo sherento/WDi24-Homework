@@ -1,4 +1,4 @@
-<h2>All Songs</h2>
+<h2>All Songs A-Z</h2>
 
 <table>
 <% @songs.each do |s|  %>
@@ -9,7 +9,7 @@
         </a>
       </td>
       <td>
-        <%= @bands.find_by(id: s.band_id).name %>
+        Band: <a href="/bands/<%= @bands.find_by(id: s.band_id).to_param %>"><%= @bands.find_by(id: s.band_id).name %></a>
       </td>
     </tr>
     <% end %>
