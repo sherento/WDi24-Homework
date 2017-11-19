@@ -36,11 +36,14 @@ end
 
 # Create
 post '/boulders' do
+  country = Country.new
+  country.name = params[:country].capitalize
+  country.save
   boulder = Boulder.new
   boulder.name = params[:name]
   boulder.grade = params[:grade]
   boulder.crag = params[:crag]
-  boulder.country = params[:country]
+  boulder.country_id = country.id
   boulder.ascensionists = params[:ascensionists]
   boulder.image = params[:image]
   boulder.save
@@ -51,7 +54,6 @@ end
 # Show
 get '/boulders/:id' do
   @boulder = Boulder.find params[:id]
-  binding.pry
   erb :boulders_show
 end
 
@@ -67,9 +69,9 @@ post '/boulders/:id' do
   boulder.update :name => params[:name],
                  :grade => params[:grade],
                  :crag => params[:crag],
-                 :country => params[:country],
                  :ascensionists => params[:ascensionists],
                  :image => params[:image]
+  boulder.country.update :name => params[:country]
 
   redirect to("/boulders/#{ boulder.id }")
 end
@@ -97,9 +99,9 @@ end
 # Create
 post '/countries' do
   country = Country.new
-  country.name = params[:name]
-  country.continent = params[:continent]
-  country.capital = params[:capital]
+  country.name = params[:name].capitalize
+  country.continent = params[:continent].capitalize
+  country.capital = params[:capital].capitalize
   country.area = params[:area]
   country.population = params[:population]
   country.save
@@ -122,9 +124,9 @@ end
 # Update
 post '/countries/:id' do
   country = Country.find params[:id]
-  country.update :name => params[:name],
-                 :continent => params[:continent],
-                 :capital => params[:capital],
+  country.update :name => params[:name].capitalize,
+                 :continent => params[:continent].capitalize,
+                 :capital => params[:capital].capitalize,
                  :area => params[:area],
                  :population => params[:population]
 
