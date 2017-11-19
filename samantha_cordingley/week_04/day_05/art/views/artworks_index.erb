@@ -1,0 +1,11 @@
+<h1> All Art. </h1>
+
+<ul>
+  <% @artworks.each do | artwork | %>
+  <li>
+    <a href="/artworks/<%= artwork.id %>">
+      <%= artwork.name %>
+    </a>
+  </li>
+  <% end %>
+</ul>

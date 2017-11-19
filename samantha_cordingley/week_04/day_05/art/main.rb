@@ -39,7 +39,7 @@ post '/artworks' do
   artwork.name = params[:name]
   artwork.author = params[:author]
   artwork.year = params[:year]
-  artwork.type = params[:type]
+  artwork.canvas = params[:canvas]
   artwork.image = params[:image]
   artwork.save #actually saves it
   redirect to ("/artworks/#{ artwork.id }") #get new artwork
