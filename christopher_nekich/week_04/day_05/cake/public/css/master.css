@@ -15,8 +15,19 @@ body {
 }
 
 .maintitle {
-  margin-top: 32vh;
-  font-size: 10vw;
+  margin-top: 30vh;
+  font-size: 5vw;
+  display: inline-block;
+}
+
+.maintitle h1 {
+  display: inline-block;
+}
+
+.titlecake {
+  max-width: 50px;
+  max-height: 50px;
+  display: inline-block;
 }
 
 .profile {

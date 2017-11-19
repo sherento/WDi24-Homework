@@ -19,7 +19,6 @@ class Cake < ActiveRecord::Base
   has_one :user
 end
 
-binding.pry
 
 get '/' do
   erb :home
@@ -69,7 +68,9 @@ end
 
 post '/users/:id' do
   user = User.find params[:id]
-  user.update name: => params[:name], image: => params[:image], username: => params[:username]
+  user.update :name => params[:name], :image => params[:image], :username => params[:username]
+
+  redirect ('/users/' + params[:id])
 end
 
 get '/cakes' do
@@ -96,9 +97,9 @@ end
 
 post '/cakes/:id' do
   cake = Cake.find params[:id]
-  cake.update name: => params[:id], image: => params[:image], description: => params[:description]
+  cake.update :name => params[:name], :image => params[:image], :description => params[:description]
 
-  redirect back
+  redirect '/users'
 end
 
 
