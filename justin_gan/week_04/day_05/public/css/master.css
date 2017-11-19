@@ -1,0 +1,13 @@
+body {
+  background-color: rgba(247, 69, 0, .2);
+}
+
+.container {
+  max-width: 960px;
+  margin: 0 auto;
+  background-color: rgba(247, 69, 0, .3)
+}
+
+.feature {
+  max-width: 100%;
+}
