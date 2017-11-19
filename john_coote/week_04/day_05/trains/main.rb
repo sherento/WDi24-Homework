@@ -20,6 +20,14 @@ get '/' do
   erb :home
 end
 
+# update section for parents.
+post '/' do
+  @start = params[:start]
+  @destination = params[:destination]
+  "code here for trip calculations. start = " + @start + ", destination = " + @destination
+end
+
+
 # index - show all parents
 get '/parents' do
   @parents = Parent.all
