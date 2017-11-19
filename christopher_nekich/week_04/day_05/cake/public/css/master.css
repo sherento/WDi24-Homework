@@ -37,6 +37,12 @@ body {
   margin: 0 auto;
   background-position: center;
   background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.profilepicture {
+max-width: 100%;
+border-radius: 1em;
 }
 
 .cakelist {
