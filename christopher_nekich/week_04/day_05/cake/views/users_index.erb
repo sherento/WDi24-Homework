@@ -1,0 +1,7 @@
+<% @users.each do |u| %>
+<a href=/users/<%= u["id"] %> ><h1><%= u["name"] %></h1></a>
+<h2><%= u["username"] %></h2>
+
+<img src="<%= u["image"] %>" alt="">
+
+<% end %>
