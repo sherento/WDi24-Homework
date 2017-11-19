@@ -47,6 +47,12 @@ class Song < ActiveRecord::Base
 end
 
 
+before do
+    @countries = Band.pluck(:country).uniq.sort
+end
+
+
+
 get '/' do
   erb :home
 end
@@ -63,6 +69,12 @@ get '/songs' do
   @bands = Band.all
   # binding.pry
   erb :songs_index
+end
+
+# index - BANDS BY COUNTRY
+get '/bands/countries/:country' do
+  @bands = Band.where(:country => params[:country]).sort_by { |s| [s.name.downcase] }
+  erb :bands_index
 end
 
 # new BAND - present form
