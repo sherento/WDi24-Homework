@@ -62,6 +62,16 @@ post '/users/:id/cakes' do
   redirect to("/users/" + params[:id])
 end
 
+get '/users/:id/edit' do
+  @user = User.find params[:id]
+  erb :users_edit
+end
+
+post '/users/:id' do
+  user = User.find params[:id]
+  user.update name: => params[:name], image: => params[:image], username: => params[:username]
+end
+
 get '/cakes' do
   @cakes = Cake.all
   erb :cakes_index
@@ -71,6 +81,27 @@ get '/cakes/:id' do
   @cake = Cake.find params[:id]
   erb :cakes_show
 end
+
+get '/cakes/:id/delete' do
+  cake = Cake.find params[:id]
+  cake.destroy
+
+  redirect back
+end
+
+get '/cakes/:id/edit' do
+  @cake = Cake.find params[:id]
+  erb :cakes_edit
+end
+
+post '/cakes/:id' do
+  cake = Cake.find params[:id]
+  cake.update name: => params[:id], image: => params[:image], description: => params[:description]
+
+  redirect back
+end
+
+
 
 # get '/cakes/new' do
 #   erb :cakes_new
@@ -85,3 +116,7 @@ end
 #
 #   redirect to ('/cakes')
 # end
+
+after do
+  ActiveRecord::Base.connection.close
+end

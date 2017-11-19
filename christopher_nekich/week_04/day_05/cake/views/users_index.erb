@@ -1,7 +1,14 @@
 <% @users.each do |u| %>
-<a href=/users/<%= u["id"] %> ><h1><%= u["name"] %></h1></a>
-<h2><%= u["username"] %></h2>
+<div class="person">
 
-<img src="<%= u["image"] %>" alt="">
+  <a href=/users/<%= u["id"] %> ><h1><%= u["name"] %></h1></a>
+  <h2><%= u["username"] %></h2>
+
+  <div class="profile" style="background-image: url(<%= u['image'] %>)">
+
+  </div>
+
+</div>
+
 
 <% end %>

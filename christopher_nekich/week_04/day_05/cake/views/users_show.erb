@@ -4,6 +4,25 @@
 <img src="<%= @user['image'] %>" alt="Profile Picture">
 
 <h2>Has Eaten:</h2>
+<div class="cakelist">
 <% @cakes.each do |c| %>
-  <a href="/cakes/<%= c['id'] %>"><%= c['name'] %></a>
+
+
+  <div class="cakeitem">
+
+    <a href="/cakes/<%= c['id'] %>"><%= c['name'] %></a>
+    <div class="cakelistimgs" style="background-image: url(<%= c['image'] %>)">
+
+    </div>
+    <div class="controls">
+      <a href="/cakes/<%= c['id'] %>/delete">Delete</a>
+    </div>
+  </div>
+
+
 <% end %>
+</div>
+
+<div class="">
+  <a href="/users/<%= @user['id'] %>/addcake">Add a Cake</a>
+</div>
