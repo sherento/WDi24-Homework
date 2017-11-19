@@ -11,8 +11,13 @@ ActiveRecord::Base.establish_connection(
 
 ActiveRecord::Base.logger = Logger.new(STDERR)
 
-class Boulder < ActiveRecord::Base; end
-class Country < ActiveRecord::Base; end
+class Boulder < ActiveRecord::Base
+  belongs_to :country
+end
+
+class Country < ActiveRecord::Base
+  has_many :boulders
+end
 
 get '/' do
   erb :home
@@ -46,6 +51,7 @@ end
 # Show
 get '/boulders/:id' do
   @boulder = Boulder.find params[:id]
+  binding.pry
   erb :boulders_show
 end
 

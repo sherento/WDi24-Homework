@@ -1,10 +1,11 @@
+DROP TABLE IF EXISTS countries;
 CREATE TABLE countries (
   id INTEGER PRIMARY KEY AUTOINCREMENT,
   name TEXT,
   continent TEXT,
   capital TEXT,
-  area NUMBER,
-  population NUMBER
+  area INTEGER,
+  population INTEGER
 );
 
 -- SEED DATA
