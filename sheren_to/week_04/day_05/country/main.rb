@@ -5,56 +5,109 @@ require 'sqlite3'
 require 'active_record'
 require 'pry'
 
+ActiveRecord::Base.establish_connection(
+  :adapter => 'sqlite3',
+  :database => 'database.sqlite3'
+)
+
+ActiveRecord::Base.logger = Logger.new(STDERR)
+
+class Places < ActiveRecord::Base
+end
+
+class Cuisines < ActiveRecord::Base
+end
 
 
 get '/' do
   erb :home
 end
 
-get '/countries' do
-  @countries = query_db 'SELECT * FROM countries'
+get '/places' do
+  @places = Place.all
   erb :index
 end
 
-get '/countries/add' do
+get '/places/add' do
   erb :add
 end
 
-post '/countries' do
-  query_db "INSERT INTO countries (country, city, image)
-  VALUES ('#{params[:country]}', '#{params[:city]}', '#{params[:image]}')"
-  redirect to('/countries')
+post '/places' do
+  place = Place.new
+  place.country = params[:country]
+  place.city = params[:city]
+  place.image = params[:image]
+  place.save
+  redirect to('/places/#{place.id}')
 end
 
-get 'countries/:id' do
-  @countries = query_db('SELECT * FROM countries WHERE id = ' + params[:id]).first
+get 'places/:id' do
+  @place = place.find prams[:id]
   erb :individual
 end
 
-get '/countries/:id/edit' do
-  @countries = query_db('SELECT * FROM countries WHERE id = ' + params[:id]).first
+get '/places/:id/edit' do
+  @place = place.find prams[:id]
   erb :edit
 end
 
-post 'countries/:id' do
-  update = "UPDATE countries SET country='#{params[:country]}',
-  city='#{params[:city]}', image'#{parmas[:image]}' WHERE id = #{params[:id]}"
-  query_db update
-  redirect to("/countries/#{params[:id]}")
+post 'places/:id' do
+  place = place.find prams[:id]
+  place.update :country => params[:country],
+  :city => params[:city], :image => params[:image]
+  redirect to("/places/#{params[:id]}")
 end
 
-get '/countries/:id/delete' do
-  query_db 'DELETE FROM countries WHERE id = ' + params[:id].to_i
-  redirect to('/countries')
+get '/places/:id/delete' do
+  place = Place.find params[:id]
+  place.destroy
+  redirect to('/places')
 end
 
-def query_db(sql_statement)
-  db = SQLite3::Database.new 'database.sqlite3'
-  db.results_as_hash = true
+###########
 
-  puts sql_statement
+get '/cuisines' do
+  @cuisines = Cuisine.all
+  erb :cuisine_index
+end
 
-  results = db.execute sql_statement
-  db.close
-  results
+get '/cuisines/add' do
+  erb :cuisines_add
+end
+
+post '/cusines' do
+  cuisine = Cuisine.new
+  cuisine.food = params[:food]
+  cuisine.type = params[:type]
+  cuisine.image = params[:image]
+  cuisine.save
+  redirect to("/cuisines/#{cuisine.id}")
+end
+
+get '/cusines/:id' do
+  @cuisine = Cuisine.find params[:id]
+  erb :cuisines_each
+end
+
+get '/cuisines/:id/edit' do
+  @cuisine = Cuisine.find params[:id]
+  erb :cuisines_edit
+end
+
+post '/plant/:id' do
+  cuisine = Cuisine.find params[:id]
+  cuisine.update :food => params[:food],
+  :type => params[:type], :image => params[:image]
+  redirect to("/cuisines/#{cusisine.id}")
+end
+
+get '/cuisines/:id/delete' do
+  cuisine = Cuisine.find params[:id]
+  cusisine.destroy
+  redirect to('/cuisines')
+end
+
+
+after do
+  ActiveRecord::Base.connection.close
 end

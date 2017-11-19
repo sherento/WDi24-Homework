@@ -2,10 +2,10 @@
 <h2>Country list</h2>
 
 <ul>
-  <% @countries.each do |country| %>
+  <% @places.each do |place| %>
     <li>
-      <a href="/countries/<%= country['id'] %>">
-        <%= country['country'] %>
+      <a href="/places/<%= place['id'] %>">
+        <%= place['place'] %>
       </a>
     </li>
     <% end %>
