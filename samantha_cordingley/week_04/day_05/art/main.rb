@@ -17,6 +17,10 @@ ActiveRecord::Base.logger = Logger.new(STDERR)
 class Artwork < ActiveRecord::Base
 end
 
+#Connect active record to my artist sql table / must be singular
+class Artist < ActiveRecord::Base
+end
+
 #connect home page
 get '/' do
   erb :home
@@ -69,6 +73,54 @@ get '/artworks/:id/delete' do
   artwork = Artwork.find params[:id]
   artwork.destroy
   redirect to ('/artworks')
+end
+
+###################################################################
+
+#index page to show full artist database
+get '/artists' do
+  @artists = Artist.all
+  erb :artists_index
+end
+
+#new page to hold create form
+get '/artists/new' do
+  erb :artist_new
+end
+
+#post action for create form to add artist to database
+post'/artists' do
+  artist = Artist.new
+  artist.name = params[:name]
+  artist.bio = params[:bio]
+  artist.save
+  redirect to ("/artists/#{ artist.id }") #show page
+end
+
+#show artist single page, display full record details
+get '/artists/:id' do
+  @artist = Artist.find params[:id]
+  erb :artist_show
+end
+
+#edit page to hold update form
+get '/artists/:id/edit' do
+  @artist = Artist.find params[:id]
+  erb :artist_edit
+end
+
+#post update form action, send new information to database
+post '/artists/:id' do
+  artist = Artist.find params[:id]
+  artist.update :name => params[:name], :bio => params[:bio]
+  redirect to ("/artists/#{ params[:id] }")
+end
+
+#delete action
+get '/artists/:id/delete' do
+  artist = Artist.find params[:id]
+  artist.destroy
+  redirect to ('/artists')
 end
 
 #'after do' function to shut down the server after each function
