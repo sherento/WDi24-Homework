@@ -95,7 +95,7 @@ a.rightnav {
   top: 50vh;
   left: 50vw;
   right: 50vw;
-  display: inline-flex;
+  display: flex;
   position: absolute;
   font-size: 22px;
   font-family: 'Oswald', sans-serif;
@@ -113,18 +113,20 @@ h2 {
 }
 
 .filmindex {
-  display: block;
+  display: flex;
   margin: 0 auto;
+  padding: 40vh;
+  align-items: center;
 }
 
 .filmindex ul {
+  display: flex;
 }
 
 .filmindex ul li {
   color: black;
   list-style-type: none;
-  text-align: center;
-  display: inline-flex;
+  display: flex;
 }
 
 .filmindex ul li a {
@@ -132,5 +134,69 @@ h2 {
   font-size: 12px;
   list-style-type: none;
   text-align: center;
-  display: inline-flex;
+  display: flex;
+}
+
+.newfilmcontainer {
+  display: flex;
+  flex-direction: column;
+  padding: 40vh;
+}
+
+.newfilmhead {
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  align-items: center;
+}
+
+.newfilmhead h2 {
+  text-align: center;
+}
+
+.newfilmform {
+  flex-direction: column;
+  display: flex;
+  margin: 0 auto;
+  align-items: center;
+}
+
+.synopsis {
+  width: 10vw;
+  height: 10vh;
+}
+
+.showfilmcontainer {
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  align-items: center;
+  padding: 40vh;
+}
+
+.showfilm h2 {
+  flex-direction: column;
+  display: flex;
+  margin: 0 auto;
+  align-items: center;
+}
+
+.showfilm p {
+  flex-direction: column;
+  display: flex;
+  margin: 0 auto;
+  align-items: center;
+}
+
+.controls {
+  font-family: 'Raleway', sans-serif;
+  font-size: 12px;
+}
+
+.editcontainer {
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  align-items: center;
+  padding: 40vh;
 }
