@@ -39,10 +39,17 @@ get '/' do
   erb :home
 end
 
-# index - show all bands
+# index - show all BANDS
 get '/bands' do
   @bands = Band.all
   erb :bands_index
+end
+
+# index - show all SONGS
+get '/songs' do
+  @songs = Song.all
+  @bands = Band.all
+  erb :songs_index
 end
 
 # new - present form

@@ -101,7 +101,7 @@ li > a {
   text-decoration: none;
 }
 
-li>a:hover {
+li, td > a:hover {
   text-decoration: underline;
 }
 

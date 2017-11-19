@@ -1,0 +1,16 @@
+<h2>All Songs</h2>
+
+<table>
+<% @songs.each do |s|  %>
+    <tr>
+      <td>
+        <a href="/songs/<%= s.to_param %>">
+          <%= s.name %>
+        </a>
+      </td>
+      <td>
+        <%= @bands[s.band_id - 1]['name'] %>
+      </td>
+    </tr>
+    <% end %>
+</table>
