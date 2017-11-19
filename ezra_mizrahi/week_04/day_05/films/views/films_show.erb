@@ -1,0 +1,10 @@
+<h2><%= @film['title'] %></h2>
+
+<% unless @film['image'].nil? %>
+<img class="feature" src="<%= @film['image'] %>" alt="<%= @film['title'] %>">
+<% end %>
+
+<div class="controls">
+  <a href="/films/<%= @film['id'] %>/delete">Delete this film from the database</a>
+  <a href="/films/<%= @film['id'] %>/edit">Edit this film</a>
+</div>
