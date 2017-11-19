@@ -95,7 +95,7 @@ li {
   padding: 1em;
 }
 
-li > a {
+li, td > a {
   color: white;
   font-size: 18px;
   text-decoration: none;

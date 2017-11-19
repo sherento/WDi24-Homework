@@ -1,0 +1,33 @@
+<h2><%= @song.name %></h2>
+
+<main>
+  <table>
+    <tr>
+      <td>From album: </td>
+      <td><%= @song.album %></td>
+    </tr>
+    <tr>
+      <td>Year released:</td>
+      <td><%= @song.year %></td>
+    </tr>
+  </table>
+</main>
+
+<aside class="side-image">
+  <% unless @song.video.nil? || @song.video.empty? %>
+    "Video coming soon"
+  <% end %>
+</aside>
+
+<div class="controls">
+  <a href="/songs/<%= @song.to_param %>/edit">
+    <div class="button edit">
+      Edit song info
+    </div>
+  </a>
+  <!-- <a href="/bands/<%= @band.to_param %>/delete" data-name="<%= @band.to_param %>" id="delete"> -->
+    <div class="button" id="delete-button" data-name="<%= @band.to_param %>">
+      Delete song
+    </div>
+  <!-- </a> -->
+</div>

@@ -32,6 +32,16 @@ end
 class Song < ActiveRecord::Base
   validates :name, presence: true
   belongs_to :band
+
+  def slug
+    @slug = self.name.downcase.gsub ' ', '-'
+    @slug = @slug.gsub /[^a-z-]/, ''
+    @slug = @slug.gsub /-{1,}/, '-'
+  end
+
+  def to_param  # to generate pretty urls
+    "#{ id }-#{ slug }"
+  end
 end
 
 
@@ -83,11 +93,19 @@ get '/bands/:url_name/delete' do
   redirect to('/bands')
 end
 
-# show - single band
+# show - single BAND
 get '/bands/:url_name' do
   @band = Band.find params['url_name'].to_i
   erb :bands_show
 end
+
+
+# show - single SONG
+get '/songs/:url_name' do
+  @song = Song.find params['url_name'].to_i
+  erb :songs_show
+end
+
 
 
 after do
