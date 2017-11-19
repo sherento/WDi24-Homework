@@ -19,7 +19,9 @@ class Band < ActiveRecord::Base
   # attr_accessor :name
 
   def slug
-    self.name.downcase.gsub ' ', '-'
+    @slug = self.name.downcase.gsub ' ', '-'
+    @slug = @slug.gsub /[^a-z-0-9]/, ''
+    @slug = @slug.gsub /-{1,}/, '-'
   end
 
   def to_param  # to generate pretty urls
@@ -35,7 +37,7 @@ class Song < ActiveRecord::Base
 
   def slug
     @slug = self.name.downcase.gsub ' ', '-'
-    @slug = @slug.gsub /[^a-z-]/, ''
+    @slug = @slug.gsub /[^a-z-0-9]/, ''
     @slug = @slug.gsub /-{1,}/, '-'
   end
 
@@ -51,14 +53,15 @@ end
 
 # index - show all BANDS
 get '/bands' do
-  @bands = Band.all
+  @bands = Band.all.sort_by { |b| [b.name.downcase] }
   erb :bands_index
 end
 
 # index - show all SONGS
 get '/songs' do
-  @songs = Song.all
+  @songs = Song.all.sort_by { |s| [s.name.downcase] }
   @bands = Band.all
+  # binding.pry
   erb :songs_index
 end
 
@@ -67,11 +70,35 @@ get '/bands/new' do
   erb :bands_new
 end
 
+# new SONG - present form
+get '/songs/new' do
+  erb :songs_new
+end
+
 # new BAND - post
 post '/bands' do
   band = Band.create name: params[:name], country: params[:country], year: params[:year].to_i, image: params[:image]
   redirect to("/bands/#{ band.to_param }")
 end
+
+
+# new SONG - post
+# post '/songs' do
+#   bands = Band.all
+#   band_exists = false
+#   bands.each do |b|
+#     if params[:band_name].downcase == b.name.downcase
+#       band_exists = true
+#       @b_id = b.id
+#     end
+#   end
+#   if band_exists == false
+#     Band.create name: params[:band_name]
+#     @b_id = Band.find_by(name: params[:band_name]).id
+#   end
+#   song = Song.create name: params[:name], album: params[:album], year: params[:year], band_id: @b_id
+#   redirect to("/songs/#{ song.to_param }")
+# end
 
 # edit - present form
 get '/bands/:url_name/edit' do
@@ -103,9 +130,9 @@ end
 # show - single SONG
 get '/songs/:url_name' do
   @song = Song.find params['url_name'].to_i
+  @bands = Band.all
   erb :songs_show
 end
-
 
 
 after do

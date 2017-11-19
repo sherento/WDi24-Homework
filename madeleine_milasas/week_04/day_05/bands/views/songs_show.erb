@@ -3,6 +3,10 @@
 <main>
   <table>
     <tr>
+      <td>Band: </td>
+      <td><%= @bands.find_by(id: @song.band_id).name  %></td>
+    </tr>
+    <tr>
       <td>From album: </td>
       <td><%= @song.album %></td>
     </tr>

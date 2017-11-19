@@ -32,6 +32,7 @@ body {
 p {
  padding: 8px 0;
  font-size: 14px;
+ text-align: justify;
 }
 
 p:last-of-type {
@@ -96,13 +97,21 @@ h2 {
   text-transform: uppercase;
 }
 
+ul {
+  list-style-type: none;
+}
+
 li {
-  padding: 1em;
+  padding: 10px;
+}
+
+.song-list {
+  padding-left: 40px;
 }
 
 li, td > a {
   color: white;
-  font-size: 18px;
+  /*font-size: 18px;*/
   text-decoration: none;
 }
 
@@ -115,6 +124,11 @@ li > a:hover, td > a:hover {
   list-style-type: none;
   margin: 0;
   padding: 0;
+}
+
+.right-col {
+  max-width: 210px;
+  vertical-align: top;
 }
 
 .small-link {
@@ -200,6 +214,10 @@ a {
 td {
   padding: 1em 2em 1em 0;
   vertical-align: baseline;
+  font-size: 14px;
+}
+
+.band-list {
   font-size: 14px;
 }
 

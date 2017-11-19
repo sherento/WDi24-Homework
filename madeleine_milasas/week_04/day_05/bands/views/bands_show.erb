@@ -4,21 +4,21 @@
   <table>
     <tr>
       <td>Country: </td>
-      <td><%= @band.country %></td>
+      <td class="right-col"><%= @band.country %></td>
     </tr>
     <tr>
       <td>Year formed:</td>
-      <td><%= @band.year %></td>
+      <td class="right-col"><%= @band.year %></td>
     </tr>
     <% unless @band.members.nil? || @band.members.empty? %>
       <tr>
         <td>Members:</td>
-        <td><%= @band.members %></td>
+        <td class="right-col"><%= @band.members %></td>
       </tr>
     <% end %>
     <tr>
-      <td>Hits:</td>
-      <td>
+      <td>Highlight songs:</td>
+      <td class="right-col">
         <ul class="list-unstyled">
         <% @band.songs.each do |song| %>
           <li class="list-unstyled"><a class="small-link" href="/songs/<%= song.to_param %>"><%= song['name'] %></a></li>

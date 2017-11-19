@@ -3,13 +3,13 @@
 <table>
 <% @songs.each do |s|  %>
     <tr>
-      <td>
+      <td class="song-list">
         <a href="/songs/<%= s.to_param %>">
           <%= s.name %>
         </a>
       </td>
       <td>
-        <%= @bands[s.band_id - 1]['name'] %>
+        <%= @bands.find_by(id: s.band_id).name %>
       </td>
     </tr>
     <% end %>
