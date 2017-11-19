@@ -1,0 +1,12 @@
+
+<h2>Edit country list</h2>
+
+<form action="/countries/<%= @country['id']" method="post">
+
+  <input type="text" name="country" placeholder="Country name" value="<%= @country['country'] %>">
+  <input type="text" name="city" placeholder="Capital city" value="<%= @country['city'] %>">
+  <input type="url" name="image" placeholder="http://..." value="<%= @country['image'] %>">
+
+  <button>Edit country list</button>
+
+</form>
