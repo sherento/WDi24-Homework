@@ -163,3 +163,11 @@ end
 after do
   ActiveRecord::Base.connection.close
 end
+
+
+def youtube_embed url
+  # e.g. url https://www.youtube.com/watch?v=iZNwLsBUw08
+  youtube_id = url.partition('watch?v=').last
+  @youtube_str = "<iframe width=\"560\" height=\"315\" src=\"https://www.youtube.com/embed/#{ youtube_id }?rel=0&amp;showinfo=0\" frameborder=\"0\" allowfullscreen></iframe>"
+  # e.g. <iframe width="560" height="315" src="https://www.youtube.com/embed/iZNwLsBUw08" frameborder="0" allowfullscreen></iframe>
+end

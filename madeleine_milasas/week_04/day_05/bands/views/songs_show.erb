@@ -18,9 +18,10 @@
 </main>
 
 <aside class="side-image">
-  <% unless @song.video.nil? || @song.video.empty? %>
-    "Video coming soon"
-  <% end %>
+<% unless @song['video'].nil? || @song['video'].empty?  %>
+  <% youtube_embed(@song['video']) %>
+  <%= @youtube_str %>
+<% end  %>
 </aside>
 
 <div class="controls">

@@ -13,8 +13,9 @@ html, body {
 body {
   font-family: 'Open Sans', sans-serif;
   letter-spacing: 0.8px;
-  background-color: #025075;
-  background-image: url('../../images/mic_full.jpg');
+  background-color: black;
+  /*background-color: #025075;*/
+  background-image: url('../../images/mic.jpg');
   background-repeat: no-repeat;
   background-size: cover;
 }
@@ -60,7 +61,7 @@ img.featured {
 }
 
 iframe {
-  padding: 2em 0;
+  /*padding: 2em 0;*/
 }
 
 .container a {

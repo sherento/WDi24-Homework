@@ -2,14 +2,18 @@
 
 <main>
   <table>
+    <% unless @band.country.nil? || @band.country.empty? %>
     <tr>
       <td>Country: </td>
       <td class="right-col"><%= @band.country %></td>
     </tr>
+    <% end %>
+    <% unless @band.year.nil? || @band.year == 0 %>
     <tr>
       <td>Year formed:</td>
       <td class="right-col"><%= @band.year %></td>
     </tr>
+    <% end  %>
     <% unless @band.members.nil? || @band.members.empty? %>
       <tr>
         <td>Members:</td>
