@@ -1,0 +1,14 @@
+<h2>
+  <%= @artwork.name %>
+</h2>
+
+<h3>
+By <%= @artwork.author %>
+</h3>
+
+<% unless @artwork.image.nil? || @artwork.image.empty? %>
+<img src="<%= @artwork.image %>" alt="<% @artwork.name %>">
+<% end %>
+
+<%= @artwork.year %>
+<%= @artwork.type %>
