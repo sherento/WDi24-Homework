@@ -1,0 +1,12 @@
+
+<h3 id= "searchtitle">You searched for: <%= @book_title %> </h3>
+
+<h1>Official Title: <%= @book_long_title %>.</h1>
+<p class = "secondaryinfo">RRP $<%= @book_price %></p>
+<p class = "secondaryinfo">Maturity Rating: <%= @book_mature_rating %></p>
+<p class = "secondaryinfo" id="readerrating">Reader Rating: <%= @book_rating %></p>
+
+<div class = "maininfo">
+  <img id= "cover" src=<%= @book_info %>>
+  <h2 id= "description"><%= @book_description %>
+</div>
