@@ -83,22 +83,22 @@ end
 
 
 # new SONG - post
-# post '/songs' do
-#   bands = Band.all
-#   band_exists = false
-#   bands.each do |b|
-#     if params[:band_name].downcase == b.name.downcase
-#       band_exists = true
-#       @b_id = b.id
-#     end
-#   end
-#   if band_exists == false
-#     Band.create name: params[:band_name]
-#     @b_id = Band.find_by(name: params[:band_name]).id
-#   end
-#   song = Song.create name: params[:name], album: params[:album], year: params[:year], band_id: @b_id
-#   redirect to("/songs/#{ song.to_param }")
-# end
+post '/songs' do
+  bands = Band.all
+  band_exists = false
+  bands.each do |b|
+    if params[:band_name].downcase == b.name.downcase
+      band_exists = true
+      @b_id = b.id
+    end
+  end
+  if band_exists == false
+    Band.create name: params[:band_name]
+    @b_id = Band.find_by(name: params[:band_name]).id
+  end
+  song = Song.create name: params[:name], album: params[:album], year: params[:year], band_id: @b_id
+  redirect to("/songs/#{ song.to_param }")
+end
 
 # edit - present form
 get '/bands/:url_name/edit' do
