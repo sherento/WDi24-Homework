@@ -81,7 +81,6 @@ post '/bands' do
   redirect to("/bands/#{ band.to_param }")
 end
 
-
 # new SONG - post
 post '/songs' do
   bands = Band.all
@@ -100,24 +99,50 @@ post '/songs' do
   redirect to("/songs/#{ song.to_param }")
 end
 
-# edit - present form
+# new SONG FROM BAND PAGE - present form
+get '/songs/new/:url_name' do
+  @band_name = Band.find(params['url_name'].to_i).name
+  erb :songs_new
+end
+
+# edit BAND - present form
 get '/bands/:url_name/edit' do
   @band = Band.find params['url_name'].to_i
   erb :bands_edit
 end
 
-# edit - post
+# edit BAND - post
 post '/bands/:url_name' do
   band = Band.find params[:url_name].to_i
   band.update :name => params[:name], :country => params[:country], :year => params[:year].to_i, :members => params[:members], :image => params[:image]
   redirect to("/bands/#{ params[:url_name] }")
 end
 
-# delete
+# edit SONG - present form
+get '/songs/:url_name/edit' do
+  @song = Song.find params['url_name'].to_i
+  erb :songs_edit
+end
+
+# edit SONG - Post
+post '/songs/:url_name' do
+  song = Song.find params[:url_name].to_i
+  song.update :name => params[:name], :album => params[:album], :year => params[:year].to_i, :video => params[:video]
+  redirect to("/songs/#{ params[:url_name] }")
+end
+
+# delete BAND
 get '/bands/:url_name/delete' do
   band = Band.find params[:url_name]
   band.delete ## destroy didn't work, maybe will once there are songs?
   redirect to('/bands')
+end
+
+# delete SONG
+get '/songs/:url_name/delete' do
+  song = Song.find params[:url_name]
+  song.delete ## destroy didn't work, maybe will once there are songs?
+  redirect to('/songs')
 end
 
 # show - single BAND

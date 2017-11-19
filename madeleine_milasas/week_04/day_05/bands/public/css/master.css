@@ -20,13 +20,14 @@ body {
 }
 
 .container {
-  min-height: 82.8vh;    /*these for sticky footer*/
+  min-height: 74.8vh;    /*these for sticky footer*/
   position: relative;  /*these for sticky footer*/
   max-width: 960px;
   margin: 0 auto;
   background-color: rgba(34, 34, 34, 0.97);
   color: white;
   padding: 2em;
+  padding-bottom: 7em;
 }
 
 p {
@@ -163,6 +164,7 @@ li > a:hover, td > a:hover {
   transition: 0.25s; /*TODO prefixes*/
 }
 
+
 footer {
 	background: rgba(255, 248, 220, 0.05);
   width: 100%;
@@ -178,6 +180,14 @@ footer {
 
 .edit {
   background-color: #014765;
+}
+
+.add {
+    background-color: teal;
+}
+
+.add:hover {
+  background-color: coral;
 }
 
 input {
