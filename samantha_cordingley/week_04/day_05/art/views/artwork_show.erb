@@ -1,14 +1,15 @@
-<h2>
+<h1 class="showtitle">
   <%= @artwork.name %>
-</h2>
+</h1>
 
 <% unless @artwork.image.nil? || @artwork.image.empty? %>
-<img src="<%= @artwork.image %>" alt="<% @artwork.name %>">
+<img class="artworkimg" src="<%= @artwork.image %>" alt="<% @artwork.name %>">
 <% end %>
 
-<%= @artwork.year %>
-<%= @artwork.canvas %>
+<p class="secondaryinfo">Artist. <%= @artwork.author %></p>
+<p class="secondaryinfo">Year. <%= @artwork.year %></p>
+<p class="secondaryinfo">Materials. <%= @artwork.canvas %></p>
 
 
-<a href="/artworks/<%= @artwork.id %>/edit">Edit Artwork Now</a>
-<a href="/artworks/<%= @artwork.id %>/delete">Delete Artwork Now</a>
+<a class="editbuttons" href="/artworks/<%= @artwork.id %>/edit">Edit Artwork Now</a>
+<a class="deletebuttons" href="/artworks/<%= @artwork.id %>/delete">Delete Artwork Now</a>

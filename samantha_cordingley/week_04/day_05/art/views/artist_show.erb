@@ -1,6 +1,8 @@
-<h2>
+<h1 class="showtitle">
   <%= @artist.name %>
-</h2>
+</h1>
 
-<a href="/artists/<%= @artist.id %>/edit">Edit Artist Now</a>
-<a href="/artists/<%= @artist.id %>/delete">Delete Artist Now</a>
+<p class="secondaryinfo">Biography. <%= @artist.bio %></p>
+
+<a class="editbuttons" href="/artists/<%= @artist.id %>/edit">Edit Artist Now</a>
+<a class="deletebuttons" href="/artists/<%= @artist.id %>/delete">Delete Artist Now</a>

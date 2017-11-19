@@ -162,9 +162,8 @@ height: 107px;
 margin-top: 50px;
 margin-left: 32px;
 border-style: none;
-font-size: 100px;
 font-weight: 400px;
-font-size: 36px;
+font-size: 26px;
 padding-left: 6px;
 margin-right: -21px;
 vertical-align: top;
@@ -177,9 +176,8 @@ input.biofield {
   margin-top: 50px;
   margin-left: 32px;
   border-style: none;
-  font-size: 100px;
   font-weight: 400px;
-  font-size: 36px;
+  font-size: 26px;
   padding-left: 6px;
   margin-right: -21px;
 }
@@ -196,4 +194,81 @@ input.biofield {
   margin-top: 50px;
   margin-left: 31px;
   margin-bottom: 120px;
+}
+
+/*////////////////////////////SHOW PAGES STYLING//////////////////////////////////*/
+
+.showtitle {
+  display: block;
+  color: white;
+  font-weight: 700;
+  font-size: 59px;
+  margin-left: 37px;
+  margin-top: 51px;
+  margin-bottom: 0px;
+}
+
+.artworkimg {
+  display: inline-block;
+  margin-top: 40px;
+  margin-left: 41px;
+}
+
+a.editbuttons {
+  display: inline-block;
+  color: white;
+  margin-top: 50px;
+  margin-left: 46px;
+}
+
+a.editbuttons:hover {
+  border-bottom: 3px solid white;
+}
+
+a.deletebuttons {
+  display: inline-block;
+  margin-bottom: 150px;
+  color: white;
+  margin-top: 50px;
+  margin-left: 46px;
+}
+
+a.deletebuttons:hover {
+  border-bottom: 3px solid white;
+}
+
+p.secondaryinfo {
+  padding-left: 43px;
+  color: white;
+  font-size: 34px;
+  margin-bottom: -22px;
+}
+
+/*////////////////////////////EDIT PAGES STYLING//////////////////////////////////*/
+
+.editformstyle {
+  display: inline-block;
+  width: 230px;
+  height: 107px;
+  margin-top: 50px;
+  margin-left: 32px;
+  border-style: none;
+  font-size: 26px;
+  font-weight: 400px;
+  padding-left: 6px;
+  margin-right: -21px;
+  vertical-align: top;
+}
+
+.editbuttonstyle {
+  width: 302px;
+  height: 85px;
+  display:block;
+  border: none;
+  background-color: rgb(255, 3, 80);
+  color: white;
+  font-weight: 700;
+  font-size: 40px;
+  margin-top: 50px;
+  margin-left: 31px;
 }
