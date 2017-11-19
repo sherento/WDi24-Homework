@@ -16,11 +16,11 @@ body {
   background-color: #025075;
   background-image: url('../../images/mic_full.jpg');
   background-repeat: no-repeat;
-  background-size: 100% auto;
+  background-size: cover;
 }
 
 .container {
-  min-height: 100vh;    /*these for sticky footer*/
+  min-height: 82.8vh;    /*these for sticky footer*/
   position: relative;  /*these for sticky footer*/
   max-width: 960px;
   margin: 0 auto;
@@ -106,8 +106,9 @@ li, td > a {
   text-decoration: none;
 }
 
-li, td > a:hover {
-  text-decoration: underline;
+li > a:hover, td > a:hover {
+  /*text-decoration: underline;*/
+  color: rgba(255, 130, 130, 1);
 }
 
 .list-unstyled {
@@ -178,11 +179,12 @@ button {
   background-color: #014765;
   font-family: 'PT Sans Narrow', sans-serif;
   text-transform: uppercase;
-  font-size: 16px;
+  font-size: 18px;
   font-weight: normal;
   padding: 40px;
   margin: 20px 0;
   border: none;
+  transition: 0.25s;
 }
 
 button:hover {
@@ -197,7 +199,7 @@ a {
 
 td {
   padding: 1em 2em 1em 0;
-  vertical-align: top;
+  vertical-align: baseline;
   font-size: 14px;
 }
 

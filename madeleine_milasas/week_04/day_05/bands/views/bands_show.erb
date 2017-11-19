@@ -21,7 +21,7 @@
       <td>
         <ul class="list-unstyled">
         <% @band.songs.each do |song| %>
-          <li class="list-unstyled"><a class="small-link" href="/<%= song.to_param %>"><%= song['name'] %></a></li>
+          <li class="list-unstyled"><a class="small-link" href="/songs/<%= song.to_param %>"><%= song['name'] %></a></li>
         <% end  %>
         </ul>
       </td>

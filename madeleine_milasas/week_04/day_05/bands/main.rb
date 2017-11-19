@@ -62,15 +62,15 @@ get '/songs' do
   erb :songs_index
 end
 
-# new - present form
+# new BAND - present form
 get '/bands/new' do
   erb :bands_new
 end
 
-# new - post
+# new BAND - post
 post '/bands' do
   band = Band.create name: params[:name], country: params[:country], year: params[:year].to_i, image: params[:image]
-  redirect to("/bands/#{ band.id }")
+  redirect to("/bands/#{ band.to_param }")
 end
 
 # edit - present form
