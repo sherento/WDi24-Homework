@@ -244,6 +244,20 @@ p.secondaryinfo {
   margin-bottom: -22px;
 }
 
+.artworkassc a {
+  color: white;
+  font-size: 32px;
+  border-bottom: solid 6px white;
+  margin-bottom: -22px;
+}
+
+a.artistassoc {
+  color: white;
+  font-size: 32px;
+  border-bottom: solid 6px white;
+  margin-bottom: -22px;
+}
+
 /*////////////////////////////EDIT PAGES STYLING//////////////////////////////////*/
 
 .editformstyle {

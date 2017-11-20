@@ -15,13 +15,12 @@ ActiveRecord::Base.logger = Logger.new(STDERR)
 
 #Connect active record to my sql table / must be singular
 class Artwork < ActiveRecord::Base
-  # belongs_to :artist
+  belongs_to :artist
 end
 
 #Connect active record to my artist sql table / must be singular
 class Artist < ActiveRecord::Base
-  # has_many :artworks
-  # validates :author, presence: true
+  has_many :artworks
 end
 
 
@@ -49,6 +48,7 @@ post '/artworks' do
   artwork.year = params[:year]
   artwork.canvas = params[:canvas]
   artwork.image = params[:image]
+  artwork.artist_id = params[:artist_id]
   artwork.save #actually saves it
   redirect to ("/artworks/#{ artwork.id }") #get new artwork
 end
@@ -68,7 +68,7 @@ end
 #post action to update data on database after Edit
 post '/artworks/:id' do
   artwork = Artwork.find params[:id]
-artwork.update :name => params[:name], :author => params[:author], :year => params[:year], :canvas => params[:canvas], :image => params[:image]
+artwork.update :name => params[:name], :author => params[:author], :year => params[:year], :canvas => params[:canvas], :image => params[:image], :artist_id => params[:artist_id]
 redirect to ("/artworks/#{ params[:id] }")
 end
 
