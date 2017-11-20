@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Films</title>
+    <link rel="stylesheet" href="/css/master.css">
+  </head>
+  <body>
+
+    <div class="pagecontainer">
+
+      <header>
+
+        <div class="navcontainer">
+
+          <nav class="fixednav">
+            <ul>
+              <li><a href="/" class="leftnav">CINÉMA35</a></li>
+              <li><a href="/films" class="rightnav">All films</a></li>
+              <li><a href="/films/new" class="rightnav">Add a film</a></li>
+              <li><a href="/directors" class="rightnav">All directors</a></li>
+              <li><a href="/directors/new"class="rightnav">Add a director</a></li>
+            </ul>
+          </nav>
+
+        </div>
+
+      </header>
+
+      <%= yield %>
+
+    </div>
+
+  </body>
+</html>
