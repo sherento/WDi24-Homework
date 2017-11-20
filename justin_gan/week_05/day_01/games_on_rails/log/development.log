@@ -1619,3 +1619,282 @@ Processing by RockPaperScissorsController#validate as HTML
 Completed 200 OK in 279ms (Views: 269.8ms)
 
 
+Started GET "/rock_paper_scissors" for 127.0.0.1 at 2017-11-20 16:28:05 +1100
+  
+SyntaxError (/Users/justingan/Projects/WDi24-Homework/justin_gan/week_05/day_01/games_on_rails/app/controllers/rock_paper_scissors_controller.rb:3: syntax error, unexpected '=', expecting =>
+    :rock = "scissors",
+           ^
+/Users/justingan/Projects/WDi24-Homework/justin_gan/week_05/day_01/games_on_rails/app/controllers/rock_paper_scissors_controller.rb:3: syntax error, unexpected ',', expecting keyword_end
+    :rock = "scissors",
+                       ^
+/Users/justingan/Projects/WDi24-Homework/justin_gan/week_05/day_01/games_on_rails/app/controllers/rock_paper_scissors_controller.rb:4: syntax error, unexpected ',', expecting keyword_end
+    :scissors = "paper",
+                        ^
+/Users/justingan/Projects/WDi24-Homework/justin_gan/week_05/day_01/games_on_rails/app/controllers/rock_paper_scissors_controller.rb:6: syntax error, unexpected '}', expecting keyword_end):
+  
+app/controllers/rock_paper_scissors_controller.rb:3: syntax error, unexpected '=', expecting =>
+app/controllers/rock_paper_scissors_controller.rb:3: syntax error, unexpected ',', expecting keyword_end
+app/controllers/rock_paper_scissors_controller.rb:4: syntax error, unexpected ',', expecting keyword_end
+app/controllers/rock_paper_scissors_controller.rb:6: syntax error, unexpected '}', expecting keyword_end
+Started GET "/rock_paper_scissors" for 127.0.0.1 at 2017-11-20 16:28:25 +1100
+Processing by RockPaperScissorsController#throw as HTML
+  Rendering rock_paper_scissors/throw.html.erb within layouts/application
+  Rendered rock_paper_scissors/throw.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 74ms (Views: 68.6ms)
+
+
+Started GET "/rock_paper_scissors/:throw?choice=paper" for 127.0.0.1 at 2017-11-20 16:28:28 +1100
+Processing by RockPaperScissorsController#validate as HTML
+  Parameters: {"choice"=>"paper", "throw"=>":throw"}
+Completed 500 Internal Server Error in 6ms
+
+
+  
+NoMethodError (undefined method `include?' for nil:NilClass):
+  
+app/controllers/rock_paper_scissors_controller.rb:23:in `validate'
+Started PUT "/__web_console/repl_sessions/650f71c4eec1b13d3c4a5afe44868fcc" for 127.0.0.1 at 2017-11-20 16:29:11 +1100
+Started PUT "/__web_console/repl_sessions/650f71c4eec1b13d3c4a5afe44868fcc" for 127.0.0.1 at 2017-11-20 16:29:13 +1100
+Started GET "/rock_paper_scissors/:throw?choice=paper" for 127.0.0.1 at 2017-11-20 16:41:34 +1100
+Processing by RockPaperScissorsController#validate as HTML
+  Parameters: {"choice"=>"paper", "throw"=>":throw"}
+  Rendering rock_paper_scissors/validate.html.erb within layouts/application
+  Rendered rock_paper_scissors/validate.html.erb within layouts/application (3.9ms)
+Completed 200 OK in 87ms (Views: 72.5ms)
+
+
+Started GET "/rock_paper_scissors/:throw?choice=paper" for 127.0.0.1 at 2017-11-20 16:43:12 +1100
+  
+SyntaxError (/Users/justingan/Projects/WDi24-Homework/justin_gan/week_05/day_01/games_on_rails/app/controllers/rock_paper_scissors_controller.rb:6: syntax error, unexpected '{', expecting =>
+      :r{ @choice => @computer_choice }
+         ^
+/Users/justingan/Projects/WDi24-Homework/justin_gan/week_05/day_01/games_on_rails/app/controllers/rock_paper_scissors_controller.rb:7: syntax error, unexpected ',', expecting keyword_end
+      :scissors => "paper",
+                           ^
+/Users/justingan/Projects/WDi24-Homework/justin_gan/week_05/day_01/games_on_rails/app/controllers/rock_paper_scissors_controller.rb:9: syntax error, unexpected '}', expecting keyword_end
+    }
+     ^
+/Users/justingan/Projects/WDi24-Homework/justin_gan/week_05/day_01/games_on_rails/app/controllers/rock_paper_scissors_controller.rb:23: syntax error, unexpected =>, expecting '}'
+win_list.include? { @choice => @computer_choice }
+                              ^):
+  
+app/controllers/rock_paper_scissors_controller.rb:6: syntax error, unexpected '{', expecting =>
+app/controllers/rock_paper_scissors_controller.rb:7: syntax error, unexpected ',', expecting keyword_end
+app/controllers/rock_paper_scissors_controller.rb:9: syntax error, unexpected '}', expecting keyword_end
+app/controllers/rock_paper_scissors_controller.rb:23: syntax error, unexpected =>, expecting '}'
+Started GET "/rock_paper_scissors/:throw?choice=paper" for 127.0.0.1 at 2017-11-20 16:44:23 +1100
+  
+SyntaxError (/Users/justingan/Projects/WDi24-Homework/justin_gan/week_05/day_01/games_on_rails/app/controllers/rock_paper_scissors_controller.rb:23: syntax error, unexpected =>, expecting '}'
+win_list.include? { @choice => @computer_choice}
+                              ^):
+  
+app/controllers/rock_paper_scissors_controller.rb:23: syntax error, unexpected =>, expecting '}'
+Started PUT "/__web_console/repl_sessions/80b0d4e1f5d10415dea2f3696d49920c" for 127.0.0.1 at 2017-11-20 16:44:58 +1100
+Started PUT "/__web_console/repl_sessions/80b0d4e1f5d10415dea2f3696d49920c" for 127.0.0.1 at 2017-11-20 16:44:58 +1100
+Started PUT "/__web_console/repl_sessions/80b0d4e1f5d10415dea2f3696d49920c" for 127.0.0.1 at 2017-11-20 16:45:17 +1100
+Started GET "/rock_paper_scissors/:throw?choice=paper" for 127.0.0.1 at 2017-11-20 16:46:57 +1100
+  
+SyntaxError (/Users/justingan/Projects/WDi24-Homework/justin_gan/week_05/day_01/games_on_rails/app/controllers/rock_paper_scissors_controller.rb:23: syntax error, unexpected =>, expecting '}'
+win_list.include? { @choice => @computer_choice}
+                              ^):
+  
+app/controllers/rock_paper_scissors_controller.rb:23: syntax error, unexpected =>, expecting '}'
+Started PUT "/__web_console/repl_sessions/28edde16006f353642950383d4cc8286" for 127.0.0.1 at 2017-11-20 16:48:10 +1100
+Started PUT "/__web_console/repl_sessions/28edde16006f353642950383d4cc8286" for 127.0.0.1 at 2017-11-20 16:48:13 +1100
+Started PUT "/__web_console/repl_sessions/28edde16006f353642950383d4cc8286" for 127.0.0.1 at 2017-11-20 16:48:26 +1100
+Started GET "/rock_paper_scissors/:throw?choice=paper" for 127.0.0.1 at 2017-11-20 16:48:28 +1100
+  
+SyntaxError (/Users/justingan/Projects/WDi24-Homework/justin_gan/week_05/day_01/games_on_rails/app/controllers/rock_paper_scissors_controller.rb:23: syntax error, unexpected =>, expecting '}'
+win_list.include? { @choice => @computer_choice}
+                              ^):
+  
+app/controllers/rock_paper_scissors_controller.rb:23: syntax error, unexpected =>, expecting '}'
+Started PUT "/__web_console/repl_sessions/f553908da3bdf0fb01cb0e35bf4f6c00" for 127.0.0.1 at 2017-11-20 16:48:31 +1100
+Started PUT "/__web_console/repl_sessions/f553908da3bdf0fb01cb0e35bf4f6c00" for 127.0.0.1 at 2017-11-20 16:48:33 +1100
+Started PUT "/__web_console/repl_sessions/f553908da3bdf0fb01cb0e35bf4f6c00" for 127.0.0.1 at 2017-11-20 16:49:05 +1100
+Started GET "/rock_paper_scissors/:throw?choice=paper" for 127.0.0.1 at 2017-11-20 16:49:21 +1100
+  
+SyntaxError (/Users/justingan/Projects/WDi24-Homework/justin_gan/week_05/day_01/games_on_rails/app/controllers/rock_paper_scissors_controller.rb:23: syntax error, unexpected =>, expecting '}'
+win_list.include? { @choice => @computer_choice}
+                              ^):
+  
+app/controllers/rock_paper_scissors_controller.rb:23: syntax error, unexpected =>, expecting '}'
+Started GET "/rock_paper_scissors/:throw?choice=paper" for 127.0.0.1 at 2017-11-20 16:49:39 +1100
+Processing by RockPaperScissorsController#validate as HTML
+  Parameters: {"choice"=>"paper", "throw"=>":throw"}
+Completed 500 Internal Server Error in 2ms
+
+
+  
+RuntimeError (hell):
+  
+app/controllers/rock_paper_scissors_controller.rb:20:in `validate'
+Started PUT "/__web_console/repl_sessions/a915ccf4e47ea0df6b86ed788c0e8856" for 127.0.0.1 at 2017-11-20 16:49:45 +1100
+Started PUT "/__web_console/repl_sessions/a915ccf4e47ea0df6b86ed788c0e8856" for 127.0.0.1 at 2017-11-20 16:49:45 +1100
+Started PUT "/__web_console/repl_sessions/a915ccf4e47ea0df6b86ed788c0e8856" for 127.0.0.1 at 2017-11-20 16:49:51 +1100
+Started PUT "/__web_console/repl_sessions/a915ccf4e47ea0df6b86ed788c0e8856" for 127.0.0.1 at 2017-11-20 16:49:53 +1100
+Started PUT "/__web_console/repl_sessions/a915ccf4e47ea0df6b86ed788c0e8856" for 127.0.0.1 at 2017-11-20 16:50:23 +1100
+Started PUT "/__web_console/repl_sessions/a915ccf4e47ea0df6b86ed788c0e8856" for 127.0.0.1 at 2017-11-20 16:50:39 +1100
+Started PUT "/__web_console/repl_sessions/a915ccf4e47ea0df6b86ed788c0e8856" for 127.0.0.1 at 2017-11-20 16:50:47 +1100
+Started PUT "/__web_console/repl_sessions/a915ccf4e47ea0df6b86ed788c0e8856" for 127.0.0.1 at 2017-11-20 16:50:57 +1100
+Started GET "/rock_paper_scissors/:throw?choice=paper" for 127.0.0.1 at 2017-11-20 16:52:11 +1100
+Processing by RockPaperScissorsController#validate as HTML
+  Parameters: {"choice"=>"paper", "throw"=>":throw"}
+  Rendering rock_paper_scissors/validate.html.erb within layouts/application
+  Rendered rock_paper_scissors/validate.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 64ms (Views: 58.4ms)
+
+
+Started GET "/rock_paper_scissors" for 127.0.0.1 at 2017-11-20 16:52:33 +1100
+Processing by RockPaperScissorsController#throw as HTML
+  Rendering rock_paper_scissors/throw.html.erb within layouts/application
+  Rendered rock_paper_scissors/throw.html.erb within layouts/application (6.9ms)
+Completed 200 OK in 128ms (Views: 116.0ms)
+
+
+Started GET "/rock_paper_scissors/:throw?choice=paper" for 127.0.0.1 at 2017-11-20 16:52:36 +1100
+Processing by RockPaperScissorsController#validate as HTML
+  Parameters: {"choice"=>"paper", "throw"=>":throw"}
+  Rendering rock_paper_scissors/validate.html.erb within layouts/application
+  Rendered rock_paper_scissors/validate.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 35ms (Views: 31.7ms)
+
+
+Started GET "/rock_paper_scissors" for 127.0.0.1 at 2017-11-20 16:52:38 +1100
+Processing by RockPaperScissorsController#throw as HTML
+  Rendering rock_paper_scissors/throw.html.erb within layouts/application
+  Rendered rock_paper_scissors/throw.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 37ms (Views: 33.5ms)
+
+
+Started GET "/rock_paper_scissors/:throw?choice=scissors" for 127.0.0.1 at 2017-11-20 16:52:40 +1100
+Processing by RockPaperScissorsController#validate as HTML
+  Parameters: {"choice"=>"scissors", "throw"=>":throw"}
+  Rendering rock_paper_scissors/validate.html.erb within layouts/application
+  Rendered rock_paper_scissors/validate.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 81ms (Views: 77.6ms)
+
+
+Started GET "/rock_paper_scissors" for 127.0.0.1 at 2017-11-20 16:52:42 +1100
+Processing by RockPaperScissorsController#throw as HTML
+  Rendering rock_paper_scissors/throw.html.erb within layouts/application
+  Rendered rock_paper_scissors/throw.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 87ms (Views: 82.2ms)
+
+
+Started GET "/rock_paper_scissors/:throw?choice=rock" for 127.0.0.1 at 2017-11-20 16:52:45 +1100
+Processing by RockPaperScissorsController#validate as HTML
+  Parameters: {"choice"=>"rock", "throw"=>":throw"}
+  Rendering rock_paper_scissors/validate.html.erb within layouts/application
+  Rendered rock_paper_scissors/validate.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 29ms (Views: 26.1ms)
+
+
+Started GET "/rock_paper_scissors" for 127.0.0.1 at 2017-11-20 16:59:10 +1100
+  
+SyntaxError (/Users/justingan/Projects/WDi24-Homework/justin_gan/week_05/day_01/games_on_rails/app/controllers/rock_paper_scissors_controller.rb:7: syntax error, unexpected [, expecting ']'
+      ["scissors", "paper"]
+       ^
+/Users/justingan/Projects/WDi24-Homework/justin_gan/week_05/day_01/games_on_rails/app/controllers/rock_paper_scissors_controller.rb:9: syntax error, unexpected ']', expecting keyword_end
+    ]
+     ^):
+  
+app/controllers/rock_paper_scissors_controller.rb:7: syntax error, unexpected [, expecting ']'
+app/controllers/rock_paper_scissors_controller.rb:9: syntax error, unexpected ']', expecting keyword_end
+Started GET "/rock_paper_scissors" for 127.0.0.1 at 2017-11-20 16:59:25 +1100
+Processing by RockPaperScissorsController#throw as HTML
+  Rendering rock_paper_scissors/throw.html.erb within layouts/application
+  Rendered rock_paper_scissors/throw.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 123ms (Views: 116.7ms)
+
+
+Started GET "/rock_paper_scissors/:throw?choice=rock" for 127.0.0.1 at 2017-11-20 16:59:28 +1100
+Processing by RockPaperScissorsController#validate as HTML
+  Parameters: {"choice"=>"rock", "throw"=>":throw"}
+  Rendering rock_paper_scissors/validate.html.erb within layouts/application
+  Rendered rock_paper_scissors/validate.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 29ms (Views: 24.2ms)
+
+
+Started GET "/rock_paper_scissors" for 127.0.0.1 at 2017-11-20 16:59:31 +1100
+Processing by RockPaperScissorsController#throw as HTML
+  Rendering rock_paper_scissors/throw.html.erb within layouts/application
+  Rendered rock_paper_scissors/throw.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 45ms (Views: 40.6ms)
+
+
+Started GET "/rock_paper_scissors/:throw?choice=rock" for 127.0.0.1 at 2017-11-20 16:59:34 +1100
+Processing by RockPaperScissorsController#validate as HTML
+  Parameters: {"choice"=>"rock", "throw"=>":throw"}
+  Rendering rock_paper_scissors/validate.html.erb within layouts/application
+  Rendered rock_paper_scissors/validate.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 24ms (Views: 21.4ms)
+
+
+Started GET "/rock_paper_scissors" for 127.0.0.1 at 2017-11-20 16:59:38 +1100
+Processing by RockPaperScissorsController#throw as HTML
+  Rendering rock_paper_scissors/throw.html.erb within layouts/application
+  Rendered rock_paper_scissors/throw.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 28ms (Views: 23.6ms)
+
+
+Started GET "/magic8ball" for 127.0.0.1 at 2017-11-20 17:03:28 +1100
+Processing by Magic8ballController#question as HTML
+  Rendering magic8ball/question.html.erb within layouts/application
+  Rendered magic8ball/question.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 51ms (Views: 45.0ms)
+
+
+Started GET "/secret_number" for 127.0.0.1 at 2017-11-20 17:03:30 +1100
+Processing by SecretNumberController#guess as HTML
+  Rendering secret_number/guess.html.erb within layouts/application
+  Rendered secret_number/guess.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 32ms (Views: 26.9ms)
+
+
+Started GET "/rock_paper_scissors" for 127.0.0.1 at 2017-11-20 17:03:31 +1100
+Processing by RockPaperScissorsController#throw as HTML
+  Rendering rock_paper_scissors/throw.html.erb within layouts/application
+  Rendered rock_paper_scissors/throw.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 34ms (Views: 30.6ms)
+
+
+Started GET "/magic8ball" for 127.0.0.1 at 2017-11-20 17:07:29 +1100
+Processing by Magic8ballController#question as HTML
+  Rendering magic8ball/question.html.erb within layouts/application
+  Rendered magic8ball/question.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 52ms (Views: 48.7ms)
+
+
+Started GET "/magic8ball/answer?question=saonethu" for 127.0.0.1 at 2017-11-20 17:07:33 +1100
+Processing by Magic8ballController#answer as HTML
+  Parameters: {"question"=>"saonethu"}
+  Rendering magic8ball/answer.html.erb within layouts/application
+  Rendered magic8ball/answer.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 30ms (Views: 25.7ms)
+
+
+Started GET "/magic8ball/answer?question=ao" for 127.0.0.1 at 2017-11-20 17:07:39 +1100
+Processing by Magic8ballController#answer as HTML
+  Parameters: {"question"=>"ao"}
+  Rendering magic8ball/answer.html.erb within layouts/application
+  Rendered magic8ball/answer.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 43ms (Views: 38.3ms)
+
+
+Started GET "/magic8ball/answer?question=What+is+the+meaning+of+life%3F" for 127.0.0.1 at 2017-11-20 17:07:45 +1100
+Processing by Magic8ballController#answer as HTML
+  Parameters: {"question"=>"What is the meaning of life?"}
+  Rendering magic8ball/answer.html.erb within layouts/application
+  Rendered magic8ball/answer.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 31ms (Views: 26.5ms)
+
+
+Started GET "/magic8ball/answer?question=ntah" for 127.0.0.1 at 2017-11-20 17:07:51 +1100
+Processing by Magic8ballController#answer as HTML
+  Parameters: {"question"=>"ntah"}
+  Rendering magic8ball/answer.html.erb within layouts/application
+  Rendered magic8ball/answer.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 26ms (Views: 23.6ms)
+
+
