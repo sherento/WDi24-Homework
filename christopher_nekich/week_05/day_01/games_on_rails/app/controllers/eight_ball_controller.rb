@@ -3,10 +3,10 @@ class EightBallController < ApplicationController
   def game
   end
 
-  def results
+  def result
     @question = params[:question]
     @responses = [
-      "Yes",
+      "Deal with your problems yourselves, like adults - Ron Swanson",
       "No",
       "Maybe",
       "I don't know, magic isn't real dumbass"

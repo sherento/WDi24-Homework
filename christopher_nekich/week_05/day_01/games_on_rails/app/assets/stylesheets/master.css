@@ -17,7 +17,7 @@ body {
 }
 
 .container h1 {
-  margin-bottom: 40px;
+  margin-bottom: 30px;
 }
 
 .black {
@@ -49,6 +49,56 @@ input {
 }
 
 button {
-  width: 400px;
+  width: 200px;
   height: 30px;
+  margin: 20px 0;
+  border-radius: 20px;
+}
+
+.num {
+  height: 40px;
+  width: 40px;
+  display: inline-block;
+  border: 1px solid black;
+  line-height: 40px;
+  text-decoration: none;
+}
+
+.gamelist {
+  display: inline-block;
+  margin: 0 25px;
+}
+
+.throw {
+  display: inline-block;
+  margin: 0 40px;
+  border: 1px solid grey;
+  padding: 20px
+}
+
+.box {
+  height: 200px;
+  width: 200px;
+  background-position: center;
+  background-size: contain;
+}
+
+.rock {
+  background-image: url("https://images.emojiterra.com/twitter/512px/270a-1f3fe.png");
+}
+
+.paper {
+  background-image: url("https://cdnjs.cloudflare.com/ajax/libs/twemoji/2.2.5/2/svg/270b-1f3fc.svg");
+}
+
+.scissors {
+  background-image: url("https://cdn.shopify.com/s/files/1/1061/1924/products/Victory_Hand_Emoji_grande.png?v=1480481048");
+}
+
+a h2 {
+  margin-top: 30px;
+}
+
+.rpstitle {
+  margin-bottom: 30px;
 }
