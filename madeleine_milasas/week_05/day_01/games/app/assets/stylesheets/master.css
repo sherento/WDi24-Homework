@@ -6,6 +6,7 @@ body {
   background-color: #F5F5F0;
   max-width: 960px;
   margin: 0 auto;
+  font-family: Avenir, sans-serif;
 }
 
 img {
@@ -16,4 +17,9 @@ a.round {
   border-radius: 50%;
   display: block;
   width: 500px;
+}
+
+a.back {
+  display: block;
+  padding: 2em 0;
 }
