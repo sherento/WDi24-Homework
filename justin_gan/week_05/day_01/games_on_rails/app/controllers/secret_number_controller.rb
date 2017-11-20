@@ -2,7 +2,7 @@ class SecretNumberController < ApplicationController
   def guess; end
 
   def validate
-    @secret_number = Random.rand 1..10
+    @secret_number = [1..10].sample
     @guess = params[:guess].to_i
     if @secret_number == @guess
       @result = "A winner is you"

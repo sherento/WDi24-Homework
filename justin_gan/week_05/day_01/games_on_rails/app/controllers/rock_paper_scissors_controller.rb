@@ -9,14 +9,7 @@ class RockPaperScissorsController < ApplicationController
     ]
 
     @choice = params[:choice]
-    @computer_choice = case Random.rand 1..3
-    when 1
-      "rock"
-    when 2
-      "paper"
-    when 3
-      "scissors"
-    end
+    @computer_choice = ["rock", "paper", "scissors"].sample
     # raise 'hell'
     if @choice == @computer_choice
       # @result = "A winner is you!"

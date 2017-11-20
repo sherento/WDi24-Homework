@@ -1898,3 +1898,103 @@ Processing by Magic8ballController#answer as HTML
 Completed 200 OK in 26ms (Views: 23.6ms)
 
 
+Started GET "/rock_paper_scissors" for 127.0.0.1 at 2017-11-20 17:25:15 +1100
+Processing by RockPaperScissorsController#throw as HTML
+  Rendering rock_paper_scissors/throw.html.erb within layouts/application
+  Rendered rock_paper_scissors/throw.html.erb within layouts/application (7.1ms)
+Completed 200 OK in 109ms (Views: 96.6ms)
+
+
+Started GET "/rock_paper_scissors/:throw?choice=rock" for 127.0.0.1 at 2017-11-20 17:25:19 +1100
+Processing by RockPaperScissorsController#validate as HTML
+  Parameters: {"choice"=>"rock", "throw"=>":throw"}
+  Rendering rock_paper_scissors/validate.html.erb within layouts/application
+  Rendered rock_paper_scissors/validate.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 33ms (Views: 28.9ms)
+
+
+Started GET "/rock_paper_scissors" for 127.0.0.1 at 2017-11-20 17:25:33 +1100
+Processing by RockPaperScissorsController#throw as HTML
+  Rendering rock_paper_scissors/throw.html.erb within layouts/application
+  Rendered rock_paper_scissors/throw.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 28ms (Views: 24.6ms)
+
+
+Started GET "/rock_paper_scissors/:throw?choice=rock" for 127.0.0.1 at 2017-11-20 17:25:35 +1100
+Processing by RockPaperScissorsController#validate as HTML
+  Parameters: {"choice"=>"rock", "throw"=>":throw"}
+  Rendering rock_paper_scissors/validate.html.erb within layouts/application
+  Rendered rock_paper_scissors/validate.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 31ms (Views: 25.9ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-11-20 20:09:54 +1100
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (15.4ms)
+Completed 200 OK in 197ms (Views: 174.5ms)
+
+
+Started GET "/magic8ball" for 127.0.0.1 at 2017-11-20 20:09:56 +1100
+Processing by Magic8ballController#question as HTML
+  Rendering magic8ball/question.html.erb within layouts/application
+  Rendered magic8ball/question.html.erb within layouts/application (2.9ms)
+Completed 200 OK in 54ms (Views: 49.9ms)
+
+
+Started GET "/secret_number" for 127.0.0.1 at 2017-11-20 20:09:58 +1100
+Processing by SecretNumberController#guess as HTML
+  Rendering secret_number/guess.html.erb within layouts/application
+  Rendered secret_number/guess.html.erb within layouts/application (4.4ms)
+Completed 200 OK in 53ms (Views: 47.0ms)
+
+
+Started GET "/rock_paper_scissors" for 127.0.0.1 at 2017-11-20 20:09:58 +1100
+Processing by RockPaperScissorsController#throw as HTML
+  Rendering rock_paper_scissors/throw.html.erb within layouts/application
+  Rendered rock_paper_scissors/throw.html.erb within layouts/application (5.3ms)
+Completed 200 OK in 58ms (Views: 52.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-11-20 20:10:02 +1100
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 97ms (Views: 92.3ms)
+
+
+Started GET "/magic8ball" for 127.0.0.1 at 2017-11-20 20:10:06 +1100
+Processing by Magic8ballController#question as HTML
+  Rendering magic8ball/question.html.erb within layouts/application
+  Rendered magic8ball/question.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 39ms (Views: 35.3ms)
+
+
+Started GET "/secret_number" for 127.0.0.1 at 2017-11-20 20:10:12 +1100
+Processing by SecretNumberController#guess as HTML
+  Rendering secret_number/guess.html.erb within layouts/application
+  Rendered secret_number/guess.html.erb within layouts/application (4.5ms)
+Completed 200 OK in 36ms (Views: 32.6ms)
+
+
+Started GET "/rock_paper_scissors" for 127.0.0.1 at 2017-11-20 20:10:50 +1100
+Processing by RockPaperScissorsController#throw as HTML
+  Rendering rock_paper_scissors/throw.html.erb within layouts/application
+  Rendered rock_paper_scissors/throw.html.erb within layouts/application (3.6ms)
+Completed 200 OK in 72ms (Views: 67.8ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-11-20 20:12:19 +1100
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (10.0ms)
+Completed 200 OK in 115ms (Views: 101.3ms)
+
+
+Started GET "/secret_number" for 127.0.0.1 at 2017-11-20 20:15:14 +1100
+Processing by SecretNumberController#guess as HTML
+  Rendering secret_number/guess.html.erb within layouts/application
+  Rendered secret_number/guess.html.erb within layouts/application (6.9ms)
+Completed 200 OK in 127ms (Views: 106.8ms)
+
+
