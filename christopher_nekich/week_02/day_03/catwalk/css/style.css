@@ -1,0 +1,128 @@
+* {
+  margin: 0;
+  padding: 0;
+  background-color: navy;
+}
+
+#cat {
+  z-index: 1;
+}
+
+.rainbow {
+  width: 20px;
+  height: 200px;
+  display: block;
+  position: absolute;
+  top: 380px;
+}
+
+.box {
+  height: 20px;
+  width: 100%;
+}
+
+.red {
+  background-color: red;
+}
+.orange {
+  background-color: orange;
+}
+.yellow {
+  background-color: yellow;
+}
+.green {
+  background-color: green;
+}
+.blue {
+background-color: blue;
+}
+.violet {
+background-color: violet;
+}
+.indigo {
+background-color: indigo;
+}
+
+.pink{
+  height: 90px;
+  width: 150px;
+  background-color: pink;
+  position: absolute;
+  top: 380px;
+  left: 20px;
+  z-index: 3;
+  font-size: 50px;
+  border-radius: 20%;
+}
+
+.pink p {
+  line-height: 90px;
+  text-align: center;
+  background-color: #CC6DB7;
+  color: #CC23B9;
+  border-radius: 10px;
+}
+
+.bigStar {
+  mix-blend-mode: lighten;
+  animation: spin 8s linear infinite;
+  position: absolute;
+}
+
+#bigStar1 {
+  top: 50px;
+
+}
+#bigStar2 {
+  top: 70%;
+  left: 40%;
+}
+#bigStar3 {
+left: 80%;
+}
+
+.littleStar {
+  height: 80px;
+  mix-blend-mode: lighten;
+  animation: spin 2s linear infinite;
+  position: absolute;
+}
+
+#littleStar1 {
+  top: 80%;
+  left: 10%;
+}
+#littleStar2 {
+  top: 20%;
+  left: 35%;
+}
+#littleStar3 {
+  top: 15%;
+  left: 56%;
+}
+#littleStar4 {
+  top: 76%;
+  left: 80%;
+}
+
+.grandmas {
+  position: absolute;
+  left: 17%;
+}
+
+.party {
+  position: absolute;
+  top: 70%;
+  height: 240px;
+  left: 58%;
+  z-index: 2;
+}
+
+.groot {
+  position: absolute;
+  top: 72%;
+  left: 21%;
+  z-index: 2;
+}
+
+@keyframes spin { 100% { -webkit-transform: rotate(360deg); transform:rotate(360deg); } }
