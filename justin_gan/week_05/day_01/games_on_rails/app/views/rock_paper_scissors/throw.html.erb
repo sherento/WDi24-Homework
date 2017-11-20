@@ -1,0 +1,12 @@
+<p>It's rock, paper, scissors!</p>
+<p>Pick one now!</p>
+
+<form action="/rock_paper_scissors/:throw">
+<%= label_tag(:choice_rock, "Rock:") %>
+<%= radio_button_tag(:choice, "rock") %>
+<%= label_tag(:choice_paper, "Paper:") %>
+<%= radio_button_tag(:choice, "paper") %>
+<%= label_tag(:choice_scissors, "Scissors:") %>
+<%= radio_button_tag(:choice, "scissors") %>
+<button>Go!</button>
+</form>
