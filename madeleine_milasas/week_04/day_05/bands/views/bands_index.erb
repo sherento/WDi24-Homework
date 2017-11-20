@@ -14,10 +14,11 @@
 
 <ul class="band-list">
     <% @countries.each do |b|  %>
-      <li>
-        <a href="/bands/countries/<%= b %>">
-          <%= b %>
-        </a>
-      </li>
+      <% next if b == "" %>
+        <li>
+          <a href="/bands/countries/<%= b %>">
+            <%= b %>
+          </a>
+        </li>
     <% end %>
 </ul>
