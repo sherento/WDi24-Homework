@@ -14,5 +14,36 @@
  *= require_self
  */
  body {
-   background-color: grey;
+   background-color: #46807d;
  }
+a {
+  font-size: 30px;
+  text-decoration: none;
+  margin-left: 20%;
+  color: #251313;
+  font-style: italic;
+
+}
+li {
+    list-style-type: none;
+}
+p {
+  text-align: center;
+  font-size: 35px;
+  font-style: italic;
+}
+.gameboard {
+  max-width: 960px;
+  background-color:#8a421f;
+  margin:auto;
+  height:100vh;
+}
+form {
+  margin-left: 30%;
+}
+select {
+  font-size: 20px;
+}
+button {
+  font-size:20px;
+}
