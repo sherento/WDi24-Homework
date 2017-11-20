@@ -1,0 +1,80 @@
+/* font converted using font-converter.net. thank you! */
+@font-face {
+  font-family: 'CarnivaleeFreakshow';
+
+  src: url('CarnevaleeFreakshow.woff') format('woff'); /* Modern Browsers */
+  src: url('CarnevaleeFreakshow.woff2') format('woff2'); /* Modern Browsers */
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* CSS Reset https://alligator.io/css/minimal-css-reset/*/
+
+html {
+  box-sizing: border-box;
+  font-size: 16px;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+body, h1, h2, h3, h4, h5, h6, p, ol, ul {
+  margin: 0;
+  padding: 0;
+  font-weight: normal;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/*-------------------------------------------------------*/
+
+
+body {
+  background-color: bisque;
+}
+
+.grid {
+  display: grid;
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+header {
+  display: grid;
+}
+
+h1 {
+  font-family: 'CarnivaleeFreakshow';
+}
+
+.title, .subtitle {
+  grid-column: 1/2;
+}
+
+nav {
+  grid-column: 2;
+  grid-row: 1;
+  justify-self: right;
+  align-self: end;
+}
+
+main.home {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-column-gap: 50px;
+  grid-row-gap: 25px;
+  justify-items: center;
+  align-items: center;
+}
+
+main.home > .heading {
+  grid-column: 1/4;
+}
