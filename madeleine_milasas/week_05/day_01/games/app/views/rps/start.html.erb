@@ -5,8 +5,10 @@
 
 <p>What's your move?</p>
 
-<%= link_to "Rock", "/rps/rock" %>
-<%= link_to "Paper", "/rps/paper" %>
-<%= link_to "Scissors", "/rps/scissors" %>
+<div class="options">
+  <%= link_to "Rock", "/rps/rock", :class => "turns" %>
+  <%= link_to "Paper", "/rps/paper", :class => "turns"  %>
+  <%= link_to "Scissors", "/rps/scissors", :class => "turns"  %>
+</div>
 
-<%= link_to "Back to all games", "/", :class => "back" %>
+<p class="back"><%= link_to "Back to all games", "/" %></p>

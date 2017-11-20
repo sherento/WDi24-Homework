@@ -2,7 +2,9 @@
 
 <h3>Magic 8 Ball says...</h3>
 
-<p><%= @answer %></p>
+<%= image_tag "ball_answer_blk.jpg", :class => "screen" %>
 
-<a href="/magic-8-ball">Ask another question</a>
-<a href="/">Back to all games</a>
+<p>"<%= @answer %>"</p>
+
+<p class="back"><a href="/magic-8-ball">Ask another question</a></p>
+<p><a href="/">Back to all games</a></p>

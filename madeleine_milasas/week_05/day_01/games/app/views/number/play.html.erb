@@ -3,7 +3,7 @@
 <p>Click a number below...</p>
 
 <% @numbers.each do |n|  %>
-  <%= link_to "#{ n }", "/secret-number/#{ n }" %>
+  <%= link_to "#{ n }", "/secret-number/#{ n }", :class => "turns" %>
 <% end  %>
 
-<%= link_to "Back to all games", '/', :class => "back" %>
+<p class="back"><%= link_to "Back to all games", '/' %></p>

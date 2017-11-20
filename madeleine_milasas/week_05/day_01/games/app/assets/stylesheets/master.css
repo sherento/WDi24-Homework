@@ -1,17 +1,21 @@
 * {
-  border: pink solid 1px;
+  /*border: pink solid 1px;*/
 }
 
 body {
   background-color: #F5F5F0;
-  max-width: 960px;
-  margin: 0 auto;
   font-family: Avenir, sans-serif;
 }
 
-img {
+main {
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+img.round {
   border-radius: 50%;
 }
+
 
 a.round {
   border-radius: 50%;
@@ -19,7 +23,42 @@ a.round {
   width: 500px;
 }
 
-a.back {
-  display: block;
-  padding: 2em 0;
+.back {
+  padding: 3em 0 0 0;
+}
+
+nav {
+  background-color: rgba(0, 0, 0, 0.1);
+  text-align: right;
+  padding: 20px;
+  text-transform: uppercase;
+  margin: 15px 0 40px 0;
+}
+
+nav > a {
+  text-transform: uppercase;
+  padding: 20px;
+}
+
+a {
+  text-decoration: none;
+  color: teal;
+}
+
+ a:hover {
+   color: black;
+ }
+
+ li {
+   padding: 15px 0;
+ }
+
+.turns {
+  font-size: 40px;
+  margin-right: 80px;
+  text-transform: uppercase;
+}
+
+.options {
+  margin-top: 50px;
 }
