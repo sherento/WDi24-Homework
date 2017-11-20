@@ -14,7 +14,7 @@ ActiveRecord::Base.logger = Logger.new(STDERR)
 
 class Band < ActiveRecord::Base
   # validates :name, presence: true  # validation, should fail/return false on .save or error on .save! if no name
-  has_many :songs
+  has_many :songs, dependent: :destroy
 
   def slug
     @slug = self.name.downcase.gsub ' ', '-'
@@ -101,7 +101,7 @@ post '/songs' do
     end
   end
   if band_exists == false
-    Band.create name: params[:band_name]
+    Band.create name: params[:band_name], country: ''
     @b_id = Band.find_by(name: params[:band_name]).id
   end
   song = Song.create name: params[:name], album: params[:album], year: params[:year], band_id: @b_id
@@ -152,7 +152,7 @@ get '/songs/:url_name/delete' do
   song = Song.find params[:url_name]
   song.destroy
 
-  redirect to('/')
+  redirect to('/songs')
 end
 
 # show - single BAND
