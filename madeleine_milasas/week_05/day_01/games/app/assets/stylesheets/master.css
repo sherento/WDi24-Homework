@@ -21,6 +21,7 @@ a.round {
   border-radius: 50%;
   display: block;
   width: 500px;
+  margin: 10px 200px;
 }
 
 .back {
@@ -55,10 +56,33 @@ a {
 
 .turns {
   font-size: 40px;
-  margin-right: 80px;
+  margin-right: 67px;
   text-transform: uppercase;
 }
 
 .options {
   margin-top: 50px;
+}
+
+.ball-container {
+  position: relative;
+  background-color: rgba(245, 245, 240, 1.00);
+  background-image: url(/assets/ball_answer_blue.jpg);
+  background-blend-mode: multiply;
+  height: 675px;
+  box-shadow: 0px 0px 50px 0 rgba(245, 245, 240, 1.00) inset, 0px -12px 20px 0 rgba(245, 245, 240, 1.00) inset;
+}
+
+.abs-text {
+    position: absolute;
+    top: 272px;
+    left: 334px;
+    color: white;
+    text-align: center;
+    width: 240px;
+    font-size: 20px;
+}
+
+.ball-ask-again {
+  padding-top: 10px;
 }
