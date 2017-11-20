@@ -2,6 +2,10 @@
   /*border: pink solid 1px;*/
 }
 
+html, body {
+  margin: 0;
+}
+
 body {
   background-color: #F5F5F0;
   font-family: Avenir, sans-serif;
@@ -85,4 +89,20 @@ a {
 
 .ball-ask-again {
   padding-top: 10px;
+}
+
+.creepy {
+  position: fixed;
+  width: 1700px;
+  z-index: 10;
+}
+
+.creepy-text {
+  z-index: 20;
+  color: white;
+  display: inline-block;
+  font-size: 200px;
+  position: fixed;
+  padding: 50px;
+  text-align: center;
 }
