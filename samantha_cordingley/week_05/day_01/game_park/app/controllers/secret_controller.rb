@@ -8,7 +8,7 @@ class SecretController < ApplicationController
     if @guess == @secret_number
       @result = "You're a genius, you got it!"
     else
-      @result = "Wrong! That is not the secret number"
+      @result = "Wrong!"
     end
   end
 end
