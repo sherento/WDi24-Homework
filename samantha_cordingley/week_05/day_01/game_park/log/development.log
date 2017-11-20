@@ -1105,3 +1105,168 @@ Processing by RockpsController#form as HTML
 Completed 200 OK in 21ms (Views: 18.3ms)
 
 
+Started GET "/rockps" for 127.0.0.1 at 2017-11-20 17:29:39 +1100
+Processing by RockpsController#form as HTML
+  Rendering rockps/form.html.erb within layouts/application
+  Rendered rockps/form.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 270ms (Views: 149.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-11-20 17:29:40 +1100
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 17ms (Views: 14.5ms)
+
+
+Started GET "/rockps" for 127.0.0.1 at 2017-11-20 17:34:37 +1100
+Processing by RockpsController#form as HTML
+  Rendering rockps/form.html.erb within layouts/application
+  Rendered rockps/form.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 18ms (Views: 15.7ms)
+
+
+Started GET "/rockps/outcome?throw=paper" for 127.0.0.1 at 2017-11-20 17:34:38 +1100
+Processing by RockpsController#outcome as HTML
+  Parameters: {"throw"=>"paper"}
+  Rendering rockps/outcome.html.erb within layouts/application
+  Rendered rockps/outcome.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 17ms (Views: 14.8ms)
+
+
+Started GET "/rockps" for 127.0.0.1 at 2017-11-20 17:34:42 +1100
+Processing by RockpsController#form as HTML
+  Rendering rockps/form.html.erb within layouts/application
+  Rendered rockps/form.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 19ms (Views: 16.9ms)
+
+
+Started GET "/rockps/outcome?throw=rock" for 127.0.0.1 at 2017-11-20 17:34:43 +1100
+Processing by RockpsController#outcome as HTML
+  Parameters: {"throw"=>"rock"}
+  Rendering rockps/outcome.html.erb within layouts/application
+  Rendered rockps/outcome.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 16ms (Views: 14.4ms)
+
+
+Started GET "/rockps" for 127.0.0.1 at 2017-11-20 17:34:45 +1100
+Processing by RockpsController#form as HTML
+  Rendering rockps/form.html.erb within layouts/application
+  Rendered rockps/form.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 28ms (Views: 25.7ms)
+
+
+Started GET "/rockps/outcome?throw=scissors" for 127.0.0.1 at 2017-11-20 17:34:46 +1100
+Processing by RockpsController#outcome as HTML
+  Parameters: {"throw"=>"scissors"}
+  Rendering rockps/outcome.html.erb within layouts/application
+  Rendered rockps/outcome.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 17ms (Views: 15.4ms)
+
+
+Started GET "/rockps" for 127.0.0.1 at 2017-11-20 17:34:51 +1100
+Processing by RockpsController#form as HTML
+  Rendering rockps/form.html.erb within layouts/application
+  Rendered rockps/form.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 20ms (Views: 17.2ms)
+
+
+Started GET "/rockps/outcome?throw=paper" for 127.0.0.1 at 2017-11-20 17:34:52 +1100
+Processing by RockpsController#outcome as HTML
+  Parameters: {"throw"=>"paper"}
+  Rendering rockps/outcome.html.erb within layouts/application
+  Rendered rockps/outcome.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 17ms (Views: 14.6ms)
+
+
+Started GET "/rockps" for 127.0.0.1 at 2017-11-20 17:34:55 +1100
+Processing by RockpsController#form as HTML
+  Rendering rockps/form.html.erb within layouts/application
+  Rendered rockps/form.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 19ms (Views: 17.0ms)
+
+
+Started GET "/rockps/outcome?throw=rock" for 127.0.0.1 at 2017-11-20 17:34:56 +1100
+Processing by RockpsController#outcome as HTML
+  Parameters: {"throw"=>"rock"}
+  Rendering rockps/outcome.html.erb within layouts/application
+  Rendered rockps/outcome.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 18ms (Views: 15.5ms)
+
+
+Started GET "/rockps" for 127.0.0.1 at 2017-11-20 17:34:58 +1100
+Processing by RockpsController#form as HTML
+  Rendering rockps/form.html.erb within layouts/application
+  Rendered rockps/form.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 22ms (Views: 19.3ms)
+
+
+Started GET "/rockps/outcome?throw=rock" for 127.0.0.1 at 2017-11-20 17:35:00 +1100
+Processing by RockpsController#outcome as HTML
+  Parameters: {"throw"=>"rock"}
+  Rendering rockps/outcome.html.erb within layouts/application
+  Rendered rockps/outcome.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 17ms (Views: 14.9ms)
+
+
+Started GET "/rockps" for 127.0.0.1 at 2017-11-20 17:35:04 +1100
+Processing by RockpsController#form as HTML
+  Rendering rockps/form.html.erb within layouts/application
+  Rendered rockps/form.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 19ms (Views: 17.0ms)
+
+
+Started GET "/rockps/outcome?throw=paper" for 127.0.0.1 at 2017-11-20 17:35:05 +1100
+Processing by RockpsController#outcome as HTML
+  Parameters: {"throw"=>"paper"}
+  Rendering rockps/outcome.html.erb within layouts/application
+  Rendered rockps/outcome.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 17ms (Views: 14.5ms)
+
+
+Started GET "/rockps" for 127.0.0.1 at 2017-11-20 17:35:08 +1100
+Processing by RockpsController#form as HTML
+  Rendering rockps/form.html.erb within layouts/application
+  Rendered rockps/form.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 20ms (Views: 17.8ms)
+
+
+Started GET "/rockps/outcome?throw=scissors" for 127.0.0.1 at 2017-11-20 17:35:09 +1100
+Processing by RockpsController#outcome as HTML
+  Parameters: {"throw"=>"scissors"}
+  Rendering rockps/outcome.html.erb within layouts/application
+  Rendered rockps/outcome.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 21ms (Views: 19.3ms)
+
+
+Started GET "/rockps" for 127.0.0.1 at 2017-11-20 17:35:47 +1100
+Processing by RockpsController#form as HTML
+  Rendering rockps/form.html.erb within layouts/application
+  Rendered rockps/form.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 21ms (Views: 18.1ms)
+
+
+Started GET "/rockps/outcome?throw=scissors" for 127.0.0.1 at 2017-11-20 17:35:48 +1100
+Processing by RockpsController#outcome as HTML
+  Parameters: {"throw"=>"scissors"}
+  Rendering rockps/outcome.html.erb within layouts/application
+  Rendered rockps/outcome.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 17ms (Views: 14.8ms)
+
+
+Started GET "/rockps/outcome?throw=scissors" for 127.0.0.1 at 2017-11-20 17:35:57 +1100
+Processing by RockpsController#outcome as HTML
+  Parameters: {"throw"=>"scissors"}
+  Rendering rockps/outcome.html.erb within layouts/application
+  Rendered rockps/outcome.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 16ms (Views: 14.4ms)
+
+
+Started GET "/rockps/outcome?throw=scissors" for 127.0.0.1 at 2017-11-20 17:36:03 +1100
+Processing by RockpsController#outcome as HTML
+  Parameters: {"throw"=>"scissors"}
+  Rendering rockps/outcome.html.erb within layouts/application
+  Rendered rockps/outcome.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 18ms (Views: 15.1ms)
+
+
