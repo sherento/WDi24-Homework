@@ -1,0 +1,1107 @@
+Started GET "/" for 127.0.0.1 at 2017-11-20 15:07:53 +1100
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 362ms (Views: 229.8ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-11-20 15:07:56 +1100
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 17ms (Views: 15.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-11-20 15:08:50 +1100
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 50ms (Views: 47.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-11-20 15:08:56 +1100
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 26ms (Views: 23.7ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-11-20 15:09:03 +1100
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 18ms (Views: 16.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-11-20 15:13:59 +1100
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 17ms (Views: 14.5ms)
+
+
+Started GET "/magic" for 127.0.0.1 at 2017-11-20 15:14:00 +1100
+Processing by MagicController#form as HTML
+  Rendering magic/form.html.erb within layouts/application
+  Rendered magic/form.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 18ms (Views: 16.3ms)
+
+
+Started GET "/magic/fortune?question=" for 127.0.0.1 at 2017-11-20 15:14:02 +1100
+  
+ActionController::RoutingError (No route matches [GET] "/magic/fortune"):
+  
+actionpack (5.1.4) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.4) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.4) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.4) lib/rails/engine.rb:522:in `call'
+puma (3.10.0) lib/puma/configuration.rb:225:in `call'
+puma (3.10.0) lib/puma/server.rb:605:in `handle_request'
+puma (3.10.0) lib/puma/server.rb:437:in `process_client'
+puma (3.10.0) lib/puma/server.rb:301:in `block in run'
+puma (3.10.0) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/magic/fortune?question=willi" for 127.0.0.1 at 2017-11-20 15:14:09 +1100
+  
+ActionController::RoutingError (No route matches [GET] "/magic/fortune"):
+  
+actionpack (5.1.4) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.4) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.4) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.4) lib/rails/engine.rb:522:in `call'
+puma (3.10.0) lib/puma/configuration.rb:225:in `call'
+puma (3.10.0) lib/puma/server.rb:605:in `handle_request'
+puma (3.10.0) lib/puma/server.rb:437:in `process_client'
+puma (3.10.0) lib/puma/server.rb:301:in `block in run'
+puma (3.10.0) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/magic/fortune?question=" for 127.0.0.1 at 2017-11-20 15:20:09 +1100
+Processing by MagicController#fortune as HTML
+  Parameters: {"question"=>""}
+  Rendering magic/fortune.html.erb within layouts/application
+  Rendered magic/fortune.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 17ms (Views: 14.5ms)
+
+
+Started GET "/magic/fortune?question=" for 127.0.0.1 at 2017-11-20 15:21:19 +1100
+Processing by MagicController#fortune as HTML
+  Parameters: {"question"=>""}
+  Rendering magic/fortune.html.erb within layouts/application
+  Rendered magic/fortune.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 16ms (Views: 13.7ms)
+
+
+Started GET "/magic/fortune?question=" for 127.0.0.1 at 2017-11-20 15:21:22 +1100
+Processing by MagicController#fortune as HTML
+  Parameters: {"question"=>""}
+  Rendering magic/fortune.html.erb within layouts/application
+  Rendered magic/fortune.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 16ms (Views: 14.3ms)
+
+
+Started GET "/magic/fortune?question=will+i+die+tomorrow" for 127.0.0.1 at 2017-11-20 15:21:28 +1100
+Processing by MagicController#fortune as HTML
+  Parameters: {"question"=>"will i die tomorrow"}
+  Rendering magic/fortune.html.erb within layouts/application
+  Rendered magic/fortune.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 17ms (Views: 15.2ms)
+
+
+Started GET "/magic/fortune?question=will+i+die+tomorrow" for 127.0.0.1 at 2017-11-20 15:22:01 +1100
+Processing by MagicController#fortune as HTML
+  Parameters: {"question"=>"will i die tomorrow"}
+  Rendering magic/fortune.html.erb within layouts/application
+  Rendered magic/fortune.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 17ms (Views: 15.5ms)
+
+
+Started GET "/magic" for 127.0.0.1 at 2017-11-20 15:24:12 +1100
+Processing by MagicController#form as HTML
+  Rendering magic/form.html.erb within layouts/application
+  Rendered magic/form.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 19ms (Views: 17.1ms)
+
+
+Started GET "/magic/fortune?question=will+i+live%3F" for 127.0.0.1 at 2017-11-20 15:24:16 +1100
+Processing by MagicController#fortune as HTML
+  Parameters: {"question"=>"will i live?"}
+  Rendering magic/fortune.html.erb within layouts/application
+  Rendered magic/fortune.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 16ms (Views: 14.3ms)
+
+
+Started GET "/magic/fortune?question=will+i+live%3F" for 127.0.0.1 at 2017-11-20 15:29:00 +1100
+  
+SyntaxError (/Users/samanthacordingley/Projects/WDi24-Homework/samantha_cordingley/week_05/day_01/game_park/app/controllers/magic_controller.rb:14: syntax error, unexpected end-of-input, expecting keyword_end):
+  
+app/controllers/magic_controller.rb:14: syntax error, unexpected end-of-input, expecting keyword_end
+Started GET "/magic/fortune?question=will+i+live%3F" for 127.0.0.1 at 2017-11-20 15:29:25 +1100
+  
+SyntaxError (/Users/samanthacordingley/Projects/WDi24-Homework/samantha_cordingley/week_05/day_01/game_park/app/controllers/magic_controller.rb:12: syntax error, unexpected end-of-input, expecting keyword_end):
+  
+app/controllers/magic_controller.rb:12: syntax error, unexpected end-of-input, expecting keyword_end
+Started GET "/magic/fortune?question=will+i+live%3F" for 127.0.0.1 at 2017-11-20 15:29:44 +1100
+Processing by MagicController#fortune as HTML
+  Parameters: {"question"=>"will i live?"}
+Completed 500 Internal Server Error in 109ms
+
+
+  
+NameError (undefined local variable or method `possible_answers' for #<MagicController:0x00007fcfd5e04f28>
+Did you mean?  @possible_answers):
+  
+app/controllers/magic_controller.rb:9:in `fortune'
+Started GET "/magic/fortune?question=will+i+live%3F" for 127.0.0.1 at 2017-11-20 15:30:03 +1100
+Processing by MagicController#fortune as HTML
+  Parameters: {"question"=>"will i live?"}
+Completed 500 Internal Server Error in 137ms
+
+
+  
+NameError (undefined local variable or method `possible_answers' for #<MagicController:0x00007fcfd5eb7da8>
+Did you mean?  @possible_answers):
+  
+app/controllers/magic_controller.rb:9:in `fortune'
+Started PUT "/__web_console/repl_sessions/c456c92959253d0b59cfaefe4b7580ee" for 127.0.0.1 at 2017-11-20 15:30:06 +1100
+Started PUT "/__web_console/repl_sessions/c456c92959253d0b59cfaefe4b7580ee" for 127.0.0.1 at 2017-11-20 15:30:09 +1100
+Started GET "/magic/fortune?question=will+i+live%3F" for 127.0.0.1 at 2017-11-20 15:34:33 +1100
+  
+SyntaxError (/Users/samanthacordingley/Projects/WDi24-Homework/samantha_cordingley/week_05/day_01/game_park/app/controllers/magic_controller.rb:18: syntax error, unexpected end-of-input, expecting keyword_end):
+  
+app/controllers/magic_controller.rb:18: syntax error, unexpected end-of-input, expecting keyword_end
+Started GET "/magic/fortune?question=will+i+live%3F" for 127.0.0.1 at 2017-11-20 15:34:51 +1100
+Processing by MagicController#fortune as HTML
+  Parameters: {"question"=>"will i live?"}
+Completed 500 Internal Server Error in 3ms
+
+
+  
+NoMethodError (undefined method `each_index_of' for #<Array:0x00007fcfd4e48b98>
+Did you mean?  each_index):
+  
+app/controllers/magic_controller.rb:13:in `fortune'
+Started GET "/magic/fortune?question=will+i+live%3F" for 127.0.0.1 at 2017-11-20 15:34:53 +1100
+Processing by MagicController#fortune as HTML
+  Parameters: {"question"=>"will i live?"}
+Completed 500 Internal Server Error in 3ms
+
+
+  
+NoMethodError (undefined method `each_index_of' for #<Array:0x00007fcfd5f39da8>
+Did you mean?  each_index):
+  
+app/controllers/magic_controller.rb:13:in `fortune'
+Started GET "/magic/fortune?question=will+i+live%3F" for 127.0.0.1 at 2017-11-20 15:37:14 +1100
+Processing by MagicController#fortune as HTML
+  Parameters: {"question"=>"will i live?"}
+Completed 500 Internal Server Error in 184ms
+
+
+  
+NoMethodError (undefined method `getRandomInt' for #<MagicController:0x00007fbef04d5e70>):
+  
+app/controllers/magic_controller.rb:9:in `index'
+app/controllers/magic_controller.rb:14:in `block in fortune'
+app/controllers/magic_controller.rb:13:in `each'
+app/controllers/magic_controller.rb:13:in `each_with_index'
+app/controllers/magic_controller.rb:13:in `fortune'
+Started GET "/magic/fortune?question=will+i+live%3F" for 127.0.0.1 at 2017-11-20 15:39:39 +1100
+Processing by MagicController#fortune as HTML
+  Parameters: {"question"=>"will i live?"}
+  Rendering magic/fortune.html.erb within layouts/application
+  Rendered magic/fortune.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 179ms (Views: 176.5ms)
+
+
+Started GET "/magic" for 127.0.0.1 at 2017-11-20 15:42:31 +1100
+Processing by MagicController#form as HTML
+  Rendering magic/form.html.erb within layouts/application
+  Rendered magic/form.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 19ms (Views: 15.6ms)
+
+
+Started GET "/magic/fortune?question=will+i+survive+this+course" for 127.0.0.1 at 2017-11-20 15:42:37 +1100
+Processing by MagicController#fortune as HTML
+  Parameters: {"question"=>"will i survive this course"}
+  Rendering magic/fortune.html.erb within layouts/application
+  Rendered magic/fortune.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 17ms (Views: 14.6ms)
+
+
+Started GET "/magic" for 127.0.0.1 at 2017-11-20 15:42:39 +1100
+Processing by MagicController#form as HTML
+  Rendering magic/form.html.erb within layouts/application
+  Rendered magic/form.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 18ms (Views: 15.7ms)
+
+
+Started GET "/magic/fortune?question=will+i+have+soup+tonight%3F" for 127.0.0.1 at 2017-11-20 15:42:46 +1100
+Processing by MagicController#fortune as HTML
+  Parameters: {"question"=>"will i have soup tonight?"}
+  Rendering magic/fortune.html.erb within layouts/application
+  Rendered magic/fortune.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 17ms (Views: 14.4ms)
+
+
+Started GET "/magic" for 127.0.0.1 at 2017-11-20 15:42:48 +1100
+Processing by MagicController#form as HTML
+  Rendering magic/form.html.erb within layouts/application
+  Rendered magic/form.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 18ms (Views: 15.8ms)
+
+
+Started GET "/magic" for 127.0.0.1 at 2017-11-20 15:52:14 +1100
+Processing by MagicController#form as HTML
+  Rendering magic/form.html.erb within layouts/application
+  Rendered magic/form.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 17ms (Views: 15.4ms)
+
+
+Started GET "/secret" for 127.0.0.1 at 2017-11-20 15:52:15 +1100
+Processing by SecretController#form as HTML
+  Rendering secret/form.html.erb within layouts/application
+  Rendered secret/form.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 21ms (Views: 18.4ms)
+
+
+Started GET "/secret/answer?guess=" for 127.0.0.1 at 2017-11-20 15:52:17 +1100
+  
+ActionController::RoutingError (No route matches [GET] "/secret/answer"):
+  
+actionpack (5.1.4) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.4) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.4) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.4) lib/rails/engine.rb:522:in `call'
+puma (3.10.0) lib/puma/configuration.rb:225:in `call'
+puma (3.10.0) lib/puma/server.rb:605:in `handle_request'
+puma (3.10.0) lib/puma/server.rb:437:in `process_client'
+puma (3.10.0) lib/puma/server.rb:301:in `block in run'
+puma (3.10.0) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/secret" for 127.0.0.1 at 2017-11-20 15:52:54 +1100
+Processing by SecretController#form as HTML
+  Rendering secret/form.html.erb within layouts/application
+  Rendered secret/form.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 22ms (Views: 19.8ms)
+
+
+Started GET "/secret/answer?guess=" for 127.0.0.1 at 2017-11-20 15:52:58 +1100
+  
+ActionController::RoutingError (No route matches [GET] "/secret/answer"):
+  
+actionpack (5.1.4) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.4) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.4) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.4) lib/rails/engine.rb:522:in `call'
+puma (3.10.0) lib/puma/configuration.rb:225:in `call'
+puma (3.10.0) lib/puma/server.rb:605:in `handle_request'
+puma (3.10.0) lib/puma/server.rb:437:in `process_client'
+puma (3.10.0) lib/puma/server.rb:301:in `block in run'
+puma (3.10.0) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/secret" for 127.0.0.1 at 2017-11-20 15:53:25 +1100
+Processing by SecretController#form as HTML
+  Rendering secret/form.html.erb within layouts/application
+  Rendered secret/form.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 16ms (Views: 14.1ms)
+
+
+Started GET "/secret/answer?guess=1" for 127.0.0.1 at 2017-11-20 15:53:27 +1100
+  
+ActionController::RoutingError (No route matches [GET] "/secret/answer"):
+  
+actionpack (5.1.4) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.4) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.4) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.4) lib/rails/engine.rb:522:in `call'
+puma (3.10.0) lib/puma/configuration.rb:225:in `call'
+puma (3.10.0) lib/puma/server.rb:605:in `handle_request'
+puma (3.10.0) lib/puma/server.rb:437:in `process_client'
+puma (3.10.0) lib/puma/server.rb:301:in `block in run'
+puma (3.10.0) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/secret/answer?guess=1" for 127.0.0.1 at 2017-11-20 15:53:39 +1100
+  
+ActionController::RoutingError (No route matches [GET] "/secret/answer"):
+  
+actionpack (5.1.4) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.4) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.4) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.4) lib/rails/engine.rb:522:in `call'
+puma (3.10.0) lib/puma/configuration.rb:225:in `call'
+puma (3.10.0) lib/puma/server.rb:605:in `handle_request'
+puma (3.10.0) lib/puma/server.rb:437:in `process_client'
+puma (3.10.0) lib/puma/server.rb:301:in `block in run'
+puma (3.10.0) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/secret/answer?guess=1" for 127.0.0.1 at 2017-11-20 15:53:41 +1100
+  
+ActionController::RoutingError (No route matches [GET] "/secret/answer"):
+  
+actionpack (5.1.4) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.4) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.4) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.4) lib/rails/engine.rb:522:in `call'
+puma (3.10.0) lib/puma/configuration.rb:225:in `call'
+puma (3.10.0) lib/puma/server.rb:605:in `handle_request'
+puma (3.10.0) lib/puma/server.rb:437:in `process_client'
+puma (3.10.0) lib/puma/server.rb:301:in `block in run'
+puma (3.10.0) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/secret/answer?guess=1" for 127.0.0.1 at 2017-11-20 15:53:44 +1100
+  
+ActionController::RoutingError (No route matches [GET] "/secret/answer"):
+  
+actionpack (5.1.4) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.4) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.4) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.4) lib/rails/engine.rb:522:in `call'
+puma (3.10.0) lib/puma/configuration.rb:225:in `call'
+puma (3.10.0) lib/puma/server.rb:605:in `handle_request'
+puma (3.10.0) lib/puma/server.rb:437:in `process_client'
+puma (3.10.0) lib/puma/server.rb:301:in `block in run'
+puma (3.10.0) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/secret/answer?guess=" for 127.0.0.1 at 2017-11-20 15:56:08 +1100
+Processing by SecretController#answer as HTML
+  Parameters: {"guess"=>""}
+  Rendering secret/answer.html.erb within layouts/application
+  Rendered secret/answer.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 16ms (Views: 13.9ms)
+
+
+Started GET "/secret" for 127.0.0.1 at 2017-11-20 15:56:10 +1100
+Processing by SecretController#form as HTML
+  Rendering secret/form.html.erb within layouts/application
+  Rendered secret/form.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 16ms (Views: 14.5ms)
+
+
+Started GET "/secret/answer?guess=4" for 127.0.0.1 at 2017-11-20 15:57:19 +1100
+Processing by SecretController#answer as HTML
+  Parameters: {"guess"=>"4"}
+  Rendering secret/answer.html.erb within layouts/application
+  Rendered secret/answer.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 17ms (Views: 14.8ms)
+
+
+Started GET "/secret/answer?guess=4" for 127.0.0.1 at 2017-11-20 15:57:47 +1100
+Processing by SecretController#answer as HTML
+  Parameters: {"guess"=>"4"}
+  Rendering secret/answer.html.erb within layouts/application
+  Rendered secret/answer.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 24ms (Views: 21.8ms)
+
+
+Started GET "/secret/answer?guess=4" for 127.0.0.1 at 2017-11-20 16:00:16 +1100
+Processing by SecretController#answer as HTML
+  Parameters: {"guess"=>"4"}
+  Rendering secret/answer.html.erb within layouts/application
+  Rendered secret/answer.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 17ms (Views: 14.9ms)
+
+
+Started GET "/secret" for 127.0.0.1 at 2017-11-20 16:00:18 +1100
+Processing by SecretController#form as HTML
+  Rendering secret/form.html.erb within layouts/application
+  Rendered secret/form.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 16ms (Views: 13.8ms)
+
+
+Started GET "/secret/answer?guess=7" for 127.0.0.1 at 2017-11-20 16:00:19 +1100
+Processing by SecretController#answer as HTML
+  Parameters: {"guess"=>"7"}
+  Rendering secret/answer.html.erb within layouts/application
+  Rendered secret/answer.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 17ms (Views: 14.5ms)
+
+
+Started GET "/secret" for 127.0.0.1 at 2017-11-20 16:00:54 +1100
+Processing by SecretController#form as HTML
+  Rendering secret/form.html.erb within layouts/application
+  Rendered secret/form.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 17ms (Views: 15.3ms)
+
+
+Started GET "/secret/answer?guess=10" for 127.0.0.1 at 2017-11-20 16:00:55 +1100
+Processing by SecretController#answer as HTML
+  Parameters: {"guess"=>"10"}
+  Rendering secret/answer.html.erb within layouts/application
+  Rendered secret/answer.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 16ms (Views: 14.3ms)
+
+
+Started GET "/secret" for 127.0.0.1 at 2017-11-20 16:00:58 +1100
+Processing by SecretController#form as HTML
+  Rendering secret/form.html.erb within layouts/application
+  Rendered secret/form.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 22ms (Views: 20.1ms)
+
+
+Started GET "/secret/answer?guess=7" for 127.0.0.1 at 2017-11-20 16:00:59 +1100
+Processing by SecretController#answer as HTML
+  Parameters: {"guess"=>"7"}
+  Rendering secret/answer.html.erb within layouts/application
+  Rendered secret/answer.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 17ms (Views: 14.6ms)
+
+
+Started GET "/secret" for 127.0.0.1 at 2017-11-20 16:01:01 +1100
+Processing by SecretController#form as HTML
+  Rendering secret/form.html.erb within layouts/application
+  Rendered secret/form.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 16ms (Views: 14.5ms)
+
+
+Started GET "/secret/answer?guess=4" for 127.0.0.1 at 2017-11-20 16:01:02 +1100
+Processing by SecretController#answer as HTML
+  Parameters: {"guess"=>"4"}
+  Rendering secret/answer.html.erb within layouts/application
+  Rendered secret/answer.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 18ms (Views: 16.0ms)
+
+
+Started GET "/secret" for 127.0.0.1 at 2017-11-20 16:01:03 +1100
+Processing by SecretController#form as HTML
+  Rendering secret/form.html.erb within layouts/application
+  Rendered secret/form.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 16ms (Views: 13.9ms)
+
+
+Started GET "/secret/answer?guess=3" for 127.0.0.1 at 2017-11-20 16:01:04 +1100
+Processing by SecretController#answer as HTML
+  Parameters: {"guess"=>"3"}
+  Rendering secret/answer.html.erb within layouts/application
+  Rendered secret/answer.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 16ms (Views: 14.4ms)
+
+
+Started GET "/secret" for 127.0.0.1 at 2017-11-20 16:01:05 +1100
+Processing by SecretController#form as HTML
+  Rendering secret/form.html.erb within layouts/application
+  Rendered secret/form.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 16ms (Views: 14.5ms)
+
+
+Started GET "/secret/answer?guess=2" for 127.0.0.1 at 2017-11-20 16:01:06 +1100
+Processing by SecretController#answer as HTML
+  Parameters: {"guess"=>"2"}
+  Rendering secret/answer.html.erb within layouts/application
+  Rendered secret/answer.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 17ms (Views: 14.7ms)
+
+
+Started GET "/secret" for 127.0.0.1 at 2017-11-20 16:01:34 +1100
+Processing by SecretController#form as HTML
+  Rendering secret/form.html.erb within layouts/application
+  Rendered secret/form.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 16ms (Views: 14.1ms)
+
+
+Started GET "/secret/answer?guess=6" for 127.0.0.1 at 2017-11-20 16:01:35 +1100
+Processing by SecretController#answer as HTML
+  Parameters: {"guess"=>"6"}
+  Rendering secret/answer.html.erb within layouts/application
+  Rendered secret/answer.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 17ms (Views: 15.2ms)
+
+
+Started GET "/secret" for 127.0.0.1 at 2017-11-20 16:01:37 +1100
+Processing by SecretController#form as HTML
+  Rendering secret/form.html.erb within layouts/application
+  Rendered secret/form.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 16ms (Views: 13.8ms)
+
+
+Started GET "/secret/answer?guess=7" for 127.0.0.1 at 2017-11-20 16:01:37 +1100
+Processing by SecretController#answer as HTML
+  Parameters: {"guess"=>"7"}
+  Rendering secret/answer.html.erb within layouts/application
+  Rendered secret/answer.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 17ms (Views: 14.6ms)
+
+
+Started GET "/secret" for 127.0.0.1 at 2017-11-20 16:01:39 +1100
+Processing by SecretController#form as HTML
+  Rendering secret/form.html.erb within layouts/application
+  Rendered secret/form.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 17ms (Views: 13.9ms)
+
+
+Started GET "/secret/answer?guess=9" for 127.0.0.1 at 2017-11-20 16:01:40 +1100
+Processing by SecretController#answer as HTML
+  Parameters: {"guess"=>"9"}
+  Rendering secret/answer.html.erb within layouts/application
+  Rendered secret/answer.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 17ms (Views: 15.2ms)
+
+
+Started GET "/secret" for 127.0.0.1 at 2017-11-20 16:01:41 +1100
+Processing by SecretController#form as HTML
+  Rendering secret/form.html.erb within layouts/application
+  Rendered secret/form.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 16ms (Views: 14.2ms)
+
+
+Started GET "/secret/answer?guess=3" for 127.0.0.1 at 2017-11-20 16:01:42 +1100
+Processing by SecretController#answer as HTML
+  Parameters: {"guess"=>"3"}
+  Rendering secret/answer.html.erb within layouts/application
+  Rendered secret/answer.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 17ms (Views: 14.8ms)
+
+
+Started GET "/secret" for 127.0.0.1 at 2017-11-20 16:01:43 +1100
+Processing by SecretController#form as HTML
+  Rendering secret/form.html.erb within layouts/application
+  Rendered secret/form.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 16ms (Views: 13.7ms)
+
+
+Started GET "/secret/answer?guess=2" for 127.0.0.1 at 2017-11-20 16:01:44 +1100
+Processing by SecretController#answer as HTML
+  Parameters: {"guess"=>"2"}
+  Rendering secret/answer.html.erb within layouts/application
+  Rendered secret/answer.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 18ms (Views: 15.7ms)
+
+
+Started GET "/secret" for 127.0.0.1 at 2017-11-20 16:01:46 +1100
+Processing by SecretController#form as HTML
+  Rendering secret/form.html.erb within layouts/application
+  Rendered secret/form.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 17ms (Views: 14.7ms)
+
+
+Started GET "/secret/answer?guess=1" for 127.0.0.1 at 2017-11-20 16:01:47 +1100
+Processing by SecretController#answer as HTML
+  Parameters: {"guess"=>"1"}
+  Rendering secret/answer.html.erb within layouts/application
+  Rendered secret/answer.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 16ms (Views: 14.4ms)
+
+
+Started GET "/secret" for 127.0.0.1 at 2017-11-20 16:01:48 +1100
+Processing by SecretController#form as HTML
+  Rendering secret/form.html.erb within layouts/application
+  Rendered secret/form.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 17ms (Views: 14.7ms)
+
+
+Started GET "/secret" for 127.0.0.1 at 2017-11-20 16:02:05 +1100
+Processing by SecretController#form as HTML
+  Rendering secret/form.html.erb within layouts/application
+  Rendered secret/form.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 17ms (Views: 14.7ms)
+
+
+Started GET "/secret" for 127.0.0.1 at 2017-11-20 16:02:06 +1100
+Processing by SecretController#form as HTML
+  Rendering secret/form.html.erb within layouts/application
+  Rendered secret/form.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 16ms (Views: 14.2ms)
+
+
+Started GET "/secret/answer?guess=5" for 127.0.0.1 at 2017-11-20 16:02:08 +1100
+Processing by SecretController#answer as HTML
+  Parameters: {"guess"=>"5"}
+  Rendering secret/answer.html.erb within layouts/application
+  Rendered secret/answer.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 21ms (Views: 19.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-11-20 16:02:18 +1100
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 20ms (Views: 17.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-11-20 17:16:54 +1100
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 18ms (Views: 15.4ms)
+
+
+Started GET "/rockps" for 127.0.0.1 at 2017-11-20 17:16:56 +1100
+Processing by RockpsController#form as HTML
+  Rendering rockps/form.html.erb within layouts/application
+  Rendered rockps/form.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 20ms (Views: 16.9ms)
+
+
+Started GET "/rockps" for 127.0.0.1 at 2017-11-20 17:17:06 +1100
+Processing by RockpsController#form as HTML
+  Rendering rockps/form.html.erb within layouts/application
+  Rendered rockps/form.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 24ms (Views: 21.9ms)
+
+
+Started GET "/rockps" for 127.0.0.1 at 2017-11-20 17:17:23 +1100
+Processing by RockpsController#form as HTML
+  Rendering rockps/form.html.erb within layouts/application
+  Rendered rockps/form.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 19ms (Views: 16.5ms)
+
+
+Started GET "/rockps/outcome?throw=rock" for 127.0.0.1 at 2017-11-20 17:17:24 +1100
+  
+ActionController::RoutingError (No route matches [GET] "/rockps/outcome"):
+  
+actionpack (5.1.4) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.4) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.4) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.4) lib/rails/engine.rb:522:in `call'
+puma (3.10.0) lib/puma/configuration.rb:225:in `call'
+puma (3.10.0) lib/puma/server.rb:605:in `handle_request'
+puma (3.10.0) lib/puma/server.rb:437:in `process_client'
+puma (3.10.0) lib/puma/server.rb:301:in `block in run'
+puma (3.10.0) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/rockps/outcome?throw=paper" for 127.0.0.1 at 2017-11-20 17:17:27 +1100
+  
+ActionController::RoutingError (No route matches [GET] "/rockps/outcome"):
+  
+actionpack (5.1.4) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.4) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.4) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.4) lib/rails/engine.rb:522:in `call'
+puma (3.10.0) lib/puma/configuration.rb:225:in `call'
+puma (3.10.0) lib/puma/server.rb:605:in `handle_request'
+puma (3.10.0) lib/puma/server.rb:437:in `process_client'
+puma (3.10.0) lib/puma/server.rb:301:in `block in run'
+puma (3.10.0) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/rockps" for 127.0.0.1 at 2017-11-20 17:19:06 +1100
+Processing by RockpsController#form as HTML
+  Rendering rockps/form.html.erb within layouts/application
+  Rendered rockps/form.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 18ms (Views: 15.9ms)
+
+
+Started GET "/rockps/outcome?throw=rock" for 127.0.0.1 at 2017-11-20 17:19:08 +1100
+  
+ActionController::RoutingError (No route matches [GET] "/rockps/outcome"):
+  
+actionpack (5.1.4) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.4) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.4) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.4) lib/rails/engine.rb:522:in `call'
+puma (3.10.0) lib/puma/configuration.rb:225:in `call'
+puma (3.10.0) lib/puma/server.rb:605:in `handle_request'
+puma (3.10.0) lib/puma/server.rb:437:in `process_client'
+puma (3.10.0) lib/puma/server.rb:301:in `block in run'
+puma (3.10.0) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/rockps/outcome?throw=paper" for 127.0.0.1 at 2017-11-20 17:22:57 +1100
+Processing by RockpsController#outcome as HTML
+  Parameters: {"throw"=>"paper"}
+  Rendering rockps/outcome.html.erb within layouts/application
+  Rendered rockps/outcome.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 17ms (Views: 14.6ms)
+
+
+Started GET "/rockps" for 127.0.0.1 at 2017-11-20 17:22:59 +1100
+Processing by RockpsController#form as HTML
+  Rendering rockps/form.html.erb within layouts/application
+  Rendered rockps/form.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 20ms (Views: 17.3ms)
+
+
+Started GET "/rockps/outcome?throw=paper" for 127.0.0.1 at 2017-11-20 17:23:13 +1100
+Processing by RockpsController#outcome as HTML
+  Parameters: {"throw"=>"paper"}
+  Rendering rockps/outcome.html.erb within layouts/application
+  Rendered rockps/outcome.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 18ms (Views: 16.0ms)
+
+
+Started GET "/rockps" for 127.0.0.1 at 2017-11-20 17:23:15 +1100
+Processing by RockpsController#form as HTML
+  Rendering rockps/form.html.erb within layouts/application
+  Rendered rockps/form.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 22ms (Views: 19.9ms)
+
+
+Started GET "/rockps/outcome?throw=scissors" for 127.0.0.1 at 2017-11-20 17:23:16 +1100
+Processing by RockpsController#outcome as HTML
+  Parameters: {"throw"=>"scissors"}
+  Rendering rockps/outcome.html.erb within layouts/application
+  Rendered rockps/outcome.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 21ms (Views: 19.4ms)
+
+
+Started GET "/rockps" for 127.0.0.1 at 2017-11-20 17:23:17 +1100
+Processing by RockpsController#form as HTML
+  Rendering rockps/form.html.erb within layouts/application
+  Rendered rockps/form.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 22ms (Views: 19.4ms)
+
+
+Started GET "/rockps/outcome?throw=rock" for 127.0.0.1 at 2017-11-20 17:23:18 +1100
+Processing by RockpsController#outcome as HTML
+  Parameters: {"throw"=>"rock"}
+  Rendering rockps/outcome.html.erb within layouts/application
+  Rendered rockps/outcome.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 17ms (Views: 14.8ms)
+
+
+Started GET "/rockps" for 127.0.0.1 at 2017-11-20 17:23:20 +1100
+Processing by RockpsController#form as HTML
+  Rendering rockps/form.html.erb within layouts/application
+  Rendered rockps/form.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 20ms (Views: 17.8ms)
+
+
+Started GET "/rockps" for 127.0.0.1 at 2017-11-20 17:24:23 +1100
+Processing by RockpsController#form as HTML
+  Rendering rockps/form.html.erb within layouts/application
+  Rendered rockps/form.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 18ms (Views: 15.8ms)
+
+
+Started GET "/rockps/outcome?throw=paper" for 127.0.0.1 at 2017-11-20 17:24:24 +1100
+Processing by RockpsController#outcome as HTML
+  Parameters: {"throw"=>"paper"}
+  Rendering rockps/outcome.html.erb within layouts/application
+  Rendered rockps/outcome.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 17ms (Views: 15.5ms)
+
+
+Started GET "/rockps" for 127.0.0.1 at 2017-11-20 17:24:26 +1100
+Processing by RockpsController#form as HTML
+  Rendering rockps/form.html.erb within layouts/application
+  Rendered rockps/form.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 20ms (Views: 17.7ms)
+
+
+Started GET "/rockps" for 127.0.0.1 at 2017-11-20 17:26:30 +1100
+Processing by RockpsController#form as HTML
+  Rendering rockps/form.html.erb within layouts/application
+  Rendered rockps/form.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 17ms (Views: 14.7ms)
+
+
+Started GET "/rockps/outcome?throw=paper" for 127.0.0.1 at 2017-11-20 17:26:31 +1100
+Processing by RockpsController#outcome as HTML
+  Parameters: {"throw"=>"paper"}
+  Rendering rockps/outcome.html.erb within layouts/application
+  Rendered rockps/outcome.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 17ms (Views: 14.9ms)
+
+
+Started GET "/rockps/outcome?throw=paper" for 127.0.0.1 at 2017-11-20 17:26:43 +1100
+Processing by RockpsController#outcome as HTML
+  Parameters: {"throw"=>"paper"}
+  Rendering rockps/outcome.html.erb within layouts/application
+  Rendered rockps/outcome.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 17ms (Views: 15.0ms)
+
+
+Started GET "/rockps" for 127.0.0.1 at 2017-11-20 17:26:56 +1100
+Processing by RockpsController#form as HTML
+  Rendering rockps/form.html.erb within layouts/application
+  Rendered rockps/form.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 21ms (Views: 18.3ms)
+
+
+Started GET "/rockps/outcome?throw=scissors" for 127.0.0.1 at 2017-11-20 17:26:57 +1100
+Processing by RockpsController#outcome as HTML
+  Parameters: {"throw"=>"scissors"}
+  Rendering rockps/outcome.html.erb within layouts/application
+  Rendered rockps/outcome.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 18ms (Views: 15.9ms)
+
+
+Started GET "/rockps" for 127.0.0.1 at 2017-11-20 17:27:06 +1100
+Processing by RockpsController#form as HTML
+  Rendering rockps/form.html.erb within layouts/application
+  Rendered rockps/form.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 21ms (Views: 18.4ms)
+
+
+Started GET "/rockps" for 127.0.0.1 at 2017-11-20 17:27:07 +1100
+Processing by RockpsController#form as HTML
+  Rendering rockps/form.html.erb within layouts/application
+  Rendered rockps/form.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 24ms (Views: 21.6ms)
+
+
+Started GET "/rockps/outcome?throw=scissors" for 127.0.0.1 at 2017-11-20 17:27:08 +1100
+Processing by RockpsController#outcome as HTML
+  Parameters: {"throw"=>"scissors"}
+  Rendering rockps/outcome.html.erb within layouts/application
+  Rendered rockps/outcome.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 17ms (Views: 15.0ms)
+
+
+Started GET "/rockps" for 127.0.0.1 at 2017-11-20 17:27:19 +1100
+Processing by RockpsController#form as HTML
+  Rendering rockps/form.html.erb within layouts/application
+  Rendered rockps/form.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 22ms (Views: 19.7ms)
+
+
+Started GET "/rockps/outcome?throw=rock" for 127.0.0.1 at 2017-11-20 17:27:21 +1100
+Processing by RockpsController#outcome as HTML
+  Parameters: {"throw"=>"rock"}
+  Rendering rockps/outcome.html.erb within layouts/application
+  Rendered rockps/outcome.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 18ms (Views: 15.8ms)
+
+
+Started GET "/rockps" for 127.0.0.1 at 2017-11-20 17:27:23 +1100
+Processing by RockpsController#form as HTML
+  Rendering rockps/form.html.erb within layouts/application
+  Rendered rockps/form.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 22ms (Views: 19.3ms)
+
+
+Started GET "/rockps/outcome?throw=paper" for 127.0.0.1 at 2017-11-20 17:27:24 +1100
+Processing by RockpsController#outcome as HTML
+  Parameters: {"throw"=>"paper"}
+  Rendering rockps/outcome.html.erb within layouts/application
+  Rendered rockps/outcome.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 17ms (Views: 15.2ms)
+
+
+Started GET "/rockps" for 127.0.0.1 at 2017-11-20 17:27:26 +1100
+Processing by RockpsController#form as HTML
+  Rendering rockps/form.html.erb within layouts/application
+  Rendered rockps/form.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 22ms (Views: 19.0ms)
+
+
+Started GET "/rockps/outcome?throw=scissors" for 127.0.0.1 at 2017-11-20 17:27:27 +1100
+Processing by RockpsController#outcome as HTML
+  Parameters: {"throw"=>"scissors"}
+  Rendering rockps/outcome.html.erb within layouts/application
+  Rendered rockps/outcome.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 17ms (Views: 15.0ms)
+
+
+Started GET "/rockps" for 127.0.0.1 at 2017-11-20 17:27:28 +1100
+Processing by RockpsController#form as HTML
+  Rendering rockps/form.html.erb within layouts/application
+  Rendered rockps/form.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 22ms (Views: 19.5ms)
+
+
+Started GET "/rockps/outcome?throw=scissors" for 127.0.0.1 at 2017-11-20 17:27:29 +1100
+Processing by RockpsController#outcome as HTML
+  Parameters: {"throw"=>"scissors"}
+  Rendering rockps/outcome.html.erb within layouts/application
+  Rendered rockps/outcome.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 18ms (Views: 16.1ms)
+
+
+Started GET "/rockps" for 127.0.0.1 at 2017-11-20 17:27:31 +1100
+Processing by RockpsController#form as HTML
+  Rendering rockps/form.html.erb within layouts/application
+  Rendered rockps/form.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 22ms (Views: 19.2ms)
+
+
+Started GET "/rockps/outcome?throw=scissors" for 127.0.0.1 at 2017-11-20 17:27:32 +1100
+Processing by RockpsController#outcome as HTML
+  Parameters: {"throw"=>"scissors"}
+  Rendering rockps/outcome.html.erb within layouts/application
+  Rendered rockps/outcome.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 17ms (Views: 14.8ms)
+
+
+Started GET "/rockps" for 127.0.0.1 at 2017-11-20 17:27:35 +1100
+Processing by RockpsController#form as HTML
+  Rendering rockps/form.html.erb within layouts/application
+  Rendered rockps/form.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 21ms (Views: 18.3ms)
+
+
