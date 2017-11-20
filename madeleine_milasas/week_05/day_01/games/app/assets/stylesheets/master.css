@@ -1,0 +1,19 @@
+* {
+  border: pink solid 1px;
+}
+
+body {
+  background-color: #F5F5F0;
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+img {
+  border-radius: 50%;
+}
+
+a.round {
+  border-radius: 50%;
+  display: block;
+  width: 500px;
+}
