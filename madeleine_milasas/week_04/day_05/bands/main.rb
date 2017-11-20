@@ -13,10 +13,8 @@ ActiveRecord::Base.establish_connection(
 ActiveRecord::Base.logger = Logger.new(STDERR)
 
 class Band < ActiveRecord::Base
-  validates :name, presence: true  # validation, should fail/return false on .save or error on .save! if no name
-  has_many :songs, dependent: :destroy
-
-  # attr_accessor :name
+  # validates :name, presence: true  # validation, should fail/return false on .save or error on .save! if no name
+  has_many :songs
 
   def slug
     @slug = self.name.downcase.gsub ' ', '-'
@@ -32,7 +30,7 @@ end
 
 
 class Song < ActiveRecord::Base
-  validates :name, presence: true
+  # validates :name, presence: true
   belongs_to :band
 
   def slug
@@ -48,7 +46,7 @@ end
 
 
 before do
-    @countries = Band.pluck(:country).uniq.sort
+    @countries = Band&.pluck(:country).uniq.sort
 end
 
 
@@ -66,8 +64,7 @@ end
 # index - show all SONGS
 get '/songs' do
   @songs = Song.all.sort_by { |s| [s.name.downcase] }
-  @bands = Band.all
-  # binding.pry
+  # @bands = Band.all
   erb :songs_index
 end
 
@@ -146,15 +143,16 @@ end
 # delete BAND
 get '/bands/:url_name/delete' do
   band = Band.find params[:url_name]
-  band.delete ## destroy didn't work, maybe will once there are songs?
+  band.destroy
   redirect to('/bands')
 end
 
 # delete SONG
 get '/songs/:url_name/delete' do
   song = Song.find params[:url_name]
-  song.delete ## destroy didn't work, maybe will once there are songs?
-  redirect to('/songs')
+  song.destroy
+
+  redirect to('/')
 end
 
 # show - single BAND

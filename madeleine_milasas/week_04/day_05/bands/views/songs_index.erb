@@ -9,7 +9,7 @@
         </a>
       </td>
       <td>
-        Band: <a href="/bands/<%= @bands.find_by(id: s.band_id).to_param %>"><%= @bands.find_by(id: s.band_id).name %></a>
+        Band: <a href="bands/<%= s.band.to_param %>"><%= s.band.name %></a>
       </td>
     </tr>
     <% end %>

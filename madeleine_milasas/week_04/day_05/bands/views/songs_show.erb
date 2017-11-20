@@ -6,14 +6,18 @@
       <td>Band: </td>
       <td><a href="/bands/<%= @bands.find_by(id: @song.band_id).to_param %>"><%= @bands.find_by(id: @song.band_id).name  %></a></td>
     </tr>
+    <% unless @song['album'].nil? || @song['album'].empty?  %>
     <tr>
       <td>From album: </td>
       <td><%= @song.album %></td>
     </tr>
+    <% end  %>
+    <% unless @song['year'].nil? || @song['year'] == 0  %>
     <tr>
       <td>Year released:</td>
       <td><%= @song.year %></td>
     </tr>
+  <% end  %>
   </table>
 </main>
 
