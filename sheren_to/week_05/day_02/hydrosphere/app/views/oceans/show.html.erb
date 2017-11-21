@@ -1,0 +1,10 @@
+
+<h2><%= @ocean.name%></h2>
+
+<%= image_tag(@ocean.image, :class => 'feature') unless @ocean.image.blank? %>
+
+<p>Surface Area: <%= @ocean.area %></p>
+<p>Average Depth: <%= @ocean.depth %></p>
+
+<%= link_to 'Edit ocean', ocean_edit_path(@ocean.id) %>
+<%= button_to 'Destroy ocean', ocean_path(@ocean.id), :method => 'delete' %>
