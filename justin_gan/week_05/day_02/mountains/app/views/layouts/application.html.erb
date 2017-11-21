@@ -12,8 +12,11 @@
 
     <div class="grid">
 
+      <%# TODO: link_to takes block %>
       <h1 class="heading">
-        <%= link_to 'Crags', root_path %>
+        <%= link_to root_path do %>
+          cra<span class="cragslist">i</span>gslist
+        <% end %>
       </h1>
 
       <nav>

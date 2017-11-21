@@ -3974,3 +3974,1641 @@ Processing by CragsController#home as HTML
 Completed 200 OK in 104ms (Views: 98.8ms | ActiveRecord: 0.5ms)
 
 
+Started GET "/" for 127.0.0.1 at 2017-11-22 06:07:26 +1100
+Processing by CragsController#home as HTML
+  Rendering crags/home.html.erb within layouts/application
+  [1m[36mCrag Load (3.6ms)[0m  [1m[34mSELECT "crags".* FROM "crags"[0m
+  Rendered crags/home.html.erb within layouts/application (66.9ms)
+Completed 200 OK in 265ms (Views: 226.1ms | ActiveRecord: 3.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-11-22 06:23:18 +1100
+Processing by CragsController#home as HTML
+  Rendering crags/home.html.erb within layouts/application
+  [1m[36mCrag Load (5.8ms)[0m  [1m[34mSELECT "crags".* FROM "crags"[0m
+  Rendered crags/home.html.erb within layouts/application (72.9ms)
+Completed 200 OK in 409ms (Views: 345.0ms | ActiveRecord: 5.8ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-11-22 06:23:48 +1100
+Processing by CragsController#home as HTML
+  Rendering crags/home.html.erb within layouts/application
+  [1m[36mCrag Load (1.9ms)[0m  [1m[34mSELECT "crags".* FROM "crags"[0m
+  Rendered crags/home.html.erb within layouts/application (37.4ms)
+Completed 200 OK in 406ms (Views: 381.3ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-11-22 06:24:09 +1100
+Processing by CragsController#home as HTML
+  Rendering crags/home.html.erb within layouts/application
+  [1m[36mCrag Load (1.1ms)[0m  [1m[34mSELECT "crags".* FROM "crags"[0m
+  Rendered crags/home.html.erb within layouts/application (15.9ms)
+Completed 200 OK in 131ms (Views: 124.2ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-11-22 06:25:41 +1100
+Processing by CragsController#home as HTML
+  Rendering crags/home.html.erb within layouts/application
+  [1m[36mCrag Load (2.6ms)[0m  [1m[34mSELECT "crags".* FROM "crags"[0m
+  Rendered crags/home.html.erb within layouts/application (24.0ms)
+Completed 200 OK in 184ms (Views: 170.3ms | ActiveRecord: 2.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-11-22 06:26:02 +1100
+Processing by CragsController#home as HTML
+  Rendering crags/home.html.erb within layouts/application
+  [1m[36mCrag Load (2.7ms)[0m  [1m[34mSELECT "crags".* FROM "crags"[0m
+  Rendered crags/home.html.erb within layouts/application (34.5ms)
+Completed 200 OK in 222ms (Views: 202.1ms | ActiveRecord: 2.7ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-11-22 06:28:12 +1100
+Processing by CragsController#home as HTML
+  Rendering crags/home.html.erb within layouts/application
+  [1m[36mCrag Load (3.1ms)[0m  [1m[34mSELECT "crags".* FROM "crags"[0m
+  Rendered crags/home.html.erb within layouts/application (31.7ms)
+Completed 200 OK in 320ms (Views: 304.2ms | ActiveRecord: 3.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-11-22 06:29:06 +1100
+Processing by CragsController#home as HTML
+  Rendering crags/home.html.erb within layouts/application
+  [1m[36mCrag Load (2.0ms)[0m  [1m[34mSELECT "crags".* FROM "crags"[0m
+  Rendered crags/home.html.erb within layouts/application (40.6ms)
+Completed 200 OK in 281ms (Views: 249.1ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-11-22 06:29:56 +1100
+Processing by CragsController#home as HTML
+  Rendering crags/home.html.erb within layouts/application
+  [1m[36mCrag Load (5.4ms)[0m  [1m[34mSELECT "crags".* FROM "crags"[0m
+  Rendered crags/home.html.erb within layouts/application (55.0ms)
+Completed 200 OK in 483ms (Views: 450.5ms | ActiveRecord: 5.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-11-22 06:30:13 +1100
+Processing by CragsController#home as HTML
+  Rendering crags/home.html.erb within layouts/application
+  [1m[36mCrag Load (2.4ms)[0m  [1m[34mSELECT "crags".* FROM "crags"[0m
+  Rendered crags/home.html.erb within layouts/application (32.6ms)
+Completed 200 OK in 479ms (Views: 453.9ms | ActiveRecord: 2.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-11-22 06:30:29 +1100
+Processing by CragsController#home as HTML
+  Rendering crags/home.html.erb within layouts/application
+  [1m[36mCrag Load (3.6ms)[0m  [1m[34mSELECT "crags".* FROM "crags"[0m
+  Rendered crags/home.html.erb within layouts/application (37.0ms)
+Completed 200 OK in 209ms (Views: 182.6ms | ActiveRecord: 3.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-11-22 06:30:42 +1100
+Processing by CragsController#home as HTML
+  Rendering crags/home.html.erb within layouts/application
+  [1m[36mCrag Load (0.3ms)[0m  [1m[34mSELECT "crags".* FROM "crags"[0m
+  Rendered crags/home.html.erb within layouts/application (6.3ms)
+Completed 200 OK in 115ms (Views: 110.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-11-22 06:30:47 +1100
+Processing by CragsController#home as HTML
+  Rendering crags/home.html.erb within layouts/application
+  [1m[36mCrag Load (0.3ms)[0m  [1m[34mSELECT "crags".* FROM "crags"[0m
+  Rendered crags/home.html.erb within layouts/application (8.1ms)
+Completed 200 OK in 115ms (Views: 110.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-11-22 06:31:00 +1100
+Processing by CragsController#home as HTML
+  Rendering crags/home.html.erb within layouts/application
+  [1m[36mCrag Load (1.1ms)[0m  [1m[34mSELECT "crags".* FROM "crags"[0m
+  Rendered crags/home.html.erb within layouts/application (9.1ms)
+Completed 200 OK in 66ms (Views: 61.1ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-11-22 06:31:07 +1100
+Processing by CragsController#home as HTML
+  Rendering crags/home.html.erb within layouts/application
+  [1m[36mCrag Load (1.1ms)[0m  [1m[34mSELECT "crags".* FROM "crags"[0m
+  Rendered crags/home.html.erb within layouts/application (24.2ms)
+Completed 200 OK in 140ms (Views: 125.6ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-11-22 06:31:36 +1100
+Processing by CragsController#home as HTML
+  Rendering crags/home.html.erb within layouts/application
+  [1m[36mCrag Load (0.6ms)[0m  [1m[34mSELECT "crags".* FROM "crags"[0m
+  Rendered crags/home.html.erb within layouts/application (9.3ms)
+Completed 200 OK in 108ms (Views: 101.8ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-11-22 06:31:43 +1100
+Processing by CragsController#home as HTML
+  Rendering crags/home.html.erb within layouts/application
+  [1m[36mCrag Load (0.3ms)[0m  [1m[34mSELECT "crags".* FROM "crags"[0m
+  Rendered crags/home.html.erb within layouts/application (4.0ms)
+Completed 200 OK in 87ms (Views: 82.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-11-22 06:31:49 +1100
+Processing by CragsController#home as HTML
+  Rendering crags/home.html.erb within layouts/application
+  [1m[36mCrag Load (0.3ms)[0m  [1m[34mSELECT "crags".* FROM "crags"[0m
+  Rendered crags/home.html.erb within layouts/application (7.4ms)
+Completed 200 OK in 87ms (Views: 81.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-11-22 06:31:59 +1100
+Processing by CragsController#home as HTML
+  Rendering crags/home.html.erb within layouts/application
+  [1m[36mCrag Load (0.3ms)[0m  [1m[34mSELECT "crags".* FROM "crags"[0m
+  Rendered crags/home.html.erb within layouts/application (6.4ms)
+Completed 200 OK in 69ms (Views: 64.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-11-22 06:32:08 +1100
+Processing by CragsController#home as HTML
+  Rendering crags/home.html.erb within layouts/application
+  [1m[36mCrag Load (2.4ms)[0m  [1m[34mSELECT "crags".* FROM "crags"[0m
+  Rendered crags/home.html.erb within layouts/application (28.5ms)
+Completed 200 OK in 264ms (Views: 247.0ms | ActiveRecord: 2.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-11-22 06:32:39 +1100
+Processing by CragsController#home as HTML
+  Rendering crags/home.html.erb within layouts/application
+  [1m[36mCrag Load (0.4ms)[0m  [1m[34mSELECT "crags".* FROM "crags"[0m
+  Rendered crags/home.html.erb within layouts/application (10.5ms)
+Completed 200 OK in 95ms (Views: 90.7ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-11-22 06:32:48 +1100
+Processing by CragsController#home as HTML
+  Rendering crags/home.html.erb within layouts/application
+  [1m[36mCrag Load (1.7ms)[0m  [1m[34mSELECT "crags".* FROM "crags"[0m
+  Rendered crags/home.html.erb within layouts/application (88.6ms)
+Completed 200 OK in 271ms (Views: 244.3ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-11-22 06:32:57 +1100
+Processing by CragsController#home as HTML
+  Rendering crags/home.html.erb within layouts/application
+  [1m[36mCrag Load (0.3ms)[0m  [1m[34mSELECT "crags".* FROM "crags"[0m
+  Rendered crags/home.html.erb within layouts/application (4.6ms)
+Completed 200 OK in 73ms (Views: 68.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-11-22 06:33:02 +1100
+Processing by CragsController#home as HTML
+  Rendering crags/home.html.erb within layouts/application
+  [1m[36mCrag Load (0.5ms)[0m  [1m[34mSELECT "crags".* FROM "crags"[0m
+  Rendered crags/home.html.erb within layouts/application (4.8ms)
+Completed 200 OK in 75ms (Views: 69.4ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-11-22 06:33:08 +1100
+Processing by CragsController#home as HTML
+  Rendering crags/home.html.erb within layouts/application
+  [1m[36mCrag Load (0.4ms)[0m  [1m[34mSELECT "crags".* FROM "crags"[0m
+  Rendered crags/home.html.erb within layouts/application (7.0ms)
+Completed 200 OK in 83ms (Views: 78.0ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-11-22 06:33:40 +1100
+Processing by CragsController#home as HTML
+  Rendering crags/home.html.erb within layouts/application
+  [1m[36mCrag Load (0.5ms)[0m  [1m[34mSELECT "crags".* FROM "crags"[0m
+  Rendered crags/home.html.erb within layouts/application (5.0ms)
+Completed 200 OK in 212ms (Views: 207.0ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-11-22 06:33:57 +1100
+Processing by CragsController#home as HTML
+  Rendering crags/home.html.erb within layouts/application
+  [1m[36mCrag Load (1.2ms)[0m  [1m[34mSELECT "crags".* FROM "crags"[0m
+  Rendered crags/home.html.erb within layouts/application (12.7ms)
+Completed 200 OK in 106ms (Views: 98.0ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-11-22 06:34:09 +1100
+Processing by CragsController#home as HTML
+  Rendering crags/home.html.erb within layouts/application
+  [1m[36mCrag Load (0.9ms)[0m  [1m[34mSELECT "crags".* FROM "crags"[0m
+  Rendered crags/home.html.erb within layouts/application (18.6ms)
+Completed 200 OK in 141ms (Views: 130.5ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-11-22 06:34:14 +1100
+Processing by CragsController#home as HTML
+  Rendering crags/home.html.erb within layouts/application
+  [1m[36mCrag Load (0.6ms)[0m  [1m[34mSELECT "crags".* FROM "crags"[0m
+  Rendered crags/home.html.erb within layouts/application (4.6ms)
+Completed 200 OK in 97ms (Views: 90.0ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-11-22 06:34:20 +1100
+Processing by CragsController#home as HTML
+  Rendering crags/home.html.erb within layouts/application
+  [1m[36mCrag Load (0.3ms)[0m  [1m[34mSELECT "crags".* FROM "crags"[0m
+  Rendered crags/home.html.erb within layouts/application (9.6ms)
+Completed 200 OK in 149ms (Views: 144.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-11-22 06:34:27 +1100
+Processing by CragsController#home as HTML
+  Rendering crags/home.html.erb within layouts/application
+  [1m[36mCrag Load (0.4ms)[0m  [1m[34mSELECT "crags".* FROM "crags"[0m
+  Rendered crags/home.html.erb within layouts/application (5.5ms)
+Completed 200 OK in 85ms (Views: 78.4ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-11-22 06:34:33 +1100
+Processing by CragsController#home as HTML
+  Rendering crags/home.html.erb within layouts/application
+  [1m[36mCrag Load (0.3ms)[0m  [1m[34mSELECT "crags".* FROM "crags"[0m
+  Rendered crags/home.html.erb within layouts/application (6.6ms)
+Completed 200 OK in 87ms (Views: 82.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-11-22 06:34:51 +1100
+Processing by CragsController#home as HTML
+  Rendering crags/home.html.erb within layouts/application
+  [1m[36mCrag Load (0.9ms)[0m  [1m[34mSELECT "crags".* FROM "crags"[0m
+  Rendered crags/home.html.erb within layouts/application (22.6ms)
+Completed 200 OK in 190ms (Views: 178.1ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-11-22 06:35:00 +1100
+Processing by CragsController#home as HTML
+  Rendering crags/home.html.erb within layouts/application
+  [1m[36mCrag Load (0.9ms)[0m  [1m[34mSELECT "crags".* FROM "crags"[0m
+  Rendered crags/home.html.erb within layouts/application (12.5ms)
+Completed 200 OK in 104ms (Views: 95.2ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-11-22 06:35:10 +1100
+Processing by CragsController#home as HTML
+  Rendering crags/home.html.erb within layouts/application
+  [1m[36mCrag Load (0.4ms)[0m  [1m[34mSELECT "crags".* FROM "crags"[0m
+  Rendered crags/home.html.erb within layouts/application (6.9ms)
+Completed 200 OK in 80ms (Views: 74.3ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-11-22 06:35:17 +1100
+Processing by CragsController#home as HTML
+  Rendering crags/home.html.erb within layouts/application
+  [1m[36mCrag Load (0.3ms)[0m  [1m[34mSELECT "crags".* FROM "crags"[0m
+  Rendered crags/home.html.erb within layouts/application (3.5ms)
+Completed 200 OK in 190ms (Views: 186.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-11-22 06:35:26 +1100
+Processing by CragsController#home as HTML
+  Rendering crags/home.html.erb within layouts/application
+  [1m[36mCrag Load (0.3ms)[0m  [1m[34mSELECT "crags".* FROM "crags"[0m
+  Rendered crags/home.html.erb within layouts/application (4.5ms)
+Completed 200 OK in 73ms (Views: 68.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-11-22 06:35:31 +1100
+Processing by CragsController#home as HTML
+  Rendering crags/home.html.erb within layouts/application
+  [1m[36mCrag Load (0.3ms)[0m  [1m[34mSELECT "crags".* FROM "crags"[0m
+  Rendered crags/home.html.erb within layouts/application (5.9ms)
+Completed 200 OK in 72ms (Views: 66.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-11-22 06:35:39 +1100
+Processing by CragsController#home as HTML
+  Rendering crags/home.html.erb within layouts/application
+  [1m[36mCrag Load (0.5ms)[0m  [1m[34mSELECT "crags".* FROM "crags"[0m
+  Rendered crags/home.html.erb within layouts/application (8.7ms)
+Completed 200 OK in 97ms (Views: 90.8ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-11-22 06:37:21 +1100
+Processing by CragsController#home as HTML
+  Rendering crags/home.html.erb within layouts/application
+  [1m[36mCrag Load (3.4ms)[0m  [1m[34mSELECT "crags".* FROM "crags"[0m
+  Rendered crags/home.html.erb within layouts/application (32.4ms)
+Completed 200 OK in 163ms (Views: 144.7ms | ActiveRecord: 3.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-11-22 06:37:38 +1100
+Processing by CragsController#home as HTML
+  Rendering crags/home.html.erb within layouts/application
+  [1m[36mCrag Load (2.5ms)[0m  [1m[34mSELECT "crags".* FROM "crags"[0m
+  Rendered crags/home.html.erb within layouts/application (32.8ms)
+Completed 200 OK in 155ms (Views: 139.9ms | ActiveRecord: 2.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-11-22 06:37:59 +1100
+Processing by CragsController#home as HTML
+  Rendering crags/home.html.erb within layouts/application
+  [1m[36mCrag Load (1.2ms)[0m  [1m[34mSELECT "crags".* FROM "crags"[0m
+  Rendered crags/home.html.erb within layouts/application (5.2ms)
+Completed 200 OK in 152ms (Views: 143.2ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-11-22 06:38:07 +1100
+Processing by CragsController#home as HTML
+  Rendering crags/home.html.erb within layouts/application
+  [1m[36mCrag Load (1.3ms)[0m  [1m[34mSELECT "crags".* FROM "crags"[0m
+  Rendered crags/home.html.erb within layouts/application (4.6ms)
+Completed 200 OK in 85ms (Views: 78.7ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-11-22 06:38:16 +1100
+Processing by CragsController#home as HTML
+  Rendering crags/home.html.erb within layouts/application
+  [1m[36mCrag Load (0.5ms)[0m  [1m[34mSELECT "crags".* FROM "crags"[0m
+  Rendered crags/home.html.erb within layouts/application (6.1ms)
+Completed 200 OK in 37ms (Views: 33.8ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-11-22 06:38:56 +1100
+Processing by CragsController#home as HTML
+  Rendering crags/home.html.erb within layouts/application
+  [1m[36mCrag Load (1.5ms)[0m  [1m[34mSELECT "crags".* FROM "crags"[0m
+  Rendered crags/home.html.erb within layouts/application (22.3ms)
+Completed 200 OK in 212ms (Views: 195.7ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-11-22 06:39:56 +1100
+Processing by CragsController#home as HTML
+  Rendering crags/home.html.erb within layouts/application
+  [1m[36mCrag Load (1.8ms)[0m  [1m[34mSELECT "crags".* FROM "crags"[0m
+  Rendered crags/home.html.erb within layouts/application (43.3ms)
+Completed 200 OK in 179ms (Views: 161.3ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-11-22 06:39:56 +1100
+Processing by CragsController#home as HTML
+  Rendering crags/home.html.erb within layouts/application
+  [1m[36mCrag Load (0.2ms)[0m  [1m[34mSELECT "crags".* FROM "crags"[0m
+  Rendered crags/home.html.erb within layouts/application (5.4ms)
+Completed 200 OK in 72ms (Views: 64.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-11-22 06:44:06 +1100
+Processing by CragsController#home as HTML
+  Rendering crags/home.html.erb within layouts/application
+  [1m[36mCrag Load (2.1ms)[0m  [1m[34mSELECT "crags".* FROM "crags"[0m
+  Rendered crags/home.html.erb within layouts/application (39.5ms)
+Completed 200 OK in 381ms (Views: 359.0ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-11-22 06:44:12 +1100
+Processing by CragsController#home as HTML
+  Rendering crags/home.html.erb within layouts/application
+  [1m[36mCrag Load (0.5ms)[0m  [1m[34mSELECT "crags".* FROM "crags"[0m
+  Rendered crags/home.html.erb within layouts/application (6.4ms)
+Completed 200 OK in 86ms (Views: 79.8ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-11-22 06:47:11 +1100
+Processing by CragsController#home as HTML
+  Rendering crags/home.html.erb within layouts/application
+  [1m[36mCrag Load (4.7ms)[0m  [1m[34mSELECT "crags".* FROM "crags"[0m
+  Rendered crags/home.html.erb within layouts/application (47.1ms)
+Completed 200 OK in 320ms (Views: 284.3ms | ActiveRecord: 4.7ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-11-22 06:47:37 +1100
+Processing by CragsController#home as HTML
+  Rendering crags/home.html.erb within layouts/application
+  [1m[36mCrag Load (1.9ms)[0m  [1m[34mSELECT "crags".* FROM "crags"[0m
+  Rendered crags/home.html.erb within layouts/application (30.5ms)
+Completed 200 OK in 159ms (Views: 139.7ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/crags/1" for 127.0.0.1 at 2017-11-22 06:47:40 +1100
+Processing by CragsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCrag Load (1.8ms)[0m  [1m[34mSELECT  "crags".* FROM "crags" WHERE "crags"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering crags/show.html.erb within layouts/application
+  Rendered crags/show.html.erb within layouts/application (30.1ms)
+Completed 200 OK in 102ms (Views: 82.8ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-11-22 06:47:43 +1100
+Processing by CragsController#home as HTML
+  Rendering crags/home.html.erb within layouts/application
+  [1m[36mCrag Load (2.9ms)[0m  [1m[34mSELECT "crags".* FROM "crags"[0m
+  Rendered crags/home.html.erb within layouts/application (9.5ms)
+Completed 200 OK in 76ms (Views: 68.2ms | ActiveRecord: 2.9ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-11-22 06:47:46 +1100
+Processing by CragsController#home as HTML
+  Rendering crags/home.html.erb within layouts/application
+  [1m[36mCrag Load (0.5ms)[0m  [1m[34mSELECT "crags".* FROM "crags"[0m
+  Rendered crags/home.html.erb within layouts/application (5.0ms)
+Completed 200 OK in 52ms (Views: 47.9ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/crags/new" for 127.0.0.1 at 2017-11-22 06:48:04 +1100
+Processing by CragsController#new as HTML
+  Rendering crags/new.html.erb within layouts/application
+  Rendered crags/new.html.erb within layouts/application (5.5ms)
+Completed 200 OK in 140ms (Views: 134.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/crags/new" for 127.0.0.1 at 2017-11-22 06:48:43 +1100
+Processing by CragsController#new as HTML
+  Rendering crags/new.html.erb within layouts/application
+  Rendered crags/new.html.erb within layouts/application (8.4ms)
+Completed 200 OK in 463ms (Views: 437.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-11-22 06:48:48 +1100
+Processing by CragsController#home as HTML
+  Rendering crags/home.html.erb within layouts/application
+  [1m[36mCrag Load (1.1ms)[0m  [1m[34mSELECT "crags".* FROM "crags"[0m
+  Rendered crags/home.html.erb within layouts/application (22.0ms)
+Completed 200 OK in 85ms (Views: 77.6ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-11-22 06:49:12 +1100
+Processing by CragsController#home as HTML
+  Rendering crags/home.html.erb within layouts/application
+  [1m[36mCrag Load (9.4ms)[0m  [1m[34mSELECT "crags".* FROM "crags"[0m
+  Rendered crags/home.html.erb within layouts/application (35.3ms)
+Completed 200 OK in 373ms (Views: 349.6ms | ActiveRecord: 9.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-11-22 06:49:33 +1100
+Processing by CragsController#home as HTML
+  Rendering crags/home.html.erb within layouts/application
+  [1m[36mCrag Load (1.1ms)[0m  [1m[34mSELECT "crags".* FROM "crags"[0m
+  Rendered crags/home.html.erb within layouts/application (23.4ms)
+Completed 200 OK in 251ms (Views: 242.4ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-11-22 06:50:15 +1100
+Processing by CragsController#home as HTML
+  Rendering crags/home.html.erb within layouts/application
+  [1m[36mCrag Load (1.6ms)[0m  [1m[34mSELECT "crags".* FROM "crags"[0m
+  Rendered crags/home.html.erb within layouts/application (39.8ms)
+Completed 200 OK in 276ms (Views: 256.7ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-11-22 06:50:18 +1100
+Processing by CragsController#home as HTML
+  Rendering crags/home.html.erb within layouts/application
+  [1m[36mCrag Load (0.4ms)[0m  [1m[34mSELECT "crags".* FROM "crags"[0m
+  Rendered crags/home.html.erb within layouts/application (6.8ms)
+Completed 200 OK in 66ms (Views: 60.0ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/crags/new" for 127.0.0.1 at 2017-11-22 06:50:21 +1100
+Processing by CragsController#new as HTML
+  Rendering crags/new.html.erb within layouts/application
+  Rendered crags/new.html.erb within layouts/application (4.3ms)
+Completed 200 OK in 57ms (Views: 53.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-11-22 06:51:26 +1100
+Processing by CragsController#home as HTML
+  Rendering crags/home.html.erb within layouts/application
+  [1m[36mCrag Load (3.3ms)[0m  [1m[34mSELECT "crags".* FROM "crags"[0m
+  Rendered crags/home.html.erb within layouts/application (35.3ms)
+Completed 200 OK in 196ms (Views: 170.5ms | ActiveRecord: 3.3ms)
+
+
+Started GET "/crags/7" for 127.0.0.1 at 2017-11-22 06:51:27 +1100
+Processing by CragsController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mCrag Load (1.3ms)[0m  [1m[34mSELECT  "crags".* FROM "crags" WHERE "crags"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  Rendering crags/show.html.erb within layouts/application
+  Rendered crags/show.html.erb within layouts/application (12.7ms)
+Completed 200 OK in 163ms (Views: 151.3ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-11-22 06:51:29 +1100
+Processing by CragsController#home as HTML
+  Rendering crags/home.html.erb within layouts/application
+  [1m[36mCrag Load (0.7ms)[0m  [1m[34mSELECT "crags".* FROM "crags"[0m
+  Rendered crags/home.html.erb within layouts/application (14.3ms)
+Completed 200 OK in 85ms (Views: 79.9ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/crags/new" for 127.0.0.1 at 2017-11-22 06:51:31 +1100
+Processing by CragsController#new as HTML
+  Rendering crags/new.html.erb within layouts/application
+  Rendered crags/new.html.erb within layouts/application (5.7ms)
+Completed 200 OK in 84ms (Views: 79.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/crags/new" for 127.0.0.1 at 2017-11-22 06:53:10 +1100
+Processing by CragsController#new as HTML
+  Rendering crags/new.html.erb within layouts/application
+  Rendered crags/new.html.erb within layouts/application (7.2ms)
+Completed 200 OK in 235ms (Views: 219.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/crags/new" for 127.0.0.1 at 2017-11-22 06:53:37 +1100
+Processing by CragsController#new as HTML
+  Rendering crags/new.html.erb within layouts/application
+  Rendered crags/new.html.erb within layouts/application (6.9ms)
+Completed 200 OK in 318ms (Views: 298.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/crags/new" for 127.0.0.1 at 2017-11-22 06:54:17 +1100
+Processing by CragsController#new as HTML
+  Rendering crags/new.html.erb within layouts/application
+  Rendered crags/new.html.erb within layouts/application (8.2ms)
+Completed 200 OK in 230ms (Views: 204.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/crags/new" for 127.0.0.1 at 2017-11-22 06:54:24 +1100
+Processing by CragsController#new as HTML
+  Rendering crags/new.html.erb within layouts/application
+  Rendered crags/new.html.erb within layouts/application (4.2ms)
+Completed 200 OK in 70ms (Views: 66.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-11-22 06:54:27 +1100
+Processing by CragsController#home as HTML
+  Rendering crags/home.html.erb within layouts/application
+  [1m[36mCrag Load (1.7ms)[0m  [1m[34mSELECT "crags".* FROM "crags"[0m
+  Rendered crags/home.html.erb within layouts/application (19.6ms)
+Completed 200 OK in 62ms (Views: 54.6ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/crags/2" for 127.0.0.1 at 2017-11-22 06:54:30 +1100
+Processing by CragsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mCrag Load (0.4ms)[0m  [1m[34mSELECT  "crags".* FROM "crags" WHERE "crags"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering crags/show.html.erb within layouts/application
+  Rendered crags/show.html.erb within layouts/application (4.2ms)
+Completed 200 OK in 51ms (Views: 44.0ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/crags/7" for 127.0.0.1 at 2017-11-22 06:54:33 +1100
+Processing by CragsController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mCrag Load (0.3ms)[0m  [1m[34mSELECT  "crags".* FROM "crags" WHERE "crags"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  Rendering crags/show.html.erb within layouts/application
+  Rendered crags/show.html.erb within layouts/application (3.2ms)
+Completed 200 OK in 42ms (Views: 36.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/crags/2" for 127.0.0.1 at 2017-11-22 06:54:34 +1100
+Processing by CragsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mCrag Load (0.2ms)[0m  [1m[34mSELECT  "crags".* FROM "crags" WHERE "crags"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering crags/show.html.erb within layouts/application
+  Rendered crags/show.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 36ms (Views: 29.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/crags/2/edit" for 127.0.0.1 at 2017-11-22 06:54:37 +1100
+Processing by CragsController#edit as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mCrag Load (0.3ms)[0m  [1m[34mSELECT  "crags".* FROM "crags" WHERE "crags"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering crags/edit.html.erb within layouts/application
+  Rendered crags/edit.html.erb within layouts/application (4.7ms)
+Completed 200 OK in 40ms (Views: 34.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-11-22 06:54:39 +1100
+Processing by CragsController#home as HTML
+  Rendering crags/home.html.erb within layouts/application
+  [1m[36mCrag Load (0.4ms)[0m  [1m[34mSELECT "crags".* FROM "crags"[0m
+  Rendered crags/home.html.erb within layouts/application (9.9ms)
+Completed 200 OK in 62ms (Views: 55.8ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/crags/2" for 127.0.0.1 at 2017-11-22 06:54:41 +1100
+Processing by CragsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mCrag Load (0.4ms)[0m  [1m[34mSELECT  "crags".* FROM "crags" WHERE "crags"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering crags/show.html.erb within layouts/application
+  Rendered crags/show.html.erb within layouts/application (6.4ms)
+Completed 200 OK in 66ms (Views: 55.8ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-11-22 06:55:01 +1100
+Processing by CragsController#home as HTML
+  Rendering crags/home.html.erb within layouts/application
+  [1m[36mCrag Load (0.8ms)[0m  [1m[34mSELECT "crags".* FROM "crags"[0m
+  Rendered crags/home.html.erb within layouts/application (18.2ms)
+Completed 200 OK in 149ms (Views: 129.2ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-11-22 06:55:16 +1100
+Processing by CragsController#home as HTML
+  Rendering crags/home.html.erb within layouts/application
+  [1m[36mCrag Load (0.5ms)[0m  [1m[34mSELECT "crags".* FROM "crags"[0m
+  Rendered crags/home.html.erb within layouts/application (5.8ms)
+Completed 200 OK in 199ms (Views: 193.6ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-11-22 06:55:23 +1100
+Processing by CragsController#home as HTML
+  Rendering crags/home.html.erb within layouts/application
+  [1m[36mCrag Load (0.6ms)[0m  [1m[34mSELECT "crags".* FROM "crags"[0m
+  Rendered crags/home.html.erb within layouts/application (26.1ms)
+Completed 200 OK in 153ms (Views: 134.4ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-11-22 06:55:30 +1100
+Processing by CragsController#home as HTML
+  Rendering crags/home.html.erb within layouts/application
+  [1m[36mCrag Load (0.9ms)[0m  [1m[34mSELECT "crags".* FROM "crags"[0m
+  Rendered crags/home.html.erb within layouts/application (16.7ms)
+Completed 200 OK in 103ms (Views: 95.2ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-11-22 06:55:32 +1100
+Processing by CragsController#home as HTML
+  Rendering crags/home.html.erb within layouts/application
+  [1m[36mCrag Load (0.8ms)[0m  [1m[34mSELECT "crags".* FROM "crags"[0m
+  Rendered crags/home.html.erb within layouts/application (9.1ms)
+Completed 200 OK in 229ms (Views: 223.5ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/crags/new" for 127.0.0.1 at 2017-11-22 06:55:33 +1100
+Processing by CragsController#new as HTML
+  Rendering crags/new.html.erb within layouts/application
+  Rendered crags/new.html.erb within layouts/application (4.7ms)
+Completed 200 OK in 54ms (Views: 49.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-11-22 06:55:35 +1100
+Processing by CragsController#home as HTML
+  Rendering crags/home.html.erb within layouts/application
+  [1m[36mCrag Load (0.6ms)[0m  [1m[34mSELECT "crags".* FROM "crags"[0m
+  Rendered crags/home.html.erb within layouts/application (8.4ms)
+Completed 200 OK in 108ms (Views: 100.5ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/crags/2" for 127.0.0.1 at 2017-11-22 06:55:36 +1100
+Processing by CragsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mCrag Load (0.3ms)[0m  [1m[34mSELECT  "crags".* FROM "crags" WHERE "crags"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering crags/show.html.erb within layouts/application
+  Rendered crags/show.html.erb within layouts/application (3.5ms)
+Completed 200 OK in 59ms (Views: 53.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-11-22 06:55:41 +1100
+Processing by CragsController#home as HTML
+  Rendering crags/home.html.erb within layouts/application
+  [1m[36mCrag Load (0.6ms)[0m  [1m[34mSELECT "crags".* FROM "crags"[0m
+  Rendered crags/home.html.erb within layouts/application (5.3ms)
+Completed 200 OK in 69ms (Views: 63.1ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-11-22 06:56:06 +1100
+Processing by CragsController#home as HTML
+  Rendering crags/home.html.erb within layouts/application
+  [1m[36mCrag Load (0.6ms)[0m  [1m[34mSELECT "crags".* FROM "crags"[0m
+  Rendered crags/home.html.erb within layouts/application (17.5ms)
+Completed 200 OK in 87ms (Views: 77.1ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-11-22 07:01:22 +1100
+Processing by CragsController#home as HTML
+  Rendering crags/home.html.erb within layouts/application
+  [1m[36mCrag Load (15.4ms)[0m  [1m[34mSELECT "crags".* FROM "crags"[0m
+  Rendered crags/home.html.erb within layouts/application (175.7ms)
+Completed 200 OK in 945ms (Views: 892.3ms | ActiveRecord: 15.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-11-22 07:01:29 +1100
+Processing by CragsController#home as HTML
+  Rendering crags/home.html.erb within layouts/application
+  [1m[36mCrag Load (3.4ms)[0m  [1m[34mSELECT "crags".* FROM "crags"[0m
+  Rendered crags/home.html.erb within layouts/application (31.6ms)
+Completed 200 OK in 349ms (Views: 321.7ms | ActiveRecord: 3.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-11-22 07:01:48 +1100
+Processing by CragsController#home as HTML
+  Rendering crags/home.html.erb within layouts/application
+  [1m[36mCrag Load (3.2ms)[0m  [1m[34mSELECT "crags".* FROM "crags"[0m
+  Rendered crags/home.html.erb within layouts/application (35.5ms)
+Completed 200 OK in 176ms (Views: 152.7ms | ActiveRecord: 3.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-11-22 07:03:15 +1100
+Processing by CragsController#home as HTML
+  Rendering crags/home.html.erb within layouts/application
+  [1m[36mCrag Load (16.1ms)[0m  [1m[34mSELECT "crags".* FROM "crags"[0m
+  Rendered crags/home.html.erb within layouts/application (110.6ms)
+Completed 200 OK in 588ms (Views: 529.0ms | ActiveRecord: 16.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-11-22 07:03:20 +1100
+Processing by CragsController#home as HTML
+  Rendering crags/home.html.erb within layouts/application
+  [1m[36mCrag Load (0.6ms)[0m  [1m[34mSELECT "crags".* FROM "crags"[0m
+  Rendered crags/home.html.erb within layouts/application (5.8ms)
+Completed 200 OK in 73ms (Views: 64.8ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-11-22 07:03:23 +1100
+Processing by CragsController#home as HTML
+  Rendering crags/home.html.erb within layouts/application
+  [1m[36mCrag Load (0.3ms)[0m  [1m[34mSELECT "crags".* FROM "crags"[0m
+  Rendered crags/home.html.erb within layouts/application (4.1ms)
+Completed 200 OK in 58ms (Views: 49.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-11-22 07:05:14 +1100
+Processing by CragsController#home as HTML
+  Rendering crags/home.html.erb within layouts/application
+  [1m[36mCrag Load (11.8ms)[0m  [1m[34mSELECT "crags".* FROM "crags"[0m
+  Rendered crags/home.html.erb within layouts/application (40.1ms)
+Completed 200 OK in 319ms (Views: 268.5ms | ActiveRecord: 11.8ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-11-22 07:05:44 +1100
+Processing by CragsController#home as HTML
+  Rendering crags/home.html.erb within layouts/application
+  [1m[36mCrag Load (1.7ms)[0m  [1m[34mSELECT "crags".* FROM "crags"[0m
+  Rendered crags/home.html.erb within layouts/application (25.8ms)
+Completed 200 OK in 331ms (Views: 313.3ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-11-22 07:05:54 +1100
+Processing by CragsController#home as HTML
+  Rendering crags/home.html.erb within layouts/application
+  [1m[36mCrag Load (0.3ms)[0m  [1m[34mSELECT "crags".* FROM "crags"[0m
+  Rendered crags/home.html.erb within layouts/application (4.3ms)
+Completed 200 OK in 93ms (Views: 87.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-11-22 07:06:10 +1100
+Processing by CragsController#home as HTML
+  Rendering crags/home.html.erb within layouts/application
+  [1m[36mCrag Load (1.8ms)[0m  [1m[34mSELECT "crags".* FROM "crags"[0m
+  Rendered crags/home.html.erb within layouts/application (28.5ms)
+Completed 200 OK in 200ms (Views: 181.3ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-11-22 07:06:26 +1100
+Processing by CragsController#home as HTML
+  Rendering crags/home.html.erb within layouts/application
+  [1m[36mCrag Load (1.9ms)[0m  [1m[34mSELECT "crags".* FROM "crags"[0m
+  Rendered crags/home.html.erb within layouts/application (34.4ms)
+Completed 200 OK in 142ms (Views: 124.2ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/crags/7" for 127.0.0.1 at 2017-11-22 07:06:27 +1100
+Processing by CragsController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mCrag Load (0.3ms)[0m  [1m[34mSELECT  "crags".* FROM "crags" WHERE "crags"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  Rendering crags/show.html.erb within layouts/application
+  Rendered crags/show.html.erb within layouts/application (10.0ms)
+Completed 200 OK in 87ms (Views: 75.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-11-22 07:06:28 +1100
+Processing by CragsController#home as HTML
+  Rendering crags/home.html.erb within layouts/application
+  [1m[36mCrag Load (2.2ms)[0m  [1m[34mSELECT "crags".* FROM "crags"[0m
+  Rendered crags/home.html.erb within layouts/application (12.4ms)
+Completed 200 OK in 71ms (Views: 65.0ms | ActiveRecord: 2.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-11-22 07:06:37 +1100
+Processing by CragsController#home as HTML
+  Rendering crags/home.html.erb within layouts/application
+  [1m[36mCrag Load (0.5ms)[0m  [1m[34mSELECT "crags".* FROM "crags"[0m
+  Rendered crags/home.html.erb within layouts/application (46.0ms)
+Completed 200 OK in 106ms (Views: 100.0ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-11-22 07:07:30 +1100
+Processing by CragsController#home as HTML
+  Rendering crags/home.html.erb within layouts/application
+  [1m[36mCrag Load (1.1ms)[0m  [1m[34mSELECT "crags".* FROM "crags"[0m
+  Rendered crags/home.html.erb within layouts/application (31.1ms)
+Completed 200 OK in 180ms (Views: 164.9ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-11-22 07:53:30 +1100
+Processing by CragsController#home as HTML
+  Rendering crags/home.html.erb within layouts/application
+  [1m[36mCrag Load (2.8ms)[0m  [1m[34mSELECT "crags".* FROM "crags"[0m
+  Rendered crags/home.html.erb within layouts/application (36.3ms)
+Completed 200 OK in 252ms (Views: 230.4ms | ActiveRecord: 2.8ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-11-22 07:53:50 +1100
+Processing by CragsController#home as HTML
+  Rendering crags/home.html.erb within layouts/application
+  [1m[36mCrag Load (2.7ms)[0m  [1m[34mSELECT "crags".* FROM "crags"[0m
+  Rendered crags/home.html.erb within layouts/application (34.7ms)
+Completed 200 OK in 214ms (Views: 194.9ms | ActiveRecord: 2.7ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-11-22 07:54:13 +1100
+Processing by CragsController#home as HTML
+  Rendering crags/home.html.erb within layouts/application
+  [1m[36mCrag Load (0.5ms)[0m  [1m[34mSELECT "crags".* FROM "crags"[0m
+  Rendered crags/home.html.erb within layouts/application (9.1ms)
+Completed 200 OK in 61ms (Views: 56.6ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-11-22 07:55:07 +1100
+Processing by CragsController#home as HTML
+  Rendering crags/home.html.erb within layouts/application
+  [1m[36mCrag Load (1.4ms)[0m  [1m[34mSELECT "crags".* FROM "crags"[0m
+  Rendered crags/home.html.erb within layouts/application (26.6ms)
+Completed 200 OK in 176ms (Views: 159.1ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-11-22 07:58:15 +1100
+Processing by CragsController#home as HTML
+  Rendering crags/home.html.erb within layouts/application
+  [1m[36mCrag Load (1.6ms)[0m  [1m[34mSELECT "crags".* FROM "crags"[0m
+  Rendered crags/home.html.erb within layouts/application (39.9ms)
+Completed 200 OK in 352ms (Views: 311.3ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-11-22 07:59:06 +1100
+Processing by CragsController#home as HTML
+  Rendering crags/home.html.erb within layouts/application
+  [1m[36mCrag Load (1.6ms)[0m  [1m[34mSELECT "crags".* FROM "crags"[0m
+  Rendered crags/home.html.erb within layouts/application (42.4ms)
+Completed 200 OK in 528ms (Views: 506.0ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-11-22 07:59:14 +1100
+Processing by CragsController#home as HTML
+  Rendering crags/home.html.erb within layouts/application
+  [1m[36mCrag Load (0.3ms)[0m  [1m[34mSELECT "crags".* FROM "crags"[0m
+  Rendered crags/home.html.erb within layouts/application (7.1ms)
+Completed 200 OK in 53ms (Views: 50.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-11-22 07:59:39 +1100
+Processing by CragsController#home as HTML
+  Rendering crags/home.html.erb within layouts/application
+  [1m[36mCrag Load (1.1ms)[0m  [1m[34mSELECT "crags".* FROM "crags"[0m
+  Rendered crags/home.html.erb within layouts/application (31.8ms)
+Completed 200 OK in 193ms (Views: 168.5ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-11-22 08:00:38 +1100
+Processing by CragsController#home as HTML
+  Rendering crags/home.html.erb within layouts/application
+  [1m[36mCrag Load (12.5ms)[0m  [1m[34mSELECT "crags".* FROM "crags"[0m
+  Rendered crags/home.html.erb within layouts/application (67.4ms)
+Completed 200 OK in 622ms (Views: 588.7ms | ActiveRecord: 12.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-11-22 08:01:48 +1100
+Processing by CragsController#home as HTML
+  Rendering crags/home.html.erb within layouts/application
+  [1m[36mCrag Load (1.0ms)[0m  [1m[34mSELECT "crags".* FROM "crags"[0m
+  Rendered crags/home.html.erb within layouts/application (9.1ms)
+Completed 200 OK in 153ms (Views: 147.6ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-11-22 08:02:40 +1100
+Processing by CragsController#home as HTML
+  Rendering crags/home.html.erb within layouts/application
+  [1m[36mCrag Load (1.7ms)[0m  [1m[34mSELECT "crags".* FROM "crags"[0m
+  Rendered crags/home.html.erb within layouts/application (28.8ms)
+Completed 200 OK in 159ms (Views: 140.4ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-11-22 08:03:48 +1100
+Processing by CragsController#home as HTML
+  Rendering crags/home.html.erb within layouts/application
+  [1m[36mCrag Load (1.3ms)[0m  [1m[34mSELECT "crags".* FROM "crags"[0m
+  Rendered crags/home.html.erb within layouts/application (24.5ms)
+Completed 200 OK in 153ms (Views: 144.7ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-11-22 08:04:10 +1100
+Processing by CragsController#home as HTML
+  Rendering crags/home.html.erb within layouts/application
+  [1m[36mCrag Load (1.2ms)[0m  [1m[34mSELECT "crags".* FROM "crags"[0m
+  Rendered crags/home.html.erb within layouts/application (15.1ms)
+Completed 200 OK in 117ms (Views: 106.3ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-11-22 08:04:37 +1100
+Processing by CragsController#home as HTML
+  Rendering crags/home.html.erb within layouts/application
+  [1m[36mCrag Load (2.1ms)[0m  [1m[34mSELECT "crags".* FROM "crags"[0m
+  Rendered crags/home.html.erb within layouts/application (38.1ms)
+Completed 200 OK in 171ms (Views: 151.2ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-11-22 08:05:29 +1100
+Processing by CragsController#home as HTML
+  Rendering crags/home.html.erb within layouts/application
+  [1m[36mCrag Load (0.5ms)[0m  [1m[34mSELECT "crags".* FROM "crags"[0m
+  Rendered crags/home.html.erb within layouts/application (10.5ms)
+Completed 200 OK in 107ms (Views: 101.4ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-11-22 08:07:13 +1100
+Processing by CragsController#home as HTML
+  Rendering crags/home.html.erb within layouts/application
+  [1m[36mCrag Load (0.9ms)[0m  [1m[34mSELECT "crags".* FROM "crags"[0m
+  Rendered crags/home.html.erb within layouts/application (16.4ms)
+Completed 200 OK in 139ms (Views: 129.0ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-11-22 08:07:41 +1100
+Processing by CragsController#home as HTML
+  Rendering crags/home.html.erb within layouts/application
+  [1m[36mCrag Load (2.5ms)[0m  [1m[34mSELECT "crags".* FROM "crags"[0m
+  Rendered crags/home.html.erb within layouts/application (22.2ms)
+Completed 200 OK in 442ms (Views: 428.4ms | ActiveRecord: 2.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-11-22 08:09:16 +1100
+Processing by CragsController#home as HTML
+  Rendering crags/home.html.erb within layouts/application
+  [1m[36mCrag Load (0.4ms)[0m  [1m[34mSELECT "crags".* FROM "crags"[0m
+  Rendered crags/home.html.erb within layouts/application (5.0ms)
+Completed 200 OK in 80ms (Views: 74.0ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-11-22 08:12:23 +1100
+Processing by CragsController#home as HTML
+  Rendering crags/home.html.erb within layouts/application
+  [1m[36mCrag Load (1.9ms)[0m  [1m[34mSELECT "crags".* FROM "crags"[0m
+  Rendered crags/home.html.erb within layouts/application (34.9ms)
+Completed 200 OK in 257ms (Views: 239.5ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-11-22 08:12:47 +1100
+Processing by CragsController#home as HTML
+  Rendering crags/home.html.erb within layouts/application
+  [1m[36mCrag Load (0.5ms)[0m  [1m[34mSELECT "crags".* FROM "crags"[0m
+  Rendered crags/home.html.erb within layouts/application (3.7ms)
+Completed 200 OK in 112ms (Views: 107.2ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-11-22 08:13:58 +1100
+Processing by CragsController#home as HTML
+  Rendering crags/home.html.erb within layouts/application
+  [1m[36mCrag Load (1.2ms)[0m  [1m[34mSELECT "crags".* FROM "crags"[0m
+  Rendered crags/home.html.erb within layouts/application (37.5ms)
+Completed 200 OK in 339ms (Views: 306.2ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-11-22 08:14:06 +1100
+Processing by CragsController#home as HTML
+  Rendering crags/home.html.erb within layouts/application
+  [1m[36mCrag Load (0.4ms)[0m  [1m[34mSELECT "crags".* FROM "crags"[0m
+  Rendered crags/home.html.erb within layouts/application (16.8ms)
+Completed 200 OK in 81ms (Views: 75.5ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/crags/2" for 127.0.0.1 at 2017-11-22 08:14:09 +1100
+Processing by CragsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mCrag Load (0.3ms)[0m  [1m[34mSELECT  "crags".* FROM "crags" WHERE "crags"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering crags/show.html.erb within layouts/application
+  Rendered crags/show.html.erb within layouts/application (10.7ms)
+Completed 200 OK in 60ms (Views: 51.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/crags/2/edit" for 127.0.0.1 at 2017-11-22 08:14:42 +1100
+Processing by CragsController#edit as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mCrag Load (0.3ms)[0m  [1m[34mSELECT  "crags".* FROM "crags" WHERE "crags"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering crags/edit.html.erb within layouts/application
+  Rendered crags/edit.html.erb within layouts/application (9.3ms)
+Completed 200 OK in 59ms (Views: 50.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/crags/new" for 127.0.0.1 at 2017-11-22 08:14:45 +1100
+Processing by CragsController#new as HTML
+  Rendering crags/new.html.erb within layouts/application
+  Rendered crags/new.html.erb within layouts/application (5.6ms)
+Completed 200 OK in 44ms (Views: 39.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-11-22 08:14:50 +1100
+Processing by CragsController#home as HTML
+  Rendering crags/home.html.erb within layouts/application
+  [1m[36mCrag Load (0.3ms)[0m  [1m[34mSELECT "crags".* FROM "crags"[0m
+  Rendered crags/home.html.erb within layouts/application (49.5ms)
+Completed 200 OK in 516ms (Views: 468.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-11-22 08:14:56 +1100
+Processing by CragsController#home as HTML
+  Rendering crags/home.html.erb within layouts/application
+  [1m[36mCrag Load (7.1ms)[0m  [1m[34mSELECT "crags".* FROM "crags"[0m
+  Rendered crags/home.html.erb within layouts/application (27.8ms)
+Completed 200 OK in 606ms (Views: 571.8ms | ActiveRecord: 7.1ms)
+
+
+Started GET "/crags/2" for 127.0.0.1 at 2017-11-22 08:14:59 +1100
+Processing by CragsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mCrag Load (0.4ms)[0m  [1m[34mSELECT  "crags".* FROM "crags" WHERE "crags"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering crags/show.html.erb within layouts/application
+  Rendered crags/show.html.erb within layouts/application (6.5ms)
+Completed 200 OK in 138ms (Views: 127.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-11-22 08:15:01 +1100
+Processing by CragsController#home as HTML
+  Rendering crags/home.html.erb within layouts/application
+  [1m[36mCrag Load (0.3ms)[0m  [1m[34mSELECT "crags".* FROM "crags"[0m
+  Rendered crags/home.html.erb within layouts/application (13.6ms)
+Completed 200 OK in 98ms (Views: 93.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/crags/7" for 127.0.0.1 at 2017-11-22 08:15:03 +1100
+Processing by CragsController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mCrag Load (0.2ms)[0m  [1m[34mSELECT  "crags".* FROM "crags" WHERE "crags"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  Rendering crags/show.html.erb within layouts/application
+  Rendered crags/show.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 44ms (Views: 38.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-11-22 08:15:04 +1100
+Processing by CragsController#home as HTML
+  Rendering crags/home.html.erb within layouts/application
+  [1m[36mCrag Load (0.3ms)[0m  [1m[34mSELECT "crags".* FROM "crags"[0m
+  Rendered crags/home.html.erb within layouts/application (3.7ms)
+Completed 200 OK in 75ms (Views: 68.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/crags/7" for 127.0.0.1 at 2017-11-22 08:15:05 +1100
+Processing by CragsController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mCrag Load (0.9ms)[0m  [1m[34mSELECT  "crags".* FROM "crags" WHERE "crags"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  Rendering crags/show.html.erb within layouts/application
+  Rendered crags/show.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 69ms (Views: 59.6ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-11-22 08:15:06 +1100
+Processing by CragsController#home as HTML
+  Rendering crags/home.html.erb within layouts/application
+  [1m[36mCrag Load (0.3ms)[0m  [1m[34mSELECT "crags".* FROM "crags"[0m
+  Rendered crags/home.html.erb within layouts/application (3.1ms)
+Completed 200 OK in 65ms (Views: 60.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/crags/7" for 127.0.0.1 at 2017-11-22 08:15:08 +1100
+Processing by CragsController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mCrag Load (0.3ms)[0m  [1m[34mSELECT  "crags".* FROM "crags" WHERE "crags"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  Rendering crags/show.html.erb within layouts/application
+  Rendered crags/show.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 105ms (Views: 92.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-11-22 08:15:09 +1100
+Processing by CragsController#home as HTML
+  Rendering crags/home.html.erb within layouts/application
+  [1m[36mCrag Load (1.7ms)[0m  [1m[34mSELECT "crags".* FROM "crags"[0m
+  Rendered crags/home.html.erb within layouts/application (8.0ms)
+Completed 200 OK in 111ms (Views: 103.2ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/crags/7" for 127.0.0.1 at 2017-11-22 08:15:11 +1100
+Processing by CragsController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mCrag Load (0.2ms)[0m  [1m[34mSELECT  "crags".* FROM "crags" WHERE "crags"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  Rendering crags/show.html.erb within layouts/application
+  Rendered crags/show.html.erb within layouts/application (13.3ms)
+Completed 200 OK in 128ms (Views: 113.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/crags/new" for 127.0.0.1 at 2017-11-22 08:15:17 +1100
+Processing by CragsController#new as HTML
+  Rendering crags/new.html.erb within layouts/application
+  Rendered crags/new.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 44ms (Views: 40.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-11-22 08:15:19 +1100
+Processing by CragsController#home as HTML
+  Rendering crags/home.html.erb within layouts/application
+  [1m[36mCrag Load (0.3ms)[0m  [1m[34mSELECT "crags".* FROM "crags"[0m
+  Rendered crags/home.html.erb within layouts/application (5.0ms)
+Completed 200 OK in 60ms (Views: 53.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-11-22 08:16:11 +1100
+Processing by CragsController#home as HTML
+  Rendering crags/home.html.erb within layouts/application
+  [1m[36mCrag Load (0.4ms)[0m  [1m[34mSELECT "crags".* FROM "crags"[0m
+  Rendered crags/home.html.erb within layouts/application (7.5ms)
+Completed 200 OK in 78ms (Views: 66.0ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-11-22 08:16:48 +1100
+Processing by CragsController#home as HTML
+  Rendering crags/home.html.erb within layouts/application
+  [1m[36mCrag Load (0.5ms)[0m  [1m[34mSELECT "crags".* FROM "crags"[0m
+  Rendered crags/home.html.erb within layouts/application (7.6ms)
+Completed 200 OK in 186ms (Views: 180.9ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-11-22 08:17:45 +1100
+Processing by CragsController#home as HTML
+  Rendering crags/home.html.erb within layouts/application
+  [1m[36mCrag Load (3.1ms)[0m  [1m[34mSELECT "crags".* FROM "crags"[0m
+  Rendered crags/home.html.erb within layouts/application (41.2ms)
+Completed 200 OK in 468ms (Views: 425.3ms | ActiveRecord: 3.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-11-22 08:18:07 +1100
+Processing by CragsController#home as HTML
+  Rendering crags/home.html.erb within layouts/application
+  [1m[36mCrag Load (0.4ms)[0m  [1m[34mSELECT "crags".* FROM "crags"[0m
+  Rendered crags/home.html.erb within layouts/application (5.1ms)
+Completed 200 OK in 94ms (Views: 88.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-11-22 08:18:16 +1100
+Processing by CragsController#home as HTML
+  Rendering crags/home.html.erb within layouts/application
+  [1m[36mCrag Load (1.8ms)[0m  [1m[34mSELECT "crags".* FROM "crags"[0m
+  Rendered crags/home.html.erb within layouts/application (30.3ms)
+Completed 200 OK in 180ms (Views: 162.0ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-11-22 08:18:25 +1100
+Processing by CragsController#home as HTML
+  Rendering crags/home.html.erb within layouts/application
+  [1m[36mCrag Load (0.9ms)[0m  [1m[34mSELECT "crags".* FROM "crags"[0m
+  Rendered crags/home.html.erb within layouts/application (7.8ms)
+Completed 200 OK in 120ms (Views: 113.8ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-11-22 08:18:38 +1100
+Processing by CragsController#home as HTML
+  Rendering crags/home.html.erb within layouts/application
+  [1m[36mCrag Load (1.0ms)[0m  [1m[34mSELECT "crags".* FROM "crags"[0m
+  Rendered crags/home.html.erb within layouts/application (6.0ms)
+Completed 200 OK in 171ms (Views: 164.6ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-11-22 08:18:50 +1100
+Processing by CragsController#home as HTML
+  Rendering crags/home.html.erb within layouts/application
+  [1m[36mCrag Load (0.4ms)[0m  [1m[34mSELECT "crags".* FROM "crags"[0m
+  Rendered crags/home.html.erb within layouts/application (5.4ms)
+Completed 200 OK in 82ms (Views: 76.6ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-11-22 08:19:16 +1100
+Processing by CragsController#home as HTML
+  Rendering crags/home.html.erb within layouts/application
+  [1m[36mCrag Load (0.5ms)[0m  [1m[34mSELECT "crags".* FROM "crags"[0m
+  Rendered crags/home.html.erb within layouts/application (3.6ms)
+Completed 200 OK in 56ms (Views: 51.4ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-11-22 08:21:11 +1100
+Processing by CragsController#home as HTML
+  Rendering crags/home.html.erb within layouts/application
+  [1m[36mCrag Load (1.1ms)[0m  [1m[34mSELECT "crags".* FROM "crags"[0m
+  Rendered crags/home.html.erb within layouts/application (51.4ms)
+Completed 200 OK in 390ms (Views: 356.8ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-11-22 08:23:01 +1100
+Processing by CragsController#home as HTML
+  Rendering crags/home.html.erb within layouts/application
+  [1m[36mCrag Load (1.1ms)[0m  [1m[34mSELECT "crags".* FROM "crags"[0m
+  Rendered crags/home.html.erb within layouts/application (30.4ms)
+Completed 200 OK in 165ms (Views: 150.3ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-11-22 08:23:57 +1100
+Processing by CragsController#home as HTML
+  Rendering crags/home.html.erb within layouts/application
+  [1m[36mCrag Load (0.5ms)[0m  [1m[34mSELECT "crags".* FROM "crags"[0m
+  Rendered crags/home.html.erb within layouts/application (7.4ms)
+Completed 200 OK in 100ms (Views: 94.8ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-11-22 08:24:02 +1100
+Processing by CragsController#home as HTML
+  Rendering crags/home.html.erb within layouts/application
+  [1m[36mCrag Load (2.6ms)[0m  [1m[34mSELECT "crags".* FROM "crags"[0m
+  Rendered crags/home.html.erb within layouts/application (9.0ms)
+Completed 200 OK in 97ms (Views: 89.0ms | ActiveRecord: 2.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-11-22 08:24:10 +1100
+Processing by CragsController#home as HTML
+  Rendering crags/home.html.erb within layouts/application
+  [1m[36mCrag Load (0.4ms)[0m  [1m[34mSELECT "crags".* FROM "crags"[0m
+  Rendered crags/home.html.erb within layouts/application (4.4ms)
+Completed 200 OK in 53ms (Views: 48.8ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/crags/1" for 127.0.0.1 at 2017-11-22 08:24:12 +1100
+Processing by CragsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCrag Load (0.6ms)[0m  [1m[34mSELECT  "crags".* FROM "crags" WHERE "crags"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering crags/show.html.erb within layouts/application
+  Rendered crags/show.html.erb within layouts/application (7.7ms)
+Completed 200 OK in 82ms (Views: 73.2ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/crags/new" for 127.0.0.1 at 2017-11-22 08:24:14 +1100
+Processing by CragsController#new as HTML
+  Rendering crags/new.html.erb within layouts/application
+  Rendered crags/new.html.erb within layouts/application (6.0ms)
+Completed 200 OK in 43ms (Views: 37.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/crags/new" for 127.0.0.1 at 2017-11-22 08:24:34 +1100
+Processing by CragsController#new as HTML
+  Rendering crags/new.html.erb within layouts/application
+  Rendered crags/new.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 82ms (Views: 77.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-11-22 08:24:36 +1100
+Processing by CragsController#home as HTML
+  Rendering crags/home.html.erb within layouts/application
+  [1m[36mCrag Load (0.4ms)[0m  [1m[34mSELECT "crags".* FROM "crags"[0m
+  Rendered crags/home.html.erb within layouts/application (10.7ms)
+Completed 200 OK in 74ms (Views: 58.7ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-11-22 08:24:47 +1100
+Processing by CragsController#home as HTML
+  Rendering crags/home.html.erb within layouts/application
+  [1m[36mCrag Load (0.3ms)[0m  [1m[34mSELECT "crags".* FROM "crags"[0m
+  Rendered crags/home.html.erb within layouts/application (4.4ms)
+Completed 200 OK in 72ms (Views: 67.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-11-22 08:25:27 +1100
+Processing by CragsController#home as HTML
+  Rendering crags/home.html.erb within layouts/application
+  [1m[36mCrag Load (0.5ms)[0m  [1m[34mSELECT "crags".* FROM "crags"[0m
+  Rendered crags/home.html.erb within layouts/application (5.9ms)
+Completed 200 OK in 38ms (Views: 33.2ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-11-22 08:25:31 +1100
+Processing by CragsController#home as HTML
+  Rendering crags/home.html.erb within layouts/application
+  [1m[36mCrag Load (0.3ms)[0m  [1m[34mSELECT "crags".* FROM "crags"[0m
+  Rendered crags/home.html.erb within layouts/application (6.6ms)
+Completed 200 OK in 53ms (Views: 48.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/crags/7" for 127.0.0.1 at 2017-11-22 08:25:34 +1100
+Processing by CragsController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mCrag Load (0.3ms)[0m  [1m[34mSELECT  "crags".* FROM "crags" WHERE "crags"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  Rendering crags/show.html.erb within layouts/application
+  Rendered crags/show.html.erb within layouts/application (3.3ms)
+Completed 200 OK in 43ms (Views: 37.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/crags/7/edit" for 127.0.0.1 at 2017-11-22 08:25:38 +1100
+Processing by CragsController#edit as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mCrag Load (0.3ms)[0m  [1m[34mSELECT  "crags".* FROM "crags" WHERE "crags"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  Rendering crags/edit.html.erb within layouts/application
+  Rendered crags/edit.html.erb within layouts/application (3.7ms)
+Completed 200 OK in 36ms (Views: 31.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/crags/new" for 127.0.0.1 at 2017-11-22 08:25:39 +1100
+Processing by CragsController#new as HTML
+  Rendering crags/new.html.erb within layouts/application
+  Rendered crags/new.html.erb within layouts/application (5.4ms)
+Completed 200 OK in 43ms (Views: 40.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-11-22 08:25:44 +1100
+Processing by CragsController#home as HTML
+  Rendering crags/home.html.erb within layouts/application
+  [1m[36mCrag Load (0.4ms)[0m  [1m[34mSELECT "crags".* FROM "crags"[0m
+  Rendered crags/home.html.erb within layouts/application (9.6ms)
+Completed 200 OK in 51ms (Views: 46.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-11-22 08:26:47 +1100
+Processing by CragsController#home as HTML
+  Rendering crags/home.html.erb within layouts/application
+  [1m[36mCrag Load (0.4ms)[0m  [1m[34mSELECT "crags".* FROM "crags"[0m
+  Rendered crags/home.html.erb within layouts/application (7.2ms)
+Completed 200 OK in 99ms (Views: 94.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-11-22 08:26:58 +1100
+Processing by CragsController#home as HTML
+  Rendering crags/home.html.erb within layouts/application
+  [1m[36mCrag Load (0.5ms)[0m  [1m[34mSELECT "crags".* FROM "crags"[0m
+  Rendered crags/home.html.erb within layouts/application (5.1ms)
+Completed 200 OK in 122ms (Views: 114.1ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-11-22 08:27:05 +1100
+Processing by CragsController#home as HTML
+  Rendering crags/home.html.erb within layouts/application
+  [1m[36mCrag Load (1.7ms)[0m  [1m[34mSELECT "crags".* FROM "crags"[0m
+  Rendered crags/home.html.erb within layouts/application (48.4ms)
+Completed 200 OK in 181ms (Views: 160.8ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-11-22 08:27:16 +1100
+Processing by CragsController#home as HTML
+  Rendering crags/home.html.erb within layouts/application
+  [1m[36mCrag Load (0.7ms)[0m  [1m[34mSELECT "crags".* FROM "crags"[0m
+  Rendered crags/home.html.erb within layouts/application (8.6ms)
+Completed 200 OK in 65ms (Views: 58.5ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-11-22 08:40:42 +1100
+Processing by CragsController#home as HTML
+  Rendering crags/home.html.erb within layouts/application
+  [1m[36mCrag Load (1.3ms)[0m  [1m[34mSELECT "crags".* FROM "crags"[0m
+  Rendered crags/home.html.erb within layouts/application (25.8ms)
+Completed 200 OK in 213ms (Views: 193.6ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-11-22 08:40:45 +1100
+Processing by CragsController#home as HTML
+  Rendering crags/home.html.erb within layouts/application
+  [1m[36mCrag Load (0.4ms)[0m  [1m[34mSELECT "crags".* FROM "crags"[0m
+  Rendered crags/home.html.erb within layouts/application (9.3ms)
+Completed 200 OK in 87ms (Views: 83.0ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/crags/7" for 127.0.0.1 at 2017-11-22 08:40:47 +1100
+Processing by CragsController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mCrag Load (0.3ms)[0m  [1m[34mSELECT  "crags".* FROM "crags" WHERE "crags"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  Rendering crags/show.html.erb within layouts/application
+  Rendered crags/show.html.erb within layouts/application (14.6ms)
+Completed 200 OK in 89ms (Views: 79.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/crags/new" for 127.0.0.1 at 2017-11-22 08:40:50 +1100
+Processing by CragsController#new as HTML
+  Rendering crags/new.html.erb within layouts/application
+  Rendered crags/new.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 44ms (Views: 39.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/crags/new" for 127.0.0.1 at 2017-11-22 08:41:06 +1100
+Processing by CragsController#new as HTML
+  Rendering crags/new.html.erb within layouts/application
+  Rendered crags/new.html.erb within layouts/application (7.7ms)
+Completed 200 OK in 164ms (Views: 144.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-11-22 08:42:26 +1100
+Processing by CragsController#home as HTML
+  Rendering crags/home.html.erb within layouts/application
+  [1m[36mCrag Load (1.5ms)[0m  [1m[34mSELECT "crags".* FROM "crags"[0m
+  Rendered crags/home.html.erb within layouts/application (44.8ms)
+Completed 200 OK in 352ms (Views: 325.9ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-11-22 08:42:27 +1100
+Processing by CragsController#home as HTML
+  Rendering crags/home.html.erb within layouts/application
+  [1m[36mCrag Load (0.4ms)[0m  [1m[34mSELECT "crags".* FROM "crags"[0m
+  Rendered crags/home.html.erb within layouts/application (8.8ms)
+Completed 200 OK in 179ms (Views: 170.0ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-11-22 08:42:31 +1100
+Processing by CragsController#home as HTML
+  Rendering crags/home.html.erb within layouts/application
+  [1m[36mCrag Load (0.4ms)[0m  [1m[34mSELECT "crags".* FROM "crags"[0m
+  Rendered crags/home.html.erb within layouts/application (6.5ms)
+Completed 200 OK in 118ms (Views: 109.4ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/crags/8" for 127.0.0.1 at 2017-11-22 08:42:37 +1100
+Processing by CragsController#show as HTML
+  Parameters: {"id"=>"8"}
+  [1m[36mCrag Load (0.9ms)[0m  [1m[34mSELECT  "crags".* FROM "crags" WHERE "crags"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  Rendering crags/show.html.erb within layouts/application
+  Rendered crags/show.html.erb within layouts/application (6.6ms)
+Completed 200 OK in 48ms (Views: 40.0ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/crags/8" for 127.0.0.1 at 2017-11-22 08:43:14 +1100
+Processing by CragsController#show as HTML
+  Parameters: {"id"=>"8"}
+  [1m[36mCrag Load (0.2ms)[0m  [1m[34mSELECT  "crags".* FROM "crags" WHERE "crags"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  Rendering crags/show.html.erb within layouts/application
+  Rendered crags/show.html.erb within layouts/application (3.2ms)
+Completed 200 OK in 68ms (Views: 62.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/crags/8" for 127.0.0.1 at 2017-11-22 08:43:33 +1100
+Processing by CragsController#show as HTML
+  Parameters: {"id"=>"8"}
+  [1m[36mCrag Load (1.9ms)[0m  [1m[34mSELECT  "crags".* FROM "crags" WHERE "crags"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  Rendering crags/show.html.erb within layouts/application
+  Rendered crags/show.html.erb within layouts/application (10.6ms)
+Completed 200 OK in 142ms (Views: 113.7ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-11-22 08:44:18 +1100
+Processing by CragsController#home as HTML
+  Rendering crags/home.html.erb within layouts/application
+  [1m[36mCrag Load (0.8ms)[0m  [1m[34mSELECT "crags".* FROM "crags"[0m
+  Rendered crags/home.html.erb within layouts/application (10.4ms)
+Completed 200 OK in 120ms (Views: 113.7ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/crags/1" for 127.0.0.1 at 2017-11-22 08:44:20 +1100
+Processing by CragsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCrag Load (0.2ms)[0m  [1m[34mSELECT  "crags".* FROM "crags" WHERE "crags"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering crags/show.html.erb within layouts/application
+  Rendered crags/show.html.erb within layouts/application (6.6ms)
+Completed 200 OK in 46ms (Views: 38.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-11-22 08:44:22 +1100
+Processing by CragsController#home as HTML
+  Rendering crags/home.html.erb within layouts/application
+  [1m[36mCrag Load (0.8ms)[0m  [1m[34mSELECT "crags".* FROM "crags"[0m
+  Rendered crags/home.html.erb within layouts/application (4.1ms)
+Completed 200 OK in 47ms (Views: 41.7ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-11-22 08:44:23 +1100
+Processing by CragsController#home as HTML
+  Rendering crags/home.html.erb within layouts/application
+  [1m[36mCrag Load (0.3ms)[0m  [1m[34mSELECT "crags".* FROM "crags"[0m
+  Rendered crags/home.html.erb within layouts/application (3.1ms)
+Completed 200 OK in 44ms (Views: 40.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/crags/new" for 127.0.0.1 at 2017-11-22 08:44:35 +1100
+Processing by CragsController#new as HTML
+  Rendering crags/new.html.erb within layouts/application
+  Rendered crags/new.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 40ms (Views: 36.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/crags/new" for 127.0.0.1 at 2017-11-22 08:44:52 +1100
+Processing by CragsController#new as HTML
+  Rendering crags/new.html.erb within layouts/application
+  Rendered crags/new.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 139ms (Views: 132.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/crags/new" for 127.0.0.1 at 2017-11-22 08:44:58 +1100
+Processing by CragsController#new as HTML
+  Rendering crags/new.html.erb within layouts/application
+  Rendered crags/new.html.erb within layouts/application (14.2ms)
+Completed 200 OK in 202ms (Views: 181.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-11-22 08:45:39 +1100
+Processing by CragsController#home as HTML
+  Rendering crags/home.html.erb within layouts/application
+  [1m[36mCrag Load (0.9ms)[0m  [1m[34mSELECT "crags".* FROM "crags"[0m
+  Rendered crags/home.html.erb within layouts/application (14.7ms)
+Completed 200 OK in 59ms (Views: 51.0ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-11-22 08:45:41 +1100
+Processing by CragsController#home as HTML
+  Rendering crags/home.html.erb within layouts/application
+  [1m[36mCrag Load (0.7ms)[0m  [1m[34mSELECT "crags".* FROM "crags"[0m
+  Rendered crags/home.html.erb within layouts/application (5.9ms)
+Completed 200 OK in 47ms (Views: 41.9ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/crags/2" for 127.0.0.1 at 2017-11-22 08:45:42 +1100
+Processing by CragsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mCrag Load (0.3ms)[0m  [1m[34mSELECT  "crags".* FROM "crags" WHERE "crags"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering crags/show.html.erb within layouts/application
+  Rendered crags/show.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 49ms (Views: 43.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-11-22 08:45:44 +1100
+Processing by CragsController#home as HTML
+  Rendering crags/home.html.erb within layouts/application
+  [1m[36mCrag Load (0.6ms)[0m  [1m[34mSELECT "crags".* FROM "crags"[0m
+  Rendered crags/home.html.erb within layouts/application (6.0ms)
+Completed 200 OK in 75ms (Views: 69.4ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-11-22 08:46:10 +1100
+Processing by CragsController#home as HTML
+  Rendering crags/home.html.erb within layouts/application
+  [1m[36mCrag Load (0.5ms)[0m  [1m[34mSELECT "crags".* FROM "crags"[0m
+  Rendered crags/home.html.erb within layouts/application (4.7ms)
+Completed 200 OK in 39ms (Views: 35.6ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/crags/new" for 127.0.0.1 at 2017-11-22 08:46:12 +1100
+Processing by CragsController#new as HTML
+  Rendering crags/new.html.erb within layouts/application
+  Rendered crags/new.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 41ms (Views: 37.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-11-22 08:46:13 +1100
+Processing by CragsController#home as HTML
+  Rendering crags/home.html.erb within layouts/application
+  [1m[36mCrag Load (0.3ms)[0m  [1m[34mSELECT "crags".* FROM "crags"[0m
+  Rendered crags/home.html.erb within layouts/application (7.3ms)
+Completed 200 OK in 60ms (Views: 55.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-11-22 08:46:38 +1100
+Processing by CragsController#home as HTML
+  Rendering crags/home.html.erb within layouts/application
+  [1m[36mCrag Load (0.4ms)[0m  [1m[34mSELECT "crags".* FROM "crags"[0m
+  Rendered crags/home.html.erb within layouts/application (9.2ms)
+Completed 200 OK in 81ms (Views: 77.3ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/crags/7" for 127.0.0.1 at 2017-11-22 08:49:14 +1100
+Processing by CragsController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mCrag Load (1.0ms)[0m  [1m[34mSELECT  "crags".* FROM "crags" WHERE "crags"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  Rendering crags/show.html.erb within layouts/application
+  Rendered crags/show.html.erb within layouts/application (44.2ms)
+Completed 200 OK in 160ms (Views: 137.4ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-11-22 09:03:39 +1100
+Processing by CragsController#home as HTML
+  Rendering crags/home.html.erb within layouts/application
+  [1m[36mCrag Load (1.9ms)[0m  [1m[34mSELECT "crags".* FROM "crags"[0m
+  Rendered crags/home.html.erb within layouts/application (64.7ms)
+Completed 200 OK in 286ms (Views: 242.1ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-11-22 09:03:52 +1100
+Processing by CragsController#home as HTML
+  Rendering crags/home.html.erb within layouts/application
+  [1m[36mCrag Load (2.9ms)[0m  [1m[34mSELECT "crags".* FROM "crags"[0m
+  Rendered crags/home.html.erb within layouts/application (59.0ms)
+Completed 200 OK in 473ms (Views: 382.5ms | ActiveRecord: 2.9ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-11-22 09:03:54 +1100
+Processing by CragsController#home as HTML
+  Rendering crags/home.html.erb within layouts/application
+  [1m[36mCrag Load (0.8ms)[0m  [1m[34mSELECT "crags".* FROM "crags"[0m
+  Rendered crags/home.html.erb within layouts/application (10.9ms)
+Completed 200 OK in 95ms (Views: 75.4ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/crags/2" for 127.0.0.1 at 2017-11-22 09:03:56 +1100
+Processing by CragsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mCrag Load (0.5ms)[0m  [1m[34mSELECT  "crags".* FROM "crags" WHERE "crags"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering crags/show.html.erb within layouts/application
+  Rendered crags/show.html.erb within layouts/application (9.3ms)
+Completed 200 OK in 113ms (Views: 101.1ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/crags/new" for 127.0.0.1 at 2017-11-22 09:03:58 +1100
+Processing by CragsController#new as HTML
+  Rendering crags/new.html.erb within layouts/application
+  Rendered crags/new.html.erb within layouts/application (7.9ms)
+Completed 200 OK in 136ms (Views: 129.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-11-22 09:04:05 +1100
+Processing by CragsController#home as HTML
+  Rendering crags/home.html.erb within layouts/application
+  [1m[36mCrag Load (0.8ms)[0m  [1m[34mSELECT "crags".* FROM "crags"[0m
+  Rendered crags/home.html.erb within layouts/application (11.8ms)
+Completed 200 OK in 277ms (Views: 251.9ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-11-22 09:05:20 +1100
+Processing by CragsController#home as HTML
+  Rendering crags/home.html.erb within layouts/application
+  [1m[36mCrag Load (3.1ms)[0m  [1m[34mSELECT "crags".* FROM "crags"[0m
+  Rendered crags/home.html.erb within layouts/application (61.5ms)
+Completed 200 OK in 328ms (Views: 306.1ms | ActiveRecord: 3.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-11-22 09:05:34 +1100
+Processing by CragsController#home as HTML
+  Rendering crags/home.html.erb within layouts/application
+  [1m[36mCrag Load (2.4ms)[0m  [1m[34mSELECT "crags".* FROM "crags"[0m
+  Rendered crags/home.html.erb within layouts/application (45.8ms)
+Completed 200 OK in 225ms (Views: 184.9ms | ActiveRecord: 2.4ms)
+
+
