@@ -57,13 +57,15 @@ a.nav:hover {
   .nameheadings {
   font-family: 'Poppins', sans-serif;
   margin-top: 34px;
+  margin-bottom: 30px;
   font-size: 30px;
-  border-bottom: 8px white dashed;
+  /*border-bottom: 8px white dashed;*/
   color: white;
   padding: 0;
   text-align: center;
-  display: inline-block;
+  display: block;
   }
+
 
   /*//////////////////////////////INDEX PAGE STYLING////////////////////////////////*/
 
