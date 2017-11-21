@@ -23,6 +23,17 @@ class MountainsController < ApplicationController
     @mountain = Mountain.find params[:id]
   end
 
+  def edit
+    @mountain = Mountain.find params[:id]
+  end
+
+  def update
+    mountain = Mountain.find params[:id]
+    mountain.update :name => params[:name], :image => params[:image], :base_height => params[:base_height], :sea_height => params[:sea_height], :location => params[:location], :fact => params[:fact]
+  
+    redirect_to mountain_path(mountain.id)
+  end
+
   def destroy
     mountain = Mountain.find params[:id]
     mountain.destroy

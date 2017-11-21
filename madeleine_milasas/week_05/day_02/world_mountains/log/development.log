@@ -681,3 +681,252 @@ Processing by MountainsController#index as HTML
 Completed 200 OK in 28ms (Views: 25.0ms | ActiveRecord: 0.3ms)
 
 
+Started GET "/rails/info/routes" for 127.0.0.1 at 2017-11-21 16:40:11 +1100
+Processing by Rails::InfoController#routes as HTML
+  Rendering /Users/madds/.rvm/gems/ruby-2.4.2/gems/railties-5.1.4/lib/rails/templates/rails/info/routes.html.erb within layouts/application
+  Rendered collection of /Users/madds/.rvm/gems/ruby-2.4.2/gems/actionpack-5.1.4/lib/action_dispatch/middleware/templates/routes/_route.html.erb [7 times] (3.0ms)
+  Rendered /Users/madds/.rvm/gems/ruby-2.4.2/gems/actionpack-5.1.4/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.3ms)
+  Rendered /Users/madds/.rvm/gems/ruby-2.4.2/gems/railties-5.1.4/lib/rails/templates/rails/info/routes.html.erb within layouts/application (11.4ms)
+Completed 200 OK in 26ms (Views: 20.3ms)
+
+
+Started GET "/rails/info/routes" for 127.0.0.1 at 2017-11-21 16:40:32 +1100
+Processing by Rails::InfoController#routes as HTML
+  Rendering /Users/madds/.rvm/gems/ruby-2.4.2/gems/railties-5.1.4/lib/rails/templates/rails/info/routes.html.erb within layouts/application
+  Rendered collection of /Users/madds/.rvm/gems/ruby-2.4.2/gems/actionpack-5.1.4/lib/action_dispatch/middleware/templates/routes/_route.html.erb [7 times] (3.2ms)
+  Rendered /Users/madds/.rvm/gems/ruby-2.4.2/gems/actionpack-5.1.4/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.1ms)
+  Rendered /Users/madds/.rvm/gems/ruby-2.4.2/gems/railties-5.1.4/lib/rails/templates/rails/info/routes.html.erb within layouts/application (12.7ms)
+Completed 200 OK in 26ms (Views: 21.3ms)
+
+
+Started GET "/rails/info/routes" for 127.0.0.1 at 2017-11-21 16:44:55 +1100
+Processing by Rails::InfoController#routes as HTML
+  Rendering /Users/madds/.rvm/gems/ruby-2.4.2/gems/railties-5.1.4/lib/rails/templates/rails/info/routes.html.erb within layouts/application
+  Rendered collection of /Users/madds/.rvm/gems/ruby-2.4.2/gems/actionpack-5.1.4/lib/action_dispatch/middleware/templates/routes/_route.html.erb [7 times] (2.1ms)
+  Rendered /Users/madds/.rvm/gems/ruby-2.4.2/gems/actionpack-5.1.4/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.0ms)
+  Rendered /Users/madds/.rvm/gems/ruby-2.4.2/gems/railties-5.1.4/lib/rails/templates/rails/info/routes.html.erb within layouts/application (7.9ms)
+Completed 200 OK in 19ms (Views: 14.9ms)
+
+
+Started GET "/mountains" for 127.0.0.1 at 2017-11-21 16:45:02 +1100
+Processing by MountainsController#index as HTML
+  Rendering mountains/index.html.erb within layouts/application
+  [1m[36mMountain Load (0.1ms)[0m  [1m[34mSELECT "mountains".* FROM "mountains"[0m
+  Rendered mountains/index.html.erb within layouts/application (9.8ms)
+Completed 200 OK in 36ms (Views: 31.8ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/mountains/1" for 127.0.0.1 at 2017-11-21 16:45:03 +1100
+Processing by MountainsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mMountain Load (0.2ms)[0m  [1m[34mSELECT  "mountains".* FROM "mountains" WHERE "mountains"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering mountains/show.html.erb within layouts/application
+  Rendered mountains/show.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 29ms (Views: 24.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/mountains/1" for 127.0.0.1 at 2017-11-21 16:45:05 +1100
+Processing by MountainsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mMountain Load (0.1ms)[0m  [1m[34mSELECT  "mountains".* FROM "mountains" WHERE "mountains"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering mountains/show.html.erb within layouts/application
+  Rendered mountains/show.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 20ms (Views: 17.0ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/mountains/1/edit" for 127.0.0.1 at 2017-11-21 16:45:08 +1100
+Processing by MountainsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mMountain Load (0.1ms)[0m  [1m[34mSELECT  "mountains".* FROM "mountains" WHERE "mountains"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering mountains/edit.html.erb within layouts/application
+  Rendered mountains/edit.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 18ms (Views: 15.6ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/mountains/1/edit" for 127.0.0.1 at 2017-11-21 16:48:30 +1100
+  
+SyntaxError (/Users/madds/Dropbox/GA/Projects/WDi24-Homework/madeleine_milasas/week_05/day_02/world_mountains/app/controllers/mountains_controller.rb:32: syntax error, unexpected '=', expecting =>
+ => params[:location], :fact = params[:fact]
+                              ^):
+  
+app/controllers/mountains_controller.rb:32: syntax error, unexpected '=', expecting =>
+Started PUT "/__web_console/repl_sessions/d86cfa701b9c512670e93bfc742c358d" for 127.0.0.1 at 2017-11-21 16:48:39 +1100
+Started PUT "/__web_console/repl_sessions/d86cfa701b9c512670e93bfc742c358d" for 127.0.0.1 at 2017-11-21 16:48:40 +1100
+Started GET "/mountains/1/edit" for 127.0.0.1 at 2017-11-21 16:48:53 +1100
+  
+SyntaxError (/Users/madds/Dropbox/GA/Projects/WDi24-Homework/madeleine_milasas/week_05/day_02/world_mountains/app/controllers/mountains_controller.rb:32: syntax error, unexpected '=', expecting =>
+ => params[:location], :fact = params[:fact]
+                              ^):
+  
+app/controllers/mountains_controller.rb:32: syntax error, unexpected '=', expecting =>
+Started GET "/mountains/1/edit" for 127.0.0.1 at 2017-11-21 16:49:17 +1100
+Processing by MountainsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mMountain Load (0.1ms)[0m  [1m[34mSELECT  "mountains".* FROM "mountains" WHERE "mountains"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering mountains/edit.html.erb within layouts/application
+  Rendered mountains/edit.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 32ms (Views: 19.4ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/mountains/1/edit" for 127.0.0.1 at 2017-11-21 16:49:38 +1100
+Processing by MountainsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mMountain Load (0.2ms)[0m  [1m[34mSELECT  "mountains".* FROM "mountains" WHERE "mountains"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering mountains/edit.html.erb within layouts/application
+  Rendered mountains/edit.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 35ms (Views: 16.2ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/mountains/1/edit" for 127.0.0.1 at 2017-11-21 16:50:06 +1100
+Processing by MountainsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mMountain Load (0.2ms)[0m  [1m[34mSELECT  "mountains".* FROM "mountains" WHERE "mountains"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering mountains/edit.html.erb within layouts/application
+  Rendered mountains/edit.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 32ms (Views: 16.2ms | ActiveRecord: 1.3ms)
+
+
+Started POST "/mountains/1" for 127.0.0.1 at 2017-11-21 16:50:08 +1100
+Processing by MountainsController#update as HTML
+  Parameters: {"name"=>"Kilimanjaro", "image"=>"", "base_height"=>"4900", "sea_height"=>"5895", "location"=>"Tanzania", "fact"=>"Maddi summitted Kilimanjaro and it was awesome", "id"=>"1"}
+  [1m[36mMountain Load (0.1ms)[0m  [1m[34mSELECT  "mountains".* FROM "mountains" WHERE "mountains"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+No template found for MountainsController#update, rendering head :no_content
+Completed 204 No Content in 96ms (ActiveRecord: 0.1ms)
+
+
+Started GET "/mountains/1/edit" for 127.0.0.1 at 2017-11-21 16:50:38 +1100
+Processing by MountainsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mMountain Load (0.1ms)[0m  [1m[34mSELECT  "mountains".* FROM "mountains" WHERE "mountains"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering mountains/edit.html.erb within layouts/application
+  Rendered mountains/edit.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 30ms (Views: 18.3ms | ActiveRecord: 0.8ms)
+
+
+Started POST "/mountains/1" for 127.0.0.1 at 2017-11-21 16:50:39 +1100
+Processing by MountainsController#update as HTML
+  Parameters: {"name"=>"Kilimanjaro", "image"=>"", "base_height"=>"4900", "sea_height"=>"5895", "location"=>"Tanzania", "fact"=>"Maddi summitted Kilimanjaro and it was awesome", "id"=>"1"}
+  [1m[36mMountain Load (0.1ms)[0m  [1m[34mSELECT  "mountains".* FROM "mountains" WHERE "mountains"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.1ms)
+
+
+  
+RuntimeError (<ActionController::Parameters {"name"=>"Kilimanjaro", "image"=>"", "base_height"=>"4900", "sea_height"=>"5895", "location"=>"Tanzania", "fact"=>"Maddi summitted Kilimanjaro and it was awesome", "controller"=>"mountains", "action"=>"update", "id"=>"1"} permitted: false>):
+  
+app/controllers/mountains_controller.rb:32:in `update'
+Started PUT "/__web_console/repl_sessions/432c7c7cd507ea0f668a979c33a96d06" for 127.0.0.1 at 2017-11-21 16:50:43 +1100
+Started PUT "/__web_console/repl_sessions/432c7c7cd507ea0f668a979c33a96d06" for 127.0.0.1 at 2017-11-21 16:50:44 +1100
+Started POST "/mountains/1" for 127.0.0.1 at 2017-11-21 16:51:37 +1100
+  
+SyntaxError (/Users/madds/Dropbox/GA/Projects/WDi24-Homework/madeleine_milasas/week_05/day_02/world_mountains/app/controllers/mountains_controller.rb:32: syntax error, unexpected '=', expecting =>
+ => params[:location], :fact = params[:fact]
+                              ^):
+  
+app/controllers/mountains_controller.rb:32: syntax error, unexpected '=', expecting =>
+Started POST "/mountains/1" for 127.0.0.1 at 2017-11-21 16:51:49 +1100
+Processing by MountainsController#update as HTML
+  Parameters: {"name"=>"Kilimanjaro", "image"=>"", "base_height"=>"4900", "sea_height"=>"5895", "location"=>"Tanzania", "fact"=>"Maddi summitted Kilimanjaro and it was awesome", "id"=>"1"}
+  [1m[36mMountain Load (0.2ms)[0m  [1m[34mSELECT  "mountains".* FROM "mountains" WHERE "mountains"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[33mUPDATE "mountains" SET "image" = ? WHERE "mountains"."id" = ?[0m  [["image", ""], ["id", 1]]
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+No template found for MountainsController#update, rendering head :no_content
+Completed 204 No Content in 118ms (ActiveRecord: 2.1ms)
+
+
+Started GET "/mountains/1" for 127.0.0.1 at 2017-11-21 16:51:55 +1100
+Processing by MountainsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mMountain Load (0.1ms)[0m  [1m[34mSELECT  "mountains".* FROM "mountains" WHERE "mountains"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering mountains/show.html.erb within layouts/application
+  Rendered mountains/show.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 20ms (Views: 16.9ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/mountains/1" for 127.0.0.1 at 2017-11-21 16:52:05 +1100
+Processing by MountainsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mMountain Load (0.1ms)[0m  [1m[34mSELECT  "mountains".* FROM "mountains" WHERE "mountains"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering mountains/show.html.erb within layouts/application
+  Rendered mountains/show.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 20ms (Views: 16.8ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/mountains/1/edit" for 127.0.0.1 at 2017-11-21 16:52:07 +1100
+Processing by MountainsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mMountain Load (0.1ms)[0m  [1m[34mSELECT  "mountains".* FROM "mountains" WHERE "mountains"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering mountains/edit.html.erb within layouts/application
+  Rendered mountains/edit.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 19ms (Views: 15.8ms | ActiveRecord: 0.1ms)
+
+
+Started POST "/mountains/1" for 127.0.0.1 at 2017-11-21 16:52:12 +1100
+Processing by MountainsController#update as HTML
+  Parameters: {"name"=>"Kilimanjaro", "image"=>"", "base_height"=>"4901", "sea_height"=>"5895", "location"=>"Tanzania", "fact"=>"Maddi summitted Kilimanjaro and it was awesome", "id"=>"1"}
+  [1m[36mMountain Load (0.1ms)[0m  [1m[34mSELECT  "mountains".* FROM "mountains" WHERE "mountains"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[33mUPDATE "mountains" SET "base_height" = ? WHERE "mountains"."id" = ?[0m  [["base_height", 4901], ["id", 1]]
+  [1m[35m (2.0ms)[0m  [1m[36mcommit transaction[0m
+No template found for MountainsController#update, rendering head :no_content
+Completed 204 No Content in 122ms (ActiveRecord: 2.7ms)
+
+
+Started POST "/mountains/1" for 127.0.0.1 at 2017-11-21 16:52:24 +1100
+Processing by MountainsController#update as HTML
+  Parameters: {"name"=>"Kilimanjaro", "image"=>"", "base_height"=>"4902", "sea_height"=>"5895", "location"=>"Tanzania", "fact"=>"Maddi summitted Kilimanjaro and it was awesome", "id"=>"1"}
+  [1m[36mMountain Load (0.1ms)[0m  [1m[34mSELECT  "mountains".* FROM "mountains" WHERE "mountains"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[33mUPDATE "mountains" SET "base_height" = ? WHERE "mountains"."id" = ?[0m  [["base_height", 4902], ["id", 1]]
+  [1m[35m (1.6ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/mountains/1
+Completed 302 Found in 17ms (ActiveRecord: 3.3ms)
+
+
+Started GET "/mountains/1" for 127.0.0.1 at 2017-11-21 16:52:24 +1100
+Processing by MountainsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mMountain Load (0.2ms)[0m  [1m[34mSELECT  "mountains".* FROM "mountains" WHERE "mountains"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering mountains/show.html.erb within layouts/application
+  Rendered mountains/show.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 28ms (Views: 24.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/mountains/1" for 127.0.0.1 at 2017-11-21 16:53:34 +1100
+Processing by MountainsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mMountain Load (0.1ms)[0m  [1m[34mSELECT  "mountains".* FROM "mountains" WHERE "mountains"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering mountains/show.html.erb within layouts/application
+  Rendered mountains/show.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 20ms (Views: 16.8ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/mountains/1/edit" for 127.0.0.1 at 2017-11-21 16:53:36 +1100
+Processing by MountainsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mMountain Load (0.1ms)[0m  [1m[34mSELECT  "mountains".* FROM "mountains" WHERE "mountains"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering mountains/edit.html.erb within layouts/application
+  Rendered mountains/edit.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 28ms (Views: 24.9ms | ActiveRecord: 0.1ms)
+
+
+Started POST "/mountains/1" for 127.0.0.1 at 2017-11-21 16:53:39 +1100
+Processing by MountainsController#update as HTML
+  Parameters: {"name"=>"Kilimanjaro", "image"=>"", "base_height"=>"4900", "sea_height"=>"5895", "location"=>"Tanzania", "fact"=>"Maddi summitted Kilimanjaro and it was awesome", "id"=>"1"}
+  [1m[36mMountain Load (0.1ms)[0m  [1m[34mSELECT  "mountains".* FROM "mountains" WHERE "mountains"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[33mUPDATE "mountains" SET "base_height" = ? WHERE "mountains"."id" = ?[0m  [["base_height", 4900], ["id", 1]]
+  [1m[35m (2.5ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/mountains/1
+Completed 302 Found in 5ms (ActiveRecord: 3.1ms)
+
+
+Started GET "/mountains/1" for 127.0.0.1 at 2017-11-21 16:53:39 +1100
+Processing by MountainsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mMountain Load (0.1ms)[0m  [1m[34mSELECT  "mountains".* FROM "mountains" WHERE "mountains"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering mountains/show.html.erb within layouts/application
+  Rendered mountains/show.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 26ms (Views: 23.0ms | ActiveRecord: 0.1ms)
+
+
