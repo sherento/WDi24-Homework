@@ -14,6 +14,7 @@
 class Mountain < ActiveRecord::Base
   def slug
     @slug = self.name.downcase.gsub ' ', '-'
+    @slug = I18n.transliterate( @slug )
     @slug = @slug.gsub /[^a-z-0-9]/, ''
     @slug = @slug.gsub /-{1,}/, '-'
   end

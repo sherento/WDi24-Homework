@@ -22,7 +22,7 @@ class MountainsController < ApplicationController
   def show
     @mountain = Mountain.find params[:slug].to_i # just take int at start of slug to search by
     @confirm = "Are you sure you want to destroy this mountain?
-                                  ___________
+                                  _________
                      __,-~~/~             `---.
                   _/__,---(                ,        )
             __ /             (              /         )  \\___

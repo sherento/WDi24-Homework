@@ -8,13 +8,13 @@
       <td><%= @mountain.location %></td>
     </tr>
     <% end %>
-    <% unless @mountain.base_height.blank? %>
+    <% unless @mountain.base_height.blank? || @mountain.base_height == 0 %>
     <tr>
       <td>Height from base:</td>
       <td><%= number_with_delimiter( @mountain.base_height, :delimiter => ',' ) %>m</td>
     </tr>
     <% end %>
-    <% unless @mountain.sea_height.blank? %>
+    <% unless @mountain.sea_height.blank? || @mountain.sea_height == 0 %>
     <tr>
       <td>Height above sea level:</td>
       <td><%= number_with_delimiter( @mountain.sea_height, :delimiter => ',' ) %>m</td>
