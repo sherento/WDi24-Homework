@@ -3,7 +3,7 @@
 <ul>
   <% @mountains.each do |m| %>
     <li>
-      <%= link_to m.name, mountain_path(m.id) %>
+      <%= link_to m.name, mountain_path(m.to_param) %>
     </li>
   <% end %>
 </ul>

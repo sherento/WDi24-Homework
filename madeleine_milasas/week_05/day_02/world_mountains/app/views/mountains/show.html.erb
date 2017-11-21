@@ -34,7 +34,7 @@
 </aside>
 
 <div class="controls">
-    <%= link_to 'Edit mountain', mountain_edit_path(@mountain.id), :class => "button edit" %>
+    <%= link_to 'Edit mountain', mountain_edit_path(@mountain.to_param), :class => "button edit" %>
     <%= button_to 'Destroy mountain', mountain_path(@mountain.id), :method => "delete", :class => "button delete",
                       data: {confirm: @confirm } %>
     <%= link_to 'Back to all mountains', mountains_path, :class => "button home" %>

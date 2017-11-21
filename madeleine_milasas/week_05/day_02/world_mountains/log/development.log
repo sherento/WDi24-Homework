@@ -3537,3 +3537,563 @@ Processing by MountainsController#index as HTML
 Completed 200 OK in 38ms (Views: 32.1ms | ActiveRecord: 0.3ms)
 
 
+Started GET "/mountains" for 127.0.0.1 at 2017-11-21 22:58:53 +1100
+Processing by MountainsController#index as HTML
+  [1m[36mMountain Load (0.3ms)[0m  [1m[34mSELECT "mountains".* FROM "mountains"[0m
+  Rendering mountains/index.html.erb within layouts/application
+  Rendered mountains/index.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 50ms (Views: 31.2ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/mountains/1" for 127.0.0.1 at 2017-11-21 22:58:55 +1100
+Processing by MountainsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mMountain Load (0.2ms)[0m  [1m[34mSELECT  "mountains".* FROM "mountains" WHERE "mountains"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering mountains/show.html.erb within layouts/application
+  Rendered mountains/show.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 37ms (Views: 33.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/mountains/1/edit" for 127.0.0.1 at 2017-11-21 22:59:08 +1100
+Processing by MountainsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mMountain Load (0.1ms)[0m  [1m[34mSELECT  "mountains".* FROM "mountains" WHERE "mountains"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering mountains/edit.html.erb within layouts/application
+  Rendered mountains/edit.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 38ms (Views: 35.1ms | ActiveRecord: 0.1ms)
+
+
+Started POST "/mountains/1" for 127.0.0.1 at 2017-11-21 22:59:20 +1100
+Processing by MountainsController#update as HTML
+  Parameters: {"name"=>"Kilimanjaro", "image"=>"https://images.jg-cdn.com/image/6aacda14-270c-4b1d-a641-f1d0f9596641.jpg?template=fundraisingpagegalleryxl", "base_height"=>"4900", "sea_height"=>"5895", "location"=>"Tanzania", "fact"=>"Maddi summitted Kilimanjaro and it was awesome but she could barely breathe", "id"=>"1"}
+  [1m[36mMountain Load (0.1ms)[0m  [1m[34mSELECT  "mountains".* FROM "mountains" WHERE "mountains"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[33mUPDATE "mountains" SET "fact" = ? WHERE "mountains"."id" = ?[0m  [["fact", "Maddi summitted Kilimanjaro and it was awesome but she could barely breathe"], ["id", 1]]
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/mountains/1
+Completed 302 Found in 4ms (ActiveRecord: 1.2ms)
+
+
+Started GET "/mountains/1" for 127.0.0.1 at 2017-11-21 22:59:20 +1100
+Processing by MountainsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mMountain Load (0.2ms)[0m  [1m[34mSELECT  "mountains".* FROM "mountains" WHERE "mountains"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering mountains/show.html.erb within layouts/application
+  Rendered mountains/show.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 46ms (Views: 40.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/mountains/1/edit" for 127.0.0.1 at 2017-11-21 22:59:30 +1100
+Processing by MountainsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mMountain Load (0.1ms)[0m  [1m[34mSELECT  "mountains".* FROM "mountains" WHERE "mountains"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering mountains/edit.html.erb within layouts/application
+  Rendered mountains/edit.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 33ms (Views: 30.4ms | ActiveRecord: 0.1ms)
+
+
+Started POST "/mountains/1" for 127.0.0.1 at 2017-11-21 22:59:34 +1100
+Processing by MountainsController#update as HTML
+  Parameters: {"name"=>"Kilimanjaro", "image"=>"https://images.jg-cdn.com/image/6aacda14-270c-4b1d-a641-f1d0f9596641.jpg?template=fundraisingpagegalleryxl", "base_height"=>"4900", "sea_height"=>"5895", "location"=>"Tanzania", "fact"=>"Maddi summitted Kilimanjaro and it was awesome even though she could barely breathe", "id"=>"1"}
+  [1m[36mMountain Load (0.1ms)[0m  [1m[34mSELECT  "mountains".* FROM "mountains" WHERE "mountains"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[33mUPDATE "mountains" SET "fact" = ? WHERE "mountains"."id" = ?[0m  [["fact", "Maddi summitted Kilimanjaro and it was awesome even though she could barely breathe"], ["id", 1]]
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/mountains/1
+Completed 302 Found in 3ms (ActiveRecord: 1.2ms)
+
+
+Started GET "/mountains/1" for 127.0.0.1 at 2017-11-21 22:59:34 +1100
+Processing by MountainsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mMountain Load (0.2ms)[0m  [1m[34mSELECT  "mountains".* FROM "mountains" WHERE "mountains"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering mountains/show.html.erb within layouts/application
+  Rendered mountains/show.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 37ms (Views: 32.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/mountains/1" for 127.0.0.1 at 2017-11-21 23:02:22 +1100
+Processing by MountainsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mMountain Load (0.1ms)[0m  [1m[34mSELECT  "mountains".* FROM "mountains" WHERE "mountains"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering mountains/show.html.erb within layouts/application
+  Rendered mountains/show.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 35ms (Views: 20.2ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/mountains/1" for 127.0.0.1 at 2017-11-21 23:02:39 +1100
+Processing by MountainsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mMountain Load (0.2ms)[0m  [1m[34mSELECT  "mountains".* FROM "mountains" WHERE "mountains"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering mountains/show.html.erb within layouts/application
+  Rendered mountains/show.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 40ms (Views: 24.0ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/mountains/new" for 127.0.0.1 at 2017-11-21 23:02:41 +1100
+Processing by MountainsController#new as HTML
+  Rendering mountains/new.html.erb within layouts/application
+  Rendered mountains/new.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 35ms (Views: 28.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/mountains" for 127.0.0.1 at 2017-11-21 23:02:46 +1100
+Processing by MountainsController#create as HTML
+  Parameters: {"name"=>"kjg", "image"=>"", "base_height"=>"34", "sea_height"=>"354", "location"=>"", "fact"=>""}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "mountains" ("name", "image", "base_height", "sea_height", "location", "fact") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "kjg"], ["image", ""], ["base_height", 34], ["sea_height", 354], ["location", ""], ["fact", ""]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/mountains
+Completed 302 Found in 3ms (ActiveRecord: 1.3ms)
+
+
+Started GET "/mountains" for 127.0.0.1 at 2017-11-21 23:02:46 +1100
+Processing by MountainsController#index as HTML
+  [1m[36mMountain Load (0.3ms)[0m  [1m[34mSELECT "mountains".* FROM "mountains"[0m
+  Rendering mountains/index.html.erb within layouts/application
+  Rendered mountains/index.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 30ms (Views: 24.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/mountains/18" for 127.0.0.1 at 2017-11-21 23:02:52 +1100
+Processing by MountainsController#show as HTML
+  Parameters: {"id"=>"18"}
+  [1m[36mMountain Load (0.1ms)[0m  [1m[34mSELECT  "mountains".* FROM "mountains" WHERE "mountains"."id" = ? LIMIT ?[0m  [["id", 18], ["LIMIT", 1]]
+  Rendering mountains/show.html.erb within layouts/application
+  Rendered mountains/show.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 30ms (Views: 26.9ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-11-21 23:07:33 +1100
+Processing by MountainsController#index as HTML
+  [1m[36mMountain Load (0.2ms)[0m  [1m[34mSELECT "mountains".* FROM "mountains"[0m
+  Rendering mountains/index.html.erb within layouts/application
+  Rendered mountains/index.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 57ms (Views: 32.0ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-11-21 23:07:35 +1100
+Processing by MountainsController#index as HTML
+  [1m[36mMountain Load (0.2ms)[0m  [1m[34mSELECT "mountains".* FROM "mountains"[0m
+  Rendering mountains/index.html.erb within layouts/application
+  Rendered mountains/index.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 28ms (Views: 25.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-11-21 23:07:41 +1100
+Processing by MountainsController#index as HTML
+  [1m[36mMountain Load (0.2ms)[0m  [1m[34mSELECT "mountains".* FROM "mountains"[0m
+  Rendering mountains/index.html.erb within layouts/application
+  Rendered mountains/index.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 22ms (Views: 19.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-11-21 23:07:53 +1100
+Processing by MountainsController#index as HTML
+  [1m[36mMountain Load (0.2ms)[0m  [1m[34mSELECT "mountains".* FROM "mountains"[0m
+  Rendering mountains/index.html.erb within layouts/application
+  Rendered mountains/index.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 22ms (Views: 19.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/mountains/18-kjg" for 127.0.0.1 at 2017-11-21 23:07:58 +1100
+Processing by MountainsController#show as HTML
+  Parameters: {"slug"=>"18-kjg"}
+  [1m[36mMountain Load (0.2ms)[0m  [1m[34mSELECT  "mountains".* FROM "mountains" WHERE "mountains"."id" = ? LIMIT ?[0m  [["id", 18], ["LIMIT", 1]]
+  Rendering mountains/show.html.erb within layouts/application
+  Rendered mountains/show.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 29ms (Views: 25.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/mountains/18-kjg" for 127.0.0.1 at 2017-11-21 23:10:04 +1100
+Processing by MountainsController#show as HTML
+  Parameters: {"slug"=>"18-kjg"}
+  [1m[36mMountain Load (0.1ms)[0m  [1m[34mSELECT  "mountains".* FROM "mountains" WHERE "mountains"."id" = ? LIMIT ?[0m  [["id", 18], ["LIMIT", 1]]
+  Rendering mountains/show.html.erb within layouts/application
+  Rendered mountains/show.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 32ms (Views: 20.4ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/mountains/18-kjg/edit" for 127.0.0.1 at 2017-11-21 23:10:08 +1100
+Processing by MountainsController#edit as HTML
+  Parameters: {"slug"=>"18-kjg"}
+  [1m[36mMountain Load (0.1ms)[0m  [1m[34mSELECT  "mountains".* FROM "mountains" WHERE "mountains"."id" = ? LIMIT ?[0m  [["id", 18], ["LIMIT", 1]]
+  Rendering mountains/edit.html.erb within layouts/application
+  Rendered mountains/edit.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 33ms (Views: 29.9ms | ActiveRecord: 0.1ms)
+
+
+Started POST "/mountains/18" for 127.0.0.1 at 2017-11-21 23:10:14 +1100
+Processing by MountainsController#update as HTML
+  Parameters: {"name"=>"sgfsgkjg", "image"=>"", "base_height"=>"34", "sea_height"=>"354", "location"=>"", "fact"=>"", "id"=>"18"}
+  [1m[36mMountain Load (0.1ms)[0m  [1m[34mSELECT  "mountains".* FROM "mountains" WHERE "mountains"."id" = ? LIMIT ?[0m  [["id", 18], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[33mUPDATE "mountains" SET "name" = ? WHERE "mountains"."id" = ?[0m  [["name", "sgfsgkjg"], ["id", 18]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/mountains/18
+Completed 302 Found in 4ms (ActiveRecord: 1.3ms)
+
+
+Started GET "/mountains/18" for 127.0.0.1 at 2017-11-21 23:10:14 +1100
+Processing by MountainsController#show as HTML
+  Parameters: {"slug"=>"18"}
+  [1m[36mMountain Load (0.3ms)[0m  [1m[34mSELECT  "mountains".* FROM "mountains" WHERE "mountains"."id" = ? LIMIT ?[0m  [["id", 18], ["LIMIT", 1]]
+  Rendering mountains/show.html.erb within layouts/application
+  Rendered mountains/show.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 29ms (Views: 24.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/mountains/18" for 127.0.0.1 at 2017-11-21 23:10:55 +1100
+Processing by MountainsController#show as HTML
+  Parameters: {"slug"=>"18"}
+  [1m[36mMountain Load (0.1ms)[0m  [1m[34mSELECT  "mountains".* FROM "mountains" WHERE "mountains"."id" = ? LIMIT ?[0m  [["id", 18], ["LIMIT", 1]]
+  Rendering mountains/show.html.erb within layouts/application
+  Rendered mountains/show.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 23ms (Views: 19.9ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-11-21 23:11:00 +1100
+Processing by MountainsController#index as HTML
+  [1m[36mMountain Load (0.2ms)[0m  [1m[34mSELECT "mountains".* FROM "mountains"[0m
+  Rendering mountains/index.html.erb within layouts/application
+  Rendered mountains/index.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 29ms (Views: 26.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/mountains/18-sgfsgkjg" for 127.0.0.1 at 2017-11-21 23:11:02 +1100
+Processing by MountainsController#show as HTML
+  Parameters: {"slug"=>"18-sgfsgkjg"}
+  [1m[36mMountain Load (0.1ms)[0m  [1m[34mSELECT  "mountains".* FROM "mountains" WHERE "mountains"."id" = ? LIMIT ?[0m  [["id", 18], ["LIMIT", 1]]
+  Rendering mountains/show.html.erb within layouts/application
+  Rendered mountains/show.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 35ms (Views: 31.8ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/mountains/18-sgfsgkjg/edit" for 127.0.0.1 at 2017-11-21 23:11:06 +1100
+Processing by MountainsController#edit as HTML
+  Parameters: {"slug"=>"18-sgfsgkjg"}
+  [1m[36mMountain Load (0.1ms)[0m  [1m[34mSELECT  "mountains".* FROM "mountains" WHERE "mountains"."id" = ? LIMIT ?[0m  [["id", 18], ["LIMIT", 1]]
+  Rendering mountains/edit.html.erb within layouts/application
+  Rendered mountains/edit.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 29ms (Views: 26.1ms | ActiveRecord: 0.1ms)
+
+
+Started POST "/mountains/18-sgfsgkjg" for 127.0.0.1 at 2017-11-21 23:11:15 +1100
+Processing by MountainsController#update as HTML
+  Parameters: {"name"=>"sgfsgkjgwwwwww", "image"=>"", "base_height"=>"34", "sea_height"=>"354", "location"=>"", "fact"=>"", "id"=>"18-sgfsgkjg"}
+  [1m[36mMountain Load (0.1ms)[0m  [1m[34mSELECT  "mountains".* FROM "mountains" WHERE "mountains"."id" = ? LIMIT ?[0m  [["id", 18], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[33mUPDATE "mountains" SET "name" = ? WHERE "mountains"."id" = ?[0m  [["name", "sgfsgkjgwwwwww"], ["id", 18]]
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/mountains/18
+Completed 302 Found in 3ms (ActiveRecord: 1.1ms)
+
+
+Started GET "/mountains/18" for 127.0.0.1 at 2017-11-21 23:11:15 +1100
+Processing by MountainsController#show as HTML
+  Parameters: {"slug"=>"18"}
+  [1m[36mMountain Load (0.3ms)[0m  [1m[34mSELECT  "mountains".* FROM "mountains" WHERE "mountains"."id" = ? LIMIT ?[0m  [["id", 18], ["LIMIT", 1]]
+  Rendering mountains/show.html.erb within layouts/application
+  Rendered mountains/show.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 37ms (Views: 31.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/mountains/18" for 127.0.0.1 at 2017-11-21 23:12:37 +1100
+Processing by MountainsController#show as HTML
+  Parameters: {"slug"=>"18"}
+  [1m[36mMountain Load (0.1ms)[0m  [1m[34mSELECT  "mountains".* FROM "mountains" WHERE "mountains"."id" = ? LIMIT ?[0m  [["id", 18], ["LIMIT", 1]]
+  Rendering mountains/show.html.erb within layouts/application
+  Rendered mountains/show.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 22ms (Views: 19.0ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/mountains/18-sgfsgkjgwwwwww/edit" for 127.0.0.1 at 2017-11-21 23:12:39 +1100
+Processing by MountainsController#edit as HTML
+  Parameters: {"slug"=>"18-sgfsgkjgwwwwww"}
+  [1m[36mMountain Load (0.2ms)[0m  [1m[34mSELECT  "mountains".* FROM "mountains" WHERE "mountains"."id" = ? LIMIT ?[0m  [["id", 18], ["LIMIT", 1]]
+  Rendering mountains/edit.html.erb within layouts/application
+  Rendered mountains/edit.html.erb within layouts/application (11.7ms)
+Completed 500 Internal Server Error in 23ms (ActiveRecord: 0.2ms)
+
+
+  
+ActionView::Template::Error (<ActionController::Parameters {"controller"=>"mountains", "action"=>"edit", "slug"=>"18-sgfsgkjgwwwwww"} permitted: false>):
+    1: <h2>Edit mountain info</h2>
+    2: 
+    3: <form action="<%= mountain_path(@mountain.id) %>" method="post">
+    4:   <%= raise params.inspect %>
+    5:     <input type="text" name="name" placeholder="Name of mountain" value="<%= @mountain.name %>" required="required" autofocus>
+    6:     <input type="url" name="image" placeholder="Image URL, e.g. http://..." value="<%= @mountain.image %>">
+    7:     <input type="number" name="base_height" placeholder="Height from base (metres)" value="<%= @mountain.base_height %>" min="0">
+  
+app/views/mountains/edit.html.erb:4:in `_app_views_mountains_edit_html_erb__3144166927377351972_70358285573900'
+Started PUT "/__web_console/repl_sessions/4ae89dec63d6cbfa7c0c4ca3800566af" for 127.0.0.1 at 2017-11-21 23:12:43 +1100
+Started PUT "/__web_console/repl_sessions/4ae89dec63d6cbfa7c0c4ca3800566af" for 127.0.0.1 at 2017-11-21 23:12:44 +1100
+Started PUT "/__web_console/repl_sessions/4ae89dec63d6cbfa7c0c4ca3800566af" for 127.0.0.1 at 2017-11-21 23:12:47 +1100
+Started PUT "/__web_console/repl_sessions/4ae89dec63d6cbfa7c0c4ca3800566af" for 127.0.0.1 at 2017-11-21 23:12:51 +1100
+Started PUT "/__web_console/repl_sessions/4ae89dec63d6cbfa7c0c4ca3800566af" for 127.0.0.1 at 2017-11-21 23:12:51 +1100
+Started PUT "/__web_console/repl_sessions/4ae89dec63d6cbfa7c0c4ca3800566af" for 127.0.0.1 at 2017-11-21 23:12:55 +1100
+Started PUT "/__web_console/repl_sessions/4ae89dec63d6cbfa7c0c4ca3800566af" for 127.0.0.1 at 2017-11-21 23:12:57 +1100
+Started PUT "/__web_console/repl_sessions/4ae89dec63d6cbfa7c0c4ca3800566af" for 127.0.0.1 at 2017-11-21 23:13:00 +1100
+Started GET "/mountains/18-sgfsgkjgwwwwww/edit" for 127.0.0.1 at 2017-11-21 23:14:31 +1100
+Processing by MountainsController#edit as HTML
+  Parameters: {"slug"=>"18-sgfsgkjgwwwwww"}
+  [1m[36mMountain Load (0.2ms)[0m  [1m[34mSELECT  "mountains".* FROM "mountains" WHERE "mountains"."id" = ? LIMIT ?[0m  [["id", 18], ["LIMIT", 1]]
+  Rendering mountains/edit.html.erb within layouts/application
+  Rendered mountains/edit.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 46ms (Views: 28.6ms | ActiveRecord: 1.2ms)
+
+
+Started POST "/mountains/18" for 127.0.0.1 at 2017-11-21 23:14:38 +1100
+Processing by MountainsController#update as HTML
+  Parameters: {"name"=>"sgfsgkjgwwwwwwttt", "image"=>"", "base_height"=>"34", "sea_height"=>"354", "location"=>"", "fact"=>"", "id"=>"18"}
+  [1m[36mMountain Load (0.2ms)[0m  [1m[34mSELECT  "mountains".* FROM "mountains" WHERE "mountains"."id" = ? LIMIT ?[0m  [["id", 18], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[33mUPDATE "mountains" SET "name" = ? WHERE "mountains"."id" = ?[0m  [["name", "sgfsgkjgwwwwwwttt"], ["id", 18]]
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/mountains/18-sgfsgkjgwwwwwwttt
+Completed 302 Found in 5ms (ActiveRecord: 1.4ms)
+
+
+Started GET "/mountains/18-sgfsgkjgwwwwwwttt" for 127.0.0.1 at 2017-11-21 23:14:38 +1100
+Processing by MountainsController#show as HTML
+  Parameters: {"slug"=>"18-sgfsgkjgwwwwwwttt"}
+  [1m[36mMountain Load (0.1ms)[0m  [1m[34mSELECT  "mountains".* FROM "mountains" WHERE "mountains"."id" = ? LIMIT ?[0m  [["id", 18], ["LIMIT", 1]]
+  Rendering mountains/show.html.erb within layouts/application
+  Rendered mountains/show.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 37ms (Views: 34.3ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/mountains/18-sgfsgkjgwwwwwwttt/edit" for 127.0.0.1 at 2017-11-21 23:14:40 +1100
+Processing by MountainsController#edit as HTML
+  Parameters: {"slug"=>"18-sgfsgkjgwwwwwwttt"}
+  [1m[36mMountain Load (0.1ms)[0m  [1m[34mSELECT  "mountains".* FROM "mountains" WHERE "mountains"."id" = ? LIMIT ?[0m  [["id", 18], ["LIMIT", 1]]
+  Rendering mountains/edit.html.erb within layouts/application
+  Rendered mountains/edit.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 33ms (Views: 29.5ms | ActiveRecord: 0.1ms)
+
+
+Started POST "/mountains/18" for 127.0.0.1 at 2017-11-21 23:14:47 +1100
+Processing by MountainsController#update as HTML
+  Parameters: {"name"=>"Biggest Mountain", "image"=>"", "base_height"=>"34", "sea_height"=>"354", "location"=>"", "fact"=>"", "id"=>"18"}
+  [1m[36mMountain Load (0.1ms)[0m  [1m[34mSELECT  "mountains".* FROM "mountains" WHERE "mountains"."id" = ? LIMIT ?[0m  [["id", 18], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[33mUPDATE "mountains" SET "name" = ? WHERE "mountains"."id" = ?[0m  [["name", "Biggest Mountain"], ["id", 18]]
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/mountains/18-biggest-mountain
+Completed 302 Found in 3ms (ActiveRecord: 1.2ms)
+
+
+Started GET "/mountains/18-biggest-mountain" for 127.0.0.1 at 2017-11-21 23:14:47 +1100
+Processing by MountainsController#show as HTML
+  Parameters: {"slug"=>"18-biggest-mountain"}
+  [1m[36mMountain Load (0.2ms)[0m  [1m[34mSELECT  "mountains".* FROM "mountains" WHERE "mountains"."id" = ? LIMIT ?[0m  [["id", 18], ["LIMIT", 1]]
+  Rendering mountains/show.html.erb within layouts/application
+  Rendered mountains/show.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 35ms (Views: 29.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/mountains" for 127.0.0.1 at 2017-11-21 23:14:50 +1100
+Processing by MountainsController#index as HTML
+  [1m[36mMountain Load (0.2ms)[0m  [1m[34mSELECT "mountains".* FROM "mountains"[0m
+  Rendering mountains/index.html.erb within layouts/application
+  Rendered mountains/index.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 33ms (Views: 29.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/mountains/18-biggest-mountain" for 127.0.0.1 at 2017-11-21 23:14:57 +1100
+Processing by MountainsController#show as HTML
+  Parameters: {"slug"=>"18-biggest-mountain"}
+  [1m[36mMountain Load (0.1ms)[0m  [1m[34mSELECT  "mountains".* FROM "mountains" WHERE "mountains"."id" = ? LIMIT ?[0m  [["id", 18], ["LIMIT", 1]]
+  Rendering mountains/show.html.erb within layouts/application
+  Rendered mountains/show.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 35ms (Views: 32.2ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-11-21 23:15:07 +1100
+Processing by MountainsController#index as HTML
+  [1m[36mMountain Load (0.2ms)[0m  [1m[34mSELECT "mountains".* FROM "mountains"[0m
+  Rendering mountains/index.html.erb within layouts/application
+  Rendered mountains/index.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 31ms (Views: 28.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-11-21 23:15:29 +1100
+Processing by MountainsController#index as HTML
+  [1m[36mMountain Load (0.2ms)[0m  [1m[34mSELECT "mountains".* FROM "mountains"[0m
+  Rendering mountains/index.html.erb within layouts/application
+  Rendered mountains/index.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 22ms (Views: 18.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/mountains" for 127.0.0.1 at 2017-11-21 23:15:34 +1100
+Processing by MountainsController#index as HTML
+  [1m[36mMountain Load (0.2ms)[0m  [1m[34mSELECT "mountains".* FROM "mountains"[0m
+  Rendering mountains/index.html.erb within layouts/application
+  Rendered mountains/index.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 39ms (Views: 35.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/mountains/18-biggest-mountain" for 127.0.0.1 at 2017-11-21 23:15:38 +1100
+Processing by MountainsController#show as HTML
+  Parameters: {"slug"=>"18-biggest-mountain"}
+  [1m[36mMountain Load (0.1ms)[0m  [1m[34mSELECT  "mountains".* FROM "mountains" WHERE "mountains"."id" = ? LIMIT ?[0m  [["id", 18], ["LIMIT", 1]]
+  Rendering mountains/show.html.erb within layouts/application
+  Rendered mountains/show.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 32ms (Views: 28.6ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/mountains/18-biggest-mountain/edit" for 127.0.0.1 at 2017-11-21 23:15:41 +1100
+Processing by MountainsController#edit as HTML
+  Parameters: {"slug"=>"18-biggest-mountain"}
+  [1m[36mMountain Load (0.1ms)[0m  [1m[34mSELECT  "mountains".* FROM "mountains" WHERE "mountains"."id" = ? LIMIT ?[0m  [["id", 18], ["LIMIT", 1]]
+  Rendering mountains/edit.html.erb within layouts/application
+  Rendered mountains/edit.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 36ms (Views: 31.1ms | ActiveRecord: 0.1ms)
+
+
+Started POST "/mountains/18" for 127.0.0.1 at 2017-11-21 23:15:49 +1100
+Processing by MountainsController#update as HTML
+  Parameters: {"name"=>"Biggest Mountain", "image"=>"", "base_height"=>"34", "sea_height"=>"354", "location"=>"Australia", "fact"=>"", "id"=>"18"}
+  [1m[36mMountain Load (0.2ms)[0m  [1m[34mSELECT  "mountains".* FROM "mountains" WHERE "mountains"."id" = ? LIMIT ?[0m  [["id", 18], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[33mUPDATE "mountains" SET "location" = ? WHERE "mountains"."id" = ?[0m  [["location", "Australia"], ["id", 18]]
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/mountains/18-biggest-mountain
+Completed 302 Found in 4ms (ActiveRecord: 1.2ms)
+
+
+Started GET "/mountains/18-biggest-mountain" for 127.0.0.1 at 2017-11-21 23:15:49 +1100
+Processing by MountainsController#show as HTML
+  Parameters: {"slug"=>"18-biggest-mountain"}
+  [1m[36mMountain Load (0.2ms)[0m  [1m[34mSELECT  "mountains".* FROM "mountains" WHERE "mountains"."id" = ? LIMIT ?[0m  [["id", 18], ["LIMIT", 1]]
+  Rendering mountains/show.html.erb within layouts/application
+  Rendered mountains/show.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 30ms (Views: 25.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/mountains" for 127.0.0.1 at 2017-11-21 23:15:52 +1100
+Processing by MountainsController#index as HTML
+  [1m[36mMountain Load (0.2ms)[0m  [1m[34mSELECT "mountains".* FROM "mountains"[0m
+  Rendering mountains/index.html.erb within layouts/application
+  Rendered mountains/index.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 39ms (Views: 35.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/mountains/new" for 127.0.0.1 at 2017-11-21 23:16:02 +1100
+Processing by MountainsController#new as HTML
+  Rendering mountains/new.html.erb within layouts/application
+  Rendered mountains/new.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 29ms (Views: 27.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/mountains" for 127.0.0.1 at 2017-11-21 23:16:25 +1100
+Processing by MountainsController#create as HTML
+  Parameters: {"name"=>"Iuy", "image"=>"", "base_height"=>"", "sea_height"=>"-986", "location"=>"", "fact"=>""}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "mountains" ("name", "image", "base_height", "sea_height", "location", "fact") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Iuy"], ["image", ""], ["base_height", 0], ["sea_height", -986], ["location", ""], ["fact", ""]]
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/mountains
+Completed 302 Found in 3ms (ActiveRecord: 1.0ms)
+
+
+Started GET "/mountains" for 127.0.0.1 at 2017-11-21 23:16:25 +1100
+Processing by MountainsController#index as HTML
+  [1m[36mMountain Load (0.3ms)[0m  [1m[34mSELECT "mountains".* FROM "mountains"[0m
+  Rendering mountains/index.html.erb within layouts/application
+  Rendered mountains/index.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 34ms (Views: 28.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/mountains/19-iuy" for 127.0.0.1 at 2017-11-21 23:16:29 +1100
+Processing by MountainsController#show as HTML
+  Parameters: {"slug"=>"19-iuy"}
+  [1m[36mMountain Load (0.1ms)[0m  [1m[34mSELECT  "mountains".* FROM "mountains" WHERE "mountains"."id" = ? LIMIT ?[0m  [["id", 19], ["LIMIT", 1]]
+  Rendering mountains/show.html.erb within layouts/application
+  Rendered mountains/show.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 30ms (Views: 26.4ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/mountains/19-iuy/edit" for 127.0.0.1 at 2017-11-21 23:16:50 +1100
+Processing by MountainsController#edit as HTML
+  Parameters: {"slug"=>"19-iuy"}
+  [1m[36mMountain Load (0.1ms)[0m  [1m[34mSELECT  "mountains".* FROM "mountains" WHERE "mountains"."id" = ? LIMIT ?[0m  [["id", 19], ["LIMIT", 1]]
+  Rendering mountains/edit.html.erb within layouts/application
+  Rendered mountains/edit.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 34ms (Views: 31.3ms | ActiveRecord: 0.1ms)
+
+
+Started POST "/mountains/19" for 127.0.0.1 at 2017-11-21 23:16:51 +1100
+Processing by MountainsController#update as HTML
+  Parameters: {"name"=>"Iuy", "image"=>"", "base_height"=>"0", "sea_height"=>"-986", "location"=>"", "fact"=>"", "id"=>"19"}
+  [1m[36mMountain Load (0.1ms)[0m  [1m[34mSELECT  "mountains".* FROM "mountains" WHERE "mountains"."id" = ? LIMIT ?[0m  [["id", 19], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/mountains/19-iuy
+Completed 302 Found in 2ms (ActiveRecord: 0.2ms)
+
+
+Started GET "/mountains/19-iuy" for 127.0.0.1 at 2017-11-21 23:16:51 +1100
+Processing by MountainsController#show as HTML
+  Parameters: {"slug"=>"19-iuy"}
+  [1m[36mMountain Load (0.1ms)[0m  [1m[34mSELECT  "mountains".* FROM "mountains" WHERE "mountains"."id" = ? LIMIT ?[0m  [["id", 19], ["LIMIT", 1]]
+  Rendering mountains/show.html.erb within layouts/application
+  Rendered mountains/show.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 24ms (Views: 20.1ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/mountains/19-iuy/edit" for 127.0.0.1 at 2017-11-21 23:16:53 +1100
+Processing by MountainsController#edit as HTML
+  Parameters: {"slug"=>"19-iuy"}
+  [1m[36mMountain Load (0.1ms)[0m  [1m[34mSELECT  "mountains".* FROM "mountains" WHERE "mountains"."id" = ? LIMIT ?[0m  [["id", 19], ["LIMIT", 1]]
+  Rendering mountains/edit.html.erb within layouts/application
+  Rendered mountains/edit.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 38ms (Views: 35.3ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/mountains/19-iuy/edit" for 127.0.0.1 at 2017-11-21 23:17:09 +1100
+Processing by MountainsController#edit as HTML
+  Parameters: {"slug"=>"19-iuy"}
+  [1m[36mMountain Load (0.1ms)[0m  [1m[34mSELECT  "mountains".* FROM "mountains" WHERE "mountains"."id" = ? LIMIT ?[0m  [["id", 19], ["LIMIT", 1]]
+  Rendering mountains/edit.html.erb within layouts/application
+  Rendered mountains/edit.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 28ms (Views: 23.9ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/mountains/19-iuy/edit" for 127.0.0.1 at 2017-11-21 23:17:48 +1100
+Processing by MountainsController#edit as HTML
+  Parameters: {"slug"=>"19-iuy"}
+  [1m[36mMountain Load (0.1ms)[0m  [1m[34mSELECT  "mountains".* FROM "mountains" WHERE "mountains"."id" = ? LIMIT ?[0m  [["id", 19], ["LIMIT", 1]]
+  Rendering mountains/edit.html.erb within layouts/application
+  Rendered mountains/edit.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 21ms (Views: 18.3ms | ActiveRecord: 0.1ms)
+
+
+Started POST "/mountains/19" for 127.0.0.1 at 2017-11-21 23:17:55 +1100
+Processing by MountainsController#update as HTML
+  Parameters: {"name"=>"Iuy", "image"=>"", "base_height"=>"1", "sea_height"=>"-986", "location"=>"", "fact"=>"", "id"=>"19"}
+  [1m[36mMountain Load (0.1ms)[0m  [1m[34mSELECT  "mountains".* FROM "mountains" WHERE "mountains"."id" = ? LIMIT ?[0m  [["id", 19], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[33mUPDATE "mountains" SET "base_height" = ? WHERE "mountains"."id" = ?[0m  [["base_height", 1], ["id", 19]]
+  [1m[35m (2.0ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/mountains/19-iuy
+Completed 302 Found in 5ms (ActiveRecord: 2.6ms)
+
+
+Started GET "/mountains/19-iuy" for 127.0.0.1 at 2017-11-21 23:17:55 +1100
+Processing by MountainsController#show as HTML
+  Parameters: {"slug"=>"19-iuy"}
+  [1m[36mMountain Load (0.1ms)[0m  [1m[34mSELECT  "mountains".* FROM "mountains" WHERE "mountains"."id" = ? LIMIT ?[0m  [["id", 19], ["LIMIT", 1]]
+  Rendering mountains/show.html.erb within layouts/application
+  Rendered mountains/show.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 34ms (Views: 31.7ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/mountains" for 127.0.0.1 at 2017-11-21 23:18:06 +1100
+Processing by MountainsController#index as HTML
+  [1m[36mMountain Load (0.2ms)[0m  [1m[34mSELECT "mountains".* FROM "mountains"[0m
+  Rendering mountains/index.html.erb within layouts/application
+  Rendered mountains/index.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 34ms (Views: 31.3ms | ActiveRecord: 0.2ms)
+
+

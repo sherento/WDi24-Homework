@@ -10,8 +10,8 @@ class MountainsController < ApplicationController
     mountain = Mountain.new
     mountain.name = params[:name]
     mountain.image = params[:image]
-    mountain.base_height = params[:base_height]
-    mountain.sea_height = params[:sea_height]
+    mountain.base_height = params[:base_height].to_i
+    mountain.sea_height = params[:sea_height].to_i
     mountain.location = params[:location]
     mountain.fact = params[:fact]
     mountain.save
@@ -20,7 +20,7 @@ class MountainsController < ApplicationController
   end
 
   def show
-    @mountain = Mountain.find params[:id]
+    @mountain = Mountain.find params[:slug].to_i # just take int at start of slug to search by
     @confirm = "Are you sure you want to destroy this mountain?
                                   ___________
                      __,-~~/~             `---.
@@ -35,23 +35,17 @@ class MountainsController < ApplicationController
                                  |i::|i|
     (` ^'\"`-' \")(` ^'\"`-' \")(` ^'\"`-' \")(` ^'\"`-' \")(` ^'\"`-' \")
 ---------------------------------------------------------------------------"
-
-
-
-
-
-
   end
 
   def edit
-    @mountain = Mountain.find params[:id]
+    @mountain = Mountain.find params[:slug].to_i # just take int at start of slug to search by
   end
 
   def update
     mountain = Mountain.find params[:id]
-    mountain.update :name => params[:name], :image => params[:image], :base_height => params[:base_height], :sea_height => params[:sea_height], :location => params[:location], :fact => params[:fact]
+    mountain.update :name => params[:name], :image => params[:image], :base_height => params[:base_height].to_i, :sea_height => params[:sea_height].to_i, :location => params[:location], :fact => params[:fact]
 
-    redirect_to mountain_path(mountain.id)
+    redirect_to mountain_path(mountain.to_param)
   end
 
   def destroy
