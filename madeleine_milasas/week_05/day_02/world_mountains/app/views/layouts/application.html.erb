@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>WorldMountains</title>
+    <title>Mountains</title>
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
@@ -9,6 +9,10 @@
   </head>
 
   <body>
+    <nav>
+      <%= link_to 'All Mountains', root_path %>
+      <%= link_to 'Add New Mountain', mountains_new_path %>
+    </nav>
     <%= yield %>
   </body>
 </html>

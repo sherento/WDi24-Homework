@@ -22,4 +22,12 @@ class MountainsController < ApplicationController
   def show
     @mountain = Mountain.find params[:id]
   end
+
+  def destroy
+    mountain = Mountain.find params[:id]
+    mountain.destroy
+
+    redirect_to mountains_path
+  end
+
 end

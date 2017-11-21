@@ -24,3 +24,7 @@
 <aside class="side-image">
     <%= image_tag @mountain.image unless @mountain.image.blank? %>
 </aside>
+
+<div class="controls">
+  <%= button_to 'Destroy mountain', mountain_path(@mountain.id), :method => "delete" %>
+</div>
