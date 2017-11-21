@@ -21,6 +21,26 @@ class MountainsController < ApplicationController
 
   def show
     @mountain = Mountain.find params[:id]
+    @confirm = "Are you sure you want to destroy this mountain?
+                                  ____
+                     __,-~~/~      `---.
+                  _/__,---(         ,        )
+            __ /             <       /          )  \\___
+- ------===;;;'====------------------===;;;===----- -  -
+                  \\\/  ~\"~\"~\"~\"~\"~\\~\"~)~\"\/
+                  (_ (   \\  (     >    \\)
+                   \\_( _ <         >_>'
+                      ~ `-i' ::>|--\"
+                          I;|.|.|
+                         <|i::|i|`.
+                        (` ^'\"`-' \")
+------------------------------------------------------------------"
+
+
+
+
+
+
   end
 
   def edit

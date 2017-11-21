@@ -252,9 +252,13 @@ td {
   font-size: 14px;
 }
 
-#delete-button:hover {
+.delete:hover {
   background-color: #DA4040;
   animation: flash 0.25s ease-in-out infinite alternate;
+}
+
+.delete:focus, button:focus, .button:focus {
+  outline: none;
 }
 
 @keyframes flash {
