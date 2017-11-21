@@ -3669,3 +3669,71 @@ Processing by WordsController#index as HTML
 Completed 200 OK in 26ms (Views: 23.8ms | ActiveRecord: 0.2ms)
 
 
+Started GET "/words" for 127.0.0.1 at 2017-11-22 09:53:28 +1100
+Processing by WordsController#index as HTML
+  Rendering words/index.html.erb within layouts/application
+  [1m[36mWord Load (0.2ms)[0m  [1m[34mSELECT "words".* FROM "words"[0m
+  Rendered words/index.html.erb within layouts/application (6.1ms)
+Completed 200 OK in 29ms (Views: 26.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/words/new" for 127.0.0.1 at 2017-11-22 09:55:05 +1100
+Processing by WordsController#new as HTML
+  Rendering words/new.html.erb within layouts/application
+  Rendered words/new.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 21ms (Views: 18.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/words" for 127.0.0.1 at 2017-11-22 09:57:46 +1100
+Processing by WordsController#create as HTML
+  Parameters: {"name"=>"Humphrey Bogart", "image"=>"https://www.biography.com/.image/t_share/MTE4MDAzNDEwNDU3MjMyOTEw/humphrey-bogart-9217486-1-402.jpg", "quote"=>"I should never have switched from scotch to martinis.", "description"=>"Humphrey DeForest Bogart was an American screen and stage actor whose performances in 1940s films noir such as The Maltese Falcon, Casablanca, and The Big Sleep earned him status as a cultural icon.", "died_from"=>"Cancer of the Esophagus", "died"=>"14 January 1957", "death_age"=>"57"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "words" ("name", "quote", "description", "died_from", "died", "death_age", "image") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Humphrey Bogart"], ["quote", "I should never have switched from scotch to martinis."], ["description", "Humphrey DeForest Bogart was an American screen and stage actor whose performances in 1940s films noir such as The Maltese Falcon, Casablanca, and The Big Sleep earned him status as a cultural icon."], ["died_from", "Cancer of the Esophagus"], ["died", "14 January 1957"], ["death_age", 57], ["image", "https://www.biography.com/.image/t_share/MTE4MDAzNDEwNDU3MjMyOTEw/humphrey-bogart-9217486-1-402.jpg"]]
+  [1m[35m (4.8ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/words
+Completed 302 Found in 8ms (ActiveRecord: 5.3ms)
+
+
+Started GET "/words" for 127.0.0.1 at 2017-11-22 09:57:46 +1100
+Processing by WordsController#index as HTML
+  Rendering words/index.html.erb within layouts/application
+  [1m[36mWord Load (0.2ms)[0m  [1m[34mSELECT "words".* FROM "words"[0m
+  Rendered words/index.html.erb within layouts/application (5.8ms)
+Completed 200 OK in 23ms (Views: 20.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/words/21/edit" for 127.0.0.1 at 2017-11-22 09:58:03 +1100
+Processing by WordsController#edit as HTML
+  Parameters: {"id"=>"21"}
+  [1m[36mWord Load (0.2ms)[0m  [1m[34mSELECT  "words".* FROM "words" WHERE "words"."id" = ? LIMIT ?[0m  [["id", 21], ["LIMIT", 1]]
+  Rendering words/edit.html.erb within layouts/application
+  Rendered words/edit.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 33ms (Views: 28.5ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/words/21" for 127.0.0.1 at 2017-11-22 09:58:14 +1100
+Processing by WordsController#update as HTML
+  Parameters: {"name"=>"Louise-Marie-Thérèse de Saint Maurice", "image"=>"http://cdn.thevirallane.com/wp-content/uploads/2015/11/Marie_Therese_de_Savoie_princesse_de_Lamballe_02.jpg", "quote"=>"She let one rip while she was dying. She said, “Good. A woman who can fart is not dead.”", "description"=>"Louise-Marie-Thérèse de Saint Maurice, Comtesse de Vercellis was the sister-in-law of Marie Antoinette and grandly disliked, though not as disliked as Marie.", "died_from"=>"Unknown", "died"=>"Unknown", "death_age"=>"0", "id"=>"21"}
+  [1m[36mWord Load (0.1ms)[0m  [1m[34mSELECT  "words".* FROM "words" WHERE "words"."id" = ? LIMIT ?[0m  [["id", 21], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/words
+Completed 302 Found in 2ms (ActiveRecord: 0.3ms)
+
+
+Started GET "/words" for 127.0.0.1 at 2017-11-22 09:58:14 +1100
+Processing by WordsController#index as HTML
+  Rendering words/index.html.erb within layouts/application
+  [1m[36mWord Load (0.3ms)[0m  [1m[34mSELECT "words".* FROM "words"[0m
+  Rendered words/index.html.erb within layouts/application (6.6ms)
+Completed 200 OK in 25ms (Views: 22.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/words" for 127.0.0.1 at 2017-11-22 09:59:45 +1100
+Processing by WordsController#index as HTML
+  Rendering words/index.html.erb within layouts/application
+  [1m[36mWord Load (0.2ms)[0m  [1m[34mSELECT "words".* FROM "words"[0m
+  Rendered words/index.html.erb within layouts/application (6.5ms)
+Completed 200 OK in 27ms (Views: 23.4ms | ActiveRecord: 0.2ms)
+
+

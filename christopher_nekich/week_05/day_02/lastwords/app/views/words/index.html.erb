@@ -10,7 +10,7 @@
         <% else %>
         <div class="profile" style="background-image: url(https://pbs.twimg.com/profile_images/479315519729070081/ty2LLr9m.jpeg)"></div>
         <% end %>
-        <p><strong><%= w.name %></strong></p>
+        <p><strong><%= w.name[0..20] %></strong></p>
         <%= button_to "X", word_path(w.id), :method => 'delete', :class => "delete" %>
         <div class="controls">
           <%= link_to "Edit", word_edit_path(w.id) %>

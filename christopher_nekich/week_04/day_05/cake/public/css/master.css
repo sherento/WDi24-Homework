@@ -30,6 +30,16 @@ body {
   display: inline-block;
 }
 
+.person {
+  display: inline-block;
+  margin: 0 10px;
+}
+
+.personlist {
+  overflow-x: scroll;
+  width: 100%;
+}
+
 .profile {
   width: 200px;
   height: 200px;
