@@ -15,14 +15,14 @@
       <td><%= number_with_delimiter( @mountain.sea_height, :delimiter => ',' ) %>m</td>
     </tr>
     <tr>
-      <td>Inspiring fact:</td>
+      <td>Factoid:</td>
       <td><%= @mountain.fact %></td>
     </tr>
   </table>
 </main>
 
 <aside class="side-image">
-    <%= image_tag @mountain.image unless @mountain.image.blank? %>
+    <%= image_tag( @mountain.image, :class => "featured" ) unless @mountain.image.blank? %>
 </aside>
 
 <div class="controls">

@@ -13,6 +13,12 @@
       <%= link_to 'All Mountains', root_path %>
       <%= link_to 'Add New Mountain', mountains_new_path %>
     </nav>
-    <%= yield %>
+    <div class="container">
+      <%= yield %>
+      
+      <footer>
+        &copy; MM MMXVII
+      </footer>
+    </div>
   </body>
 </html>
