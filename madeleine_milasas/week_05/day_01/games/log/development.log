@@ -31053,3 +31053,220 @@ Processing by BallController#start as HTML
 Completed 200 OK in 29ms (Views: 26.5ms)
 
 
+Started GET "/" for 127.0.0.1 at 2017-11-21 10:10:38 +1100
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 475ms (Views: 347.8ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-11-21 10:25:18 +1100
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 20ms (Views: 17.2ms)
+
+
+Started GET "/magic-8-ball" for 127.0.0.1 at 2017-11-21 10:25:33 +1100
+Processing by BallController#start as HTML
+  Rendering ball/start.html.erb within layouts/application
+  Rendered ball/start.html.erb within layouts/application (11.9ms)
+Completed 200 OK in 39ms (Views: 34.1ms)
+
+
+Started GET "/magic-8-ball/answer" for 127.0.0.1 at 2017-11-21 10:25:43 +1100
+Processing by BallController#answer as HTML
+  Rendering ball/answer.html.erb within layouts/application
+  Rendered ball/answer.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 36ms (Views: 32.4ms)
+
+
+Started GET "/magic-8-ball" for 127.0.0.1 at 2017-11-21 10:28:19 +1100
+Processing by BallController#start as HTML
+  Rendering ball/start.html.erb within layouts/application
+  Rendered ball/start.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 41ms (Views: 38.0ms)
+
+
+Started GET "/magic-8-ball/answer" for 127.0.0.1 at 2017-11-21 10:28:20 +1100
+Processing by BallController#answer as HTML
+  Rendering ball/answer.html.erb within layouts/application
+  Rendered ball/answer.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 39ms (Views: 36.3ms)
+
+
+Started GET "/magic-8-ball" for 127.0.0.1 at 2017-11-21 10:28:22 +1100
+Processing by BallController#start as HTML
+  Rendering ball/start.html.erb within layouts/application
+  Rendered ball/start.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 36ms (Views: 32.9ms)
+
+
+Started GET "/magic-8-ball/answer" for 127.0.0.1 at 2017-11-21 10:28:22 +1100
+Processing by BallController#answer as HTML
+  Rendering ball/answer.html.erb within layouts/application
+  Rendered ball/answer.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 47ms (Views: 44.1ms)
+
+
+Started GET "/magic-8-ball" for 127.0.0.1 at 2017-11-21 10:28:24 +1100
+Processing by BallController#start as HTML
+  Rendering ball/start.html.erb within layouts/application
+  Rendered ball/start.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 39ms (Views: 35.6ms)
+
+
+Started GET "/secret-number" for 127.0.0.1 at 2017-11-21 10:28:57 +1100
+Processing by NumberController#generate as HTML
+  Rendering number/generate.html.erb within layouts/application
+  Rendered number/generate.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 30ms (Views: 26.7ms)
+
+
+Started GET "/magic-8-ball" for 127.0.0.1 at 2017-11-21 10:29:01 +1100
+Processing by BallController#start as HTML
+  Rendering ball/start.html.erb within layouts/application
+  Rendered ball/start.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 45ms (Views: 40.3ms)
+
+
+Started GET "/secret-number" for 127.0.0.1 at 2017-11-21 10:29:55 +1100
+Processing by NumberController#generate as HTML
+  Rendering number/generate.html.erb within layouts/application
+  Rendered number/generate.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 35ms (Views: 31.9ms)
+
+
+Started GET "/secret-number/play" for 127.0.0.1 at 2017-11-21 10:30:01 +1100
+Processing by NumberController#play as HTML
+  Rendering number/play.html.erb within layouts/application
+  Rendered number/play.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 37ms (Views: 33.2ms)
+
+
+Started GET "/secret-number/3" for 127.0.0.1 at 2017-11-21 10:30:05 +1100
+Processing by NumberController#result as HTML
+  Parameters: {"id"=>"3"}
+  Rendering number/result.html.erb within layouts/application
+  Rendered number/result.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 38ms (Views: 34.3ms)
+
+
+Started GET "/secret-number/play" for 127.0.0.1 at 2017-11-21 10:30:06 +1100
+Processing by NumberController#play as HTML
+  Rendering number/play.html.erb within layouts/application
+  Rendered number/play.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 38ms (Views: 34.4ms)
+
+
+Started GET "/secret-number/4" for 127.0.0.1 at 2017-11-21 10:30:07 +1100
+Processing by NumberController#result as HTML
+  Parameters: {"id"=>"4"}
+  Rendering number/result.html.erb within layouts/application
+  Rendered number/result.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 44ms (Views: 41.2ms)
+
+
+Started GET "/secret-number" for 127.0.0.1 at 2017-11-21 10:30:15 +1100
+Processing by NumberController#generate as HTML
+  Rendering number/generate.html.erb within layouts/application
+  Rendered number/generate.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 41ms (Views: 38.1ms)
+
+
+Started GET "/secret-number/play" for 127.0.0.1 at 2017-11-21 10:30:53 +1100
+Processing by NumberController#play as HTML
+  Rendering number/play.html.erb within layouts/application
+  Rendered number/play.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 36ms (Views: 33.4ms)
+
+
+Started GET "/secret-number/6" for 127.0.0.1 at 2017-11-21 10:30:54 +1100
+Processing by NumberController#result as HTML
+  Parameters: {"id"=>"6"}
+  Rendering number/result.html.erb within layouts/application
+  Rendered number/result.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 38ms (Views: 34.7ms)
+
+
+Started GET "/secret-number/play" for 127.0.0.1 at 2017-11-21 10:30:55 +1100
+Processing by NumberController#play as HTML
+  Rendering number/play.html.erb within layouts/application
+  Rendered number/play.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 39ms (Views: 36.2ms)
+
+
+Started GET "/secret-number/7" for 127.0.0.1 at 2017-11-21 10:30:56 +1100
+Processing by NumberController#result as HTML
+  Parameters: {"id"=>"7"}
+  Rendering number/result.html.erb within layouts/application
+  Rendered number/result.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 39ms (Views: 36.5ms)
+
+
+Started GET "/secret-number" for 127.0.0.1 at 2017-11-21 10:31:01 +1100
+Processing by NumberController#generate as HTML
+  Rendering number/generate.html.erb within layouts/application
+  Rendered number/generate.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 49ms (Views: 43.2ms)
+
+
+Started GET "/rps" for 127.0.0.1 at 2017-11-21 10:31:03 +1100
+Processing by RpsController#start as HTML
+  Rendering rps/start.html.erb within layouts/application
+  Rendered rps/start.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 41ms (Views: 35.9ms)
+
+
+Started GET "/rps/rock" for 127.0.0.1 at 2017-11-21 10:31:05 +1100
+Processing by RpsController#result as HTML
+  Parameters: {"throw"=>"rock"}
+  Rendering rps/result.html.erb within layouts/application
+  Rendered rps/result.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 33ms (Views: 28.9ms)
+
+
+Started GET "/rps" for 127.0.0.1 at 2017-11-21 10:31:06 +1100
+Processing by RpsController#start as HTML
+  Rendering rps/start.html.erb within layouts/application
+  Rendered rps/start.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 47ms (Views: 44.1ms)
+
+
+Started GET "/rps/paper" for 127.0.0.1 at 2017-11-21 10:31:07 +1100
+Processing by RpsController#result as HTML
+  Parameters: {"throw"=>"paper"}
+  Rendering rps/result.html.erb within layouts/application
+  Rendered rps/result.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 40ms (Views: 37.6ms)
+
+
+Started GET "/rps" for 127.0.0.1 at 2017-11-21 10:31:08 +1100
+Processing by RpsController#start as HTML
+  Rendering rps/start.html.erb within layouts/application
+  Rendered rps/start.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 39ms (Views: 36.2ms)
+
+
+Started GET "/rps/scissors" for 127.0.0.1 at 2017-11-21 10:31:09 +1100
+Processing by RpsController#result as HTML
+  Parameters: {"throw"=>"scissors"}
+  Rendering rps/result.html.erb within layouts/application
+  Rendered rps/result.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 32ms (Views: 29.3ms)
+
+
+Started GET "/rps" for 127.0.0.1 at 2017-11-21 10:31:10 +1100
+Processing by RpsController#start as HTML
+  Rendering rps/start.html.erb within layouts/application
+  Rendered rps/start.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 45ms (Views: 41.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-11-21 10:31:51 +1100
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 35ms (Views: 32.0ms)
+
+
