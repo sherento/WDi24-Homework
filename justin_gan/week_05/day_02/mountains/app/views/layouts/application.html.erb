@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Mountains</title>
+    <title>Crags</title>
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
@@ -9,6 +9,21 @@
   </head>
 
   <body>
-    <%= yield %>
+
+    <div class="grid">
+
+      <h1 class="heading">
+        <%= link_to 'Crags', root_path %>
+      </h1>
+
+      <nav>
+        <%= link_to 'All Crags', root_path %>
+        <%= link_to 'Add Crag', crags_new_path %>
+      </nav>
+
+      <%= yield %>
+
+    </div>
+
   </body>
 </html>
