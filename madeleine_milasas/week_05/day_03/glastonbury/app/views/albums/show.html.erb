@@ -2,6 +2,9 @@
 
 <%= image_tag( @album.image, :class => "feature" ) %>
 
+<% unless @album.band.blank? %>
+  <p>Band: <%= @album.band.name %></p>
+<% end %>
 
 <p>Released: <%= @album.release_date.strftime "%A %B %e, %Y" unless @album.release_date.nil? %></p>
 

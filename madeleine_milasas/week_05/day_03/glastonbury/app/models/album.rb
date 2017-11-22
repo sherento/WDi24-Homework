@@ -9,7 +9,9 @@
 #  created_at   :datetime         not null
 #  updated_at   :datetime         not null
 #  tracklist    :text
+#  band_id      :integer
 #
 
 class Album < ActiveRecord::Base
+  belongs_to :band
 end
