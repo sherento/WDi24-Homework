@@ -1,0 +1,6 @@
+<h1><%= @album.name %></h1>
+
+<%= image_tag( @album.image, :class => "feature" ) %>
+
+
+<p>Released: <%= @album.release_date.strftime "%A %B %e, %Y" %></p>
