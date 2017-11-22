@@ -811,3 +811,650 @@ Processing by AlbumsController#new as HTML
 Completed 200 OK in 40ms (Views: 37.0ms | ActiveRecord: 0.0ms)
 
 
+Started GET "/bands/new" for 127.0.0.1 at 2017-11-22 22:51:18 +1100
+Processing by BandsController#new as HTML
+  Rendering bands/new.html.erb within layouts/application
+  Rendered bands/new.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 36ms (Views: 32.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/bands" for 127.0.0.1 at 2017-11-22 22:51:30 +1100
+Processing by BandsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Dl/IrSbDPNZ12PNFYDveURwvQU7xE2HgMK+a28SOgkGEMXSbfnXZaKYZh9pLW5aXEUCSE3DjCzcfDbZzARPrwg==", "band"=>{"name"=>"BADBADNOTGOOD", "country"=>"", "year"=>"", "members"=>"", "image"=>""}, "commit"=>"Create Band"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "bands" ("name", "country", "year", "members", "image", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["name", "BADBADNOTGOOD"], ["country", ""], ["year", ""], ["members", ""], ["image", ""], ["created_at", "2017-11-22 11:51:30.806789"], ["updated_at", "2017-11-22 11:51:30.806789"]]
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/bands/3
+Completed 302 Found in 5ms (ActiveRecord: 1.2ms)
+
+
+Started GET "/bands/3" for 127.0.0.1 at 2017-11-22 22:51:30 +1100
+Processing by BandsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mBand Load (0.2ms)[0m  [1m[34mSELECT  "bands".* FROM "bands" WHERE "bands"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering bands/show.html.erb within layouts/application
+  Rendered bands/show.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 32ms (Views: 27.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/bands/3" for 127.0.0.1 at 2017-11-22 22:52:03 +1100
+Processing by BandsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mBand Load (0.1ms)[0m  [1m[34mSELECT  "bands".* FROM "bands" WHERE "bands"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering bands/show.html.erb within layouts/application
+  Rendered bands/show.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 30ms (Views: 26.3ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/bands" for 127.0.0.1 at 2017-11-22 22:52:12 +1100
+Processing by BandsController#index as HTML
+  Rendering bands/index.html.erb within layouts/application
+  [1m[36mBand Load (0.2ms)[0m  [1m[34mSELECT "bands".* FROM "bands"[0m
+  Rendered bands/index.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 32ms (Views: 29.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/bands" for 127.0.0.1 at 2017-11-22 22:52:38 +1100
+Processing by BandsController#index as HTML
+  Rendering bands/index.html.erb within layouts/application
+  [1m[36mBand Load (0.2ms)[0m  [1m[34mSELECT "bands".* FROM "bands"[0m
+  Rendered bands/index.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 26ms (Views: 23.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/bands/new" for 127.0.0.1 at 2017-11-22 22:52:40 +1100
+Processing by BandsController#new as HTML
+  Rendering bands/new.html.erb within layouts/application
+  Rendered bands/new.html.erb within layouts/application (10.6ms)
+Completed 200 OK in 36ms (Views: 33.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/bands" for 127.0.0.1 at 2017-11-22 22:53:45 +1100
+Processing by BandsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"wDp/04iyYtiu+26ODRB3BoA2X4g07/LvZ4W7T/WXpFNKVMPl0ASHZn06GhEmcD/AjVmM1bUfmDhIJ5fnMArN0A==", "band"=>{"name"=>"The XX", "country"=>"UK", "year"=>"2005", "members"=>"", "image"=>"http://nashville.carpediem.cd/data/afisha/o/ae/51/ae512c172c.jpg"}, "commit"=>"Create Band"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "bands" ("name", "country", "year", "members", "image", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["name", "The XX"], ["country", "UK"], ["year", "2005"], ["members", ""], ["image", "http://nashville.carpediem.cd/data/afisha/o/ae/51/ae512c172c.jpg"], ["created_at", "2017-11-22 11:53:45.595039"], ["updated_at", "2017-11-22 11:53:45.595039"]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/bands/4
+Completed 302 Found in 5ms (ActiveRecord: 1.4ms)
+
+
+Started GET "/bands/4" for 127.0.0.1 at 2017-11-22 22:53:45 +1100
+Processing by BandsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mBand Load (0.1ms)[0m  [1m[34mSELECT  "bands".* FROM "bands" WHERE "bands"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  Rendering bands/show.html.erb within layouts/application
+  Rendered bands/show.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 24ms (Views: 21.2ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/bands" for 127.0.0.1 at 2017-11-22 22:53:49 +1100
+Processing by BandsController#index as HTML
+  Rendering bands/index.html.erb within layouts/application
+  [1m[36mBand Load (0.2ms)[0m  [1m[34mSELECT "bands".* FROM "bands"[0m
+  Rendered bands/index.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 31ms (Views: 27.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/bands" for 127.0.0.1 at 2017-11-22 22:56:05 +1100
+Processing by BandsController#index as HTML
+  Rendering bands/index.html.erb within layouts/application
+  [1m[36mBand Load (0.2ms)[0m  [1m[34mSELECT "bands".* FROM "bands"[0m
+  Rendered bands/index.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 33ms (Views: 30.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/bands/4" for 127.0.0.1 at 2017-11-22 22:56:08 +1100
+Processing by BandsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mBand Load (0.1ms)[0m  [1m[34mSELECT  "bands".* FROM "bands" WHERE "bands"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  Rendering bands/show.html.erb within layouts/application
+  Rendered bands/show.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 27ms (Views: 23.3ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/bands/4" for 127.0.0.1 at 2017-11-22 22:56:28 +1100
+Processing by BandsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mBand Load (0.1ms)[0m  [1m[34mSELECT  "bands".* FROM "bands" WHERE "bands"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  Rendering bands/show.html.erb within layouts/application
+  Rendered bands/show.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 26ms (Views: 22.3ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/bands/4" for 127.0.0.1 at 2017-11-22 22:56:37 +1100
+Processing by BandsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mBand Load (0.1ms)[0m  [1m[34mSELECT  "bands".* FROM "bands" WHERE "bands"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  Rendering bands/show.html.erb within layouts/application
+  Rendered bands/show.html.erb within layouts/application (5.9ms)
+Completed 200 OK in 31ms (Views: 27.5ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/bands" for 127.0.0.1 at 2017-11-22 22:58:39 +1100
+Processing by BandsController#index as HTML
+  Rendering bands/index.html.erb within layouts/application
+  [1m[36mBand Load (0.2ms)[0m  [1m[34mSELECT "bands".* FROM "bands"[0m
+  Rendered bands/index.html.erb within layouts/application (12.7ms)
+Completed 200 OK in 37ms (Views: 32.9ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/bands/3" for 127.0.0.1 at 2017-11-22 22:58:44 +1100
+Processing by BandsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mBand Load (0.2ms)[0m  [1m[34mSELECT  "bands".* FROM "bands" WHERE "bands"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering bands/show.html.erb within layouts/application
+  Rendered bands/show.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 31ms (Views: 22.0ms | ActiveRecord: 0.2ms)
+
+
+Started DELETE "/bands/3" for 127.0.0.1 at 2017-11-22 22:58:52 +1100
+Processing by BandsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"i41Q+uZBBn9X3acL+wbe+f4CuokIt/0VT7Gdl4QPOBbjsWRwdY2TsWxaU0o4Jvik5GQUIPmu+VqNf1jKTG3EkQ==", "id"=>"3"}
+  [1m[36mBand Load (0.2ms)[0m  [1m[34mSELECT  "bands".* FROM "bands" WHERE "bands"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[31mDELETE FROM "bands" WHERE "bands"."id" = ?[0m  [["id", 3]]
+  [1m[35m (2.0ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/bands
+Completed 302 Found in 5ms (ActiveRecord: 2.7ms)
+
+
+Started GET "/bands" for 127.0.0.1 at 2017-11-22 22:58:52 +1100
+Processing by BandsController#index as HTML
+  Rendering bands/index.html.erb within layouts/application
+  [1m[36mBand Load (0.2ms)[0m  [1m[34mSELECT "bands".* FROM "bands"[0m
+  Rendered bands/index.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 27ms (Views: 23.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/bands" for 127.0.0.1 at 2017-11-22 22:59:59 +1100
+Processing by BandsController#index as HTML
+  Rendering bands/index.html.erb within layouts/application
+  [1m[36mBand Load (0.2ms)[0m  [1m[34mSELECT "bands".* FROM "bands"[0m
+  Rendered bands/index.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 38ms (Views: 35.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/bands/4" for 127.0.0.1 at 2017-11-22 23:00:01 +1100
+Processing by BandsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mBand Load (0.1ms)[0m  [1m[34mSELECT  "bands".* FROM "bands" WHERE "bands"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  Rendering bands/show.html.erb within layouts/application
+  Rendered bands/show.html.erb within layouts/application (9.2ms)
+Completed 200 OK in 38ms (Views: 33.4ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/bands/4" for 127.0.0.1 at 2017-11-22 23:01:02 +1100
+Processing by BandsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mBand Load (0.1ms)[0m  [1m[34mSELECT  "bands".* FROM "bands" WHERE "bands"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  Rendering bands/show.html.erb within layouts/application
+  Rendered bands/show.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 53ms (Views: 50.2ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/bands/4" for 127.0.0.1 at 2017-11-22 23:01:20 +1100
+Processing by BandsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mBand Load (0.1ms)[0m  [1m[34mSELECT  "bands".* FROM "bands" WHERE "bands"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  Rendering bands/show.html.erb within layouts/application
+  Rendered bands/show.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 56ms (Views: 53.2ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/bands/4" for 127.0.0.1 at 2017-11-22 23:03:53 +1100
+Processing by BandsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mBand Load (0.2ms)[0m  [1m[34mSELECT  "bands".* FROM "bands" WHERE "bands"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  Rendering bands/show.html.erb within layouts/application
+  Rendered bands/show.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 69ms (Views: 54.0ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/bands/4/edit" for 127.0.0.1 at 2017-11-22 23:03:57 +1100
+Processing by BandsController#edit as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mBand Load (0.1ms)[0m  [1m[34mSELECT  "bands".* FROM "bands" WHERE "bands"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  Rendering bands/edit.html.erb within layouts/application
+  Rendered bands/edit.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 32ms (Views: 27.9ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/bands/4" for 127.0.0.1 at 2017-11-22 23:04:20 +1100
+Processing by BandsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mBand Load (0.1ms)[0m  [1m[34mSELECT  "bands".* FROM "bands" WHERE "bands"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  Rendering bands/show.html.erb within layouts/application
+  Rendered bands/show.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 53ms (Views: 49.6ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/bands/4" for 127.0.0.1 at 2017-11-22 23:04:22 +1100
+Processing by BandsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mBand Load (0.1ms)[0m  [1m[34mSELECT  "bands".* FROM "bands" WHERE "bands"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  Rendering bands/show.html.erb within layouts/application
+  Rendered bands/show.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 23ms (Views: 20.1ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/bands/4" for 127.0.0.1 at 2017-11-22 23:04:32 +1100
+Processing by BandsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mBand Load (0.1ms)[0m  [1m[34mSELECT  "bands".* FROM "bands" WHERE "bands"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  Rendering bands/show.html.erb within layouts/application
+  Rendered bands/show.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 52ms (Views: 47.8ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/bands/4" for 127.0.0.1 at 2017-11-22 23:04:40 +1100
+Processing by BandsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mBand Load (0.1ms)[0m  [1m[34mSELECT  "bands".* FROM "bands" WHERE "bands"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  Rendering bands/show.html.erb within layouts/application
+  Rendered bands/show.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 49ms (Views: 45.8ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/bands/4" for 127.0.0.1 at 2017-11-22 23:05:00 +1100
+Processing by BandsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mBand Load (0.2ms)[0m  [1m[34mSELECT  "bands".* FROM "bands" WHERE "bands"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  Rendering bands/show.html.erb within layouts/application
+  Rendered bands/show.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 30ms (Views: 25.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/bands/4/edit" for 127.0.0.1 at 2017-11-22 23:05:01 +1100
+Processing by BandsController#edit as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mBand Load (0.1ms)[0m  [1m[34mSELECT  "bands".* FROM "bands" WHERE "bands"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  Rendering bands/edit.html.erb within layouts/application
+  Rendered bands/_form.html.erb (3.2ms)
+  Rendered bands/edit.html.erb within layouts/application (7.0ms)
+Completed 200 OK in 35ms (Views: 30.9ms | ActiveRecord: 0.1ms)
+
+
+Started PATCH "/bands/4" for 127.0.0.1 at 2017-11-22 23:05:29 +1100
+  
+AbstractController::ActionNotFound (The action 'update' could not be found for BandsController):
+  
+actionpack (5.1.4) lib/abstract_controller/base.rb:119:in `process'
+actionview (5.1.4) lib/action_view/rendering.rb:30:in `process'
+actionpack (5.1.4) lib/action_controller/metal.rb:189:in `dispatch'
+actionpack (5.1.4) lib/action_controller/metal.rb:253:in `dispatch'
+actionpack (5.1.4) lib/action_dispatch/routing/route_set.rb:49:in `dispatch'
+actionpack (5.1.4) lib/action_dispatch/routing/route_set.rb:31:in `serve'
+actionpack (5.1.4) lib/action_dispatch/journey/router.rb:50:in `block in serve'
+actionpack (5.1.4) lib/action_dispatch/journey/router.rb:33:in `each'
+actionpack (5.1.4) lib/action_dispatch/journey/router.rb:33:in `serve'
+actionpack (5.1.4) lib/action_dispatch/routing/route_set.rb:834:in `call'
+rack (2.0.3) lib/rack/etag.rb:25:in `call'
+rack (2.0.3) lib/rack/conditional_get.rb:38:in `call'
+rack (2.0.3) lib/rack/head.rb:12:in `call'
+rack (2.0.3) lib/rack/session/abstract/id.rb:232:in `context'
+rack (2.0.3) lib/rack/session/abstract/id.rb:226:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/cookies.rb:613:in `call'
+activerecord (5.1.4) lib/active_record/migration.rb:556:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/callbacks.rb:26:in `block in call'
+activesupport (5.1.4) lib/active_support/callbacks.rb:97:in `run_callbacks'
+actionpack (5.1.4) lib/action_dispatch/middleware/callbacks.rb:24:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/debug_exceptions.rb:59:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.4) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.4) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.4) lib/rails/engine.rb:522:in `call'
+puma (3.11.0) lib/puma/configuration.rb:225:in `call'
+puma (3.11.0) lib/puma/server.rb:624:in `handle_request'
+puma (3.11.0) lib/puma/server.rb:438:in `process_client'
+puma (3.11.0) lib/puma/server.rb:302:in `block in run'
+puma (3.11.0) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started PATCH "/bands/4" for 127.0.0.1 at 2017-11-22 23:06:46 +1100
+Processing by BandsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"7F4c5skwYPU8gzr8d79ePEjzppyMc7dJJ3n0E93q1SVTHMNCR9e2FqbA6TBN7KsWq8sym5iLdXy9/TJfk8vDEA==", "band"=>{"name"=>"The XX", "country"=>"UK", "year"=>"2005", "members"=>"Romy Madley Croft, Oliver Sim, Jamie Smith", "image"=>"http://nashville.carpediem.cd/data/afisha/o/ae/51/ae512c172c.jpg"}, "commit"=>"Update Band", "id"=>"4"}
+  [1m[36mBand Load (0.1ms)[0m  [1m[34mSELECT  "bands".* FROM "bands" WHERE "bands"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[33mUPDATE "bands" SET "members" = ?, "updated_at" = ? WHERE "bands"."id" = ?[0m  [["members", "Romy Madley Croft, Oliver Sim, Jamie Smith"], ["updated_at", "2017-11-22 12:06:46.747923"], ["id", 4]]
+  [1m[35m (2.1ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/bands/4
+Completed 302 Found in 18ms (ActiveRecord: 3.4ms)
+
+
+Started GET "/bands/4" for 127.0.0.1 at 2017-11-22 23:06:46 +1100
+Processing by BandsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mBand Load (0.1ms)[0m  [1m[34mSELECT  "bands".* FROM "bands" WHERE "bands"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  Rendering bands/show.html.erb within layouts/application
+  Rendered bands/show.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 25ms (Views: 21.1ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/bands/4" for 127.0.0.1 at 2017-11-22 23:07:09 +1100
+Processing by BandsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mBand Load (0.1ms)[0m  [1m[34mSELECT  "bands".* FROM "bands" WHERE "bands"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  Rendering bands/show.html.erb within layouts/application
+  Rendered bands/show.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 49ms (Views: 46.0ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/albums" for 127.0.0.1 at 2017-11-22 23:07:39 +1100
+Processing by AlbumsController#index as HTML
+  Rendering albums/index.html.erb within layouts/application
+  [1m[36mAlbum Load (0.2ms)[0m  [1m[34mSELECT "albums".* FROM "albums"[0m
+  Rendered albums/index.html.erb within layouts/application (11.6ms)
+Completed 200 OK in 39ms (Views: 32.5ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/albums/new" for 127.0.0.1 at 2017-11-22 23:07:43 +1100
+Processing by AlbumsController#new as HTML
+  Rendering albums/new.html.erb within layouts/application
+  Rendered albums/new.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 34ms (Views: 31.5ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/albums" for 127.0.0.1 at 2017-11-22 23:08:28 +1100
+Processing by AlbumsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"854NXrnxtVFSD8gVefrdJGPQM0HzLMEAS6vfVe9RFzk8Hctr8DSUElJ/9lf3s9J8/9KZi8PIs2LuIK6TQ7r/5g==", "album"=>{"name"=>"A Moon Shaped Pool", "release_date"=>"2016-05-08", "image"=>""}, "commit"=>"Create Album"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "albums" ("name", "release_date", "image", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "A Moon Shaped Pool"], ["release_date", "2016-05-08"], ["image", ""], ["created_at", "2017-11-22 12:08:28.964902"], ["updated_at", "2017-11-22 12:08:28.964902"]]
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/albums/3
+Completed 302 Found in 5ms (ActiveRecord: 1.5ms)
+
+
+Started GET "/albums/3" for 127.0.0.1 at 2017-11-22 23:08:28 +1100
+Processing by AlbumsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mAlbum Load (0.2ms)[0m  [1m[34mSELECT  "albums".* FROM "albums" WHERE "albums"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering albums/show.html.erb within layouts/application
+  Rendered albums/show.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 26ms (Views: 22.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/albums/3" for 127.0.0.1 at 2017-11-22 23:10:57 +1100
+Processing by AlbumsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mAlbum Load (0.1ms)[0m  [1m[34mSELECT  "albums".* FROM "albums" WHERE "albums"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering albums/show.html.erb within layouts/application
+  Rendered albums/show.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 26ms (Views: 22.7ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/albums/3" for 127.0.0.1 at 2017-11-22 23:12:29 +1100
+Processing by AlbumsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mAlbum Load (0.1ms)[0m  [1m[34mSELECT  "albums".* FROM "albums" WHERE "albums"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering albums/show.html.erb within layouts/application
+  Rendered albums/show.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 35ms (Views: 21.7ms | ActiveRecord: 0.9ms)
+
+
+Started DELETE "/albums/3" for 127.0.0.1 at 2017-11-22 23:12:40 +1100
+Processing by AlbumsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"Xg3kvfA3PPD8Bj00uqjSsAXFiwDNboq5feULlvZdb/k2MdA3Y/upPseByXV5iPTtH6MlqTx3jva/K87LPj+Tfg==", "id"=>"3"}
+  [1m[36mAlbum Load (0.1ms)[0m  [1m[34mSELECT  "albums".* FROM "albums" WHERE "albums"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[31mDELETE FROM "albums" WHERE "albums"."id" = ?[0m  [["id", 3]]
+  [1m[35m (2.0ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/albums
+Completed 302 Found in 5ms (ActiveRecord: 2.5ms)
+
+
+Started GET "/albums" for 127.0.0.1 at 2017-11-22 23:12:40 +1100
+Processing by AlbumsController#index as HTML
+  Rendering albums/index.html.erb within layouts/application
+  [1m[36mAlbum Load (0.3ms)[0m  [1m[34mSELECT "albums".* FROM "albums"[0m
+  Rendered albums/index.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 32ms (Views: 28.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/albums" for 127.0.0.1 at 2017-11-22 23:13:43 +1100
+Processing by AlbumsController#index as HTML
+  Rendering albums/index.html.erb within layouts/application
+  [1m[36mAlbum Load (0.1ms)[0m  [1m[34mSELECT "albums".* FROM "albums"[0m
+  Rendered albums/index.html.erb within layouts/application (15.5ms)
+Completed 200 OK in 59ms (Views: 55.1ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/albums/new" for 127.0.0.1 at 2017-11-22 23:13:46 +1100
+Processing by AlbumsController#new as HTML
+  Rendering albums/new.html.erb within layouts/application
+  Rendered albums/_form.html.erb (3.7ms)
+  Rendered albums/new.html.erb within layouts/application (7.8ms)
+Completed 200 OK in 37ms (Views: 34.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/albums" for 127.0.0.1 at 2017-11-22 23:14:53 +1100
+Processing by AlbumsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"KBsJYX87L/SfBpKqlugyKylulSnv6RR7/Nx2gnYsuPHnmM9UNv4Ot592rOgYoT1ztWw/498NZhlZVwdE2sdQLg==", "album"=>{"name"=>"A Moon Shaped Pool", "release_date"=>"2016-05-08", "tracklist"=>"Identikit", "image"=>"https://www.gannett-cdn.com/-mm-/317eb3e40630c50c9aa245b819998da9aa37acbd/c=0-100-807-707&r=x404&c=534x401/local/-/media/2016/05/11/Louisville/Louisville/635985692098588203-a-moon-shaped-pool.jpg"}, "commit"=>"Create Album"}
+Unpermitted parameter: :tracklist
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "albums" ("name", "release_date", "image", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "A Moon Shaped Pool"], ["release_date", "2016-05-08"], ["image", "https://www.gannett-cdn.com/-mm-/317eb3e40630c50c9aa245b819998da9aa37acbd/c=0-100-807-707&r=x404&c=534x401/local/-/media/2016/05/11/Louisville/Louisville/635985692098588203-a-moon-shaped-pool.jpg"], ["created_at", "2017-11-22 12:14:53.192084"], ["updated_at", "2017-11-22 12:14:53.192084"]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/albums/4
+Completed 302 Found in 4ms (ActiveRecord: 1.3ms)
+
+
+Started GET "/albums/4" for 127.0.0.1 at 2017-11-22 23:14:53 +1100
+Processing by AlbumsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mAlbum Load (0.2ms)[0m  [1m[34mSELECT  "albums".* FROM "albums" WHERE "albums"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  Rendering albums/show.html.erb within layouts/application
+  Rendered albums/show.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 27ms (Views: 23.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/albums/4/edit" for 127.0.0.1 at 2017-11-22 23:15:01 +1100
+Processing by AlbumsController#edit as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mAlbum Load (0.1ms)[0m  [1m[34mSELECT  "albums".* FROM "albums" WHERE "albums"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  Rendering albums/edit.html.erb within layouts/application
+  Rendered albums/edit.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 35ms (Views: 31.5ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/albums/4/edit" for 127.0.0.1 at 2017-11-22 23:15:28 +1100
+Processing by AlbumsController#edit as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mAlbum Load (0.1ms)[0m  [1m[34mSELECT  "albums".* FROM "albums" WHERE "albums"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  Rendering albums/edit.html.erb within layouts/application
+  Rendered albums/_form.html.erb (2.6ms)
+  Rendered albums/edit.html.erb within layouts/application (4.9ms)
+Completed 200 OK in 28ms (Views: 25.6ms | ActiveRecord: 0.1ms)
+
+
+Started PATCH "/albums/4" for 127.0.0.1 at 2017-11-22 23:15:56 +1100
+  
+AbstractController::ActionNotFound (The action 'update' could not be found for AlbumsController):
+  
+actionpack (5.1.4) lib/abstract_controller/base.rb:119:in `process'
+actionview (5.1.4) lib/action_view/rendering.rb:30:in `process'
+actionpack (5.1.4) lib/action_controller/metal.rb:189:in `dispatch'
+actionpack (5.1.4) lib/action_controller/metal.rb:253:in `dispatch'
+actionpack (5.1.4) lib/action_dispatch/routing/route_set.rb:49:in `dispatch'
+actionpack (5.1.4) lib/action_dispatch/routing/route_set.rb:31:in `serve'
+actionpack (5.1.4) lib/action_dispatch/journey/router.rb:50:in `block in serve'
+actionpack (5.1.4) lib/action_dispatch/journey/router.rb:33:in `each'
+actionpack (5.1.4) lib/action_dispatch/journey/router.rb:33:in `serve'
+actionpack (5.1.4) lib/action_dispatch/routing/route_set.rb:834:in `call'
+rack (2.0.3) lib/rack/etag.rb:25:in `call'
+rack (2.0.3) lib/rack/conditional_get.rb:38:in `call'
+rack (2.0.3) lib/rack/head.rb:12:in `call'
+rack (2.0.3) lib/rack/session/abstract/id.rb:232:in `context'
+rack (2.0.3) lib/rack/session/abstract/id.rb:226:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/cookies.rb:613:in `call'
+activerecord (5.1.4) lib/active_record/migration.rb:556:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/callbacks.rb:26:in `block in call'
+activesupport (5.1.4) lib/active_support/callbacks.rb:97:in `run_callbacks'
+actionpack (5.1.4) lib/action_dispatch/middleware/callbacks.rb:24:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/debug_exceptions.rb:59:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.4) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.4) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.4) lib/rails/engine.rb:522:in `call'
+puma (3.11.0) lib/puma/configuration.rb:225:in `call'
+puma (3.11.0) lib/puma/server.rb:624:in `handle_request'
+puma (3.11.0) lib/puma/server.rb:438:in `process_client'
+puma (3.11.0) lib/puma/server.rb:302:in `block in run'
+puma (3.11.0) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started PATCH "/albums/4" for 127.0.0.1 at 2017-11-22 23:16:50 +1100
+Processing by AlbumsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"jTjGA3QZpDmVl+9A2ibXvITAxovQfn2QbBZvJt8/UITlBPKJ59Ux964QGwEZBvHhnqZoIiFned+u2Kp7F12sAw==", "album"=>{"name"=>"A Moon Shaped Pool", "release_date"=>"2016-05-08", "tracklist"=>"Identikit", "image"=>"https://www.gannett-cdn.com/-mm-/317eb3e40630c50c9aa245b819998da9aa37acbd/c=0-100-807-707&r=x404&c=534x401/local/-/media/2016/05/11/Louisville/Louisville/635985692098588203-a-moon-shaped-pool.jpg"}, "commit"=>"Update Album", "id"=>"4"}
+  [1m[36mAlbum Load (0.1ms)[0m  [1m[34mSELECT  "albums".* FROM "albums" WHERE "albums"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[33mUPDATE "albums" SET "tracklist" = ?, "updated_at" = ? WHERE "albums"."id" = ?[0m  [["tracklist", "Identikit"], ["updated_at", "2017-11-22 12:16:50.699841"], ["id", 4]]
+  [1m[35m (1.9ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/albums/4
+Completed 302 Found in 15ms (ActiveRecord: 3.3ms)
+
+
+Started GET "/albums/4" for 127.0.0.1 at 2017-11-22 23:16:50 +1100
+Processing by AlbumsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mAlbum Load (0.1ms)[0m  [1m[34mSELECT  "albums".* FROM "albums" WHERE "albums"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  Rendering albums/show.html.erb within layouts/application
+  Rendered albums/show.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 24ms (Views: 20.7ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/albums/4/edit" for 127.0.0.1 at 2017-11-22 23:16:53 +1100
+Processing by AlbumsController#edit as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mAlbum Load (0.1ms)[0m  [1m[34mSELECT  "albums".* FROM "albums" WHERE "albums"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  Rendering albums/edit.html.erb within layouts/application
+  Rendered albums/_form.html.erb (2.8ms)
+  Rendered albums/edit.html.erb within layouts/application (5.8ms)
+Completed 200 OK in 33ms (Views: 29.5ms | ActiveRecord: 0.1ms)
+
+
+Started PATCH "/albums/4" for 127.0.0.1 at 2017-11-22 23:16:58 +1100
+Processing by AlbumsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"n+GI+0KQyXfRD3kqz8clNiti0INOU4sl7dGahhKOGdey9bAviOWM8T51VjvKaVKLuaGld2CCXN0NIq1vyohe9g==", "album"=>{"name"=>"A Moon Shaped Pool", "release_date"=>"2016-05-08", "tracklist"=>"Identikit, Ful Stop", "image"=>"https://www.gannett-cdn.com/-mm-/317eb3e40630c50c9aa245b819998da9aa37acbd/c=0-100-807-707&r=x404&c=534x401/local/-/media/2016/05/11/Louisville/Louisville/635985692098588203-a-moon-shaped-pool.jpg"}, "commit"=>"Update Album", "id"=>"4"}
+  [1m[36mAlbum Load (0.2ms)[0m  [1m[34mSELECT  "albums".* FROM "albums" WHERE "albums"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[33mUPDATE "albums" SET "tracklist" = ?, "updated_at" = ? WHERE "albums"."id" = ?[0m  [["tracklist", "Identikit, Ful Stop"], ["updated_at", "2017-11-22 12:16:58.098501"], ["id", 4]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/albums/4
+Completed 302 Found in 6ms (ActiveRecord: 1.8ms)
+
+
+Started GET "/albums/4" for 127.0.0.1 at 2017-11-22 23:16:58 +1100
+Processing by AlbumsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mAlbum Load (0.1ms)[0m  [1m[34mSELECT  "albums".* FROM "albums" WHERE "albums"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  Rendering albums/show.html.erb within layouts/application
+  Rendered albums/show.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 39ms (Views: 34.9ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/albums" for 127.0.0.1 at 2017-11-22 23:17:01 +1100
+Processing by AlbumsController#index as HTML
+  Rendering albums/index.html.erb within layouts/application
+  [1m[36mAlbum Load (0.2ms)[0m  [1m[34mSELECT "albums".* FROM "albums"[0m
+  Rendered albums/index.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 33ms (Views: 30.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/albums" for 127.0.0.1 at 2017-11-22 23:17:48 +1100
+Processing by AlbumsController#index as HTML
+  Rendering albums/index.html.erb within layouts/application
+  [1m[36mAlbum Load (0.2ms)[0m  [1m[34mSELECT "albums".* FROM "albums"[0m
+  Rendered albums/index.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 25ms (Views: 21.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/albums" for 127.0.0.1 at 2017-11-22 23:18:08 +1100
+Processing by AlbumsController#index as HTML
+  Rendering albums/index.html.erb within layouts/application
+  [1m[36mAlbum Load (0.2ms)[0m  [1m[34mSELECT "albums".* FROM "albums"[0m
+  Rendered albums/index.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 61ms (Views: 58.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/albums" for 127.0.0.1 at 2017-11-22 23:18:12 +1100
+Processing by AlbumsController#index as HTML
+  Rendering albums/index.html.erb within layouts/application
+  [1m[36mAlbum Load (0.2ms)[0m  [1m[34mSELECT "albums".* FROM "albums"[0m
+  Rendered albums/index.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 23ms (Views: 20.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/bands" for 127.0.0.1 at 2017-11-22 23:18:24 +1100
+Processing by BandsController#index as HTML
+  Rendering bands/index.html.erb within layouts/application
+  [1m[36mBand Load (0.2ms)[0m  [1m[34mSELECT "bands".* FROM "bands"[0m
+  Rendered bands/index.html.erb within layouts/application (9.7ms)
+Completed 200 OK in 45ms (Views: 38.2ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/bands" for 127.0.0.1 at 2017-11-22 23:19:13 +1100
+Processing by BandsController#index as HTML
+  Rendering bands/index.html.erb within layouts/application
+  [1m[36mBand Load (0.2ms)[0m  [1m[34mSELECT "bands".* FROM "bands"[0m
+  Rendered bands/index.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 51ms (Views: 48.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/albums" for 127.0.0.1 at 2017-11-22 23:19:15 +1100
+Processing by AlbumsController#index as HTML
+  Rendering albums/index.html.erb within layouts/application
+  [1m[36mAlbum Load (0.2ms)[0m  [1m[34mSELECT "albums".* FROM "albums"[0m
+  Rendered albums/index.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 44ms (Views: 40.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/albums/1" for 127.0.0.1 at 2017-11-22 23:19:28 +1100
+Processing by AlbumsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mAlbum Load (0.1ms)[0m  [1m[34mSELECT  "albums".* FROM "albums" WHERE "albums"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering albums/show.html.erb within layouts/application
+  Rendered albums/show.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 34ms (Views: 30.1ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/albums/4" for 127.0.0.1 at 2017-11-22 23:19:45 +1100
+Processing by AlbumsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mAlbum Load (0.1ms)[0m  [1m[34mSELECT  "albums".* FROM "albums" WHERE "albums"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  Rendering albums/show.html.erb within layouts/application
+  Rendered albums/show.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 35ms (Views: 31.1ms | ActiveRecord: 0.1ms)
+
+
