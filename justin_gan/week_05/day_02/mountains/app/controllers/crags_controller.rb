@@ -33,7 +33,7 @@ class CragsController < ApplicationController
                 :image => params[:image],
                 :location => params[:location],
                 :parent_range => params[:parent_range],
-                :elevation => params[:elevationv],
+                :elevation => params[:elevation],
                 :mountain_type => params[:mountain_type]
 
     redirect_to crag_path(crag.id)

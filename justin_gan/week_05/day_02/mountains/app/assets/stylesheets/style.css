@@ -3,8 +3,9 @@
 
 .grid {
   /*TODO: what order is the css loaded in?*/
-  margin-top: 50px !important;
+  margin-top: 50px;
   max-width: 960px;
+  width: 90%;
   margin: 0 auto;
   font-family: 'Roboto', sans-serif;
   color: black;
@@ -41,7 +42,7 @@ main {
   grid-column: span 4;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
-  grid-column-gap: 20px;
+  grid-column-gap: 10px;
 }
 
 figure {
