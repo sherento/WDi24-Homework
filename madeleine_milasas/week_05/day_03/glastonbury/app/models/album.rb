@@ -8,6 +8,7 @@
 #  image        :text
 #  created_at   :datetime         not null
 #  updated_at   :datetime         not null
+#  tracklist    :text
 #
 
 class Album < ActiveRecord::Base

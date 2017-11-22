@@ -3,4 +3,8 @@
 <%= image_tag( @album.image, :class => "feature" ) %>
 
 
-<p>Released: <%= @album.release_date.strftime "%A %B %e, %Y" %></p>
+<p>Released: <%= @album.release_date.strftime "%A %B %e, %Y" unless @album.release_date.nil? %></p>
+
+<% unless @album.tracklist.blank? %>
+  <p>Highlight tracks: <%= @album.tracklist %></p>
+<% end %>
