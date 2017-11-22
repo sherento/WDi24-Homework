@@ -21,6 +21,11 @@
   </fieldset>
 
   <fieldset>
+    <%= f.label :band %>
+    <%= f.select :band_id, Band.order(:name).pluck(:name, :id), :include_blank => true %>
+  </fieldset>
+
+  <fieldset>
     <label></label>
     <%= f.submit %>
   </fieldset>
