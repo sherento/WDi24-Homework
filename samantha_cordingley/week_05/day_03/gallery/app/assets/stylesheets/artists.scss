@@ -1,3 +1,10 @@
-// Place all the styles related to the Artists controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+body {
+  text-align: center;
+  background-color: #1d1a1a;
+  color: white;
+}
+
+.thumbnail {
+  max-width: 10em;
+  border: 10px solid white;
+}
