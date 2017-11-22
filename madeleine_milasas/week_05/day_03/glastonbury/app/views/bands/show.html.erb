@@ -1,0 +1,18 @@
+<h1><%= @band.name %></h1>
+
+<%= image_tag( @band.image ) %>
+
+<table>
+  <tr>
+    <td>Country of origin:</td>
+    <td><%= @band.country %></td>
+  </tr>
+  <tr>
+    <td>Year formed:</td>
+    <td><%= @band.year %></td>
+  </tr>
+  <tr>
+    <td>Members:</td>
+    <td><%= @band.members %></td>
+  </tr>
+</table>
