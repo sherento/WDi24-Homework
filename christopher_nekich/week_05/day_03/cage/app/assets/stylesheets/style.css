@@ -124,8 +124,13 @@ nav {
   /*background-color: blue;*/
   display: inline-block;
   text-align: center;
+  transition: all 1s;
+}
+
+.movbox:hover {
+  height: 100px;
 }
 
 .movbox img {
-  width: 60px;
+  height: 100%;
 }

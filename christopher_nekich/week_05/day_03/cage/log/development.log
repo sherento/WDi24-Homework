@@ -2217,3 +2217,290 @@ Processing by MoviesController#index as HTML
 Completed 200 OK in 24ms (Views: 19.7ms | ActiveRecord: 0.2ms)
 
 
+Started GET "/actors/2" for 127.0.0.1 at 2017-11-23 09:41:16 +1100
+Processing by ActorsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mActor Load (0.1ms)[0m  [1m[34mSELECT  "actors".* FROM "actors" WHERE "actors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE Actor Load (0.0ms)[0m  [1m[34mSELECT  "actors".* FROM "actors" WHERE "actors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering actors/show.html.erb within layouts/application
+  [1m[36mMovie Load (0.1ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE "movies"."actor_id" = ?[0m  [["actor_id", 2]]
+  Rendered actors/show.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 21ms (Views: 16.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/actors/2" for 127.0.0.1 at 2017-11-23 09:41:47 +1100
+Processing by ActorsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mActor Load (0.1ms)[0m  [1m[34mSELECT  "actors".* FROM "actors" WHERE "actors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE Actor Load (0.0ms)[0m  [1m[34mSELECT  "actors".* FROM "actors" WHERE "actors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering actors/show.html.erb within layouts/application
+  [1m[36mMovie Load (0.1ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE "movies"."actor_id" = ?[0m  [["actor_id", 2]]
+  Rendered actors/show.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 92ms (Views: 87.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/actors/2" for 127.0.0.1 at 2017-11-23 09:42:09 +1100
+Processing by ActorsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mActor Load (0.1ms)[0m  [1m[34mSELECT  "actors".* FROM "actors" WHERE "actors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE Actor Load (0.0ms)[0m  [1m[34mSELECT  "actors".* FROM "actors" WHERE "actors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering actors/show.html.erb within layouts/application
+  [1m[36mMovie Load (0.2ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE "movies"."actor_id" = ?[0m  [["actor_id", 2]]
+  Rendered actors/show.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 132ms (Views: 128.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/actors/2" for 127.0.0.1 at 2017-11-23 09:42:18 +1100
+Processing by ActorsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mActor Load (0.1ms)[0m  [1m[34mSELECT  "actors".* FROM "actors" WHERE "actors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE Actor Load (0.0ms)[0m  [1m[34mSELECT  "actors".* FROM "actors" WHERE "actors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering actors/show.html.erb within layouts/application
+  [1m[36mMovie Load (0.1ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE "movies"."actor_id" = ?[0m  [["actor_id", 2]]
+  Rendered actors/show.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 93ms (Views: 88.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/actors/1" for 127.0.0.1 at 2017-11-23 09:42:20 +1100
+Processing by ActorsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mActor Load (0.1ms)[0m  [1m[34mSELECT  "actors".* FROM "actors" WHERE "actors"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Actor Load (0.0ms)[0m  [1m[34mSELECT  "actors".* FROM "actors" WHERE "actors"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering actors/show.html.erb within layouts/application
+  [1m[36mMovie Load (0.1ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE "movies"."actor_id" = ?[0m  [["actor_id", 1]]
+  Rendered actors/show.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 24ms (Views: 20.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/actors/1" for 127.0.0.1 at 2017-11-23 09:42:36 +1100
+Processing by ActorsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mActor Load (0.1ms)[0m  [1m[34mSELECT  "actors".* FROM "actors" WHERE "actors"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Actor Load (0.0ms)[0m  [1m[34mSELECT  "actors".* FROM "actors" WHERE "actors"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering actors/show.html.erb within layouts/application
+  [1m[36mMovie Load (0.1ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE "movies"."actor_id" = ?[0m  [["actor_id", 1]]
+  Rendered actors/show.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 123ms (Views: 120.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/actors/1" for 127.0.0.1 at 2017-11-23 09:42:56 +1100
+Processing by ActorsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mActor Load (0.1ms)[0m  [1m[34mSELECT  "actors".* FROM "actors" WHERE "actors"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Actor Load (0.0ms)[0m  [1m[34mSELECT  "actors".* FROM "actors" WHERE "actors"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering actors/show.html.erb within layouts/application
+  [1m[36mMovie Load (0.2ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE "movies"."actor_id" = ?[0m  [["actor_id", 1]]
+  Rendered actors/show.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 25ms (Views: 21.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/actors/2" for 127.0.0.1 at 2017-11-23 09:42:58 +1100
+Processing by ActorsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mActor Load (0.2ms)[0m  [1m[34mSELECT  "actors".* FROM "actors" WHERE "actors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE Actor Load (0.0ms)[0m  [1m[34mSELECT  "actors".* FROM "actors" WHERE "actors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering actors/show.html.erb within layouts/application
+  [1m[36mMovie Load (0.1ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE "movies"."actor_id" = ?[0m  [["actor_id", 2]]
+  Rendered actors/show.html.erb within layouts/application (3.6ms)
+Completed 200 OK in 39ms (Views: 33.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/actors/1" for 127.0.0.1 at 2017-11-23 09:42:59 +1100
+Processing by ActorsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mActor Load (0.2ms)[0m  [1m[34mSELECT  "actors".* FROM "actors" WHERE "actors"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Actor Load (0.0ms)[0m  [1m[34mSELECT  "actors".* FROM "actors" WHERE "actors"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering actors/show.html.erb within layouts/application
+  [1m[36mMovie Load (0.1ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE "movies"."actor_id" = ?[0m  [["actor_id", 1]]
+  Rendered actors/show.html.erb within layouts/application (3.1ms)
+Completed 200 OK in 37ms (Views: 32.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/movies/2" for 127.0.0.1 at 2017-11-23 09:43:02 +1100
+Processing by MoviesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mMovie Load (0.1ms)[0m  [1m[34mSELECT  "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering movies/show.html.erb within layouts/application
+  Rendered movies/show.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 41ms (Views: 36.7ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/movies" for 127.0.0.1 at 2017-11-23 09:43:11 +1100
+Processing by MoviesController#index as HTML
+  Rendering movies/index.html.erb within layouts/application
+  [1m[36mMovie Load (0.2ms)[0m  [1m[34mSELECT "movies".* FROM "movies"[0m
+  Rendered movies/index.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 25ms (Views: 21.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/movies/8" for 127.0.0.1 at 2017-11-23 09:43:37 +1100
+Processing by MoviesController#show as HTML
+  Parameters: {"id"=>"8"}
+  [1m[36mMovie Load (0.1ms)[0m  [1m[34mSELECT  "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  Rendering movies/show.html.erb within layouts/application
+  Rendered movies/show.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 23ms (Views: 18.8ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/movies" for 127.0.0.1 at 2017-11-23 09:43:39 +1100
+Processing by MoviesController#index as HTML
+  Rendering movies/index.html.erb within layouts/application
+  [1m[36mMovie Load (0.2ms)[0m  [1m[34mSELECT "movies".* FROM "movies"[0m
+  Rendered movies/index.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 26ms (Views: 20.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/movies" for 127.0.0.1 at 2017-11-23 09:43:59 +1100
+Processing by MoviesController#index as HTML
+  Rendering movies/index.html.erb within layouts/application
+  [1m[36mMovie Load (0.2ms)[0m  [1m[34mSELECT "movies".* FROM "movies"[0m
+  Rendered movies/index.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 29ms (Views: 25.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/movies/4" for 127.0.0.1 at 2017-11-23 09:44:00 +1100
+Processing by MoviesController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mMovie Load (0.2ms)[0m  [1m[34mSELECT  "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  Rendering movies/show.html.erb within layouts/application
+  Rendered movies/show.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 36ms (Views: 29.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/movies" for 127.0.0.1 at 2017-11-23 09:44:02 +1100
+Processing by MoviesController#index as HTML
+  Rendering movies/index.html.erb within layouts/application
+  [1m[36mMovie Load (0.3ms)[0m  [1m[34mSELECT "movies".* FROM "movies"[0m
+  Rendered movies/index.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 27ms (Views: 23.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/actors" for 127.0.0.1 at 2017-11-23 09:44:04 +1100
+Processing by ActorsController#index as HTML
+  Rendering actors/index.html.erb within layouts/application
+  [1m[36mActor Load (0.2ms)[0m  [1m[34mSELECT "actors".* FROM "actors"[0m
+  Rendered actors/index.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 23ms (Views: 19.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/actors1" for 127.0.0.1 at 2017-11-23 09:44:05 +1100
+  
+ActionController::RoutingError (No route matches [GET] "/actors1"):
+  
+actionpack (5.1.4) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.4) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.4) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.4) lib/rails/engine.rb:522:in `call'
+puma (3.11.0) lib/puma/configuration.rb:225:in `call'
+puma (3.11.0) lib/puma/server.rb:624:in `handle_request'
+puma (3.11.0) lib/puma/server.rb:438:in `process_client'
+puma (3.11.0) lib/puma/server.rb:302:in `block in run'
+puma (3.11.0) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/actors1" for 127.0.0.1 at 2017-11-23 09:44:20 +1100
+  
+ActionController::RoutingError (No route matches [GET] "/actors1"):
+  
+actionpack (5.1.4) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.4) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.4) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.4) lib/rails/engine.rb:522:in `call'
+puma (3.11.0) lib/puma/configuration.rb:225:in `call'
+puma (3.11.0) lib/puma/server.rb:624:in `handle_request'
+puma (3.11.0) lib/puma/server.rb:438:in `process_client'
+puma (3.11.0) lib/puma/server.rb:302:in `block in run'
+puma (3.11.0) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/actors" for 127.0.0.1 at 2017-11-23 09:44:23 +1100
+Processing by ActorsController#index as HTML
+  Rendering actors/index.html.erb within layouts/application
+  [1m[36mActor Load (0.2ms)[0m  [1m[34mSELECT "actors".* FROM "actors"[0m
+  Rendered actors/index.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 19ms (Views: 16.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/actors/1" for 127.0.0.1 at 2017-11-23 09:44:24 +1100
+Processing by ActorsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mActor Load (0.1ms)[0m  [1m[34mSELECT  "actors".* FROM "actors" WHERE "actors"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Actor Load (0.0ms)[0m  [1m[34mSELECT  "actors".* FROM "actors" WHERE "actors"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering actors/show.html.erb within layouts/application
+  [1m[36mMovie Load (0.2ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE "movies"."actor_id" = ?[0m  [["actor_id", 1]]
+  Rendered actors/show.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 24ms (Views: 19.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/actors/2" for 127.0.0.1 at 2017-11-23 09:44:26 +1100
+Processing by ActorsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mActor Load (0.1ms)[0m  [1m[34mSELECT  "actors".* FROM "actors" WHERE "actors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE Actor Load (0.0ms)[0m  [1m[34mSELECT  "actors".* FROM "actors" WHERE "actors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering actors/show.html.erb within layouts/application
+  [1m[36mMovie Load (0.2ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE "movies"."actor_id" = ?[0m  [["actor_id", 2]]
+  Rendered actors/show.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 24ms (Views: 19.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/actors/1" for 127.0.0.1 at 2017-11-23 09:44:29 +1100
+Processing by ActorsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mActor Load (0.2ms)[0m  [1m[34mSELECT  "actors".* FROM "actors" WHERE "actors"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Actor Load (0.0ms)[0m  [1m[34mSELECT  "actors".* FROM "actors" WHERE "actors"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering actors/show.html.erb within layouts/application
+  [1m[36mMovie Load (0.2ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE "movies"."actor_id" = ?[0m  [["actor_id", 1]]
+  Rendered actors/show.html.erb within layouts/application (3.1ms)
+Completed 200 OK in 26ms (Views: 20.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/actors/2" for 127.0.0.1 at 2017-11-23 09:44:32 +1100
+Processing by ActorsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mActor Load (0.1ms)[0m  [1m[34mSELECT  "actors".* FROM "actors" WHERE "actors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE Actor Load (0.0ms)[0m  [1m[34mSELECT  "actors".* FROM "actors" WHERE "actors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering actors/show.html.erb within layouts/application
+  [1m[36mMovie Load (0.1ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE "movies"."actor_id" = ?[0m  [["actor_id", 2]]
+  Rendered actors/show.html.erb within layouts/application (10.2ms)
+Completed 200 OK in 33ms (Views: 27.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-11-23 09:44:34 +1100
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 23ms (Views: 19.2ms | ActiveRecord: 0.0ms)
+
+
