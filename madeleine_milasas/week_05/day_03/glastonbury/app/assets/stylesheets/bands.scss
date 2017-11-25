@@ -47,6 +47,17 @@ nav > a:hover {
   color: coral;
 }
 
+p > a {
+  // text-transform: uppercase;
+  text-decoration: none;
+  color: #333;
+  // padding: 20px;
+}
+
+p > a:hover {
+  color: coral;
+}
+
 .controls {
   padding: 40px 0;
 }

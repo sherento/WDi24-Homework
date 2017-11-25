@@ -3,10 +3,12 @@
 <%= image_tag( @album.image, :class => "feature" ) %>
 
 <% unless @album.band.blank? %>
-  <p>Band: <%= @album.band.name %></p>
+  <p>Band: <%= link_to @album.band.name, band_path(@album.band_id) %></p>
 <% end %>
 
-<p>Released: <%= @album.release_date.strftime "%A %B %e, %Y" unless @album.release_date.nil? %></p>
+<% unless @album.release_date.nil? %>
+  <p>Released: <%= @album.release_date.strftime "%A %B %e, %Y" %></p>
+<% end %>
 
 <% unless @album.tracklist.blank? %>
   <p>Highlight tracks: <%= @album.tracklist %></p>

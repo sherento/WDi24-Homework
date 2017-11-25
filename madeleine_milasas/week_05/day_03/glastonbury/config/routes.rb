@@ -17,9 +17,10 @@
 #            PATCH  /albums/:id(.:format)      albums#update
 #            PUT    /albums/:id(.:format)      albums#update
 #            DELETE /albums/:id(.:format)      albums#destroy
-# 
+#
 
 Rails.application.routes.draw do
+  root to: "bands#index"
   resources :bands
   resources :albums
 end

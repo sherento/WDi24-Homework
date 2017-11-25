@@ -13,5 +13,5 @@
 #
 
 class Album < ActiveRecord::Base
-  belongs_to :band
+  belongs_to :band, optional: true
 end
