@@ -4,10 +4,6 @@ body {
   margin: 0 auto;
 }
 
-.box {
-  margin: 60px 0;
-}
-
 .thumb {
   max-height: 150px;
 }
@@ -71,4 +67,18 @@ p > a:hover {
 
 .controls > a:hover {
   color: coral;
+}
+
+
+/***********  CSS GRID BASIC *********/
+
+.grid-container {
+  display: grid;
+  grid-template-columns: 300px 300px 300px;
+  grid-gap: 20px;
+}
+
+
+.box {
+  margin: 60px 0;
 }
