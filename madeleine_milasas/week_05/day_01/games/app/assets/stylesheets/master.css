@@ -93,7 +93,7 @@ a {
 
 .creepy {
   position: fixed;
-  width: 1700px;
+  width: 100vw;
   z-index: 10;
 }
 
@@ -105,4 +105,5 @@ a {
   position: fixed;
   padding: 50px;
   text-align: center;
+  width: 100vw;
 }
