@@ -4,13 +4,18 @@ body {
   margin: 0 auto;
 }
 
-button {
-  display: block;
+input {
+  padding: 15px;
+  width: 690px;
+  height: 50px;
+  box-sizing: border-box;
+  display: inline-block;
 }
 
-button, input {
+button {
   padding: 15px;
-  width: 200px;
+  width: 260px;
+  height: 50px;
   box-sizing: border-box;
 }
 
