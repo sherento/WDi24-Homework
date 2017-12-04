@@ -747,3 +747,530 @@ Processing by CountriesController#index as HTML
 Completed 200 OK in 32ms (Views: 28.3ms | ActiveRecord: 0.3ms)
 
 
+Started GET "/" for 127.0.0.1 at 2017-11-22 23:20:04 +1100
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Users/john/.rvm/gems/ruby-2.4.2/gems/railties-5.1.4/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/john/.rvm/gems/ruby-2.4.2/gems/railties-5.1.4/lib/rails/templates/rails/welcome/index.html.erb (1.8ms)
+Completed 200 OK in 7ms (Views: 4.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/cities" for 127.0.0.1 at 2017-11-22 23:20:09 +1100
+Processing by CitiesController#index as HTML
+  Rendering cities/index.html.erb within layouts/application
+  [1m[36mCity Load (0.2ms)[0m  [1m[34mSELECT "cities".* FROM "cities"[0m
+  Rendered cities/index.html.erb within layouts/application (7.6ms)
+Completed 200 OK in 31ms (Views: 26.3ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-11-23 08:03:31 +1100
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Users/john/.rvm/gems/ruby-2.4.2/gems/railties-5.1.4/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/john/.rvm/gems/ruby-2.4.2/gems/railties-5.1.4/lib/rails/templates/rails/welcome/index.html.erb (17.4ms)
+Completed 200 OK in 43ms (Views: 24.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/cities" for 127.0.0.1 at 2017-11-23 08:03:36 +1100
+Processing by CitiesController#index as HTML
+  Rendering cities/index.html.erb within layouts/application
+  [1m[36mCity Load (2.3ms)[0m  [1m[34mSELECT "cities".* FROM "cities"[0m
+  Rendered cities/index.html.erb within layouts/application (15.1ms)
+Completed 200 OK in 81ms (Views: 70.9ms | ActiveRecord: 2.3ms)
+
+
+Started GET "/cities/new" for 127.0.0.1 at 2017-11-23 08:03:41 +1100
+Processing by CitiesController#new as HTML
+  Rendering cities/new.html.erb within layouts/application
+  Rendered cities/_form.html.erb (8.3ms)
+  Rendered cities/new.html.erb within layouts/application (13.1ms)
+Completed 200 OK in 78ms (Views: 72.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/cities/1" for 127.0.0.1 at 2017-11-23 08:03:48 +1100
+Processing by CitiesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCity Load (0.4ms)[0m  [1m[34mSELECT  "cities".* FROM "cities" WHERE "cities"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering cities/show.html.erb within layouts/application
+  Rendered cities/show.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 37ms (Views: 30.6ms | ActiveRecord: 0.4ms)
+
+
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to AddCityIdToCountries (20171122210953)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.8ms)[0m  [1m[35mALTER TABLE "cities" ADD "country_id" integer[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20171122210953"]]
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.6ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mCity Load (0.1ms)[0m  [1m[34mSELECT  "cities".* FROM "cities" ORDER BY "cities"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mCity Load (0.2ms)[0m  [1m[34mSELECT  "cities".* FROM "cities" ORDER BY "cities"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mCity Load (0.1ms)[0m  [1m[34mSELECT  "cities".* FROM "cities" ORDER BY "cities"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mCountry Load (0.2ms)[0m  [1m[34mSELECT  "countries".* FROM "countries" ORDER BY "countries"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mCountry Load (0.1ms)[0m  [1m[34mSELECT "countries".* FROM "countries"[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[31mDELETE FROM "countries" WHERE "countries"."id" = ?[0m  [["id", 1]]
+  [1m[35m (6.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[31mDELETE FROM "countries" WHERE "countries"."id" = ?[0m  [["id", 2]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "countries" ("name", "population", "food", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Australia"], ["population", 200], ["food", "Lamingtons"], ["created_at", "2017-11-22 21:27:57.416888"], ["updated_at", "2017-11-22 21:27:57.416888"]]
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "countries" ("name", "population", "food", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "England"], ["population", 300], ["food", "Gooseberries"], ["created_at", "2017-11-22 21:27:57.420669"], ["updated_at", "2017-11-22 21:27:57.420669"]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "countries" ("name", "population", "food", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "New Zealand"], ["population", 30], ["food", "Chinese Gooseberries"], ["created_at", "2017-11-22 21:27:57.423608"], ["updated_at", "2017-11-22 21:27:57.423608"]]
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "countries" ("name", "population", "food", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "USA"], ["population", 301], ["food", "BBQ"], ["created_at", "2017-11-22 21:27:57.426783"], ["updated_at", "2017-11-22 21:27:57.426783"]]
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mCity Load (0.3ms)[0m  [1m[34mSELECT "cities".* FROM "cities"[0m
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[31mDELETE FROM "cities" WHERE "cities"."id" = ?[0m  [["id", 1]]
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[31mDELETE FROM "cities" WHERE "cities"."id" = ?[0m  [["id", 2]]
+  [1m[35m (1.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[31mDELETE FROM "cities" WHERE "cities"."id" = ?[0m  [["id", 3]]
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mCountry Load (0.9ms)[0m  [1m[34mSELECT  "countries".* FROM "countries" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mCity Load (0.1ms)[0m  [1m[34mSELECT  "cities".* FROM "cities" ORDER BY "cities"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mCountry Load (0.1ms)[0m  [1m[34mSELECT  "countries".* FROM "countries" ORDER BY "countries"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mCity Load (0.2ms)[0m  [1m[34mSELECT  "cities".* FROM "cities" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mCity Load (0.2ms)[0m  [1m[34mSELECT "cities".* FROM "cities"[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCountry Load (0.2ms)[0m  [1m[34mSELECT  "countries".* FROM "countries" WHERE "countries"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "cities" ("name", "population", "created_at", "updated_at", "country_id") VALUES (?, ?, ?, ?, ?)[0m  [["name", "London"], ["population", 250], ["created_at", "2017-11-22 21:34:49.224767"], ["updated_at", "2017-11-22 21:34:49.224767"], ["country_id", 5]]
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.4ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCountry Load (0.1ms)[0m  [1m[34mSELECT  "countries".* FROM "countries" WHERE "countries"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "cities" ("name", "population", "created_at", "updated_at", "country_id") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Birmingham"], ["population", 250], ["created_at", "2017-11-22 21:34:49.229323"], ["updated_at", "2017-11-22 21:34:49.229323"], ["country_id", 5]]
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCountry Load (0.1ms)[0m  [1m[34mSELECT  "countries".* FROM "countries" WHERE "countries"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "cities" ("name", "population", "created_at", "updated_at", "country_id") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Sydney"], ["population", 220], ["created_at", "2017-11-22 21:34:49.233109"], ["updated_at", "2017-11-22 21:34:49.233109"], ["country_id", 4]]
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCountry Load (0.1ms)[0m  [1m[34mSELECT  "countries".* FROM "countries" WHERE "countries"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "cities" ("name", "population", "created_at", "updated_at", "country_id") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Melbourne"], ["population", 220], ["created_at", "2017-11-22 21:34:49.237416"], ["updated_at", "2017-11-22 21:34:49.237416"], ["country_id", 4]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCountry Load (0.1ms)[0m  [1m[34mSELECT  "countries".* FROM "countries" WHERE "countries"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "cities" ("name", "population", "created_at", "updated_at", "country_id") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Auckland"], ["population", 220], ["created_at", "2017-11-22 21:34:49.242018"], ["updated_at", "2017-11-22 21:34:49.242018"], ["country_id", 6]]
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCountry Load (0.2ms)[0m  [1m[34mSELECT  "countries".* FROM "countries" WHERE "countries"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "cities" ("name", "population", "created_at", "updated_at", "country_id") VALUES (?, ?, ?, ?, ?)[0m  [["name", "New York"], ["population", 220], ["created_at", "2017-11-22 21:34:49.246663"], ["updated_at", "2017-11-22 21:34:49.246663"], ["country_id", 4]]
+  [1m[35m (1.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mCity Load (0.2ms)[0m  [1m[34mSELECT  "cities".* FROM "cities" ORDER BY "cities"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mCountry Load (0.2ms)[0m  [1m[34mSELECT  "countries".* FROM "countries" ORDER BY "countries"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mCity Load (0.1ms)[0m  [1m[34mSELECT  "cities".* FROM "cities" ORDER BY "cities"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mCountry Load (0.2ms)[0m  [1m[34mSELECT  "countries".* FROM "countries" WHERE "countries"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mCity Load (0.2ms)[0m  [1m[34mSELECT  "cities".* FROM "cities" ORDER BY "cities"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mCountry Load (0.1ms)[0m  [1m[34mSELECT  "countries".* FROM "countries" WHERE "countries"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mCity Load (0.2ms)[0m  [1m[34mSELECT  "cities".* FROM "cities" ORDER BY "cities"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mCountry Load (0.1ms)[0m  [1m[34mSELECT  "countries".* FROM "countries" WHERE "countries"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+Started GET "/cities" for 127.0.0.1 at 2017-11-23 08:39:18 +1100
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by CitiesController#index as HTML
+  Rendering cities/index.html.erb within layouts/application
+  [1m[36mCity Load (0.2ms)[0m  [1m[34mSELECT "cities".* FROM "cities"[0m
+  Rendered cities/index.html.erb within layouts/application (9.5ms)
+Completed 200 OK in 43ms (Views: 28.1ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/cities/6" for 127.0.0.1 at 2017-11-23 08:39:20 +1100
+Processing by CitiesController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mCity Load (0.3ms)[0m  [1m[34mSELECT  "cities".* FROM "cities" WHERE "cities"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  Rendering cities/show.html.erb within layouts/application
+  [1m[36mCountry Load (0.2ms)[0m  [1m[34mSELECT  "countries".* FROM "countries" WHERE "countries"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  Rendered cities/show.html.erb within layouts/application (23.2ms)
+Completed 200 OK in 56ms (Views: 51.0ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/countries" for 127.0.0.1 at 2017-11-23 08:39:31 +1100
+Processing by CountriesController#index as HTML
+  Rendering countries/index.html.erb within layouts/application
+  [1m[36mCountry Load (0.3ms)[0m  [1m[34mSELECT "countries".* FROM "countries"[0m
+  Rendered countries/index.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 25ms (Views: 22.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/countries/4" for 127.0.0.1 at 2017-11-23 08:39:33 +1100
+Processing by CountriesController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mCountry Load (0.2ms)[0m  [1m[34mSELECT  "countries".* FROM "countries" WHERE "countries"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  Rendering countries/show.html.erb within layouts/application
+  Rendered countries/show.html.erb within layouts/application (23.3ms)
+Completed 500 Internal Server Error in 37ms (ActiveRecord: 0.2ms)
+
+
+  
+ActionView::Template::Error (undefined method `city' for #<Country:0x00007fb2991bb2c0>):
+     5: <%= @country.population %>
+     6: <%= @country.food %>
+     7: 
+     8: <% @country.city.each do |city| %>
+     9:   <%= city.name %>
+    10: <% end %>
+    11: 
+  
+app/views/countries/show.html.erb:8:in `_app_views_countries_show_html_erb__688425437426848786_70202549155480'
+Started GET "/countries/4" for 127.0.0.1 at 2017-11-23 08:40:24 +1100
+Processing by CountriesController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mCountry Load (0.2ms)[0m  [1m[34mSELECT  "countries".* FROM "countries" WHERE "countries"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  Rendering countries/show.html.erb within layouts/application
+  [1m[36mCity Load (0.2ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = ?[0m  [["country_id", 4]]
+  Rendered countries/show.html.erb within layouts/application (16.9ms)
+Completed 200 OK in 41ms (Views: 37.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/countries/6" for 127.0.0.1 at 2017-11-23 08:40:38 +1100
+Processing by CountriesController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mCountry Load (0.1ms)[0m  [1m[34mSELECT  "countries".* FROM "countries" WHERE "countries"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  Rendering countries/show.html.erb within layouts/application
+  [1m[36mCity Load (0.1ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = ?[0m  [["country_id", 6]]
+  Rendered countries/show.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 26ms (Views: 22.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/countries/7" for 127.0.0.1 at 2017-11-23 08:40:44 +1100
+Processing by CountriesController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mCountry Load (0.1ms)[0m  [1m[34mSELECT  "countries".* FROM "countries" WHERE "countries"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  Rendering countries/show.html.erb within layouts/application
+  [1m[36mCity Load (0.1ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = ?[0m  [["country_id", 7]]
+  Rendered countries/show.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 26ms (Views: 22.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/cities" for 127.0.0.1 at 2017-11-23 08:58:14 +1100
+Processing by CitiesController#index as HTML
+  Rendering cities/index.html.erb within layouts/application
+  [1m[36mCity Load (0.2ms)[0m  [1m[34mSELECT "cities".* FROM "cities"[0m
+  Rendered cities/index.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 30ms (Views: 27.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/cities/6" for 127.0.0.1 at 2017-11-23 08:58:16 +1100
+Processing by CitiesController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mCity Load (0.1ms)[0m  [1m[34mSELECT  "cities".* FROM "cities" WHERE "cities"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  Rendering cities/show.html.erb within layouts/application
+  [1m[36mCountry Load (0.1ms)[0m  [1m[34mSELECT  "countries".* FROM "countries" WHERE "countries"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  Rendered cities/show.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 30ms (Views: 26.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/cities/6/edit" for 127.0.0.1 at 2017-11-23 08:58:17 +1100
+Processing by CitiesController#edit as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mCity Load (0.1ms)[0m  [1m[34mSELECT  "cities".* FROM "cities" WHERE "cities"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  Rendering cities/edit.html.erb within layouts/application
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "countries"."name", "countries"."id" FROM "countries"[0m
+  Rendered cities/_form.html.erb (5.2ms)
+  Rendered cities/edit.html.erb within layouts/application (8.7ms)
+Completed 200 OK in 39ms (Views: 30.3ms | ActiveRecord: 0.3ms)
+
+
+Started PATCH "/cities/6" for 127.0.0.1 at 2017-11-23 08:58:22 +1100
+Processing by CitiesController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"WDUId04vryQ3MjAfxjw/i4SMA/4V73HjIBNDrXcRWmhkTJCXFbEvKC3WBUOc0VU0SmbBzE5AcXK4fiKyRUhoYg==", "city"=>{"name"=>"London", "population"=>"250", "country_id"=>"5"}, "commit"=>"Update City", "id"=>"6"}
+  [1m[36mCity Load (0.1ms)[0m  [1m[34mSELECT  "cities".* FROM "cities" WHERE "cities"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+Unpermitted parameter: :country_id
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCountry Load (0.2ms)[0m  [1m[34mSELECT  "countries".* FROM "countries" WHERE "countries"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/cities/6
+Completed 302 Found in 6ms (ActiveRecord: 0.5ms)
+
+
+Started GET "/cities/6" for 127.0.0.1 at 2017-11-23 08:58:22 +1100
+Processing by CitiesController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mCity Load (0.1ms)[0m  [1m[34mSELECT  "cities".* FROM "cities" WHERE "cities"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  Rendering cities/show.html.erb within layouts/application
+  [1m[36mCountry Load (0.1ms)[0m  [1m[34mSELECT  "countries".* FROM "countries" WHERE "countries"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  Rendered cities/show.html.erb within layouts/application (2.9ms)
+Completed 200 OK in 32ms (Views: 27.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/countries" for 127.0.0.1 at 2017-11-23 08:58:33 +1100
+Processing by CountriesController#index as HTML
+  Rendering countries/index.html.erb within layouts/application
+  [1m[36mCountry Load (0.3ms)[0m  [1m[34mSELECT "countries".* FROM "countries"[0m
+  Rendered countries/index.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 24ms (Views: 21.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/countries/6" for 127.0.0.1 at 2017-11-23 08:58:35 +1100
+Processing by CountriesController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mCountry Load (0.2ms)[0m  [1m[34mSELECT  "countries".* FROM "countries" WHERE "countries"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  Rendering countries/show.html.erb within layouts/application
+  [1m[36mCity Load (0.1ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = ?[0m  [["country_id", 6]]
+  Rendered countries/show.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 38ms (Views: 33.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/countries/5" for 127.0.0.1 at 2017-11-23 08:58:41 +1100
+Processing by CountriesController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mCountry Load (0.1ms)[0m  [1m[34mSELECT  "countries".* FROM "countries" WHERE "countries"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  Rendering countries/show.html.erb within layouts/application
+  [1m[36mCity Load (0.2ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = ?[0m  [["country_id", 5]]
+  Rendered countries/show.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 24ms (Views: 20.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/countries/7" for 127.0.0.1 at 2017-11-23 08:58:45 +1100
+Processing by CountriesController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mCountry Load (0.1ms)[0m  [1m[34mSELECT  "countries".* FROM "countries" WHERE "countries"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  Rendering countries/show.html.erb within layouts/application
+  [1m[36mCity Load (0.1ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = ?[0m  [["country_id", 7]]
+  Rendered countries/show.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 25ms (Views: 21.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/countries/4" for 127.0.0.1 at 2017-11-23 08:58:53 +1100
+Processing by CountriesController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mCountry Load (0.1ms)[0m  [1m[34mSELECT  "countries".* FROM "countries" WHERE "countries"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  Rendering countries/show.html.erb within layouts/application
+  [1m[36mCity Load (0.2ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = ?[0m  [["country_id", 4]]
+  Rendered countries/show.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 24ms (Views: 20.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/cities" for 127.0.0.1 at 2017-11-23 08:59:02 +1100
+Processing by CitiesController#index as HTML
+  Rendering cities/index.html.erb within layouts/application
+  [1m[36mCity Load (0.2ms)[0m  [1m[34mSELECT "cities".* FROM "cities"[0m
+  Rendered cities/index.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 24ms (Views: 21.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/cities/11" for 127.0.0.1 at 2017-11-23 08:59:04 +1100
+Processing by CitiesController#show as HTML
+  Parameters: {"id"=>"11"}
+  [1m[36mCity Load (0.3ms)[0m  [1m[34mSELECT  "cities".* FROM "cities" WHERE "cities"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  Rendering cities/show.html.erb within layouts/application
+  [1m[36mCountry Load (0.1ms)[0m  [1m[34mSELECT  "countries".* FROM "countries" WHERE "countries"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  Rendered cities/show.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 30ms (Views: 25.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/cities/11/edit" for 127.0.0.1 at 2017-11-23 08:59:09 +1100
+Processing by CitiesController#edit as HTML
+  Parameters: {"id"=>"11"}
+  [1m[36mCity Load (0.2ms)[0m  [1m[34mSELECT  "cities".* FROM "cities" WHERE "cities"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  Rendering cities/edit.html.erb within layouts/application
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "countries"."name", "countries"."id" FROM "countries"[0m
+  Rendered cities/_form.html.erb (3.5ms)
+  Rendered cities/edit.html.erb within layouts/application (6.6ms)
+Completed 200 OK in 40ms (Views: 35.6ms | ActiveRecord: 0.4ms)
+
+
+Started PATCH "/cities/11" for 127.0.0.1 at 2017-11-23 08:59:13 +1100
+Processing by CitiesController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"vbxna8Ox3cJHYMOgx4VLYgfxGS5z5Eo/d6hZOTfjcO9UeNwRAFDW6Yfgkd889Y7XH1EQiZ8vApuwOOrdN9drGw==", "city"=>{"name"=>"New York", "population"=>"220", "country_id"=>"7"}, "commit"=>"Update City", "id"=>"11"}
+  [1m[36mCity Load (0.1ms)[0m  [1m[34mSELECT  "cities".* FROM "cities" WHERE "cities"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+Unpermitted parameter: :country_id
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCountry Load (0.1ms)[0m  [1m[34mSELECT  "countries".* FROM "countries" WHERE "countries"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/cities/11
+Completed 302 Found in 4ms (ActiveRecord: 0.3ms)
+
+
+Started GET "/cities/11" for 127.0.0.1 at 2017-11-23 08:59:13 +1100
+Processing by CitiesController#show as HTML
+  Parameters: {"id"=>"11"}
+  [1m[36mCity Load (0.1ms)[0m  [1m[34mSELECT  "cities".* FROM "cities" WHERE "cities"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  Rendering cities/show.html.erb within layouts/application
+  [1m[36mCountry Load (0.2ms)[0m  [1m[34mSELECT  "countries".* FROM "countries" WHERE "countries"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  Rendered cities/show.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 29ms (Views: 25.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/cities/11" for 127.0.0.1 at 2017-11-23 08:59:25 +1100
+Processing by CitiesController#show as HTML
+  Parameters: {"id"=>"11"}
+  [1m[36mCity Load (0.1ms)[0m  [1m[34mSELECT  "cities".* FROM "cities" WHERE "cities"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  Rendering cities/show.html.erb within layouts/application
+  [1m[36mCountry Load (0.1ms)[0m  [1m[34mSELECT  "countries".* FROM "countries" WHERE "countries"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  Rendered cities/show.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 31ms (Views: 27.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/cities/11" for 127.0.0.1 at 2017-11-23 08:59:29 +1100
+Processing by CitiesController#show as HTML
+  Parameters: {"id"=>"11"}
+  [1m[36mCity Load (0.1ms)[0m  [1m[34mSELECT  "cities".* FROM "cities" WHERE "cities"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  Rendering cities/show.html.erb within layouts/application
+  [1m[36mCountry Load (0.1ms)[0m  [1m[34mSELECT  "countries".* FROM "countries" WHERE "countries"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  Rendered cities/show.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 31ms (Views: 28.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/cities/11/edit" for 127.0.0.1 at 2017-11-23 08:59:40 +1100
+Processing by CitiesController#edit as HTML
+  Parameters: {"id"=>"11"}
+  [1m[36mCity Load (0.2ms)[0m  [1m[34mSELECT  "cities".* FROM "cities" WHERE "cities"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  Rendering cities/edit.html.erb within layouts/application
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "countries"."name", "countries"."id" FROM "countries"[0m
+  Rendered cities/_form.html.erb (4.5ms)
+  Rendered cities/edit.html.erb within layouts/application (8.5ms)
+Completed 200 OK in 36ms (Views: 30.9ms | ActiveRecord: 0.4ms)
+
+
+Started PATCH "/cities/11" for 127.0.0.1 at 2017-11-23 09:01:58 +1100
+Processing by CitiesController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"73Vw3QU1ntmwGaAHDThZuUkKOVJXWFjoXoIdNVvLT7AGscunxtSV8nCZ8nj2SJwMUaow9buTEEyZEq7RW/9URA==", "city"=>{"name"=>"New York", "population"=>"220", "country_id"=>"7"}, "commit"=>"Update City", "id"=>"11"}
+  [1m[36mCity Load (0.1ms)[0m  [1m[34mSELECT  "cities".* FROM "cities" WHERE "cities"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCountry Load (0.2ms)[0m  [1m[34mSELECT  "countries".* FROM "countries" WHERE "countries"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[33mUPDATE "cities" SET "country_id" = ?, "updated_at" = ? WHERE "cities"."id" = ?[0m  [["country_id", 7], ["updated_at", "2017-11-22 22:01:58.455002"], ["id", 11]]
+  [1m[35m (6.1ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/cities/11
+Completed 302 Found in 29ms (ActiveRecord: 7.8ms)
+
+
+Started GET "/cities/11" for 127.0.0.1 at 2017-11-23 09:01:58 +1100
+Processing by CitiesController#show as HTML
+  Parameters: {"id"=>"11"}
+  [1m[36mCity Load (0.2ms)[0m  [1m[34mSELECT  "cities".* FROM "cities" WHERE "cities"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  Rendering cities/show.html.erb within layouts/application
+  [1m[36mCountry Load (0.1ms)[0m  [1m[34mSELECT  "countries".* FROM "countries" WHERE "countries"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  Rendered cities/show.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 33ms (Views: 28.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/countries" for 127.0.0.1 at 2017-11-23 10:09:13 +1100
+Processing by CountriesController#index as HTML
+  Rendering countries/index.html.erb within layouts/application
+  [1m[36mCountry Load (0.2ms)[0m  [1m[34mSELECT "countries".* FROM "countries"[0m
+  Rendered countries/index.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 33ms (Views: 30.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/countries/new" for 127.0.0.1 at 2017-11-23 10:09:26 +1100
+Processing by CountriesController#new as HTML
+  Rendering countries/new.html.erb within layouts/application
+  Rendered countries/_form.html.erb (2.0ms)
+  Rendered countries/new.html.erb within layouts/application (5.1ms)
+Completed 200 OK in 29ms (Views: 24.9ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/countries" for 127.0.0.1 at 2017-11-23 10:09:33 +1100
+Processing by CountriesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"pizL2IEwwyzPSwClC/Ggp+aSOz+yZRFJd9eLuVWm56q2t7fgXtCK0XcjzVR1a/3CFYmJlAgeH3bkkrTv/ygWMA==", "country"=>{"name"=>"Tonga", "population"=>"2"}, "commit"=>"Create Country"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "countries" ("name", "population", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Tonga"], ["population", 2], ["created_at", "2017-11-22 23:09:33.605755"], ["updated_at", "2017-11-22 23:09:33.605755"]]
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/countries/8
+Completed 302 Found in 5ms (ActiveRecord: 1.2ms)
+
+
+Started GET "/countries/8" for 127.0.0.1 at 2017-11-23 10:09:33 +1100
+Processing by CountriesController#show as HTML
+  Parameters: {"id"=>"8"}
+  [1m[36mCountry Load (0.1ms)[0m  [1m[34mSELECT  "countries".* FROM "countries" WHERE "countries"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  Rendering countries/show.html.erb within layouts/application
+  [1m[36mCity Load (0.2ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = ?[0m  [["country_id", 8]]
+  Rendered countries/show.html.erb within layouts/application (3.5ms)
+Completed 200 OK in 28ms (Views: 23.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/countries/" for 127.0.0.1 at 2017-11-23 10:09:38 +1100
+Processing by CountriesController#index as HTML
+  Rendering countries/index.html.erb within layouts/application
+  [1m[36mCountry Load (0.2ms)[0m  [1m[34mSELECT "countries".* FROM "countries"[0m
+  Rendered countries/index.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 23ms (Views: 20.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/cities" for 127.0.0.1 at 2017-11-23 10:09:44 +1100
+Processing by CitiesController#index as HTML
+  Rendering cities/index.html.erb within layouts/application
+  [1m[36mCity Load (0.2ms)[0m  [1m[34mSELECT "cities".* FROM "cities"[0m
+  Rendered cities/index.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 23ms (Views: 19.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/cities/6" for 127.0.0.1 at 2017-11-23 10:09:46 +1100
+Processing by CitiesController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mCity Load (0.1ms)[0m  [1m[34mSELECT  "cities".* FROM "cities" WHERE "cities"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  Rendering cities/show.html.erb within layouts/application
+  [1m[36mCountry Load (0.1ms)[0m  [1m[34mSELECT  "countries".* FROM "countries" WHERE "countries"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  Rendered cities/show.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 28ms (Views: 24.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/cities/6/edit" for 127.0.0.1 at 2017-11-23 10:09:51 +1100
+Processing by CitiesController#edit as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mCity Load (0.1ms)[0m  [1m[34mSELECT  "cities".* FROM "cities" WHERE "cities"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  Rendering cities/edit.html.erb within layouts/application
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "countries"."name", "countries"."id" FROM "countries"[0m
+  Rendered cities/_form.html.erb (2.8ms)
+  Rendered cities/edit.html.erb within layouts/application (5.7ms)
+Completed 200 OK in 33ms (Views: 28.7ms | ActiveRecord: 0.3ms)
+
+
+Started PATCH "/cities/6" for 127.0.0.1 at 2017-11-23 10:09:56 +1100
+Processing by CitiesController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"QWqFmGKCNvbjbqBLJISKk555xBIQQRsrej1Pk8aqa8t9Ex14ORy2+vmKlRd+aeAsUJMGIEvuG7riUC6M9PNZwQ==", "city"=>{"name"=>"London", "population"=>"250", "country_id"=>"8"}, "commit"=>"Update City", "id"=>"6"}
+  [1m[36mCity Load (0.1ms)[0m  [1m[34mSELECT  "cities".* FROM "cities" WHERE "cities"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCountry Load (0.1ms)[0m  [1m[34mSELECT  "countries".* FROM "countries" WHERE "countries"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[33mUPDATE "cities" SET "country_id" = ?, "updated_at" = ? WHERE "cities"."id" = ?[0m  [["country_id", 8], ["updated_at", "2017-11-22 23:09:56.551949"], ["id", 6]]
+  [1m[35m (6.6ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/cities/6
+Completed 302 Found in 12ms (ActiveRecord: 7.3ms)
+
+
+Started GET "/cities/6" for 127.0.0.1 at 2017-11-23 10:09:56 +1100
+Processing by CitiesController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mCity Load (0.2ms)[0m  [1m[34mSELECT  "cities".* FROM "cities" WHERE "cities"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  Rendering cities/show.html.erb within layouts/application
+  [1m[36mCountry Load (0.1ms)[0m  [1m[34mSELECT  "countries".* FROM "countries" WHERE "countries"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  Rendered cities/show.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 30ms (Views: 26.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/countries" for 127.0.0.1 at 2017-11-23 10:10:05 +1100
+Processing by CountriesController#index as HTML
+  Rendering countries/index.html.erb within layouts/application
+  [1m[36mCountry Load (0.2ms)[0m  [1m[34mSELECT "countries".* FROM "countries"[0m
+  Rendered countries/index.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 23ms (Views: 20.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/countries/8" for 127.0.0.1 at 2017-11-23 10:10:07 +1100
+Processing by CountriesController#show as HTML
+  Parameters: {"id"=>"8"}
+  [1m[36mCountry Load (0.1ms)[0m  [1m[34mSELECT  "countries".* FROM "countries" WHERE "countries"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  Rendering countries/show.html.erb within layouts/application
+  [1m[36mCity Load (0.1ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = ?[0m  [["country_id", 8]]
+  Rendered countries/show.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 26ms (Views: 22.3ms | ActiveRecord: 0.3ms)
+
+

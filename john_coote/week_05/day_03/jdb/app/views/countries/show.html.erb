@@ -3,6 +3,11 @@
 
 <%= @country.name %>
 <%= @country.population %>
+<%= @country.food %>
+
+<% @country.cities.each do |city| %>
+  <%= city.name %>
+<% end %>
 
 <div class="controls">
   <%= link_to "Edit", edit_country_path(@country) %>
