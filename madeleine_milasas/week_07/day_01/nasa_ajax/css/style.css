@@ -21,8 +21,16 @@ button {
 
 img {
   padding: 15px;
+  padding-top: 45px;
   display: block;
   width: 800px;
   margin: 0 auto;
   box-sizing: border-box;
+}
+
+p {
+  box-sizing: border-box;
+  padding: 15px;
+  width: 800px;
+  margin: 0 auto;
 }
