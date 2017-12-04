@@ -25,7 +25,7 @@ class Director < ActiveRecord::Base
   has_many :films, dependent: :destroy
 end
 
-class Film <ActiveRecord::Base
+class Film < ActiveRecord::Base
   belongs_to :director
 end
 
