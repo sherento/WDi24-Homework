@@ -3,3 +3,19 @@ body {
   max-width: 960px;
   margin: 0 auto;
 }
+
+button {
+  display: block;
+}
+
+button, input {
+  padding: 15px;
+  width: 200px;
+  box-sizing: border-box;
+}
+
+img {
+  padding: 15px;
+  width: 200px;
+  box-sizing: border-box;
+}
