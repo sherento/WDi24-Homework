@@ -22,9 +22,18 @@ const position = function() {
     });
     $("#wherenow").css("opacity", "0.8");
     $("#coordinates").text("CURRENT COORDINATES: ");
+
     marker = new google.maps.Marker({
           position: {lat: latitude, lng: longitude},
-          map: map
+          map: map,
+          icon: {
+           path: google.maps.SymbolPath.CIRCLE,
+           scale: 15,
+           fillColor: "#ff0000",
+           fillOpacity: 1,
+           strokeWeight: 1,
+           labelClass: "label",
+         }
     });
 
   })
