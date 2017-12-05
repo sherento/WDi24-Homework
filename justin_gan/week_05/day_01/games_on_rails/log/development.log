@@ -5582,3 +5582,175 @@ Processing by PagesController#home as HTML
 Completed 200 OK in 151ms (Views: 147.9ms)
 
 
+Started GET "/" for 127.0.0.1 at 2017-11-25 18:58:17 +1100
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (1016.8ms)
+Completed 200 OK in 1667ms (Views: 1113.2ms)
+
+
+Started GET "/magic8ball" for 127.0.0.1 at 2017-11-25 18:58:31 +1100
+Processing by Magic8ballController#question as HTML
+  Rendering magic8ball/question.html.erb within layouts/application
+  Rendered magic8ball/question.html.erb within layouts/application (25.8ms)
+Completed 200 OK in 166ms (Views: 150.7ms)
+
+
+Started GET "/magic8ball/answer?question=how+do+you+use+dvorak%3F" for 127.0.0.1 at 2017-11-25 18:58:50 +1100
+Processing by Magic8ballController#answer as HTML
+  Parameters: {"question"=>"how do you use dvorak?"}
+  Rendering magic8ball/answer.html.erb within layouts/application
+  Rendered magic8ball/answer.html.erb within layouts/application (3.5ms)
+Completed 200 OK in 88ms (Views: 72.5ms)
+
+
+Started GET "/magic8ball" for 127.0.0.1 at 2017-11-25 18:59:01 +1100
+Processing by Magic8ballController#question as HTML
+  Rendering magic8ball/question.html.erb within layouts/application
+  Rendered magic8ball/question.html.erb within layouts/application (5.0ms)
+Completed 200 OK in 45ms (Views: 40.5ms)
+
+
+Started GET "/magic8ball/answer?question=will+my+podcast+reach+200%2C000+people%3F" for 127.0.0.1 at 2017-11-25 18:59:16 +1100
+Processing by Magic8ballController#answer as HTML
+  Parameters: {"question"=>"will my podcast reach 200,000 people?"}
+  Rendering magic8ball/answer.html.erb within layouts/application
+  Rendered magic8ball/answer.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 38ms (Views: 33.3ms)
+
+
+Started GET "/magic8ball" for 127.0.0.1 at 2017-11-25 18:59:22 +1100
+Processing by Magic8ballController#question as HTML
+  Rendering magic8ball/question.html.erb within layouts/application
+  Rendered magic8ball/question.html.erb within layouts/application (15.5ms)
+Completed 200 OK in 65ms (Views: 54.1ms)
+
+
+Started GET "/magic8ball/answer?question=What+is+the+meaning+of+life%3F" for 127.0.0.1 at 2017-11-25 18:59:35 +1100
+Processing by Magic8ballController#answer as HTML
+  Parameters: {"question"=>"What is the meaning of life?"}
+  Rendering magic8ball/answer.html.erb within layouts/application
+  Rendered magic8ball/answer.html.erb within layouts/application (4.2ms)
+Completed 200 OK in 93ms (Views: 79.9ms)
+
+
+Started GET "/secret_number" for 127.0.0.1 at 2017-11-25 18:59:41 +1100
+Processing by SecretNumberController#guess as HTML
+  Rendering secret_number/guess.html.erb within layouts/application
+  Rendered secret_number/guess.html.erb within layouts/application (6.1ms)
+Completed 200 OK in 142ms (Views: 125.7ms)
+
+
+Started GET "/secret_number/7" for 127.0.0.1 at 2017-11-25 18:59:47 +1100
+Processing by SecretNumberController#validate as HTML
+  Parameters: {"guess"=>"7"}
+  Rendering secret_number/validate.html.erb within layouts/application
+  Rendered secret_number/validate.html.erb within layouts/application (4.0ms)
+Completed 200 OK in 135ms (Views: 121.6ms)
+
+
+Started GET "/secret_number" for 127.0.0.1 at 2017-11-25 18:59:56 +1100
+Processing by SecretNumberController#guess as HTML
+  Rendering secret_number/guess.html.erb within layouts/application
+  Rendered secret_number/guess.html.erb within layouts/application (6.9ms)
+Completed 200 OK in 112ms (Views: 87.1ms)
+
+
+Started GET "/secret_number/10" for 127.0.0.1 at 2017-11-25 18:59:57 +1100
+Processing by SecretNumberController#validate as HTML
+  Parameters: {"guess"=>"10"}
+  Rendering secret_number/validate.html.erb within layouts/application
+  Rendered secret_number/validate.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 64ms (Views: 59.0ms)
+
+
+Started GET "/rock_paper_scissors" for 127.0.0.1 at 2017-11-25 19:00:01 +1100
+Processing by RockPaperScissorsController#throw as HTML
+  Rendering rock_paper_scissors/throw.html.erb within layouts/application
+  Rendered rock_paper_scissors/throw.html.erb within layouts/application (7.1ms)
+Completed 200 OK in 56ms (Views: 47.0ms)
+
+
+Started GET "/rock_paper_scissors/:throw?choice=rock" for 127.0.0.1 at 2017-11-25 19:00:05 +1100
+Processing by RockPaperScissorsController#validate as HTML
+  Parameters: {"choice"=>"rock", "throw"=>":throw"}
+  Rendering rock_paper_scissors/validate.html.erb within layouts/application
+  Rendered rock_paper_scissors/validate.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 157ms (Views: 149.9ms)
+
+
+Started GET "/rock_paper_scissors" for 127.0.0.1 at 2017-11-25 19:00:09 +1100
+Processing by RockPaperScissorsController#throw as HTML
+  Rendering rock_paper_scissors/throw.html.erb within layouts/application
+  Rendered rock_paper_scissors/throw.html.erb within layouts/application (11.3ms)
+Completed 200 OK in 76ms (Views: 59.2ms)
+
+
+Started GET "/rock_paper_scissors/:throw?choice=paper" for 127.0.0.1 at 2017-11-25 19:00:13 +1100
+Processing by RockPaperScissorsController#validate as HTML
+  Parameters: {"choice"=>"paper", "throw"=>":throw"}
+  Rendering rock_paper_scissors/validate.html.erb within layouts/application
+  Rendered rock_paper_scissors/validate.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 48ms (Views: 45.4ms)
+
+
+Started GET "/rock_paper_scissors" for 127.0.0.1 at 2017-11-25 19:00:16 +1100
+Processing by RockPaperScissorsController#throw as HTML
+  Rendering rock_paper_scissors/throw.html.erb within layouts/application
+  Rendered rock_paper_scissors/throw.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 37ms (Views: 32.9ms)
+
+
+Started GET "/rock_paper_scissors/:throw?choice=scissors" for 127.0.0.1 at 2017-11-25 19:00:20 +1100
+Processing by RockPaperScissorsController#validate as HTML
+  Parameters: {"choice"=>"scissors", "throw"=>":throw"}
+  Rendering rock_paper_scissors/validate.html.erb within layouts/application
+  Rendered rock_paper_scissors/validate.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 49ms (Views: 43.5ms)
+
+
+Started GET "/rock_paper_scissors" for 127.0.0.1 at 2017-11-25 19:00:24 +1100
+Processing by RockPaperScissorsController#throw as HTML
+  Rendering rock_paper_scissors/throw.html.erb within layouts/application
+  Rendered rock_paper_scissors/throw.html.erb within layouts/application (6.9ms)
+Completed 200 OK in 100ms (Views: 87.7ms)
+
+
+Started GET "/rock_paper_scissors/:throw?choice=paper" for 127.0.0.1 at 2017-11-25 19:00:27 +1100
+Processing by RockPaperScissorsController#validate as HTML
+  Parameters: {"choice"=>"paper", "throw"=>":throw"}
+  Rendering rock_paper_scissors/validate.html.erb within layouts/application
+  Rendered rock_paper_scissors/validate.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 44ms (Views: 40.2ms)
+
+
+Started GET "/rock_paper_scissors" for 127.0.0.1 at 2017-11-25 19:00:31 +1100
+Processing by RockPaperScissorsController#throw as HTML
+  Rendering rock_paper_scissors/throw.html.erb within layouts/application
+  Rendered rock_paper_scissors/throw.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 45ms (Views: 39.7ms)
+
+
+Started GET "/rock_paper_scissors/:throw?choice=rock" for 127.0.0.1 at 2017-11-25 19:00:34 +1100
+Processing by RockPaperScissorsController#validate as HTML
+  Parameters: {"choice"=>"rock", "throw"=>":throw"}
+  Rendering rock_paper_scissors/validate.html.erb within layouts/application
+  Rendered rock_paper_scissors/validate.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 93ms (Views: 90.2ms)
+
+
+Started GET "/rock_paper_scissors" for 127.0.0.1 at 2017-11-25 19:00:37 +1100
+Processing by RockPaperScissorsController#throw as HTML
+  Rendering rock_paper_scissors/throw.html.erb within layouts/application
+  Rendered rock_paper_scissors/throw.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 37ms (Views: 34.3ms)
+
+
+Started GET "/rock_paper_scissors/:throw?choice=rock" for 127.0.0.1 at 2017-11-25 19:00:40 +1100
+Processing by RockPaperScissorsController#validate as HTML
+  Parameters: {"choice"=>"rock", "throw"=>":throw"}
+  Rendering rock_paper_scissors/validate.html.erb within layouts/application
+  Rendered rock_paper_scissors/validate.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 36ms (Views: 32.6ms)
+
+

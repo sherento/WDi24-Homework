@@ -1,7 +1,5 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
+Category.destroy_all
+Category.create(:name => 'Sans-serif', :image => 'http://blog.glasscanopy.com/wp-content/uploads/2014/01/SansSerif.jpg', :description => 'In typography, a sans-serif font is one that doesn\'t have extending features called "serifs" at the end of strokes. They are often used to convey simplicity and modernity or minimalism.' )
+
+Font.destroy_all
+Font.create(:name => 'Gill Sans', :classification => 'Humanist', :designer => 'Eric Gill', :year_created => 1926, :image => 'https://en.wikipedia.org/wiki/Gill_Sans#/media/File:GillSansEG.svg', :category_id => 1)
