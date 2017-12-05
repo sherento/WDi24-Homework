@@ -31,8 +31,7 @@ const position = function() {
            scale: 15,
            fillColor: "#ff0000",
            fillOpacity: 1,
-           strokeWeight: 1,
-           labelClass: "label",
+           strokeWeight: 1
          }
     });
 
