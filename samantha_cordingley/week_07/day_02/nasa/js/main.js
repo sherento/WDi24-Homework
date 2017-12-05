@@ -13,12 +13,15 @@ const position = function() {
     $('#lat').text(latitude);
     $('#long').text(longitude);
 
+
     map = new google.maps.Map(document.getElementById('map'), {
       center: {lat: latitude, lng: longitude},
       zoom: 3,
       mapTypeControl: false,
       mapTypeId: 'satellite'
     });
+    $("#wherenow").css("opacity", "0.8");
+    $("#coordinates").text("CURRENT COORDINATES: ");
     marker = new google.maps.Marker({
           position: {lat: latitude, lng: longitude},
           map: map
