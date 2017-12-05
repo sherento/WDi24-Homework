@@ -34,44 +34,33 @@ body {
   height: 60px;
   background-color: rgba(242, 242, 242, 0.7);
   flex-direction: row;
-}
-
-nav ul {
   margin: 0;
   padding: 0;
-  flex-direction: row;
   display: flex;
 }
 
-nav ul li a {
+
+.leftnav a {
   color: black;
   text-decoration: none;
   padding: 1em 1em;
-  line-height: 4em;
-}
-
-nav ul li {
-  list-style-type: none;
-  text-align: left;
-  display: inline-flex;
-}
-
-nav ul li:first-child {
-  margin-right: auto;
-}
-
-a.leftnav {
   font-family: 'Oswald', sans-serif;
   font-weight: bold;
   font-size: 30px;
   color: rgba(0, 0, 0, 1);
   line-height: 0em;
+  flex-direction: row;
 }
 
-a.rightnav {
+.rightnav a {
+  color: black;
+  text-decoration: none;
+  padding: 1em 1em;
+  margin-right: auto;
   font-family: 'Raleway', sans-serif;
   font-size: 10px;
   line-height: 4em;
+  flex-direction: row-reverse;
 }
 
 .banner {

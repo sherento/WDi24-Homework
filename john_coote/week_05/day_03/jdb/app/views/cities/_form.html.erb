@@ -1,0 +1,17 @@
+
+
+<%= form_for @city do |f| %>
+<fieldset>
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+</fieldset>
+<fieldset>
+  <%= f.label :population %>
+  <%= f.text_field :population %>
+</fieldset>
+<fieldset>
+  <label></label>
+  <%= f.submit %>
+</fieldset>
+
+<% end %>
