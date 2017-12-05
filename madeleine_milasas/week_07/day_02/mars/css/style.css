@@ -1,7 +1,19 @@
+* {
+  /*border: 1px solid pink;*/
+}
+
 body {
   font-family: Avenir, sans-serif;
   max-width: 960px;
   margin: 0 auto;
+}
+
+h2 {
+  padding-bottom: 50px;
+}
+
+form {
+  padding-bottom: 30px;
 }
 
 input {
@@ -22,17 +34,19 @@ button {
 }
 
 img {
-  /*padding: 15px;*/
-  padding-top: 45px;
+  /*padding: 20px;*/
+  /*padding-top: 45px;*/
   display: inline-block;
   width: 477px;
-  margin: 0 auto;
+  /*margin: 0 auto;*/
   box-sizing: border-box;
 }
 
 p {
   box-sizing: border-box;
-  padding: 10px 0 20px 0;
-  width: 960px;
-  margin: 0 auto;
+  display: inline-block;
+  padding: 10px 0;
+  width: 477px;
+  /*margin: 0 auto;*/
+  font-size: 10px;
 }
