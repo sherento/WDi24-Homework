@@ -1,4 +1,4 @@
-// console.log( $.fn.jquery, _.VERSION );
+console.log( $.fn.jquery, _.VERSION );
 
 const searchFlickr = function (term) {
   console.log( `Searching Flickr for ${ term }` );
@@ -47,7 +47,7 @@ $(document).ready(function () {
 
   });
 
-  $(window).on('scroll', function () {
+  $(window).on('scroll', _.throttle(function () {
     const scrollBottom = $(document).height() - $(window).height() - $(window).scrollTop();
 
     if (scrollBottom > 600) {
@@ -55,5 +55,6 @@ $(document).ready(function () {
     }
     console.log( 'nearing the bottom' );
     // your code here
-  });
+  },
+  300 ));
 });
