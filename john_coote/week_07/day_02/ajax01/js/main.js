@@ -20,11 +20,10 @@ console.log("connected");
 
 $( document ).ready(function() {
     console.log( "ready!" );
+    updateCountryData()
 
     $('#B08').on('click', function() {
       console.log("clicked");
-
-      updateCountryData()
       displayCountryData()
     })
 
