@@ -74,7 +74,7 @@ $(document).ready(function () {
   });
 
 
-  let throttled = _.throttle(searchFlickr, 3000, {trailing: false});
+  let throttled = _.throttle(searchFlickr, 1000, {trailing: false});
 
 //scroll event to see how often we should make a request to Flickr to load more images and create an infinite scroll
   $(window).on('scroll', function () {
