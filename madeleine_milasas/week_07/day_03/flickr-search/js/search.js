@@ -1,16 +1,20 @@
-console.log( $.fn.jquery, _.VERSION );
+// console.log( $.fn.jquery, _.VERSION );
+
+const flickrURL = 'https://api.flickr.com/services/rest/?jsoncallback=?';
+let pageNum = 1;
+let query;
 
 const searchFlickr = function (term) {
   console.log( `Searching Flickr for ${ term }` );
-
   // Fetch images from Flickr using Ajax
-  const flickrURL = 'https://api.flickr.com/services/rest/?jsoncallback=?';
   $.getJSON(flickrURL, {
     method: "flickr.photos.search",
     api_key: "2f5ac274ecfac5a455f38745704ad084",
     text: term , // what we're actually searching for
-    format: "json"  // flickr's api is old, gives xml by default
-  }).done(showImages);
+    page: pageNum,
+    format: "json" })  // flickr's api is old, gives xml by default
+  .done(showImages)
+  .done(pageNum++);
 };
 
 const showImages = function (results) {
@@ -38,23 +42,23 @@ const generateURL = function (photo) {
   ].join('');
 };
 
+
+// *********** DOC READY ***************
 $(document).ready(function () {
+  // ON SUBMIT
   $('#search').on('submit', function (e) {
     e.preventDefault();
-
-    const query = $('#query').val();
+    query = $('#query').val();
     searchFlickr( query );
-
   });
-
+  // ON SCROLL
   $(window).on('scroll', _.throttle(function () {
     const scrollBottom = $(document).height() - $(window).height() - $(window).scrollTop();
-
-    if (scrollBottom > 600) {
+    if (scrollBottom > 1000) {
       return; // don't do anything until we are within 600px of bottom of page; n.b could pick any number, 600 not nec ideal
     }
     console.log( 'nearing the bottom' );
-    // your code here
+    searchFlickr( query );
   },
-  300 ));
+  700 ));
 });
