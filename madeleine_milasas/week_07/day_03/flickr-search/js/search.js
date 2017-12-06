@@ -48,6 +48,10 @@ $(document).ready(function () {
   // ON SUBMIT
   $('#search').on('submit', function (e) {
     e.preventDefault();
+    // Clear previous images
+    $('#images').empty();
+    // Reset page number
+    pageNum = 1;
     query = $('#query').val();
     searchFlickr( query );
   });
