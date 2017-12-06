@@ -7,15 +7,18 @@ body {
 
 h2 {
   font-size: 50px;
+  margin: 0 auto;
+  text-align: center;
 }
 
 nav {
   font-size: 20px;
+  text-align: right;
 }
 
-.container {
+.container, .single {
   display: flex;
-  justify-content: space-evenly;
+  justify-content: center;
 }
 
 p {
@@ -25,11 +28,17 @@ p {
   width: 300px;
 }
 
+.homepage, .info {
+  display: block;
+}
+
 .feature {
-  max-width: 70vw;
+  max-width: 60vw;
+  margin: 0 auto;
 }
 
 img {
   max-width: 60vw;
+  max-height: 60vh;
   display: inline-block;
 }

@@ -12,10 +12,10 @@ ActiveRecord::Base.establish_connection(
 
 ActiveRecord::Base.logger = Logger.new(STDERR)
 
-class Places < ActiveRecord::Base
+class Place < ActiveRecord::Base
 end
 
-class Cuisines < ActiveRecord::Base
+class Cuisine < ActiveRecord::Base
 end
 
 
@@ -38,21 +38,22 @@ post '/places' do
   place.city = params[:city]
   place.image = params[:image]
   place.save
-  redirect to('/places/#{place.id}')
+  redirect to("/places/#{place.id}")
 end
 
 get 'places/:id' do
-  @place = place.find prams[:id]
+  @places = place.find params[:id]
+  binding.pry
   erb :individual
 end
 
 get '/places/:id/edit' do
-  @place = place.find prams[:id]
+  @place = place.find params[:id]
   erb :edit
 end
 
 post 'places/:id' do
-  place = place.find prams[:id]
+  place = place.find params[:id]
   place.update :country => params[:country],
   :city => params[:city], :image => params[:image]
   redirect to("/places/#{params[:id]}")

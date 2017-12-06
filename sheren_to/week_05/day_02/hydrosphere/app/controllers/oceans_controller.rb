@@ -20,6 +20,9 @@ class OceansController < ApplicationController
 
   def show
     @ocean = Ocean.find params[:id]
+    @images = Dir.glob("app/assets/images/:name/*.jpg")
+
+    
   end
 
   def edit
@@ -37,5 +40,5 @@ class OceansController < ApplicationController
     ocean.destroy
     redirect_to oceans_path
   end
-  
+
 end
