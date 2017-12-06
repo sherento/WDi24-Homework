@@ -22,7 +22,7 @@ const showImages = function (results) {
   _(results.photos.photo).each(function (photoInfo) {
     const photoURL = generateURL(photoInfo);
     // Create a new image, set source
-    const $img = $('<img/>', {src: photoURL});  // create and set attr at same time
+    const $img = $('<img/>', {src: photoURL, className: 'grid-cell'});  // create and set attr at same time
     // Append the image on the page
     $img.appendTo('#images');  // or $('#images').append($img);
   });

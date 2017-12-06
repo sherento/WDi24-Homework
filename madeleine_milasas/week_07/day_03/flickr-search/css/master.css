@@ -18,11 +18,17 @@ h1 {
   padding: 15px;
 }
 
-.container {
-  max-width: 1200px;
+#images {
+  max-width: 825px;
   margin: 0 auto;
   margin-top: 300px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  grid-gap: 10px;
 }
+
+/*.grid-cell {
+}*/
 
 header {
   display: block;
