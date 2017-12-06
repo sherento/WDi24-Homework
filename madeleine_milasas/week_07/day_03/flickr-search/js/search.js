@@ -20,15 +20,19 @@ const searchFlickr = function (term) {
 const showImages = function (results) {
   console.log( results );
   _(results.photos.photo).each(function (photoInfo) {
-    const photoURL = generateURL(photoInfo);
-    // Create a new image, set source
-    const $img = $('<img/>', {src: photoURL, className: 'grid-cell'});  // create and set attr at same time
-    // Append the image on the page
-    $img.appendTo('#images');  // or $('#images').append($img);
+    // create a new image tag, set source
+    const photoURL = generateURL(photoInfo, 'q'); // q = 150px square
+    const $img = $('<img/>', {src: photoURL, class: 'grid-cell'});  // create and set attr at same time
+    // create new anchor tag, set href
+    const largePhotoURL = generateURL(photoInfo, 'h'); // h = large
+    const $a = $('<a>', {href: largePhotoURL, target: '_blank'});
+    // append
+    $img.appendTo($a);
+    $a.appendTo('#images');  // or $('#images').append($img);
   });
 };
 
-const generateURL = function (photo) {
+const generateURL = function (photo, size) {
   return [
     'http://farm',
     photo.farm,
@@ -38,7 +42,7 @@ const generateURL = function (photo) {
     photo.id,
     '_',
     photo.secret,
-    '_q.jpg'  // change "q" for different sizes, e.g. m
+    `_${size}.jpg`  // e.g. q is 150px square, h is large 1600px on longest side
   ].join('');
 };
 
@@ -48,6 +52,7 @@ $(document).ready(function () {
   // ON SUBMIT
   $('#search').on('submit', function (e) {
     e.preventDefault();
+    $('.hidden').removeClass('hidden');
     // Clear previous images
     $('#images').empty();
     // Reset page number
@@ -58,7 +63,7 @@ $(document).ready(function () {
   // ON SCROLL
   $(window).on('scroll', _.throttle(function () {
     const scrollBottom = $(document).height() - $(window).height() - $(window).scrollTop();
-    if (scrollBottom > 1000) {
+    if (scrollBottom > 500) {
       return; // don't do anything until we are within 600px of bottom of page; n.b could pick any number, 600 not nec ideal
     }
     console.log( 'nearing the bottom' );
