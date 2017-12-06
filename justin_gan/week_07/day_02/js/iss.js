@@ -22,9 +22,12 @@ const fetchISSLocation = function () {
 }
 
 const updateMap = function ( issPosition ) {
-  map.panTo( issPosition, animate=true );
+  map.panTo( issPosition );
   marker.setPosition( issPosition );
 }
+
+///////////////////////////////////////////////////////////////////////////////
+// Google Maps initialisation
 
 function initMap() {
   const issPosition = fetchISSLocation();

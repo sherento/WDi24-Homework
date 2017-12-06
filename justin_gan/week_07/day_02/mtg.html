@@ -1,21 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <style>
-     #map {
-      height: 80vh;
-      width: 100%;
-     }
-  </style>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>ISS Location</title>
   <script src="js/jquery.js" charset="utf-8"></script>
-  <script src="js/iss.js" charset="utf-8"></script>
-  <script async defer
-  src="https://maps.googleapis.com/maps/api/js?key=AIzaSyABDM6jpfKy3YA3F25pB0zMUg6QBNCk-0A&callback=initMap">
-  </script>
+  <script src="js/mtg.js" charset="utf-8"></script>
 </head>
 <body>
   <nav>
@@ -25,8 +16,9 @@
     <a href="mtg.html">nerdy</a>
   </nav>
 
-  <h1>ISS Location</h1>
-  <div id="display"></div>
-  <div id="map"></div>
+  <button>These cards suck</button>
+  <div id="cards" style="display:flex; flex-wrap:wrap; justify-content:space-between; align-items:center;"></div>
+
+
 </body>
 </html>
