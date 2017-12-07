@@ -4,7 +4,9 @@
 <%= @city.name %>
 <%= @city.population %>
 
+<%= @city.country.name %>
+
 <div class="controls">
   <%= link_to "Edit", edit_city_path(@city) %>
-  <%= link_to 'Delete City', @city, :method => 'delete', :data => { :confirm => 'Are you sure?'} %>  
+  <%= link_to 'Delete City', @city, :method => 'delete', :data => { :confirm => 'Are you sure?'} %>
 </div>

@@ -9,6 +9,13 @@
   <%= f.label :population %>
   <%= f.text_field :population %>
 </fieldset>
+
+<fieldset>
+  <%= f.label :country_id %>
+  <%= f.select :country_id, Country.pluck(:name, :id), :include_blank => true %>
+
+</fieldset>
+
 <fieldset>
   <label></label>
   <%= f.submit %>
