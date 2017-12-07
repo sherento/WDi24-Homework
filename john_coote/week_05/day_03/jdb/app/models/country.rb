@@ -12,4 +12,5 @@
 #
 
 class Country < ActiveRecord::Base
-end 
+  has_many :cities
+end
