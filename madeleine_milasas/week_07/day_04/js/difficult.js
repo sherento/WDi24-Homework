@@ -17,19 +17,29 @@ const startingData = [
   [["gummo",   "marx", 1992], ["firstName", "lastName", "born"]]
 ];
 
-// rearrange data
-const brothers = _(startingData).map(function (arr) {
-  return _.chain(arr)
-    .unzip()
-    .object()
-    .invert()
-    .value();
-});
 
 // make function for title case
 const title = function ( str ) {
   return str[0].toUpperCase() + str.substring(1).toLowerCase();
 };
+
+
+// rearrange and adjust data
+let brothers = _(startingData).map(function (arr) {
+  return _.chain( arr )
+    .unzip()
+    .object()
+    .invert()
+    .mapObject( function (value) {
+      if ( _(+value).isNaN() ) {
+        return title( value );
+      } else {
+        return +value - 100;
+      }
+    })
+    .value();
+});
+
 
 // log out each sentence
 _(brothers).each(function (b) {
