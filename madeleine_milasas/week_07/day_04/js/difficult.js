@@ -18,14 +18,24 @@ const startingData = [
 ];
 
 
-// make function for title case
+
+// make helper function for title case
 const title = function ( str ) {
   return str[0].toUpperCase() + str.substring(1).toLowerCase();
 };
 
 
-// rearrange and adjust data
-let brothers = _(startingData).map(function (arr) {
+// make template for logging out info; mixin so i can add to chain
+_.mixin({
+  printInfo: function (arg) {
+    const template = _.template("<%= firstName %> <%= lastName %> was born in <%= born %>.");
+    console.log( template( arg ) );
+  }
+});
+
+
+// rearrange, adjust data, print to console
+const brothers = _(startingData).map(function (arr) {
   return _.chain( arr )
     .unzip()
     .object()
@@ -37,13 +47,27 @@ let brothers = _(startingData).map(function (arr) {
         return +value - 100;
       }
     })
-    .value();
+    .printInfo();
+    // .value();   // commented out because prob doesn't need us to return final obj
 });
 
 
-// log out each sentence
-_(brothers).each(function (b) {
-  console.log(
-    `${ title(b.firstName) } ${ title(b.lastName) } was born in ${b.born}.`
-  );
-});
+// log out each sentence - first version before mixin
+// _(brothers).each(function (b) {
+//   console.log(
+//     `${ b.firstName } ${ b.lastName } was born in ${b.born}.`
+//   );
+// });
+
+
+
+
+
+
+
+
+
+
+
+
+// **
