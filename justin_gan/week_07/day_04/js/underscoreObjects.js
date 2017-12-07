@@ -37,7 +37,7 @@ console.log( 'inverted:', inverted );
 const omitted = _( objectToMap ).omit( 'start' );
 console.log( 'omitted:', omitted );
 
-const omittedByPredicate = _( objectToMap ).omit( function ( value ) {
-  return value === 100;
+const omittedByPredicate = _( objectToMap ).omit( function ( value, key ) {
+  return key === "start";
 } );
 console.log( 'omittedByPredicate:', omittedByPredicate );
