@@ -7,20 +7,24 @@ class Board extends PureComponent {
     this.state = {
       squares: Array(9).fill( null ),
     };
-    this._handleClick = this._handleClick.bind( this );
+    // this._handleClick = this._handleClick.bind( this );
+    // console.log( this );
   }
 
   _handleClick(i) {
     const squares = this.state.squares.slice();
     squares[i] = 'X';
     this.setState( { squares: squares } );
+    // console.log( this.state );
   }
 
   renderSquare(i) {
     return (
       <Square
         value={ this.state.squares[i] }
-        onClick={ this._handleClick }
+        // TODO: do we have to use the fat arrow to pass an argument into the function?
+        // onClick={ () => this._handleClick(i) }
+        onClick={ this._handleClick.bind( this, i ) }
       />
     );
   }
