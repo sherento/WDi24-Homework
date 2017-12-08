@@ -5,7 +5,7 @@ let infowindow;
 let place;
 
 
-function initMap() {
+function initMap(place) {
 
   map = new google.maps.Map(document.getElementById('map'), {
     center: place,
@@ -44,15 +44,16 @@ function createMarker(place) {
 
 
 
-  function getLatLng( place ) {
-
+  function getLatLng( event ) {
+    event.preventDefault();
+    const address = $('#query').val();
     let geocoder = new google.maps.Geocoder();
-    place = $('#query').val();
-
-    geocoder.geocode({ 'place': place }, function (results, status) {
+    geocoder.geocode({ 'address': address }, function (results, status) {
         if (status == google.maps.GeocoderStatus.OK) {
           let latitude = results[0].geometry.location.lat();
           let longitude = results[0].geometry.location.lng();
+
+          initMap( { lat: latitude, lng: longitude} );
         }
     })
   }
@@ -60,21 +61,17 @@ function createMarker(place) {
 $(document).ready(function() {
   $('#place-search').on('submit', getLatLng);
 
-  const getPlace = function (e) {
-    e.preventDefault();
-
-  $.getJSON(`https://maps.googleapis.com/maps/api/js?key=AIzaSyB9jCQyBy9GVlbnZOyuTyRv57EznuBqRDc&libraries=places:${place }`).done(function ( initMap ) {
-    latitude;
-  }).done(function( initMap ) {
-    longitude;
-  }).fail(function() {
-    alert('something went wrong, please try again')
-  })
-
-  // on submit
-    // get the location from the text field
-    // use the geocode API to find the latitude/long
-      // show the map with that lat/long
-  }
+  // const getPlace = function (e) {
+  //   e.preventDefault();
+  //
+  //   $.getJSON(`https://maps.googleapis.com/maps/api/js?key=AIzaSyB9jCQyBy9GVlbnZOyuTyRv57EznuBqRDc&libraries=places:${place }`).done(getLatLng).fail(function() {
+  //     alert('something went wrong, please try again')
+  //   })
+  //
+  // // on submit
+  //   // get the location from the text field
+  //   // use the geocode API to find the latitude/long
+  //     // show the map with that lat/long
+  // }
 
 });
