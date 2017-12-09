@@ -151,15 +151,15 @@ const notBad = function(string) {
   if ( string.includes("bad") && string.includes("not") ) {
     if (notIndex < badIndex) {
       return string.replace(string.substr(notIndex, indexEndBad), "good");
-    } else if ( notIndex > badIndex ) {
-      console.log(string);
-  } else {
-    console.log(string);
+    } else {
+      return string;
     }
+  } else {
+    return string;
   }
 };
 
-  notBad('This dinner is not that bad!');
-  notBad('This movie is not so bad!');
-  notBad('This dinner is bad!');
-  notBad('This dinner is bad! Not.');
+  console.log(notBad('This dinner is not that bad!'));
+  console.log(notBad('This movie is not so bad!'));
+  console.log(notBad('This dinner is bad!'));
+  console.log(notBad('This dinner is bad! Not.'));
