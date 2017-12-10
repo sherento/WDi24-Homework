@@ -1,40 +1,50 @@
 import React, { PureComponent } from 'react';
-import Square from './Square.js';
+// import Square from './Square.js';
+
+const Square = function( props ) {
+  // get winning squares
+  // const winningSquares = props.winningSquares;
+  // console.log( winningSquares, props.value );
+  // let classes;
+  // if ( winningSquares !== undefined && winningSquares.includes( props.value ) ) {
+  //   console.log( winningSquares.includes( props.value ) );
+  //   classes = "square winning-square";
+  // }
+  // else {
+  //   classes = "square";
+  // }
+  return (
+    <button className={ props.classes } onClick={ props.onClick }>
+      { props.value }
+    </button>
+  );
+}
 
 class Board extends PureComponent {
-  constructor( props ) {
-    super( props );
-    this.state = {
-      squares: Array(9).fill( null ),
-    };
-    // this._handleClick = this._handleClick.bind( this );
-    // console.log( this );
-  }
-
-  _handleClick(i) {
-    const squares = this.state.squares.slice();
-    squares[i] = 'X';
-    this.setState( { squares: squares } );
-    // console.log( this.state );
-  }
-
   renderSquare(i) {
+    // console.log( i );
+    const winningSquares = this.props.winningSquares;
+    let classes;
+    if ( winningSquares !== undefined && winningSquares.includes( i ) ) {
+      classes = "square winning-square";
+    }
+    else {
+      classes = "square";
+    }
     return (
       <Square
-        value={ this.state.squares[i] }
-        // TODO: do we have to use the fat arrow to pass an argument into the function?
+        value={ this.props.squares[i] }
         // onClick={ () => this._handleClick(i) }
-        onClick={ this._handleClick.bind( this, i ) }
+        onClick={ this.props.onClick.bind( this, i ) }
+        // winningSquares={ this.props.winningSquares }
+        classes={ classes }
       />
     );
   }
 
   render() {
-    const status = 'Next player: X';
-
     return (
       <div>
-        <div className="status">{ status }</div>
         <div className="board-row">
           { this.renderSquare(0) }
           { this.renderSquare(1) }
