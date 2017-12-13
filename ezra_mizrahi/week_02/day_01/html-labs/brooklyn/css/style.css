@@ -18,11 +18,40 @@ body {
   color: #656565;
 }
 
+.container {
+  padding: 3em;
+}
 
-h1 {
+a:hover {
+  color: #20222a;
+}
+
+.header h1 {
   text-align: left;
 }
 
-p {
+.mainimages {
+  text-align: left;
+}
+
+.p1 p {
   display: inline-block;
+  width: 50%;
+}
+
+.p2 p {
+  width: 50%;
+}
+
+.bottomimages {
+  text-align: left;
+  border-style: solid 1px grey;
+}
+
+.footer {
+  text-align: left;
+  font-size: 12px;
+  margin: 0 auto;
+  text-indent: 0;
+
 }

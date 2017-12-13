@@ -1,0 +1,90 @@
+@import url(http://fonts.googleapis.com/css?family=Oleo+Script);
+@import url(http://fonts.googleapis.com/css?family=Ruluko);
+
+body {
+  font-family: 'Avenir', sans-serif;
+  letter-spacing: 1.7px;
+}
+
+#content {
+  margin: 0 auto;
+  text-align: center;
+  width: 700px;
+}
+
+#nav {
+  margin: 50px 0px;
+}
+
+#title {
+  color: #F52F4F;
+  font-family: 'Oleo Script', cursive;
+  font-size: 50px;
+}
+
+#checking {
+  float: left;
+}
+
+#savings {
+  float: right;
+}
+
+.account {
+  border: 1px solid #333;
+  padding: 10px;
+}
+
+#savings {
+  background-color: #A1B5D8;
+}
+
+#checking {
+  background-color: #C2D8B9;
+}
+
+.balance {
+  background-color: #E3E3E3;
+  border: 1px solid #333;
+  font-family: 'Ruluko', sans-serif;
+  font-size: 50px;
+  padding: 25px 0;
+}
+
+.clear {
+  clear: both;
+}
+
+.zero {
+  background-color: #F52F4F;
+  color: #FFF;
+}
+
+.record-area {
+  padding: 65px 0;
+}
+
+.record {
+  padding-top: 30px;
+}
+
+.record-data {
+  font-family: monospace;
+  text-align: left;
+  font-size: 12px;
+  letter-spacing: 1px;
+}
+
+.right-balance {
+  float: right;
+  font-weight: bold;
+}
+
+.error {
+  box-sizing: border-box;
+  height: 82px;
+  color: #F52F4F;
+  letter-spacing: 1.2px;
+  padding: 30px 0;
+
+}
